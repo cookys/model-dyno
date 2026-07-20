@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-thinkingcap-dflash-local-ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf-d8407b14bc73","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"thinkingcap-qwen3.6-27b","policy":"dashboard-public-feed","subject_digest":"30536c2a441d181256f8220e69f07cc20c2738aad8c2f2238c4521fa34238338"}]

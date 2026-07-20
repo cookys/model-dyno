@@ -1,0 +1,1 @@
+[{"backend":"direct-api","display_slug":"results-m27-highspeed-minimax-32k-MiniMax-M2.7-highspeed-6b8af130dc7f","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"minimax-m2.7","policy":"dashboard-public-feed","subject_digest":"901ca11f36486435bc325265a00bd9756b098846edae05b5c24c8dcc33749b94"}]

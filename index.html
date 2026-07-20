@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>llm-playground — bench dashboard</title>
+    <script>
+      (function() {
+        try {
+          let theme = localStorage.getItem('dash.theme') || 'auto';
+          if (theme.startsWith('"') && theme.endsWith('"')) {
+            theme = theme.slice(1, -1);
+          }
+          const isDark = theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-ClDg1S8V.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C6nR5sCs.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

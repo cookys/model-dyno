@@ -1,0 +1,74 @@
+{
+ "cells": [
+  {
+   "cell": "results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+   "profile": "bake-off-huihui-thinking-off-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-aimax395",
+   "owner": "cookys",
+   "ts": "20260617031831",
+   "n_graded": 106,
+   "n_passed": 104,
+   "n_agent_error": 2,
+   "canonical_version": "107t-af21579a",
+   "n_canon": 107,
+   "owed": 1,
+   "comparable": true,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.9811320754716981,
+   "headline_ci": [
+    0.9337994255846298,
+    0.9948104999809118
+   ],
+   "capability_est": 1.0,
+   "capability_est_ci": [
+    0.9643773831248793,
+    0.9999999999999999
+   ],
+   "status_counts": {
+    "ok": 106,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 106,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 5.65551701728033,
+   "tok_per_solved": 2284.355769230769,
+   "sec_per_solved": 403.9163461538462,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 8.91273659578216,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 103,
+    "noop_count": 0,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  }
+ ],
+ "dropped_older": [],
+ "current_exam": "107t-af21579a",
+ "current_exam_label": "af21579a (unlabeled)",
+ "current_exam_name": "af21579a",
+ "current_exam_n_tasks": 107,
+ "n_canon": 107,
+ "exam_versions": [],
+ "comparable_min": 96,
+ "version_aware": true
+}

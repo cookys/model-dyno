@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-ornith-1.0-35b-local-ornith-1.0-35b-f73726b39907","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"ornith-1.0-35b","policy":"dashboard-public-feed","subject_digest":"4d05bda2ff350419494f60acab40d566e802c6982615d6292d3115d480275af7"}]

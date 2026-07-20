@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-bake-off-qwopus-mtp-thinking-off-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf-52d62f48f7bb","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"qwopus-3.6-27b","policy":"dashboard-public-feed","subject_digest":"405f14b0852709ab3290e38d7f4a1130851840a6e27a75e20664cd02021b226b"}]

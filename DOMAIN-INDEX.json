@@ -1,0 +1,5889 @@
+{
+ "exam": "40t-6604ff64",
+ "comparable_min": 36,
+ "domains": [
+  "app-logic",
+  "backend",
+  "cli-tool",
+  "data-pipeline",
+  "devtools",
+  "frontend-web",
+  "infra-scripts",
+  "tui-display"
+ ],
+ "cells": [
+  {
+   "cell": "agents-a1-q4km-64k-local",
+   "model": "Agents-A1-Q4_K_M",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 3,
+     "n": 17,
+     "acc": 0.1765
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "agy/gemini-3.1-pro",
+   "model": "gemini-3.1-pro",
+   "backend": "agy",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "agy/gemini-3.5-flash",
+   "model": "gemini-3.5-flash",
+   "backend": "agy",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 10,
+     "n": 17,
+     "acc": 0.5882
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "agy/gpt-oss-120b",
+   "model": "gpt-oss-120b",
+   "backend": "agy",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 2,
+     "n": 17,
+     "acc": 0.1176
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 7,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "anthropic/fable-5",
+   "model": "claude-fable-5",
+   "backend": "claude",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 10,
+     "n": 17,
+     "acc": 0.5882
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "anthropic/haiku-4.5",
+   "model": "claude-haiku-4-5",
+   "backend": "claude",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "anthropic/haiku-4.5-p4a",
+   "model": "haiku",
+   "backend": null,
+   "frozen": true,
+   "n": 27,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "backend": {
+     "passed": 7,
+     "n": 9,
+     "acc": 0.7778
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    }
+   }
+  },
+  {
+   "cell": "anthropic/opus-4.7",
+   "model": "opus",
+   "backend": null,
+   "frozen": true,
+   "n": 27,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "backend": {
+     "passed": 9,
+     "n": 9,
+     "acc": 1.0
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 7,
+     "n": 7,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "anthropic/opus-4.8",
+   "model": "claude-opus-4-8",
+   "backend": "claude",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 10,
+     "n": 17,
+     "acc": 0.5882
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "anthropic/sonnet-4.5",
+   "model": "sonnet",
+   "backend": null,
+   "frozen": true,
+   "n": 27,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "backend": {
+     "passed": 7,
+     "n": 9,
+     "acc": 0.7778
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "anthropic/sonnet-4.6",
+   "model": "claude-sonnet-4-6",
+   "backend": "claude",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 7,
+     "n": 7,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "anthropic/sonnet-5",
+   "model": "claude-sonnet-5",
+   "backend": "claude",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 10,
+     "n": 17,
+     "acc": 0.5882
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "bake-off-base-v2",
+   "model": "Qwen3.6-27B-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 4,
+     "n": 17,
+     "acc": 0.2353
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "bake-off-control-base-no-heretic",
+   "model": "Qwen3.6-27B-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 3,
+     "n": 17,
+     "acc": 0.1765
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "bake-off-control-qwen36-27b-dflash-local",
+   "model": "Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 3,
+     "n": 17,
+     "acc": 0.1765
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "bake-off-control-thinking-on",
+   "model": "Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "bake-off-gemma-4-12b-fixed-local",
+   "model": "gemma-4-12b-it-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-gemma-4-12b-fixed-thinkoff-local",
+   "model": "gemma-4-12b-it-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 0,
+     "n": 7,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-gemma4-coder-fable5-thinkon-local",
+   "model": "gemma4-coding-Q8_0.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 0,
+     "n": 7,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-glm47flash-local",
+   "model": "GLM-4.7-Flash-Q4_K_M",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 12,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 0,
+     "n": 7,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-heretic-dflash-v2",
+   "model": "Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 3,
+     "n": 17,
+     "acc": 0.1765
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "bake-off-heretic-thinkon-v2",
+   "model": "Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "bake-off-huihui-abliterated-local",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 1,
+   "by_domain": {
+    "infra-scripts": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-huihui-mtp-thinking-off-local",
+   "model": "Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-huihui-mtp-thinking-on-local",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-huihui-mtp-thinkoff-v2",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-huihui-thinking-off-local",
+   "model": "Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-huihui-thinking-on-local",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-qwen35a3b-apex-remote",
+   "model": "OpenYourMind-Qwen3.6-35B-A3B-abliterated-uncensored-APEX-I-Compact.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 5,
+     "n": 17,
+     "acc": 0.2941
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-qwen35a3b-local",
+   "model": "Qwen3.6-35B-A3B-UD-Q4_K_M",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "bake-off-qwen35a3b-mxfp4-remote",
+   "model": "Qwen3.6-35B-A3B-MXFP4_MOE.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 2,
+     "n": 17,
+     "acc": 0.1176
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "bake-off-qwopus-mtp-thinking-off-local",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-qwopus-mtp-thinking-on-local",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-qwopus-mtp-thinkon-v2",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-qwopus-thinking-off-local",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bake-off-qwopus-thinking-on-local",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 9,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "bigmodel/glm-5.1",
+   "model": "claude-zai-glm-5.1",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/deepseek-v4-flash",
+   "model": "claude-deepseek-v4-flash",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/deepseek-v4-flash:or-free",
+   "model": "claude-or-deepseek-v4-flash",
+   "backend": "litellm",
+   "frozen": true,
+   "n": 27,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 0,
+     "n": 9,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/devstral-24b-local",
+   "model": "claude-devstral-24b-local",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/glm-5.1",
+   "model": "claude-glm-5.1",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 7,
+   "by_domain": {
+    "backend": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/huihui-mtp-local",
+   "model": "claude-huihui-mtp-local",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/kimi-k2.6",
+   "model": "claude-kimi-k2.6",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/kimi-k2.7-code",
+   "model": "claude-kimi-k2.7-code",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 33,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 13,
+     "acc": 0.4615
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/mimo-v2.5-local",
+   "model": "claude-mimo-v2.5-local",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/mimo-v2.5-pro",
+   "model": "claude-mimo-v2.5-pro",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/minimax-m2.5",
+   "model": "claude-minimax-m2.5",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/minimax-m2.7",
+   "model": "claude-minimax-m2.7",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/or-deepseek-v4-flash",
+   "model": "claude-or-deepseek-v4-flash-paid",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 5,
+     "n": 17,
+     "acc": 0.2941
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/or-deepseek-v4-pro",
+   "model": "claude-or-deepseek-v4-pro",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/or-gpt-oss-120b",
+   "model": "claude-or-gpt-oss-120b",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 3,
+     "n": 17,
+     "acc": 0.1765
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/or-kimi-k2.6",
+   "model": "claude-or-kimi-k2.6-paid",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/or-mimo-v2.5",
+   "model": "claude-or-mimo-v2.5",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 4,
+     "n": 17,
+     "acc": 0.2353
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/or-mimo-v2.5-pro",
+   "model": "claude-or-mimo-v2.5-pro",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/qwen3-27b-local",
+   "model": "claude-qwen3-27b-local",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 30,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "backend": {
+     "passed": 5,
+     "n": 9,
+     "acc": 0.5556
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/qwen3-27b-plain-local",
+   "model": "claude-qwen3-27b-plain-local",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "claude-harness/qwen3.7-max",
+   "model": "claude-qwen3.7-max",
+   "backend": "litellm",
+   "frozen": false,
+   "n": 7,
+   "by_domain": {
+    "backend": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "deepseek-v4-flash-lucifer-low-local",
+   "model": "DeepSeek-V4-Flash",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "gemma-4-26b-a4b-dflash-turbo3-local",
+   "model": "gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 3,
+     "n": 17,
+     "acc": 0.1765
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "gemma-4-31b-dflash-turbo3-local",
+   "model": "gemma-4-31B-it-IQ4_XS.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 4,
+     "n": 17,
+     "acc": 0.2353
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "glm-52-coding-plan",
+   "model": "glm-5.2",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "glm-52-opencode",
+   "model": "glm-5",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "google/gemini-3-flash",
+   "model": "gemini-3-flash-preview",
+   "backend": "gemini",
+   "frozen": true,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "backend": {
+     "passed": 7,
+     "n": 10,
+     "acc": 0.7
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "google/gemini-3-pro",
+   "model": "gemini-3-pro-preview",
+   "backend": "gemini",
+   "frozen": true,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "backend": {
+     "passed": 6,
+     "n": 10,
+     "acc": 0.6
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "google/gemini-3.1-flash-lite",
+   "model": "gemini-3.1-flash-lite",
+   "backend": "gemini",
+   "frozen": true,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 4,
+     "n": 10,
+     "acc": 0.4
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "grok/grok-4.5",
+   "model": "grok-4.5",
+   "backend": "grok",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 13,
+     "n": 17,
+     "acc": 0.7647
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "grok/grok-build",
+   "model": "grok-build",
+   "backend": "grok",
+   "frozen": true,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 6,
+     "n": 10,
+     "acc": 0.6
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 7,
+     "n": 7,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "grok/grok-composer-2.5-fast",
+   "model": "grok-composer-2.5-fast",
+   "backend": "grok",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "huihui-mtp-runswe-local",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "hy3-free-openrouter",
+   "model": "tencent/hy3:free",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 29,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 2,
+     "acc": 1.0
+    },
+    "backend": {
+     "passed": 4,
+     "n": 11,
+     "acc": 0.3636
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "hy3-iq1m-32k-thinkoff-local",
+   "model": "hy3-iq1m-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "hy3-mxfp4-98k-mtp-local-4kout",
+   "model": "hy3",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "hy3-openrouter-paid",
+   "model": "tencent/hy3",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 17,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    }
+   }
+  },
+  {
+   "cell": "kimi/k3",
+   "model": "kimi-code/k3",
+   "backend": "kimi",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 7,
+     "n": 7,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "kimi/kimi-for-coding",
+   "model": "kimi-code/kimi-for-coding",
+   "backend": "kimi",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "lemonade-qwen3-30b-a3b",
+   "model": "Qwen3-30B-A3B-Instruct-2507-GGUF",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 10,
+     "acc": 0.1
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 7,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "lemonade-qwen3-30b-a3b-rocm",
+   "model": "Qwen3-30B-A3B-Instruct-2507-GGUF",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 21,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 5,
+     "acc": 0.2
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "llamacpp-vulkan-huihui-3.6-27b-mtp",
+   "model": "huihui-qwen3.6-27b-abliterated-mtp",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 5,
+     "n": 10,
+     "acc": 0.5
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "llamacpp-vulkan-qwen3-30b-a3b",
+   "model": "qwen3-30b-a3b-instruct-2507",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 2,
+     "n": 10,
+     "acc": 0.2
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 7,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "llamacpp-vulkan-qwen3.6-35b-a3b-mtp",
+   "model": "qwen3.6-35b-a3b-mtp",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 3,
+     "n": 10,
+     "acc": 0.3
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "m2-minimax-32k",
+   "model": "MiniMax-M2",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "m21-highspeed-minimax-32k",
+   "model": "MiniMax-M2.1-highspeed",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "m21-minimax-32k",
+   "model": "MiniMax-M2.1",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "m25-highspeed-minimax-32k",
+   "model": "MiniMax-M2.5-highspeed",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "m27-highspeed-minimax",
+   "model": "MiniMax-M2.7-highspeed",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "backend": {
+     "passed": 7,
+     "n": 10,
+     "acc": 0.7
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "m27-highspeed-minimax-32k",
+   "model": "MiniMax-M2.7-highspeed",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "m3-fair",
+   "model": "MiniMax-M3",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "mimo-fair",
+   "model": "MiMo-V2.5",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 4,
+     "n": 17,
+     "acc": 0.2353
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "mimo-fair-q4km",
+   "model": "MiMo-V2.5-Q4KM",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 3,
+     "n": 17,
+     "acc": 0.1765
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "mimo-v25-opencode",
+   "model": "mimo-v2.5",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "minimax-m3-iq3xxs-64k-local-prequal",
+   "model": "minimax-m3-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 7,
+   "by_domain": {
+    "backend": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "minimax-m3-moq3-64k-local-prequal",
+   "model": "minimax-m3-moq3-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 7,
+   "by_domain": {
+    "backend": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "minimax-m3-reap50-128k-sglang-prequal",
+   "model": "minimax-m3-reap50-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 7,
+   "by_domain": {
+    "backend": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "minimax/m2.5-direct",
+   "model": "MiniMax-M2.5",
+   "backend": "minimax",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "minimax/m2.7-direct",
+   "model": "MiniMax-M2.7",
+   "backend": "minimax",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 4,
+     "n": 17,
+     "acc": 0.2353
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "minimax/m3-direct",
+   "model": "MiniMax-M3",
+   "backend": "minimax",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 10,
+     "n": 17,
+     "acc": 0.5882
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "mlx-qwen3-30b-a3b",
+   "model": "qwen3-30b-a3b-instruct-2507-mlx-4bit",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 1,
+     "n": 10,
+     "acc": 0.1
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 7,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "nemotron-cascade-2-30b-a3b-bf16-128k-local-openhands-prequal",
+   "model": "nemotron-cascade-2-30b-a3b-local",
+   "backend": null,
+   "frozen": false,
+   "n": 5,
+   "by_domain": {
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "nemotron-cascade-2-30b-a3b-bf16-128k-local-prequal",
+   "model": "nemotron-cascade-2-30b-a3b-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 7,
+   "by_domain": {
+    "backend": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "nemotron-puzzle-75b-a9b-nvfp4-mtp-128k-local-prequal",
+   "model": "nemotron-puzzle-75b-a9b-nvfp4-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 7,
+   "by_domain": {
+    "backend": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "nemotron-super-120b-a12b-nvfp4-mtp-128k-local-prequal",
+   "model": "nemotron-super-120b-a12b-nvfp4-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 7,
+   "by_domain": {
+    "backend": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "nex-n2-pro-iq2m-64k-local-prequal",
+   "model": "nex-n2-pro-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 6,
+   "by_domain": {
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "nex-n2-pro-iq3xxs-64k-local-prequal",
+   "model": "nex-n2-pro-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 6,
+   "by_domain": {
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "nex-n2-pro-openrouter-paid",
+   "model": "nex-agi/nex-n2-pro",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 2,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "openai/codex-gpt5.3-spark",
+   "model": "gpt-5.3-codex-spark",
+   "backend": "codex",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "openai/codex-gpt5.5",
+   "model": "gpt-5.5",
+   "backend": "codex",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 11,
+     "n": 17,
+     "acc": 0.6471
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "openai/codex-gpt5.6-luna",
+   "model": "gpt-5.6-luna",
+   "backend": "codex",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 10,
+     "n": 17,
+     "acc": 0.5882
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "openai/codex-gpt5.6-sol",
+   "model": "gpt-5.6-sol",
+   "backend": "codex",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 6,
+     "n": 7,
+     "acc": 0.8571
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "openai/codex-gpt5.6-terra",
+   "model": "gpt-5.6-terra",
+   "backend": "codex",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 11,
+     "n": 17,
+     "acc": 0.6471
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "opencode/big-pickle",
+   "model": "opencode/big-pickle",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "opencode/deepseek-v4-flash",
+   "model": "opencode-go/deepseek-v4-flash",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 10,
+     "n": 17,
+     "acc": 0.5882
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "opencode/deepseek-v4-flash-free",
+   "model": "opencode/deepseek-v4-flash-free",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "opencode/glm-5.1",
+   "model": "opencode-go/glm-5.1",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "opencode/hy3-free",
+   "model": "opencode/hy3-free",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "opencode/kimi-k2.6",
+   "model": "opencode-go/kimi-k2.6",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "opencode/mimo-v2.5-free",
+   "model": "opencode/mimo-v2.5-free",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 2,
+     "n": 17,
+     "acc": 0.1176
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 1,
+     "n": 7,
+     "acc": 0.1429
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "opencode/mimo-v2.5-pro",
+   "model": "opencode-go/mimo-v2.5-pro",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 9,
+     "n": 17,
+     "acc": 0.5294
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "opencode/minimax-m2.5:minimax-1p",
+   "model": "minimax/MiniMax-M2.5",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  },
+  {
+   "cell": "opencode/minimax-m2.7",
+   "model": "opencode-go/minimax-m2.7",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "opencode/nemotron-3-ultra-free",
+   "model": "opencode/nemotron-3-ultra-free",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 6,
+     "n": 17,
+     "acc": 0.3529
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "opencode/north-mini-code-free",
+   "model": "opencode/north-mini-code-free",
+   "backend": "opencode",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 2,
+     "n": 17,
+     "acc": 0.1176
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "ornith-1.0-35b-local",
+   "model": "ornith-1.0-35b",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "qoder/qwen3.8-max",
+   "model": "Qwen3.8-Max-Preview",
+   "backend": "qoder",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 10,
+     "n": 17,
+     "acc": 0.5882
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 7,
+     "n": 7,
+     "acc": 1.0
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "qwen3-coder-next-q4km-64k-local",
+   "model": "Qwen3-Coder-Next-Q4_K_M",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "qwen3.5-122b-a10b-mtp-udq4xl-64k-local",
+   "model": "Qwen3.5-122B-A10B-MTP-UD-Q4_K_XL",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 2,
+     "n": 2,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "qwen3.6-35b-a3b-mtp-runswe-local",
+   "model": "Qwen3.6-35B-A3B-UD-IQ4_XS.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 2,
+     "n": 4,
+     "acc": 0.5
+    }
+   }
+  },
+  {
+   "cell": "qwen36-27b-nvfp4-unsloth-128k-thinkoff-local",
+   "model": "qwen36-27b-nvfp4-unsloth-local",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 8,
+     "n": 17,
+     "acc": 0.4706
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 3,
+     "n": 7,
+     "acc": 0.4286
+    },
+    "tui-display": {
+     "passed": 1,
+     "n": 4,
+     "acc": 0.25
+    }
+   }
+  },
+  {
+   "cell": "step37-flash-iq4xs-64k-think8k-local",
+   "model": "Step-3.7-Flash-IQ4_XS-think",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 5,
+     "n": 7,
+     "acc": 0.7143
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "thinkingcap-dflash-local",
+   "model": "ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "thinkingcap-qwen3.6-27b-thinkoff-local",
+   "model": "ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 2,
+     "n": 3,
+     "acc": 0.6667
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 1,
+     "n": 2,
+     "acc": 0.5
+    },
+    "infra-scripts": {
+     "passed": 4,
+     "n": 7,
+     "acc": 0.5714
+    },
+    "tui-display": {
+     "passed": 3,
+     "n": 4,
+     "acc": 0.75
+    }
+   }
+  },
+  {
+   "cell": "v4-flash-opencode",
+   "model": "deepseek-v4-flash",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 40,
+   "by_domain": {
+    "app-logic": {
+     "passed": 1,
+     "n": 3,
+     "acc": 0.3333
+    },
+    "backend": {
+     "passed": 7,
+     "n": 17,
+     "acc": 0.4118
+    },
+    "cli-tool": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "data-pipeline": {
+     "passed": 1,
+     "n": 1,
+     "acc": 1.0
+    },
+    "devtools": {
+     "passed": 3,
+     "n": 3,
+     "acc": 1.0
+    },
+    "frontend-web": {
+     "passed": 2,
+     "n": 2,
+     "acc": 1.0
+    },
+    "infra-scripts": {
+     "passed": 2,
+     "n": 7,
+     "acc": 0.2857
+    },
+    "tui-display": {
+     "passed": 4,
+     "n": 4,
+     "acc": 1.0
+    }
+   }
+  },
+  {
+   "cell": "vibethinker-3b-local",
+   "model": "vibethinker-3b",
+   "backend": "swe-personal",
+   "frozen": false,
+   "n": 31,
+   "by_domain": {
+    "app-logic": {
+     "passed": 0,
+     "n": 2,
+     "acc": 0.0
+    },
+    "backend": {
+     "passed": 0,
+     "n": 10,
+     "acc": 0.0
+    },
+    "cli-tool": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "data-pipeline": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "devtools": {
+     "passed": 0,
+     "n": 3,
+     "acc": 0.0
+    },
+    "frontend-web": {
+     "passed": 0,
+     "n": 1,
+     "acc": 0.0
+    },
+    "infra-scripts": {
+     "passed": 0,
+     "n": 7,
+     "acc": 0.0
+    },
+    "tui-display": {
+     "passed": 0,
+     "n": 4,
+     "acc": 0.0
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+[{"backend":"direct-api","display_slug":"results-m2-minimax-32k-MiniMax-M2-2adec142c723","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"minimax-m2","policy":"dashboard-public-feed","subject_digest":"f6ef8fc510bf8e3d4505c8371c951e276973cb36beac6193ec2a3b2b1503d125"}]

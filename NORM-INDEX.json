@@ -1,0 +1,1791 @@
+{
+ "task_set": "canonical-frontier-task-ids",
+ "n_tasks": 40,
+ "source_matrix": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/matrix-p4c-full.json",
+ "cell_count": 56,
+ "version_aware": false,
+ "current_exam": "40t-6604ff64",
+ "stale_risk": {
+  "version_pinned": false,
+  "reason": "matrix predates per-task versioning; verdicts matched by task-id only — a task whose verifier was repaired after this matrix was captured reuses the stale cloud verdict (not re-graded)."
+ },
+ "cells": [
+  {
+   "model": "anthropic/opus-4.7",
+   "label": "opus-4.7",
+   "identity": {
+    "canonical_model": "opus-4.7",
+    "access": "direct-api"
+   },
+   "display": "opus-4.7 · Direct",
+   "access_label": "Direct",
+   "publisher": "Anthropic",
+   "operator": "Anthropic",
+   "harness": "",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 25,
+   "n_graded": 29,
+   "n_agent_error": 0,
+   "n_on_set": 29,
+   "coverage": 0.725,
+   "comparable": false,
+   "pass_rate": 0.8620689655172413,
+   "ci": [
+    0.6944064228730067,
+    0.9450264914795217
+   ],
+   "effective": 0.8620689655172413,
+   "effective_ci": [
+    0.6944064228730067,
+    0.9450264914795217
+   ]
+  },
+  {
+   "model": "anthropic/sonnet-4.5",
+   "label": "sonnet-4.5",
+   "identity": {
+    "canonical_model": "sonnet-4.5",
+    "access": "direct-api"
+   },
+   "display": "sonnet-4.5 · Direct",
+   "access_label": "Direct",
+   "publisher": "Anthropic",
+   "operator": "Anthropic",
+   "harness": "",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 23,
+   "n_graded": 29,
+   "n_agent_error": 0,
+   "n_on_set": 29,
+   "coverage": 0.725,
+   "comparable": false,
+   "pass_rate": 0.7931034482758621,
+   "ci": [
+    0.6160955339174228,
+    0.9015406348441479
+   ],
+   "effective": 0.7931034482758621,
+   "effective_ci": [
+    0.6160955339174228,
+    0.9015406348441479
+   ]
+  },
+  {
+   "model": "claude-harness/mimo-v2.5-local",
+   "label": "mimo-v2.5-local",
+   "identity": {
+    "canonical_model": "mimo-v2.5",
+    "access": "local"
+   },
+   "display": "MiMo-v2.5",
+   "access_label": "local",
+   "publisher": "Xiaomi",
+   "operator": "自架",
+   "harness": "Claude Code",
+   "tags": {
+    "placement": "local"
+   },
+   "source": "local",
+   "n_passed": 22,
+   "n_graded": 28,
+   "n_agent_error": 0,
+   "n_on_set": 28,
+   "coverage": 0.7,
+   "comparable": false,
+   "pass_rate": 0.7857142857142857,
+   "ci": [
+    0.6046105292072612,
+    0.8978767829881058
+   ],
+   "effective": 0.7857142857142857,
+   "effective_ci": [
+    0.6046105292072612,
+    0.8978767829881058
+   ]
+  },
+  {
+   "model": "grok/grok-4.5",
+   "label": "grok-4.5",
+   "identity": {
+    "canonical_model": "grok-4.5",
+    "access": "grok-cli"
+   },
+   "display": "grok-4.5 · Grok",
+   "access_label": "Grok",
+   "publisher": "xAI",
+   "operator": "xAI",
+   "harness": "Grok CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 30,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.75,
+   "ci": [
+    0.598057409330299,
+    0.8581303210445048
+   ],
+   "effective": 0.75,
+   "effective_ci": [
+    0.598057409330299,
+    0.8581303210445048
+   ]
+  },
+  {
+   "model": "openai/codex-gpt5.6-luna",
+   "label": "codex-gpt5.6-luna",
+   "identity": {
+    "canonical_model": "gpt-5.6-luna",
+    "access": "codex-cli"
+   },
+   "display": "gpt-5.6-luna · Codex",
+   "access_label": "Codex",
+   "publisher": "",
+   "operator": "OpenAI",
+   "harness": "Codex CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 30,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.75,
+   "ci": [
+    0.598057409330299,
+    0.8581303210445048
+   ],
+   "effective": 0.75,
+   "effective_ci": [
+    0.598057409330299,
+    0.8581303210445048
+   ]
+  },
+  {
+   "model": "anthropic/opus-4.8",
+   "label": "opus-4.8",
+   "identity": {
+    "canonical_model": "opus-4.8",
+    "access": "direct-api"
+   },
+   "display": "opus-4.8 · Direct",
+   "access_label": "Direct",
+   "publisher": "Anthropic",
+   "operator": "Anthropic",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 29,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.725,
+   "ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "effective": 0.725,
+   "effective_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ]
+  },
+  {
+   "model": "openai/codex-gpt5.5",
+   "label": "codex-gpt5.5",
+   "identity": {
+    "canonical_model": "gpt-5.5",
+    "access": "codex-cli"
+   },
+   "display": "gpt-5.5 · Codex",
+   "access_label": "Codex",
+   "publisher": "OpenAI",
+   "operator": "OpenAI",
+   "harness": "Codex CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 29,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.725,
+   "ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "effective": 0.725,
+   "effective_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ]
+  },
+  {
+   "model": "openai/codex-gpt5.6-terra",
+   "label": "codex-gpt5.6-terra",
+   "identity": {
+    "canonical_model": "gpt-5.6-terra",
+    "access": "codex-cli"
+   },
+   "display": "gpt-5.6-terra · Codex",
+   "access_label": "Codex",
+   "publisher": "",
+   "operator": "OpenAI",
+   "harness": "Codex CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 29,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.725,
+   "ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "effective": 0.725,
+   "effective_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ]
+  },
+  {
+   "model": "agy/gemini-3.5-flash",
+   "label": "gemini-3.5-flash",
+   "identity": {
+    "canonical_model": "gemini-3.5-flash",
+    "access": "direct-api"
+   },
+   "display": "gemini-3.5-flash · Direct",
+   "access_label": "Direct",
+   "publisher": "Google",
+   "operator": "Google",
+   "harness": "Antigravity",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 28,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.7,
+   "ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "effective": 0.7,
+   "effective_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ]
+  },
+  {
+   "model": "anthropic/sonnet-4.6",
+   "label": "sonnet-4.6",
+   "identity": {
+    "canonical_model": "sonnet-4.6",
+    "access": "direct-api"
+   },
+   "display": "sonnet-4.6 · Direct",
+   "access_label": "Direct",
+   "publisher": "Anthropic",
+   "operator": "Anthropic",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 28,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.7,
+   "ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "effective": 0.7,
+   "effective_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ]
+  },
+  {
+   "model": "bigmodel/glm-5.1",
+   "label": "glm-5.1",
+   "identity": {
+    "canonical_model": "glm-5.1",
+    "access": "direct-api"
+   },
+   "display": "glm-5.1 · Direct",
+   "access_label": "Direct",
+   "publisher": "Z.AI",
+   "operator": "Z.AI",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 28,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.7,
+   "ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "effective": 0.7,
+   "effective_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ]
+  },
+  {
+   "model": "openai/codex-gpt5.6-sol",
+   "label": "codex-gpt5.6-sol",
+   "identity": {
+    "canonical_model": "gpt-5.6-sol",
+    "access": "codex-cli"
+   },
+   "display": "gpt-5.6-sol · Codex",
+   "access_label": "Codex",
+   "publisher": "",
+   "operator": "OpenAI",
+   "harness": "Codex CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 28,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.7,
+   "ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "effective": 0.7,
+   "effective_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ]
+  },
+  {
+   "model": "minimax/m3-direct",
+   "label": "m3-direct",
+   "identity": {
+    "canonical_model": "minimax-m3",
+    "access": "direct-api"
+   },
+   "display": "minimax-m3 · Direct",
+   "access_label": "Direct",
+   "publisher": "MiniMax",
+   "operator": "MiniMax",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 27,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.675,
+   "ci": [
+    0.52017458088898,
+    0.7991568303733828
+   ],
+   "effective": 0.675,
+   "effective_ci": [
+    0.52017458088898,
+    0.7991568303733828
+   ]
+  },
+  {
+   "model": "claude-harness/glm-5.1",
+   "label": "glm-5.1",
+   "identity": {
+    "canonical_model": "glm-5.1",
+    "access": "direct-api"
+   },
+   "display": "glm-5.1 · Direct",
+   "access_label": "Direct",
+   "publisher": "Z.AI",
+   "operator": "Z.AI",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 4,
+   "n_graded": 4,
+   "n_agent_error": 0,
+   "n_on_set": 4,
+   "coverage": 0.1,
+   "comparable": false,
+   "pass_rate": 1.0,
+   "ci": [
+    0.5100999795960008,
+    1.0
+   ],
+   "effective": 1.0,
+   "effective_ci": [
+    0.5100999795960008,
+    1.0
+   ]
+  },
+  {
+   "model": "anthropic/fable-5",
+   "label": "fable-5",
+   "identity": {
+    "canonical_model": "fable-5",
+    "access": "direct-api"
+   },
+   "display": "fable-5 · Direct",
+   "access_label": "Direct",
+   "publisher": "Anthropic",
+   "operator": "Anthropic",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 26,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.65,
+   "ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ],
+   "effective": 0.65,
+   "effective_ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ]
+  },
+  {
+   "model": "google/gemini-3-flash",
+   "label": "gemini-3-flash",
+   "identity": {
+    "canonical_model": "gemini-3-flash",
+    "access": "direct-api"
+   },
+   "display": "gemini-3-flash · Direct",
+   "access_label": "Direct",
+   "publisher": "Google",
+   "operator": "Google",
+   "harness": "Gemini CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 26,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.65,
+   "ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ],
+   "effective": 0.65,
+   "effective_ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ]
+  },
+  {
+   "model": "google/gemini-3-pro",
+   "label": "gemini-3-pro",
+   "identity": {
+    "canonical_model": "gemini-3-pro",
+    "access": "direct-api"
+   },
+   "display": "gemini-3-pro · Direct",
+   "access_label": "Direct",
+   "publisher": "Google",
+   "operator": "Google",
+   "harness": "Gemini CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 26,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.65,
+   "ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ],
+   "effective": 0.65,
+   "effective_ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ]
+  },
+  {
+   "model": "anthropic/haiku-4.5-p4a",
+   "label": "haiku-4.5-p4a",
+   "identity": {
+    "canonical_model": "haiku-4.5",
+    "access": "direct-api"
+   },
+   "display": "haiku-4.5 · Direct",
+   "access_label": "Direct",
+   "publisher": "Anthropic",
+   "operator": "Anthropic",
+   "harness": "",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 19,
+   "n_graded": 29,
+   "n_agent_error": 0,
+   "n_on_set": 29,
+   "coverage": 0.725,
+   "comparable": false,
+   "pass_rate": 0.6551724137931034,
+   "ci": [
+    0.47344776507155983,
+    0.8005949125080951
+   ],
+   "effective": 0.6551724137931034,
+   "effective_ci": [
+    0.47344776507155983,
+    0.8005949125080951
+   ]
+  },
+  {
+   "model": "anthropic/sonnet-5",
+   "label": "sonnet-5",
+   "identity": {
+    "canonical_model": "sonnet-5",
+    "access": "direct-api"
+   },
+   "display": "sonnet-5 · Direct",
+   "access_label": "Direct",
+   "publisher": "Anthropic",
+   "operator": "Anthropic",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 25,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.625,
+   "ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ],
+   "effective": 0.625,
+   "effective_ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ]
+  },
+  {
+   "model": "openai/codex-gpt5.3-spark",
+   "label": "codex-gpt5.3-spark",
+   "identity": {
+    "canonical_model": "gpt-5.3-codex-spark",
+    "access": "codex-cli"
+   },
+   "display": "gpt-5.3-codex-spark · Codex",
+   "access_label": "Codex",
+   "publisher": "",
+   "operator": "OpenAI",
+   "harness": "Codex CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 25,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.625,
+   "ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ],
+   "effective": 0.625,
+   "effective_ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ]
+  },
+  {
+   "model": "opencode/deepseek-v4-flash",
+   "label": "deepseek-v4-flash",
+   "identity": {
+    "canonical_model": "deepseek-v4-flash",
+    "access": "opencode-go"
+   },
+   "display": "deepseek-v4-flash · OpenCode",
+   "access_label": "OpenCode",
+   "publisher": "DeepSeek",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 25,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.625,
+   "ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ],
+   "effective": 0.625,
+   "effective_ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ]
+  },
+  {
+   "model": "claude-harness/huihui-mtp-local",
+   "label": "huihui-mtp-local",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "display": "Qwen3.6-27B · huihui",
+   "access_label": "local",
+   "publisher": "",
+   "operator": "自架",
+   "harness": "Claude Code",
+   "tags": {
+    "placement": "local",
+    "draft": "mtp"
+   },
+   "source": "local",
+   "n_passed": 24,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.6,
+   "ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "effective": 0.6,
+   "effective_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ]
+  },
+  {
+   "model": "claude-harness/or-kimi-k2.6",
+   "label": "or-kimi-k2.6",
+   "identity": {
+    "canonical_model": "kimi-k2.6",
+    "access": "openrouter"
+   },
+   "display": "kimi-k2.6 · OpenRouter",
+   "access_label": "OpenRouter",
+   "publisher": "Moonshot",
+   "operator": "OpenRouter",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 24,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.6,
+   "ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "effective": 0.6,
+   "effective_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ]
+  },
+  {
+   "model": "opencode/glm-5.1",
+   "label": "glm-5.1",
+   "identity": {
+    "canonical_model": "glm-5.1",
+    "access": "opencode-go"
+   },
+   "display": "glm-5.1 · OpenCode",
+   "access_label": "OpenCode",
+   "publisher": "Z.AI",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 24,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.6,
+   "ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "effective": 0.6,
+   "effective_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ]
+  },
+  {
+   "model": "opencode/kimi-k2.6",
+   "label": "kimi-k2.6",
+   "identity": {
+    "canonical_model": "kimi-k2.6",
+    "access": "opencode-go"
+   },
+   "display": "kimi-k2.6 · OpenCode",
+   "access_label": "OpenCode",
+   "publisher": "Moonshot",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 24,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.6,
+   "ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "effective": 0.6,
+   "effective_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ]
+  },
+  {
+   "model": "agy/gemini-3.1-pro",
+   "label": "gemini-3.1-pro",
+   "identity": {
+    "canonical_model": "gemini-3.1-pro",
+    "access": "direct-api"
+   },
+   "display": "gemini-3.1-pro · Direct",
+   "access_label": "Direct",
+   "publisher": "Google",
+   "operator": "Google",
+   "harness": "Antigravity",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 23,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.575,
+   "ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "effective": 0.575,
+   "effective_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ]
+  },
+  {
+   "model": "claude-harness/devstral-24b-local",
+   "label": "devstral-24b-local",
+   "identity": {
+    "canonical_model": "devstral-24b",
+    "access": "local"
+   },
+   "display": "Devstral-24B",
+   "access_label": "local",
+   "publisher": "Mistral",
+   "operator": "自架",
+   "harness": "Claude Code",
+   "tags": {
+    "placement": "local"
+   },
+   "source": "local",
+   "n_passed": 23,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.575,
+   "ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "effective": 0.575,
+   "effective_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ]
+  },
+  {
+   "model": "opencode/mimo-v2.5-pro",
+   "label": "mimo-v2.5-pro",
+   "identity": {
+    "canonical_model": "mimo-v2.5-pro",
+    "access": "opencode-go"
+   },
+   "display": "mimo-v2.5-pro · OpenCode",
+   "access_label": "OpenCode",
+   "publisher": "Xiaomi",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 23,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.575,
+   "ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "effective": 0.575,
+   "effective_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ]
+  },
+  {
+   "model": "grok/grok-build",
+   "label": "grok-build",
+   "identity": {
+    "canonical_model": "grok-build",
+    "access": "grok-cli"
+   },
+   "display": "grok-build · Grok",
+   "access_label": "Grok",
+   "publisher": "xAI",
+   "operator": "xAI",
+   "harness": "Grok CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 22,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.55,
+   "ci": [
+    0.39828829888440775,
+    0.6929492471905531
+   ],
+   "effective": 0.55,
+   "effective_ci": [
+    0.39828829888440775,
+    0.6929492471905531
+   ]
+  },
+  {
+   "model": "claude-harness/qwen3-27b-local",
+   "label": "qwen3-27b-local",
+   "identity": {
+    "canonical_model": "qwen3.6-27b",
+    "access": "local"
+   },
+   "display": "Qwen3.6-27B",
+   "access_label": "local",
+   "publisher": "Alibaba",
+   "operator": "自架",
+   "harness": "Claude Code",
+   "tags": {
+    "placement": "local"
+   },
+   "source": "local",
+   "n_passed": 21,
+   "n_graded": 38,
+   "n_agent_error": 0,
+   "n_on_set": 38,
+   "coverage": 0.95,
+   "comparable": true,
+   "pass_rate": 0.5526315789473685,
+   "ci": [
+    0.3970602917908942,
+    0.6985383468844911
+   ],
+   "effective": 0.5526315789473685,
+   "effective_ci": [
+    0.3970602917908942,
+    0.6985383468844911
+   ]
+  },
+  {
+   "model": "anthropic/haiku-4.5",
+   "label": "haiku-4.5",
+   "identity": {
+    "canonical_model": "haiku-4.5",
+    "access": "direct-api"
+   },
+   "display": "haiku-4.5 · Direct",
+   "access_label": "Direct",
+   "publisher": "Anthropic",
+   "operator": "Anthropic",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 20,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.5,
+   "ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "effective": 0.5,
+   "effective_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ]
+  },
+  {
+   "model": "claude-harness/qwen3-27b-plain-local",
+   "label": "qwen3-27b-plain-local",
+   "identity": {
+    "canonical_model": "qwen3.6-27b",
+    "access": "local"
+   },
+   "display": "Qwen3.6-27B",
+   "access_label": "local",
+   "publisher": "Alibaba",
+   "operator": "自架",
+   "harness": "Claude Code",
+   "tags": {
+    "placement": "local"
+   },
+   "source": "local",
+   "n_passed": 20,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.5,
+   "ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "effective": 0.5,
+   "effective_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ]
+  },
+  {
+   "model": "grok/grok-composer-2.5-fast",
+   "label": "grok-composer-2.5-fast",
+   "identity": {
+    "canonical_model": "grok-composer-2.5",
+    "access": "grok-cli"
+   },
+   "display": "grok-composer-2.5 · Grok",
+   "access_label": "Grok",
+   "publisher": "xAI",
+   "operator": "xAI",
+   "harness": "Grok CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 20,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.5,
+   "ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "effective": 0.5,
+   "effective_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ]
+  },
+  {
+   "model": "opencode/big-pickle",
+   "label": "big-pickle",
+   "identity": {
+    "canonical_model": "big-pickle",
+    "access": "opencode-free",
+    "wire_model": "opencode/big-pickle"
+   },
+   "display": "big-pickle · OpenCode Free",
+   "access_label": "OpenCode Free",
+   "publisher": "",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 20,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.5,
+   "ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "effective": 0.5,
+   "effective_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ]
+  },
+  {
+   "model": "opencode/hy3-free",
+   "label": "hy3-free",
+   "identity": {
+    "canonical_model": "hy3",
+    "access": "opencode-free",
+    "wire_model": "opencode/hy3-free"
+   },
+   "display": "hy3 · OpenCode Free",
+   "access_label": "OpenCode Free",
+   "publisher": "Tencent",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 20,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.5,
+   "ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "effective": 0.5,
+   "effective_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ]
+  },
+  {
+   "model": "claude-harness/deepseek-v4-flash",
+   "label": "deepseek-v4-flash",
+   "identity": {
+    "canonical_model": "deepseek-v4-flash",
+    "access": "direct-api"
+   },
+   "display": "deepseek-v4-flash · Direct",
+   "access_label": "Direct",
+   "publisher": "DeepSeek",
+   "operator": "DeepSeek",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 10,
+   "n_graded": 18,
+   "n_agent_error": 0,
+   "n_on_set": 18,
+   "coverage": 0.45,
+   "comparable": false,
+   "pass_rate": 0.5555555555555556,
+   "ci": [
+    0.3371606942825164,
+    0.7544076889861088
+   ],
+   "effective": 0.5555555555555556,
+   "effective_ci": [
+    0.3371606942825164,
+    0.7544076889861088
+   ]
+  },
+  {
+   "model": "claude-harness/or-mimo-v2.5-pro",
+   "label": "or-mimo-v2.5-pro",
+   "identity": {
+    "canonical_model": "mimo-v2.5-pro",
+    "access": "openrouter"
+   },
+   "display": "mimo-v2.5-pro · OpenRouter",
+   "access_label": "OpenRouter",
+   "publisher": "Xiaomi",
+   "operator": "OpenRouter",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 19,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.475,
+   "ci": [
+    0.32935229550181694,
+    0.6250289314607027
+   ],
+   "effective": 0.475,
+   "effective_ci": [
+    0.32935229550181694,
+    0.6250289314607027
+   ]
+  },
+  {
+   "model": "opencode/deepseek-v4-flash-free",
+   "label": "deepseek-v4-flash-free",
+   "identity": {
+    "canonical_model": "deepseek-v4-flash",
+    "access": "opencode-free",
+    "wire_model": "opencode/deepseek-v4-flash-free"
+   },
+   "display": "deepseek-v4-flash · OpenCode Free",
+   "access_label": "OpenCode Free",
+   "publisher": "DeepSeek",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 19,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.475,
+   "ci": [
+    0.32935229550181694,
+    0.6250289314607027
+   ],
+   "effective": 0.475,
+   "effective_ci": [
+    0.32935229550181694,
+    0.6250289314607027
+   ]
+  },
+  {
+   "model": "claude-harness/kimi-k2.6",
+   "label": "kimi-k2.6",
+   "identity": {
+    "canonical_model": "kimi-k2.6",
+    "access": "direct-api"
+   },
+   "display": "kimi-k2.6 · Direct",
+   "access_label": "Direct",
+   "publisher": "Moonshot",
+   "operator": "Moonshot",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 12,
+   "n_graded": 24,
+   "n_agent_error": 0,
+   "n_on_set": 24,
+   "coverage": 0.6,
+   "comparable": false,
+   "pass_rate": 0.5,
+   "ci": [
+    0.31427131627763083,
+    0.6857286837223692
+   ],
+   "effective": 0.5,
+   "effective_ci": [
+    0.31427131627763083,
+    0.6857286837223692
+   ]
+  },
+  {
+   "model": "minimax/m2.7-direct",
+   "label": "m2.7-direct",
+   "identity": {
+    "canonical_model": "minimax-m2.7",
+    "access": "direct-api"
+   },
+   "display": "minimax-m2.7 · Direct",
+   "access_label": "Direct",
+   "publisher": "MiniMax",
+   "operator": "MiniMax",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 18,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.45,
+   "ci": [
+    0.307050752809447,
+    0.6017117011155924
+   ],
+   "effective": 0.45,
+   "effective_ci": [
+    0.307050752809447,
+    0.6017117011155924
+   ]
+  },
+  {
+   "model": "claude-harness/or-deepseek-v4-pro",
+   "label": "or-deepseek-v4-pro",
+   "identity": {
+    "canonical_model": "deepseek-v4-pro",
+    "access": "openrouter"
+   },
+   "display": "deepseek-v4-pro · OpenRouter",
+   "access_label": "OpenRouter",
+   "publisher": "DeepSeek",
+   "operator": "OpenRouter",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 17,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.425,
+   "ci": [
+    0.28509168524815875,
+    0.5780519956394001
+   ],
+   "effective": 0.425,
+   "effective_ci": [
+    0.28509168524815875,
+    0.5780519956394001
+   ]
+  },
+  {
+   "model": "minimax/m2.5-direct",
+   "label": "m2.5-direct",
+   "identity": {
+    "canonical_model": "minimax-m2.5",
+    "access": "direct-api"
+   },
+   "display": "minimax-m2.5 · Direct",
+   "access_label": "Direct",
+   "publisher": "MiniMax",
+   "operator": "MiniMax",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 16,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.4,
+   "ci": [
+    0.2634811061240136,
+    0.5540438017260649
+   ],
+   "effective": 0.4,
+   "effective_ci": [
+    0.2634811061240136,
+    0.5540438017260649
+   ]
+  },
+  {
+   "model": "opencode/minimax-m2.5:minimax-1p",
+   "label": "minimax-m2.5:minimax-1p",
+   "identity": {
+    "canonical_model": "minimax-m2.5",
+    "access": "direct-api"
+   },
+   "display": "minimax-m2.5 · Direct",
+   "access_label": "Direct",
+   "publisher": "MiniMax",
+   "operator": "MiniMax",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 16,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.4,
+   "ci": [
+    0.2634811061240136,
+    0.5540438017260649
+   ],
+   "effective": 0.4,
+   "effective_ci": [
+    0.2634811061240136,
+    0.5540438017260649
+   ]
+  },
+  {
+   "model": "opencode/minimax-m2.7",
+   "label": "minimax-m2.7",
+   "identity": {
+    "canonical_model": "minimax-m2.7",
+    "access": "opencode-go"
+   },
+   "display": "minimax-m2.7 · OpenCode",
+   "access_label": "OpenCode",
+   "publisher": "MiniMax",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 16,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.4,
+   "ci": [
+    0.2634811061240136,
+    0.5540438017260649
+   ],
+   "effective": 0.4,
+   "effective_ci": [
+    0.2634811061240136,
+    0.5540438017260649
+   ]
+  },
+  {
+   "model": "claude-harness/or-deepseek-v4-flash",
+   "label": "or-deepseek-v4-flash",
+   "identity": {
+    "canonical_model": "deepseek-v4-flash",
+    "access": "openrouter"
+   },
+   "display": "deepseek-v4-flash · OpenRouter",
+   "access_label": "OpenRouter",
+   "publisher": "DeepSeek",
+   "operator": "OpenRouter",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 15,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.375,
+   "ci": [
+    0.2422277353579172,
+    0.529678399454681
+   ],
+   "effective": 0.375,
+   "effective_ci": [
+    0.2422277353579172,
+    0.529678399454681
+   ]
+  },
+  {
+   "model": "claude-harness/or-mimo-v2.5",
+   "label": "or-mimo-v2.5",
+   "identity": {
+    "canonical_model": "mimo-v2.5",
+    "access": "openrouter"
+   },
+   "display": "mimo-v2.5 · OpenRouter",
+   "access_label": "OpenRouter",
+   "publisher": "Xiaomi",
+   "operator": "OpenRouter",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 15,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.375,
+   "ci": [
+    0.2422277353579172,
+    0.529678399454681
+   ],
+   "effective": 0.375,
+   "effective_ci": [
+    0.2422277353579172,
+    0.529678399454681
+   ]
+  },
+  {
+   "model": "claude-harness/minimax-m2.7",
+   "label": "minimax-m2.7",
+   "identity": {
+    "canonical_model": "minimax-m2.7",
+    "access": "direct-api"
+   },
+   "display": "minimax-m2.7 · Direct",
+   "access_label": "Direct",
+   "publisher": "MiniMax",
+   "operator": "MiniMax",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 14,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.35,
+   "ci": [
+    0.2213433317104915,
+    0.5049440300646263
+   ],
+   "effective": 0.35,
+   "effective_ci": [
+    0.2213433317104915,
+    0.5049440300646263
+   ]
+  },
+  {
+   "model": "claude-harness/minimax-m2.5",
+   "label": "minimax-m2.5",
+   "identity": {
+    "canonical_model": "minimax-m2.5",
+    "access": "direct-api"
+   },
+   "display": "minimax-m2.5 · Direct",
+   "access_label": "Direct",
+   "publisher": "MiniMax",
+   "operator": "MiniMax",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 13,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.325,
+   "ci": [
+    0.20084316962661725,
+    0.4798254191110201
+   ],
+   "effective": 0.325,
+   "effective_ci": [
+    0.20084316962661725,
+    0.4798254191110201
+   ]
+  },
+  {
+   "model": "opencode/nemotron-3-ultra-free",
+   "label": "nemotron-3-ultra-free",
+   "identity": {
+    "canonical_model": "nemotron-3-ultra",
+    "access": "opencode-free",
+    "wire_model": "opencode/nemotron-3-ultra-free"
+   },
+   "display": "nemotron-3-ultra · OpenCode Free",
+   "access_label": "OpenCode Free",
+   "publisher": "NVIDIA",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 12,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.3,
+   "ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "effective": 0.3,
+   "effective_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ]
+  },
+  {
+   "model": "opencode/mimo-v2.5-free",
+   "label": "mimo-v2.5-free",
+   "identity": {
+    "canonical_model": "mimo-v2.5",
+    "access": "opencode-free",
+    "wire_model": "opencode/mimo-v2.5-free"
+   },
+   "display": "mimo-v2.5 · OpenCode Free",
+   "access_label": "OpenCode Free",
+   "publisher": "Xiaomi",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 11,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.275,
+   "ci": [
+    0.1610785343314309,
+    0.4283525083312457
+   ],
+   "effective": 0.275,
+   "effective_ci": [
+    0.1610785343314309,
+    0.4283525083312457
+   ]
+  },
+  {
+   "model": "google/gemini-3.1-flash-lite",
+   "label": "gemini-3.1-flash-lite",
+   "identity": {
+    "canonical_model": "gemini-3.1-flash-lite",
+    "access": "direct-api"
+   },
+   "display": "gemini-3.1-flash-lite · Direct",
+   "access_label": "Direct",
+   "publisher": "Google",
+   "operator": "Google",
+   "harness": "Gemini CLI",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 10,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.25,
+   "ci": [
+    0.14186967895549518,
+    0.40194259066970106
+   ],
+   "effective": 0.25,
+   "effective_ci": [
+    0.14186967895549518,
+    0.40194259066970106
+   ]
+  },
+  {
+   "model": "claude-harness/mimo-v2.5-pro",
+   "label": "mimo-v2.5-pro",
+   "identity": {
+    "canonical_model": "mimo-v2.5-pro",
+    "access": "direct-api"
+   },
+   "display": "mimo-v2.5-pro · Direct",
+   "access_label": "Direct",
+   "publisher": "Xiaomi",
+   "operator": "Xiaomi",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 6,
+   "n_graded": 21,
+   "n_agent_error": 0,
+   "n_on_set": 21,
+   "coverage": 0.525,
+   "comparable": false,
+   "pass_rate": 0.2857142857142857,
+   "ci": [
+    0.13813675745628204,
+    0.49956773822837586
+   ],
+   "effective": 0.2857142857142857,
+   "effective_ci": [
+    0.13813675745628204,
+    0.49956773822837586
+   ]
+  },
+  {
+   "model": "claude-harness/or-gpt-oss-120b",
+   "label": "or-gpt-oss-120b",
+   "identity": {
+    "canonical_model": "gpt-oss-120b",
+    "access": "openrouter"
+   },
+   "display": "gpt-oss-120b · OpenRouter",
+   "access_label": "OpenRouter",
+   "publisher": "OpenAI",
+   "operator": "OpenRouter",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 9,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.225,
+   "ci": [
+    0.1231595325467853,
+    0.3750339640409305
+   ],
+   "effective": 0.225,
+   "effective_ci": [
+    0.1231595325467853,
+    0.3750339640409305
+   ]
+  },
+  {
+   "model": "opencode/north-mini-code-free",
+   "label": "north-mini-code-free",
+   "identity": {
+    "canonical_model": "north-mini-code",
+    "access": "opencode-free",
+    "wire_model": "opencode/north-mini-code-free"
+   },
+   "display": "north-mini-code · OpenCode Free",
+   "access_label": "OpenCode Free",
+   "publisher": "",
+   "operator": "OpenCode",
+   "harness": "OpenCode",
+   "tags": {
+    "placement": "cloud"
+   },
+   "source": "cloud",
+   "n_passed": 5,
+   "n_graded": 28,
+   "n_agent_error": 0,
+   "n_on_set": 28,
+   "coverage": 0.7,
+   "comparable": false,
+   "pass_rate": 0.17857142857142858,
+   "ci": [
+    0.0787838582943011,
+    0.355917915485911
+   ],
+   "effective": 0.17857142857142858,
+   "effective_ci": [
+    0.0787838582943011,
+    0.355917915485911
+   ]
+  },
+  {
+   "model": "agy/gpt-oss-120b",
+   "label": "gpt-oss-120b",
+   "identity": {
+    "canonical_model": "gpt-oss-120b",
+    "access": "direct-api"
+   },
+   "display": "gpt-oss-120b · Direct",
+   "access_label": "Direct",
+   "publisher": "OpenAI",
+   "operator": "OpenAI",
+   "harness": "Antigravity",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 4,
+   "n_graded": 40,
+   "n_agent_error": 0,
+   "n_on_set": 40,
+   "coverage": 1.0,
+   "comparable": true,
+   "pass_rate": 0.1,
+   "ci": [
+    0.03957888759557486,
+    0.23052074380473897
+   ],
+   "effective": 0.1,
+   "effective_ci": [
+    0.03957888759557486,
+    0.23052074380473897
+   ]
+  },
+  {
+   "model": "claude-harness/deepseek-v4-flash:or-free",
+   "label": "deepseek-v4-flash:or-free",
+   "identity": {
+    "canonical_model": "deepseek-v4-flash",
+    "access": "openrouter"
+   },
+   "display": "deepseek-v4-flash · OpenRouter",
+   "access_label": "OpenRouter",
+   "publisher": "DeepSeek",
+   "operator": "OpenRouter",
+   "harness": "Claude Code",
+   "tags": null,
+   "source": "cloud",
+   "n_passed": 2,
+   "n_graded": 29,
+   "n_agent_error": 0,
+   "n_on_set": 29,
+   "coverage": 0.725,
+   "comparable": false,
+   "pass_rate": 0.06896551724137931,
+   "ci": [
+    0.019120864097994447,
+    0.21964947595851925
+   ],
+   "effective": 0.06896551724137931,
+   "effective_ci": [
+    0.019120864097994447,
+    0.21964947595851925
+   ]
+  }
+ ]
+}

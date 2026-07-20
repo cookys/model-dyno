@@ -1,0 +1,6615 @@
+{
+ "cells": [
+  {
+   "cell": "codex-gpt5.6-luna",
+   "model": "gpt-5.6-luna",
+   "profile": "openai/codex-gpt5.6-luna",
+   "source": "survey-p4c",
+   "display": "gpt-5.6-luna · Codex",
+   "identity": {
+    "canonical_model": "gpt-5.6-luna",
+    "access": "codex-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 30,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.75,
+   "headline_ci": [
+    0.598057409330299,
+    0.8581303210445048
+   ],
+   "capability_est": 0.75,
+   "capability_est_ci": [
+    0.598057409330299,
+    0.8581303210445048
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 38.374620010254624,
+   "tok_per_solved": 5962.533333333334,
+   "sec_per_solved": 155.377,
+   "usd_per_solved": null,
+   "solved_per_hour": 23.169452364249533,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "grok-4.5",
+   "model": "grok-4.5",
+   "profile": "grok/grok-4.5",
+   "source": "survey-p4c",
+   "display": "grok-4.5 · Grok",
+   "identity": {
+    "canonical_model": "grok-4.5",
+    "access": "grok-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 30,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.75,
+   "headline_ci": [
+    0.598057409330299,
+    0.8581303210445048
+   ],
+   "capability_est": 0.75,
+   "capability_est_ci": [
+    0.598057409330299,
+    0.8581303210445048
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 74.77293101411406,
+   "tok_per_solved": 7173.166666666667,
+   "sec_per_solved": 95.93266666666666,
+   "usd_per_solved": null,
+   "solved_per_hour": 37.52632054427063,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "anthropic-opus-4.8",
+   "model": "claude-opus-4-8",
+   "profile": "anthropic/opus-4.8",
+   "source": "survey-p4c",
+   "display": "opus-4.8 · Direct",
+   "identity": {
+    "canonical_model": "opus-4.8",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 29,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.725,
+   "headline_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "capability_est": 0.725,
+   "capability_est_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 59.15281072493416,
+   "tok_per_solved": 14995.931034482759,
+   "sec_per_solved": 253.51172413793103,
+   "usd_per_solved": 0.4117631034482758,
+   "solved_per_hour": 14.200526670874229,
+   "solved_per_usd": 2.4285808796989903,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "codex",
+   "model": "gpt-5.5",
+   "profile": "openai/codex-gpt5.5",
+   "source": "survey-p4c",
+   "display": "gpt-5.5 · Codex",
+   "identity": {
+    "canonical_model": "gpt-5.5",
+    "access": "codex-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 29,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.725,
+   "headline_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "capability_est": 0.725,
+   "capability_est_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 48.561529292575706,
+   "tok_per_solved": 13107.275862068966,
+   "sec_per_solved": 269.9106896551724,
+   "usd_per_solved": null,
+   "solved_per_hour": 13.337745180078725,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "codex-gpt5.6-terra",
+   "model": "gpt-5.6-terra",
+   "profile": "openai/codex-gpt5.6-terra",
+   "source": "survey-p4c",
+   "display": "gpt-5.6-terra · Codex",
+   "identity": {
+    "canonical_model": "gpt-5.6-terra",
+    "access": "codex-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 29,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.725,
+   "headline_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "capability_est": 0.725,
+   "capability_est_ci": [
+    0.5716474916687543,
+    0.8389214656685692
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 38.05267100733964,
+   "tok_per_solved": 5447.3448275862065,
+   "sec_per_solved": 143.15275862068967,
+   "usd_per_solved": null,
+   "solved_per_hour": 25.147961064018904,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-hy3-openrouter-paid-tencent_hy3",
+   "model": "tencent/hy3",
+   "profile": "hy3-openrouter-paid",
+   "source": "results",
+   "display": "hy3 · OpenRouter",
+   "identity": {
+    "canonical_model": "hy3",
+    "access": "openrouter"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-aimax395",
+   "owner": "cookys",
+   "ts": "20260707163445",
+   "n_graded": 17,
+   "n_passed": 12,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 23,
+   "comparable": false,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.7058823529411765,
+   "headline_ci": [
+    0.468664666737861,
+    0.8672020613444361
+   ],
+   "capability_est": 0.7058823529411765,
+   "capability_est_ci": [
+    0.468664666737861,
+    0.8672020613444361
+   ],
+   "status_counts": {
+    "ok": 17,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 17,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 11.117074376081048,
+   "tok_per_solved": 9373.083333333334,
+   "sec_per_solved": 843.125,
+   "usd_per_solved": 0.12570785,
+   "solved_per_hour": 4.269829503335804,
+   "solved_per_usd": 7.954952693885067,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 14,
+    "noop_count": 0,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-qoder-qwen3.8-max",
+   "model": "Qwen3.8-Max-Preview",
+   "profile": "qoder/qwen3.8-max",
+   "source": "results",
+   "display": "qwen3.8-max · qoder-cli",
+   "identity": {
+    "canonical_model": "qwen3.8-max",
+    "access": "qoder-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260720113937",
+   "n_graded": 40,
+   "n_passed": 28,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.7,
+   "headline_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "capability_est": 0.7,
+   "capability_est_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 0.0,
+   "tok_per_solved": 0.0,
+   "sec_per_solved": 195.03214285714284,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 18.458495852332035,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "anthropic-sonnet-4.6",
+   "model": "claude-sonnet-4-6",
+   "profile": "anthropic/sonnet-4.6",
+   "source": "survey-p4c",
+   "display": "sonnet-4.6 · Direct",
+   "identity": {
+    "canonical_model": "sonnet-4.6",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 28,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.7,
+   "headline_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "capability_est": 0.7,
+   "capability_est_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 53.085904795628394,
+   "tok_per_solved": 12636.0,
+   "sec_per_solved": 238.0292857142857,
+   "usd_per_solved": 0.19093489285714285,
+   "solved_per_hour": 15.124189400463928,
+   "solved_per_usd": 5.237387389156775,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 8,
+    "n_eligible": 40,
+    "noop_count": 3,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "codex-gpt5.6-sol",
+   "model": "gpt-5.6-sol",
+   "profile": "openai/codex-gpt5.6-sol",
+   "source": "survey-p4c",
+   "display": "gpt-5.6-sol · Codex",
+   "identity": {
+    "canonical_model": "gpt-5.6-sol",
+    "access": "codex-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 28,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.7,
+   "headline_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "capability_est": 0.7,
+   "capability_est_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 37.263594533672304,
+   "tok_per_solved": 4433.928571428572,
+   "sec_per_solved": 118.98821428571429,
+   "usd_per_solved": null,
+   "solved_per_hour": 30.255097293549483,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "agy-gemini-3.5-flash",
+   "model": "gemini-3.5-flash",
+   "profile": "agy/gemini-3.5-flash",
+   "source": "survey-p4c",
+   "display": "gemini-3.5-flash · Direct",
+   "identity": {
+    "canonical_model": "gemini-3.5-flash",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 28,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 2,
+   "noedit_rate": 0.05,
+   "headline": 0.7,
+   "headline_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "capability_est": 0.7,
+   "capability_est_ci": [
+    0.545696893456796,
+    0.8192532908430471
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": null,
+   "tok_per_solved": null,
+   "sec_per_solved": 166.83357142857145,
+   "usd_per_solved": null,
+   "solved_per_hour": 21.578390782944506,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 8,
+    "n_eligible": 40,
+    "noop_count": 3,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-m3-fair-MiniMax-M3",
+   "model": "MiniMax-M3",
+   "profile": "m3-fair",
+   "source": "results",
+   "display": "minimax-m3 · Direct",
+   "identity": {
+    "canonical_model": "minimax-m3",
+    "access": "direct-api"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-7840hs",
+   "owner": "cookys",
+   "ts": "20260625125716",
+   "n_graded": 40,
+   "n_passed": 26,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.65,
+   "headline_ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ],
+   "capability_est": 0.6666666666666666,
+   "capability_est_ci": [
+    0.5097710432024052,
+    0.7936723389308484
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 38.08208315473639,
+   "tok_per_solved": 20502.80769230769,
+   "sec_per_solved": 538.3846153846154,
+   "usd_per_solved": 0.6350266038461538,
+   "solved_per_hour": 6.686669524217746,
+   "solved_per_usd": 1.5747371746999552,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 39,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-m2-minimax-32k-MiniMax-M2",
+   "model": "MiniMax-M2",
+   "profile": "m2-minimax-32k",
+   "source": "results",
+   "display": "minimax-m2 · Direct",
+   "identity": {
+    "canonical_model": "minimax-m2",
+    "access": "direct-api"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260711211902",
+   "n_graded": 40,
+   "n_passed": 26,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.65,
+   "headline_ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ],
+   "capability_est": 0.6842105263157895,
+   "capability_est_ci": [
+    0.5254394356005149,
+    0.8091557997633335
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 0,
+    "verify_error": 2
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 55.43891238271441,
+   "tok_per_solved": 12907.884615384615,
+   "sec_per_solved": 232.83076923076925,
+   "usd_per_solved": null,
+   "solved_per_hour": 15.461873926258754,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "anthropic-fable-5",
+   "model": "claude-fable-5",
+   "profile": "anthropic/fable-5",
+   "source": "survey-p4c",
+   "display": "fable-5 · Direct",
+   "identity": {
+    "canonical_model": "fable-5",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 26,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.65,
+   "headline_ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ],
+   "capability_est": 0.65,
+   "capability_est_ci": [
+    0.4950559699353738,
+    0.7786566682895086
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 53.35630059321587,
+   "tok_per_solved": 20628.346153846152,
+   "sec_per_solved": 386.615,
+   "usd_per_solved": null,
+   "solved_per_hour": 9.311589048536657,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 5,
+    "n_eligible": 40,
+    "noop_count": 2,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-m27-highspeed-minimax-MiniMax-M2.7-highspeed",
+   "model": "MiniMax-M2.7-highspeed",
+   "profile": "m27-highspeed-minimax",
+   "source": "results",
+   "display": "minimax-m2.7 · Direct",
+   "identity": {
+    "canonical_model": "minimax-m2.7",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-7840hs",
+   "owner": "cookys",
+   "ts": "20260626040646",
+   "n_graded": 31,
+   "n_passed": 20,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.6451612903225806,
+   "headline_ci": [
+    0.469476380428149,
+    0.7888355225843418
+   ],
+   "capability_est": 0.6451612903225806,
+   "capability_est_ci": [
+    0.469476380428149,
+    0.7888355225843418
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 52.05658403324711,
+   "tok_per_solved": 17912.15,
+   "sec_per_solved": 344.09000000000003,
+   "usd_per_solved": null,
+   "solved_per_hour": 10.46237902874248,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 31,
+    "noop_count": 0,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-mtp-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "profile": "bake-off-huihui-mtp-thinking-off-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "mtp"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "?",
+   "ts": "20260527155221",
+   "n_graded": 31,
+   "n_passed": 20,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 2,
+   "noedit_rate": 0.06451612903225806,
+   "headline": 0.6451612903225806,
+   "headline_ci": [
+    0.469476380428149,
+    0.7888355225843418
+   ],
+   "capability_est": 0.6896551724137931,
+   "capability_est_ci": [
+    0.5076952952728147,
+    0.8272457551023193
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 45.60650462563926,
+   "tok_per_solved": 7936.9,
+   "sec_per_solved": 174.03,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 20.68608860541286,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 27,
+    "noop_count": 0,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-glm-52-coding-plan-glm-5.2",
+   "model": "glm-5.2",
+   "profile": "glm-52-coding-plan",
+   "source": "results",
+   "display": "glm-5.2 · Direct",
+   "identity": {
+    "canonical_model": "glm-5.2",
+    "access": "direct-api"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-7840hs",
+   "owner": "cookys",
+   "ts": "20260618161323",
+   "n_graded": 40,
+   "n_passed": 25,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.625,
+   "headline_ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ],
+   "capability_est": 0.6410256410256411,
+   "capability_est_ci": [
+    0.484178631846895,
+    0.772581153035089
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 30.714367143671435,
+   "tok_per_solved": 20476.04,
+   "sec_per_solved": 666.66,
+   "usd_per_solved": null,
+   "solved_per_hour": 5.400054000540005,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 39,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "anthropic-sonnet-5",
+   "model": "claude-sonnet-5",
+   "profile": "anthropic/sonnet-5",
+   "source": "survey-p4c",
+   "display": "sonnet-5 · Direct",
+   "identity": {
+    "canonical_model": "sonnet-5",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 25,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.625,
+   "headline_ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ],
+   "capability_est": 0.625,
+   "capability_est_ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 82.19717720342479,
+   "tok_per_solved": 21366.4,
+   "sec_per_solved": 259.94079999999997,
+   "usd_per_solved": 0.34552188,
+   "solved_per_hour": 13.849307226876276,
+   "solved_per_usd": 2.894172722144253,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "codex-gpt5.3-spark",
+   "model": "gpt-5.3-codex-spark",
+   "profile": "openai/codex-gpt5.3-spark",
+   "source": "survey-p4c",
+   "display": "gpt-5.3-codex-spark · Codex",
+   "identity": {
+    "canonical_model": "gpt-5.3-codex-spark",
+    "access": "codex-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 25,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.625,
+   "headline_ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ],
+   "capability_est": 0.625,
+   "capability_est_ci": [
+    0.47032160054531913,
+    0.7577722646420829
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 248.6590868297755,
+   "tok_per_solved": 16070.24,
+   "sec_per_solved": 64.6276,
+   "usd_per_solved": null,
+   "solved_per_hour": 55.703755052021116,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-glm-52-opencode-glm-5",
+   "model": "glm-5",
+   "profile": "glm-52-opencode",
+   "source": "results",
+   "display": "glm-5.2 · OpenCode",
+   "identity": {
+    "canonical_model": "glm-5.2",
+    "access": "opencode-go"
+   },
+   "tags": {
+    "draft": "none",
+    "lineage": "base",
+    "placement": "cloud",
+    "quant": "none",
+    "role": "candidate",
+    "thinking": "on"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260515152408",
+   "n_graded": 40,
+   "n_passed": 24,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 3,
+   "noedit_rate": 0.075,
+   "headline": 0.6,
+   "headline_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "capability_est": 0.6,
+   "capability_est_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 36.1470880990839,
+   "tok_per_solved": 25269.375,
+   "sec_per_solved": 699.0708333333333,
+   "usd_per_solved": null,
+   "solved_per_hour": 5.149692746920019,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 7,
+    "n_eligible": 29,
+    "noop_count": 2,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-deepseek-v4-flash-lucifer-low-local-DeepSeek-V4-Flash",
+   "model": "DeepSeek-V4-Flash",
+   "profile": "deepseek-v4-flash-lucifer-low-local",
+   "source": "results",
+   "display": "deepseek-v4-flash-lucifer-low",
+   "identity": {
+    "canonical_model": "deepseek-v4-flash",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "mtp",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "FP4-FP8"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260708073513",
+   "n_graded": 40,
+   "n_passed": 24,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 2,
+   "noedit_rate": 0.05,
+   "headline": 0.6,
+   "headline_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "capability_est": 0.631578947368421,
+   "capability_est_ci": [
+    0.47283672824260115,
+    0.7661598684458619
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 0,
+    "verify_error": 2
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 136.85758741773378,
+   "tok_per_solved": 27120.041666666668,
+   "sec_per_solved": 198.1625,
+   "usd_per_solved": 0.4746806145833333,
+   "solved_per_hour": 18.16690847158267,
+   "solved_per_usd": 2.106679668976546,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 36,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-step37-flash-iq4xs-64k-think8k-local-Step-3.7-Flash-IQ4_XS-think",
+   "model": "Step-3.7-Flash-IQ4_XS-think",
+   "profile": "step37-flash-iq4xs-64k-think8k-local",
+   "source": "results",
+   "display": "Step-3.7-Flash",
+   "identity": {
+    "canonical_model": "step-3.7-flash",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "IQ4_XS"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260709134758",
+   "n_graded": 40,
+   "n_passed": 24,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.6,
+   "headline_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "capability_est": 0.6153846153846154,
+   "capability_est_ci": [
+    0.45898781310078474,
+    0.7510883745299295
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 83.7917195149599,
+   "tok_per_solved": 56979.416666666664,
+   "sec_per_solved": 680.0125,
+   "usd_per_solved": null,
+   "solved_per_hour": 5.29402033050863,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 23,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-qwen3.5-122b-a10b-mtp-udq4xl-64k-local-Qwen3.5-122B-A10B-MTP-UD-Q4_K_XL",
+   "model": "Qwen3.5-122B-A10B-MTP-UD-Q4_K_XL",
+   "profile": "qwen3.5-122b-a10b-mtp-udq4xl-64k-local",
+   "source": "results",
+   "display": "Qwen3.5-122B-A10B",
+   "identity": {
+    "canonical_model": "qwen3.5-122b-a10b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "mtp",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "UD-Q4_K_XL"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260710050240",
+   "n_graded": 40,
+   "n_passed": 24,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.6,
+   "headline_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "capability_est": 0.6,
+   "capability_est_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 67.19504684106454,
+   "tok_per_solved": 8637.083333333334,
+   "sec_per_solved": 128.5375,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 28.007390839249247,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-kimi-k3",
+   "model": "kimi-code/k3",
+   "profile": "kimi/k3",
+   "source": "results",
+   "display": "kimi-k3 · Kimi Code",
+   "identity": {
+    "canonical_model": "kimi-k3",
+    "access": "kimi-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260718031510",
+   "n_graded": 40,
+   "n_passed": 24,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.6,
+   "headline_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "capability_est": 0.6,
+   "capability_est_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 30.890786384854575,
+   "tok_per_solved": 18581.541666666668,
+   "sec_per_solved": 601.52375,
+   "usd_per_solved": null,
+   "solved_per_hour": 5.98480109887598,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 40,
+    "noop_count": 0,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "litellm-claude-zai-glm-5.1",
+   "model": "claude-zai-glm-5.1",
+   "profile": "bigmodel/glm-5.1",
+   "source": "survey-p4c",
+   "display": "glm-5.1 · Direct",
+   "identity": {
+    "canonical_model": "glm-5.1",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 24,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.6,
+   "headline_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "capability_est": 0.6,
+   "capability_est_ci": [
+    0.445956198273935,
+    0.7365188938759863
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 15.481535686107357,
+   "tok_per_solved": 13605.458333333334,
+   "sec_per_solved": 878.81839432392,
+   "usd_per_solved": null,
+   "solved_per_hour": 4.096409478057751,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 5,
+    "n_eligible": 40,
+    "noop_count": 2,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-llamacpp-vulkan-huihui-3.6-27b-mtp-huihui-qwen3.6-27b-abliterated-mtp",
+   "model": "huihui-qwen3.6-27b-abliterated-mtp",
+   "profile": "llamacpp-vulkan-huihui-3.6-27b-mtp",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "draft": "mtp"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cachyos-max395",
+   "owner": "cookys",
+   "ts": "20260617225149",
+   "n_graded": 31,
+   "n_passed": 18,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.03225806451612903,
+   "headline": 0.5806451612903226,
+   "headline_ci": [
+    0.40765964352020967,
+    0.7358469692645074
+   ],
+   "capability_est": 0.5806451612903226,
+   "capability_est_ci": [
+    0.40765964352020967,
+    0.7358469692645074
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 10.72988277436253,
+   "tok_per_solved": 8853.166666666666,
+   "sec_per_solved": 825.0944444444444,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.363136879953137,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 22,
+    "noop_count": 0,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-hy3-mxfp4-98k-mtp-local-4kout-hy3",
+   "model": "hy3",
+   "profile": "hy3-mxfp4-98k-mtp-local-4kout",
+   "source": "results",
+   "display": "hy3-mxfp4-98k-mtp-local-4kout",
+   "identity": {
+    "canonical_model": "hy3",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "n/a",
+    "draft": "mtp",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "MXFP4"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260707222630",
+   "n_graded": 40,
+   "n_passed": 23,
+   "n_agent_error": 5,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 3,
+   "noedit_rate": 0.075,
+   "headline": 0.575,
+   "headline_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "capability_est": 0.6571428571428571,
+   "capability_est_ci": [
+    0.49151646872736704,
+    0.7916850471731107
+   ],
+   "status_counts": {
+    "ok": 35,
+    "infra_error": 0,
+    "verify_error": 5
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 5,
+   "suspect_error_rate": 0.125,
+   "integrity": "infra-suspect",
+   "pps": 56.3015308755232,
+   "tok_per_solved": 8538.739130434782,
+   "sec_per_solved": 151.66086956521738,
+   "usd_per_solved": null,
+   "solved_per_hour": 23.737171033771002,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 10,
+    "n_eligible": 30,
+    "noop_count": 3,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-v4-flash-opencode-deepseek-v4-flash",
+   "model": "deepseek-v4-flash",
+   "profile": "v4-flash-opencode",
+   "source": "results",
+   "display": "deepseek-v4-flash · OpenCode",
+   "identity": {
+    "canonical_model": "deepseek-v4-flash",
+    "access": "opencode-go"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260710115833",
+   "n_graded": 40,
+   "n_passed": 23,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 4,
+   "noedit_rate": 0.1,
+   "headline": 0.575,
+   "headline_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "capability_est": 0.575,
+   "capability_est_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 80.66036817618469,
+   "tok_per_solved": 54046.30434782609,
+   "sec_per_solved": 670.0478260869565,
+   "usd_per_solved": 0.42038458695652176,
+   "solved_per_hour": 5.372750809481477,
+   "solved_per_usd": 2.3787741773306856,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 10,
+    "n_eligible": 39,
+    "noop_count": 4,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-thinkingcap-qwen3.6-27b-thinkoff-local-ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf",
+   "model": "ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf",
+   "profile": "thinkingcap-qwen3.6-27b-thinkoff-local",
+   "source": "results",
+   "display": "thinkingcap-qwen3.6-27b-thinkoff",
+   "identity": {
+    "canonical_model": "thinkingcap-qwen3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "mtp",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "Q4_K_M"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260714124948",
+   "n_graded": 40,
+   "n_passed": 23,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.575,
+   "headline_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "capability_est": 0.575,
+   "capability_est_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 41.05338706051225,
+   "tok_per_solved": 10321.0,
+   "sec_per_solved": 251.40434782608696,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 14.319561420196115,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "agy-gemini-3.1-pro",
+   "model": "gemini-3.1-pro",
+   "profile": "agy/gemini-3.1-pro",
+   "source": "survey-p4c",
+   "display": "gemini-3.1-pro · Direct",
+   "identity": {
+    "canonical_model": "gemini-3.1-pro",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 23,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.575,
+   "headline_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "capability_est": 0.575,
+   "capability_est_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": null,
+   "tok_per_solved": null,
+   "sec_per_solved": 177.7295652173913,
+   "usd_per_solved": null,
+   "solved_per_hour": 20.25549320168894,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "litellm-claude-devstral-24b-local",
+   "model": "claude-devstral-24b-local",
+   "profile": "claude-harness/devstral-24b-local",
+   "source": "survey-p4c",
+   "display": "Devstral-24B",
+   "identity": {
+    "canonical_model": "devstral-24b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 23,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 3,
+   "noedit_rate": 0.075,
+   "headline": 0.575,
+   "headline_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "capability_est": 0.575,
+   "capability_est_ci": [
+    0.42194800436059987,
+    0.7149083147518411
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 8.256331614933403,
+   "tok_per_solved": 9901.782608695652,
+   "sec_per_solved": 1199.295652173913,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 3.0017619037261,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 8,
+    "n_eligible": 40,
+    "noop_count": 3,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-m27-highspeed-minimax-32k-MiniMax-M2.7-highspeed",
+   "model": "MiniMax-M2.7-highspeed",
+   "profile": "m27-highspeed-minimax-32k",
+   "source": "results",
+   "display": "minimax-m2.7 · Direct",
+   "identity": {
+    "canonical_model": "minimax-m2.7",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-7840hs",
+   "owner": "cookys",
+   "ts": "20260625183454",
+   "n_graded": 40,
+   "n_passed": 22,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.55,
+   "headline_ci": [
+    0.39828829888440775,
+    0.6929492471905531
+   ],
+   "capability_est": 0.5641025641025641,
+   "capability_est_ci": [
+    0.40975423474522105,
+    0.7069547583829534
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 55.285149632975724,
+   "tok_per_solved": 18691.909090909092,
+   "sec_per_solved": 338.09999999999997,
+   "usd_per_solved": null,
+   "solved_per_hour": 10.64773735581189,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "litellm-claude-kimi-k2.6",
+   "model": "claude-kimi-k2.6",
+   "profile": "claude-harness/kimi-k2.6",
+   "source": "survey-p4c",
+   "display": "kimi-k2.6 · Direct",
+   "identity": {
+    "canonical_model": "kimi-k2.6",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 22,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.55,
+   "headline_ci": [
+    0.39828829888440775,
+    0.6929492471905531
+   ],
+   "capability_est": 0.55,
+   "capability_est_ci": [
+    0.39828829888440775,
+    0.6929492471905531
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 76.22966100366054,
+   "tok_per_solved": 19887.590909090908,
+   "sec_per_solved": 260.89045454545453,
+   "usd_per_solved": null,
+   "solved_per_hour": 13.798895043025722,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-mtp-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+   "profile": "bake-off-huihui-mtp-thinking-off-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "mtp"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-aimax395",
+   "owner": "cookys",
+   "ts": "20260704024025",
+   "n_graded": 40,
+   "n_passed": 21,
+   "n_agent_error": 3,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.525,
+   "headline_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "capability_est": 0.5675675675675675,
+   "capability_est_ci": [
+    0.40913906334200717,
+    0.713285131596487
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 0,
+    "verify_error": 2
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 9.887087313557902,
+   "tok_per_solved": 11237.380952380952,
+   "sec_per_solved": 1136.5714285714287,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 3.167420814479638,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 37,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+   "profile": "bake-off-huihui-thinking-off-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-aimax395",
+   "owner": "cookys",
+   "ts": "20260704052359",
+   "n_graded": 40,
+   "n_passed": 21,
+   "n_agent_error": 3,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.525,
+   "headline_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "capability_est": 0.5675675675675675,
+   "capability_est_ci": [
+    0.40913906334200717,
+    0.713285131596487
+   ],
+   "status_counts": {
+    "ok": 37,
+    "infra_error": 0,
+    "verify_error": 3
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 3,
+   "suspect_error_rate": 0.075,
+   "integrity": "ok",
+   "pps": 6.216039715504275,
+   "tok_per_solved": 9563.761904761905,
+   "sec_per_solved": 1538.5619047619048,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 2.3398473528155543,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 38,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-qwen3-coder-next-q4km-64k-local-Qwen3-Coder-Next-Q4_K_M",
+   "model": "Qwen3-Coder-Next-Q4_K_M",
+   "profile": "qwen3-coder-next-q4km-64k-local",
+   "source": "results",
+   "display": "Qwen3-Coder-Next",
+   "identity": {
+    "canonical_model": "qwen3-coder-next",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "Q4_K_M"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260710003617",
+   "n_graded": 40,
+   "n_passed": 21,
+   "n_agent_error": 4,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 4,
+   "noedit_rate": 0.1,
+   "headline": 0.525,
+   "headline_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "capability_est": 0.5833333333333334,
+   "capability_est_ci": [
+    0.4219996966427768,
+    0.7285966649491271
+   ],
+   "status_counts": {
+    "ok": 36,
+    "infra_error": 0,
+    "verify_error": 4
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 4,
+   "suspect_error_rate": 0.1,
+   "integrity": "infra-suspect",
+   "pps": 100.50322799864084,
+   "tok_per_solved": 56339.23809523809,
+   "sec_per_solved": 560.5714285714286,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 6.422018348623853,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 33,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-m25-highspeed-minimax-32k-MiniMax-M2.5-highspeed",
+   "model": "MiniMax-M2.5-highspeed",
+   "profile": "m25-highspeed-minimax-32k",
+   "source": "results",
+   "display": "minimax-m2.5 · Direct",
+   "identity": {
+    "canonical_model": "minimax-m2.5",
+    "access": "direct-api"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260711152952",
+   "n_graded": 40,
+   "n_passed": 21,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.525,
+   "headline_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "capability_est": 0.5384615384615384,
+   "capability_est_ci": [
+    0.3856918682173881,
+    0.6843335276595165
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 45.476809334026456,
+   "tok_per_solved": 14996.952380952382,
+   "sec_per_solved": 329.77142857142854,
+   "usd_per_solved": null,
+   "solved_per_hour": 10.916652226650495,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-m21-minimax-32k-MiniMax-M2.1",
+   "model": "MiniMax-M2.1",
+   "profile": "m21-minimax-32k",
+   "source": "results",
+   "display": "minimax-m2.1 · Direct",
+   "identity": {
+    "canonical_model": "minimax-m2.1",
+    "access": "direct-api"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260711172733",
+   "n_graded": 40,
+   "n_passed": 21,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.525,
+   "headline_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "capability_est": 0.5526315789473685,
+   "capability_est_ci": [
+    0.3970602917908942,
+    0.6985383468844911
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 0,
+    "verify_error": 2
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 56.31208859289089,
+   "tok_per_solved": 17313.285714285714,
+   "sec_per_solved": 307.45238095238096,
+   "usd_per_solved": null,
+   "solved_per_hour": 11.709130333772167,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-thinkingcap-dflash-local-ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf",
+   "model": "ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf",
+   "profile": "thinkingcap-dflash-local",
+   "source": "results",
+   "display": "thinkingcap-dflash",
+   "identity": {
+    "canonical_model": "thinkingcap-qwen3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "dflash",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "Q4_K_M"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260714235124",
+   "n_graded": 40,
+   "n_passed": 21,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.525,
+   "headline_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "capability_est": 0.525,
+   "capability_est_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 29.350380221285185,
+   "tok_per_solved": 15512.095238095239,
+   "sec_per_solved": 528.5142857142857,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 6.8115471942912755,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "litellm-claude-mimo-v2.5-pro",
+   "model": "claude-mimo-v2.5-pro",
+   "profile": "claude-harness/mimo-v2.5-pro",
+   "source": "survey-p4c",
+   "display": "mimo-v2.5-pro · Direct",
+   "identity": {
+    "canonical_model": "mimo-v2.5-pro",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 21,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 2,
+   "noedit_rate": 0.05,
+   "headline": 0.525,
+   "headline_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "capability_est": 0.525,
+   "capability_est_ci": [
+    0.37497106853929735,
+    0.6706477044981831
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 24.40601774577006,
+   "tok_per_solved": 11551.333333333334,
+   "sec_per_solved": 473.29857142857145,
+   "usd_per_solved": 0.07245704285714286,
+   "solved_per_hour": 7.60619240648458,
+   "solved_per_usd": 13.801280877162094,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 5,
+    "n_eligible": 40,
+    "noop_count": 2,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "profile": "bake-off-huihui-thinking-off-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "?",
+   "ts": "20260527164542",
+   "n_graded": 31,
+   "n_passed": 16,
+   "n_agent_error": 3,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 5,
+   "noedit_rate": 0.16129032258064516,
+   "headline": 0.5161290322580645,
+   "headline_ci": [
+    0.34840118286973176,
+    0.6803001396872117
+   ],
+   "capability_est": 0.5714285714285714,
+   "capability_est_ci": [
+    0.390704789856154,
+    0.7349170381926877
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 32.00108573098927,
+   "tok_per_solved": 9579.125,
+   "sec_per_solved": 299.3375,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 12.026558650352863,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 23,
+    "noop_count": 0,
+    "verdict": "INFRA",
+    "flags": [
+     "INFRA"
+    ]
+   }
+  },
+  {
+   "cell": "results-ornith-1.0-35b-local-ornith-1.0-35b",
+   "model": "ornith-1.0-35b",
+   "profile": "ornith-1.0-35b-local",
+   "source": "results",
+   "display": "ornith-1.0-35b",
+   "identity": {
+    "canonical_model": "ornith-1.0-35b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "Q4_K_M"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260626080637",
+   "n_graded": 40,
+   "n_passed": 20,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.5,
+   "headline_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "capability_est": 0.5128205128205128,
+   "capability_est_ci": [
+    0.36199108645696565,
+    0.6613507121686691
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 78.49854852959737,
+   "tok_per_solved": 31097.2,
+   "sec_per_solved": 396.15,
+   "usd_per_solved": null,
+   "solved_per_hour": 9.087466868610376,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-nex-n2-pro-openrouter-paid-nex-agi_nex-n2-pro",
+   "model": "nex-agi/nex-n2-pro",
+   "profile": "nex-n2-pro-openrouter-paid",
+   "source": "results",
+   "display": "nex-n2-pro · OpenRouter",
+   "identity": {
+    "canonical_model": "nex-n2-pro",
+    "access": "openrouter"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "fp8"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-aimax395",
+   "owner": "cookys",
+   "ts": "20260709032103",
+   "n_graded": 2,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 38,
+   "comparable": false,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.5,
+   "headline_ci": [
+    0.09452865480086614,
+    0.9054713451991339
+   ],
+   "capability_est": 0.5,
+   "capability_est_ci": [
+    0.09452865480086614,
+    0.9054713451991339
+   ],
+   "status_counts": {
+    "ok": 2,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 2,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 80.87246130738589,
+   "tok_per_solved": 123840.0,
+   "sec_per_solved": 1531.3,
+   "usd_per_solved": null,
+   "solved_per_hour": 2.3509436426565666,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 1,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-m21-highspeed-minimax-32k-MiniMax-M2.1-highspeed",
+   "model": "MiniMax-M2.1-highspeed",
+   "profile": "m21-highspeed-minimax-32k",
+   "source": "results",
+   "display": "minimax-m2.1 · Direct",
+   "identity": {
+    "canonical_model": "minimax-m2.1",
+    "access": "direct-api"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260711191645",
+   "n_graded": 40,
+   "n_passed": 20,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.5,
+   "headline_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "capability_est": 0.5263157894736842,
+   "capability_est_ci": [
+    0.37258710742710854,
+    0.6752122119105841
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 0,
+    "verify_error": 2
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 49.026793836315015,
+   "tok_per_solved": 17785.45,
+   "sec_per_solved": 362.77000000000004,
+   "usd_per_solved": null,
+   "solved_per_hour": 9.923643079637236,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-huihui-mtp-runswe-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "profile": "huihui-mtp-runswe-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "mtp",
+    "lineage": "abliterated",
+    "role": "candidate",
+    "quant": "Q4_K"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260714161710",
+   "n_graded": 40,
+   "n_passed": 20,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.5,
+   "headline_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "capability_est": 0.5,
+   "capability_est_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 39.52102382098172,
+   "tok_per_solved": 13139.95,
+   "sec_per_solved": 332.47999999999996,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 10.82771896053898,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 39,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-qwen3.6-35b-a3b-mtp-runswe-local-Qwen3.6-35B-A3B-UD-IQ4_XS.gguf",
+   "model": "Qwen3.6-35B-A3B-UD-IQ4_XS.gguf",
+   "profile": "qwen3.6-35b-a3b-mtp-runswe-local",
+   "source": "results",
+   "display": "Qwen3.6-35B-A3B",
+   "identity": {
+    "canonical_model": "qwen3.6-35b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "mtp",
+    "lineage": "instruct",
+    "role": "candidate",
+    "quant": "UD-IQ4_XS"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-aimax395",
+   "owner": "cookys",
+   "ts": "20260714171845",
+   "n_graded": 40,
+   "n_passed": 20,
+   "n_agent_error": 4,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 2,
+   "noedit_rate": 0.05,
+   "headline": 0.5,
+   "headline_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "capability_est": 0.5555555555555556,
+   "capability_est_ci": [
+    0.3958078731600341,
+    0.7045897012345685
+   ],
+   "status_counts": {
+    "ok": 36,
+    "infra_error": 1,
+    "verify_error": 3
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 4,
+   "suspect_error_rate": 0.1,
+   "integrity": "infra-suspect",
+   "pps": 16.94438060216042,
+   "tok_per_solved": 14745.0,
+   "sec_per_solved": 870.2,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.136980004596644,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 5,
+    "n_eligible": 38,
+    "noop_count": 2,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "anthropic-haiku-4.5",
+   "model": "claude-haiku-4-5",
+   "profile": "anthropic/haiku-4.5",
+   "source": "survey-p4c",
+   "display": "haiku-4.5 · Direct",
+   "identity": {
+    "canonical_model": "haiku-4.5",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 20,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 3,
+   "noedit_rate": 0.075,
+   "headline": 0.5,
+   "headline_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "capability_est": 0.5,
+   "capability_est_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 77.54216840269449,
+   "tok_per_solved": 13738.65,
+   "sec_per_solved": 177.1765,
+   "usd_per_solved": 0.06959425,
+   "solved_per_hour": 20.31872172663982,
+   "solved_per_usd": 14.369003186326456,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 10,
+    "n_eligible": 40,
+    "noop_count": 4,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "grok-composer-2.5-fast",
+   "model": "grok-composer-2.5-fast",
+   "profile": "grok/grok-composer-2.5-fast",
+   "source": "survey-p4c",
+   "display": "grok-composer-2.5 · Grok",
+   "identity": {
+    "canonical_model": "grok-composer-2.5",
+    "access": "grok-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 20,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.5,
+   "headline_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "capability_est": 0.5,
+   "capability_est_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 80.59144427157733,
+   "tok_per_solved": 10127.0,
+   "sec_per_solved": 125.6585,
+   "usd_per_solved": null,
+   "solved_per_hour": 28.649076664133343,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "opencode-big-pickle",
+   "model": "opencode/big-pickle",
+   "profile": "opencode/big-pickle",
+   "source": "survey-p4c",
+   "display": "big-pickle · OpenCode Free",
+   "identity": {
+    "canonical_model": "big-pickle",
+    "access": "opencode-free",
+    "wire_model": "opencode/big-pickle"
+   },
+   "tags": {
+    "placement": "cloud"
+   },
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 20,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 2,
+   "noedit_rate": 0.05,
+   "headline": 0.5,
+   "headline_ci": [
+    0.35199278797099753,
+    0.6480072120290025
+   ],
+   "capability_est": 0.5128205128205128,
+   "capability_est_ci": [
+    0.36199108645696565,
+    0.6613507121686691
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 1,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 32.27701077303457,
+   "tok_per_solved": 8204.8,
+   "sec_per_solved": 254.1995,
+   "usd_per_solved": null,
+   "solved_per_hour": 14.16210496086735,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 39,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-qwen35a3b-apex-remote-OpenYourMind-Qwen3.6-35B-A3B-abliterated-uncensored-APEX-I-Compact.gguf",
+   "model": "OpenYourMind-Qwen3.6-35B-A3B-abliterated-uncensored-APEX-I-Compact.gguf",
+   "profile": "bake-off-qwen35a3b-apex-remote",
+   "source": "results",
+   "display": "Qwen3.6-35B-A3B",
+   "identity": {
+    "canonical_model": "qwen3.6-35b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "cloud"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-7840hs",
+   "owner": "cookys",
+   "ts": "20260517182729",
+   "n_graded": 40,
+   "n_passed": 19,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 4,
+   "noedit_rate": 0.1,
+   "headline": 0.475,
+   "headline_ci": [
+    0.32935229550181694,
+    0.6250289314607027
+   ],
+   "capability_est": 0.475,
+   "capability_est_ci": [
+    0.32935229550181694,
+    0.6250289314607027
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 16.735825682624263,
+   "tok_per_solved": 25952.42105263158,
+   "sec_per_solved": 1550.7105263157894,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 2.321516452559947,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 30,
+    "noop_count": 1,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-mimo-v25-opencode-mimo-v2.5",
+   "model": "mimo-v2.5",
+   "profile": "mimo-v25-opencode",
+   "source": "results",
+   "display": "mimo-v2.5 · OpenCode",
+   "identity": {
+    "canonical_model": "mimo-v2.5",
+    "access": "opencode-go"
+   },
+   "tags": {
+    "placement": "cloud"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-7840hs",
+   "owner": "cookys",
+   "ts": "20260515190231",
+   "n_graded": 40,
+   "n_passed": 18,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 6,
+   "noedit_rate": 0.15,
+   "headline": 0.45,
+   "headline_ci": [
+    0.307050752809447,
+    0.6017117011155924
+   ],
+   "capability_est": 0.46153846153846156,
+   "capability_est_ci": [
+    0.3156664723404835,
+    0.6143081317826119
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 58.29639190455287,
+   "tok_per_solved": 49431.77777777778,
+   "sec_per_solved": 847.9388888888889,
+   "usd_per_solved": 1.6567203,
+   "solved_per_hour": 4.245588977193063,
+   "solved_per_usd": 0.6036021892168522,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 30,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-heretic-thinkon-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "model": "Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "profile": "bake-off-heretic-thinkon-v2",
+   "source": "results",
+   "display": "Qwen3.6-27B",
+   "identity": {
+    "canonical_model": "qwen3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "thinking": "on",
+    "lineage": "heretic"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260601133700",
+   "n_graded": 40,
+   "n_passed": 18,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 2,
+   "noedit_rate": 0.05,
+   "headline": 0.45,
+   "headline_ci": [
+    0.307050752809447,
+    0.6017117011155924
+   ],
+   "capability_est": 0.45,
+   "capability_est_ci": [
+    0.307050752809447,
+    0.6017117011155924
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 35.64623681852643,
+   "tok_per_solved": 22986.277777777777,
+   "sec_per_solved": 644.8444444444444,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 5.582741746502171,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 33,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-qwen35a3b-local-_data_models_Qwen3.6-35B-A3B-GGUF_Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+   "model": "Qwen3.6-35B-A3B-UD-Q4_K_M",
+   "profile": "bake-off-qwen35a3b-local",
+   "source": "results",
+   "display": "Qwen3.6-35B-A3B",
+   "identity": {
+    "canonical_model": "qwen3.6-35b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260626042728",
+   "n_graded": 40,
+   "n_passed": 18,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.45,
+   "headline_ci": [
+    0.307050752809447,
+    0.6017117011155924
+   ],
+   "capability_est": 0.46153846153846156,
+   "capability_est_ci": [
+    0.3156664723404835,
+    0.6143081317826119
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 40.29940506983963,
+   "tok_per_solved": 17310.833333333332,
+   "sec_per_solved": 429.55555555555554,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 8.380755302638386,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 39,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-kimi-kimi-for-coding",
+   "model": "kimi-code/kimi-for-coding",
+   "profile": "kimi/kimi-for-coding",
+   "source": "results",
+   "display": "kimi-k2.7-code · Kimi Code",
+   "identity": {
+    "canonical_model": "kimi-k2.7-code",
+    "access": "kimi-cli"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260717131625",
+   "n_graded": 40,
+   "n_passed": 18,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.45,
+   "headline_ci": [
+    0.307050752809447,
+    0.6017117011155924
+   ],
+   "capability_est": 0.45,
+   "capability_est_ci": [
+    0.307050752809447,
+    0.6017117011155924
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 38.15022593909813,
+   "tok_per_solved": 21364.444444444445,
+   "sec_per_solved": 560.0083333333333,
+   "usd_per_solved": null,
+   "solved_per_hour": 6.428475766729662,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 2,
+    "n_eligible": 40,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-hy3-free-openrouter-tencent_hy3_free",
+   "model": "tencent/hy3:free",
+   "profile": "hy3-free-openrouter",
+   "source": "results",
+   "display": "hy3 · OpenRouter",
+   "identity": {
+    "canonical_model": "hy3",
+    "access": "openrouter"
+   },
+   "tags": {
+    "placement": "cloud",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "none"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-aimax395",
+   "owner": "cookys",
+   "ts": "20260707123338",
+   "n_graded": 29,
+   "n_passed": 13,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 11,
+   "comparable": false,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.4482758620689655,
+   "headline_ci": [
+    0.2841291114874579,
+    0.6245233293193238
+   ],
+   "capability_est": 0.48148148148148145,
+   "capability_est_ci": [
+    0.30742950649709083,
+    0.6601467541378958
+   ],
+   "status_counts": {
+    "ok": 27,
+    "infra_error": 0,
+    "verify_error": 2
+   },
+   "status_denominator": 29,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.06896551724137931,
+   "integrity": "ok",
+   "pps": 41.598572768123525,
+   "tok_per_solved": 26276.53846153846,
+   "sec_per_solved": 631.6692307692308,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 5.699185308766759,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 21,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-control-thinking-on-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "model": "Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "profile": "bake-off-control-thinking-on",
+   "source": "results",
+   "display": "Qwen3.6-27B",
+   "identity": {
+    "canonical_model": "qwen3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "thinking": "on",
+    "role": "control"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260517154738",
+   "n_graded": 40,
+   "n_passed": 17,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 3,
+   "noedit_rate": 0.075,
+   "headline": 0.425,
+   "headline_ci": [
+    0.28509168524815875,
+    0.5780519956394001
+   ],
+   "capability_est": 0.425,
+   "capability_est_ci": [
+    0.28509168524815875,
+    0.5780519956394001
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 35.798621582458644,
+   "tok_per_solved": 28629.0,
+   "sec_per_solved": 799.7235294117646,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.501555684685149,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 31,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "litellm-claude-or-deepseek-v4-pro",
+   "model": "claude-or-deepseek-v4-pro",
+   "profile": "claude-harness/or-deepseek-v4-pro",
+   "source": "survey-p4c",
+   "display": "deepseek-v4-pro · OpenRouter",
+   "identity": {
+    "canonical_model": "deepseek-v4-pro",
+    "access": "openrouter"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 17,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 2,
+   "noedit_rate": 0.05,
+   "headline": 0.425,
+   "headline_ci": [
+    0.28509168524815875,
+    0.5780519956394001
+   ],
+   "capability_est": 0.425,
+   "capability_est_ci": [
+    0.28509168524815875,
+    0.5780519956394001
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 41.74551060343244,
+   "tok_per_solved": 20994.529411764706,
+   "sec_per_solved": 502.91705882352943,
+   "usd_per_solved": 0.05848929,
+   "solved_per_hour": 7.158237997377652,
+   "solved_per_usd": 17.097147187117503,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 8,
+    "n_eligible": 40,
+    "noop_count": 3,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-nemotron-cascade-2-30b-a3b-bf16-128k-local-openhands-prequal-nemotron-cascade-2-30b-a3b-local",
+   "model": "nemotron-cascade-2-30b-a3b-local",
+   "profile": "nemotron-cascade-2-30b-a3b-bf16-128k-local-openhands-prequal",
+   "source": "results",
+   "display": "Nemotron Cascade 2 30B-A3B",
+   "identity": {
+    "canonical_model": "nemotron-cascade-2-30b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "BF16"
+   },
+   "harness": "scripts/run-swe-openhands.py@1+maxsteps80",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260709075819",
+   "n_graded": 5,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 35,
+   "comparable": false,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.4,
+   "headline_ci": [
+    0.1176182311592533,
+    0.769280067791163
+   ],
+   "capability_est": 0.4,
+   "capability_est_ci": [
+    0.1176182311592533,
+    0.769280067791163
+   ],
+   "status_counts": {
+    "ok": 5,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 5,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 81.21554252199414,
+   "tok_per_solved": 27694.5,
+   "sec_per_solved": 341.0,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 10.557184750733137,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 5,
+    "noop_count": 0,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local",
+   "model": "qwen36-27b-nvfp4-unsloth-local",
+   "profile": "qwen36-27b-nvfp4-unsloth-128k-thinkoff-local",
+   "source": "results",
+   "display": "qwen36-27b-nvfp4-unsloth-128k-thinkoff",
+   "identity": {
+    "canonical_model": "qwen36-27b-nvfp4-unsloth",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "NVFP4"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260713172443",
+   "n_graded": 40,
+   "n_passed": 16,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.4,
+   "headline_ci": [
+    0.2634811061240136,
+    0.5540438017260649
+   ],
+   "capability_est": 0.41025641025641024,
+   "capability_est_ci": [
+    0.2707908943540048,
+    0.5658165152665509
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 40.34501850394848,
+   "tok_per_solved": 17306.5,
+   "sec_per_solved": 428.9625,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 8.392341987936009,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 39,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-llamacpp-vulkan-qwen3.6-35b-a3b-mtp-qwen3.6-35b-a3b-mtp",
+   "model": "qwen3.6-35b-a3b-mtp",
+   "profile": "llamacpp-vulkan-qwen3.6-35b-a3b-mtp",
+   "source": "results",
+   "display": "Qwen3.6-35B-A3B",
+   "identity": {
+    "canonical_model": "qwen3.6-35b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "draft": "mtp"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cachyos-max395",
+   "owner": "cookys",
+   "ts": "20260617080945",
+   "n_graded": 31,
+   "n_passed": 12,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.03225806451612903,
+   "headline": 0.3870967741935484,
+   "headline_ci": [
+    0.23732875351271562,
+    0.5617619885886803
+   ],
+   "capability_est": 0.3870967741935484,
+   "capability_est_ci": [
+    0.23732875351271562,
+    0.5617619885886803
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 40.32671727656445,
+   "tok_per_solved": 43869.083333333336,
+   "sec_per_solved": 1087.8416666666667,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 3.309305122528554,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 13,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-mimo-fair-q4km-MiMo-V2.5-Q4KM",
+   "model": "MiMo-V2.5-Q4KM",
+   "profile": "mimo-fair-q4km",
+   "source": "results",
+   "display": "MiMo-v2.5",
+   "identity": {
+    "canonical_model": "mimo-v2.5",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260706151132",
+   "n_graded": 40,
+   "n_passed": 15,
+   "n_agent_error": 4,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 7,
+   "noedit_rate": 0.175,
+   "headline": 0.375,
+   "headline_ci": [
+    0.2422277353579172,
+    0.529678399454681
+   ],
+   "capability_est": 0.4166666666666667,
+   "capability_est_ci": [
+    0.2714033350508729,
+    0.5780003033572231
+   ],
+   "status_counts": {
+    "ok": 36,
+    "infra_error": 0,
+    "verify_error": 4
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 4,
+   "suspect_error_rate": 0.1,
+   "integrity": "infra-suspect",
+   "pps": 22.116958359287615,
+   "tok_per_solved": 110069.46666666666,
+   "sec_per_solved": 4976.7,
+   "usd_per_solved": 4.259374279999999,
+   "solved_per_hour": 0.7233709084332992,
+   "solved_per_usd": 0.23477626859314182,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 23,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-hy3-iq1m-32k-thinkoff-local-hy3-iq1m-local",
+   "model": "hy3-iq1m-local",
+   "profile": "hy3-iq1m-32k-thinkoff-local",
+   "source": "results",
+   "display": "hy3-iq1m-32k-thinkoff",
+   "identity": {
+    "canonical_model": "hy3",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "IQ1_M"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260715011208",
+   "n_graded": 40,
+   "n_passed": 14,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 2,
+   "noedit_rate": 0.05,
+   "headline": 0.35,
+   "headline_ci": [
+    0.2213433317104915,
+    0.5049440300646263
+   ],
+   "capability_est": 0.3684210526315789,
+   "capability_est_ci": [
+    0.23384013155413794,
+    0.5271632717573987
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 0,
+    "verify_error": 2
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 22.840845738440162,
+   "tok_per_solved": 19607.071428571428,
+   "sec_per_solved": 858.4214285714286,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.19374433137237,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 34,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-nex-n2-pro-iq3xxs-64k-local-prequal-nex-n2-pro-local",
+   "model": "nex-n2-pro-local",
+   "profile": "nex-n2-pro-iq3xxs-64k-local-prequal",
+   "source": "results",
+   "display": "Nex-N2-Pro",
+   "identity": {
+    "canonical_model": "nex-n2-pro",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "IQ3_XXS"
+   },
+   "harness": "scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260709033408",
+   "n_graded": 6,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 34,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.16666666666666666,
+   "headline": 0.3333333333333333,
+   "headline_ci": [
+    0.09676933255921683,
+    0.7000116786584712
+   ],
+   "capability_est": 0.3333333333333333,
+   "capability_est_ci": [
+    0.09676933255921683,
+    0.7000116786584712
+   ],
+   "status_counts": {
+    "ok": 6,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 6,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 40.737370567932224,
+   "tok_per_solved": 6491.5,
+   "sec_per_solved": 159.35,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 22.59177910260433,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 17,
+    "n_eligible": 6,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-mimo-fair-MiMo-V2.5",
+   "model": "MiMo-V2.5",
+   "profile": "mimo-fair",
+   "source": "results",
+   "display": "MiMo-v2.5",
+   "identity": {
+    "canonical_model": "mimo-v2.5",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260704173219",
+   "n_graded": 40,
+   "n_passed": 13,
+   "n_agent_error": 6,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 8,
+   "noedit_rate": 0.2,
+   "headline": 0.325,
+   "headline_ci": [
+    0.20084316962661725,
+    0.4798254191110201
+   ],
+   "capability_est": 0.38235294117647056,
+   "capability_est_ci": [
+    0.23899964851608782,
+    0.5495928000061734
+   ],
+   "status_counts": {
+    "ok": 34,
+    "infra_error": 1,
+    "verify_error": 5
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 6,
+   "suspect_error_rate": 0.15,
+   "integrity": "infra-suspect",
+   "pps": 21.423117074255984,
+   "tok_per_solved": 192587.23076923078,
+   "sec_per_solved": 8989.692307692309,
+   "usd_per_solved": 5.3727069692307685,
+   "solved_per_hour": 0.40045864494378175,
+   "solved_per_usd": 0.18612591487437363,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 7,
+    "n_eligible": 14,
+    "noop_count": 1,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-control-qwen36-27b-dflash-local-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "model": "Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "profile": "bake-off-control-qwen36-27b-dflash-local",
+   "source": "results",
+   "display": "Qwen3.6-27B",
+   "identity": {
+    "canonical_model": "qwen3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "draft": "dflash",
+    "role": "control"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260517085421",
+   "n_graded": 40,
+   "n_passed": 12,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 8,
+   "noedit_rate": 0.2,
+   "headline": 0.3,
+   "headline_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "capability_est": 0.3,
+   "capability_est_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 29.8111186376597,
+   "tok_per_solved": 15769.833333333334,
+   "sec_per_solved": 528.9916666666667,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 6.805400211093433,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 21,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-control-base-no-heretic-Qwen3.6-27B-Q4_K_M.gguf",
+   "model": "Qwen3.6-27B-Q4_K_M.gguf",
+   "profile": "bake-off-control-base-no-heretic",
+   "source": "results",
+   "display": "Qwen3.6-27B",
+   "identity": {
+    "canonical_model": "qwen3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "lineage": "heretic",
+    "role": "control"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260518080135",
+   "n_graded": 40,
+   "n_passed": 12,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 7,
+   "noedit_rate": 0.175,
+   "headline": 0.3,
+   "headline_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "capability_est": 0.3,
+   "capability_est_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 27.40498840834599,
+   "tok_per_solved": 28567.416666666668,
+   "sec_per_solved": 1042.4166666666667,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 3.453513470301383,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 4,
+    "n_eligible": 27,
+    "noop_count": 1,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-heretic-dflash-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "model": "Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+   "profile": "bake-off-heretic-dflash-v2",
+   "source": "results",
+   "display": "Qwen3.6-27B",
+   "identity": {
+    "canonical_model": "qwen3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "draft": "dflash",
+    "lineage": "heretic"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260528133056",
+   "n_graded": 40,
+   "n_passed": 12,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 7,
+   "noedit_rate": 0.175,
+   "headline": 0.3,
+   "headline_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "capability_est": 0.3,
+   "capability_est_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 29.59035803909094,
+   "tok_per_solved": 13953.333333333334,
+   "sec_per_solved": 471.55,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 7.634397200721026,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 23,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-base-v2-Qwen3.6-27B-Q4_K_M.gguf",
+   "model": "Qwen3.6-27B-Q4_K_M.gguf",
+   "profile": "bake-off-base-v2",
+   "source": "results",
+   "display": "Qwen3.6-27B",
+   "identity": {
+    "canonical_model": "qwen3.6-27b",
+    "access": "local"
+   },
+   "tags": null,
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260528161326",
+   "n_graded": 40,
+   "n_passed": 12,
+   "n_agent_error": 3,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 8,
+   "noedit_rate": 0.2,
+   "headline": 0.3,
+   "headline_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "capability_est": 0.32432432432432434,
+   "capability_est_ci": [
+    0.19633077820815478,
+    0.48536631495176064
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 18.884976116592867,
+   "tok_per_solved": 13541.0,
+   "sec_per_solved": 717.025,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 5.020745441232872,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 23,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf",
+   "model": "Qwen3.6-35B-A3B-MXFP4_MOE.gguf",
+   "profile": "bake-off-qwen35a3b-mxfp4-remote",
+   "source": "results",
+   "display": "Qwen3.6-35B-A3B",
+   "identity": {
+    "canonical_model": "qwen3.6-35b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "cloud"
+   },
+   "harness": "scripts/run-swe-personal.py@3",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260709111020",
+   "n_graded": 40,
+   "n_passed": 12,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 1,
+   "noedit_rate": 0.025,
+   "headline": 0.3,
+   "headline_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "capability_est": 0.3076923076923077,
+   "capability_est_ci": [
+    0.1856575344598306,
+    0.464215486155646
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 35.77146919431279,
+   "tok_per_solved": 31449.083333333332,
+   "sec_per_solved": 879.1666666666666,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.09478672985782,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 3,
+    "n_eligible": 37,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-agents-a1-q4km-64k-local-Agents-A1-Q4_K_M",
+   "model": "Agents-A1-Q4_K_M",
+   "profile": "agents-a1-q4km-64k-local",
+   "source": "results",
+   "display": "Agents-A1",
+   "identity": {
+    "canonical_model": "agents-a1",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "Q4_K_M"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260709200956",
+   "n_graded": 40,
+   "n_passed": 12,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 6,
+   "noedit_rate": 0.15,
+   "headline": 0.3,
+   "headline_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "capability_est": 0.3157894736842105,
+   "capability_est_ci": [
+    0.1908442002366664,
+    0.47456056439948513
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 0,
+    "verify_error": 2
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 66.99889316863683,
+   "tok_per_solved": 63054.333333333336,
+   "sec_per_solved": 941.125,
+   "usd_per_solved": null,
+   "solved_per_hour": 3.8252091911276396,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 4,
+    "n_eligible": 28,
+    "noop_count": 1,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "opencode-nemotron-3-ultra-free",
+   "model": "opencode/nemotron-3-ultra-free",
+   "profile": "opencode/nemotron-3-ultra-free",
+   "source": "survey-p4c",
+   "display": "nemotron-3-ultra · OpenCode Free",
+   "identity": {
+    "canonical_model": "nemotron-3-ultra",
+    "access": "opencode-free",
+    "wire_model": "opencode/nemotron-3-ultra-free"
+   },
+   "tags": {
+    "placement": "cloud"
+   },
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 12,
+   "n_agent_error": 5,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 8,
+   "noedit_rate": 0.2,
+   "headline": 0.3,
+   "headline_ci": [
+    0.18074670915695293,
+    0.45430310654320405
+   ],
+   "capability_est": 0.34285714285714286,
+   "capability_est_ci": [
+    0.20831495282688922,
+    0.5084835312726328
+   ],
+   "status_counts": {
+    "ok": 35,
+    "infra_error": 5,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 5,
+   "suspect_error_rate": 0.125,
+   "integrity": "infra-suspect",
+   "pps": 18.653773704642116,
+   "tok_per_solved": 19319.666666666668,
+   "sec_per_solved": 1035.6974933098302,
+   "usd_per_solved": null,
+   "solved_per_hour": 3.475918425268463,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 9,
+    "n_eligible": 35,
+    "noop_count": 3,
+    "verdict": "INFRA",
+    "flags": [
+     "INFRA"
+    ]
+   }
+  },
+  {
+   "cell": "results-nemotron-puzzle-75b-a9b-nvfp4-mtp-128k-local-prequal-nemotron-puzzle-75b-a9b-nvfp4-local",
+   "model": "nemotron-puzzle-75b-a9b-nvfp4-local",
+   "profile": "nemotron-puzzle-75b-a9b-nvfp4-mtp-128k-local-prequal",
+   "source": "results",
+   "display": "Nemotron Puzzle 75B-A9B",
+   "identity": {
+    "canonical_model": "nemotron-puzzle-75b-a9b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "draft": "mtp",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "NVFP4"
+   },
+   "harness": "scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260709053023",
+   "n_graded": 7,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 33,
+   "comparable": false,
+   "n_noedit": 3,
+   "noedit_rate": 0.42857142857142855,
+   "headline": 0.2857142857142857,
+   "headline_ci": [
+    0.0822171657090155,
+    0.6410709098517873
+   ],
+   "capability_est": 0.2857142857142857,
+   "capability_est_ci": [
+    0.0822171657090155,
+    0.6410709098517873
+   ],
+   "status_counts": {
+    "ok": 7,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 7,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 176.7478315393458,
+   "tok_per_solved": 84565.0,
+   "sec_per_solved": 478.45,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 7.524297209739784,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 50,
+    "n_eligible": 2,
+    "noop_count": 1,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-gemma-4-31b-dflash-turbo3-local-gemma-4-31B-it-IQ4_XS.gguf",
+   "model": "gemma-4-31B-it-IQ4_XS.gguf",
+   "profile": "gemma-4-31b-dflash-turbo3-local",
+   "source": "results",
+   "display": "gemma-4-31b-dflash-turbo3",
+   "identity": {
+    "canonical_model": "gemma-4-31b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "dflash",
+    "lineage": "gemma4-dense-31b",
+    "role": "candidate",
+    "quant": "IQ4_XS"
+   },
+   "harness": "scripts/run-swe-personal.py@5",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260720133840",
+   "n_graded": 40,
+   "n_passed": 10,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 3,
+   "noedit_rate": 0.075,
+   "headline": 0.25,
+   "headline_ci": [
+    0.14186967895549518,
+    0.40194259066970106
+   ],
+   "capability_est": 0.2564102564102564,
+   "capability_est_ci": [
+    0.14568625843452188,
+    0.410819567678415
+   ],
+   "status_counts": {
+    "ok": 39,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.025,
+   "integrity": "ok",
+   "pps": 35.8997503582821,
+   "tok_per_solved": 31061.9,
+   "sec_per_solved": 865.24,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.160695298414313,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 12,
+    "n_eligible": 25,
+    "noop_count": 3,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "opencode-north-mini-code-free",
+   "model": "opencode/north-mini-code-free",
+   "profile": "opencode/north-mini-code-free",
+   "source": "survey-p4c",
+   "display": "north-mini-code · OpenCode Free",
+   "identity": {
+    "canonical_model": "north-mini-code",
+    "access": "opencode-free",
+    "wire_model": "opencode/north-mini-code-free"
+   },
+   "tags": {
+    "placement": "cloud"
+   },
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 9,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 5,
+   "noedit_rate": 0.125,
+   "headline": 0.225,
+   "headline_ci": [
+    0.1231595325467853,
+    0.3750339640409305
+   ],
+   "capability_est": 0.23684210526315788,
+   "capability_est_ci": [
+    0.12993561496969508,
+    0.39207119165337856
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 2,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 12.88284193542987,
+   "tok_per_solved": 17362.88888888889,
+   "sec_per_solved": 1347.7530016989633,
+   "usd_per_solved": null,
+   "solved_per_hour": 2.671112581802361,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 8,
+    "n_eligible": 38,
+    "noop_count": 3,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-qwopus-mtp-thinking-off-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "profile": "bake-off-qwopus-mtp-thinking-off-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · qwopus",
+   "identity": {
+    "canonical_model": "qwopus-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "mtp",
+    "lineage": "merged"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709073107",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.2222222222222222,
+   "capability_est_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 35.97144149382955,
+   "tok_per_solved": 27836.5,
+   "sec_per_solved": 773.85,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.652064353556891,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 11,
+    "n_eligible": 9,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-qwopus-mtp-thinking-on-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "profile": "bake-off-qwopus-mtp-thinking-on-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · qwopus",
+   "identity": {
+    "canonical_model": "qwopus-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "draft": "mtp",
+    "lineage": "merged"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709075813",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.2222222222222222,
+   "capability_est_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 62.910836835665265,
+   "tok_per_solved": 118253.5,
+   "sec_per_solved": 1879.7,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 1.9151992339203063,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 5,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-qwopus-thinking-off-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "profile": "bake-off-qwopus-thinking-off-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · qwopus",
+   "identity": {
+    "canonical_model": "qwopus-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "lineage": "merged"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709094651",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.2222222222222222,
+   "capability_est_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 23.398172708517535,
+   "tok_per_solved": 23817.0,
+   "sec_per_solved": 1017.9,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 3.5366931918656057,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 11,
+    "n_eligible": 9,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-qwopus-thinking-on-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "profile": "bake-off-qwopus-thinking-on-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · qwopus",
+   "identity": {
+    "canonical_model": "qwopus-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "lineage": "merged"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709102144",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.2222222222222222,
+   "capability_est_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 34.81796264276843,
+   "tok_per_solved": 71486.5,
+   "sec_per_solved": 2053.15,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 1.7534033071134596,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 12,
+    "n_eligible": 8,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-mtp-thinking-on-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "profile": "bake-off-huihui-mtp-thinking-on-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "draft": "mtp"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709044305",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.25,
+   "capability_est_ci": [
+    0.07147768885802763,
+    0.5907301208974108
+   ],
+   "status_counts": {
+    "ok": 8,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.1111111111111111,
+   "integrity": "infra-suspect",
+   "pps": 61.66334385556848,
+   "tok_per_solved": 111345.5,
+   "sec_per_solved": 1805.7,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 1.9936866589134405,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 12,
+    "n_eligible": 8,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-thinking-on-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "profile": "bake-off-huihui-thinking-on-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709054503",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.2222222222222222,
+   "capability_est_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 32.047011012718556,
+   "tok_per_solved": 63874.5,
+   "sec_per_solved": 1993.15,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 1.806186187692848,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 12,
+    "n_eligible": 8,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-mtp-thinkoff-v2-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "profile": "bake-off-huihui-mtp-thinkoff-v2",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "thinking": "off",
+    "draft": "mtp"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709041320",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.2222222222222222,
+   "capability_est_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 37.0441525374689,
+   "tok_per_solved": 32008.0,
+   "sec_per_solved": 864.05,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.166425554076731,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 11,
+    "n_eligible": 9,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-qwopus-mtp-thinkon-v2-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "model": "Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+   "profile": "bake-off-qwopus-mtp-thinkon-v2",
+   "source": "results",
+   "display": "Qwen3.6-27B · qwopus",
+   "identity": {
+    "canonical_model": "qwopus-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "thinking": "on",
+    "draft": "mtp",
+    "lineage": "merged"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709090153",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.25,
+   "capability_est_ci": [
+    0.07147768885802763,
+    0.5907301208974108
+   ],
+   "status_counts": {
+    "ok": 8,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.1111111111111111,
+   "integrity": "infra-suspect",
+   "pps": 55.60219413307894,
+   "tok_per_solved": 69942.0,
+   "sec_per_solved": 1257.9,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 2.8619127116622938,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 12,
+    "n_eligible": 8,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-abliterated-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "profile": "bake-off-huihui-abliterated-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "lineage": "abliterated"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709065226",
+   "n_graded": 9,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 1,
+   "noedit_rate": 0.1111111111111111,
+   "headline": 0.2222222222222222,
+   "headline_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "capability_est": 0.2222222222222222,
+   "capability_est_ci": [
+    0.0632237623122272,
+    0.5474166563271947
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 25.55902209492635,
+   "tok_per_solved": 24986.5,
+   "sec_per_solved": 977.6,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 3.6824877250409167,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 11,
+    "n_eligible": 9,
+    "noop_count": 1,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-gemma-4-26b-a4b-dflash-turbo3-local-gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+   "model": "gemma-4-26B-A4B-it-UD-Q4_K_M.gguf",
+   "profile": "gemma-4-26b-a4b-dflash-turbo3-local",
+   "source": "results",
+   "display": "gemma-4-26b-a4b-dflash-turbo3",
+   "identity": {
+    "canonical_model": "gemma-4-26b-a4b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "dflash",
+    "lineage": "gemma4-moe-a4b",
+    "role": "candidate",
+    "quant": "Q4_K_M"
+   },
+   "harness": "scripts/run-swe-personal.py@5",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260717152121",
+   "n_graded": 40,
+   "n_passed": 8,
+   "n_agent_error": 2,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 8,
+   "noedit_rate": 0.2,
+   "headline": 0.2,
+   "headline_ci": [
+    0.10499864973166873,
+    0.34757607381856676
+   ],
+   "capability_est": 0.21052631578947367,
+   "capability_est_ci": [
+    0.11074660352095933,
+    0.36346088376442165
+   ],
+   "status_counts": {
+    "ok": 38,
+    "infra_error": 1,
+    "verify_error": 1
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 2,
+   "suspect_error_rate": 0.05,
+   "integrity": "ok",
+   "pps": 59.72082235227061,
+   "tok_per_solved": 132280.875,
+   "sec_per_solved": 2214.9875,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 1.625291339115909,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 44,
+    "n_eligible": 9,
+    "noop_count": 4,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-nex-n2-pro-iq2m-64k-local-prequal-nex-n2-pro-local",
+   "model": "nex-n2-pro-local",
+   "profile": "nex-n2-pro-iq2m-64k-local-prequal",
+   "source": "results",
+   "display": "Nex-N2-Pro",
+   "identity": {
+    "canonical_model": "nex-n2-pro",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "IQ2_M"
+   },
+   "harness": "scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260708212141",
+   "n_graded": 6,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 34,
+   "comparable": false,
+   "n_noedit": 4,
+   "noedit_rate": 0.6666666666666666,
+   "headline": 0.16666666666666666,
+   "headline_ci": [
+    0.03005258587173032,
+    0.563509436563646
+   ],
+   "capability_est": 0.16666666666666666,
+   "capability_est_ci": [
+    0.03005258587173032,
+    0.563509436563646
+   ],
+   "status_counts": {
+    "ok": 6,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 6,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 20.111464968152866,
+   "tok_per_solved": 3789.0,
+   "sec_per_solved": 188.4,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 19.108280254777068,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 67,
+    "n_eligible": 6,
+    "noop_count": 4,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE"
+    ]
+   }
+  },
+  {
+   "cell": "results-minimax-m3-iq3xxs-64k-local-prequal-minimax-m3-local",
+   "model": "minimax-m3-local",
+   "profile": "minimax-m3-iq3xxs-64k-local-prequal",
+   "source": "results",
+   "display": "minimax-m3-iq3xxs-64k-local-prequal",
+   "identity": {
+    "canonical_model": "minimax-m3",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "UD-IQ3_XXS"
+   },
+   "harness": "scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260708173051",
+   "n_graded": 7,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 33,
+   "comparable": false,
+   "n_noedit": 4,
+   "noedit_rate": 0.5714285714285714,
+   "headline": 0.14285714285714285,
+   "headline_ci": [
+    0.02567895594897482,
+    0.5131345033190299
+   ],
+   "capability_est": 0.14285714285714285,
+   "capability_est_ci": [
+    0.02567895594897482,
+    0.5131345033190299
+   ],
+   "status_counts": {
+    "ok": 7,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 7,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 31.264227642276424,
+   "tok_per_solved": 23073.0,
+   "sec_per_solved": 738.0,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.878048780487805,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 50,
+    "n_eligible": 2,
+    "noop_count": 1,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-nemotron-cascade-2-30b-a3b-bf16-128k-local-prequal-nemotron-cascade-2-30b-a3b-local",
+   "model": "nemotron-cascade-2-30b-a3b-local",
+   "profile": "nemotron-cascade-2-30b-a3b-bf16-128k-local-prequal",
+   "source": "results",
+   "display": "Nemotron Cascade 2 30B-A3B",
+   "identity": {
+    "canonical_model": "nemotron-cascade-2-30b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "BF16"
+   },
+   "harness": "scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260709064852",
+   "n_graded": 7,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 33,
+   "comparable": false,
+   "n_noedit": 3,
+   "noedit_rate": 0.42857142857142855,
+   "headline": 0.14285714285714285,
+   "headline_ci": [
+    0.02567895594897482,
+    0.5131345033190299
+   ],
+   "capability_est": 0.14285714285714285,
+   "capability_est_ci": [
+    0.02567895594897482,
+    0.5131345033190299
+   ],
+   "status_counts": {
+    "ok": 7,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 7,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 181.8842631926744,
+   "tok_per_solved": 192670.0,
+   "sec_per_solved": 1059.3,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 3.398470688190314,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 1,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-gemma-4-12b-fixed-local-gemma-4-12b-it-Q4_K_M.gguf",
+   "model": "gemma-4-12b-it-Q4_K_M.gguf",
+   "profile": "bake-off-gemma-4-12b-fixed-local",
+   "source": "results",
+   "display": "Gemma-4-12B",
+   "identity": {
+    "canonical_model": "gemma-4-12b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709113557",
+   "n_graded": 9,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 2,
+   "noedit_rate": 0.2222222222222222,
+   "headline": 0.1111111111111111,
+   "headline_ci": [
+    0.019890371327130507,
+    0.4350062147680602
+   ],
+   "capability_est": 0.1111111111111111,
+   "capability_est_ci": [
+    0.019890371327130507,
+    0.4350062147680602
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 38.98845285894318,
+   "tok_per_solved": 266065.0,
+   "sec_per_solved": 6824.2,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 0.5275343630022566,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 50,
+    "n_eligible": 4,
+    "noop_count": 2,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-gemma4-coder-fable5-thinkon-local-gemma4-coding-Q8_0.gguf",
+   "model": "gemma4-coding-Q8_0.gguf",
+   "profile": "bake-off-gemma4-coder-fable5-thinkon-local",
+   "source": "results",
+   "display": "Gemma-4-12B · coder",
+   "identity": {
+    "canonical_model": "gemma4-coder",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709194239",
+   "n_graded": 9,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 3,
+   "noedit_rate": 0.3333333333333333,
+   "headline": 0.1111111111111111,
+   "headline_ci": [
+    0.019890371327130507,
+    0.4350062147680602
+   ],
+   "capability_est": 0.1111111111111111,
+   "capability_est_ci": [
+    0.019890371327130507,
+    0.4350062147680602
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 20.439273418022083,
+   "tok_per_solved": 17216.0,
+   "sec_per_solved": 842.3,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 4.27401163480945,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 33,
+    "n_eligible": 9,
+    "noop_count": 3,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE"
+    ]
+   }
+  },
+  {
+   "cell": "agy-gpt-oss-120b",
+   "model": "gpt-oss-120b",
+   "profile": "agy/gpt-oss-120b",
+   "source": "survey-p4c",
+   "display": "gpt-oss-120b · Direct",
+   "identity": {
+    "canonical_model": "gpt-oss-120b",
+    "access": "direct-api"
+   },
+   "tags": null,
+   "harness": "?",
+   "machine": "?",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 40,
+   "n_passed": 4,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 18,
+   "noedit_rate": 0.45,
+   "headline": 0.1,
+   "headline_ci": [
+    0.03957888759557486,
+    0.23052074380473897
+   ],
+   "capability_est": 0.1,
+   "capability_est_ci": [
+    0.03957888759557486,
+    0.23052074380473897
+   ],
+   "status_counts": {
+    "ok": 40,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": null,
+   "tok_per_solved": null,
+   "sec_per_solved": 1057.3275,
+   "usd_per_solved": null,
+   "solved_per_hour": 3.404810713804379,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 45,
+    "n_eligible": 40,
+    "noop_count": 18,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE"
+    ]
+   }
+  },
+  {
+   "cell": "results-llamacpp-vulkan-qwen3-30b-a3b-qwen3-30b-a3b-instruct-2507",
+   "model": "qwen3-30b-a3b-instruct-2507",
+   "profile": "llamacpp-vulkan-qwen3-30b-a3b",
+   "source": "results",
+   "display": "Qwen3-30B-A3B",
+   "identity": {
+    "canonical_model": "qwen3-30b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cachyos-max395",
+   "owner": "cookys",
+   "ts": "20260617004410",
+   "n_graded": 31,
+   "n_passed": 3,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 10,
+   "noedit_rate": 0.3225806451612903,
+   "headline": 0.0967741935483871,
+   "headline_ci": [
+    0.03346403609464399,
+    0.2490028999817704
+   ],
+   "capability_est": 0.0967741935483871,
+   "capability_est_ci": [
+    0.03346403609464399,
+    0.2490028999817704
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 19.72638852274777,
+   "tok_per_solved": 47391.333333333336,
+   "sec_per_solved": 2402.4333333333334,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 1.4984807070608965,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 25,
+    "n_eligible": 24,
+    "noop_count": 6,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-lemonade-qwen3-30b-a3b-rocm-Qwen3-30B-A3B-Instruct-2507-GGUF",
+   "model": "Qwen3-30B-A3B-Instruct-2507-GGUF",
+   "profile": "lemonade-qwen3-30b-a3b-rocm",
+   "source": "results",
+   "display": "Qwen3-30B-A3B",
+   "identity": {
+    "canonical_model": "qwen3-30b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cachyos-max395",
+   "owner": "?",
+   "ts": "20260611215518",
+   "n_graded": 21,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 19,
+   "comparable": false,
+   "n_noedit": 8,
+   "noedit_rate": 0.38095238095238093,
+   "headline": 0.09523809523809523,
+   "headline_ci": [
+    0.026518208796947246,
+    0.2891458386074067
+   ],
+   "capability_est": 0.09523809523809523,
+   "capability_est_ci": [
+    0.026518208796947246,
+    0.2891458386074067
+   ],
+   "status_counts": {
+    "ok": 21,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 21,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 4.596128779979145,
+   "tok_per_solved": 35261.5,
+   "sec_per_solved": 7672.0,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 0.4692387904066736,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 33,
+    "n_eligible": 15,
+    "noop_count": 5,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-glm47flash-local-_data_models_GLM-4.7-Flash-Q4_GLM-4.7-Flash-Q4_K_M.gguf",
+   "model": "GLM-4.7-Flash-Q4_K_M",
+   "profile": "bake-off-glm47flash-local",
+   "source": "results",
+   "display": "GLM-4.7-Flash",
+   "identity": {
+    "canonical_model": "glm-4.7-flash",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260617152329",
+   "n_graded": 12,
+   "n_passed": 1,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 28,
+   "comparable": false,
+   "n_noedit": 4,
+   "noedit_rate": 0.3333333333333333,
+   "headline": 0.08333333333333333,
+   "headline_ci": [
+    0.014864709450773478,
+    0.35388592179859524
+   ],
+   "capability_est": 0.09090909090909091,
+   "capability_est_ci": [
+    0.01623175226282597,
+    0.3773646254862038
+   ],
+   "status_counts": {
+    "ok": 11,
+    "infra_error": 0,
+    "verify_error": 1
+   },
+   "status_denominator": 12,
+   "suspect_error_count": 1,
+   "suspect_error_rate": 0.08333333333333333,
+   "integrity": "ok",
+   "pps": 7.219073691625442,
+   "tok_per_solved": 90185.0,
+   "sec_per_solved": 12492.6,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 0.2881705969934201,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": null,
+    "n_eligible": 0,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-gemma-4-12b-fixed-thinkoff-local-Gemma-4-12B-it",
+   "model": "Gemma-4-12B-it",
+   "profile": "bake-off-gemma-4-12b-fixed-thinkoff-local",
+   "source": "results",
+   "display": "Gemma-4-12B",
+   "identity": {
+    "canonical_model": "gemma-4-12b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "?",
+   "ts": "20260605005227",
+   "n_graded": 27,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 13,
+   "comparable": false,
+   "n_noedit": 17,
+   "noedit_rate": 0.6296296296296297,
+   "headline": 0.07407407407407407,
+   "headline_ci": [
+    0.020554221697383523,
+    0.2336997729073062
+   ],
+   "capability_est": 0.07407407407407407,
+   "capability_est_ci": [
+    0.020554221697383523,
+    0.2336997729073062
+   ],
+   "status_counts": {
+    "ok": 27,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 27,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 45.30893055695946,
+   "tok_per_solved": 179296.5,
+   "sec_per_solved": 3957.2000000000003,
+   "usd_per_solved": null,
+   "solved_per_hour": 0.9097341554634589,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 50,
+    "n_eligible": 14,
+    "noop_count": 7,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-gemma-4-12b-fixed-local-Gemma-4-12B-it",
+   "model": "Gemma-4-12B-it",
+   "profile": "bake-off-gemma-4-12b-fixed-local",
+   "source": "results",
+   "display": "Gemma-4-12B",
+   "identity": {
+    "canonical_model": "gemma-4-12b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "?",
+   "ts": "20260605041621",
+   "n_graded": 27,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 13,
+   "comparable": false,
+   "n_noedit": 15,
+   "noedit_rate": 0.5555555555555556,
+   "headline": 0.07407407407407407,
+   "headline_ci": [
+    0.020554221697383523,
+    0.2336997729073062
+   ],
+   "capability_est": 0.07407407407407407,
+   "capability_est_ci": [
+    0.020554221697383523,
+    0.2336997729073062
+   ],
+   "status_counts": {
+    "ok": 27,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 27,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 50.197704167057346,
+   "tok_per_solved": 562141.5,
+   "sec_per_solved": 11198.55,
+   "usd_per_solved": null,
+   "solved_per_hour": 0.32147019033714186,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 80,
+    "n_eligible": 10,
+    "noop_count": 8,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-mlx-qwen3-30b-a3b-qwen3-30b-a3b-instruct-2507-mlx-4bit",
+   "model": "qwen3-30b-a3b-instruct-2507-mlx-4bit",
+   "profile": "mlx-qwen3-30b-a3b",
+   "source": "results",
+   "display": "Qwen3-30B-A3B",
+   "identity": {
+    "canonical_model": "qwen3-30b-a3b",
+    "access": "local"
+   },
+   "tags": null,
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "mac165s-MacBook-Pro.local",
+   "owner": "cyberbsd",
+   "ts": "20260618210645",
+   "n_graded": 31,
+   "n_passed": 2,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 11,
+   "noedit_rate": 0.3548387096774194,
+   "headline": 0.06451612903225806,
+   "headline_ci": [
+    0.017874407775063147,
+    0.20718988318746434
+   ],
+   "capability_est": 0.06451612903225806,
+   "capability_est_ci": [
+    0.017874407775063147,
+    0.20718988318746434
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 26.606351777003972,
+   "tok_per_solved": 760645.0,
+   "sec_per_solved": 28588.85,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 0.12592321831763084,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 33,
+    "n_eligible": 27,
+    "noop_count": 9,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-glm47flash-local-_data_models_GLM-4.7-Flash-Q4_GLM-4.7-Flash-Q4_K_M.gguf-20260615-191823.nonrtr-superseded",
+   "model": "GLM-4.7-Flash-Q4_K_M",
+   "profile": "bake-off-glm47flash-local",
+   "source": "results",
+   "display": "GLM-4.7-Flash",
+   "identity": {
+    "canonical_model": "glm-4.7-flash",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-cuda",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 27,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 13,
+   "comparable": false,
+   "n_noedit": 18,
+   "noedit_rate": 0.6666666666666666,
+   "headline": 0.037037037037037035,
+   "headline_ci": [
+    0.006567976533097597,
+    0.1828385393415652
+   ],
+   "capability_est": 0.037037037037037035,
+   "capability_est_ci": [
+    0.006567976533097597,
+    0.1828385393415652
+   ],
+   "status_counts": {
+    "ok": 27,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 27,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 20.514594912945856,
+   "tok_per_solved": 334392.0,
+   "sec_per_solved": 16300.199999999999,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 0.22085618581367103,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 2,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-glm47flash-local-GLM-4.7-Flash-Q4_K_M.gguf-20260517-095011.nonrtr-superseded",
+   "model": "GLM-4.7-Flash-Q4_K_M.gguf",
+   "profile": "bake-off-glm47flash-local",
+   "source": "results",
+   "display": "GLM-4.7-Flash",
+   "identity": {
+    "canonical_model": "glm-4.7-flash",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "?",
+   "ts": "00000000000000",
+   "n_graded": 31,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 21,
+   "noedit_rate": 0.6774193548387096,
+   "headline": 0.03225806451612903,
+   "headline_ci": [
+    0.00571707408694444,
+    0.16194457176169622
+   ],
+   "capability_est": 0.03225806451612903,
+   "capability_est_ci": [
+    0.00571707408694444,
+    0.16194457176169622
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 44.824669875899836,
+   "tok_per_solved": 202993.0,
+   "sec_per_solved": 4528.6,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 0.7949476659453252,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 0,
+    "n_eligible": 1,
+    "noop_count": 0,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-lemonade-qwen3-30b-a3b-Qwen3-30B-A3B-Instruct-2507-GGUF",
+   "model": "Qwen3-30B-A3B-Instruct-2507-GGUF",
+   "profile": "lemonade-qwen3-30b-a3b",
+   "source": "results",
+   "display": "Qwen3-30B-A3B",
+   "identity": {
+    "canonical_model": "qwen3-30b-a3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cachyos-max395",
+   "owner": "?",
+   "ts": "20260611170859",
+   "n_graded": 31,
+   "n_passed": 1,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 10,
+   "noedit_rate": 0.3225806451612903,
+   "headline": 0.03225806451612903,
+   "headline_ci": [
+    0.00571707408694444,
+    0.16194457176169622
+   ],
+   "capability_est": 0.03225806451612903,
+   "capability_est_ci": [
+    0.00571707408694444,
+    0.16194457176169622
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 22.602530896174056,
+   "tok_per_solved": 152714.0,
+   "sec_per_solved": 6756.5,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 0.5328202471693925,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 27,
+    "n_eligible": 22,
+    "noop_count": 6,
+    "verdict": "CLEAN",
+    "flags": []
+   }
+  },
+  {
+   "cell": "results-vibethinker-3b-local-VibeThinker-3B.Q8_0.gguf",
+   "model": "VibeThinker-3B.Q8_0.gguf",
+   "profile": "vibethinker-3b-local",
+   "source": "results",
+   "display": "VibeThinker-3B",
+   "identity": {
+    "canonical_model": "vibethinker-3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260704035625",
+   "n_graded": 40,
+   "n_passed": 1,
+   "n_agent_error": 3,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 0,
+   "comparable": true,
+   "n_noedit": 24,
+   "noedit_rate": 0.6,
+   "headline": 0.025,
+   "headline_ci": [
+    0.0044267174077949265,
+    0.1288165948800778
+   ],
+   "capability_est": 0.02702702702702703,
+   "capability_est_ci": [
+    0.00478685105490774,
+    0.13824378437563367
+   ],
+   "status_counts": {
+    "ok": 37,
+    "infra_error": 0,
+    "verify_error": 3
+   },
+   "status_denominator": 40,
+   "suspect_error_count": 3,
+   "suspect_error_rate": 0.075,
+   "integrity": "ok",
+   "pps": 70.35538397828817,
+   "tok_per_solved": 2055721.0,
+   "sec_per_solved": 29219.1,
+   "usd_per_solved": 0.0,
+   "solved_per_hour": 0.1232070803002146,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 60,
+    "n_eligible": 20,
+    "noop_count": 12,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-huihui-abliterated-local-_home_cookys_models_Huihui-Qwen3.6-27B-abliterated-MTP-Q4_Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+   "model": "Huihui-Qwen3.6-27B-abliterated-Q4_K",
+   "profile": "bake-off-huihui-abliterated-local",
+   "source": "results",
+   "display": "Qwen3.6-27B · huihui",
+   "identity": {
+    "canonical_model": "huihui-3.6-27b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "lineage": "abliterated"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "?",
+   "ts": "20260520115132",
+   "n_graded": 1,
+   "n_passed": 0,
+   "n_agent_error": 1,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 39,
+   "comparable": false,
+   "n_noedit": 0,
+   "noedit_rate": 0.0,
+   "headline": 0.0,
+   "headline_ci": [
+    0.0,
+    0.7934567085261071
+   ],
+   "capability_est": null,
+   "capability_est_ci": [
+    0.0,
+    1.0
+   ],
+   "status_counts": {
+    "ok": 1,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 1,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 1.2283184556208722,
+   "tok_per_solved": null,
+   "sec_per_solved": null,
+   "usd_per_solved": null,
+   "solved_per_hour": 0.0,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": null,
+    "n_eligible": 0,
+    "noop_count": 0,
+    "verdict": "INFRA",
+    "flags": [
+     "INFRA"
+    ]
+   }
+  },
+  {
+   "cell": "results-bake-off-gemma-4-12b-fixed-thinkoff-local-gemma-4-12b-it-Q4_K_M.gguf",
+   "model": "gemma-4-12b-it-Q4_K_M.gguf",
+   "profile": "bake-off-gemma-4-12b-fixed-thinkoff-local",
+   "source": "results",
+   "display": "Gemma-4-12B",
+   "identity": {
+    "canonical_model": "gemma-4-12b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off"
+   },
+   "harness": "scripts/run-swe-personal.py@4",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260709133056",
+   "n_graded": 9,
+   "n_passed": 0,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 31,
+   "comparable": false,
+   "n_noedit": 3,
+   "noedit_rate": 0.3333333333333333,
+   "headline": 0.0,
+   "headline_ci": [
+    0.0,
+    0.2991527535509594
+   ],
+   "capability_est": 0.0,
+   "capability_est_ci": [
+    0.0,
+    0.2991527535509594
+   ],
+   "status_counts": {
+    "ok": 9,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 9,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 38.69180316117702,
+   "tok_per_solved": null,
+   "sec_per_solved": null,
+   "usd_per_solved": null,
+   "solved_per_hour": 0.0,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 25,
+    "n_eligible": 4,
+    "noop_count": 1,
+    "verdict": "CAPPED",
+    "flags": [
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-vibethinker-3b-local-vibethinker-3b",
+   "model": "vibethinker-3b",
+   "profile": "vibethinker-3b-local",
+   "source": "results",
+   "display": "VibeThinker-3B",
+   "identity": {
+    "canonical_model": "vibethinker-3b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local"
+   },
+   "harness": "scripts/run-swe-personal.py@2",
+   "machine": "cookys-gentoo",
+   "owner": "cookys",
+   "ts": "20260617180616",
+   "n_graded": 31,
+   "n_passed": 0,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 9,
+   "comparable": false,
+   "n_noedit": 25,
+   "noedit_rate": 0.8064516129032258,
+   "headline": 0.0,
+   "headline_ci": [
+    0.0,
+    0.11025900073475384
+   ],
+   "capability_est": 0.0,
+   "capability_est_ci": [
+    0.0,
+    0.11025900073475384
+   ],
+   "status_counts": {
+    "ok": 31,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 31,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 70.69692688819278,
+   "tok_per_solved": null,
+   "sec_per_solved": null,
+   "usd_per_solved": null,
+   "solved_per_hour": 0.0,
+   "solved_per_usd": null,
+   "price_known": false,
+   "agency": {
+    "noop_pct": 86,
+    "n_eligible": 14,
+    "noop_count": 12,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  },
+  {
+   "cell": "results-minimax-m3-moq3-64k-local-prequal-minimax-m3-moq3-local",
+   "model": "minimax-m3-moq3-local",
+   "profile": "minimax-m3-moq3-64k-local-prequal",
+   "source": "results",
+   "display": "minimax-m3-moq3-64k-local-prequal",
+   "identity": {
+    "canonical_model": "minimax-m3",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "MoQ-3.0"
+   },
+   "harness": "scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260708182225",
+   "n_graded": 7,
+   "n_passed": 0,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 33,
+   "comparable": false,
+   "n_noedit": 5,
+   "noedit_rate": 0.7142857142857143,
+   "headline": 0.0,
+   "headline_ci": [
+    0.0,
+    0.35433884297520657
+   ],
+   "capability_est": 0.0,
+   "capability_est_ci": [
+    0.0,
+    0.35433884297520657
+   ],
+   "status_counts": {
+    "ok": 7,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 7,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 28.192329385222784,
+   "tok_per_solved": null,
+   "sec_per_solved": null,
+   "usd_per_solved": null,
+   "solved_per_hour": 0.0,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 100,
+    "n_eligible": 5,
+    "noop_count": 5,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE"
+    ]
+   }
+  },
+  {
+   "cell": "results-minimax-m3-reap50-128k-sglang-prequal-minimax-m3-reap50-local",
+   "model": "minimax-m3-reap50-local",
+   "profile": "minimax-m3-reap50-128k-sglang-prequal",
+   "source": "results",
+   "display": "minimax-m3-reap50-128k-sglang-prequal",
+   "identity": {
+    "canonical_model": "minimax-m3",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "off",
+    "draft": "none",
+    "lineage": "pruned",
+    "role": "candidate",
+    "quant": "NVFP4-REAP50"
+   },
+   "harness": "scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260708200341",
+   "n_graded": 7,
+   "n_passed": 0,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 33,
+   "comparable": false,
+   "n_noedit": 5,
+   "noedit_rate": 0.7142857142857143,
+   "headline": 0.0,
+   "headline_ci": [
+    0.0,
+    0.35433884297520657
+   ],
+   "capability_est": 0.0,
+   "capability_est_ci": [
+    0.0,
+    0.35433884297520657
+   ],
+   "status_counts": {
+    "ok": 7,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 7,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 36.053365193150135,
+   "tok_per_solved": null,
+   "sec_per_solved": null,
+   "usd_per_solved": null,
+   "solved_per_hour": 0.0,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 83,
+    "n_eligible": 6,
+    "noop_count": 5,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE"
+    ]
+   }
+  },
+  {
+   "cell": "results-nemotron-super-120b-a12b-nvfp4-mtp-128k-local-prequal-nemotron-super-120b-a12b-nvfp4-local",
+   "model": "nemotron-super-120b-a12b-nvfp4-local",
+   "profile": "nemotron-super-120b-a12b-nvfp4-mtp-128k-local-prequal",
+   "source": "results",
+   "display": "Nemotron Super 120B-A12B",
+   "identity": {
+    "canonical_model": "nemotron-super-120b-a12b",
+    "access": "local"
+   },
+   "tags": {
+    "placement": "local",
+    "thinking": "on",
+    "draft": "mtp",
+    "lineage": "base",
+    "role": "candidate",
+    "quant": "NVFP4"
+   },
+   "harness": "scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60",
+   "machine": "cookys-cuda",
+   "owner": "cookys",
+   "ts": "20260709061105",
+   "n_graded": 7,
+   "n_passed": 0,
+   "n_agent_error": 0,
+   "canonical_version": "40t-6604ff64",
+   "n_canon": 40,
+   "owed": 33,
+   "comparable": false,
+   "n_noedit": 2,
+   "noedit_rate": 0.2857142857142857,
+   "headline": 0.0,
+   "headline_ci": [
+    0.0,
+    0.35433884297520657
+   ],
+   "capability_est": 0.0,
+   "capability_est_ci": [
+    0.0,
+    0.35433884297520657
+   ],
+   "status_counts": {
+    "ok": 7,
+    "infra_error": 0,
+    "verify_error": 0
+   },
+   "status_denominator": 7,
+   "suspect_error_count": 0,
+   "suspect_error_rate": 0.0,
+   "integrity": "ok",
+   "pps": 126.38267600022766,
+   "tok_per_solved": null,
+   "sec_per_solved": null,
+   "usd_per_solved": null,
+   "solved_per_hour": 0.0,
+   "solved_per_usd": null,
+   "price_known": true,
+   "agency": {
+    "noop_pct": 100,
+    "n_eligible": 1,
+    "noop_count": 1,
+    "verdict": "TOOL-USE",
+    "flags": [
+     "TOOL-USE",
+     "CAPPED"
+    ]
+   }
+  }
+ ],
+ "dropped_older": [
+  "results-m27-highspeed-minimax-MiniMax-M2.7-highspeed",
+  "results-mimo-v25-opencode-mimo-v2.5",
+  "results-m27-highspeed-minimax-MiniMax-M2.7-highspeed",
+  "results-bake-off-heretic-thinkon-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+  "results-bake-off-heretic-thinkon-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+  "results-bake-off-heretic-thinkon-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf",
+  "results-bake-off-huihui-mtp-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+  "results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+  "results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+  "results-bake-off-glm47flash-local-_data_models_GLM-4.7-Flash-Q4_GLM-4.7-Flash-Q4_K_M.gguf",
+  "results-m27-highspeed-minimax-MiniMax-M2.7-highspeed",
+  "results-m27-highspeed-minimax-MiniMax-M2.7-highspeed",
+  "results-m3-fair-MiniMax-M3",
+  "results-m3-fair-MiniMax-M3",
+  "results-m27-highspeed-minimax-32k-MiniMax-M2.7-highspeed",
+  "results-m27-highspeed-minimax-MiniMax-M2.7-highspeed",
+  "results-bake-off-qwen35a3b-local-_data_models_Qwen3.6-35B-A3B-GGUF_Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+  "results-bake-off-huihui-mtp-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+  "results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf",
+  "results-bake-off-huihui-mtp-thinkoff-v2-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+  "results-bake-off-huihui-mtp-thinking-on-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+  "results-bake-off-huihui-thinking-on-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+  "results-bake-off-huihui-abliterated-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf",
+  "results-bake-off-qwopus-mtp-thinking-off-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+  "results-bake-off-qwopus-mtp-thinking-on-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+  "results-bake-off-qwopus-mtp-thinkon-v2-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+  "results-bake-off-qwopus-thinking-off-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+  "results-bake-off-qwopus-thinking-on-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf",
+  "results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf",
+  "results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf",
+  "results-bake-off-gemma-4-12b-fixed-local-gemma-4-12b-it-Q4_K_M.gguf",
+  "results-bake-off-gemma-4-12b-fixed-thinkoff-local-gemma-4-12b-it-Q4_K_M.gguf",
+  "results-bake-off-gemma4-coder-fable5-thinkon-local-gemma4-coding-Q8_0.gguf"
+ ],
+ "current_exam": "40t-6604ff64",
+ "current_exam_label": "cookys-frontier v1.0",
+ "current_exam_name": "cookys-frontier",
+ "current_exam_n_tasks": 40,
+ "n_canon": 40,
+ "exam_versions": [
+  {
+   "version": "40t-6604ff64",
+   "label": "cookys-frontier v1.0",
+   "name": "cookys-frontier",
+   "date": "2026-06-27",
+   "note": "Current canonical frontier exam after 40-task rebaseline",
+   "n_tasks": 40,
+   "current": true
+  }
+ ],
+ "comparable_min": 36,
+ "version_aware": true
+}

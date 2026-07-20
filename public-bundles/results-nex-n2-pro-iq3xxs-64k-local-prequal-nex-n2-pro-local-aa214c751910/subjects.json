@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-nex-n2-pro-iq3xxs-64k-local-prequal-nex-n2-pro-local-aa214c751910","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60","model":"nex-n2-pro","policy":"dashboard-public-feed","subject_digest":"f90a7808326dfd31bd849af67790f16c1cb177f46dab6b67c1265ae79e09d846"}]

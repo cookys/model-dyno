@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-vibethinker-3b-local-VibeThinker-3B.Q8_0.gguf-ff3d22dcbdac","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"vibethinker-3b","policy":"dashboard-public-feed","subject_digest":"3ac4ff2171a5fc41e40b9ca15a69b8d8ffbda28bfa8091a60d16625696ee6c65"}]

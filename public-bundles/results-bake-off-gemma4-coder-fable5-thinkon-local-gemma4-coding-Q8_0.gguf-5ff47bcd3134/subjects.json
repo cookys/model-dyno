@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-bake-off-gemma4-coder-fable5-thinkon-local-gemma4-coding-Q8_0.gguf-5ff47bcd3134","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"gemma4-coder","policy":"dashboard-public-feed","subject_digest":"e2729bfa28a38854d33b3277f386e7039b8788c5592870384dfa1fdb7f82c2be"}]

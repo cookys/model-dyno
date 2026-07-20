@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-mimo-fair-MiMo-V2.5-0d7ed3a999cb","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"mimo-v2.5","policy":"dashboard-public-feed","subject_digest":"f818277d57e5b27ff7f97fcbbfecb51a21b2c8803ed5672a60a92a4eb7b78ed6"}]

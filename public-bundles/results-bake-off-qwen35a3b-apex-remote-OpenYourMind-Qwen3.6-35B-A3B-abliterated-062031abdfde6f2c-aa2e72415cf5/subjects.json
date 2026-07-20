@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-bake-off-qwen35a3b-apex-remote-OpenYourMind-Qwen3.6-35B-A3B-abliterated-062031abdfde6f2c-aa2e72415cf5","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"qwen3.6-35b-a3b","policy":"dashboard-public-feed","subject_digest":"d8d62b7301af74cd9edd927e78504af855a448bd97300dfccd844d35f5a569d6"}]

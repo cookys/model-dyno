@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-huihui-mtp-runswe-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-83a6c55c8a00","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"huihui-3.6-27b","policy":"dashboard-public-feed","subject_digest":"893930103f7741c824793cb0aa725e15c589a53ce917a6b43e33d200d67b8a0b"}]

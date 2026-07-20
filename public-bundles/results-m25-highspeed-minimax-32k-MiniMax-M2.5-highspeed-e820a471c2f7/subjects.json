@@ -1,0 +1,1 @@
+[{"backend":"direct-api","display_slug":"results-m25-highspeed-minimax-32k-MiniMax-M2.5-highspeed-e820a471c2f7","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"minimax-m2.5","policy":"dashboard-public-feed","subject_digest":"bacb3b3a3278a8c301cc10fe376a6edab357e4aa334f5430d460567af307a102"}]

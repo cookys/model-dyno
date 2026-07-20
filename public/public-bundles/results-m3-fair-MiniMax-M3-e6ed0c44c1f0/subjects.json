@@ -1,0 +1,1 @@
+[{"backend":"direct-api","display_slug":"results-m3-fair-MiniMax-M3-e6ed0c44c1f0","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"minimax-m3","policy":"dashboard-public-feed","subject_digest":"d6fe3f5240f6651d4ccc1ac5b332f5d949d5a6f45e50fd82117db21a08e63cdc"}]

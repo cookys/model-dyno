@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-deepseek-v4-flash-lucifer-low-local-DeepSeek-V4-Flash-444626a079ce","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"deepseek-v4-flash","policy":"dashboard-public-feed","subject_digest":"73e0871a12f2aaadc3b959f2090479c9dc43208a6261fd70db3d4656aa77eed2"}]

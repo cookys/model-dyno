@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-lemonade-qwen3-30b-a3b-Qwen3-30B-A3B-Instruct-2507-GGUF-c6b598f0cfe2","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@2","model":"qwen3-30b-a3b","policy":"dashboard-public-feed","subject_digest":"ed8e766a87339c759b235494842dcd5406d6860e922d975c2ce8a6db45d9493e"}]

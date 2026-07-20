@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-bake-off-huihui-mtp-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-7e2c39bb9f7a","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@2","model":"huihui-3.6-27b","policy":"dashboard-public-feed","subject_digest":"95c136c39f83bf46c080f8f1757c9331d70c3a5836e3ec610792a7e61ad498c0"}]

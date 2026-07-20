@@ -1,0 +1,10 @@
+{
+  "schema": "model_dyno_website_source_provenance.v1",
+  "source_repository": "git@github.com:cookys/llm-playground.git",
+  "source_commit": "df73622b4915ccb5ce758e2b202ad055d97ada3d",
+  "source_tree": "1cf97987db5a48310582f6fca2b5fc5d1c3af0b8",
+  "source_path": "dashboard",
+  "publication_snapshot_commit": "ce919ddfca0caed6d3a797549b90babb97a93ff2",
+  "publication_snapshot_path": "public-bundles",
+  "public_release": true
+}

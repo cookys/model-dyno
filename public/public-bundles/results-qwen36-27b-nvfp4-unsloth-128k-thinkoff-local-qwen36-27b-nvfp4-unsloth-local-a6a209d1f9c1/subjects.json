@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local-a6a209d1f9c1","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"qwen36-27b-nvfp4-unsloth","policy":"dashboard-public-feed","subject_digest":"b48efad9b7edb08e534653a6af66b098212b6ee16c66117faaeaf4a688b668bf"}]

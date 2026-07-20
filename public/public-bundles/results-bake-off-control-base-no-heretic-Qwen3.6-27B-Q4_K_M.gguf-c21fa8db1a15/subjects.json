@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-bake-off-control-base-no-heretic-Qwen3.6-27B-Q4_K_M.gguf-c21fa8db1a15","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@2","model":"qwen3.6-27b","policy":"dashboard-public-feed","subject_digest":"a72b88061a6b0c82b1ad4082421b6f9a81775bc49507f92ec802c6b559f2327d"}]

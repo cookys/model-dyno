@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-minimax-m3-reap50-128k-sglang-prequal-minimax-m3-reap50-local-5265f907e2cd","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4+repeatcmd5+nocmd3+maxsteps60","model":"minimax-m3","policy":"dashboard-public-feed","subject_digest":"6ad6db172cc914de7d25260bde838f099005ca4bf1eced580677f95b76fb392e"}]

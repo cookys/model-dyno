@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-agents-a1-q4km-64k-local-Agents-A1-Q4_K_M-dcfd3f43ccd2","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"agents-a1","policy":"dashboard-public-feed","subject_digest":"10834e9e64d92c7f780add4f5687a5c207299bb4c83c6b1215066f3b16ca88ed"}]

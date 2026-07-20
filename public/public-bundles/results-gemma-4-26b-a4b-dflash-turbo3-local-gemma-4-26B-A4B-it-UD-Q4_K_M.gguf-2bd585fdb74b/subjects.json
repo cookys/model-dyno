@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-gemma-4-26b-a4b-dflash-turbo3-local-gemma-4-26B-A4B-it-UD-Q4_K_M.gguf-2bd585fdb74b","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@5","model":"gemma-4-26b-a4b","policy":"dashboard-public-feed","subject_digest":"d0b0f0547a4e0501515c7a0b1f81edf74ee9b584d56b043b92dac1d63afd2418"}]

@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen3.6-35b-a3b-mtp-runswe-local-Qwen3.6-35B-A3B-UD-IQ4_XS.gguf-65be21056d92","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"qwen3.6-35b-a3b","policy":"dashboard-public-feed","subject_digest":"d8d62b7301af74cd9edd927e78504af855a448bd97300dfccd844d35f5a569d6"}]

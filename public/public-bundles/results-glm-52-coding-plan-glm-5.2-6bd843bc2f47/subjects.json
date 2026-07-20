@@ -1,0 +1,1 @@
+[{"backend":"direct-api","display_slug":"results-glm-52-coding-plan-glm-5.2-6bd843bc2f47","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"glm-5.2","policy":"dashboard-public-feed","subject_digest":"dec2163b216d028d67bb5fb8a239edefe926d98e05472d51fabae982227f2eb6"}]

@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-bake-off-gemma-4-12b-fixed-thinkoff-local-gemma-4-12b-it-Q4_K_M.gguf-723ed5728502","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"gemma-4-12b","policy":"dashboard-public-feed","subject_digest":"bb964fa9e17aad899f43add2ffb3de66f1d1113332d5873caa045d6189f98b6d"}]

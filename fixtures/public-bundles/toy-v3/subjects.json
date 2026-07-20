@@ -1,0 +1,1 @@
+[{"backend":"local-process","display_slug":"dummy__model-dyno-eval-dummy__local-process__deterministic-toy__recommended_stack","evaluation_mode":"recommended_stack","harness":"model-dyno-eval-dummy","model":"dummy","policy":"deterministic-toy","subject_digest":"dedb5e316fbe7815b03f82fb1faefe2cdeba9c55b55deea1df5071c265440d70"}]

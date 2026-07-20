@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-bake-off-glm47flash-local-GLM-4.7-Flash-Q4_K_M.gguf-20260517-095011.nonrtr-superseded-3a7869571b5b","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@2","model":"glm-4.7-flash","policy":"dashboard-public-feed","subject_digest":"f3635b39427a8bf42227cff345d47194ff5a45ef93f064cd1c8654de1aa6eda8"}]

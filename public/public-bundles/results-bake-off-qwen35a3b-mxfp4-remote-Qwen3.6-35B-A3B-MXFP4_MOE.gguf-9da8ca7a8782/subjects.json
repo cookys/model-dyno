@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf-9da8ca7a8782","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@3","model":"qwen3.6-35b-a3b","policy":"dashboard-public-feed","subject_digest":"8c0e7530d46109463bd1b2164031db0f3ecbf5fd0fb2ccf5d4df5ebc9f5b7ccb"}]

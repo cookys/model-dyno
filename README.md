@@ -16,9 +16,10 @@ test -f dist/index.html
 test -f dist/public-bundles/index.json
 ```
 
-Production deployment is deliberate/manual: run the `deploy-pages` workflow after a verified
-source or public-data update. This preserves the pre-migration policy of not rebuilding on every
-push while moving deployment ownership into this public source repository.
+Source deployment is deliberate/manual: run the `deploy-pages` workflow after a verified source
+update. A push that changes only the cleared `public/public-bundles/` snapshot deploys
+automatically; such pushes are produced by the private repository's own manually triggered publish
+workflow. Ordinary source pushes do not spend deployment minutes.
 
 The website consumes only the five-file PublicBundle projection under
 `public/public-bundles/`. It does not read private `llm-playground` source, transcripts,

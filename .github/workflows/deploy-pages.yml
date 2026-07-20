@@ -1,8 +1,13 @@
 name: deploy-pages
 
 on:
-  # Manual-only to preserve the existing llm-playground publication policy and
-  # avoid spending Actions minutes on every public-data snapshot commit.
+  # Source changes remain deliberate/manual. The private producer's own manual
+  # publish workflow may push only a cleared PublicBundle snapshot; that path
+  # automatically deploys the resulting public-data update.
+  push:
+    branches: [main]
+    paths:
+      - 'public/public-bundles/**'
   workflow_dispatch: {}
 
 permissions:

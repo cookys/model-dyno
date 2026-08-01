@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-laguna-xs21-bf16-256k-vllm-local-laguna-bc1f434f8a1a","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@5","model":"laguna-xs-2.1","policy":"dashboard-public-feed","subject_digest":"5b01d9360a8493ad6d8d7684f25c27d05c3e1eacbf1e3ea6963e06dbdc380915"}]

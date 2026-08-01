@@ -24,6 +24,17 @@
     },
     {
       "access_label": "",
+      "base_url": "./public-bundles/results-v4-flash-opencode-deepseek-v4-flash-9884ac3b5626/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "deepseek-v4-flash · OpenCode",
+      "machine": "cookys-7840hs",
+      "operator": "",
+      "owner": "cookys",
+      "publisher": ""
+    },
+    {
+      "access_label": "",
       "base_url": "./public-bundles/anthropic-opus-4.8-5c268542aed8/",
       "current": true,
       "id": "40t-6604ff64",
@@ -72,7 +83,7 @@
       "current": true,
       "id": "40t-6604ff64",
       "label": "qwen3.8-max · qoder-cli",
-      "machine": "cookys-cuda",
+      "machine": "cookys-linux-7840hs",
       "operator": "",
       "owner": "cookys",
       "publisher": ""
@@ -105,6 +116,17 @@
       "current": true,
       "id": "40t-6604ff64",
       "label": "gemini-3.5-flash · Direct",
+      "machine": "?",
+      "operator": "",
+      "owner": "?",
+      "publisher": ""
+    },
+    {
+      "access_label": "",
+      "base_url": "./public-bundles/anthropic-opus-5-faee9cb3dad9/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "opus-5 · Direct",
       "machine": "?",
       "operator": "",
       "owner": "?",
@@ -281,17 +303,6 @@
       "current": true,
       "id": "40t-6604ff64",
       "label": "hy3-mxfp4-98k-mtp-local-4kout",
-      "machine": "cookys-cuda",
-      "operator": "",
-      "owner": "cookys",
-      "publisher": ""
-    },
-    {
-      "access_label": "",
-      "base_url": "./public-bundles/results-v4-flash-opencode-deepseek-v4-flash-9884ac3b5626/",
-      "current": true,
-      "id": "40t-6604ff64",
-      "label": "deepseek-v4-flash · OpenCode",
       "machine": "cookys-cuda",
       "operator": "",
       "owner": "cookys",
@@ -497,6 +508,17 @@
     },
     {
       "access_label": "",
+      "base_url": "./public-bundles/results-gemini-35-flash-lite-direct-gemini-3.5-flash-lite-e390dbbbf2ae/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "gemini-3.5-flash-lite · Direct",
+      "machine": "cookys-7840hs",
+      "operator": "",
+      "owner": "cookys",
+      "publisher": ""
+    },
+    {
+      "access_label": "",
       "base_url": "./public-bundles/anthropic-haiku-4.5-89139150c79f/",
       "current": true,
       "id": "40t-6604ff64",
@@ -535,6 +557,17 @@
       "id": "40t-6604ff64",
       "label": "Qwen3.6-35B-A3B",
       "machine": "cookys-7840hs",
+      "operator": "",
+      "owner": "cookys",
+      "publisher": ""
+    },
+    {
+      "access_label": "",
+      "base_url": "./public-bundles/results-laguna-xs21-bf16-256k-vllm-local-laguna-bc1f434f8a1a/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "Laguna XS 2.1",
+      "machine": "cookys-cuda",
       "operator": "",
       "owner": "cookys",
       "publisher": ""
@@ -601,6 +634,17 @@
       "id": "40t-6604ff64",
       "label": "Qwen3.6-27B",
       "machine": "cookys-gentoo",
+      "operator": "",
+      "owner": "cookys",
+      "publisher": ""
+    },
+    {
+      "access_label": "",
+      "base_url": "./public-bundles/results-agy-gemini-3.6-flash-high-9311f745b041/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "gemini-3.6-flash-high · Direct",
+      "machine": "cookys-linux-7840hs",
       "operator": "",
       "owner": "cookys",
       "publisher": ""
@@ -678,6 +722,17 @@
       "id": "40t-6604ff64",
       "label": "Nex-N2-Pro",
       "machine": "cookys-cuda",
+      "operator": "",
+      "owner": "cookys",
+      "publisher": ""
+    },
+    {
+      "access_label": "",
+      "base_url": "./public-bundles/results-devstral2-24b-thinkoff-local-Devstral-Small-2-24B-Instruct-2512-Q4_K_M.gguf-de4467c386e6/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "devstral2-24b-thinkoff",
+      "machine": "cookys-gentoo",
       "operator": "",
       "owner": "cookys",
       "publisher": ""
@@ -1172,7 +1227,7 @@
       "version": "40t-6604ff64"
     }
   ],
-  "generated_at": "2026-07-20T10:43:16Z",
+  "generated_at": "2026-08-01T17:56:37Z",
   "n_canon": 40,
   "schema_version": "dashboard_public_bundle_feed.v1",
   "task_domains_url": "./public-bundles/task-domains.json",

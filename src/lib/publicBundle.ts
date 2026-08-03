@@ -261,7 +261,6 @@ function tokensPerSolved(usage: JsonObject, passed: number): number | undefined 
 
 /** Plan 051 §2.3 formula contract — never 0/Infinity; gate failures → undefined. */
 function derivePerfMetrics(
-  aggregate: JsonObject,
   usage: JsonObject,
   perf: JsonObject,
   nPassed: number,
@@ -356,7 +355,7 @@ export function projectScorecardRowsFromPublicBundle(
       ?? boolOrNull(comparisonKey.comparable)
       ?? (runPartial === null ? undefined : !runPartial)
     const costCoverage = stringOrNull(cost.coverage)
-    const perfMetrics = derivePerfMetrics(aggregate, usage, perf, nPassed)
+    const perfMetrics = derivePerfMetrics(usage, perf, nPassed)
 
     return [{
       model: stringOrNull(comparisonKey.model) ?? subjectDisplay(subject, comparisonKey, run),

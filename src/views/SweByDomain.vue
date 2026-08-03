@@ -47,7 +47,7 @@ const COMPARABLE_MIN = computed(() => dashboardDomainIndex.value?.comparable_min
 function group(predicate: (n: number) => boolean) {
   return computed(() =>
     (dashboardDomainIndex.value?.cells ?? [])
-      .filter((c) => predicate(c.n ?? 0))
+      .filter((c) => predicate(c.n ?? 0) && !c.frozen)
       .map((c) => {
         const passed = Object.values(c.by_domain || {}).reduce((s, v) => s + (v?.passed ?? 0), 0)
         const name = c.model || c.cell

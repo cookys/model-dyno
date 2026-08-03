@@ -46,7 +46,7 @@ const onMq = (e: MediaQueryListEvent | MediaQueryList) => { isMobile.value = e.m
 const examName = computed(() => dashboardComp.value?.exam ?? '—')
 
 const rawCells = computed(() => {
-  return (dashboardComp.value?.cells || []).filter((c) => num(c.acc) !== null)
+  return (dashboardComp.value?.cells || []).filter((c) => num(c.acc) !== null && !c.frozen)
 })
 
 const rawCompRows = computed(() => {

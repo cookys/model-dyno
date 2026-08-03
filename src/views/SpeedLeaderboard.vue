@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, h } from 'vue'
 import { useI18n } from '@/lib/i18n'
-import { dashboardRecords, loading } from '@/lib/store'
+import { dashboardRecords, speedLoading as loading } from '@/lib/store'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'

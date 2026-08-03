@@ -113,6 +113,7 @@ export interface NormCell {
   n_graded: number
   n_on_set: number
   comparable?: boolean
+  frozen?: boolean
   coverage?: number
   pass_rate: number
   ci: [number, number]
@@ -151,6 +152,7 @@ export interface CompCell {
   cell: string
   source: string
   comparable?: boolean
+  frozen?: boolean
   acc: number
   ci_lo: number
   ci_hi: number
@@ -196,6 +198,7 @@ export interface DomainCell {
   model?: string | null
   backend?: string | null
   n: number
+  frozen?: boolean
   by_domain: Record<string, { passed: number; n: number; acc: number | null }>
 }
 export interface DomainIndex {
@@ -282,7 +285,9 @@ export const publicBundleSharedCells = ref<SharedSweCell[]>([])
 export const publicBundleNorm = ref<NormIndex | null>(null)
 export const publicBundleComp = ref<CompIndex | null>(null)
 export const publicBundleDomainIndex = ref<DomainIndex | null>(null)
-export const dashboardRecords = computed<SpeedRecord[]>(() => publicBundleRecords.value)
+export const speedRecords = ref<SpeedRecord[]>([])
+export const speedComp = ref<CompIndex | null>(null)
+export const dashboardRecords = computed<SpeedRecord[]>(() => speedRecords.value)
 export const scorecardSweCells = computed<SweCell[]>(() => publicBundleSweCells.value)
 export const scorecardSweMeta = computed<SweMeta | null>(() => publicBundleSweMeta.value)
 export const compatibilityFallbackActive = computed<boolean>(() => false)
@@ -294,9 +299,18 @@ export const domainIndex = ref<DomainIndex | null>(null)
 export const dashboardSharedCells = computed<SharedSweCell[]>(() => publicBundleSharedCells.value)
 export const dashboardNorm = computed<NormIndex | null>(() => publicBundleNorm.value)
 export const dashboardComp = computed<CompIndex | null>(() => publicBundleComp.value)
+export const dashboardSpeedComp = computed<CompIndex | null>(() => speedComp.value)
 export const dashboardDomainIndex = computed<DomainIndex | null>(() => publicBundleDomainIndex.value)
-export const loading = ref<boolean>(true)
+export const speedLoading = ref<boolean>(true)
+export const sweLoading = ref<boolean>(true)
+export const loading = computed<boolean>(() => speedLoading.value || sweLoading.value)
 export const error = ref<string | null>(null)
+
+async function fetchDashboardJson<T>(url: string): Promise<T> {
+  const response = await fetch(url, { cache: 'no-cache' })
+  if (!response.ok) throw new Error(`HTTP ${response.status} fetching ${url}`)
+  return response.json() as Promise<T>
+}
 
 export function orderedExamVersions(versions: ExamVersionInfo[]): ExamVersionInfo[] {
   if (!versions.length) return []
@@ -350,12 +364,31 @@ export const sweCellsByExam = computed<SweCell[]>(() => {
 })
 
 export async function loadAllData() {
-  loading.value = true
+  speedLoading.value = true
+  sweLoading.value = true
   error.value = null
+
+  // Optional private/local speed aggregates (INDEX + COMP-INDEX). Present when
+  // build-dashboard.py copies compatibility projections into dashboard/public/,
+  // absent on the public Pages deploy (PublicBundle-only). 404 must not fail
+  // the page or set error — fall back to PublicBundle projections below.
+  try {
+    const [speedIndex, speedCompIndex] = await Promise.all([
+      fetchDashboardJson<Record<string, unknown>>('./INDEX.json'),
+      fetchDashboardJson<CompIndex>('./COMP-INDEX.json'),
+    ])
+    const loadedSpeedRecords = speedIndex['records']
+    speedRecords.value = Array.isArray(loadedSpeedRecords) ? loadedSpeedRecords as SpeedRecord[] : []
+    speedComp.value = Array.isArray(speedCompIndex.cells) ? speedCompIndex : null
+  } catch {
+    speedRecords.value = []
+    speedComp.value = null
+  }
+
   try {
     const publicDashboard = await loadPublicBundleDashboardFeed()
     if (!publicDashboard.loaded) {
-      throw new Error('PublicBundle dashboard feed missing at ./public-bundles/index.json; run python3 scripts/build-dashboard.py --no-build')
+      throw new Error('PublicBundle dashboard snapshot missing; run python3 scripts/build-dashboard.py --no-build')
     }
     publicBundleFeedLoaded.value = true
     publicBundleRecords.value = publicDashboard.records
@@ -367,6 +400,16 @@ export async function loadAllData() {
     publicBundleDomainIndex.value = publicDashboard.domainIndex
     generatedAt.value = publicDashboard.generatedAt
     nowMs.value = generatedAt.value ? Date.parse(generatedAt.value) || Date.now() : Date.now()
+
+    // Production model-dyno has no *-INDEX.json. Keep speed routes rendering
+    // from the PublicBundle projection (metrics may be blank until plan 051
+    // perf ABI); private fleets keep the richer COMP-INDEX numbers when present.
+    if (!speedComp.value && publicDashboard.comp) {
+      speedComp.value = publicDashboard.comp
+    }
+    if (!speedRecords.value.length && publicDashboard.records.length) {
+      speedRecords.value = publicDashboard.records
+    }
   } catch (e: any) {
     publicBundleFeedLoaded.value = false
     publicBundleRecords.value = []
@@ -380,6 +423,7 @@ export async function loadAllData() {
     nowMs.value = Date.now()
     error.value = e.message
   } finally {
-    loading.value = false
+    speedLoading.value = false
+    sweLoading.value = false
   }
 }

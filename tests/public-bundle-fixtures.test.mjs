@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { readdirSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import test from 'node:test'
 import ts from 'typescript'
@@ -134,7 +134,52 @@ test('PublicBundle projection builds scorecard rows without legacy INDEX fields'
   assert.equal(domain.cells[0].by_domain['toy-domain'].n, 1)
 })
 
-test('dashboard store requires PublicBundle feed and has no legacy INDEX fallback', () => {
+test('browser dashboard hydrates PublicBundle data from one materialized request', async () => {
+  const { loadPublicBundleDashboardFeed } = await importTsModule('src/lib/publicBundle.ts')
+  const bundleDir = join(fixtures, 'toy-v3')
+  const bundle = Object.fromEntries(exactBundleFiles.map((file) => [
+    file.replace('.json', ''),
+    JSON.parse(readFileSync(join(bundleDir, file), 'utf8')),
+  ]))
+  const entry = {
+    id: 'toy-bench',
+    base_url: './public-bundles/toy-v3/',
+    current: true,
+    label: 'dummy',
+  }
+  const snapshot = {
+    schema_version: 'dashboard_public_bundle_snapshot.v1',
+    feed: {
+      current_exam: 'toy-bench',
+      current_exam_label: 'Toy Bench',
+      current_exam_n_tasks: 1,
+      n_canon: 1,
+      comparable_min: 1,
+      version_aware: true,
+      bundles: [entry],
+    },
+    task_domains: { hello: 'toy-domain' },
+    bundles: [{ entry, bundle }],
+  }
+
+  const originalFetch = globalThis.fetch
+  let requests = 0
+  globalThis.fetch = async () => {
+    requests += 1
+    return { ok: true, status: 200, json: async () => snapshot }
+  }
+  try {
+    const projection = await loadPublicBundleDashboardFeed('./snapshot.json')
+    assert.equal(requests, 1)
+    assert.equal(projection.loaded, true)
+    assert.equal(projection.cells.length, 1)
+    assert.equal(projection.domainIndex.cells[0].by_domain['toy-domain'].passed, 1)
+  } finally {
+    globalThis.fetch = originalFetch
+  }
+})
+
+test('dashboard store requires PublicBundle for SWE and dedicated aggregates for speed views', () => {
   const store = readFileSync(join(root, 'src/lib/store.ts'), 'utf8')
   const scorecard = readFileSync(join(root, 'src/views/SweScorecard.vue'), 'utf8')
   const examBar = readFileSync(join(root, 'src/components/ExamVersionBar.vue'), 'utf8')
@@ -142,19 +187,43 @@ test('dashboard store requires PublicBundle feed and has no legacy INDEX fallbac
   const ignore = readFileSync(join(root, '.gitignore'), 'utf8')
 
   assert.match(store, /import \{ loadPublicBundleDashboardFeed \} from '\.\/publicBundle'/)
+  assert.match(store, /const \[speedIndex, speedCompIndex\] = await Promise\.all/)
   assert.match(store, /const publicDashboard = await loadPublicBundleDashboardFeed\(\)/)
-  assert.match(store, /PublicBundle dashboard feed missing at \.\/public-bundles\/index\.json/)
+  // Aggregates are optional: public Pages has no *-INDEX.json. Fall back to
+  // PublicBundle projections so speed routes still render (plan 051 P0).
+  assert.match(store, /if \(!speedComp\.value && publicDashboard\.comp\)/)
+  assert.match(store, /if \(!speedRecords\.value\.length && publicDashboard\.records\.length\)/)
+  assert.match(store, /PublicBundle dashboard snapshot missing/)
   assert.match(store, /export const dashboardRecords = computed/)
   assert.match(store, /export const dashboardComp = computed/)
+  assert.match(store, /export const dashboardSpeedComp = computed/)
+  assert.match(store, /export const speedLoading = ref<boolean>\(true\)/)
   assert.match(store, /export const dashboardDomainIndex = computed/)
-  assert.doesNotMatch(store, /fetch\('\.\/(?:INDEX|SWE-INDEX|SWE-SHARED-INDEX|NORM-INDEX|COMP-INDEX|DOMAIN-INDEX)\.json'/)
+  assert.match(store, /fetchDashboardJson<Record<string, unknown>>\('\.\/INDEX\.json'\)/)
+  assert.match(store, /fetchDashboardJson<CompIndex>\('\.\/COMP-INDEX\.json'\)/)
+  assert.doesNotMatch(store, /fetchDashboardJson.*(?:SWE-INDEX|SWE-SHARED-INDEX|NORM-INDEX|DOMAIN-INDEX)/)
   assert.doesNotMatch(store, /publicBundleFeedLoaded\.value \?/)
-  assert.match(loader, /feedUrl = '\.\/public-bundles\/index\.json'/)
+  assert.match(loader, /snapshotUrl = '\.\/public-bundles\/dashboard-snapshot\.json'/)
+  assert.match(loader, /dashboard_public_bundle_snapshot\.v1/)
   assert.match(loader, /task_domains_url/)
-  assert.doesNotMatch(ignore, /public\/public-bundles\//)
+  // Private monorepo regenerates public-bundles/ and gitignores it. Public
+  // model-dyno commits the cleared feed (SOURCE_PROVENANCE marks that layout).
+  if (existsSync(join(root, 'SOURCE_PROVENANCE.json'))) {
+    assert.ok(existsSync(join(root, 'public', 'public-bundles', 'index.json')))
+  } else {
+    assert.match(ignore, /public\/public-bundles\//)
+  }
   assert.match(scorecard, /scorecardSweMeta/)
   assert.match(examBar, /scorecardSweMeta/)
   assert.doesNotMatch(loader, /SWE-INDEX|COMP-INDEX|NORM-INDEX|DOMAIN-INDEX|benchmarks\/|results\//)
+
+  for (const file of ['SpeedHeatmap.vue', 'SpeedLeaderboard.vue', 'SpeedContributors.vue', 'SpeedEfficiency.vue', 'SpeedCloud.vue']) {
+    assert.match(
+      readFileSync(join(root, 'src/views', file), 'utf8'),
+      /speedLoading as loading/,
+      `${file} must not wait for the SWE PublicBundle fan-out`,
+    )
+  }
 })
 
 test('production data routes read active dashboard projections, not legacy store refs directly', () => {
@@ -162,8 +231,8 @@ test('production data routes read active dashboard projections, not legacy store
     ['src/views/SpeedHeatmap.vue', 'dashboardRecords'],
     ['src/views/SpeedLeaderboard.vue', 'dashboardRecords'],
     ['src/views/SpeedContributors.vue', 'dashboardRecords'],
-    ['src/views/SpeedEfficiency.vue', 'dashboardComp'],
-    ['src/views/SpeedCloud.vue', 'dashboardComp'],
+    ['src/views/SpeedEfficiency.vue', 'dashboardSpeedComp'],
+    ['src/views/SpeedCloud.vue', 'dashboardSpeedComp'],
     ['src/views/SweShared.vue', 'dashboardSharedCells'],
     ['src/views/SweNorm.vue', 'dashboardNorm'],
     ['src/views/SweComp.vue', 'dashboardComp'],

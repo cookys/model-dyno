@@ -602,21 +602,7 @@ function normalizeFeedEntries(raw: unknown): NormalizedPublicBundleFeed {
   const bundles = Array.isArray(feed.bundles) ? feed.bundles : []
   const entries = bundles
     .filter(isObject)
-    .map((entry): PublicBundleFeedEntry | null => {
-      const base = stringOrNull(entry.base_url)
-      if (!base) return null
-      return {
-        id: stringOrNull(entry.id) ?? undefined,
-        base_url: base,
-        current: boolOrNull(entry.current) ?? undefined,
-        label: stringOrNull(entry.label) ?? undefined,
-        owner: stringOrNull(entry.owner) ?? undefined,
-        machine: stringOrNull(entry.machine) ?? undefined,
-        publisher: stringOrNull(entry.publisher) ?? undefined,
-        operator: stringOrNull(entry.operator) ?? undefined,
-        access_label: stringOrNull(entry.access_label) ?? undefined,
-      }
-    })
+    .map(normalizeFeedEntry)
     .filter((entry): entry is PublicBundleFeedEntry => entry !== null)
   const explicitCurrent = stringOrNull(feed.current_exam)
   const currentEntry = entries.find((entry) => entry.current)
@@ -640,6 +626,23 @@ function normalizeFeedEntries(raw: unknown): NormalizedPublicBundleFeed {
   }
 }
 
+function normalizeFeedEntry(raw: unknown): PublicBundleFeedEntry | null {
+  const entry = asObject(raw)
+  const base = stringOrNull(entry.base_url)
+  if (!base) return null
+  return {
+    id: stringOrNull(entry.id) ?? undefined,
+    base_url: base,
+    current: boolOrNull(entry.current) ?? undefined,
+    label: stringOrNull(entry.label) ?? undefined,
+    owner: stringOrNull(entry.owner) ?? undefined,
+    machine: stringOrNull(entry.machine) ?? undefined,
+    publisher: stringOrNull(entry.publisher) ?? undefined,
+    operator: stringOrNull(entry.operator) ?? undefined,
+    access_label: stringOrNull(entry.access_label) ?? undefined,
+  }
+}
+
 function normalizeTaskDomains(raw: unknown): Record<string, string> {
   const obj = asObject(raw)
   const out: Record<string, string> = {}
@@ -650,11 +653,11 @@ function normalizeTaskDomains(raw: unknown): Record<string, string> {
 }
 
 export async function loadPublicBundleDashboardFeed(
-  feedUrl = './public-bundles/index.json',
+  snapshotUrl = './public-bundles/dashboard-snapshot.json',
 ): Promise<PublicBundleDashboardProjection> {
-  const feedRes = await fetch(feedUrl, { cache: 'no-cache' })
-  if (!feedRes.ok) {
-    if (feedRes.status === 404) {
+  const snapshotRes = await fetch(snapshotUrl, { cache: 'no-cache' })
+  if (!snapshotRes.ok) {
+    if (snapshotRes.status === 404) {
       return {
         cells: [],
         meta: null,
@@ -667,10 +670,14 @@ export async function loadPublicBundleDashboardFeed(
         domainIndex: null,
       }
     }
-    throw new Error(`HTTP ${feedRes.status} fetching ${feedUrl}`)
+    throw new Error(`HTTP ${snapshotRes.status} fetching ${snapshotUrl}`)
   }
 
-  const feed = normalizeFeedEntries(await feedRes.json())
+  const snapshot = asObject(await snapshotRes.json())
+  if (snapshot.schema_version !== 'dashboard_public_bundle_snapshot.v1') {
+    throw new Error(`Unsupported dashboard snapshot schema: ${String(snapshot.schema_version ?? 'missing')}`)
+  }
+  const feed = normalizeFeedEntries(snapshot.feed)
   if (!feed.entries.length) {
     return {
       cells: [],
@@ -685,13 +692,27 @@ export async function loadPublicBundleDashboardFeed(
     }
   }
 
-  const loadedBundles = await Promise.all(feed.entries.map(async (entry) => ({
-    entry,
-    bundle: await loadPublicBundle(entry.base_url),
-  })))
-  const taskDomains = feed.taskDomainsUrl
-    ? normalizeTaskDomains(await fetchJson(feed.taskDomainsUrl))
-    : {}
+  const packed = Array.isArray(snapshot.bundles) ? snapshot.bundles : []
+  const loadedBundles = packed.map((raw, index) => {
+    const item = asObject(raw)
+    const entry = normalizeFeedEntry(item.entry) ?? feed.entries[index]
+    if (!entry) throw new Error(`dashboard snapshot bundle ${index} has no feed entry`)
+    const bundleRaw = requireObject(item.bundle, `snapshot.bundles[${index}].bundle`)
+    return {
+      entry,
+      bundle: parsePublicBundle({
+        manifest: bundleRaw.manifest,
+        benches: bundleRaw.benches,
+        subjects: bundleRaw.subjects,
+        runs: bundleRaw.runs,
+        scores: bundleRaw.scores,
+      }),
+    }
+  })
+  if (loadedBundles.length !== feed.entries.length) {
+    throw new Error(`dashboard snapshot bundle count mismatch: ${loadedBundles.length}/${feed.entries.length}`)
+  }
+  const taskDomains = normalizeTaskDomains(snapshot.task_domains)
   const bundles = loadedBundles.map((item) => item.bundle)
   const cells = loadedBundles.flatMap(({ entry, bundle }) => projectScorecardRowsFromPublicBundle(bundle, entry))
   const meta = buildScorecardMeta(cells, bundles, feed.current, feed.meta)

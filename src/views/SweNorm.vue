@@ -40,7 +40,7 @@ const staleRisk = computed(() =>
 
 const rawCells = computed(() => {
   return (dashboardNorm.value?.cells || []).filter(
-    (c) => num(c.pass_rate) !== null && Array.isArray(c.ci)
+    (c) => num(c.pass_rate) !== null && Array.isArray(c.ci) && !c.frozen
   )
 })
 

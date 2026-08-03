@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch, h } from 'vue'
 import vegaEmbed from 'vega-embed'
-import { dashboardRecords, loading, error } from '@/lib/store'
+import { dashboardRecords, speedLoading as loading, error } from '@/lib/store'
 import { useI18n } from '@/lib/i18n'
 import { isDark, chartTheme, chartBlueScheme } from '@/lib/theme'
 import DataTable from '@/components/DataTable.vue'

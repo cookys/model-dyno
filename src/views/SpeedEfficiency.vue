@@ -2,7 +2,7 @@
 import { ref, computed, nextTick, onUnmounted, watch } from 'vue'
 import vegaEmbed from 'vega-embed'
 import { useI18n } from '@/lib/i18n'
-import { dashboardComp, loading } from '@/lib/store'
+import { dashboardSpeedComp, speedLoading as loading } from '@/lib/store'
 import type { CompCell } from '@/lib/store'
 import { isDark, chartTheme } from '@/lib/theme'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
@@ -17,7 +17,7 @@ const selectedKey = ref<string | null>(null)
 const detailFlash = ref(false)
 let detailFlashTimer: ReturnType<typeof setTimeout> | null = null
 
-const examName = computed(() => dashboardComp.value?.exam ?? '—')
+const examName = computed(() => dashboardSpeedComp.value?.exam ?? '—')
 
 const rankDesc = (value: unknown): number => num(value) ?? -Infinity
 const rankAsc = (value: unknown): number => num(value) ?? Infinity
@@ -49,7 +49,7 @@ const chooseFastestEfficiencyCell = (current: CompCell, candidate: CompCell): Co
 
 const throughputGroups = computed(() =>
   groupByCanonicalModel(
-    (dashboardComp.value?.cells || []).filter((c) => num(c.solved_per_hour) !== null),
+    (dashboardSpeedComp.value?.cells || []).filter((c) => num(c.solved_per_hour) !== null && !c.frozen),
     chooseFastestEfficiencyCell,
     (c) => `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
   )

@@ -1,18 +1,18 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import SpeedHeatmap from '@/views/SpeedHeatmap.vue'
-import SpeedLeaderboard from '@/views/SpeedLeaderboard.vue'
-import SpeedContributors from '@/views/SpeedContributors.vue'
-import SpeedEfficiency from '@/views/SpeedEfficiency.vue'
-import SpeedCloud from '@/views/SpeedCloud.vue'
-import SweShared from '@/views/SweShared.vue'
-import SweNorm from '@/views/SweNorm.vue'
-import SweComp from '@/views/SweComp.vue'
-import SweScorecard from '@/views/SweScorecard.vue'
-import SweByDomain from '@/views/SweByDomain.vue'
-import SweExamHistory from '@/views/ExamHistory.vue'
-import ModelDetail from '@/views/ModelDetail.vue'
-import OwnerDetail from '@/views/OwnerDetail.vue'
+const SpeedHeatmap = () => import('@/views/SpeedHeatmap.vue')
+const SpeedLeaderboard = () => import('@/views/SpeedLeaderboard.vue')
+const SpeedContributors = () => import('@/views/SpeedContributors.vue')
+const SpeedEfficiency = () => import('@/views/SpeedEfficiency.vue')
+const SpeedCloud = () => import('@/views/SpeedCloud.vue')
+const SweShared = () => import('@/views/SweShared.vue')
+const SweNorm = () => import('@/views/SweNorm.vue')
+const SweComp = () => import('@/views/SweComp.vue')
+const SweScorecard = () => import('@/views/SweScorecard.vue')
+const SweByDomain = () => import('@/views/SweByDomain.vue')
+const SweExamHistory = () => import('@/views/ExamHistory.vue')
+const ModelDetail = () => import('@/views/ModelDetail.vue')
+const OwnerDetail = () => import('@/views/OwnerDetail.vue')
 
 const routes = [
   { path: '/', redirect: '/speed/heatmap' },

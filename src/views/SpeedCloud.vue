@@ -2,7 +2,7 @@
 import { ref, computed, nextTick, onUnmounted, watch, h } from 'vue'
 import vegaEmbed from 'vega-embed'
 import { useI18n } from '@/lib/i18n'
-import { dashboardComp, loading } from '@/lib/store'
+import { dashboardSpeedComp, speedLoading as loading } from '@/lib/store'
 import { isDark, chartTheme } from '@/lib/theme'
 import { RouterLink } from 'vue-router'
 import DataTable from '@/components/DataTable.vue'
@@ -19,7 +19,7 @@ const focusedCloudRowId = ref<string | null>(null)
 const tableFlash = ref(false)
 let tableFlashTimer: ReturnType<typeof setTimeout> | null = null
 
-const examName = computed(() => dashboardComp.value?.exam ?? '—')
+const examName = computed(() => dashboardSpeedComp.value?.exam ?? '—')
 const placementFilter = ref<'all' | 'cloud' | 'local'>('all')
 const placementOptions = ['all', 'cloud', 'local'] as const
 const setPlacementFilter = (value: 'all' | 'cloud' | 'local') => {
@@ -72,7 +72,7 @@ function placementClass(source: 'cloud' | 'local'): string {
 }
 
 const canonicalN = computed(() => {
-  const ns = (dashboardComp.value?.cells || [])
+  const ns = (dashboardSpeedComp.value?.cells || [])
     .map((c) => num(c.n))
     .filter((n): n is number => n !== null)
   return ns.length ? Math.max(...ns) : null
@@ -81,8 +81,8 @@ const canonicalN = computed(() => {
 // Agentic SWE cells, cloud + local. Raw decode columns are still shown when a
 // tool-free probe exists, but the main speed metric is end-to-end agentic t/s.
 const agenticData = computed(() =>
-  (dashboardComp.value?.cells || [])
-    .filter((c) => num(c.acc) !== null)
+  (dashboardSpeedComp.value?.cells || [])
+    .filter((c) => num(c.acc) !== null && !c.frozen)
     .map((c) => {
       const source = placementOf(c)
       const n = num(c.n)

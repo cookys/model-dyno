@@ -76,6 +76,8 @@ export interface SweCell {
   sec_per_solved?: number
   usd_per_solved?: number
   solved_per_hour?: number
+  agentic_tok_s?: number
+  med_wall?: number
   price_known?: boolean
   tags?: Record<string, string>
   identity?: {

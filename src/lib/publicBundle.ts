@@ -14,6 +14,7 @@ export const PUBLIC_BUNDLE_SCHEMA_VERSIONS = [
   'public_bundle.v1',
   'public_bundle.v2',
   'public_bundle.v3',
+  'public_bundle.v4',
 ] as const
 
 export type PublicBundleSchemaVersion = typeof PUBLIC_BUNDLE_SCHEMA_VERSIONS[number]
@@ -249,13 +250,58 @@ function nanoUsdPerSolved(cost: JsonObject, passed: number): number | undefined 
   return total === null ? undefined : total / 1_000_000_000 / passed
 }
 
+/** Plan 051 §2.3: tok/✓ is output-only (matches competitiveness.py). */
 function tokensPerSolved(usage: JsonObject, passed: number): number | undefined {
   if (passed <= 0) return undefined
-  const input = nonNegativeInt(usage.input_tokens)
-  const cached = nonNegativeInt(usage.cached_input_tokens)
+  if (stringOrNull(usage.coverage) !== 'full') return undefined
   const output = nonNegativeInt(usage.output_tokens)
-  if (input === null && cached === null && output === null) return undefined
-  return ((input ?? 0) + (cached ?? 0) + (output ?? 0)) / passed
+  if (output === null || output <= 0) return undefined
+  return output / passed
+}
+
+/** Plan 051 §2.3 formula contract — never 0/Infinity; gate failures → undefined. */
+function derivePerfMetrics(
+  aggregate: JsonObject,
+  usage: JsonObject,
+  perf: JsonObject,
+  nPassed: number,
+): {
+  sec_per_solved?: number
+  solved_per_hour?: number
+  agentic_tok_s?: number
+  med_wall?: number
+  tok_per_solved?: number
+  perf_coverage?: string
+} {
+  const coverage = stringOrNull(perf.coverage)
+  const wallTotal = finiteNumberOrNull(perf.wall_seconds_total)
+  const medWall = finiteNumberOrNull(perf.wall_seconds_median)
+  const usageCoverage = stringOrNull(usage.coverage)
+  const output = nonNegativeInt(usage.output_tokens)
+
+  const out: {
+    sec_per_solved?: number
+    solved_per_hour?: number
+    agentic_tok_s?: number
+    med_wall?: number
+    tok_per_solved?: number
+    perf_coverage?: string
+  } = {}
+  if (coverage) out.perf_coverage = coverage
+  if (medWall !== null) out.med_wall = medWall
+
+  if (coverage === 'full' && nPassed > 0 && wallTotal !== null) {
+    out.sec_per_solved = wallTotal / nPassed
+    if (wallTotal > 0) {
+      out.solved_per_hour = nPassed / (wallTotal / 3600)
+      if (usageCoverage === 'full' && output !== null && output > 0) {
+        out.agentic_tok_s = output / wallTotal
+      }
+    }
+  }
+  const tok = tokensPerSolved(usage, nPassed)
+  if (tok !== undefined) out.tok_per_solved = tok
+  return out
 }
 
 export function projectScorecardRowsFromPublicBundle(
@@ -290,6 +336,7 @@ export function projectScorecardRowsFromPublicBundle(
     const footing = asObject(score.footing)
     const cost = asObject(score.cost)
     const usage = asObject(score.usage)
+    const perf = asObject(score.perf)
 
     const benchDigest = stringOrNull(comparisonKey.bench_digest) ?? stringOrNull(run?.bench_digest)
     const bench = benchDigest ? benchesByDigest.get(benchDigest) : undefined
@@ -309,7 +356,7 @@ export function projectScorecardRowsFromPublicBundle(
       ?? boolOrNull(comparisonKey.comparable)
       ?? (runPartial === null ? undefined : !runPartial)
     const costCoverage = stringOrNull(cost.coverage)
-    const usageCoverage = stringOrNull(usage.coverage)
+    const perfMetrics = derivePerfMetrics(aggregate, usage, perf, nPassed)
 
     return [{
       model: stringOrNull(comparisonKey.model) ?? subjectDisplay(subject, comparisonKey, run),
@@ -340,7 +387,11 @@ export function projectScorecardRowsFromPublicBundle(
       suspect_error_rate: nTasks > 0
         ? ((nonNegativeInt(aggregate.n_error) ?? 0) + (nonNegativeInt(aggregate.n_infra_error) ?? 0)) / nTasks
         : 0,
-      tok_per_solved: usageCoverage === 'full' ? tokensPerSolved(usage, nPassed) : undefined,
+      tok_per_solved: perfMetrics.tok_per_solved,
+      sec_per_solved: perfMetrics.sec_per_solved,
+      solved_per_hour: perfMetrics.solved_per_hour,
+      agentic_tok_s: perfMetrics.agentic_tok_s,
+      med_wall: perfMetrics.med_wall,
       usd_per_solved: costCoverage === 'full' ? nanoUsdPerSolved(cost, nPassed) : undefined,
       price_known: costCoverage === 'full',
       tags: backend ? { placement: backend.includes('local') ? 'local' : 'remote' } : undefined,
@@ -436,6 +487,8 @@ export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMet
         sec_per_solved: cell.sec_per_solved,
         solved_per_hour: cell.solved_per_hour,
         tok_per_solved: cell.tok_per_solved,
+        agentic_tok_s: cell.agentic_tok_s,
+        med_wall: cell.med_wall,
         cost_per_solved: cell.usd_per_solved,
         price_known: cell.price_known,
         identity: cell.identity,

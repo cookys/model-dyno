@@ -36,7 +36,7 @@ test('published PublicBundle snapshot is complete, hashed, and raw-private-data 
     assert.deepEqual(readdirSync(dir).sort(), exactBundleFiles, `${slug} exact file set`)
 
     const manifest = JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8'))
-    assert.match(manifest.schema_version, /^public_bundle\.v[123]$/)
+    assert.match(manifest.schema_version, /^public_bundle\.v[1234]$/)
     assert.deepEqual(Object.keys(manifest.file_hashes).sort(), dataFiles)
     for (const file of dataFiles) {
       const text = readFileSync(join(dir, file), 'utf8')

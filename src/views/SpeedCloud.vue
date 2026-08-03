@@ -393,6 +393,7 @@ onUnmounted(() => {
           {{ t('cloud.table.title') }}
         </CardTitle>
         <p class="text-xs text-muted-foreground">{{ t('cloud.table.desc') }}</p>
+        <p class="text-xs text-muted-foreground">{{ t('cloud.timing.caveat') }}</p>
       </CardHeader>
       <CardContent>
         <DataTable

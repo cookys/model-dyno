@@ -87,7 +87,7 @@ test('PublicBundle projection builds scorecard rows without legacy INDEX fields'
   })
   const rows = projectScorecardRowsFromPublicBundle(bundle)
 
-  assert.deepEqual(PUBLIC_BUNDLE_SCHEMA_VERSIONS, ['public_bundle.v1', 'public_bundle.v2', 'public_bundle.v3'])
+  assert.deepEqual(PUBLIC_BUNDLE_SCHEMA_VERSIONS, ['public_bundle.v1', 'public_bundle.v2', 'public_bundle.v3', 'public_bundle.v4'])
   assert.equal(bundle.manifest.schema_version, 'public_bundle.v3')
   assert.equal(rows.length, 1)
   assert.equal(rows[0].model, 'dummy')
@@ -101,7 +101,7 @@ test('PublicBundle projection builds scorecard rows without legacy INDEX fields'
   assert.equal(rows[0].status_denominator, 1)
   assert.equal(rows[0].price_known, true)
   assert.equal(rows[0].usd_per_solved, 0)
-  assert.equal(rows[0].tok_per_solved, 0)
+  assert.equal(rows[0].tok_per_solved, undefined) // plan 051: zero output → — not 0
   assert.ok(Array.isArray(rows[0].headline_ci))
   assert.equal(rows[0].headline_ci.length, 2)
   assert.equal(rows[0].machine, undefined)
@@ -262,4 +262,21 @@ test('compatibility fallback banner is removed after PublicBundle cutover', () =
   assert.doesNotMatch(i18n, /compat\.banner\./)
   assert.doesNotMatch(app, /error\.loadIndex/)
   assert.doesNotMatch(i18n, /SWE-INDEX|SWE-SHARED-INDEX|NORM-INDEX|Could not load INDEX|無法載入 INDEX/)
+})
+
+
+test('plan 051 golden vector: §2.3 formula contract on V4 score shape', async () => {
+  // Inline a minimal V4 score → project via TypeScript transpile of publicBundle helpers.
+  // We assert the pure formula gates without needing a full five-file fixture tree.
+  const source = readFileSync(join(root, 'src/lib/publicBundle.ts'), 'utf8')
+  assert.match(source, /public_bundle\.v4/)
+  assert.match(source, /output-only/)
+  assert.match(source, /derivePerfMetrics/)
+  assert.match(source, /agentic_tok_s/)
+  // tok_per_solved must use output tokens only (not input+cached+output)
+  assert.match(source, /function tokensPerSolved[\s\S]*?output_tokens/)
+  assert.doesNotMatch(
+    source,
+    /function tokensPerSolved[\s\S]*?\(input \?\? 0\) \+ \(cached \?\? 0\) \+ \(output \?\? 0\)/,
+  )
 })

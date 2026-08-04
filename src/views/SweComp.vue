@@ -8,15 +8,15 @@ import { isDark, chartTheme } from '@/lib/theme'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { foldedRoutesBadge, modelCell, modelName, orgCell, harnessCell, machineCell, num, usageOf, agencyBadge, suspectErrorBadge, usageScenarioBadge, speedCredibilityBadge } from '@/components/CellHelpers'
+import { foldedRoutesBadge, modelCell, modelName, orgCell, harnessCell, machineCell, num, usageOf, agencyBadge, suspectErrorBadge, usageScenarioBadge, speedCredibilityBadge, runClassBadge } from '@/components/CellHelpers'
 import { primarySolveSecOf, examCostSecOf } from '@/lib/speedMetrics'
+import { classifyCell, partitionBySection } from '@/lib/runClass'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
 import {
   chooseBestCompCell,
   groupByCanonicalModel,
   normalizeCanonicalModel,
   recordCanonicalModel,
-  variantCount as foldedVariantCount,
 } from '@/lib/modelFolding'
 
 const { t } = useI18n()
@@ -46,43 +46,69 @@ const onMq = (e: MediaQueryListEvent | MediaQueryList) => { isMobile.value = e.m
 
 const examName = computed(() => dashboardComp.value?.exam ?? '—')
 
+/** plan 053: exam size + comparable_min (never hardcode product 36). */
+const examMeta = computed(() => {
+  const idx = dashboardComp.value
+  const cells = idx?.cells || []
+  const ns = cells.map((c) => c.n).filter((n): n is number => typeof n === 'number' && n > 0)
+  const nExam = idx?.n_exam ?? idx?.n_canon ?? (ns.length ? Math.max(...ns) : 40)
+  const comparableMin = idx?.comparable_min ?? Math.max(1, Math.round(0.9 * nExam))
+  return { nExam, comparableMin }
+})
+
 const rawCells = computed(() => {
   return (dashboardComp.value?.cells || []).filter((c) => num(c.acc) !== null && !c.frozen)
 })
 
-const rawCompRows = computed(() => {
-  return rawCells.value.map((c) => {
-    const accuracy = c.acc
-    const speed = primarySolveSecOf(c)
-    const usage = usageOf(accuracy, speed)
-    const canonical = recordCanonicalModel(c)
+function mapCompRow(c: any, group?: { records: any[]; key: string }) {
+  const accuracy = c.acc
+  const speed = primarySolveSecOf(c)
+  const usage = usageOf(accuracy, speed)
+  const canonical = recordCanonicalModel(c)
+  const cls = classifyCell(c, examMeta.value)
+  const records = group?.records || [c]
+  return {
+    _rec: c,
+    canon: canonical || c.cell,
+    publisher: c.publisher || '',
+    operator: c.operator || '',
+    harness: c.harness || c.access_label || '',
+    machine: c.machine || '',
+    cell: c.cell,
+    source: c.source,
+    comparable: cls.rankable,
+    __stale: !cls.rankable,
+    _section: cls.section,
+    _nGraded: cls.n,
+    _nExam: cls.nExam,
+    _owed: cls.owed,
+    eff: +(accuracy * 100).toFixed(1),
+    lo: +(c.ci_lo * 100).toFixed(1),
+    hi: +(c.ci_hi * 100).toFixed(1),
+    n: `${c.passed}/${c.n}`,
+    nRaw: c.n,
+    secSolved: speed,
+    secAll: examCostSecOf(c),
+    perHour: num(c.solved_per_hour),
+    usage,
+    variantCount: group ? Math.max(0, records.length - 1) : 0,
+    variants: (group ? records : []).map((v: any) => ({
+      model: modelName(v),
+      publisher: v.publisher || '—',
+      operator: v.operator || '—',
+      harness: v.harness || v.access_label || '—',
+      machine: v.machine || '—',
+      n: `${v.passed}/${v.n}`,
+      eff: `${Math.round(v.acc * 100)}%`,
+      ci: `[${Math.round(v.ci_lo * 100)}–${Math.round(v.ci_hi * 100)}]`,
+      secSolved: primarySolveSecOf(v) === null ? '—' : `${Math.round(primarySolveSecOf(v)!)}s`,
+      comparable: classifyCell(v, examMeta.value).rankable,
+    })),
+    id: group?.key || `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
+  }
+}
 
-    return {
-      _rec: c,
-      canon: canonical || c.cell,
-      publisher: c.publisher || '',
-      operator: c.operator || '',
-      harness: c.harness || c.access_label || '',
-      machine: c.machine || '',
-      cell: c.cell,
-      source: c.source,
-      comparable: c.comparable !== false,
-      __stale: c.comparable === false,
-      eff: +(accuracy * 100).toFixed(1),
-      lo: +(c.ci_lo * 100).toFixed(1),
-      hi: +(c.ci_hi * 100).toFixed(1),
-      n: `${c.passed}/${c.n}`,
-      nRaw: c.n,
-      secSolved: speed, // primary = med_wall_pass (plan 052)
-      secAll: examCostSecOf(c),
-      perHour: num(c.solved_per_hour),
-      usage,
-      variantCount: 0,
-      variants: [],
-      id: `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`
-    }
-  })
-})
+const rawCompRows = computed(() => rawCells.value.map((c) => mapCompRow(c)))
 
 const foldedCompGroups = computed(() =>
   groupByCanonicalModel(
@@ -92,56 +118,26 @@ const foldedCompGroups = computed(() =>
   )
 )
 
-const foldedCompRows = computed(() => {
-  return foldedCompGroups.value.map((group) => {
-    const c = group.representative
-    const accuracy = c.acc
-    const speed = primarySolveSecOf(c)
-    const usage = usageOf(accuracy, speed)
-    const canonical = recordCanonicalModel(c)
+const foldedCompRows = computed(() =>
+  foldedCompGroups.value.map((group) => mapCompRow(group.representative, group))
+)
 
-    return {
-      _rec: c,
-      canon: canonical || c.cell,
-      publisher: c.publisher || '',
-      operator: c.operator || '',
-      harness: c.harness || c.access_label || '',
-      machine: c.machine || '',
-      cell: c.cell,
-      source: c.source,
-      comparable: c.comparable !== false,
-      __stale: c.comparable === false,
-      eff: +(accuracy * 100).toFixed(1),
-      lo: +(c.ci_lo * 100).toFixed(1),
-      hi: +(c.ci_hi * 100).toFixed(1),
-      n: `${c.passed}/${c.n}`,
-      nRaw: c.n,
-      secSolved: speed,
-      secAll: examCostSecOf(c),
-      perHour: num(c.solved_per_hour),
-      usage,
-      variantCount: foldedVariantCount(group),
-      variants: group.records.map((v) => ({
-        model: modelName(v),
-        publisher: v.publisher || '—',
-        operator: v.operator || '—',
-        harness: v.harness || v.access_label || '—',
-        machine: v.machine || '—',
-        n: `${v.passed}/${v.n}`,
-        eff: `${Math.round(v.acc * 100)}%`,
-        ci: `[${Math.round(v.ci_lo * 100)}–${Math.round(v.ci_hi * 100)}]`,
-        secSolved: primarySolveSecOf(v) === null ? '—' : `${Math.round(primarySolveSecOf(v)!)}s`,
-        comparable: v.comparable !== false,
-      })),
-      id: group.key,
-    }
-  })
+/** plan 053: fold first, then partition representatives into main vs incomplete. */
+const filteredCompData = computed(() => {
+  if (modelFilter.value) {
+    const modelKey = normalizeCanonicalModel(modelFilter.value)
+    return rawCompRows.value.filter((r) => normalizeCanonicalModel(recordCanonicalModel(r._rec)) === modelKey)
+  }
+  return foldedCompRows.value
 })
 
-const filteredCompData = computed(() => {
-  if (!modelFilter.value) return foldedCompRows.value
-  const modelKey = normalizeCanonicalModel(modelFilter.value)
-  return rawCompRows.value.filter((r) => normalizeCanonicalModel(recordCanonicalModel(r._rec)) === modelKey)
+const mainCompData = computed(() =>
+  partitionBySection(filteredCompData.value, (r) => r._section).main
+)
+const incompleteCompData = computed(() => {
+  const inc = partitionBySection(filteredCompData.value, (r) => r._section).incomplete
+  // Among incomplete: larger n first, then acc (not a ranked leaderboard chrome)
+  return [...inc].sort((a, b) => (b.nRaw || 0) - (a.nRaw || 0) || (b.eff || 0) - (a.eff || 0))
 })
 
 const usageLegend = computed(() => [
@@ -175,6 +171,14 @@ const cols = computed<Column<any>[]>(() => [
       const kids = [modelCell(r._rec)]
       if (r.variantCount > 0) {
         kids.push(foldedRoutesBadge(r.variantCount, t))
+      }
+      if (r._section === 'incomplete') {
+        kids.push(runClassBadge({
+          section: r._section,
+          n: r._nGraded,
+          nExam: r._nExam,
+          owed: r._owed,
+        }) as any)
       }
       return h('span', { class: 'inline-flex flex-wrap items-center gap-1' }, kids)
     }
@@ -271,7 +275,7 @@ const drawChart = () => {
 
   if (!chartContainer.value) return
 
-  const pts = filteredCompData.value
+  const pts = mainCompData.value
     .filter((r) => r.comparable && r.secSolved !== null && r.usage)
     .map((r) => ({
       label: modelName(r._rec),
@@ -348,8 +352,8 @@ const drawChart = () => {
     })
 }
 
-watch([filteredCompData, chartContainer, isDark], () => {
-  if (filteredCompData.value.length && chartContainer.value) {
+watch([mainCompData, chartContainer, isDark], () => {
+  if (mainCompData.value.length && chartContainer.value) {
     drawChart()
   }
 }, { immediate: true })
@@ -361,7 +365,7 @@ onMounted(() => {
     chartOpen.value = !mq.matches // collapsed on mobile by default
     mq.addEventListener('change', onMq)
   }
-  if (filteredCompData.value.length && chartContainer.value) {
+  if (mainCompData.value.length && chartContainer.value) {
     drawChart()
   }
 })
@@ -419,7 +423,7 @@ onUnmounted(() => {
         <div v-if="loading" class="h-48 flex items-center justify-center text-muted-foreground text-sm font-mono animate-pulse">
           {{ t('state.rendering') }}
         </div>
-        <div v-else-if="!filteredCompData.length" class="text-muted-foreground text-sm p-4 text-center">
+        <div v-else-if="!mainCompData.length && !incompleteCompData.length" class="text-muted-foreground text-sm p-4 text-center">
           {{ t('empty.speedData') }}
         </div>
         <template v-else>
@@ -453,89 +457,156 @@ onUnmounted(() => {
         <p class="text-xs text-muted-foreground">{{ t('swe.comp.scope') }}</p>
         <p class="text-xs text-muted-foreground" v-html="t('swe.comp.desc2').replace('{examName}', examName)"></p>
       </CardHeader>
-      <CardContent>
-        <DataTable
-          :columns="cols"
-          :rows="filteredCompData"
-          row-id-key="id"
-          :default-sort="'eff'"
-          :default-dir="'desc'"
-          :expandable="true"
-          fixed-layout
-        >
-          <template #detail="{ row }">
-            <div v-if="row.variantCount > 0" class="space-y-2">
-              <div>
-                <div class="text-xs font-semibold text-foreground">{{ t('fold.variants.title') }}</div>
-                <p class="text-[11px] text-muted-foreground">{{ t('fold.variants.explainer') }}</p>
-              </div>
-              <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
-                <table class="w-full text-left text-[11px]">
-                  <thead class="border-b border-border/60 text-muted-foreground">
-                    <tr>
-                      <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
-                      <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
-                      <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
-                      <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
-                      <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passed50') }}</th>
-                      <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
-                      <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.solveSpeed') }}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                      <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
-                      <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
-                      <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
-                      <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
-                      <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>
-                      <td class="px-2 py-1.5 text-right font-mono">{{ variant.eff }} <span class="text-muted-foreground">{{ variant.ci }}</span></td>
-                      <td class="px-2 py-1.5 text-right font-mono">{{ variant.secSolved }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="grid grid-cols-1 gap-2 md:hidden">
-                <div
-                  v-for="variant in row.variants"
-                  :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}-card`"
-                  :class="[
-                    'rounded-md border border-border/60 bg-card p-2.5 text-xs',
-                    variant.comparable ? '' : 'opacity-50',
-                  ]"
-                >
-                  <div class="break-words font-mono font-semibold text-foreground">{{ variant.model }}</div>
-                  <div class="mt-2 grid grid-cols-2 gap-2 text-[11px]">
-                    <div>
-                      <div class="text-muted-foreground">{{ t('col.operator') }}</div>
-                      <div class="break-words">{{ variant.operator }}</div>
-                    </div>
-                    <div>
-                      <div class="text-muted-foreground">{{ t('col.harness') }}</div>
-                      <div class="break-words">{{ variant.harness }}</div>
-                    </div>
-                    <div>
-                      <div class="text-muted-foreground">{{ t('col.machineSwe') }}</div>
-                      <div class="font-mono">{{ variant.machine }}</div>
-                    </div>
-                    <div>
-                      <div class="text-muted-foreground">{{ t('col.passRateCI') }}</div>
-                      <div class="font-mono">{{ variant.eff }} <span class="text-muted-foreground">{{ variant.ci }}</span></div>
-                    </div>
-                    <div>
-                      <div class="text-muted-foreground">{{ t('col.passed50') }}</div>
-                      <div class="font-mono">{{ variant.n }}</div>
-                    </div>
-                    <div>
-                      <div class="text-muted-foreground">{{ t('col.solveSpeed') }}</div>
-                      <div class="font-mono">{{ variant.secSolved }}</div>
+      <CardContent class="space-y-5">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <h3 class="text-sm font-semibold text-foreground">{{ t('runClass.section.main') }}</h3>
+            <span class="rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-mono text-muted-foreground">
+              {{ t('runClass.section.count').replace('{n}', String(mainCompData.length)) }}
+            </span>
+          </div>
+          <DataTable
+            v-if="mainCompData.length"
+            :columns="cols"
+            :rows="mainCompData"
+            row-id-key="id"
+            :default-sort="'eff'"
+            :default-dir="'desc'"
+            :expandable="true"
+            fixed-layout
+          >
+            <template #detail="{ row }">
+              <div v-if="row.variantCount > 0" class="space-y-2">
+                <div>
+                  <div class="text-xs font-semibold text-foreground">{{ t('fold.variants.title') }}</div>
+                  <p class="text-[11px] text-muted-foreground">{{ t('fold.variants.explainer') }}</p>
+                </div>
+                <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
+                  <table class="w-full text-left text-[11px]">
+                    <thead class="border-b border-border/60 text-muted-foreground">
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passed50') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.solveSpeed') }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
+                        <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.eff }} <span class="text-muted-foreground">{{ variant.ci }}</span></td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.secSolved }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="grid grid-cols-1 gap-2 md:hidden">
+                  <div
+                    v-for="variant in row.variants"
+                    :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}-card`"
+                    :class="[
+                      'rounded-md border border-border/60 bg-card p-2.5 text-xs',
+                      variant.comparable ? '' : 'opacity-50',
+                    ]"
+                  >
+                    <div class="break-words font-mono font-semibold text-foreground">{{ variant.model }}</div>
+                    <div class="mt-2 grid grid-cols-2 gap-2 text-[11px]">
+                      <div>
+                        <div class="text-muted-foreground">{{ t('col.operator') }}</div>
+                        <div class="break-words">{{ variant.operator }}</div>
+                      </div>
+                      <div>
+                        <div class="text-muted-foreground">{{ t('col.harness') }}</div>
+                        <div class="break-words">{{ variant.harness }}</div>
+                      </div>
+                      <div>
+                        <div class="text-muted-foreground">{{ t('col.machineSwe') }}</div>
+                        <div class="font-mono">{{ variant.machine }}</div>
+                      </div>
+                      <div>
+                        <div class="text-muted-foreground">{{ t('col.passRateCI') }}</div>
+                        <div class="font-mono">{{ variant.eff }} <span class="text-muted-foreground">{{ variant.ci }}</span></div>
+                      </div>
+                      <div>
+                        <div class="text-muted-foreground">{{ t('col.passed50') }}</div>
+                        <div class="font-mono">{{ variant.n }}</div>
+                      </div>
+                      <div>
+                        <div class="text-muted-foreground">{{ t('col.solveSpeed') }}</div>
+                        <div class="font-mono">{{ variant.secSolved }}</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </template>
+          </DataTable>
+          <div v-else class="text-muted-foreground text-sm p-3 text-center">{{ t('empty.speedData') }}</div>
+        </div>
+
+        <!-- plan 053: incomplete section — not a second leaderboard (no rank chrome) -->
+        <div v-if="incompleteCompData.length" class="border-t border-border/60 pt-4 space-y-2">
+          <div class="flex items-start justify-between gap-3 flex-wrap">
+            <div class="space-y-1">
+              <h3 class="text-sm font-semibold text-muted-foreground">{{ t('runClass.section.incomplete') }}</h3>
+              <p class="text-xs text-muted-foreground">{{ t('runClass.section.incompleteDesc') }}</p>
             </div>
-          </template>
-        </DataTable>
+            <span class="rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-mono text-muted-foreground">
+              {{ t('runClass.section.count').replace('{n}', String(incompleteCompData.length)) }}
+            </span>
+          </div>
+          <DataTable
+            :columns="cols"
+            :rows="incompleteCompData"
+            row-id-key="id"
+            :default-sort="'nRaw'"
+            :default-dir="'desc'"
+            :expandable="true"
+            fixed-layout
+          >
+            <template #detail="{ row }">
+              <div v-if="row.variantCount > 0" class="space-y-2">
+                <div>
+                  <div class="text-xs font-semibold text-foreground">{{ t('fold.variants.title') }}</div>
+                  <p class="text-[11px] text-muted-foreground">{{ t('fold.variants.explainer') }}</p>
+                </div>
+                <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
+                  <table class="w-full text-left text-[11px]">
+                    <thead class="border-b border-border/60 text-muted-foreground">
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passed50') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.solveSpeed') }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
+                        <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.eff }} <span class="text-muted-foreground">{{ variant.ci }}</span></td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.secSolved }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </template>
+          </DataTable>
+        </div>
       </CardContent>
     </Card>
   </div>

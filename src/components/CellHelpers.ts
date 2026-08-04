@@ -367,6 +367,39 @@ export function usageOf(acc: number | null, sec: number | null): UsageScenario |
   return { label: t('usage.background'), cls: 'border-amber-300 text-amber-700 bg-amber-50 dark:border-amber-500/40 dark:text-amber-300 dark:bg-amber-950/30', icon: '🤖', rank: 2, tip: t('usage.tip.background') }
 }
 
+/** plan 053 — exam coverage / owed badges (not speed poison). */
+export function runClassBadge(opts: {
+  section: 'main' | 'incomplete' | 'hide'
+  n: number
+  nExam: number
+  owed?: number | null
+}): VNode | string {
+  const { t } = useI18n()
+  if (opts.section !== 'incomplete') return ''
+  const kids: VNode[] = []
+  if (opts.n > 0 && opts.n < opts.nExam) {
+    kids.push(h('span', {
+      class: 'inline-flex items-center rounded border border-amber-400/50 bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-900 dark:bg-amber-950/40 dark:text-amber-200',
+      title: t('runClass.tip.partial'),
+    }, t('runClass.badge.partial')
+      .replace('{n}', String(opts.n))
+      .replace('{exam}', String(opts.nExam))))
+  }
+  if (opts.owed != null && opts.owed > 0) {
+    kids.push(h('span', {
+      class: 'inline-flex items-center rounded border border-amber-400/50 bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-900 dark:bg-amber-950/40 dark:text-amber-200',
+      title: t('tip.owed').replace('{n}', String(opts.owed)),
+    }, t('runClass.badge.owed').replace('{n}', String(opts.owed))))
+  }
+  if (!kids.length) {
+    kids.push(h('span', {
+      class: 'inline-flex items-center rounded border border-amber-400/40 bg-amber-50/80 px-1.5 py-0.5 text-[10px] text-amber-800 dark:bg-amber-950/30 dark:text-amber-200',
+      title: t('runClass.tip.partial'),
+    }, t('runClass.badge.incomplete')))
+  }
+  return h('span', { class: 'ml-1 inline-flex flex-wrap items-center gap-1' }, kids)
+}
+
 /** plan 052 SPEED-POISONED / WARN badge (exam-tax thrash; not "median pass is fake"). */
 export function speedCredibilityBadge(cred: { verdict?: string; flags?: string[] } | null | undefined): VNode | string {
   const { t } = useI18n()

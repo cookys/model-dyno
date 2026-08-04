@@ -8,6 +8,7 @@ import { isDark, chartTheme } from '@/lib/theme'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { num } from '@/components/CellHelpers'
 import { groupByCanonicalModel, recordCanonicalModel } from '@/lib/modelFolding'
+import { classifyCell, partitionBySection } from '@/lib/runClass'
 import { primarySolveSecOf, primarySolvedPerHourOf, examCostSecOf } from '@/lib/speedMetrics'
 
 const { t } = useI18n()
@@ -20,9 +21,20 @@ let detailFlashTimer: ReturnType<typeof setTimeout> | null = null
 
 const examName = computed(() => dashboardSpeedComp.value?.exam ?? '—')
 
+/** plan 053: exam size + comparable_min (never hardcode product 36). */
+const examMeta = computed(() => {
+  const idx = dashboardSpeedComp.value
+  const cells = idx?.cells || []
+  const ns = cells.map((c) => c.n).filter((n): n is number => typeof n === 'number' && n > 0)
+  const nExam = idx?.n_exam ?? idx?.n_canon ?? (ns.length ? Math.max(...ns) : 40)
+  const comparableMin = idx?.comparable_min ?? Math.max(1, Math.round(0.9 * nExam))
+  return { nExam, comparableMin }
+})
+
 const rankDesc = (value: unknown): number => num(value) ?? -Infinity
 const rankAsc = (value: unknown): number => num(value) ?? Infinity
-const comparableRank = (record: CompCell): number => record.comparable === false ? 0 : 1
+const comparableRank = (record: CompCell): number =>
+  classifyCell(record, examMeta.value).rankable ? 1 : 0
 
 const compareDesc = (a: number, b: number): number => {
   if (a === b) return 0
@@ -71,10 +83,12 @@ const routeRank = (a: CompCell, b: CompCell): number => {
 
 // One canonical-model representative per row. Full-exam cells win before partials;
 // within the same run status, the page shows the fastest solving-throughput route.
-const rows = computed(() =>
+// plan 053: fold then partition into main (rankable) vs incomplete.
+const allRows = computed(() =>
   throughputGroups.value
     .map((group) => {
       const c = group.representative
+      const cls = classifyCell(c, examMeta.value)
       return {
         key: group.key,
         label: (c.identity && c.identity.canonical_model) || c.model || c.cell,
@@ -82,23 +96,37 @@ const rows = computed(() =>
         acc: num(c.acc) !== null ? +(c.acc * 100).toFixed(0) : null,
         sec: primarySolveSecOf(c),
         secAll: examCostSecOf(c),
-        comparable: c.comparable !== false,
-        run: c.comparable === false ? t('cloud.run.partial') : t('cloud.run.full'),
+        comparable: cls.rankable,
+        run: cls.rankable ? t('cloud.run.full') : t('cloud.run.partial'),
         vendor: c.publisher || c.operator || (c.machine ? 'local' : c.harness || '—'),
         machine: c.machine || 'cloud',
         n: `${c.passed}/${c.n}`,
+        nRaw: c.n,
         route: c.cell,
         routes: group.records.length,
         canonical: recordCanonicalModel(c) || c.cell,
         selected: selectedKey.value === group.key,
+        _section: cls.section,
+        _nGraded: cls.n,
+        _nExam: cls.nExam,
+        _owed: cls.owed,
       }
     })
     .filter((r) => r.perHour !== null)
-    .sort((a, b) => {
-      if (a.comparable !== b.comparable) return a.comparable ? -1 : 1
-      return (b.perHour as number) - (a.perHour as number)
-    })
 )
+
+const mainRows = computed(() =>
+  partitionBySection(allRows.value, (r) => r._section).main
+    .slice()
+    .sort((a, b) => (b.perHour as number) - (a.perHour as number))
+)
+const incompleteRows = computed(() => {
+  const inc = partitionBySection(allRows.value, (r) => r._section).incomplete
+  return [...inc].sort((a, b) => (b.nRaw || 0) - (a.nRaw || 0) || (b.perHour as number) - (a.perHour as number))
+})
+
+/** Chart + default selection use rankable FULL only (plan 053). */
+const rows = computed(() => mainRows.value)
 
 const selectedGroup = computed(() => {
   const fallback = rows.value[0]?.key ?? null
@@ -122,8 +150,8 @@ const selectedRoutes = computed(() =>
       provider: c.publisher || c.operator || '—',
       harness: c.harness || c.access_label || '—',
       machine: c.machine || 'cloud',
-      run: c.comparable === false ? t('cloud.run.partial') : t('cloud.run.full'),
-      comparable: c.comparable !== false,
+      run: classifyCell(c, examMeta.value).rankable ? t('cloud.run.full') : t('cloud.run.partial'),
+      comparable: classifyCell(c, examMeta.value).rankable,
       shown: c === selectedGroup.value?.representative,
       n: `${c.passed}/${c.n}`,
       perHour: primarySolvedPerHourOf(c),
@@ -244,13 +272,26 @@ onUnmounted(() => {
         <p class="text-xs text-muted-foreground">{{ t('eff.subtitle') }} · {{ examName }}</p>
       </CardHeader>
       <CardContent>
-        <div v-if="loading && !rows.length" class="py-16 text-center text-sm text-muted-foreground">
+        <div v-if="loading && !allRows.length" class="py-16 text-center text-sm text-muted-foreground">
           {{ t('common.loading') }}
         </div>
-        <div v-else-if="!rows.length" class="py-16 text-center text-sm text-muted-foreground">
+        <div v-else-if="!allRows.length" class="py-16 text-center text-sm text-muted-foreground">
           {{ t('empty.speedData') }}
         </div>
-        <div v-else ref="chartContainer" class="w-full"></div>
+        <template v-else>
+          <div v-if="rows.length" class="space-y-2">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <h3 class="text-sm font-semibold text-foreground">{{ t('runClass.section.main') }}</h3>
+              <span class="rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-mono text-muted-foreground">
+                {{ t('runClass.section.count').replace('{n}', String(rows.length)) }}
+              </span>
+            </div>
+            <div ref="chartContainer" class="w-full"></div>
+          </div>
+          <div v-else class="py-8 text-center text-sm text-muted-foreground">
+            {{ t('runClass.section.incompleteDesc') }}
+          </div>
+        </template>
         <div
           v-if="selectedRow"
           ref="detailContainer"
@@ -350,6 +391,50 @@ onUnmounted(() => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- plan 053: incomplete dual list (not a ranked bar chart) -->
+        <div v-if="incompleteRows.length" class="mt-5 border-t border-border/60 pt-4 space-y-2">
+          <div class="flex items-start justify-between gap-3 flex-wrap">
+            <div class="space-y-1">
+              <h3 class="text-sm font-semibold text-muted-foreground">{{ t('runClass.section.incomplete') }}</h3>
+              <p class="text-xs text-muted-foreground">{{ t('runClass.section.incompleteDesc') }}</p>
+            </div>
+            <span class="rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-mono text-muted-foreground">
+              {{ t('runClass.section.count').replace('{n}', String(incompleteRows.length)) }}
+            </span>
+          </div>
+          <div class="overflow-x-auto rounded-md border border-border/60">
+            <table class="w-full text-left text-xs">
+              <thead class="border-b border-border/60 text-muted-foreground">
+                <tr>
+                  <th class="px-2 py-1.5 font-semibold">{{ t('col.modelZh') }}</th>
+                  <th class="px-2 py-1.5 text-right font-semibold">{{ t('eff.tt.perHour') }}</th>
+                  <th class="px-2 py-1.5 text-right font-semibold">{{ t('vega.tt.secSolved') }}</th>
+                  <th class="px-2 py-1.5 text-right font-semibold">{{ t('cloud.col.pass') }}</th>
+                  <th class="px-2 py-1.5 font-semibold">{{ t('cloud.col.run') }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="row in incompleteRows"
+                  :key="row.key"
+                  class="border-b border-border/40 last:border-0"
+                >
+                  <td class="px-2 py-1.5 font-mono">
+                    {{ row.label }}
+                    <span class="ml-1 text-[10px] text-amber-800 dark:text-amber-200">
+                      {{ t('runClass.badge.partial').replace('{n}', String(row._nGraded)).replace('{exam}', String(row._nExam)) }}
+                    </span>
+                  </td>
+                  <td class="px-2 py-1.5 text-right font-mono">{{ row.perHour === null ? '—' : (row.perHour as number).toFixed(1) }}</td>
+                  <td class="px-2 py-1.5 text-right font-mono">{{ row.sec === null ? '—' : Math.round(row.sec as number) }}</td>
+                  <td class="px-2 py-1.5 text-right font-mono">{{ row.n }}</td>
+                  <td class="px-2 py-1.5 text-muted-foreground">{{ row.run }}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </CardContent>

@@ -7,7 +7,8 @@ import { isDark, chartTheme } from '@/lib/theme'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { foldedVariantsBadge, modelCell, modelName, orgCell, harnessCell, num } from '@/components/CellHelpers'
+import { foldedVariantsBadge, modelCell, modelName, orgCell, harnessCell, num, runClassBadge } from '@/components/CellHelpers'
+import { classifyCell, partitionBySection } from '@/lib/runClass'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
 import {
   chooseBestNormCell,
@@ -30,6 +31,14 @@ const MIN_COV = 0.5
 
 const nTasks = computed(() => dashboardNorm.value?.n_tasks ?? 0)
 const taskSet = computed(() => dashboardNorm.value?.task_set ?? '—')
+
+/** plan 053: exam size + comparable_min (never hardcode product 36). */
+const examMeta = computed(() => {
+  const idx = dashboardNorm.value
+  const nExam = idx?.n_exam ?? idx?.n_canon ?? idx?.n_tasks ?? 40
+  const comparableMin = idx?.comparable_min ?? Math.max(1, Math.round(0.9 * nExam))
+  return { nExam, comparableMin }
+})
 
 // plan 023 P4 staleness: the NORM board id-matches verdicts (not version-pinned), so a task
 // whose verifier was repaired after the matrix was captured may reuse a stale cloud verdict.
@@ -65,6 +74,11 @@ const normData = computed(() => {
     const c = group.representative
     const mName = modelName(c)
     const canonical = recordCanonicalModel(c)
+    // NORM cells use n_graded; carrier also accepts n
+    const cls = classifyCell(
+      { ...c, n: c.n_graded ?? c.n_on_set, n_graded: c.n_graded, comparable: c.comparable, owed: c.owed, n_exam: c.n_exam ?? c.n_canon },
+      examMeta.value,
+    )
     return {
       _rec: c,
       chartLabel: dedupLabel(mName),
@@ -74,8 +88,13 @@ const normData = computed(() => {
       title: c.model,
       canon: canonical || c.model,
       source: c.source,
-      comparable: c.comparable !== false,
-      __stale: c.comparable === false,
+      comparable: cls.rankable,
+      __stale: !cls.rankable,
+      _section: cls.section,
+      _nGraded: cls.n,
+      _nExam: cls.nExam,
+      _owed: cls.owed,
+      nRaw: cls.n,
       eff: +(c.pass_rate * 100).toFixed(1),
       lo: +(c.ci[0] * 100).toFixed(1),
       hi: +(c.ci[1] * 100).toFixed(1),
@@ -94,11 +113,23 @@ const normData = computed(() => {
         cov: `${v.n_on_set}/${nTasks.value}`,
         eff: `${Math.round(v.pass_rate * 100)}%`,
         ci: `[${Math.round(v.ci[0] * 100)}–${Math.round(v.ci[1] * 100)}]`,
-        comparable: v.comparable !== false,
+        comparable: classifyCell(
+          { ...v, n: v.n_graded ?? v.n_on_set, n_graded: v.n_graded, comparable: v.comparable, owed: v.owed },
+          examMeta.value,
+        ).rankable,
       })),
       id: group.key
     }
   })
+})
+
+/** plan 053: fold first, then partition. */
+const mainNormData = computed(() =>
+  partitionBySection(normData.value, (r) => r._section).main
+)
+const incompleteNormData = computed(() => {
+  const inc = partitionBySection(normData.value, (r) => r._section).incomplete
+  return [...inc].sort((a, b) => (b.nRaw || 0) - (a.nRaw || 0) || (b.eff || 0) - (a.eff || 0))
 })
 
 const cols = computed<Column<any>[]>(() => [
@@ -117,6 +148,14 @@ const cols = computed<Column<any>[]>(() => [
       const kids = [modelCell(r._rec)]
       if (r.variantCount > 0) {
         kids.push(foldedVariantsBadge(r.variantCount, t))
+      }
+      if (r._section === 'incomplete') {
+        kids.push(runClassBadge({
+          section: r._section,
+          n: r._nGraded,
+          nExam: r._nExam,
+          owed: r._owed,
+        }) as any)
       }
       return h('span', { class: 'inline-flex flex-wrap items-center gap-1' }, kids)
     }
@@ -163,8 +202,8 @@ const drawChart = () => {
 
   if (!chartContainer.value) return
 
-  // Chart only displays comparable (full exam) cells
-  const chartData = normData.value.filter((d) => d.comparable)
+  // Chart: rankable FULL only (plan 053)
+  const chartData = mainNormData.value.filter((d) => d.comparable)
   if (!chartData.length) return
 
   const spec: any = {
@@ -244,8 +283,8 @@ const drawChart = () => {
     })
 }
 
-watch([normData, chartContainer, isDark], () => {
-  if (normData.value.length && chartContainer.value) {
+watch([mainNormData, chartContainer, isDark], () => {
+  if (mainNormData.value.length && chartContainer.value) {
     drawChart()
   }
 }, { immediate: true })
@@ -257,7 +296,7 @@ onMounted(() => {
     chartOpen.value = !mq.matches
     mq.addEventListener("change", onMq)
   }
-  if (normData.value.length && chartContainer.value) {
+  if (mainNormData.value.length && chartContainer.value) {
     drawChart()
   }
 })
@@ -293,7 +332,7 @@ onUnmounted(() => {
         <div v-if="loading" class="h-48 flex items-center justify-center text-muted-foreground text-sm font-mono animate-pulse">
           {{ t('state.rendering') }}
         </div>
-        <div v-else-if="!normData.length" class="text-muted-foreground text-sm p-4 text-center">
+        <div v-else-if="!mainNormData.length && !incompleteNormData.length" class="text-muted-foreground text-sm p-4 text-center">
           {{ t('empty.normData') }}
         </div>
         <template v-else>
@@ -307,52 +346,117 @@ onUnmounted(() => {
       </CardContent>
     </Card>
 
-    <!-- Table Card -->
+    <!-- Table Card (plan 053 dual-section) -->
     <Card class="border-border bg-card shadow-lg">
-      <CardContent class="pt-6">
-        <DataTable
-          :columns="cols"
-          :rows="normData"
-          row-id-key="id"
-          :default-sort="'eff'"
-          :default-dir="'desc'"
-          :expandable="true"
-        >
-          <template #detail="{ row }">
-            <div v-if="row.variantCount > 0" class="space-y-2">
-              <div>
-                <div class="text-xs font-semibold text-foreground">{{ t('fold.variants.title') }}</div>
-                <p class="text-[11px] text-muted-foreground">{{ t('fold.variants.explainer') }}</p>
+      <CardContent class="pt-6 space-y-5">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <h3 class="text-sm font-semibold text-foreground">{{ t('runClass.section.main') }}</h3>
+            <span class="rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-mono text-muted-foreground">
+              {{ t('runClass.section.count').replace('{n}', String(mainNormData.length)) }}
+            </span>
+          </div>
+          <DataTable
+            v-if="mainNormData.length"
+            :columns="cols"
+            :rows="mainNormData"
+            row-id-key="id"
+            :default-sort="'eff'"
+            :default-dir="'desc'"
+            :expandable="true"
+          >
+            <template #detail="{ row }">
+              <div v-if="row.variantCount > 0" class="space-y-2">
+                <div>
+                  <div class="text-xs font-semibold text-foreground">{{ t('fold.variants.title') }}</div>
+                  <p class="text-[11px] text-muted-foreground">{{ t('fold.variants.explainer') }}</p>
+                </div>
+                <div class="overflow-x-auto rounded-md border border-border/60 bg-card">
+                  <table class="w-full text-left text-[11px]">
+                    <thead class="border-b border-border/60 text-muted-foreground">
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.source') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passedGraded') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.coverage') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.source }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.cov }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.eff }} <span class="text-muted-foreground">{{ variant.ci }}</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="overflow-x-auto rounded-md border border-border/60 bg-card">
-                <table class="w-full text-left text-[11px]">
-                  <thead class="border-b border-border/60 text-muted-foreground">
-                    <tr>
-                      <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
-                      <th class="px-2 py-1.5 font-semibold">{{ t('col.source') }}</th>
-                      <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
-                      <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
-                      <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passedGraded') }}</th>
-                      <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.coverage') }}</th>
-                      <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
-                      <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
-                      <td class="px-2 py-1.5 text-muted-foreground">{{ variant.source }}</td>
-                      <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
-                      <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
-                      <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>
-                      <td class="px-2 py-1.5 text-right font-mono">{{ variant.cov }}</td>
-                      <td class="px-2 py-1.5 text-right font-mono">{{ variant.eff }} <span class="text-muted-foreground">{{ variant.ci }}</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            </template>
+          </DataTable>
+          <div v-else class="text-muted-foreground text-sm p-3 text-center">{{ t('empty.normData') }}</div>
+        </div>
+
+        <div v-if="incompleteNormData.length" class="border-t border-border/60 pt-4 space-y-2">
+          <div class="flex items-start justify-between gap-3 flex-wrap">
+            <div class="space-y-1">
+              <h3 class="text-sm font-semibold text-muted-foreground">{{ t('runClass.section.incomplete') }}</h3>
+              <p class="text-xs text-muted-foreground">{{ t('runClass.section.incompleteDesc') }}</p>
             </div>
-          </template>
-        </DataTable>
+            <span class="rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-mono text-muted-foreground">
+              {{ t('runClass.section.count').replace('{n}', String(incompleteNormData.length)) }}
+            </span>
+          </div>
+          <DataTable
+            :columns="cols"
+            :rows="incompleteNormData"
+            row-id-key="id"
+            :default-sort="'nRaw'"
+            :default-dir="'desc'"
+            :expandable="true"
+          >
+            <template #detail="{ row }">
+              <div v-if="row.variantCount > 0" class="space-y-2">
+                <div>
+                  <div class="text-xs font-semibold text-foreground">{{ t('fold.variants.title') }}</div>
+                  <p class="text-[11px] text-muted-foreground">{{ t('fold.variants.explainer') }}</p>
+                </div>
+                <div class="overflow-x-auto rounded-md border border-border/60 bg-card">
+                  <table class="w-full text-left text-[11px]">
+                    <thead class="border-b border-border/60 text-muted-foreground">
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.source') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passedGraded') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.coverage') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.source }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
+                        <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.cov }}</td>
+                        <td class="px-2 py-1.5 text-right font-mono">{{ variant.eff }} <span class="text-muted-foreground">{{ variant.ci }}</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </template>
+          </DataTable>
+        </div>
       </CardContent>
     </Card>
   </div>

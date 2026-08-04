@@ -61,6 +61,7 @@ export interface SweCell {
   n_passed?: number
   canonical_version?: string | null
   n_canon?: number | null
+  n_exam?: number | null
   owed?: number | null
   headline?: number
   headline_ci?: [number, number]
@@ -141,6 +142,10 @@ export interface NormCell {
   tags?: Record<string, string>
   display?: string
   cell?: string
+  // plan 053 (optional pass-through)
+  owed?: number | null
+  n_exam?: number | null
+  n_canon?: number | null
 }
 
 export interface NormIndex {
@@ -153,6 +158,10 @@ export interface NormIndex {
   version_aware?: boolean
   current_exam?: string | null
   stale_risk?: { version_pinned: boolean; reason: string }
+  // plan 053 run-class (optional; UI falls back to n_tasks + 0.9·N)
+  comparable_min?: number
+  n_exam?: number
+  n_canon?: number
 }
 
 export interface CompCell {
@@ -216,11 +225,17 @@ export interface CompCell {
   // agency / no-op credibility — is a low score the model, the env, or the tools? (same shape
   // the SWE scorecard renders; emitted by competitiveness.py via footing.agency_block)
   agency?: AgencyBlock
+  owed?: number | null
+  n_exam?: number | null
+  n_canon?: number | null
 }
 
 export interface CompIndex {
   cells: CompCell[]
   exam?: string
+  comparable_min?: number
+  n_exam?: number
+  n_canon?: number
 }
 
 export interface DomainCell {

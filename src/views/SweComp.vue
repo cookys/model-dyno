@@ -8,7 +8,8 @@ import { isDark, chartTheme } from '@/lib/theme'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { foldedRoutesBadge, modelCell, modelName, orgCell, harnessCell, machineCell, num, usageOf, agencyBadge, suspectErrorBadge, usageScenarioBadge } from '@/components/CellHelpers'
+import { foldedRoutesBadge, modelCell, modelName, orgCell, harnessCell, machineCell, num, usageOf, agencyBadge, suspectErrorBadge, usageScenarioBadge, speedCredibilityBadge } from '@/components/CellHelpers'
+import { primarySolveSecOf, examCostSecOf } from '@/lib/speedMetrics'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
 import {
   chooseBestCompCell,
@@ -52,7 +53,7 @@ const rawCells = computed(() => {
 const rawCompRows = computed(() => {
   return rawCells.value.map((c) => {
     const accuracy = c.acc
-    const speed = num(c.sec_per_solved)
+    const speed = primarySolveSecOf(c)
     const usage = usageOf(accuracy, speed)
     const canonical = recordCanonicalModel(c)
 
@@ -72,7 +73,8 @@ const rawCompRows = computed(() => {
       hi: +(c.ci_hi * 100).toFixed(1),
       n: `${c.passed}/${c.n}`,
       nRaw: c.n,
-      secSolved: speed,
+      secSolved: speed, // primary = med_wall_pass (plan 052)
+      secAll: examCostSecOf(c),
       perHour: num(c.solved_per_hour),
       usage,
       variantCount: 0,
@@ -94,7 +96,7 @@ const foldedCompRows = computed(() => {
   return foldedCompGroups.value.map((group) => {
     const c = group.representative
     const accuracy = c.acc
-    const speed = num(c.sec_per_solved)
+    const speed = primarySolveSecOf(c)
     const usage = usageOf(accuracy, speed)
     const canonical = recordCanonicalModel(c)
 
@@ -115,6 +117,7 @@ const foldedCompRows = computed(() => {
       n: `${c.passed}/${c.n}`,
       nRaw: c.n,
       secSolved: speed,
+      secAll: examCostSecOf(c),
       perHour: num(c.solved_per_hour),
       usage,
       variantCount: foldedVariantCount(group),
@@ -127,7 +130,7 @@ const foldedCompRows = computed(() => {
         n: `${v.passed}/${v.n}`,
         eff: `${Math.round(v.acc * 100)}%`,
         ci: `[${Math.round(v.ci_lo * 100)}–${Math.round(v.ci_hi * 100)}]`,
-        secSolved: num(v.sec_per_solved) === null ? '—' : `${Math.round(num(v.sec_per_solved)!)}s`,
+        secSolved: primarySolveSecOf(v) === null ? '—' : `${Math.round(primarySolveSecOf(v)!)}s`,
         comparable: v.comparable !== false,
       })),
       id: group.key,
@@ -214,13 +217,33 @@ const cols = computed<Column<any>[]>(() => [
     ])
   },
   {
+    // plan 052: primary = med_wall_pass; sort comparable → med_wall_pass asc → acc desc
     key: 'secSolved',
-    label: t('col.solveSpeed'),
+    label: t('col.solveSpeedPass'),
     num: true,
     mobileHide: true,
     tabletHide: true,
-    sortVal: (r) => (r.secSolved === null ? Infinity : r.secSolved),
-    render: (r) => r.secSolved === null ? '—' : `${Math.round(r.secSolved)}s`
+    // Encode multi-key as single number (DataTable num sort): comparable → med_wall_pass → −acc
+    sortVal: (r) => {
+      const comp = r.comparable ? 0 : 1
+      const sp = r.secSolved === null ? 1e12 : r.secSolved
+      const accPenalty = typeof r.eff === 'number' ? (100 - r.eff) : 100
+      return comp * 1e15 + sp * 1e3 + accPenalty
+    },
+    render: (r) => {
+      if (r.secSolved === null) return '—'
+      const kids = [
+        h('span', { class: 'font-mono' }, `${Math.round(r.secSolved)}s`),
+        speedCredibilityBadge(r._rec?.speed_credibility),
+      ]
+      if (r.secAll !== null && r.secAll !== r.secSolved) {
+        kids.push(h('span', {
+          class: 'ml-1 text-[10px] text-muted-foreground font-normal',
+          title: t('table.tip.secSolvedAll'),
+        }, `(${t('col.solveSpeedAllShort')} ${Math.round(r.secAll)}s)`))
+      }
+      return h('span', { class: 'inline-flex flex-wrap items-center' }, kids)
+    },
   },
   {
     key: 'usage',
@@ -252,7 +275,7 @@ const drawChart = () => {
     .filter((r) => r.comparable && r.secSolved !== null && r.usage)
     .map((r) => ({
       label: modelName(r._rec),
-      sec: r.secSolved,
+      sec: r.secSolved, // pass-conditioned med_wall_pass (speed-axis: med_wall_pass@052)
       acc: r.eff,
       usage: r.usage!.label,
       machine: r.machine || 'cloud',

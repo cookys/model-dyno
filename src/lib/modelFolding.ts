@@ -128,8 +128,15 @@ export const chooseBestCompCell: ChooseBest<CompCell> = (current, candidate) => 
     compareDesc(num(candidate.ci_lo), num(current.ci_lo)),
     compareDesc(num(candidate.acc), num(current.acc)),
     compareDesc(num(candidate.n), num(current.n)),
-    compareDesc(num(candidate.solved_per_hour), num(current.solved_per_hour)),
-    compareAscNullable(candidate.sec_per_solved, current.sec_per_solved),
+    // plan 052: prefer pass-conditioned throughput / solve time as speed tie-breaks
+    compareDesc(
+      num(candidate.solved_per_hour_pass ?? candidate.solved_per_hour),
+      num(current.solved_per_hour_pass ?? current.solved_per_hour),
+    ),
+    compareAscNullable(
+      candidate.med_wall_pass ?? candidate.sec_per_solved,
+      current.med_wall_pass ?? current.sec_per_solved,
+    ),
   ]
   return checks.find((v) => v !== 0)! > 0 ? candidate : current
 }

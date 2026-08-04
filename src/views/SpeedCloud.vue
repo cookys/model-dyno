@@ -8,8 +8,9 @@ import { RouterLink } from 'vue-router'
 import DataTable from '@/components/DataTable.vue'
 import type { Column, DetailField } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { modelBadges, modelName, num } from '@/components/CellHelpers'
+import { modelBadges, modelName, num, speedCredibilityBadge } from '@/components/CellHelpers'
 import { deploymentLine, routeProvenanceOf } from '@/lib/modelProvenance'
+import { primarySolveSecOf, primarySolvedPerHourOf, primarySolvedPerMinOf, examCostSecOf } from '@/lib/speedMetrics'
 
 const { t } = useI18n()
 let vegaView: any = null
@@ -101,14 +102,17 @@ const agenticData = computed(() =>
         run: n !== null && fullN ? `${n}/${fullN}` : (n === null ? '—' : String(n)),
         complete: n !== null && fullN !== null && n >= fullN,
         coverage,
-        sec: num(c.sec_per_solved),
-        perHour: num(c.solved_per_hour),
-        perMin: num(c.solved_per_hour) === null ? null : num(c.solved_per_hour)! / 60,
+        // plan 052: primary solve time = med_wall_pass; exam-cost kept as secAll
+        sec: primarySolveSecOf(c),
+        secAll: examCostSecOf(c),
+        perHour: primarySolvedPerHourOf(c),
+        perMin: primarySolvedPerMinOf(c),
         medWall: num(c.med_wall),
         tokS: num(c.agentic_tok_s),
-        tokSolved: num(c.tok_per_solved) ?? (num(c.agentic_tok_s) !== null && num(c.sec_per_solved) !== null
-          ? num(c.agentic_tok_s)! * num(c.sec_per_solved)!
+        tokSolved: num(c.tok_per_solved) ?? (num(c.agentic_tok_s) !== null && examCostSecOf(c) !== null
+          ? num(c.agentic_tok_s)! * examCostSecOf(c)!
           : null),
+        speedCred: c.speed_credibility,
         ctx: num(c.med_in_tok),
         rawTokS: num(c.raw_tok_s),
         latency: num(c.raw_latency_s),
@@ -197,11 +201,25 @@ const cols = computed<Column<any>[]>(() => [
     ]),
   },
   {
-    key: 'sec', label: t('cloud.col.avgSolve'), num: true,
+    // plan 052: pass-median primary (not fail-taxed 902s exam cost)
+    key: 'sec', label: t('col.solveSpeedPass'), num: true,
     mobileHide: true,
     description: t('cloud.tip.avgSolve'),
     sortVal: (r) => (r.sec === null ? Infinity : r.sec),
-    render: (r) => h('span', { class: 'font-mono' }, fmt0(r.sec)),
+    render: (r) => {
+      if (r.sec === null) return '—'
+      const kids = [
+        h('span', { class: 'font-mono' }, fmt0(r.sec)),
+        speedCredibilityBadge(r.speedCred),
+      ]
+      if (r.secAll !== null && r.secAll !== r.sec) {
+        kids.push(h('span', {
+          class: 'ml-1 text-[10px] text-muted-foreground',
+          title: t('table.tip.secSolvedAll'),
+        }, `(${t('col.solveSpeedAllShort')} ${fmt0(r.secAll)})`))
+      }
+      return h('span', { class: 'inline-flex flex-wrap items-center justify-end' }, kids)
+    },
   },
 ])
 

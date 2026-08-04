@@ -350,6 +350,8 @@ export interface UsageScenario {
   tip: string
 }
 
+// plan 052: speed axis is pass-conditioned med_wall_pass (not exam-cost s/✓).
+// Tip version string documents the methodology bump for readers.
 const USE_THRESH = { good: 0.50, top: 0.70, fastSec: 300 }
 export function usageOf(acc: number | null, sec: number | null): UsageScenario | null {
   const { t } = useI18n()
@@ -363,4 +365,29 @@ export function usageOf(acc: number | null, sec: number | null): UsageScenario |
   if (fast && acc >= USE_THRESH.top) return { label: t('usage.allround'), cls: 'border-emerald-300 text-emerald-700 bg-emerald-50 dark:border-emerald-500/40 dark:text-emerald-300 dark:bg-emerald-950/30', icon: '🏆', rank: 0, tip: t('usage.tip.allround') }
   if (fast) return { label: t('usage.pair'), cls: 'border-brand/40 text-brand bg-brand/10 dark:border-brand/40 dark:text-brand dark:bg-brand/20', icon: '🤝', rank: 1, tip: t('usage.tip.pair') }
   return { label: t('usage.background'), cls: 'border-amber-300 text-amber-700 bg-amber-50 dark:border-amber-500/40 dark:text-amber-300 dark:bg-amber-950/30', icon: '🤖', rank: 2, tip: t('usage.tip.background') }
+}
+
+/** plan 052 SPEED-POISONED / WARN badge (exam-tax thrash; not "median pass is fake"). */
+export function speedCredibilityBadge(cred: { verdict?: string; flags?: string[] } | null | undefined): VNode | string {
+  const { t } = useI18n()
+  if (!cred || !cred.verdict || cred.verdict === 'CLEAN') return ''
+  if (cred.verdict === 'UNKNOWN') {
+    return h('span', {
+      class: 'ml-1 text-[10px] text-muted-foreground',
+      title: t('speed.cred.unknown.tip'),
+    }, t('speed.cred.unknown'))
+  }
+  if (cred.verdict === 'WARN') {
+    return h('span', {
+      class: 'ml-1 inline-flex items-center rounded border border-amber-400/50 bg-amber-50 px-1 text-[10px] text-amber-800 dark:bg-amber-950/40 dark:text-amber-200',
+      title: t('speed.cred.warn.tip'),
+    }, t('speed.cred.warn'))
+  }
+  if (cred.verdict === 'POISONED') {
+    return h('span', {
+      class: 'ml-1 inline-flex items-center rounded border border-rose-400/50 bg-rose-50 px-1 text-[10px] text-rose-800 dark:bg-rose-950/40 dark:text-rose-200',
+      title: t('speed.cred.poisoned.tip'),
+    }, t('speed.cred.poisoned'))
+  }
+  return ''
 }

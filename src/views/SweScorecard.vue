@@ -105,7 +105,7 @@ const scorecardRows = computed(() => {
       tie,
       pps: num(c.pps),
       tokSolved: num(c.tok_per_solved),
-      secSolved: num(c.sec_per_solved),
+      secSolved: num(c.med_wall_pass) ?? num(c.sec_per_solved),
       usdSolved: c.price_known ? num(c.usd_per_solved) : null,
       perHour: num(c.solved_per_hour),
       variantCount: foldedVariantCount(group),
@@ -214,7 +214,7 @@ const cols = computed<Column<any>[]>(() => [
   },
   { key: 'pps', label: t('col.pps'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.pps, 0) },
   { key: 'tokSolved', label: t('col.tokSolved'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.tokSolved, 0) },
-  { key: 'secSolved', label: t('col.secSolved'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.secSolved, 0) },
+  { key: 'secSolved', label: t('col.solveSpeedPass'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.secSolved, 0) },
   {
     key: 'usdSolved',
     label: t('col.usdSolved'),

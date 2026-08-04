@@ -8,6 +8,7 @@ import { isDark, chartTheme } from '@/lib/theme'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { num } from '@/components/CellHelpers'
 import { groupByCanonicalModel, recordCanonicalModel } from '@/lib/modelFolding'
+import { primarySolveSecOf, primarySolvedPerHourOf, examCostSecOf } from '@/lib/speedMetrics'
 
 const { t } = useI18n()
 let vegaView: any = null
@@ -38,8 +39,9 @@ const compareAsc = (a: number, b: number): number => {
 const chooseFastestEfficiencyCell = (current: CompCell, candidate: CompCell): CompCell => {
   const checks = [
     compareDesc(comparableRank(candidate), comparableRank(current)),
-    compareDesc(rankDesc(candidate.solved_per_hour), rankDesc(current.solved_per_hour)),
-    compareAsc(rankAsc(candidate.sec_per_solved), rankAsc(current.sec_per_solved)),
+    // plan 052: rank by pass-conditioned throughput / solve time, not fail-taxed s/✓
+    compareDesc(rankDesc(primarySolvedPerHourOf(candidate)), rankDesc(primarySolvedPerHourOf(current))),
+    compareAsc(rankAsc(primarySolveSecOf(candidate)), rankAsc(primarySolveSecOf(current))),
     compareDesc(rankDesc(candidate.ci_lo), rankDesc(current.ci_lo)),
     compareDesc(rankDesc(candidate.acc), rankDesc(current.acc)),
     compareDesc(rankDesc(candidate.n), rankDesc(current.n)),
@@ -49,7 +51,7 @@ const chooseFastestEfficiencyCell = (current: CompCell, candidate: CompCell): Co
 
 const throughputGroups = computed(() =>
   groupByCanonicalModel(
-    (dashboardSpeedComp.value?.cells || []).filter((c) => num(c.solved_per_hour) !== null && !c.frozen),
+    (dashboardSpeedComp.value?.cells || []).filter((c) => primarySolvedPerHourOf(c) !== null && !c.frozen),
     chooseFastestEfficiencyCell,
     (c) => `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
   )
@@ -58,8 +60,8 @@ const throughputGroups = computed(() =>
 const routeRank = (a: CompCell, b: CompCell): number => {
   const checks = [
     compareDesc(comparableRank(a), comparableRank(b)),
-    compareDesc(rankDesc(a.solved_per_hour), rankDesc(b.solved_per_hour)),
-    compareAsc(rankAsc(a.sec_per_solved), rankAsc(b.sec_per_solved)),
+    compareDesc(rankDesc(primarySolvedPerHourOf(a)), rankDesc(primarySolvedPerHourOf(b))),
+    compareAsc(rankAsc(primarySolveSecOf(a)), rankAsc(primarySolveSecOf(b))),
     compareDesc(rankDesc(a.ci_lo), rankDesc(b.ci_lo)),
     compareDesc(rankDesc(a.acc), rankDesc(b.acc)),
     compareDesc(rankDesc(a.n), rankDesc(b.n)),
@@ -76,9 +78,10 @@ const rows = computed(() =>
       return {
         key: group.key,
         label: (c.identity && c.identity.canonical_model) || c.model || c.cell,
-        perHour: num(c.solved_per_hour),
+        perHour: primarySolvedPerHourOf(c),
         acc: num(c.acc) !== null ? +(c.acc * 100).toFixed(0) : null,
-        sec: num(c.sec_per_solved),
+        sec: primarySolveSecOf(c),
+        secAll: examCostSecOf(c),
         comparable: c.comparable !== false,
         run: c.comparable === false ? t('cloud.run.partial') : t('cloud.run.full'),
         vendor: c.publisher || c.operator || (c.machine ? 'local' : c.harness || '—'),
@@ -123,8 +126,9 @@ const selectedRoutes = computed(() =>
       comparable: c.comparable !== false,
       shown: c === selectedGroup.value?.representative,
       n: `${c.passed}/${c.n}`,
-      perHour: num(c.solved_per_hour),
-      sec: num(c.sec_per_solved),
+      perHour: primarySolvedPerHourOf(c),
+      sec: primarySolveSecOf(c),
+      secAll: examCostSecOf(c),
       acc: num(c.acc),
     }))
 )

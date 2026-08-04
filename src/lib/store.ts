@@ -74,10 +74,21 @@ export interface SweCell {
   pps?: number
   tok_per_solved?: number
   sec_per_solved?: number
+  sec_per_solved_all?: number
   usd_per_solved?: number
   solved_per_hour?: number
+  solved_per_hour_pass?: number
   agentic_tok_s?: number
   med_wall?: number
+  med_wall_pass?: number
+  mean_wall_pass?: number
+  fail_wall_share?: number
+  maxstep_fail_n?: number
+  maxstep_fail_wall_share?: number
+  speed_credibility?: {
+    verdict?: string
+    flags?: string[]
+  }
   price_known?: boolean
   tags?: Record<string, string>
   identity?: {
@@ -161,10 +172,27 @@ export interface CompCell {
   passed: number
   n: number
   sec_per_solved?: number
+  sec_per_solved_all?: number
   solved_per_hour?: number
+  solved_per_hour_all?: number
+  solved_per_hour_pass?: number
   med_wall?: number
+  med_wall_pass?: number
+  mean_wall_pass?: number
+  fail_wall_share?: number
+  maxstep_fail_n?: number
+  maxstep_fail_wall_s?: number
+  maxstep_fail_wall_share?: number
+  speed_credibility?: {
+    verdict?: string
+    flags?: string[]
+    fail_wall_share?: number | null
+    maxstep_fail_n?: number | null
+  }
   agentic_tok_s?: number
   tok_per_solved?: number
+  tok_per_solved_pass?: number
+  tok_per_solved_all?: number
   med_in_tok?: number
   raw_tok_s?: number
   raw_latency_s?: number

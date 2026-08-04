@@ -259,7 +259,7 @@ function tokensPerSolved(usage: JsonObject, passed: number): number | undefined 
   return output / passed
 }
 
-/** Plan 051 §2.3 formula contract — never 0/Infinity; gate failures → undefined. */
+/** Plan 051 §2.3 + plan 052 perf.v2 — never 0/Infinity; gate failures → undefined. */
 function derivePerfMetrics(
   usage: JsonObject,
   perf: JsonObject,
@@ -269,12 +269,21 @@ function derivePerfMetrics(
   solved_per_hour?: number
   agentic_tok_s?: number
   med_wall?: number
+  med_wall_pass?: number
+  mean_wall_pass?: number
   tok_per_solved?: number
   perf_coverage?: string
+  fail_wall_share?: number
+  maxstep_fail_n?: number
+  maxstep_fail_wall_share?: number
+  speed_verdict?: string
 } {
   const coverage = stringOrNull(perf.coverage)
   const wallTotal = finiteNumberOrNull(perf.wall_seconds_total)
   const medWall = finiteNumberOrNull(perf.wall_seconds_median)
+  const medPass = finiteNumberOrNull(perf.wall_seconds_median_pass)
+  const sumPass = finiteNumberOrNull(perf.wall_seconds_sum_pass)
+  const nPassTimed = nonNegativeInt(perf.n_records_timed_pass)
   const usageCoverage = stringOrNull(usage.coverage)
   const output = nonNegativeInt(usage.output_tokens)
 
@@ -283,8 +292,14 @@ function derivePerfMetrics(
     solved_per_hour?: number
     agentic_tok_s?: number
     med_wall?: number
+    med_wall_pass?: number
+    mean_wall_pass?: number
     tok_per_solved?: number
     perf_coverage?: string
+    fail_wall_share?: number
+    maxstep_fail_n?: number
+    maxstep_fail_wall_share?: number
+    speed_verdict?: string
   } = {}
   if (coverage) out.perf_coverage = coverage
   if (medWall !== null) out.med_wall = medWall
@@ -298,6 +313,26 @@ function derivePerfMetrics(
       }
     }
   }
+  // plan 052: pass-conditioned primary (only when publisher left pass keys non-null)
+  if (coverage === 'full' && medPass !== null) {
+    out.med_wall_pass = medPass
+  }
+  if (coverage === 'full' && sumPass !== null && nPassTimed !== null && nPassTimed > 0) {
+    out.mean_wall_pass = sumPass / nPassTimed
+  }
+  // pass-conditioned ✓/h for speed/* ranking (plan 052)
+  if (out.mean_wall_pass !== undefined && out.mean_wall_pass > 0) {
+    ;(out as { solved_per_hour_pass?: number }).solved_per_hour_pass = 3600 / out.mean_wall_pass
+  }
+  const fws = finiteNumberOrNull(perf.fail_wall_share)
+  if (fws !== null) out.fail_wall_share = fws
+  const mfn = nonNegativeInt(perf.maxstep_fail_n)
+  if (mfn !== null) out.maxstep_fail_n = mfn
+  const mfws = finiteNumberOrNull(perf.maxstep_fail_wall_share)
+  if (mfws !== null) out.maxstep_fail_wall_share = mfws
+  const sv = stringOrNull(perf.speed_verdict)
+  if (sv) out.speed_verdict = sv
+
   const tok = tokensPerSolved(usage, nPassed)
   if (tok !== undefined) out.tok_per_solved = tok
   return out
@@ -388,9 +423,19 @@ export function projectScorecardRowsFromPublicBundle(
         : 0,
       tok_per_solved: perfMetrics.tok_per_solved,
       sec_per_solved: perfMetrics.sec_per_solved,
+      sec_per_solved_all: perfMetrics.sec_per_solved,
       solved_per_hour: perfMetrics.solved_per_hour,
       agentic_tok_s: perfMetrics.agentic_tok_s,
       med_wall: perfMetrics.med_wall,
+      med_wall_pass: perfMetrics.med_wall_pass,
+      mean_wall_pass: perfMetrics.mean_wall_pass,
+      solved_per_hour_pass: (perfMetrics as { solved_per_hour_pass?: number }).solved_per_hour_pass,
+      fail_wall_share: perfMetrics.fail_wall_share,
+      maxstep_fail_n: perfMetrics.maxstep_fail_n,
+      maxstep_fail_wall_share: perfMetrics.maxstep_fail_wall_share,
+      speed_credibility: perfMetrics.speed_verdict
+        ? { verdict: perfMetrics.speed_verdict }
+        : undefined,
       usd_per_solved: costCoverage === 'full' ? nanoUsdPerSolved(cost, nPassed) : undefined,
       price_known: costCoverage === 'full',
       tags: backend ? { placement: backend.includes('local') ? 'local' : 'remote' } : undefined,
@@ -484,10 +529,18 @@ export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMet
         passed: cell.n_passed ?? 0,
         n: cell.n_graded ?? 0,
         sec_per_solved: cell.sec_per_solved,
+        sec_per_solved_all: cell.sec_per_solved_all ?? cell.sec_per_solved,
         solved_per_hour: cell.solved_per_hour,
         tok_per_solved: cell.tok_per_solved,
         agentic_tok_s: cell.agentic_tok_s,
         med_wall: cell.med_wall,
+        med_wall_pass: cell.med_wall_pass,
+        mean_wall_pass: cell.mean_wall_pass,
+        solved_per_hour_pass: cell.solved_per_hour_pass,
+        fail_wall_share: cell.fail_wall_share,
+        maxstep_fail_n: cell.maxstep_fail_n,
+        maxstep_fail_wall_share: cell.maxstep_fail_wall_share,
+        speed_credibility: cell.speed_credibility,
         cost_per_solved: cell.usd_per_solved,
         price_known: cell.price_known,
         identity: cell.identity,

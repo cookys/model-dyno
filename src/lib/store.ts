@@ -259,6 +259,8 @@ export interface SweMeta {
   current_exam_name?: string | null
   current_exam_n_tasks?: number | null
   n_canon?: number | null
+  /** plan 053 SSOT: current exam task count (= n_canon / current_exam_n_tasks). */
+  n_exam?: number | null
   comparable_min?: number
   version_aware?: boolean
   exam_versions?: ExamVersionInfo[]

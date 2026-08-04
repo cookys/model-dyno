@@ -11,6 +11,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { foldedRoutesBadge, modelCell, modelName, orgCell, harnessCell, machineCell, num, usageOf, agencyBadge, suspectErrorBadge, usageScenarioBadge, speedCredibilityBadge, runClassBadge } from '@/components/CellHelpers'
 import { primarySolveSecOf, examCostSecOf } from '@/lib/speedMetrics'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
+import { resolveExamMeta } from '@/lib/examMeta'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
 import {
   chooseBestCompCell,
@@ -46,15 +47,8 @@ const onMq = (e: MediaQueryListEvent | MediaQueryList) => { isMobile.value = e.m
 
 const examName = computed(() => dashboardComp.value?.exam ?? '—')
 
-/** plan 053: exam size + comparable_min (never hardcode product 36). */
-const examMeta = computed(() => {
-  const idx = dashboardComp.value
-  const cells = idx?.cells || []
-  const ns = cells.map((c) => c.n).filter((n): n is number => typeof n === 'number' && n > 0)
-  const nExam = idx?.n_exam ?? idx?.n_canon ?? (ns.length ? Math.max(...ns) : 40)
-  const comparableMin = idx?.comparable_min ?? Math.max(1, Math.round(0.9 * nExam))
-  return { nExam, comparableMin }
-})
+/** plan 053: exam size SSOT from index (not max(cell.n)). */
+const examMeta = computed(() => resolveExamMeta(dashboardComp.value))
 
 const rawCells = computed(() => {
   return (dashboardComp.value?.cells || []).filter((c) => num(c.acc) !== null && !c.frozen)

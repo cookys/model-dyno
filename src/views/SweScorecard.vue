@@ -11,6 +11,7 @@ import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { foldedVariantsBadge, indicatorIconBadge, machineCell, modelCell, modelName, sweRate, sweCI, overlaps, num, pct, fmt, agencyBadge, suspectErrorBadge, runClassBadge } from '@/components/CellHelpers'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
+import { resolveExamMeta } from '@/lib/examMeta'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
 import {
   chooseBestScorecardCell,
@@ -30,13 +31,8 @@ const onMq = (e: MediaQueryListEvent | MediaQueryList) => { isMobile.value = e.m
 
 const MIN_GRADED = 8
 
-/** plan 053: exam size + comparable_min (never hardcode product 36). */
-const examMeta = computed(() => {
-  const meta = scorecardSweMeta.value
-  const nExam = meta?.current_exam_n_tasks ?? meta?.n_canon ?? 40
-  const comparableMin = meta?.comparable_min ?? Math.max(1, Math.round(0.9 * nExam))
-  return { nExam, comparableMin }
-})
+/** plan 053: exam size SSOT from scorecard meta (not invented). */
+const examMeta = computed(() => resolveExamMeta(scorecardSweMeta.value))
 
 const foldedScorecardGroups = computed(() =>
   groupByCanonicalModel(

@@ -9,6 +9,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { num } from '@/components/CellHelpers'
 import { groupByCanonicalModel, recordCanonicalModel } from '@/lib/modelFolding'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
+import { resolveExamMeta } from '@/lib/examMeta'
 import { primarySolveSecOf, primarySolvedPerHourOf, examCostSecOf } from '@/lib/speedMetrics'
 
 const { t } = useI18n()
@@ -21,15 +22,8 @@ let detailFlashTimer: ReturnType<typeof setTimeout> | null = null
 
 const examName = computed(() => dashboardSpeedComp.value?.exam ?? '—')
 
-/** plan 053: exam size + comparable_min (never hardcode product 36). */
-const examMeta = computed(() => {
-  const idx = dashboardSpeedComp.value
-  const cells = idx?.cells || []
-  const ns = cells.map((c) => c.n).filter((n): n is number => typeof n === 'number' && n > 0)
-  const nExam = idx?.n_exam ?? idx?.n_canon ?? (ns.length ? Math.max(...ns) : 40)
-  const comparableMin = idx?.comparable_min ?? Math.max(1, Math.round(0.9 * nExam))
-  return { nExam, comparableMin }
-})
+/** plan 053: exam size SSOT from COMP index (not max(cell.n)). */
+const examMeta = computed(() => resolveExamMeta(dashboardSpeedComp.value))
 
 const rankDesc = (value: unknown): number => num(value) ?? -Infinity
 const rankAsc = (value: unknown): number => num(value) ?? Infinity

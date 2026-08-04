@@ -9,6 +9,7 @@ import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { foldedVariantsBadge, modelCell, modelName, orgCell, harnessCell, num, runClassBadge } from '@/components/CellHelpers'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
+import { resolveExamMeta } from '@/lib/examMeta'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
 import {
   chooseBestNormCell,
@@ -32,13 +33,8 @@ const MIN_COV = 0.5
 const nTasks = computed(() => dashboardNorm.value?.n_tasks ?? 0)
 const taskSet = computed(() => dashboardNorm.value?.task_set ?? '—')
 
-/** plan 053: exam size + comparable_min (never hardcode product 36). */
-const examMeta = computed(() => {
-  const idx = dashboardNorm.value
-  const nExam = idx?.n_exam ?? idx?.n_canon ?? idx?.n_tasks ?? 40
-  const comparableMin = idx?.comparable_min ?? Math.max(1, Math.round(0.9 * nExam))
-  return { nExam, comparableMin }
-})
+/** plan 053: exam size SSOT from index (not invented). */
+const examMeta = computed(() => resolveExamMeta(dashboardNorm.value))
 
 // plan 023 P4 staleness: the NORM board id-matches verdicts (not version-pinned), so a task
 // whose verifier was repaired after the matrix was captured may reuse a stale cloud verdict.

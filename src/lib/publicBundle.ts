@@ -409,6 +409,7 @@ export function projectScorecardRowsFromPublicBundle(
       n_passed: nPassed,
       canonical_version: benchId,
       n_canon: nonNegativeInt(bench?.task_count) ?? nTasks,
+      n_exam: nonNegativeInt(bench?.task_count) ?? nTasks,
       owed: Math.max(0, (nonNegativeInt(bench?.task_count) ?? nTasks) - nTasks),
       headline,
       headline_ci: wilsonCi(nPassed, denominator),
@@ -469,16 +470,35 @@ export function projectSharedCellsFromScorecardRows(cells: SweCell[]): SharedSwe
   }))
 }
 
+/** plan 053: exam size SSOT from feed meta (never invent from max cell n). */
+function examSizeFromMeta(meta: SweMeta | null, cells: SweCell[] = []): {
+  nExam: number
+  comparableMin: number | undefined
+} {
+  const nExam =
+    nonNegativeInt(meta?.n_exam)
+    ?? nonNegativeInt(meta?.current_exam_n_tasks)
+    ?? nonNegativeInt(meta?.n_canon)
+    ?? nonNegativeInt(cells[0]?.n_exam)
+    ?? nonNegativeInt(cells[0]?.n_canon)
+    ?? 0
+  const comparableMin =
+    nonNegativeInt(meta?.comparable_min)
+    ?? (nExam > 0 ? Math.max(1, Math.round(0.9 * nExam)) : undefined)
+  return { nExam, comparableMin }
+}
+
 export function projectNormIndexFromScorecardRows(cells: SweCell[], meta: SweMeta | null): NormIndex | null {
   if (!cells.length) return null
   const current = meta?.current_exam ?? cells[0]?.canonical_version ?? 'public-bundle'
-  const currentTaskCount = meta?.current_exam_n_tasks ?? meta?.n_canon ?? cells[0]?.n_canon ?? 0
+  const { nExam, comparableMin } = examSizeFromMeta(meta, cells)
+  const currentTaskCount = nExam
   return {
     cells: cells.map((cell) => {
       const passRate = finiteNumberOrNull(cell.headline) ?? 0
       const ci = cell.headline_ci ?? wilsonCi(cell.n_passed ?? 0, cell.n_graded ?? 0)
       const nGraded = cell.n_graded ?? 0
-      const nCanon = cell.n_canon ?? currentTaskCount
+      const nCanon = cell.n_exam ?? cell.n_canon ?? currentTaskCount
       return {
         model: cell.model,
         source: cell.source ?? 'public-bundle',
@@ -497,19 +517,29 @@ export function projectNormIndexFromScorecardRows(cells: SweCell[], meta: SweMet
         tags: cell.tags,
         display: cell.display,
         cell: cell.cell,
+        owed: cell.owed,
+        n_exam: nCanon || null,
+        n_canon: nCanon || null,
       }
     }),
     n_tasks: currentTaskCount,
     task_set: current,
     version_aware: true,
     current_exam: current,
+    n_exam: currentTaskCount || undefined,
+    n_canon: currentTaskCount || undefined,
+    comparable_min: comparableMin,
   }
 }
 
 export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMeta | null): CompIndex | null {
   if (!cells.length) return null
+  const { nExam, comparableMin } = examSizeFromMeta(meta, cells)
   return {
     exam: meta?.current_exam_label ?? meta?.current_exam ?? cells[0]?.canonical_version ?? undefined,
+    n_exam: nExam || undefined,
+    n_canon: nExam || undefined,
+    comparable_min: comparableMin,
     cells: cells.map((cell) => {
       const acc = finiteNumberOrNull(cell.headline) ?? 0
       const ci = cell.headline_ci ?? wilsonCi(cell.n_passed ?? 0, cell.n_graded ?? 0)
@@ -528,6 +558,9 @@ export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMet
         ci_hi: ci[1],
         passed: cell.n_passed ?? 0,
         n: cell.n_graded ?? 0,
+        n_exam: cell.n_exam ?? cell.n_canon ?? (nExam || null),
+        n_canon: cell.n_canon ?? cell.n_exam ?? (nExam || null),
+        owed: cell.owed,
         sec_per_solved: cell.sec_per_solved,
         sec_per_solved_all: cell.sec_per_solved_all ?? cell.sec_per_solved,
         solved_per_hour: cell.solved_per_hour,
@@ -634,13 +667,23 @@ function buildScorecardMeta(
     const current = versions.find((v) => v.current)
       ?? versions.find((v) => v.version === feedCurrent)
       ?? versions[0]
+    const nExam =
+      nonNegativeInt(feedMeta.n_exam)
+      ?? nonNegativeInt(feedMeta.current_exam_n_tasks)
+      ?? nonNegativeInt(feedMeta.n_canon)
+      ?? nonNegativeInt(current?.n_tasks)
+      ?? null
+    const comparableMin =
+      nonNegativeInt(feedMeta.comparable_min)
+      ?? (nExam != null && nExam > 0 ? Math.max(1, Math.round(0.9 * nExam)) : undefined)
     return {
       current_exam: feedMeta.current_exam ?? current?.version ?? null,
       current_exam_label: feedMeta.current_exam_label ?? current?.label ?? null,
       current_exam_name: feedMeta.current_exam_name ?? current?.name ?? null,
-      current_exam_n_tasks: feedMeta.current_exam_n_tasks ?? current?.n_tasks ?? null,
-      n_canon: feedMeta.n_canon ?? current?.n_tasks ?? null,
-      comparable_min: feedMeta.comparable_min,
+      current_exam_n_tasks: nExam,
+      n_canon: nExam,
+      n_exam: nExam,
+      comparable_min: comparableMin,
       version_aware: feedMeta.version_aware ?? true,
       exam_versions: versions,
     }
@@ -669,13 +712,19 @@ function buildScorecardMeta(
   }
 
   const current = versions.find((v) => v.current) ?? versions[0]
+  const nExam = nonNegativeInt(current?.n_tasks)
+  // plan 053: comparable_min is 0.9·n_exam — NEVER equal to full n_tasks
+  const comparableMin = nExam != null && nExam > 0
+    ? Math.max(1, Math.round(0.9 * nExam))
+    : undefined
   return {
     current_exam: current?.version ?? null,
     current_exam_label: current?.label ?? null,
     current_exam_name: current?.name ?? null,
-    current_exam_n_tasks: current?.n_tasks ?? null,
-    n_canon: current?.n_tasks ?? null,
-    comparable_min: current?.n_tasks ?? undefined,
+    current_exam_n_tasks: nExam,
+    n_canon: nExam,
+    n_exam: nExam,
+    comparable_min: comparableMin,
     version_aware: true,
     exam_versions: versions,
   }
@@ -723,7 +772,8 @@ function normalizeFeedEntries(raw: unknown): NormalizedPublicBundleFeed {
       current_exam_label: stringOrNull(feed.current_exam_label),
       current_exam_name: stringOrNull(feed.current_exam_name),
       current_exam_n_tasks: nonNegativeInt(feed.current_exam_n_tasks),
-      n_canon: nonNegativeInt(feed.n_canon),
+      n_canon: nonNegativeInt(feed.n_canon) ?? nonNegativeInt(feed.n_exam),
+      n_exam: nonNegativeInt(feed.n_exam) ?? nonNegativeInt(feed.n_canon) ?? nonNegativeInt(feed.current_exam_n_tasks),
       comparable_min: nonNegativeInt(feed.comparable_min) ?? undefined,
       version_aware: boolOrNull(feed.version_aware) ?? true,
       exam_versions: examVersions,

@@ -92,16 +92,24 @@ test('scorecard chart and table share folded representatives', () => {
 
   assert.match(view, /const foldedScorecardGroups = computed/)
   assert.match(view, /const scorecardRows = computed\(\(\) => \{/)
-  assert.match(view, /const data = scorecardRows\.value/)
-  assert.match(view, /:rows="scorecardRows"/)
+  // plan 053: chart + main table use rankable FULL partition of folded rows
+  assert.match(view, /const mainScorecardData = computed/)
+  assert.match(view, /const data = mainScorecardData\.value/)
+  assert.match(view, /:rows="mainScorecardData"/)
+  assert.match(view, /incompleteScorecardData/)
 })
 
 test('COMP default is folded but model query remains route-level drilldown', () => {
   const view = read('src/views/SweComp.vue')
 
-  assert.match(view, /if \(!modelFilter\.value\) return foldedCompRows\.value/)
+  // plan 053: model filter → raw rows; else folded, then partition main/incomplete
+  assert.match(view, /if \(modelFilter\.value\)/)
   assert.match(view, /return rawCompRows\.value\.filter/)
+  assert.match(view, /return foldedCompRows\.value/)
   assert.match(view, /normalizeCanonicalModel\(recordCanonicalModel\(r\._rec\)\) === modelKey/)
+  assert.match(view, /partitionBySection/)
+  assert.match(view, /mainCompData/)
+  assert.match(view, /incompleteCompData/)
 })
 
 test('route-first speed cloud page does not import or apply model folding', () => {

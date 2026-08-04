@@ -123,6 +123,17 @@
     },
     {
       "access_label": "",
+      "base_url": "./public-bundles/results-deepseek-v4-flash-0731-local-DeepSeek-V4-Flash-0731-2eebe056bbbc/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "deepseek-v4-flash-0731",
+      "machine": "cookys-cuda",
+      "operator": "",
+      "owner": "cookys",
+      "publisher": ""
+    },
+    {
+      "access_label": "",
       "base_url": "./public-bundles/anthropic-opus-5-faee9cb3dad9/",
       "current": true,
       "id": "40t-6604ff64",
@@ -1209,6 +1220,17 @@
       "operator": "",
       "owner": "cookys",
       "publisher": ""
+    },
+    {
+      "access_label": "",
+      "base_url": "./public-bundles/results-qwen3-coder-next-vulkan-local-qwen3-coder-next-2bb09d67af49/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "Qwen3-Coder-Next",
+      "machine": "cookys-aimax395",
+      "operator": "",
+      "owner": "cookys",
+      "publisher": ""
     }
   ],
   "comparable_min": 36,
@@ -1227,7 +1249,7 @@
       "version": "40t-6604ff64"
     }
   ],
-  "generated_at": "2026-08-03T08:12:25Z",
+  "generated_at": "2026-08-04T02:54:29Z",
   "n_canon": 40,
   "schema_version": "dashboard_public_bundle_feed.v1",
   "task_domains_url": "./public-bundles/task-domains.json",

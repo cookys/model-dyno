@@ -122,6 +122,10 @@ export function tagOf(c: RouteCarrier, key: string): string | null {
 export function engineOf(c: RouteCarrier): string | null {
   if (c.engine) return c.engine
   const text = routeText(c).toLowerCase()
+  // 0731 official local (DSpark) before generic lucifer preview
+  if (text.includes('0731') || text.includes('deepseek-v4-flash-0731')) {
+    return 'vLLM 0.26.0-fi3989 (DSpark)'
+  }
   if (text.includes('lucifer')) return 'voipmonitor/vllm:lucifer'
   if (text.includes('hy3') && text.includes('mxfp4')) return 'vLLM 0.24.0'
   if (text.includes('step-3.7') || text.includes('step37')) return 'StepFun llama.cpp step3.7'
@@ -161,6 +165,7 @@ export function contextOf(c: RouteCarrier): string | null {
   const text = routeText(c).toLowerCase()
   const m = text.match(/(\d+)k/)
   if (m) return `${m[1]}K`
+  if (text.includes('0731') || text.includes('deepseek-v4-flash-0731')) return '131K'
   if (text.includes('deepseek-v4-flash-lucifer')) return '262K'
   return null
 }
@@ -187,6 +192,17 @@ export function weightMetaOf(c: RouteCarrier): Partial<RouteProvenance> {
       weight_source_url: 'https://huggingface.co/olka-fi/Hy3-MXFP4',
       base_model: 'tencent/Hy3',
       base_model_url: 'https://huggingface.co/tencent/Hy3',
+    }
+  }
+  // Official 0731 release (must precede generic preview Flash path)
+  if (text.includes('0731') || text.includes('deepseek-v4-flash-0731')) {
+    return {
+      weight_format: 'safetensors · FP4/FP8 mixed',
+      weight_path: '/data/models/DeepSeek-V4-Flash-0731',
+      weight_source: 'deepseek-ai/DeepSeek-V4-Flash-0731',
+      weight_source_url: 'https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731',
+      base_model: 'deepseek-ai/DeepSeek-V4-Flash-0731',
+      base_model_url: 'https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731',
     }
   }
   if (text.includes('deepseek-v4-flash')) {

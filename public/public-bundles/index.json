@@ -178,6 +178,17 @@
     },
     {
       "access_label": "Direct",
+      "base_url": "./public-bundles/meta-muse-spark-1.2-c1b3cf82a858/",
+      "current": true,
+      "id": "40t-6604ff64",
+      "label": "muse-spark-1.2 · Direct",
+      "machine": "?",
+      "operator": "Meta",
+      "owner": "?",
+      "publisher": "Meta"
+    },
+    {
+      "access_label": "Direct",
       "base_url": "./public-bundles/results-m27-highspeed-minimax-MiniMax-M2.7-highspeed-b7fa70161353/",
       "current": true,
       "id": "40t-6604ff64",
@@ -1249,8 +1260,9 @@
       "version": "40t-6604ff64"
     }
   ],
-  "generated_at": "2026-08-04T04:22:35Z",
+  "generated_at": "2026-08-07T07:37:18Z",
   "n_canon": 40,
+  "n_exam": 40,
   "schema_version": "dashboard_public_bundle_feed.v1",
   "task_domains_url": "./public-bundles/task-domains.json",
   "version_aware": true,

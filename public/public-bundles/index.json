@@ -8,8 +8,10 @@
       "label": "gpt-5.6-luna · Codex",
       "machine": "?",
       "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "Grok",
@@ -19,8 +21,10 @@
       "label": "grok-4.5 · Grok",
       "machine": "?",
       "operator": "xAI",
+      "operator_url": "https://x.ai/",
       "owner": "?",
-      "publisher": "xAI"
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/"
     },
     {
       "access_label": "OpenCode",
@@ -30,8 +34,10 @@
       "label": "deepseek-v4-flash · OpenCode",
       "machine": "cookys-7840hs",
       "operator": "OpenCode",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "DeepSeek"
+      "publisher": "DeepSeek",
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
     },
     {
       "access_label": "Direct",
@@ -41,8 +47,10 @@
       "label": "opus-4.8 · Direct",
       "machine": "?",
       "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "publisher": "Anthropic"
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
     },
     {
       "access_label": "Codex",
@@ -52,8 +60,10 @@
       "label": "gpt-5.5 · Codex",
       "machine": "?",
       "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
-      "publisher": "OpenAI"
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models"
     },
     {
       "access_label": "Codex",
@@ -63,8 +73,10 @@
       "label": "gpt-5.6-terra · Codex",
       "machine": "?",
       "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "OpenRouter",
@@ -74,8 +86,10 @@
       "label": "hy3 · OpenRouter",
       "machine": "cookys-aimax395",
       "operator": "OpenRouter",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Tencent"
+      "publisher": "Tencent",
+      "publisher_url": "https://www.tencent.com/en-us/"
     },
     {
       "access_label": "qoder-cli",
@@ -85,8 +99,10 @@
       "label": "qwen3.8-max · qoder-cli",
       "machine": "cookys-linux-7840hs",
       "operator": "Alibaba",
+      "operator_url": "https://qwen.ai/",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -96,8 +112,10 @@
       "label": "sonnet-4.6 · Direct",
       "machine": "?",
       "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "publisher": "Anthropic"
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
     },
     {
       "access_label": "Codex",
@@ -107,8 +125,10 @@
       "label": "gpt-5.6-sol · Codex",
       "machine": "?",
       "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "Direct",
@@ -118,8 +138,10 @@
       "label": "gemini-3.5-flash · Direct",
       "machine": "?",
       "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "?",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "local",
@@ -129,8 +151,10 @@
       "label": "deepseek-v4-flash-0731",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "DeepSeek"
+      "publisher": "DeepSeek",
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
     },
     {
       "access_label": "Direct",
@@ -140,8 +164,10 @@
       "label": "opus-5 · Direct",
       "machine": "?",
       "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "publisher": "Anthropic"
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
     },
     {
       "access_label": "Direct",
@@ -151,8 +177,10 @@
       "label": "minimax-m3 · Direct",
       "machine": "cookys-7840hs",
       "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "Direct",
@@ -162,8 +190,10 @@
       "label": "minimax-m2 · Direct",
       "machine": "cookys-cuda",
       "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "Direct",
@@ -173,8 +203,10 @@
       "label": "fable-5 · Direct",
       "machine": "?",
       "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "publisher": "Anthropic"
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
     },
     {
       "access_label": "Direct",
@@ -184,8 +216,10 @@
       "label": "muse-spark-1.2 · Direct",
       "machine": "?",
       "operator": "Meta",
+      "operator_url": "https://developer.meta.com/ai/models/muse-spark/",
       "owner": "?",
-      "publisher": "Meta"
+      "publisher": "Meta",
+      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/"
     },
     {
       "access_label": "Direct",
@@ -195,8 +229,10 @@
       "label": "minimax-m2.7 · Direct",
       "machine": "cookys-7840hs",
       "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "local",
@@ -206,8 +242,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "Direct",
@@ -217,8 +255,10 @@
       "label": "glm-5.2 · Direct",
       "machine": "cookys-7840hs",
       "operator": "Z.AI",
+      "operator_url": "https://z.ai/",
       "owner": "cookys",
-      "publisher": "Z.AI"
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/"
     },
     {
       "access_label": "Direct",
@@ -228,8 +268,10 @@
       "label": "sonnet-5 · Direct",
       "machine": "?",
       "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "publisher": "Anthropic"
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
     },
     {
       "access_label": "Codex",
@@ -239,8 +281,10 @@
       "label": "gpt-5.3-codex-spark · Codex",
       "machine": "?",
       "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "OpenCode",
@@ -250,8 +294,10 @@
       "label": "glm-5.2 · OpenCode",
       "machine": "cookys-cuda",
       "operator": "OpenCode",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Z.AI"
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/"
     },
     {
       "access_label": "local",
@@ -261,8 +307,10 @@
       "label": "deepseek-v4-flash-lucifer-low",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "DeepSeek"
+      "publisher": "DeepSeek",
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
     },
     {
       "access_label": "local",
@@ -272,8 +320,10 @@
       "label": "Step-3.7-Flash",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "StepFun"
+      "publisher": "StepFun",
+      "publisher_url": "https://www.stepfun.com/"
     },
     {
       "access_label": "local",
@@ -283,8 +333,10 @@
       "label": "Qwen3.5-122B-A10B",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Kimi Code",
@@ -294,8 +346,10 @@
       "label": "kimi-k3 · Kimi Code",
       "machine": "cookys-cuda",
       "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
       "owner": "cookys",
-      "publisher": "Moonshot"
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/"
     },
     {
       "access_label": "Direct",
@@ -305,8 +359,10 @@
       "label": "glm-5.1 · Direct",
       "machine": "?",
       "operator": "Z.AI",
+      "operator_url": "https://z.ai/",
       "owner": "?",
-      "publisher": "Z.AI"
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/"
     },
     {
       "access_label": "local",
@@ -316,8 +372,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cachyos-max395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -327,8 +385,10 @@
       "label": "hy3-mxfp4-98k-mtp-local-4kout",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Tencent"
+      "publisher": "Tencent",
+      "publisher_url": "https://www.tencent.com/en-us/"
     },
     {
       "access_label": "local",
@@ -338,8 +398,10 @@
       "label": "thinkingcap-qwen3.6-27b-thinkoff",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "Direct",
@@ -349,8 +411,10 @@
       "label": "gemini-3.1-pro · Direct",
       "machine": "?",
       "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "?",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "local",
@@ -360,8 +424,10 @@
       "label": "Devstral-24B",
       "machine": "?",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "Mistral"
+      "publisher": "Mistral",
+      "publisher_url": ""
     },
     {
       "access_label": "Direct",
@@ -371,8 +437,10 @@
       "label": "minimax-m2.7 · Direct",
       "machine": "cookys-7840hs",
       "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "Direct",
@@ -382,8 +450,10 @@
       "label": "kimi-k2.6 · Direct",
       "machine": "?",
       "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
       "owner": "?",
-      "publisher": "Moonshot"
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/"
     },
     {
       "access_label": "local",
@@ -393,8 +463,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-aimax395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -404,8 +476,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-aimax395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -415,8 +489,10 @@
       "label": "Qwen3-Coder-Next",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -426,8 +502,10 @@
       "label": "minimax-m2.5 · Direct",
       "machine": "cookys-cuda",
       "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "Direct",
@@ -437,8 +515,10 @@
       "label": "minimax-m2.1 · Direct",
       "machine": "cookys-cuda",
       "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "local",
@@ -448,8 +528,10 @@
       "label": "thinkingcap-dflash",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "Direct",
@@ -459,8 +541,10 @@
       "label": "mimo-v2.5-pro · Direct",
       "machine": "?",
       "operator": "Xiaomi",
+      "operator_url": "https://www.mi.com/global/",
       "owner": "?",
-      "publisher": "Xiaomi"
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/"
     },
     {
       "access_label": "local",
@@ -470,8 +554,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -481,8 +567,10 @@
       "label": "ornith-1.0-35b",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "OpenRouter",
@@ -492,8 +580,10 @@
       "label": "nex-n2-pro · OpenRouter",
       "machine": "cookys-aimax395",
       "operator": "OpenRouter",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Nex AGI"
+      "publisher": "Nex AGI",
+      "publisher_url": "https://huggingface.co/nex-agi"
     },
     {
       "access_label": "Direct",
@@ -503,8 +593,10 @@
       "label": "minimax-m2.1 · Direct",
       "machine": "cookys-cuda",
       "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "local",
@@ -514,8 +606,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -525,8 +619,10 @@
       "label": "Qwen3.6-35B-A3B",
       "machine": "cookys-aimax395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -536,8 +632,10 @@
       "label": "gemini-3.5-flash-lite · Direct",
       "machine": "cookys-7840hs",
       "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "cookys",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "Direct",
@@ -547,8 +645,10 @@
       "label": "haiku-4.5 · Direct",
       "machine": "?",
       "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "publisher": "Anthropic"
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
     },
     {
       "access_label": "Grok",
@@ -558,8 +658,10 @@
       "label": "grok-composer-2.5 · Grok",
       "machine": "?",
       "operator": "xAI",
+      "operator_url": "https://x.ai/",
       "owner": "?",
-      "publisher": "xAI"
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/"
     },
     {
       "access_label": "OpenCode Free",
@@ -569,8 +671,10 @@
       "label": "big-pickle · OpenCode Free",
       "machine": "?",
       "operator": "OpenCode",
+      "operator_url": "",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -580,8 +684,10 @@
       "label": "Qwen3.6-35B-A3B",
       "machine": "cookys-7840hs",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -591,8 +697,10 @@
       "label": "Laguna XS 2.1",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Poolside"
+      "publisher": "Poolside",
+      "publisher_url": ""
     },
     {
       "access_label": "OpenCode",
@@ -602,8 +710,10 @@
       "label": "mimo-v2.5 · OpenCode",
       "machine": "cookys-7840hs",
       "operator": "OpenCode",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Xiaomi"
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/"
     },
     {
       "access_label": "local",
@@ -613,8 +723,10 @@
       "label": "Qwen3.6-27B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -624,8 +736,10 @@
       "label": "Qwen3.6-35B-A3B",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Kimi Code",
@@ -635,8 +749,10 @@
       "label": "kimi-k2.7-code · Kimi Code",
       "machine": "cookys-cuda",
       "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
       "owner": "cookys",
-      "publisher": "Moonshot"
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/"
     },
     {
       "access_label": "OpenRouter",
@@ -646,8 +762,10 @@
       "label": "hy3 · OpenRouter",
       "machine": "cookys-aimax395",
       "operator": "OpenRouter",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Tencent"
+      "publisher": "Tencent",
+      "publisher_url": "https://www.tencent.com/en-us/"
     },
     {
       "access_label": "local",
@@ -657,8 +775,10 @@
       "label": "Qwen3.6-27B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -668,8 +788,10 @@
       "label": "gemini-3.6-flash-high · Direct",
       "machine": "cookys-linux-7840hs",
       "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "cookys",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "OpenRouter",
@@ -679,8 +801,10 @@
       "label": "deepseek-v4-pro · OpenRouter",
       "machine": "?",
       "operator": "OpenRouter",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "DeepSeek"
+      "publisher": "DeepSeek",
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
     },
     {
       "access_label": "local",
@@ -690,8 +814,10 @@
       "label": "Nemotron Cascade 2 30B-A3B",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "NVIDIA"
+      "publisher": "NVIDIA",
+      "publisher_url": "https://www.nvidia.com/en-us/ai/"
     },
     {
       "access_label": "local",
@@ -701,8 +827,10 @@
       "label": "qwen36-27b-nvfp4-unsloth-128k-thinkoff",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -712,8 +840,10 @@
       "label": "Qwen3.6-35B-A3B",
       "machine": "cachyos-max395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -723,8 +853,10 @@
       "label": "MiMo-v2.5",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Xiaomi"
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/"
     },
     {
       "access_label": "local",
@@ -734,8 +866,10 @@
       "label": "hy3-iq1m-32k-thinkoff",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Tencent"
+      "publisher": "Tencent",
+      "publisher_url": "https://www.tencent.com/en-us/"
     },
     {
       "access_label": "local",
@@ -745,8 +879,10 @@
       "label": "Nex-N2-Pro",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Nex AGI"
+      "publisher": "Nex AGI",
+      "publisher_url": "https://huggingface.co/nex-agi"
     },
     {
       "access_label": "local",
@@ -756,8 +892,10 @@
       "label": "devstral2-24b-thinkoff",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -767,8 +905,10 @@
       "label": "MiMo-v2.5",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Xiaomi"
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/"
     },
     {
       "access_label": "local",
@@ -778,8 +918,10 @@
       "label": "Qwen3.6-27B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -789,8 +931,10 @@
       "label": "Qwen3.6-27B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -800,8 +944,10 @@
       "label": "Qwen3.6-27B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -811,8 +957,10 @@
       "label": "Qwen3.6-27B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -822,8 +970,10 @@
       "label": "Qwen3.6-35B-A3B",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -833,8 +983,10 @@
       "label": "Agents-A1",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "InternScience"
+      "publisher": "InternScience",
+      "publisher_url": ""
     },
     {
       "access_label": "OpenCode Free",
@@ -844,8 +996,10 @@
       "label": "nemotron-3-ultra · OpenCode Free",
       "machine": "?",
       "operator": "OpenCode",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "NVIDIA"
+      "publisher": "NVIDIA",
+      "publisher_url": "https://www.nvidia.com/en-us/ai/"
     },
     {
       "access_label": "local",
@@ -855,8 +1009,10 @@
       "label": "Nemotron Puzzle 75B-A9B",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "NVIDIA"
+      "publisher": "NVIDIA",
+      "publisher_url": "https://www.nvidia.com/en-us/ai/"
     },
     {
       "access_label": "local",
@@ -866,8 +1022,10 @@
       "label": "gemma-4-31b-dflash-turbo3",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "OpenCode Free",
@@ -877,8 +1035,10 @@
       "label": "north-mini-code · OpenCode Free",
       "machine": "?",
       "operator": "OpenCode",
+      "operator_url": "",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -888,8 +1048,10 @@
       "label": "Qwen3.6-27B · qwopus",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -899,8 +1061,10 @@
       "label": "Qwen3.6-27B · qwopus",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -910,8 +1074,10 @@
       "label": "Qwen3.6-27B · qwopus",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -921,8 +1087,10 @@
       "label": "Qwen3.6-27B · qwopus",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -932,8 +1100,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -943,8 +1113,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -954,8 +1126,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -965,8 +1139,10 @@
       "label": "Qwen3.6-27B · qwopus",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -976,8 +1152,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -987,8 +1165,10 @@
       "label": "gemma-4-26b-a4b-dflash-turbo3",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -998,8 +1178,10 @@
       "label": "Nex-N2-Pro",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Nex AGI"
+      "publisher": "Nex AGI",
+      "publisher_url": "https://huggingface.co/nex-agi"
     },
     {
       "access_label": "local",
@@ -1009,8 +1191,10 @@
       "label": "minimax-m3-iq3xxs-64k-local-prequal",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "local",
@@ -1020,8 +1204,10 @@
       "label": "Nemotron Cascade 2 30B-A3B",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "NVIDIA"
+      "publisher": "NVIDIA",
+      "publisher_url": "https://www.nvidia.com/en-us/ai/"
     },
     {
       "access_label": "local",
@@ -1031,8 +1217,10 @@
       "label": "Gemma-4-12B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "local",
@@ -1042,8 +1230,10 @@
       "label": "Gemma-4-12B · coder",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "Direct",
@@ -1053,8 +1243,10 @@
       "label": "gpt-oss-120b · Direct",
       "machine": "?",
       "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
-      "publisher": "OpenAI"
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models"
     },
     {
       "access_label": "local",
@@ -1064,8 +1256,10 @@
       "label": "Qwen3-30B-A3B",
       "machine": "cachyos-max395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -1075,8 +1269,10 @@
       "label": "Qwen3-30B-A3B",
       "machine": "cachyos-max395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -1086,8 +1282,10 @@
       "label": "GLM-4.7-Flash",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Z.AI"
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/"
     },
     {
       "access_label": "local",
@@ -1097,8 +1295,10 @@
       "label": "Gemma-4-12B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "local",
@@ -1108,8 +1308,10 @@
       "label": "Gemma-4-12B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "local",
@@ -1119,8 +1321,10 @@
       "label": "Qwen3-30B-A3B",
       "machine": "mac165s-MacBook-Pro.local",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cyberbsd",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -1130,8 +1334,10 @@
       "label": "GLM-4.7-Flash",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "Z.AI"
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/"
     },
     {
       "access_label": "local",
@@ -1141,8 +1347,10 @@
       "label": "GLM-4.7-Flash",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "Z.AI"
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/"
     },
     {
       "access_label": "local",
@@ -1152,8 +1360,10 @@
       "label": "Qwen3-30B-A3B",
       "machine": "cachyos-max395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "local",
@@ -1163,8 +1373,10 @@
       "label": "VibeThinker-3B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Weibo"
+      "publisher": "Weibo",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -1174,8 +1386,10 @@
       "label": "Qwen3.6-27B · huihui",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "?",
-      "publisher": ""
+      "publisher": "",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -1185,8 +1399,10 @@
       "label": "Gemma-4-12B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Google"
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
       "access_label": "local",
@@ -1196,8 +1412,10 @@
       "label": "VibeThinker-3B",
       "machine": "cookys-gentoo",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Weibo"
+      "publisher": "Weibo",
+      "publisher_url": ""
     },
     {
       "access_label": "local",
@@ -1207,8 +1425,10 @@
       "label": "minimax-m3-moq3-64k-local-prequal",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "local",
@@ -1218,8 +1438,10 @@
       "label": "minimax-m3-reap50-128k-sglang-prequal",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "MiniMax"
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/"
     },
     {
       "access_label": "local",
@@ -1229,8 +1451,10 @@
       "label": "Nemotron Super 120B-A12B",
       "machine": "cookys-cuda",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "NVIDIA"
+      "publisher": "NVIDIA",
+      "publisher_url": "https://www.nvidia.com/en-us/ai/"
     },
     {
       "access_label": "local",
@@ -1240,8 +1464,10 @@
       "label": "Qwen3-Coder-Next",
       "machine": "cookys-aimax395",
       "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
-      "publisher": "Alibaba"
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     }
   ],
   "comparable_min": 36,
@@ -1260,7 +1486,7 @@
       "version": "40t-6604ff64"
     }
   ],
-  "generated_at": "2026-08-07T08:04:23Z",
+  "generated_at": "2026-08-07T09:17:26Z",
   "n_canon": 40,
   "n_exam": 40,
   "schema_version": "dashboard_public_bundle_feed.v1",

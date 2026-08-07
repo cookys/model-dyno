@@ -1,1 +1,1 @@
-[{"backend":"direct-api","display_slug":"anthropic-fable-5-7434903341ce","evaluation_mode":"capability","harness":"?","model":"fable-5","policy":"dashboard-public-feed","subject_digest":"15b1f2f7ff81f862cbf2b15a68c0873e235430f716ad9a521bedb362b187afd2"}]
+[{"backend":"direct-api","display_slug":"anthropic-fable-5-7434903341ce","evaluation_mode":"capability","harness":"Claude Code","model":"fable-5","policy":"dashboard-public-feed","subject_digest":"2b0db939cbedc664a4cad437dd6d2786a5995210806f4609391c3b55c38ffdaf"}]

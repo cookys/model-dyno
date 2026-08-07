@@ -1,1 +1,1 @@
-[{"backend":"direct-api","display_slug":"anthropic-opus-4.8-5c268542aed8","evaluation_mode":"capability","harness":"?","model":"opus-4.8","policy":"dashboard-public-feed","subject_digest":"5922b3b5fcda1030c7a66fa04a42e5e2f72c2420eb681099ffb0fedfeaaa6017"}]
+[{"backend":"direct-api","display_slug":"anthropic-opus-4.8-5c268542aed8","evaluation_mode":"capability","harness":"Claude Code","model":"opus-4.8","policy":"dashboard-public-feed","subject_digest":"2ed01619b574b95ef080ef8c794eb736a71c424fd455ad4ee574a1a5d0086b37"}]

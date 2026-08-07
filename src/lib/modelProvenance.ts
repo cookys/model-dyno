@@ -29,6 +29,12 @@ type RouteCarrier = Partial<CompCell> & {
   engine?: string | null
   engine_url?: string | null
   runtime_context?: string | null
+  // Producer-supplied provenance links. When the feed carries these, they win
+  // over the ENTITY_URLS table below — so onboarding a vendor is a data change
+  // upstream, not an edit to this file.
+  publisher_url?: string | null
+  operator_url?: string | null
+  harness_url?: string | null
 }
 
 const ENTITY_URLS: Record<string, string> = {
@@ -44,6 +50,8 @@ const ENTITY_URLS: Record<string, string> = {
   Alibaba: 'https://qwen.ai/',
   StepFun: 'https://www.stepfun.com/',
   NVIDIA: 'https://www.nvidia.com/en-us/ai/',
+  Meta: 'https://developer.meta.com/ai/models/muse-spark/',
+  'Vercel AI Gateway': 'https://vercel.com/docs/ai-gateway',
   xAI: 'https://x.ai/',
   OpenRouter: 'https://openrouter.ai/models',
   OpenCode: 'https://opencode.ai/docs/',
@@ -273,11 +281,15 @@ export function routeProvenanceOf(c: RouteCarrier): RouteProvenance {
     route_kind: access ? ACCESS_LABELS[access] || access : null,
     route_url: access ? ACCESS_URLS[access] || entityUrl(operator) || entityUrl(publisher) : null,
     provider: publisher || operator || null,
-    provider_url: entityUrl(publisher || operator),
+    // Producer-supplied *_url fields win; ENTITY_URLS is the fallback for rows
+    // whose feed predates them. Without this, every new vendor silently renders
+    // an unlinked name until someone remembers to edit the map in THIS repo
+    // (Meta/muse-spark-1.2 shipped that way on 2026-08-07).
+    provider_url: c.publisher_url || entityUrl(publisher || operator),
     operator: operator || null,
-    operator_url: entityUrl(operator),
+    operator_url: c.operator_url || entityUrl(operator),
     harness: harness || null,
-    harness_url: entityUrl(harness),
+    harness_url: c.harness_url || entityUrl(harness),
     billing: billing || null,
     plan: plan || null,
     model_source: modelSource || undefined,

@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-devstral2-24b-thinkoff-local-Devstral-Small-2-24B-Instruct-2512-Q4_K_M.gguf-de859788149a","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@5","model":"devstral-small-2-24b","policy":"dashboard-public-feed","subject_digest":"1801af6875d7ec67af9d4b4f796341fea97d02af2e952deab67d07e7d5654106"}]

@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-deepseek-v4-flash-0731-local-DeepSeek-V4-Flash-0731-8b2fa7be3847","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@6","model":"deepseek-v4-flash","policy":"dashboard-public-feed","subject_digest":"5d34e1147336a7d1e38e197192f9c6caf54d3fd51aa8ef1806e9d54c220c9a2f"}]

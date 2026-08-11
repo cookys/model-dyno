@@ -141,6 +141,14 @@ export function engineOf(c: RouteCarrier): string | null {
   if (text.includes('qwen3-coder-next')) return 'llama-minimax-m3 (llama.cpp PR #24925)'
   if (text.includes('qwen3.5-122b-a10b')) return 'llama-minimax-m3 (llama.cpp PR #24925)'
   if (text.includes('rocmfp4') || text.includes('rocmfpx')) return 'llama-rocmfpx (charlie12345 fork)'
+  // Meta Muse Glimmer 30B — mainline llama.cpp, pinned dd1ea5243 / b10355. The arch
+  // (MODEL_ARCH.MUSE_GLIMMER) landed in 62bf73d25 on 2026-08-10, so an older mainline
+  // build genuinely cannot load these weights — the pin is provenance, not decoration.
+  if (text.includes('muse-glimmer')) {
+    return text.includes('dflash')
+      ? 'llama.cpp mainline b10355 (DFlash draft-dflash n=15)'
+      : 'llama.cpp mainline b10355'
+  }
   return null
 }
 
@@ -152,6 +160,7 @@ export function engineUrlOf(c: RouteCarrier): string | null {
   if (engine.toLowerCase().includes('stepfun')) return 'https://github.com/stepfun-ai/llama.cpp/tree/step3.7'
   if (engine.toLowerCase().includes('ik_llama')) return 'https://github.com/ikawrakow/ik_llama.cpp'
   if (engine.toLowerCase().includes('rocmfpx')) return 'https://github.com/charlie12345/ROCmFPX'
+  if (engine.toLowerCase().includes('mainline b10355')) return 'https://github.com/ggml-org/llama.cpp/commit/62bf73d25'
   if (engine.toLowerCase().includes('llama.cpp')) return 'https://github.com/ggml-org/llama.cpp/pull/24925'
   return null
 }

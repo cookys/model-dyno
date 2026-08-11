@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-muse-glimmer-30b-dflash-local-Muse-Glimmer-30B-dflash-708f0f680759","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@6","model":"muse-glimmer-30b","policy":"dashboard-public-feed","subject_digest":"c1bbe796cce869589aa3dc2c8cce6afe2f6999cbfefb3589e7b9ab9c01fbc558"}]

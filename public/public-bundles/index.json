@@ -391,6 +391,19 @@
       "publisher_url": "https://z.ai/"
     },
     {
+      "access_label": "OpenCode",
+      "base_url": "./public-bundles/opencode-deepseek-v4-pro-aea18b0263f8/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "deepseek-v4-pro · OpenCode",
+      "machine": "?",
+      "operator": "OpenCode",
+      "operator_url": "",
+      "owner": "?",
+      "publisher": "DeepSeek",
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    {
       "access_label": "local",
       "base_url": "./public-bundles/results-hy3-mxfp4-98k-mtp-local-4kout-hy3-588b7573afb4/",
       "current": true,
@@ -1002,19 +1015,6 @@
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
-      "access_label": "OpenRouter",
-      "base_url": "./public-bundles/litellm-claude-or-deepseek-v4-pro-841850860b61/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "deepseek-v4-pro · OpenRouter",
-      "machine": "?",
-      "operator": "OpenRouter",
-      "operator_url": "",
-      "owner": "?",
-      "publisher": "DeepSeek",
-      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
-    },
-    {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local-c96327caae22/",
       "current": true,
@@ -1612,7 +1612,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-13T11:06:44Z",
+  "generated_at": "2026-08-13T18:45:56Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

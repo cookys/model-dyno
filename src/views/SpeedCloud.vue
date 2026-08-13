@@ -12,6 +12,7 @@ import { modelBadges, modelName, num, speedCredibilityBadge } from '@/components
 import { deploymentLine, routeProvenanceOf } from '@/lib/modelProvenance'
 import { primarySolveSecOf, primarySolvedPerHourOf, primarySolvedPerMinOf, examCostSecOf } from '@/lib/speedMetrics'
 import { useBoardFilter } from '@/lib/useBoardFilter'
+import { publishersOf } from '@/lib/modelFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
 
 const { t } = useI18n()
@@ -24,6 +25,16 @@ const tableFlash = ref(false)
 let tableFlashTimer: ReturnType<typeof setTimeout> | null = null
 
 const examName = computed(() => dashboardSpeedComp.value?.exam ?? '—')
+// Vendors present on this board. Derived from the registry `publisher` only: rows the
+// registry deliberately leaves publisher-less (local abliterations/merges — never guess a
+// vendor) simply do not offer a family, rather than inventing one from a display fallback.
+const vendorOptions = computed(() =>
+  publishersOf((dashboardSpeedComp.value?.cells || []).filter((c) => num(c.acc) !== null && !c.frozen))
+)
+const activeVendor = computed(() =>
+  boardFilter.active.value?.kind === 'publisher' ? boardFilter.active.value.value : null
+)
+
 const placementFilter = ref<'all' | 'cloud' | 'local'>('all')
 const placementOptions = ['all', 'cloud', 'local'] as const
 const setPlacementFilter = (value: 'all' | 'cloud' | 'local') => {
@@ -341,6 +352,22 @@ onUnmounted(() => {
             >
               {{ t(`cloud.filter.${opt}`) }}
             </button>
+          </div>
+          <!-- Vendor family. This board colours by placement, not by vendor, so there is
+               no legend to click — an explicit control is the discoverable affordance. -->
+          <div v-if="vendorOptions.length" class="inline-flex items-center gap-1.5">
+            <span class="text-xs text-muted-foreground">{{ t('filter.vendorLabel') }}</span>
+            <select
+              class="rounded-md border border-border bg-muted/50 px-2 py-1 text-xs font-semibold text-foreground"
+              :value="activeVendor || ''"
+              @change="(e) => {
+                const v = (e.target as HTMLSelectElement).value
+                v ? boardFilter.filterByPublisher(v) : boardFilter.clearFilter()
+              }"
+            >
+              <option value="">{{ t('filter.vendorAll') }}</option>
+              <option v-for="v in vendorOptions" :key="v" :value="v">{{ v }}</option>
+            </select>
           </div>
         </div>
       </CardHeader>

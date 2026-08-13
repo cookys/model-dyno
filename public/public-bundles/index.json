@@ -79,6 +79,19 @@
       "publisher_url": "https://x.ai/"
     },
     {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.6-xhigh-4a910bcf0782/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "grok-4.6 · Grok",
+      "machine": "?",
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/"
+    },
+    {
       "access_label": "qoder-cli",
       "base_url": "./public-bundles/results-qoder-qwen3.8-max-35bad1730ec9/",
       "current": true,
@@ -1599,7 +1612,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-11T10:05:55Z",
+  "generated_at": "2026-08-13T11:06:44Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

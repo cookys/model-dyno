@@ -144,6 +144,19 @@
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.7-flash-high-3b013170d4c6/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "gemini-3.7-flash-high · Direct",
+      "machine": "?",
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+    },
+    {
       "access_label": "local",
       "base_url": "./public-bundles/results-deepseek-v4-flash-0731-local-DeepSeek-V4-Flash-0731-8b2fa7be3847/",
       "current": true,
@@ -1612,7 +1625,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-13T18:55:15Z",
+  "generated_at": "2026-08-13T20:51:29Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

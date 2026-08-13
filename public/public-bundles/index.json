@@ -14,6 +14,19 @@
       "publisher_url": ""
     },
     {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.6-9a6574cf6e40/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "grok-4.6 · Grok",
+      "machine": "?",
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/"
+    },
+    {
       "access_label": "OpenCode",
       "base_url": "./public-bundles/results-v4-flash-opencode-deepseek-v4-flash-560436c3b13a/",
       "current": true,
@@ -71,19 +84,6 @@
       "current": true,
       "id": "34t-4885e69a",
       "label": "grok-4.5 · Grok",
-      "machine": "?",
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
-      "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/"
-    },
-    {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-4.6-xhigh-4a910bcf0782/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "grok-4.6 · Grok",
       "machine": "?",
       "operator": "xAI",
       "operator_url": "https://x.ai/",
@@ -1612,7 +1612,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-13T18:45:56Z",
+  "generated_at": "2026-08-13T18:55:15Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

@@ -18,7 +18,11 @@ import {
   variantCount as foldedVariantCount,
 } from '@/lib/modelFolding'
 
+import { useBoardFilter } from '@/lib/useBoardFilter'
+import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
+
 const { t } = useI18n()
+const boardFilter = useBoardFilter()
 
 let vegaView: any = null
 const chartContainer = ref<HTMLDivElement | null>(null)
@@ -44,9 +48,9 @@ const staleRisk = computed(() =>
 )
 
 const rawCells = computed(() => {
-  return (dashboardNorm.value?.cells || []).filter(
+  return boardFilter.applyTo((dashboardNorm.value?.cells || []).filter(
     (c) => num(c.pass_rate) !== null && Array.isArray(c.ci) && !c.frozen
-  )
+  ))
 })
 
 const foldedNormGroups = computed(() =>
@@ -134,7 +138,7 @@ const cols = computed<Column<any>[]>(() => [
     label: t('col.publisher'),
     sortVal: (r) => r.publisher,
     mobileHide: true,
-    render: (r) => orgCell(r.publisher)
+    render: (r) => orgCell(r.publisher, r.publisher ? () => boardFilter.filterByPublisher(r.publisher) : undefined)
   },
   {
     key: 'model',
@@ -309,6 +313,7 @@ onUnmounted(() => {
 <template>
   <div class="space-y-6">
     <ExamVersionBar :switchable="false" />
+    <BoardFilterBanner :filter="boardFilter.active.value" @clear="boardFilter.clearFilter" />
 
     <!-- Chart Card -->
     <Card class="border-border bg-card shadow-lg">

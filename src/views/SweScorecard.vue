@@ -19,7 +19,11 @@ import {
   variantCount as foldedVariantCount,
 } from '@/lib/modelFolding'
 
+import { useBoardFilter } from '@/lib/useBoardFilter'
+import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
+
 const { t } = useI18n()
+const boardFilter = useBoardFilter()
 
 let vegaView: any = null
 const chartContainer = ref<HTMLDivElement | null>(null)
@@ -36,7 +40,8 @@ const examMeta = computed(() => resolveExamMeta(scorecardSweMeta.value))
 
 const foldedScorecardGroups = computed(() =>
   groupByCanonicalModel(
-    sweCellsByExam.value,
+    // Filter before folding so a family view picks its representative within the family.
+    boardFilter.applyTo(sweCellsByExam.value),
     chooseBestScorecardCell,
     (c) => `${c.model}-${c.profile || ''}-${c.machine || ''}-${c.canonical_version || ''}`,
   )
@@ -403,6 +408,7 @@ onUnmounted(() => {
 <template>
   <div class="space-y-6">
     <ExamVersionBar />
+    <BoardFilterBanner :filter="boardFilter.active.value" @clear="boardFilter.clearFilter" />
 
     <!-- Chart Card -->
     <Card class="border-border bg-card shadow-lg">

@@ -11,8 +11,11 @@ import { groupByCanonicalModel, recordCanonicalModel } from '@/lib/modelFolding'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
 import { resolveExamMeta } from '@/lib/examMeta'
 import { primarySolveSecOf, primarySolvedPerHourOf, examCostSecOf } from '@/lib/speedMetrics'
+import { useBoardFilter } from '@/lib/useBoardFilter'
+import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
 
 const { t } = useI18n()
+const boardFilter = useBoardFilter()
 let vegaView: any = null
 const chartContainer = ref<HTMLDivElement | null>(null)
 const detailContainer = ref<HTMLDivElement | null>(null)
@@ -55,9 +58,22 @@ const chooseFastestEfficiencyCell = (current: CompCell, candidate: CompCell): Co
   return checks.find((v) => v !== 0)! > 0 ? candidate : current
 }
 
+const eligibleCells = computed(() =>
+  (dashboardSpeedComp.value?.cells || []).filter((c) => primarySolvedPerHourOf(c) !== null && !c.frozen)
+)
+
+/** Vendors actually present as a registry `publisher`. The chart's `vendor` field falls
+ * back to operator/local/harness for rows the registry deliberately leaves publisher-less
+ * (local abliterations/merges — never guess a vendor), and those buckets are NOT
+ * filterable: clicking one would empty the board rather than narrow it. */
+const knownPublishers = computed(
+  () => new Set(eligibleCells.value.map((c) => c.publisher).filter((p): p is string => !!p && !!p.trim()))
+)
+
+// Filter BEFORE folding so the representative is chosen within the family, not globally.
 const throughputGroups = computed(() =>
   groupByCanonicalModel(
-    (dashboardSpeedComp.value?.cells || []).filter((c) => primarySolvedPerHourOf(c) !== null && !c.frozen),
+    boardFilter.applyTo(eligibleCells.value),
     chooseFastestEfficiencyCell,
     (c) => `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
   )
@@ -242,6 +258,14 @@ function render() {
         if (typeof key === 'string') {
           selectedKey.value = key
           focusSelectedRoutes()
+          return
+        }
+        // Colour-legend entry: the vendor family. Bars carry `key`, legend entries carry
+        // `value`, so one handler serves both. Only real registry publishers are
+        // actionable — see knownPublishers.
+        const vendor = item?.datum?.value
+        if (typeof vendor === 'string' && knownPublishers.value.has(vendor)) {
+          boardFilter.filterByPublisher(vendor)
         }
       })
     })
@@ -260,6 +284,7 @@ onUnmounted(() => {
 
 <template>
   <div class="space-y-4">
+    <BoardFilterBanner :filter="boardFilter.active.value" @clear="boardFilter.clearFilter" />
     <Card>
       <CardHeader class="pb-2">
         <CardTitle class="text-base">{{ t('eff.title') }}</CardTitle>

@@ -11,8 +11,11 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { modelBadges, modelName, num, speedCredibilityBadge } from '@/components/CellHelpers'
 import { deploymentLine, routeProvenanceOf } from '@/lib/modelProvenance'
 import { primarySolveSecOf, primarySolvedPerHourOf, primarySolvedPerMinOf, examCostSecOf } from '@/lib/speedMetrics'
+import { useBoardFilter } from '@/lib/useBoardFilter'
+import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
 
 const { t } = useI18n()
+const boardFilter = useBoardFilter()
 let vegaView: any = null
 const chartContainer = ref<HTMLDivElement | null>(null)
 const tableContainer = ref<any>(null)
@@ -82,8 +85,8 @@ const canonicalN = computed(() => {
 // Agentic SWE cells, cloud + local. Raw decode columns are still shown when a
 // tool-free probe exists, but the main speed metric is end-to-end agentic t/s.
 const agenticData = computed(() =>
-  (dashboardSpeedComp.value?.cells || [])
-    .filter((c) => num(c.acc) !== null && !c.frozen)
+  boardFilter.applyTo((dashboardSpeedComp.value?.cells || [])
+    .filter((c) => num(c.acc) !== null && !c.frozen))
     .map((c) => {
       const source = placementOf(c)
       const n = num(c.n)
@@ -318,6 +321,7 @@ onUnmounted(() => {
 
 <template>
   <div class="space-y-6">
+    <BoardFilterBanner :filter="boardFilter.active.value" @clear="boardFilter.clearFilter" />
     <Card class="border-border bg-card shadow-lg">
       <CardHeader class="pb-2">
         <CardTitle class="text-base font-semibold flex items-center gap-2">

@@ -264,10 +264,23 @@ export function logoGlyph(slug: string, title: string, cls = 'w-4.5 h-4.5'): VNo
   })
 }
 
-export function orgCell(name: string): VNode | string {
+/**
+ * Publisher/operator cell. With `onClick` the vendor becomes the entry point to the
+ * family filter ("show me everything xAI publishes"); without it the rendering is
+ * unchanged. Rows the registry deliberately leaves publisher-less must pass no handler —
+ * a filter on a non-publisher bucket empties the board instead of narrowing it.
+ */
+export function orgCell(name: string, onClick?: () => void): VNode | string {
   if (!name) return '—'
   const slug = ORG_LOGO[name]
-  return slug ? logoGlyph(slug, name) : name
+  const inner = slug ? logoGlyph(slug, name) : name
+  if (!onClick) return inner
+  return h('button', {
+    type: 'button',
+    class: 'cursor-pointer hover:opacity-70 transition-opacity align-middle',
+    title: name,
+    onClick: (e: MouseEvent) => { e.stopPropagation(); onClick() },
+  }, [inner])
 }
 
 type HarnessKind = 'local' | 'thirdPartyCli' | 'directApi'

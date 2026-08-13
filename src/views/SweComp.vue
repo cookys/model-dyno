@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
-import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 import vegaEmbed from 'vega-embed'
 import { useI18n } from '@/lib/i18n'
 import { dashboardComp, loading } from '@/lib/store'
@@ -20,19 +20,18 @@ import {
   recordCanonicalModel,
 } from '@/lib/modelFolding'
 
+import { useBoardFilter } from '@/lib/useBoardFilter'
+import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
+
 const { t } = useI18n()
+const boardFilter = useBoardFilter()
 
 const route = useRoute()
-const router = useRouter()
 
 const modelFilter = computed(() => {
   const m = route.query.model
   return typeof m === 'string' ? m : null
 })
-
-const clearModelFilter = () => {
-  router.push({ path: '/swe/comp', query: { ...route.query, model: undefined } })
-}
 
 let vegaView: any = null
 const chartContainer = ref<HTMLDivElement | null>(null)
@@ -122,7 +121,11 @@ const filteredCompData = computed(() => {
     const modelKey = normalizeCanonicalModel(modelFilter.value)
     return rawCompRows.value.filter((r) => normalizeCanonicalModel(recordCanonicalModel(r._rec)) === modelKey)
   }
-  return foldedCompRows.value
+  // A vendor-family filter narrows the FOLDED view: one row per model in the family, so
+  // grok-4.5 / 4.6 / build / composer compare side by side. Drilling into one model then
+  // still opens its routes via the ?model= branch above.
+  if (!boardFilter.filters.value.length) return foldedCompRows.value
+  return boardFilter.applyTo(foldedCompRows.value, (r) => r._rec)
 })
 
 const mainCompData = computed(() =>
@@ -155,7 +158,7 @@ const cols = computed<Column<any>[]>(() => [
     sortVal: (r) => r.publisher,
     mobileHide: true,
     tabletHide: true,
-    render: (r) => orgCell(r.publisher)
+    render: (r) => orgCell(r.publisher, r.publisher ? () => boardFilter.filterByPublisher(r.publisher) : undefined)
   },
   {
     key: 'model',
@@ -377,20 +380,7 @@ onUnmounted(() => {
   <div class="space-y-6">
     <ExamVersionBar :switchable="false" />
 
-    <!-- Active Filter Alert / Banner -->
-    <div v-if="modelFilter" class="flex items-center justify-between gap-4 bg-muted/50 dark:bg-muted/20 border border-border px-4 py-3 rounded-lg shadow-sm">
-      <div class="flex items-center gap-2 text-sm text-foreground">
-        <span class="text-amber-500 font-bold select-none">🔍</span>
-        <span>{{ t('filter.filteredTo') }} <strong class="font-mono bg-muted/80 dark:bg-muted/40 border border-border/80 px-1.5 py-0.5 rounded text-xs">{{ modelFilter }}</strong></span>
-      </div>
-      <button
-        type="button"
-        @click="clearModelFilter"
-        class="text-xs font-medium text-brand hover:text-brand transition-colors hover:underline cursor-pointer"
-      >
-        {{ t('filter.clear') }}
-      </button>
-    </div>
+    <BoardFilterBanner :filter="boardFilter.active.value" @clear="boardFilter.clearFilter" />
 
     <!-- Chart Card -->
     <Card class="border-border bg-card shadow-lg">

@@ -139,9 +139,14 @@ test('the vendor entry point never offers a filter for a publisher-less row', ()
       `${path} must gate the click on a real publisher`,
     )
   }
-  const eff = read('src/views/SpeedEfficiency.vue')
-  assert.match(eff, /knownPublishers\.value\.has\(vendor\)/,
-    'the speed-efficiency legend must only act on real publishers')
+  // Both speed boards offer an explicit vendor <select>, not a legend gesture: Vega-Lite
+  // legends are non-interactive unless a selection is bound, so a legend click never
+  // reaches the view handler (verified in-browser, label and swatch both dead).
+  for (const path of ['src/views/SpeedEfficiency.vue', 'src/views/SpeedCloud.vue']) {
+    const view = read(path)
+    assert.match(view, /publishersOf/, `${path} must derive options from real publishers`)
+    assert.doesNotMatch(view, /datum\?\.value/, `${path} must not rely on a legend click`)
+  }
 })
 
 test('COMP keeps folded-by-default and route drilldown while gaining the family view', () => {

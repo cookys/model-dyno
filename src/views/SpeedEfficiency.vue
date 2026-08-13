@@ -12,6 +12,7 @@ import { classifyCell, partitionBySection } from '@/lib/runClass'
 import { resolveExamMeta } from '@/lib/examMeta'
 import { primarySolveSecOf, primarySolvedPerHourOf, examCostSecOf } from '@/lib/speedMetrics'
 import { useBoardFilter } from '@/lib/useBoardFilter'
+import { publishersOf } from '@/lib/modelFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
 
 const { t } = useI18n()
@@ -62,12 +63,18 @@ const eligibleCells = computed(() =>
   (dashboardSpeedComp.value?.cells || []).filter((c) => primarySolvedPerHourOf(c) !== null && !c.frozen)
 )
 
-/** Vendors actually present as a registry `publisher`. The chart's `vendor` field falls
- * back to operator/local/harness for rows the registry deliberately leaves publisher-less
- * (local abliterations/merges — never guess a vendor), and those buckets are NOT
- * filterable: clicking one would empty the board rather than narrow it. */
-const knownPublishers = computed(
-  () => new Set(eligibleCells.value.map((c) => c.publisher).filter((p): p is string => !!p && !!p.trim()))
+/** Vendors present as a registry `publisher`. The chart's `vendor` field falls back to
+ * operator/local/harness for rows the registry deliberately leaves publisher-less (local
+ * abliterations/merges — never guess a vendor); those buckets are not offered, since a
+ * filter on them would empty the board rather than narrow it.
+ *
+ * This is an explicit control rather than a click on the colour legend: Vega-Lite legends
+ * are non-interactive unless a selection is bound to them, so a legend click never reaches
+ * the view's click handler (verified in-browser on the live site — label and swatch both
+ * dead). It is also simply easier to find. */
+const vendorOptions = computed(() => publishersOf(eligibleCells.value))
+const activeVendor = computed(() =>
+  boardFilter.active.value?.kind === 'publisher' ? boardFilter.active.value.value : null
 )
 
 // Filter BEFORE folding so the representative is chosen within the family, not globally.
@@ -258,14 +265,6 @@ function render() {
         if (typeof key === 'string') {
           selectedKey.value = key
           focusSelectedRoutes()
-          return
-        }
-        // Colour-legend entry: the vendor family. Bars carry `key`, legend entries carry
-        // `value`, so one handler serves both. Only real registry publishers are
-        // actionable — see knownPublishers.
-        const vendor = item?.datum?.value
-        if (typeof vendor === 'string' && knownPublishers.value.has(vendor)) {
-          boardFilter.filterByPublisher(vendor)
         }
       })
     })
@@ -288,7 +287,23 @@ onUnmounted(() => {
     <Card>
       <CardHeader class="pb-2">
         <CardTitle class="text-base">{{ t('eff.title') }}</CardTitle>
-        <p class="text-xs text-muted-foreground">{{ t('eff.subtitle') }} · {{ examName }}</p>
+        <div class="flex items-center justify-between gap-3 flex-wrap">
+          <p class="text-xs text-muted-foreground">{{ t('eff.subtitle') }} · {{ examName }}</p>
+          <div v-if="vendorOptions.length" class="inline-flex items-center gap-1.5">
+            <span class="text-xs text-muted-foreground">{{ t('filter.vendorLabel') }}</span>
+            <select
+              class="rounded-md border border-border bg-muted/50 px-2 py-1 text-xs font-semibold text-foreground"
+              :value="activeVendor || ''"
+              @change="(e) => {
+                const v = (e.target as HTMLSelectElement).value
+                v ? boardFilter.filterByPublisher(v) : boardFilter.clearFilter()
+              }"
+            >
+              <option value="">{{ t('filter.vendorAll') }}</option>
+              <option v-for="v in vendorOptions" :key="v" :value="v">{{ v }}</option>
+            </select>
+          </div>
+        </div>
       </CardHeader>
       <CardContent>
         <div v-if="loading && !allRows.length" class="py-16 text-center text-sm text-muted-foreground">

@@ -41,6 +41,19 @@
     },
     {
       "access_label": "Direct",
+      "base_url": "./public-bundles/results-glm-53-coding-plan-glm-5.3-1989d3519ef1/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "glm-5.3 · Direct",
+      "machine": "cookys-7840hs",
+      "operator": "Z.AI",
+      "operator_url": "https://z.ai/",
+      "owner": "cookys",
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/"
+    },
+    {
+      "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-94d691a821b6/",
       "current": true,
       "id": "34t-4885e69a",
@@ -248,19 +261,6 @@
       "publisher_url": "https://developer.meta.com/ai/models/muse-spark/"
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/results-glm-52-coding-plan-glm-5.2-3c85d8087c52/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "glm-5.2 · Direct",
-      "machine": "cookys-7840hs",
-      "operator": "Z.AI",
-      "operator_url": "https://z.ai/",
-      "owner": "cookys",
-      "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/"
-    },
-    {
       "access_label": "local",
       "base_url": "./public-bundles/results-muse-glimmer-30b-local-Muse-Glimmer-30B-27268187bf7c/",
       "current": true,
@@ -272,6 +272,19 @@
       "owner": "cookys",
       "publisher": "Meta",
       "publisher_url": "https://developer.meta.com/ai/models/muse-spark/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-local-Qwen3.8-27B-Q4_K_M-a1620c00f33c/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -334,6 +347,19 @@
       "machine": "cookys-cuda",
       "operator": "OpenCode",
       "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/"
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/results-glm-52-coding-plan-glm-5.2-3c85d8087c52/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "glm-5.2 · Direct",
+      "machine": "cookys-7840hs",
+      "operator": "Z.AI",
+      "operator_url": "https://z.ai/",
       "owner": "cookys",
       "publisher": "Z.AI",
       "publisher_url": "https://z.ai/"
@@ -1625,7 +1651,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-13T20:51:29Z",
+  "generated_at": "2026-08-15T19:25:13Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

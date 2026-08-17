@@ -1,6 +1,19 @@
 {
   "bundles": [
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-dspark-local-Qwen3.8-27B-Q4_K_M-6766b6f0f9d0/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.6-luna-64699bb05f4f/",
       "current": true,
@@ -51,6 +64,19 @@
       "owner": "cookys",
       "publisher": "Z.AI",
       "publisher_url": "https://z.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-e55f789b29a9/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -113,6 +139,19 @@
       "machine": "cookys-linux-7840hs",
       "operator": "Alibaba",
       "operator_url": "https://qwen.ai/",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-thinkon-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-cdcbd1a2b8b8/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/"
@@ -181,6 +220,19 @@
       "owner": "cookys",
       "publisher": "DeepSeek",
       "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-thinkon-mtp-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-b2f4fe82274d/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -311,6 +363,19 @@
       "owner": "?",
       "publisher": "",
       "publisher_url": ""
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-thinkon-t0-local-Qwen3.8-27B-Q4_K_M-1113355aa06f/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -480,6 +545,32 @@
       "owner": "cookys",
       "publisher": "",
       "publisher_url": ""
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-thinkoff-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-b7ef52a22682/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-thinkoff-mtp-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-072864807790/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -768,6 +859,19 @@
       "publisher_url": ""
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-unsloth-mtp-local-Qwen3.8-27B-Q4_K_M-unsloth-320e3e83a6a1/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-mimo-v2.5-pro-7f301a801ee4/",
       "current": true,
@@ -844,6 +948,45 @@
       "owner": "cookys",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-local-Qwen3.8-27B-Q4_K_M-1a4dd26e33ce/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-bf16-local-Qwen3.8-27B-Q4_K_M-00b33136aa3a/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-vendor-local-Qwen3.8-27B-Q4_K_M-3d00b8a2ab8c/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -1651,7 +1794,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-15T19:25:13Z",
+  "generated_at": "2026-08-17T11:42:57Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

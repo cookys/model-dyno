@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen38-27b-thinkon-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-cdcbd1a2b8b8","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@6","model":"qwen3.8-27b","policy":"dashboard-public-feed","subject_digest":"59e0bfc7c8a2044c74b387d5de2a51e9b64efb151ff027a08f05370d8ad3815f"}]

@@ -135,6 +135,7 @@ const scorecardRows = computed(() => {
       tie,
       pps: num(c.pps),
       tokSolved: num(c.tok_per_solved),
+      tokWaste: num(c.tok_fail_ratio),
       secSolved: num(c.med_wall_pass) ?? num(c.sec_per_solved),
       usdSolved: c.price_known ? num(c.usd_per_solved) : null,
       perHour: num(c.solved_per_hour),
@@ -264,6 +265,11 @@ const cols = computed<Column<any>[]>(() => [
   },
   { key: 'pps', label: t('col.pps'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.pps, 0) },
   { key: 'tokSolved', label: t('col.tokSolved'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.tokSolved, 0) },
+  // median output tokens on FAILED tasks : on SOLVED ones. tok/✓ divides all output
+  // by the passes, so a cell that spent its budget solving and one that burned it
+  // retrying score the same; this separates them. >1 means the budget went to
+  // flailing. Blank when either outcome subset is under the publisher's privacy floor.
+  { key: 'tokWaste', label: t('col.tokWaste'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.tokWaste, 2) },
   { key: 'secSolved', label: t('col.solveSpeedPass'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.secSolved, 0) },
   {
     key: 'usdSolved',

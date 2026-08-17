@@ -92,6 +92,18 @@ onUnmounted(() => {
 const hideClass = (c: Column<T>) =>
   c.tabletHide ? 'hidden xl:table-cell' : (c.mobileHide ? 'hidden md:table-cell' : '')
 
+// Columns the CURRENT breakpoint is hiding. mobileHide/tabletHide promise the value
+// "stays reachable via the row's expand-detail grid", but nothing was keeping that
+// promise: no view populates detailFields, and the fallback grid dumps RAW record
+// fields, which are neither labelled like the columns nor formatted by their render().
+// On SweScorecard that meant 10 of 12 columns simply vanished on a phone. This
+// re-renders exactly the hidden ones, with their own label and their own render().
+const hiddenCols = computed(() =>
+  props.columns.filter((c) =>
+    c.tabletHide ? (isMobile.value || isMid.value) : (c.mobileHide ? isMobile.value : false),
+  ),
+)
+
 const columnDescription = (c: Column<T>) => {
   if (c.description) return c.description
   const key = `table.tip.${c.key}`
@@ -342,6 +354,29 @@ const getRecordFields = (row: T, excludeKeys = new Set<string>()) => {
                       class="text-xs text-foreground/90"
                     >
                       <slot name="detail" :row="row" />
+                    </div>
+
+                    <!-- Columns hidden by the current breakpoint, with their real labels
+                         and render(). Without this the value is unreachable on a phone. -->
+                    <div
+                      v-if="hiddenCols.length"
+                      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 text-xs text-foreground/90"
+                    >
+                      <div
+                        v-for="col in hiddenCols"
+                        :key="'hidden-' + String(col.key)"
+                        class="flex flex-col min-w-0 overflow-hidden bg-card p-2.5 rounded border border-border/60"
+                      >
+                        <span class="text-[10px] text-muted-foreground font-semibold uppercase tracking-wide truncate">
+                          {{ col.label }}
+                        </span>
+                        <span class="mt-1 min-w-0 truncate text-foreground text-xs font-mono">
+                          <template v-if="typeof renderCell(col, row, i) === 'function'">
+                            <component :is="renderCell(col, row, i)" />
+                          </template>
+                          <template v-else>{{ renderCell(col, row, i) }}</template>
+                        </span>
+                      </div>
                     </div>
 
                     <div

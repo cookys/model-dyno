@@ -196,6 +196,7 @@ const STRINGS = {
     "col.agency": "Credibility",        // agency/no-op verdict: model vs env vs tools
     "col.pps": "pps",
     "col.tokSolved": "tok/✓",
+    "col.tokWaste": "tok ✗:✓",
     "col.secSolved": "s/✓",
     "col.usdSolved": "$/✓",
     "col.perHour": "✓/hr",
@@ -606,6 +607,7 @@ const STRINGS = {
     "col.agency": "可信度",
     "col.pps": "pps",
     "col.tokSolved": "tok/✓",
+    "col.tokWaste": "tok 敗:成",
     "col.secSolved": "s/✓",
     "col.usdSolved": "$/✓",
     "col.perHour": "✓/hr",

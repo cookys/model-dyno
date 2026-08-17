@@ -272,6 +272,10 @@ function derivePerfMetrics(
   med_wall_pass?: number
   mean_wall_pass?: number
   tok_per_solved?: number
+  tok_med?: number
+  tok_med_pass?: number
+  tok_med_fail?: number
+  tok_fail_ratio?: number
   perf_coverage?: string
   fail_wall_share?: number
   maxstep_fail_n?: number
@@ -295,6 +299,10 @@ function derivePerfMetrics(
     med_wall_pass?: number
     mean_wall_pass?: number
     tok_per_solved?: number
+    tok_med?: number
+    tok_med_pass?: number
+    tok_med_fail?: number
+    tok_fail_ratio?: number
     perf_coverage?: string
     fail_wall_share?: number
     maxstep_fail_n?: number
@@ -335,6 +343,19 @@ function derivePerfMetrics(
 
   const tok = tokensPerSolved(usage, nPassed)
   if (tok !== undefined) out.tok_per_solved = tok
+
+  // Outcome-split output-token medians. The publisher nulls all three together
+  // when either subset is under the privacy floor, so treat them as one set and
+  // derive the ratio only when both sides are present and the pass side is > 0.
+  const tMed = finiteNumberOrNull(perf.tokens_out_median)
+  const tPass = finiteNumberOrNull(perf.tokens_out_median_pass)
+  const tFail = finiteNumberOrNull(perf.tokens_out_median_fail)
+  if (tMed !== null && tPass !== null && tFail !== null) {
+    out.tok_med = tMed
+    out.tok_med_pass = tPass
+    out.tok_med_fail = tFail
+    if (tPass > 0) out.tok_fail_ratio = tFail / tPass
+  }
   return out
 }
 
@@ -423,6 +444,10 @@ export function projectScorecardRowsFromPublicBundle(
         ? ((nonNegativeInt(aggregate.n_error) ?? 0) + (nonNegativeInt(aggregate.n_infra_error) ?? 0)) / nTasks
         : 0,
       tok_per_solved: perfMetrics.tok_per_solved,
+      tok_med: perfMetrics.tok_med,
+      tok_med_pass: perfMetrics.tok_med_pass,
+      tok_med_fail: perfMetrics.tok_med_fail,
+      tok_fail_ratio: perfMetrics.tok_fail_ratio,
       sec_per_solved: perfMetrics.sec_per_solved,
       sec_per_solved_all: perfMetrics.sec_per_solved,
       solved_per_hour: perfMetrics.solved_per_hour,

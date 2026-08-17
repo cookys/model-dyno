@@ -74,6 +74,14 @@ export interface SweCell {
   suspect_error_rate?: number
   pps?: number
   tok_per_solved?: number
+  /** Outcome-split output-token medians (perf.v2). tok_per_solved divides all
+   *  output by the passes, so "spent it solving" and "burned it retrying" score
+   *  the same. tok_fail_ratio = median(fail)/median(pass); >1 is the flailing one.
+   *  Publisher nulls all of them together below the privacy floor. */
+  tok_med?: number
+  tok_med_pass?: number
+  tok_med_fail?: number
+  tok_fail_ratio?: number
   sec_per_solved?: number
   sec_per_solved_all?: number
   usd_per_solved?: number

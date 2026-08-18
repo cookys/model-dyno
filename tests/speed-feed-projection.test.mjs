@@ -45,3 +45,17 @@ test('the heatmap renders findings from the feed, not from a literal', () => {
   assert.ok(!view.includes('SPEC_DECODE_FINDINGS'), 'the hard-coded Apple-only array is gone')
   assert.match(view, /dashboardSpecDecodeFindings/)
 })
+
+test('the spec-decode card copy does not describe a narrower dataset than it shows', () => {
+  // The rows went data-driven and covered 5 machines and 3 methods while the heading
+  // still read "(DFlash) — Apple Silicon", so the page looked unchanged. Copy that
+  // names one method or one vendor is a claim about the data, and it goes stale
+  // silently the moment the feed grows.
+  const i18n = readFileSync(join(root, 'src/lib/i18n.ts'), 'utf8')
+  const titles = [...i18n.matchAll(/"idx\.specdecode\.title":\s*"([^"]*)"/g)].map((m) => m[1])
+  assert.ok(titles.length >= 2, 'both locales declare the title')
+  for (const title of titles) {
+    assert.ok(!/DFlash|Apple/i.test(title), `title must not name one method or vendor: ${title}`)
+  }
+  assert.ok(!i18n.includes('specdecode.note.'), 'per-row notes come from the feed, not from i18n')
+})

@@ -176,6 +176,8 @@ const STRINGS = {
     // spec-decode columns
     "col.machine": "Machine",
     "col.target": "Target",
+    "col.method": "Method",
+    "col.metric": "Measured",
     "col.prompt": "Prompt",
     "col.dflashSpeedup": "DFlash speedup",
     "col.accept": "Accept",
@@ -595,6 +597,8 @@ const STRINGS = {
     "col.os": "作業系統",
     "col.machine": "機器",
     "col.target": "目標",
+    "col.method": "手法",
+    "col.metric": "量的是",
     "col.prompt": "提示",
     "col.dflashSpeedup": "DFlash 加速比",
     "col.accept": "接受率",

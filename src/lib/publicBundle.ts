@@ -63,9 +63,24 @@ export interface PublicBundleScorecardProjection {
   loaded: boolean
 }
 
+export interface SpecDecodeFinding {
+  machine: string
+  target: string
+  method: string
+  workload: string
+  /** `decode` = tok/s ratio, `agentic` = end-to-end task wall. They disagree, often. */
+  metric: string
+  speedup: number
+  accept: string
+  verdict: string
+  note: string
+  source: string
+}
+
 export interface PublicBundleDashboardProjection extends PublicBundleScorecardProjection {
   generatedAt: string | null
   records: SpeedRecord[]
+  specDecodeFindings: SpecDecodeFinding[]
   sharedCells: SharedSweCell[]
   norm: NormIndex | null
   comp: CompIndex | null
@@ -844,6 +859,36 @@ function normalizeTaskDomains(raw: unknown): Record<string, string> {
   return out
 }
 
+// The speed routes' data, straight off the snapshot.
+//
+// These used to be hard-coded to [] here, with a comment deferring them to a future
+// ABI — which meant /speed/heatmap, /speed/leaderboard and /speed/contributors
+// rendered nothing in production while looking healthy on a dev checkout, where the
+// private INDEX.json still exists. The producer publishes both arrays now; this only
+// has to not throw when an older snapshot lacks them.
+function projectSpeedRecords(raw: unknown): SpeedRecord[] {
+  return Array.isArray(raw) ? (raw.filter((r) => r && typeof r === 'object') as SpeedRecord[]) : []
+}
+
+function projectSpecDecodeFindings(raw: unknown): SpecDecodeFinding[] {
+  if (!Array.isArray(raw)) return []
+  return raw
+    .filter((f): f is Record<string, unknown> => !!f && typeof f === 'object')
+    .map((f) => ({
+      machine: String(f.machine ?? ''),
+      target: String(f.target ?? ''),
+      method: String(f.method ?? ''),
+      metric: String(f.metric ?? ''),
+      workload: String(f.workload ?? ''),
+      speedup: typeof f.speedup === 'number' ? f.speedup : NaN,
+      accept: String(f.accept ?? ''),
+      verdict: String(f.verdict ?? ''),
+      note: String(f.note ?? ''),
+      source: String(f.source ?? ''),
+    }))
+    .filter((f) => f.machine && Number.isFinite(f.speedup))
+}
+
 export async function loadPublicBundleDashboardFeed(
   snapshotUrl = './public-bundles/dashboard-snapshot.json',
 ): Promise<PublicBundleDashboardProjection> {
@@ -856,6 +901,7 @@ export async function loadPublicBundleDashboardFeed(
         loaded: false,
         generatedAt: null,
         records: [],
+        specDecodeFindings: [],
         sharedCells: [],
         norm: null,
         comp: null,
@@ -877,6 +923,7 @@ export async function loadPublicBundleDashboardFeed(
       loaded: true,
       generatedAt: feed.generatedAt,
       records: [],
+      specDecodeFindings: [],
       sharedCells: [],
       norm: null,
       comp: null,
@@ -913,7 +960,8 @@ export async function loadPublicBundleDashboardFeed(
     meta,
     loaded: true,
     generatedAt: feed.generatedAt,
-    records: [],
+    records: projectSpeedRecords(snapshot.speed_records),
+    specDecodeFindings: projectSpecDecodeFindings(snapshot.spec_decode_findings),
     sharedCells: projectSharedCellsFromScorecardRows(cells),
     norm: projectNormIndexFromScorecardRows(cells, meta),
     comp: projectCompIndexFromScorecardRows(cells, meta),

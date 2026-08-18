@@ -1,5 +1,6 @@
 import { computed, ref } from 'vue'
 import { loadPublicBundleDashboardFeed } from './publicBundle'
+import type { SpecDecodeFinding } from './publicBundle'
 
 export interface ExamVersionInfo {
   version: string
@@ -343,6 +344,11 @@ export const publicBundleDomainIndex = ref<DomainIndex | null>(null)
 export const speedRecords = ref<SpeedRecord[]>([])
 export const speedComp = ref<CompIndex | null>(null)
 export const dashboardRecords = computed<SpeedRecord[]>(() => speedRecords.value)
+// Spec-decode findings ride the published snapshot (producer:
+// benchmarks/spec-decode-findings.toml). They used to be a literal array inside
+// SpeedHeatmap.vue — Apple-only, and a frontend edit for every new measurement.
+export const specDecodeFindings = ref<SpecDecodeFinding[]>([])
+export const dashboardSpecDecodeFindings = computed<SpecDecodeFinding[]>(() => specDecodeFindings.value)
 export const scorecardSweCells = computed<SweCell[]>(() => publicBundleSweCells.value)
 export const scorecardSweMeta = computed<SweMeta | null>(() => publicBundleSweMeta.value)
 export const compatibilityFallbackActive = computed<boolean>(() => false)
@@ -465,6 +471,7 @@ export async function loadAllData() {
     if (!speedRecords.value.length && publicDashboard.records.length) {
       speedRecords.value = publicDashboard.records
     }
+    specDecodeFindings.value = publicDashboard.specDecodeFindings
   } catch (e: any) {
     publicBundleFeedLoaded.value = false
     publicBundleRecords.value = []

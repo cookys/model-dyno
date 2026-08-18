@@ -51,6 +51,7 @@ export interface PublicBundleFeedEntry {
   label?: string
   owner?: string
   machine?: string
+  tags?: Record<string, string>
   publisher?: string
   operator?: string
   access_label?: string
@@ -74,6 +75,7 @@ export interface PublicBundleDashboardProjection extends PublicBundleScorecardPr
 interface PublicBundleProjectionMetadata {
   owner?: string
   machine?: string
+  tags?: Record<string, string>
   publisher?: string
   operator?: string
   access_label?: string
@@ -464,7 +466,14 @@ export function projectScorecardRowsFromPublicBundle(
         : undefined,
       usd_per_solved: costCoverage === 'full' ? nanoUsdPerSolved(cost, nPassed) : undefined,
       price_known: costCoverage === 'full',
-      tags: backend ? { placement: backend.includes('local') ? 'local' : 'remote' } : undefined,
+      // Config axes come from the feed entry, which carries what the eval profile
+      // declared and the tag validator checked. The old fallback synthesized a
+      // placement-only object out of the backend string, so every other tag column
+      // rendered empty here while looking populated against a private aggregate — a
+      // failure that only shows up on the published site, never in local development.
+      tags: (metadata.tags && Object.keys(metadata.tags).length)
+        ? metadata.tags
+        : (backend ? { placement: backend.includes('local') ? 'local' : 'remote' } : undefined),
       identity: {
         access: subjectAccess(backend),
         canonical_model: stringOrNull(comparisonKey.model) ?? stringOrNull(subject?.model) ?? undefined,
@@ -817,6 +826,9 @@ function normalizeFeedEntry(raw: unknown): PublicBundleFeedEntry | null {
     label: stringOrNull(entry.label) ?? undefined,
     owner: stringOrNull(entry.owner) ?? undefined,
     machine: stringOrNull(entry.machine) ?? undefined,
+    tags: (entry.tags && typeof entry.tags === 'object' && !Array.isArray(entry.tags))
+      ? (entry.tags as Record<string, string>)
+      : undefined,
     publisher: stringOrNull(entry.publisher) ?? undefined,
     operator: stringOrNull(entry.operator) ?? undefined,
     access_label: stringOrNull(entry.access_label) ?? undefined,

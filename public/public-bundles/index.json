@@ -79,6 +79,19 @@
       "publisher_url": "https://qwen.ai/"
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkoff-local-Qwen3.8-27B-NVFP4-e10daa3e5996/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-94d691a821b6/",
       "current": true,
@@ -150,6 +163,19 @@
       "id": "34t-4885e69a",
       "label": "Qwen3.8-27B",
       "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-vendor-local-Qwen3.8-27B-Q4_K_M-3d00b8a2ab8c/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
@@ -287,6 +313,32 @@
       "publisher_url": "https://developer.meta.com/ai/models/muse-spark/"
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-local-Qwen3.8-27B-Q4_K_M-a1620c00f33c/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-thinkon-t0-local-Qwen3.8-27B-Q4_K_M-1113355aa06f/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-fable-5-bd7af1f86a7b/",
       "current": true,
@@ -326,19 +378,6 @@
       "publisher_url": "https://developer.meta.com/ai/models/muse-spark/"
     },
     {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-local-Qwen3.8-27B-Q4_K_M-a1620c00f33c/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
-    },
-    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-5-916a75a23211/",
       "current": true,
@@ -363,19 +402,6 @@
       "owner": "?",
       "publisher": "",
       "publisher_url": ""
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-thinkon-t0-local-Qwen3.8-27B-Q4_K_M-1113355aa06f/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
     },
     {
       "access_label": "Direct",
@@ -482,6 +508,19 @@
       "publisher_url": "https://platform.moonshot.ai/"
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-vendor-trimfloor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-13622d099b08/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-zai-glm-5.1-9f8b05f98175/",
       "current": true,
@@ -566,6 +605,58 @@
       "id": "34t-4885e69a",
       "label": "Qwen3.8-27B",
       "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-dspark-local-Qwen3.8-27B-NVFP4-567eccfad2d5/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-thinkoff-trimfloor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-8875924273a2/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkon-t0-local-Qwen3.8-27B-NVFP4-1beb8d872b5e/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkon-t0-dspark-local-Qwen3.8-27B-NVFP4-5551cf3cb7d7/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
@@ -729,6 +820,32 @@
       "publisher_url": "https://www.minimax.io/"
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-local-Qwen3.8-27B-NVFP4-54947d681558/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-local-Qwen3.8-27B-NVFP4-99cb06ed82ad/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-kimi-k2.6-4968b92011ab/",
       "current": true,
@@ -872,6 +989,19 @@
       "publisher_url": "https://qwen.ai/"
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-unsloth-mtp-n2-local-Qwen3.8-27B-Q4_K_M-unsloth-5e0a00db4ba1/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-mimo-v2.5-pro-7f301a801ee4/",
       "current": true,
@@ -977,7 +1107,7 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-vendor-local-Qwen3.8-27B-Q4_K_M-3d00b8a2ab8c/",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendorinstruct-local-Qwen3.8-27B-NVFP4-9f2003b5edbb/",
       "current": true,
       "id": "34t-4885e69a",
       "label": "Qwen3.8-27B",
@@ -1060,6 +1190,19 @@
       "id": "34t-4885e69a",
       "label": "Qwen3.6-35B-A3B",
       "machine": "cookys-7840hs",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/"
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-miaai-local-Qwen3.8-27B-NVFP4-a5f04cf3a5b7/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
@@ -1794,7 +1937,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-17T11:42:57Z",
+  "generated_at": "2026-08-18T03:36:48Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

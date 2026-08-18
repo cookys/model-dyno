@@ -105,3 +105,25 @@ test('the sub-table wires that rule to the pass-rate column', () => {
   assert.match(view, /accComparable:/, 'SpeedCloud must mark each variant comparable-or-not')
   assert.match(table, /key: 'acc'[^\n]*accComparable \? v\.accRaw : null/)
 })
+
+test('the efficiency fold shows a pass RATE and keeps partials out of its ranking', () => {
+  // It showed passed/n only — the count, never the rate the outer board ranks on.
+  const view = readFileSync(join(root, 'src/views/SpeedEfficiency.vue'), 'utf8')
+  assert.match(view, /accPct:/, 'route rows carry a formatted pass rate')
+  assert.match(view, /accSortable: classifyCell\([^)]*\)\.rankable \? num\(c\.acc\) : null/,
+    'a partial-exam route contributes no sortable pass rate')
+  assert.match(view, /key: 'acc'[^\n]*sortVal: \(r\) => r\.accSortable/)
+  assert.match(view, /sortFoldRows\(row\.routeRows\)/, 'the fold renders in the clicked order')
+})
+
+test('the efficiency cover row follows the active sort', () => {
+  // A folded row shows ONE route. Picking it by a fixed rule while the reader ranks by
+  // another column puts a number on screen that is not the number being ranked.
+  const view = readFileSync(join(root, 'src/views/SpeedEfficiency.vue'), 'utf8')
+  assert.match(view, /@sort-change="onSortChange"/, 'the board reports its active sort')
+  assert.match(view, /groupByCanonicalModel\(\s*boardFilter\.applyTo\(eligibleCells\.value\),\s*chooseBySort/,
+    'folding picks the representative with the sort-aware chooser')
+  // Comparability must still win first, or flipping the arrow promotes a partial cell.
+  const chooser = view.slice(view.indexOf('const chooseBySort'))
+  assert.match(chooser.slice(0, 600), /comparableRank\(candidate\), comparableRank\(current\)/)
+})

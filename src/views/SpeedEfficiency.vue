@@ -8,6 +8,8 @@ import { isDark, chartTheme } from '@/lib/theme'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { num } from '@/components/CellHelpers'
 import { groupByCanonicalModel, recordCanonicalModel } from '@/lib/modelFolding'
+import type { ChooseBest } from '@/lib/modelFolding'
+import { sortVariants } from '@/lib/variantSort'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { foldedRoutesBadge } from '@/components/CellHelpers'
@@ -80,11 +82,88 @@ const activeVendor = computed(() =>
   boardFilter.active.value?.kind === 'publisher' ? boardFilter.active.value.value : null
 )
 
+// Which column the reader is ranking by. A folded row shows ONE route out of several,
+// so a representative picked by a fixed rule contradicts the sort the moment the reader
+// asks a different question: ranking by pass rate while the cover row is the group's
+// FASTEST route means the number on screen is not the number being ranked. The cover
+// follows the active sort instead.
+const sortKey = ref<string | null>('perHour')
+const sortDir = ref<'asc' | 'desc'>('desc')
+const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
+  sortKey.value = payload.key
+  sortDir.value = payload.dir
+}
+
+/** The active column's value for a cell, or null when that column cannot rank cells. */
+const activeSortValue = (c: CompCell): number | string | null => {
+  switch (sortKey.value) {
+    case 'perHour': return primarySolvedPerHourOf(c)
+    case 'sec': return primarySolveSecOf(c)
+    case 'secAll': return examCostSecOf(c)
+    case 'acc': return num(c.acc)
+    case 'n': return num(c.n)
+    case 'vendor': return c.publisher || c.operator || ''
+    case 'machine': return c.machine || ''
+    default: return null
+  }
+}
+
+// Comparable (full-exam) cells still win first, in BOTH directions: a partial cell with
+// a freak number must never become the cover just because the reader flipped the arrow.
+// Ties fall through to the board's existing fastest-route rule.
+const chooseBySort: ChooseBest<CompCell> = (current, candidate) => {
+  const rank = compareDesc(comparableRank(candidate), comparableRank(current))
+  if (rank !== 0) return rank > 0 ? candidate : current
+  const a = activeSortValue(candidate)
+  const b = activeSortValue(current)
+  if (a !== null && b !== null && a !== b) {
+    const candidateIsSmaller = typeof a === 'number' && typeof b === 'number'
+      ? a < b
+      : String(a).localeCompare(String(b), undefined, { numeric: true }) < 0
+    return (sortDir.value === 'asc') === candidateIsSmaller ? candidate : current
+  }
+  return chooseFastestEfficiencyCell(current, candidate)
+}
+
+// Ordering inside an expanded fold. Same rule as /speed/cloud's fold: every column
+// sorts, numeric columns open descending, and a missing value sinks in BOTH directions
+// so flipping an arrow never promotes an unmeasured route.
+type FoldCol = { key: string; label: string; num?: boolean; sortVal: (r: any) => unknown }
+const foldCols = computed<FoldCol[]>(() => [
+  { key: 'thinking', label: t('tag.thinking'), sortVal: (r) => r.tags.thinking },
+  { key: 'effort', label: t('tag.effort'), sortVal: (r) => r.tags.effort },
+  { key: 'temp', label: t('tag.temp'), sortVal: (r) => r.tags.temp },
+  { key: 'draft', label: t('tag.draft'), sortVal: (r) => r.tags.draft },
+  { key: 'engine', label: t('tag.engine'), sortVal: (r) => r.tags.engine },
+  { key: 'machine', label: t('col.machineSwe'), sortVal: (r) => r.machine },
+  { key: 'acc', label: t('cloud.col.pass'), num: true, sortVal: (r) => r.accSortable },
+  { key: 'n', label: t('eff.tt.solved'), num: true, sortVal: (r) => r.nRaw },
+  { key: 'perHour', label: t('eff.tt.perHour'), num: true, sortVal: (r) => r.perHour },
+  { key: 'sec', label: t('vega.tt.secSolved'), num: true, sortVal: (r) => r.sec },
+  { key: 'run', label: t('cloud.col.run'), sortVal: (r) => r.run },
+])
+const foldSortKey = ref<string>('perHour')
+const foldSortDir = ref<'asc' | 'desc'>('desc')
+const toggleFoldSort = (col: FoldCol) => {
+  if (foldSortKey.value === col.key) {
+    foldSortDir.value = foldSortDir.value === 'asc' ? 'desc' : 'asc'
+  } else {
+    foldSortKey.value = col.key
+    foldSortDir.value = col.num ? 'desc' : 'asc'
+  }
+}
+const foldSortArrow = (key: string) =>
+  (foldSortKey.value !== key ? '' : foldSortDir.value === 'asc' ? '\u2191' : '\u2193')
+const sortFoldRows = (rows: readonly any[]) => {
+  const col = foldCols.value.find((c) => c.key === foldSortKey.value)
+  return sortVariants(rows, col ? col.sortVal : null, foldSortDir.value)
+}
+
 // Filter BEFORE folding so the representative is chosen within the family, not globally.
 const throughputGroups = computed(() =>
   groupByCanonicalModel(
     boardFilter.applyTo(eligibleCells.value),
-    chooseFastestEfficiencyCell,
+    chooseBySort,
     (c) => `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
   )
 )
@@ -121,10 +200,17 @@ const mapRoutes = (records: readonly CompCell[], representative: CompCell | null
       comparable: classifyCell(c, examMeta.value).rankable,
       shown: c === representative,
       n: `${c.passed}/${c.n}`,
+      nRaw: num(c.n),
       perHour: primarySolvedPerHourOf(c),
       sec: primarySolveSecOf(c),
       secAll: examCostSecOf(c),
       acc: num(c.acc),
+      // The fold showed passed/n but never the RATE, which is the number the outer
+      // board ranks on. `accSortable` is null for a partial exam: 6/6 on a sixth of
+      // the tasks is not a 100% that outranks 29/34, so it is shown but never ranked
+      // against a full run it did not sit.
+      accPct: num(c.acc) !== null ? `${(c.acc * 100).toFixed(1)}%` : '—',
+      accSortable: classifyCell(c, examMeta.value).rankable ? num(c.acc) : null,
     }))
 
 // One canonical-model representative per row. Full-exam cells win before partials;
@@ -206,10 +292,17 @@ const selectedRoutes = computed(() =>
       comparable: classifyCell(c, examMeta.value).rankable,
       shown: c === selectedGroup.value?.representative,
       n: `${c.passed}/${c.n}`,
+      nRaw: num(c.n),
       perHour: primarySolvedPerHourOf(c),
       sec: primarySolveSecOf(c),
       secAll: examCostSecOf(c),
       acc: num(c.acc),
+      // The fold showed passed/n but never the RATE, which is the number the outer
+      // board ranks on. `accSortable` is null for a partial exam: 6/6 on a sixth of
+      // the tasks is not a 100% that outranks 29/34, so it is shown but never ranked
+      // against a full run it did not sit.
+      accPct: num(c.acc) !== null ? `${(c.acc * 100).toFixed(1)}%` : '—',
+      accSortable: classifyCell(c, examMeta.value).rankable ? num(c.acc) : null,
     }))
 )
 
@@ -507,6 +600,7 @@ const focusRow = (key: string) => {
             :default-dir="'desc'"
             expandable
             :highlight-row-id="focusedRowKey"
+            @sort-change="onSortChange"
           >
             <template #detail="{ row }">
               <div v-if="row.routeRows && row.routeRows.length > 1" class="space-y-2">
@@ -518,21 +612,26 @@ const focusRow = (key: string) => {
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
                       <tr>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('tag.thinking') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('tag.effort') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('tag.temp') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('tag.draft') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('tag.engine') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('cloud.col.pass') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('eff.tt.perHour') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('vega.tt.secSolved') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('cloud.col.run') }}</th>
+                        <th
+                          v-for="col in foldCols"
+                          :key="col.key"
+                          scope="col"
+                          :aria-sort="foldSortKey === col.key ? (foldSortDir === 'asc' ? 'ascending' : 'descending') : 'none'"
+                          :class="['px-2 py-1.5 font-semibold', col.num ? 'text-right' : 'text-left']"
+                        >
+                          <button
+                            type="button"
+                            :class="['inline-flex items-center gap-0.5 hover:text-foreground', foldSortKey === col.key ? 'text-foreground' : '']"
+                            @click="toggleFoldSort(col)"
+                          >
+                            {{ col.label }}<span class="font-mono">{{ foldSortArrow(col.key) }}</span>
+                          </button>
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr
-                        v-for="rt in row.routeRows"
+                        v-for="rt in sortFoldRows(row.routeRows)"
                         :key="rt.key"
                         :class="[rt.comparable ? '' : 'opacity-50', rt.shown ? 'bg-primary/5 font-medium' : '']"
                       >
@@ -555,6 +654,12 @@ const focusRow = (key: string) => {
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">
                           {{ rt.machine }}
                           <span v-if="rt.tags.variant" class="ml-1 rounded bg-muted px-1 text-[10px]">{{ rt.tags.variant }}</span>
+                        </td>
+                        <td class="px-2 py-1.5 text-right font-mono">
+                          <span :class="rt.accSortable === null ? 'text-muted-foreground' : ''"
+                                :title="rt.accSortable === null ? t('fold.variants.partialAcc') : undefined">
+                            {{ rt.accPct }}<template v-if="rt.accSortable === null">*</template>
+                          </span>
                         </td>
                         <td class="px-2 py-1.5 text-right font-mono">{{ rt.n }}</td>
                         <td class="px-2 py-1.5 text-right font-mono">{{ rt.perHour === null ? '—' : rt.perHour.toFixed(1) }}</td>

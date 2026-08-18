@@ -93,3 +93,28 @@ test('published speed rows name the card that produced them', () => {
   assert.ok(fourNinety.every((r) => r.gpu_summary && r.vram_total_gb === 24),
     'every 4090 row names the card and its 24GB')
 })
+
+test('the published run configs carry no host filesystem path', () => {
+  // These exist so a reader can reproduce a number. They are structured knobs rather than
+  // a rendered command line precisely because the command is full of this machine's
+  // absolute paths, and a leak here is a leak on a public site.
+  const snap = JSON.parse(readFileSync(join(root, 'public/public-bundles/dashboard-snapshot.json'), 'utf8'))
+  assert.ok(Array.isArray(snap.run_configs) && snap.run_configs.length > 0, 'run_configs is published')
+  const blob = JSON.stringify(snap.run_configs)
+  for (const leak of ['/home/', '/data/', '/Users/', 'C:\\\\']) {
+    assert.ok(!blob.includes(leak), `run configs must not contain ${leak}`)
+  }
+  assert.ok(snap.run_configs.every((c) => c.model && c.config), 'every config names its model')
+})
+
+test('every published machine can be used for fit arithmetic', () => {
+  const snap = JSON.parse(readFileSync(join(root, 'public/public-bundles/dashboard-snapshot.json'), 'utf8'))
+  for (const m of snap.machines) {
+    assert.ok(typeof m.vram_usable_gb === 'number' && m.vram_usable_gb > 0,
+      `${m.profile} publishes no usable memory figure`)
+    // A unified box must never report its whole pool as usable — the OS holds some of it.
+    if (m.memory_kind === 'unified' && m.vram_pool_gb) {
+      assert.ok(m.vram_usable_gb <= m.vram_pool_gb, `${m.profile} claims more than its pool`)
+    }
+  }
+})

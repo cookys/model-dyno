@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
 import { loadPublicBundleDashboardFeed } from './publicBundle'
-import type { SpecDecodeFinding, MachineHardware, ModelFootprint } from './publicBundle'
+import type { SpecDecodeFinding, MachineHardware, ModelFootprint, RunConfig } from './publicBundle'
 
 export interface ExamVersionInfo {
   version: string
@@ -352,6 +352,7 @@ export const specDecodeFindings = ref<SpecDecodeFinding[]>([])
 // a home reader asks before any tok/s means anything: whose card is this, and does it fit.
 export const machines = ref<MachineHardware[]>([])
 export const modelFootprints = ref<ModelFootprint[]>([])
+export const runConfigs = ref<RunConfig[]>([])
 export const dashboardSpecDecodeFindings = computed<SpecDecodeFinding[]>(() => specDecodeFindings.value)
 export const scorecardSweCells = computed<SweCell[]>(() => publicBundleSweCells.value)
 export const scorecardSweMeta = computed<SweMeta | null>(() => publicBundleSweMeta.value)
@@ -478,6 +479,7 @@ export async function loadAllData() {
     specDecodeFindings.value = publicDashboard.specDecodeFindings
     machines.value = publicDashboard.machines
     modelFootprints.value = publicDashboard.modelFootprints
+    runConfigs.value = publicDashboard.runConfigs
   } catch (e: any) {
     publicBundleFeedLoaded.value = false
     publicBundleRecords.value = []

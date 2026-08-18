@@ -10,7 +10,7 @@
 // context. That is why the middle verdict exists.
 import { computed } from 'vue'
 import { useI18n } from '@/lib/i18n'
-import { machines } from '@/lib/store'
+import { machines, runConfigs } from '@/lib/store'
 import { footprintByAlias, fitVerdict } from '@/lib/hardware'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 
@@ -33,6 +33,22 @@ const rows = computed(() => {
     .sort((a, b) => a.gb - b.gb)
     .map((r) => ({ ...r, verdict: fitVerdict(w, r.gb), headroom: +(r.gb - w).toFixed(1) }))
 })
+
+// How this model was actually served. The knobs, not a command line: the command is
+// machine-specific (binaries, weight paths, device indices) and would not run on the
+// reader's box anyway, while ctx_size and the KV settings are what they have to match to
+// get the same memory behaviour.
+const HIDDEN = new Set(['config', 'tier', 'model', 'methods'])
+const recipes = computed(() =>
+  runConfigs.value
+    .filter((c) => c.model === props.alias || c.config === props.alias)
+    .map((c) => ({
+      config: c.config,
+      methods: c.methods || [],
+      knobs: Object.entries(c)
+        .filter(([k, v]) => !HIDDEN.has(k) && v !== null && v !== undefined)
+        .map(([k, v]) => `${k}=${v}`),
+    })))
 
 const cls = (v: string) =>
   v === 'fits' ? 'text-emerald-700 dark:text-emerald-400'
@@ -68,6 +84,19 @@ const cls = (v: string) =>
       <a v-if="footprint.hf_repo" :href="`https://huggingface.co/${footprint.hf_repo}`"
          target="_blank" rel="noopener"
          class="inline-block font-mono text-xs text-primary hover:underline">{{ footprint.hf_repo }} ↗</a>
+
+      <div v-if="recipes.length" class="space-y-1.5">
+        <div class="text-xs font-semibold text-foreground">{{ t('fit.card.servedAs') }}</div>
+        <div v-for="r in recipes" :key="r.config" class="rounded-md border border-border/60 bg-muted/30 p-2">
+          <div class="font-mono text-[11px] text-foreground">{{ r.config }}</div>
+          <div class="mt-1 flex flex-wrap gap-1">
+            <span v-for="k in r.knobs" :key="k"
+                  class="rounded bg-muted px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">{{ k }}</span>
+            <span v-for="m in r.methods" :key="m"
+                  class="rounded bg-brand/15 px-1.5 py-0.5 font-mono text-[10px] text-brand">{{ m }}</span>
+          </div>
+        </div>
+      </div>
 
       <div v-if="rows.length" class="overflow-x-auto rounded-md border border-border/60">
         <table class="w-full text-left text-[11px]">

@@ -105,12 +105,23 @@ export interface ModelFootprint {
   license?: string
 }
 
+export interface RunConfig {
+  config: string
+  tier: string
+  model: string
+  methods: string[]
+  engine?: string
+  ctx_size?: number
+  [k: string]: unknown
+}
+
 export interface PublicBundleDashboardProjection extends PublicBundleScorecardProjection {
   generatedAt: string | null
   records: SpeedRecord[]
   specDecodeFindings: SpecDecodeFinding[]
   machines: MachineHardware[]
   modelFootprints: ModelFootprint[]
+  runConfigs: RunConfig[]
   sharedCells: SharedSweCell[]
   norm: NormIndex | null
   comp: CompIndex | null
@@ -968,6 +979,7 @@ export async function loadPublicBundleDashboardFeed(
         specDecodeFindings: [],
         machines: [],
         modelFootprints: [],
+        runConfigs: [],
         sharedCells: [],
         norm: null,
         comp: null,
@@ -992,6 +1004,7 @@ export async function loadPublicBundleDashboardFeed(
       specDecodeFindings: [],
       machines: [],
       modelFootprints: [],
+      runConfigs: [],
       sharedCells: [],
       norm: null,
       comp: null,
@@ -1032,6 +1045,9 @@ export async function loadPublicBundleDashboardFeed(
     specDecodeFindings: projectSpecDecodeFindings(snapshot.spec_decode_findings),
     machines: projectMachines(snapshot.machines),
     modelFootprints: projectModelFootprints(snapshot.model_registry),
+    runConfigs: Array.isArray(snapshot.run_configs)
+      ? (snapshot.run_configs.filter((c) => c && typeof c === 'object') as RunConfig[])
+      : [],
     sharedCells: projectSharedCellsFromScorecardRows(cells),
     norm: projectNormIndexFromScorecardRows(cells, meta),
     comp: projectCompIndexFromScorecardRows(cells, meta),

@@ -38,8 +38,18 @@ const sweCellsCount = computed(() => scorecardSweCells.value.length)
 
 const generatedDateStr = computed(() => shortDate(generatedAt.value))
 
-// Determine active top tab ('speed' | 'swe' | null)
+// Which top tab a route belongs to is decided by WHAT ITS DATA IS, not by its URL
+// prefix. /speed/efficiency and /speed/cloud are agentic-exam boards that share their
+// source with the entire exam tab; they only lived under "speed" because their headline
+// number is a rate. Grouping by the word split one dataset across two tabs and put the
+// exam's throughput views where nobody looking for exam results would click.
+//
+// The paths themselves do NOT move: they are pasted in notes across the fleet, and a
+// rename buys nothing a label cannot.
+const EXAM_ROUTES = new Set(['/speed/efficiency', '/speed/cloud'])
+
 const activeTopTab = computed(() => {
+  if (EXAM_ROUTES.has(route.path)) return 'swe'
   if (route.path.startsWith('/speed')) return 'speed'
   if (route.path.startsWith('/swe')) return 'swe'
   return null
@@ -50,7 +60,10 @@ const navigateToTopTab = (tab: 'speed' | 'swe') => {
   if (tab === 'speed') {
     router.push('/speed/heatmap')
   } else {
-    router.push('/swe/shared')
+    // The comparability board, not the shared-workspace one: it is the only view that
+    // answers both decisions a reader arrives with — does this model solve the tasks,
+    // and what does it cost.
+    router.push('/swe/comp')
   }
 }
 
@@ -291,6 +304,30 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
             >
               {{ t('idx.contributors.title') }}
             </Button>
+          </div>
+
+          <!-- SWE Sub Navigation -->
+          <div v-if="activeTopTab === 'swe'" class="flex items-center gap-1.5 flex-wrap text-xs pt-1">
+            <Button
+              :as="RouterLink"
+              to="/swe/comp"
+              variant="ghost"
+              size="sm"
+              class="h-7 text-xs rounded-full font-medium"
+              :class="route.path === '/swe/comp' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
+            >
+              {{ t('subtab.swe.comp') }}
+            </Button>
+            <Button
+              :as="RouterLink"
+              to="/swe/norm"
+              variant="ghost"
+              size="sm"
+              class="h-7 text-xs rounded-full font-medium"
+              :class="route.path === '/swe/norm' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
+            >
+              {{ t('subtab.swe.norm') }}
+            </Button>
             <Button
               :as="RouterLink"
               to="/speed/efficiency"
@@ -310,40 +347,6 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
               :class="route.path === '/speed/cloud' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
             >
               {{ t('idx.cloud.title') }}
-            </Button>
-          </div>
-
-          <!-- SWE Sub Navigation -->
-          <div v-if="activeTopTab === 'swe'" class="flex items-center gap-1.5 flex-wrap text-xs pt-1">
-            <Button
-              :as="RouterLink"
-              to="/swe/shared"
-              variant="ghost"
-              size="sm"
-              class="h-7 text-xs rounded-full font-medium"
-              :class="route.path === '/swe/shared' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
-            >
-              {{ t('subtab.swe.shared') }}
-            </Button>
-            <Button
-              :as="RouterLink"
-              to="/swe/norm"
-              variant="ghost"
-              size="sm"
-              class="h-7 text-xs rounded-full font-medium"
-              :class="route.path === '/swe/norm' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
-            >
-              {{ t('subtab.swe.norm') }}
-            </Button>
-            <Button
-              :as="RouterLink"
-              to="/swe/comp"
-              variant="ghost"
-              size="sm"
-              class="h-7 text-xs rounded-full font-medium"
-              :class="route.path === '/swe/comp' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
-            >
-              {{ t('subtab.swe.comp') }}
             </Button>
             <Button
               :as="RouterLink"
@@ -367,6 +370,16 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
             </Button>
             <Button
               :as="RouterLink"
+              to="/swe/shared"
+              variant="ghost"
+              size="sm"
+              class="h-7 text-xs rounded-full font-medium"
+              :class="route.path === '/swe/shared' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
+            >
+              {{ t('subtab.swe.shared') }}
+            </Button>
+            <Button
+              :as="RouterLink"
               to="/swe/exam-history"
               variant="ghost"
               size="sm"
@@ -375,7 +388,7 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
             >
               {{ t('subtab.swe.examHistory') }}
             </Button>
-          </div>
+</div>
         </div>
 
         <!-- Rendered Route View -->

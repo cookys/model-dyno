@@ -59,3 +59,37 @@ test('the spec-decode card copy does not describe a narrower dataset than it sho
   }
   assert.ok(!i18n.includes('specdecode.note.'), 'per-row notes come from the feed, not from i18n')
 })
+
+test('the snapshot carries the hardware and footprint blocks the fit view needs', () => {
+  const snap = JSON.parse(readFileSync(join(root, 'public/public-bundles/dashboard-snapshot.json'), 'utf8'))
+  assert.ok(Array.isArray(snap.machines) && snap.machines.length > 0, 'machines block is published')
+  assert.ok(Array.isArray(snap.model_registry) && snap.model_registry.length > 0, 'model_registry is published')
+  // The join that makes the whole thing work: registry aliases must actually match the
+  // model_alias on speed records, or every fit lookup silently returns nothing.
+  const aliases = new Set(snap.model_registry.map((m) => m.alias))
+  const hits = snap.speed_records.filter((r) => aliases.has(r.model_alias)).length
+  assert.ok(hits > 10, `expected registry to join to speed records, matched ${hits}`)
+})
+
+test('a discrete card is never described as unified memory', () => {
+  // Memory kind is a property of the silicon. Deriving it from "which VRAM key does this
+  // profile happen to set" called the discrete 4090 unified and the Strix Halo APU
+  // dedicated — and the fit arithmetic means the opposite thing on each.
+  const snap = JSON.parse(readFileSync(join(root, 'public/public-bundles/dashboard-snapshot.json'), 'utf8'))
+  const byProfile = Object.fromEntries(snap.machines.map((m) => [m.profile, m]))
+  assert.equal(byProfile['cookys-gentoo']?.memory_kind, 'dedicated', '4090 is a discrete card')
+  assert.equal(byProfile['cookys-gentoo']?.vram_usable_gb, 24)
+  assert.equal(byProfile['cachyos-max395']?.memory_kind, 'unified', 'Strix Halo is an APU')
+  assert.equal(byProfile['MacBook-Pro.M4Max.36GB']?.memory_kind, 'unified')
+})
+
+test('published speed rows name the card that produced them', () => {
+  const snap = JSON.parse(readFileSync(join(root, 'public/public-bundles/dashboard-snapshot.json'), 'utf8'))
+  const missing = snap.speed_records.filter((r) => !r.gpu_summary).length
+  // Was 45/82 while the aggregator read only host_caps and ignored gpu_state_before.
+  assert.ok(missing <= 10, `${missing} rows still publish no GPU identity`)
+  const fourNinety = snap.speed_records.filter((r) => r.profile === 'cookys-gentoo')
+  assert.ok(fourNinety.length > 0)
+  assert.ok(fourNinety.every((r) => r.gpu_summary && r.vram_total_gb === 24),
+    'every 4090 row names the card and its 24GB')
+})

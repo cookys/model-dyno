@@ -6,6 +6,7 @@ import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { contributorOf, hwOf, num, fmt } from '@/components/CellHelpers'
+import { machineLabel } from '@/lib/hardware'
 
 const { t } = useI18n()
 
@@ -18,7 +19,10 @@ const contributorRows = computed(() => {
     const cur = byC.get(c) || {
       contributor: c,
       profile: r.profile || '—',
-      hw: hwOf(r),
+      // Prefer the profile's own hardware record over the free-text GPU string the bench
+      // happened to capture: it carries the memory figure, which is the reason a reader
+      // looks at this page at all.
+      hw: machineLabel(r.profile) !== (r.profile || '—') ? machineLabel(r.profile) : hwOf(r),
       os: r.os_version || r.os_family || '—',
       runs: 0,
       best: null

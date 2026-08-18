@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
 import { loadPublicBundleDashboardFeed } from './publicBundle'
-import type { SpecDecodeFinding } from './publicBundle'
+import type { SpecDecodeFinding, MachineHardware, ModelFootprint } from './publicBundle'
 
 export interface ExamVersionInfo {
   version: string
@@ -348,6 +348,10 @@ export const dashboardRecords = computed<SpeedRecord[]>(() => speedRecords.value
 // benchmarks/spec-decode-findings.toml). They used to be a literal array inside
 // SpeedHeatmap.vue — Apple-only, and a frontend edit for every new measurement.
 export const specDecodeFindings = ref<SpecDecodeFinding[]>([])
+// Hardware behind each profile, and weight footprint per model. Both answer the question
+// a home reader asks before any tok/s means anything: whose card is this, and does it fit.
+export const machines = ref<MachineHardware[]>([])
+export const modelFootprints = ref<ModelFootprint[]>([])
 export const dashboardSpecDecodeFindings = computed<SpecDecodeFinding[]>(() => specDecodeFindings.value)
 export const scorecardSweCells = computed<SweCell[]>(() => publicBundleSweCells.value)
 export const scorecardSweMeta = computed<SweMeta | null>(() => publicBundleSweMeta.value)
@@ -472,6 +476,8 @@ export async function loadAllData() {
       speedRecords.value = publicDashboard.records
     }
     specDecodeFindings.value = publicDashboard.specDecodeFindings
+    machines.value = publicDashboard.machines
+    modelFootprints.value = publicDashboard.modelFootprints
   } catch (e: any) {
     publicBundleFeedLoaded.value = false
     publicBundleRecords.value = []

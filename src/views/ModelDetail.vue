@@ -8,6 +8,7 @@ import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import ModelFitCard from '@/components/ModelFitCard.vue'
 import {
   contributorOf,
   hwOf,
@@ -237,6 +238,8 @@ const cols = computed<Column<any>[]>(() => [
         {{ t('model.detail.noRuns').replace('{alias}', alias) }}
       </CardContent>
     </Card>
+
+    <ModelFitCard :alias="alias" />
 
     <Card v-if="hasSpeedRuns || loading" class="border-border bg-card shadow-lg">
       <CardHeader class="pb-2">

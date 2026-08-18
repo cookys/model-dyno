@@ -8,8 +8,12 @@ import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { num } from '@/components/CellHelpers'
+import { machineLabel } from '@/lib/hardware'
+import { useVramFilter } from '@/lib/useVramFilter'
+import VramFilterBar from '@/components/VramFilterBar.vue'
 
 const { t } = useI18n()
+const { machineFits } = useVramFilter()
 
 // Vega Embed instances to finalize on unmount
 let vegaView: any = null
@@ -74,8 +78,11 @@ const drawChart = () => {
 
   const data = dashboardRecords.value
     .filter((r) => r.profile && r.tier && r.model_alias && num(r.tg128_tps) !== null)
+    .filter((r) => machineFits(r.profile))
     .map((r) => ({
-      profile: r.profile,
+      // Axis label is the CARD, not the hostname: `cookys-gentoo` tells a stranger
+      // nothing, `RTX 4090 · 24GB` tells them whether the row is about them.
+      profile: machineLabel(r.profile),
       cell: `${r.tier} · ${r.model_alias}`,
       tier: r.tier,
       tg: r.tg128_tps,
@@ -213,6 +220,7 @@ onUnmounted(() => {
           {{ t('empty.heatmap') }}
         </div>
         <template v-else>
+          <VramFilterBar class="mb-3" />
           <button type="button" class="md:hidden w-full mb-2 py-2 text-xs font-medium rounded-md border border-border bg-muted/40 text-muted-foreground hover:text-foreground transition-colors" @click="chartOpen = !chartOpen">
             {{ chartOpen ? t("chart.hide") : t("chart.show") }}
           </button>

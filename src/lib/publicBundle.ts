@@ -77,10 +77,40 @@ export interface SpecDecodeFinding {
   source: string
 }
 
+export interface MachineHardware {
+  profile: string
+  gpu_name: string | null
+  gpu_vendor: string | null
+  gpu_count: number | null
+  /** dedicated = a discrete card's own VRAM; unified = one pool shared with the OS. */
+  memory_kind: string
+  vram_per_gpu_gb: number | null
+  vram_total_gb: number | null
+  vram_pool_gb: number | null
+  vram_practical_gb: number | null
+  /** The figure to subtract a model's weights from. Not the same quantity on both kinds. */
+  vram_usable_gb: number | null
+  aliases: string[]
+}
+
+export interface ModelFootprint {
+  alias: string
+  family?: string
+  quant?: string
+  weights_gb?: number
+  params_total_b?: number
+  params_active_b?: number
+  context_max?: number
+  hf_repo?: string
+  license?: string
+}
+
 export interface PublicBundleDashboardProjection extends PublicBundleScorecardProjection {
   generatedAt: string | null
   records: SpeedRecord[]
   specDecodeFindings: SpecDecodeFinding[]
+  machines: MachineHardware[]
+  modelFootprints: ModelFootprint[]
   sharedCells: SharedSweCell[]
   norm: NormIndex | null
   comp: CompIndex | null
@@ -480,7 +510,13 @@ export function projectScorecardRowsFromPublicBundle(
         ? { verdict: perfMetrics.speed_verdict }
         : undefined,
       usd_per_solved: costCoverage === 'full' ? nanoUsdPerSolved(cost, nPassed) : undefined,
-      price_known: costCoverage === 'full',
+      // `coverage: "full"` means every token was OBSERVED, not that a rate exists to
+      // price them with. Every local cell in the feed is coverage:"full" with
+      // total_cost_nano_usd:null and reason:"rate_unavailable" — 65 of them — so
+      // conflating the two published a confident "price known" for runs whose price is
+      // explicitly unavailable, and the $0 branch downstream reads that as "local is
+      // free". A price is known when there is a number.
+      price_known: costCoverage === 'full' && finiteNumberOrNull(cost.total_cost_nano_usd) !== null,
       // Config axes come from the feed entry, which carries what the eval profile
       // declared and the tag validator checked. The old fallback synthesized a
       // placement-only object out of the backend string, so every other tag column
@@ -870,6 +906,34 @@ function projectSpeedRecords(raw: unknown): SpeedRecord[] {
   return Array.isArray(raw) ? (raw.filter((r) => r && typeof r === 'object') as SpeedRecord[]) : []
 }
 
+function projectMachines(raw: unknown): MachineHardware[] {
+  if (!Array.isArray(raw)) return []
+  return raw
+    .filter((m): m is Record<string, unknown> => !!m && typeof m === 'object')
+    .map((m) => ({
+      profile: String(m.profile ?? ''),
+      gpu_name: (m.gpu_name as string) ?? null,
+      gpu_vendor: (m.gpu_vendor as string) ?? null,
+      gpu_count: typeof m.gpu_count === 'number' ? m.gpu_count : null,
+      memory_kind: String(m.memory_kind ?? 'dedicated'),
+      vram_per_gpu_gb: typeof m.vram_per_gpu_gb === 'number' ? m.vram_per_gpu_gb : null,
+      vram_total_gb: typeof m.vram_total_gb === 'number' ? m.vram_total_gb : null,
+      vram_pool_gb: typeof m.vram_pool_gb === 'number' ? m.vram_pool_gb : null,
+      vram_practical_gb: typeof m.vram_practical_gb === 'number' ? m.vram_practical_gb : null,
+      vram_usable_gb: typeof m.vram_usable_gb === 'number' ? m.vram_usable_gb : null,
+      aliases: Array.isArray(m.aliases) ? m.aliases.map(String) : [],
+    }))
+    .filter((m) => m.profile)
+}
+
+function projectModelFootprints(raw: unknown): ModelFootprint[] {
+  if (!Array.isArray(raw)) return []
+  return raw
+    .filter((m): m is Record<string, unknown> => !!m && typeof m === 'object')
+    .map((m) => ({ ...(m as unknown as ModelFootprint), alias: String(m.alias ?? '') }))
+    .filter((m) => m.alias)
+}
+
 function projectSpecDecodeFindings(raw: unknown): SpecDecodeFinding[] {
   if (!Array.isArray(raw)) return []
   return raw
@@ -902,6 +966,8 @@ export async function loadPublicBundleDashboardFeed(
         generatedAt: null,
         records: [],
         specDecodeFindings: [],
+        machines: [],
+        modelFootprints: [],
         sharedCells: [],
         norm: null,
         comp: null,
@@ -924,6 +990,8 @@ export async function loadPublicBundleDashboardFeed(
       generatedAt: feed.generatedAt,
       records: [],
       specDecodeFindings: [],
+      machines: [],
+      modelFootprints: [],
       sharedCells: [],
       norm: null,
       comp: null,
@@ -962,6 +1030,8 @@ export async function loadPublicBundleDashboardFeed(
     generatedAt: feed.generatedAt,
     records: projectSpeedRecords(snapshot.speed_records),
     specDecodeFindings: projectSpecDecodeFindings(snapshot.spec_decode_findings),
+    machines: projectMachines(snapshot.machines),
+    modelFootprints: projectModelFootprints(snapshot.model_registry),
     sharedCells: projectSharedCellsFromScorecardRows(cells),
     norm: projectNormIndexFromScorecardRows(cells, meta),
     comp: projectCompIndexFromScorecardRows(cells, meta),

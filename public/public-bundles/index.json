@@ -15,6 +15,7 @@
       "tags": {
         "draft": "dspark",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -35,7 +36,9 @@
       "owner": "?",
       "publisher": "",
       "publisher_url": "",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Grok",
@@ -49,7 +52,9 @@
       "owner": "?",
       "publisher": "xAI",
       "publisher_url": "https://x.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "OpenCode",
@@ -65,10 +70,12 @@
       "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -86,10 +93,12 @@
       "publisher_url": "https://z.ai/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -108,6 +117,7 @@
       "tags": {
         "draft": "none",
         "effort": "low",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-Q4_K_XL",
@@ -154,7 +164,9 @@
       "owner": "?",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Codex",
@@ -168,7 +180,9 @@
       "owner": "?",
       "publisher": "OpenAI",
       "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Codex",
@@ -182,7 +196,9 @@
       "owner": "?",
       "publisher": "",
       "publisher_url": "",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Grok",
@@ -196,7 +212,9 @@
       "owner": "?",
       "publisher": "xAI",
       "publisher_url": "https://x.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "qoder-cli",
@@ -210,7 +228,9 @@
       "owner": "cookys",
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -226,6 +246,7 @@
       "publisher_url": "https://qwen.ai/",
       "tags": {
         "draft": "none",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-Q4_K_XL",
@@ -249,6 +270,7 @@
       "tags": {
         "draft": "none",
         "effort": "low",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -269,7 +291,9 @@
       "owner": "?",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Codex",
@@ -283,7 +307,9 @@
       "owner": "?",
       "publisher": "",
       "publisher_url": "",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Direct",
@@ -297,7 +323,9 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Direct",
@@ -311,7 +339,9 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -327,12 +357,14 @@
       "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "tags": {
         "draft": "dspark",
+        "engine": "vllm",
         "exam": "canonical",
         "lineage": "base",
         "model_release": "0731",
         "placement": "local",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -350,6 +382,7 @@
       "publisher_url": "https://qwen.ai/",
       "tags": {
         "draft": "mtp",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-Q4_K_XL",
@@ -370,7 +403,9 @@
       "owner": "?",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Direct",
@@ -386,10 +421,12 @@
       "publisher_url": "https://www.minimax.io/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -407,10 +444,12 @@
       "publisher_url": "https://www.minimax.io/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -428,10 +467,12 @@
       "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
       "tags": {
         "draft": "dflash",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -450,6 +491,7 @@
       "tags": {
         "draft": "none",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -473,6 +515,7 @@
       "tags": {
         "draft": "none",
         "effort": "xhigh",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -493,7 +536,9 @@
       "owner": "?",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Direct",
@@ -507,7 +552,9 @@
       "owner": "?",
       "publisher": "Meta",
       "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -523,10 +570,12 @@
       "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
       "tags": {
         "draft": "none",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -542,7 +591,9 @@
       "owner": "?",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Codex",
@@ -556,7 +607,9 @@
       "owner": "?",
       "publisher": "",
       "publisher_url": "",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Direct",
@@ -570,7 +623,9 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Direct",
@@ -584,7 +639,9 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "OpenCode",
@@ -600,10 +657,12 @@
       "publisher_url": "https://z.ai/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -621,10 +680,12 @@
       "publisher_url": "https://z.ai/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -642,10 +703,12 @@
       "publisher_url": "https://www.tencent.com/en-us/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -663,10 +726,12 @@
       "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "tags": {
         "draft": "mtp",
+        "engine": "vllm",
         "lineage": "base",
         "placement": "local",
         "quant": "FP4-FP8",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -684,10 +749,12 @@
       "publisher_url": "https://www.stepfun.com/",
       "tags": {
         "draft": "none",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "IQ4_XS",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -703,7 +770,9 @@
       "owner": "cookys",
       "publisher": "Moonshot",
       "publisher_url": "https://platform.moonshot.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -720,6 +789,7 @@
       "tags": {
         "draft": "none",
         "effort": "low",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-Q4_K_XL",
@@ -741,7 +811,9 @@
       "owner": "?",
       "publisher": "Z.AI",
       "publisher_url": "https://z.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "OpenCode",
@@ -756,6 +828,7 @@
       "publisher": "DeepSeek",
       "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "tags": {
+        "engine": "n/a",
         "placement": "cloud"
       }
     },
@@ -773,10 +846,12 @@
       "publisher_url": "https://www.tencent.com/en-us/",
       "tags": {
         "draft": "mtp",
+        "engine": "vllm",
         "lineage": "base",
         "placement": "local",
         "quant": "MXFP4",
         "role": "candidate",
+        "temp": "0",
         "thinking": "n/a"
       }
     },
@@ -795,6 +870,7 @@
       "tags": {
         "draft": "mtp",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-Q4_K_XL",
@@ -817,10 +893,13 @@
       "publisher_url": "",
       "tags": {
         "draft": "mtp",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -839,6 +918,7 @@
       "tags": {
         "draft": "none",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-Q4_K_XL",
@@ -862,6 +942,7 @@
       "tags": {
         "draft": "mtp",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-Q4_K_XL",
@@ -912,6 +993,7 @@
       "tags": {
         "draft": "none",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-Q4_K_XL",
@@ -986,7 +1068,9 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -1001,6 +1085,7 @@
       "publisher": "Mistral",
       "publisher_url": "",
       "tags": {
+        "engine": "llama.cpp",
         "placement": "local"
       }
     },
@@ -1017,9 +1102,10 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "draft": "mtp",
-        "lineage": "merged",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1036,10 +1122,9 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "draft": "mtp",
-        "lineage": "merged",
+        "engine": "llama.cpp",
         "placement": "local",
-        "thinking": "on"
+        "temp": "0"
       }
     },
     {
@@ -1055,8 +1140,10 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "lineage": "merged",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1073,9 +1160,9 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "lineage": "merged",
+        "engine": "llama.cpp",
         "placement": "local",
-        "thinking": "on"
+        "temp": "0"
       }
     },
     {
@@ -1091,9 +1178,9 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "draft": "mtp",
+        "engine": "llama.cpp",
         "placement": "local",
-        "thinking": "on"
+        "temp": "0"
       }
     },
     {
@@ -1109,8 +1196,9 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
+        "engine": "llama.cpp",
         "placement": "local",
-        "thinking": "on"
+        "temp": "0"
       }
     },
     {
@@ -1126,7 +1214,10 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "draft": "mtp",
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1143,9 +1234,9 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "draft": "mtp",
-        "lineage": "merged",
-        "thinking": "on"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0"
       }
     },
     {
@@ -1161,8 +1252,11 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "lineage": "abliterated",
-        "placement": "local"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -1177,7 +1271,11 @@
       "owner": "cookys",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a",
+        "placement": "cloud",
+        "temp": "0"
+      }
     },
     {
       "access_label": "local",
@@ -1244,7 +1342,9 @@
       "owner": "?",
       "publisher": "Moonshot",
       "publisher_url": "https://platform.moonshot.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Direct",
@@ -1258,7 +1358,11 @@
       "owner": "cookys",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a",
+        "placement": "cloud",
+        "temp": "0"
+      }
     },
     {
       "access_label": "local",
@@ -1273,8 +1377,10 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "draft": "mtp",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1290,7 +1396,9 @@
       "owner": "?",
       "publisher": "xAI",
       "publisher_url": "https://x.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -1305,8 +1413,10 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "draft": "mtp",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1323,7 +1433,10 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1342,6 +1455,7 @@
       "tags": {
         "draft": "none",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -1364,10 +1478,12 @@
       "publisher_url": "https://www.minimax.io/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -1385,10 +1501,12 @@
       "publisher_url": "https://www.minimax.io/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -1406,10 +1524,13 @@
       "publisher_url": "",
       "tags": {
         "draft": "dflash",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1428,6 +1549,7 @@
       "tags": {
         "draft": "mtp-embedded",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -1451,6 +1573,7 @@
       "tags": {
         "draft": "mtp-embedded-n2",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -1471,7 +1594,9 @@
       "owner": "?",
       "publisher": "Xiaomi",
       "publisher_url": "https://www.mi.com/global/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -1487,10 +1612,12 @@
       "publisher_url": "",
       "tags": {
         "draft": "none",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -1508,10 +1635,12 @@
       "publisher_url": "https://www.minimax.io/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -1529,10 +1658,13 @@
       "publisher_url": "",
       "tags": {
         "draft": "mtp",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "abliterated",
         "placement": "local",
         "quant": "Q4_K",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1551,6 +1683,7 @@
       "tags": {
         "draft": "mtp",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "instruct",
         "placement": "local",
         "quant": "UD-IQ4_XS",
@@ -1573,10 +1706,12 @@
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -1595,6 +1730,7 @@
       "tags": {
         "draft": "mtp",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -1619,6 +1755,7 @@
         "draft": "mtp",
         "draft_quant": "BF16",
         "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -1665,7 +1802,9 @@
       "owner": "?",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "Grok",
@@ -1679,7 +1818,9 @@
       "owner": "?",
       "publisher": "xAI",
       "publisher_url": "https://x.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "OpenCode Free",
@@ -1694,6 +1835,7 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
+        "engine": "n/a",
         "placement": "cloud"
       }
     },
@@ -1710,8 +1852,11 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "draft": "mtp",
-        "placement": "local"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -1728,10 +1873,12 @@
       "publisher_url": "https://www.tencent.com/en-us/",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "none",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1748,7 +1895,11 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "placement": "cloud"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "remote",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -1792,7 +1943,11 @@
       "publisher": "Xiaomi",
       "publisher_url": "https://www.mi.com/global/",
       "tags": {
-        "placement": "cloud"
+        "effort": "n/a",
+        "engine": "n/a",
+        "placement": "cloud",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -1808,8 +1963,9 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "lineage": "heretic",
-        "thinking": "on"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0"
       }
     },
     {
@@ -1825,7 +1981,11 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "placement": "local"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -1840,7 +2000,9 @@
       "owner": "cookys",
       "publisher": "Moonshot",
       "publisher_url": "https://platform.moonshot.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -1856,10 +2018,13 @@
       "publisher_url": "",
       "tags": {
         "draft": "none",
+        "effort": "xhigh",
+        "engine": "vllm",
         "lineage": "base",
         "placement": "local",
         "quant": "BF16",
         "role": "candidate",
+        "temp": "1.0",
         "thinking": "on"
       }
     },
@@ -1875,7 +2040,9 @@
       "owner": "?",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -1890,7 +2057,10 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -1907,8 +2077,9 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "role": "control",
-        "thinking": "on"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0"
       }
     },
     {
@@ -1925,10 +2096,12 @@
       "publisher_url": "https://huggingface.co/nex-agi",
       "tags": {
         "draft": "none",
+        "engine": "n/a",
         "lineage": "base",
         "placement": "cloud",
         "quant": "fp8",
         "role": "candidate",
+        "temp": "0",
         "thinking": "on"
       }
     },
@@ -1944,7 +2117,9 @@
       "owner": "cookys",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -1961,6 +2136,7 @@
       "tags": {
         "draft": "none",
         "effort": "n/a",
+        "engine": "vllm",
         "lineage": "base",
         "placement": "local",
         "quant": "NVFP4",
@@ -1981,7 +2157,9 @@
       "owner": "?",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -1997,9 +2175,12 @@
       "publisher_url": "https://www.mi.com/global/",
       "tags": {
         "draft": "none",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2017,10 +2198,12 @@
       "publisher_url": "https://www.tencent.com/en-us/",
       "tags": {
         "draft": "none",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "IQ1_M",
         "role": "candidate",
+        "temp": "0.6",
         "thinking": "off"
       }
     },
@@ -2038,10 +2221,13 @@
       "publisher_url": "https://www.nvidia.com/en-us/ai/",
       "tags": {
         "draft": "none",
+        "effort": "xhigh",
+        "engine": "vllm",
         "lineage": "base",
         "placement": "local",
         "quant": "BF16",
         "role": "candidate",
+        "temp": "1.0",
         "thinking": "on"
       }
     },
@@ -2058,8 +2244,9 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "draft": "mtp",
-        "placement": "local"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0"
       }
     },
     {
@@ -2076,9 +2263,12 @@
       "publisher_url": "https://www.mi.com/global/",
       "tags": {
         "draft": "none",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2095,9 +2285,11 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "draft": "dflash",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
-        "role": "control"
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2113,8 +2305,11 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "lineage": "heretic",
-        "role": "control"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2130,8 +2325,11 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "draft": "dflash",
-        "lineage": "heretic"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2146,7 +2344,13 @@
       "owner": "cookys",
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
-      "tags": {}
+      "tags": {
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -2161,7 +2365,11 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "placement": "cloud"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "remote",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2178,10 +2386,13 @@
       "publisher_url": "",
       "tags": {
         "draft": "none",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2198,7 +2409,9 @@
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
-        "placement": "local"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "1.0"
       }
     },
     {
@@ -2214,8 +2427,9 @@
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
+        "engine": "llama.cpp",
         "placement": "local",
-        "thinking": "on"
+        "temp": "1.0"
       }
     },
     {
@@ -2232,10 +2446,13 @@
       "publisher_url": "https://huggingface.co/nex-agi",
       "tags": {
         "draft": "none",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "IQ3_XXS",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2253,10 +2470,13 @@
       "publisher_url": "https://www.nvidia.com/en-us/ai/",
       "tags": {
         "draft": "mtp",
+        "effort": "xhigh",
+        "engine": "vllm",
         "lineage": "base",
         "placement": "local",
         "quant": "NVFP4",
         "role": "candidate",
+        "temp": "1.0",
         "thinking": "on"
       }
     },
@@ -2274,10 +2494,12 @@
       "publisher_url": "",
       "tags": {
         "draft": "none",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "Q4_K_M",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2294,6 +2516,7 @@
       "publisher": "NVIDIA",
       "publisher_url": "https://www.nvidia.com/en-us/ai/",
       "tags": {
+        "engine": "n/a",
         "placement": "cloud"
       }
     },
@@ -2311,10 +2534,13 @@
       "publisher_url": "",
       "tags": {
         "draft": "dflash",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "gemma4-dense-31b",
         "placement": "local",
         "quant": "IQ4_XS",
         "role": "candidate",
+        "temp": "1.0",
         "thinking": "off"
       }
     },
@@ -2331,6 +2557,7 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
+        "engine": "n/a",
         "placement": "cloud"
       }
     },
@@ -2348,10 +2575,13 @@
       "publisher_url": "",
       "tags": {
         "draft": "dflash",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "gemma4-moe-a4b",
         "placement": "local",
         "quant": "Q4_K_M",
         "role": "candidate",
+        "temp": "1.0",
         "thinking": "off"
       }
     },
@@ -2367,7 +2597,9 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -2382,7 +2614,11 @@
       "publisher": "Z.AI",
       "publisher_url": "https://z.ai/",
       "tags": {
-        "placement": "local"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2399,10 +2635,13 @@
       "publisher_url": "https://www.minimax.io/",
       "tags": {
         "draft": "none",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "UD-IQ3_XXS",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2420,10 +2659,13 @@
       "publisher_url": "https://huggingface.co/nex-agi",
       "tags": {
         "draft": "none",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "IQ2_M",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2441,10 +2683,13 @@
       "publisher_url": "https://www.nvidia.com/en-us/ai/",
       "tags": {
         "draft": "none",
+        "effort": "xhigh",
+        "engine": "vllm",
         "lineage": "base",
         "placement": "local",
         "quant": "BF16",
         "role": "candidate",
+        "temp": "1.0",
         "thinking": "on"
       }
     },
@@ -2460,7 +2705,9 @@
       "owner": "?",
       "publisher": "OpenAI",
       "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {}
+      "tags": {
+        "engine": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -2475,7 +2722,9 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "placement": "local"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0"
       }
     },
     {
@@ -2491,7 +2740,9 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "placement": "local"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0"
       }
     },
     {
@@ -2507,7 +2758,10 @@
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
+        "temp": "1.0",
         "thinking": "off"
       }
     },
@@ -2524,7 +2778,9 @@
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
-        "placement": "local"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "1.0"
       }
     },
     {
@@ -2539,7 +2795,11 @@
       "owner": "cyberbsd",
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
-      "tags": {}
+      "tags": {
+        "engine": "mlx",
+        "placement": "local",
+        "temp": "0"
+      }
     },
     {
       "access_label": "local",
@@ -2554,7 +2814,11 @@
       "publisher": "Z.AI",
       "publisher_url": "https://z.ai/",
       "tags": {
-        "placement": "local"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2570,7 +2834,11 @@
       "publisher": "Z.AI",
       "publisher_url": "https://z.ai/",
       "tags": {
-        "placement": "local"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2586,7 +2854,9 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "placement": "local"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0"
       }
     },
     {
@@ -2602,7 +2872,9 @@
       "publisher": "Weibo",
       "publisher_url": "",
       "tags": {
-        "placement": "local"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "1.0"
       }
     },
     {
@@ -2618,8 +2890,11 @@
       "publisher": "",
       "publisher_url": "",
       "tags": {
-        "lineage": "abliterated",
-        "placement": "local"
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2635,7 +2910,10 @@
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "placement": "local",
+        "temp": "1.0",
         "thinking": "off"
       }
     },
@@ -2652,7 +2930,9 @@
       "publisher": "Weibo",
       "publisher_url": "",
       "tags": {
-        "placement": "local"
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "1.0"
       }
     },
     {
@@ -2669,10 +2949,13 @@
       "publisher_url": "https://www.minimax.io/",
       "tags": {
         "draft": "none",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
         "quant": "MoQ-3.0",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2690,10 +2973,12 @@
       "publisher_url": "https://www.minimax.io/",
       "tags": {
         "draft": "none",
+        "engine": "sglang",
         "lineage": "pruned",
         "placement": "local",
         "quant": "NVFP4-REAP50",
         "role": "candidate",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -2711,10 +2996,13 @@
       "publisher_url": "https://www.nvidia.com/en-us/ai/",
       "tags": {
         "draft": "mtp",
+        "effort": "xhigh",
+        "engine": "vllm",
         "lineage": "base",
         "placement": "local",
         "quant": "NVFP4",
         "role": "candidate",
+        "temp": "1.0",
         "thinking": "on"
       }
     },
@@ -2732,6 +3020,7 @@
       "publisher_url": "https://qwen.ai/",
       "tags": {
         "draft": "none",
+        "engine": "llama.cpp",
         "lineage": "qwen3-next-deltanet",
         "placement": "local",
         "quant": "Q4_K_M",
@@ -2766,7 +3055,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-18T09:36:05Z",
+  "generated_at": "2026-08-18T10:32:15Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

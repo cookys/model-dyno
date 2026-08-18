@@ -11,7 +11,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dspark",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Codex",
@@ -24,7 +34,8 @@
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {}
     },
     {
       "access_label": "Grok",
@@ -37,7 +48,8 @@
       "operator_url": "https://x.ai/",
       "owner": "?",
       "publisher": "xAI",
-      "publisher_url": "https://x.ai/"
+      "publisher_url": "https://x.ai/",
+      "tags": {}
     },
     {
       "access_label": "OpenCode",
@@ -50,7 +62,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "DeepSeek",
-      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -63,7 +83,15 @@
       "operator_url": "https://z.ai/",
       "owner": "cookys",
       "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/"
+      "publisher_url": "https://z.ai/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -76,7 +104,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "low",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -89,7 +127,20 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "n/a",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Direct",
@@ -102,7 +153,8 @@
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
       "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {}
     },
     {
       "access_label": "Codex",
@@ -115,7 +167,8 @@
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
       "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models"
+      "publisher_url": "https://platform.openai.com/docs/models",
+      "tags": {}
     },
     {
       "access_label": "Codex",
@@ -128,7 +181,8 @@
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {}
     },
     {
       "access_label": "Grok",
@@ -141,7 +195,8 @@
       "operator_url": "https://x.ai/",
       "owner": "?",
       "publisher": "xAI",
-      "publisher_url": "https://x.ai/"
+      "publisher_url": "https://x.ai/",
+      "tags": {}
     },
     {
       "access_label": "qoder-cli",
@@ -154,7 +209,8 @@
       "operator_url": "https://qwen.ai/",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -167,7 +223,16 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -180,7 +245,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "low",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -193,7 +268,8 @@
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
       "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {}
     },
     {
       "access_label": "Codex",
@@ -206,7 +282,8 @@
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {}
     },
     {
       "access_label": "Direct",
@@ -219,7 +296,8 @@
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "?",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {}
     },
     {
       "access_label": "Direct",
@@ -232,7 +310,8 @@
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "?",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -245,7 +324,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "DeepSeek",
-      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "tags": {
+        "draft": "dspark",
+        "exam": "canonical",
+        "lineage": "base",
+        "model_release": "0731",
+        "placement": "local",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -258,7 +347,16 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -271,7 +369,8 @@
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
       "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {}
     },
     {
       "access_label": "Direct",
@@ -284,7 +383,15 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -297,7 +404,15 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -310,7 +425,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Meta",
-      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/"
+      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
+      "tags": {
+        "draft": "dflash",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -323,7 +446,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -336,7 +469,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "xhigh",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -349,7 +492,8 @@
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
       "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {}
     },
     {
       "access_label": "Direct",
@@ -362,7 +506,8 @@
       "operator_url": "https://developer.meta.com/ai/models/muse-spark/",
       "owner": "?",
       "publisher": "Meta",
-      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/"
+      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -375,7 +520,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Meta",
-      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/"
+      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -388,7 +541,8 @@
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
       "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {}
     },
     {
       "access_label": "Codex",
@@ -401,7 +555,8 @@
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {}
     },
     {
       "access_label": "Direct",
@@ -414,7 +569,8 @@
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "?",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {}
     },
     {
       "access_label": "Direct",
@@ -427,7 +583,8 @@
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "?",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {}
     },
     {
       "access_label": "OpenCode",
@@ -440,7 +597,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/"
+      "publisher_url": "https://z.ai/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -453,7 +618,15 @@
       "operator_url": "https://z.ai/",
       "owner": "cookys",
       "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/"
+      "publisher_url": "https://z.ai/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "OpenRouter",
@@ -466,7 +639,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Tencent",
-      "publisher_url": "https://www.tencent.com/en-us/"
+      "publisher_url": "https://www.tencent.com/en-us/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -479,7 +660,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "DeepSeek",
-      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "FP4-FP8",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -492,7 +681,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "StepFun",
-      "publisher_url": "https://www.stepfun.com/"
+      "publisher_url": "https://www.stepfun.com/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "IQ4_XS",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Kimi Code",
@@ -505,7 +702,8 @@
       "operator_url": "https://platform.moonshot.ai/",
       "owner": "cookys",
       "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/"
+      "publisher_url": "https://platform.moonshot.ai/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -518,7 +716,18 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "low",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "ab-leg",
+        "temp": "1.0",
+        "thinking": "on",
+        "variant": "trimfloor045"
+      }
     },
     {
       "access_label": "Direct",
@@ -531,7 +740,8 @@
       "operator_url": "https://z.ai/",
       "owner": "?",
       "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/"
+      "publisher_url": "https://z.ai/",
+      "tags": {}
     },
     {
       "access_label": "OpenCode",
@@ -544,7 +754,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "DeepSeek",
-      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing"
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "tags": {
+        "placement": "cloud"
+      }
     },
     {
       "access_label": "local",
@@ -557,7 +770,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Tencent",
-      "publisher_url": "https://www.tencent.com/en-us/"
+      "publisher_url": "https://www.tencent.com/en-us/",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "MXFP4",
+        "role": "candidate",
+        "thinking": "n/a"
+      }
     },
     {
       "access_label": "local",
@@ -570,7 +791,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -583,7 +814,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -596,7 +835,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -609,7 +858,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -622,7 +881,21 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dspark",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "1.0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -635,7 +908,18 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off",
+        "variant": "trimfloor045"
+      }
     },
     {
       "access_label": "local",
@@ -648,7 +932,20 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -661,7 +958,21 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dspark",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -674,7 +985,8 @@
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "?",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -687,7 +999,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "Mistral",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -700,7 +1015,13 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "merged",
+        "placement": "local",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -713,7 +1034,13 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "merged",
+        "placement": "local",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -726,7 +1053,12 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "lineage": "merged",
+        "placement": "local",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -739,7 +1071,12 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "lineage": "merged",
+        "placement": "local",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -752,7 +1089,12 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "placement": "local",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -765,7 +1107,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "placement": "local",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -778,7 +1124,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -791,7 +1141,12 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "merged",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -804,7 +1159,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "lineage": "abliterated",
+        "placement": "local"
+      }
     },
     {
       "access_label": "Direct",
@@ -817,7 +1176,8 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -830,7 +1190,20 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -843,7 +1216,21 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dspark",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "unquant",
+        "effort": "n/a",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Direct",
@@ -856,7 +1243,8 @@
       "operator_url": "https://platform.moonshot.ai/",
       "owner": "?",
       "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/"
+      "publisher_url": "https://platform.moonshot.ai/",
+      "tags": {}
     },
     {
       "access_label": "Direct",
@@ -869,7 +1257,8 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -882,7 +1271,12 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "placement": "local",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Grok",
@@ -895,7 +1289,8 @@
       "operator_url": "https://x.ai/",
       "owner": "?",
       "publisher": "xAI",
-      "publisher_url": "https://x.ai/"
+      "publisher_url": "https://x.ai/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -908,7 +1303,12 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "placement": "local",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -921,7 +1321,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "placement": "local",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -934,7 +1338,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Direct",
@@ -947,7 +1361,15 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -960,7 +1382,15 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -973,7 +1403,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "dflash",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -986,7 +1424,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp-embedded",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -999,7 +1447,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp-embedded-n2",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Direct",
@@ -1012,7 +1470,8 @@
       "operator_url": "https://www.mi.com/global/",
       "owner": "?",
       "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/"
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1025,7 +1484,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -1038,7 +1505,15 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -1051,7 +1526,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "abliterated",
+        "placement": "local",
+        "quant": "Q4_K",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1064,7 +1547,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "effort": "n/a",
+        "lineage": "instruct",
+        "placement": "local",
+        "quant": "UD-IQ4_XS",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Direct",
@@ -1077,7 +1570,15 @@
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "cookys",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -1090,7 +1591,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1103,7 +1614,18 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_quant": "BF16",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1116,7 +1638,20 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "n/a",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "0.7",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Direct",
@@ -1129,7 +1664,8 @@
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
       "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models"
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {}
     },
     {
       "access_label": "Grok",
@@ -1142,7 +1678,8 @@
       "operator_url": "https://x.ai/",
       "owner": "?",
       "publisher": "xAI",
-      "publisher_url": "https://x.ai/"
+      "publisher_url": "https://x.ai/",
+      "tags": {}
     },
     {
       "access_label": "OpenCode Free",
@@ -1155,7 +1692,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "placement": "cloud"
+      }
     },
     {
       "access_label": "local",
@@ -1168,7 +1708,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "placement": "local"
+      }
     },
     {
       "access_label": "OpenRouter",
@@ -1181,7 +1725,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Tencent",
-      "publisher_url": "https://www.tencent.com/en-us/"
+      "publisher_url": "https://www.tencent.com/en-us/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1194,7 +1746,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "placement": "cloud"
+      }
     },
     {
       "access_label": "local",
@@ -1207,7 +1762,22 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dspark",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "unquant",
+        "effort": "n/a",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off",
+        "variant": "miaai-flags"
+      }
     },
     {
       "access_label": "OpenCode",
@@ -1220,7 +1790,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/"
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "placement": "cloud"
+      }
     },
     {
       "access_label": "local",
@@ -1233,7 +1806,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "lineage": "heretic",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -1246,7 +1823,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "Kimi Code",
@@ -1259,7 +1839,8 @@
       "operator_url": "https://platform.moonshot.ai/",
       "owner": "cookys",
       "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/"
+      "publisher_url": "https://platform.moonshot.ai/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1272,7 +1853,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Poolside",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "BF16",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -1285,7 +1874,8 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "?",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1298,7 +1888,11 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "placement": "local",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1311,7 +1905,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "role": "control",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "OpenRouter",
@@ -1324,7 +1922,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Nex AGI",
-      "publisher_url": "https://huggingface.co/nex-agi"
+      "publisher_url": "https://huggingface.co/nex-agi",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "fp8",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -1337,7 +1943,8 @@
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "cookys",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1350,7 +1957,17 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "effort": "n/a",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "0.7",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Direct",
@@ -1363,7 +1980,8 @@
       "operator_url": "https://www.minimax.io/",
       "owner": "?",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1376,7 +1994,14 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/"
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1389,7 +2014,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Tencent",
-      "publisher_url": "https://www.tencent.com/en-us/"
+      "publisher_url": "https://www.tencent.com/en-us/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "IQ1_M",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1402,7 +2035,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "NVIDIA",
-      "publisher_url": "https://www.nvidia.com/en-us/ai/"
+      "publisher_url": "https://www.nvidia.com/en-us/ai/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "BF16",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -1415,7 +2056,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1428,7 +2073,14 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/"
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1441,7 +2093,12 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash",
+        "placement": "local",
+        "role": "control"
+      }
     },
     {
       "access_label": "local",
@@ -1454,7 +2111,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "lineage": "heretic",
+        "role": "control"
+      }
     },
     {
       "access_label": "local",
@@ -1467,7 +2128,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash",
+        "lineage": "heretic"
+      }
     },
     {
       "access_label": "local",
@@ -1480,7 +2145,8 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1493,7 +2159,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "placement": "cloud"
+      }
     },
     {
       "access_label": "local",
@@ -1506,7 +2175,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "InternScience",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1519,7 +2196,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1532,7 +2212,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "placement": "local",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -1545,7 +2229,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Nex AGI",
-      "publisher_url": "https://huggingface.co/nex-agi"
+      "publisher_url": "https://huggingface.co/nex-agi",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "IQ3_XXS",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1558,7 +2250,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "NVIDIA",
-      "publisher_url": "https://www.nvidia.com/en-us/ai/"
+      "publisher_url": "https://www.nvidia.com/en-us/ai/",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -1571,7 +2271,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "OpenCode Free",
@@ -1584,7 +2292,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "NVIDIA",
-      "publisher_url": "https://www.nvidia.com/en-us/ai/"
+      "publisher_url": "https://www.nvidia.com/en-us/ai/",
+      "tags": {
+        "placement": "cloud"
+      }
     },
     {
       "access_label": "local",
@@ -1597,7 +2308,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "dflash",
+        "lineage": "gemma4-dense-31b",
+        "placement": "local",
+        "quant": "IQ4_XS",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "OpenCode Free",
@@ -1610,7 +2329,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "placement": "cloud"
+      }
     },
     {
       "access_label": "local",
@@ -1623,7 +2345,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "draft": "dflash",
+        "lineage": "gemma4-moe-a4b",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "Direct",
@@ -1636,7 +2366,8 @@
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
       "owner": "?",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1649,7 +2380,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/"
+      "publisher_url": "https://z.ai/",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1662,7 +2396,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "UD-IQ3_XXS",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1675,7 +2417,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Nex AGI",
-      "publisher_url": "https://huggingface.co/nex-agi"
+      "publisher_url": "https://huggingface.co/nex-agi",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "IQ2_M",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1688,7 +2438,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "NVIDIA",
-      "publisher_url": "https://www.nvidia.com/en-us/ai/"
+      "publisher_url": "https://www.nvidia.com/en-us/ai/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "BF16",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "Direct",
@@ -1701,7 +2459,8 @@
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
       "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models"
+      "publisher_url": "https://platform.openai.com/docs/models",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1714,7 +2473,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1727,7 +2489,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1740,7 +2505,11 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "placement": "local",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1753,7 +2522,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1766,7 +2538,8 @@
       "operator_url": "",
       "owner": "cyberbsd",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {}
     },
     {
       "access_label": "local",
@@ -1779,7 +2552,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/"
+      "publisher_url": "https://z.ai/",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1792,7 +2568,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/"
+      "publisher_url": "https://z.ai/",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1805,7 +2584,10 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1818,7 +2600,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Weibo",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1831,7 +2616,11 @@
       "operator_url": "",
       "owner": "?",
       "publisher": "",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "lineage": "abliterated",
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1844,7 +2633,11 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models"
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "placement": "local",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1857,7 +2650,10 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Weibo",
-      "publisher_url": ""
+      "publisher_url": "",
+      "tags": {
+        "placement": "local"
+      }
     },
     {
       "access_label": "local",
@@ -1870,7 +2666,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "draft": "none",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "MoQ-3.0",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1883,7 +2687,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/"
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "draft": "none",
+        "lineage": "pruned",
+        "placement": "local",
+        "quant": "NVFP4-REAP50",
+        "role": "candidate",
+        "thinking": "off"
+      }
     },
     {
       "access_label": "local",
@@ -1896,7 +2708,15 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "NVIDIA",
-      "publisher_url": "https://www.nvidia.com/en-us/ai/"
+      "publisher_url": "https://www.nvidia.com/en-us/ai/",
+      "tags": {
+        "draft": "mtp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "thinking": "on"
+      }
     },
     {
       "access_label": "local",
@@ -1909,7 +2729,16 @@
       "operator_url": "",
       "owner": "cookys",
       "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/"
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "lineage": "qwen3-next-deltanet",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "off"
+      }
     }
   ],
   "comparable_min": 31,
@@ -1937,7 +2766,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-18T08:51:36Z",
+  "generated_at": "2026-08-18T09:36:05Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

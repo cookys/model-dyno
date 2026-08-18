@@ -178,11 +178,14 @@ const agenticData = computed(() =>
           source: placementLabel(placementOf(v)),
           n: num(v.n),
           acc: num(v.acc) !== null ? `${(v.acc * 100).toFixed(1)}%` : '—',
+          // Kept raw beside the formatted string: sorting the sub-table by pass rate on
+          // "85.3%" would order it lexically (100% < 85.3% < 9%).
+          accRaw: num(v.acc),
           perMin: primarySolvedPerMinOf(v),
           sec: primarySolveSecOf(v),
           tokS: num(v.agentic_tok_s),
           isRepresentative: v === c,
-        })).sort((a: any, b: any) => (b.perMin ?? -Infinity) - (a.perMin ?? -Infinity)),
+        })),
         id: `${c.cell}-${c.source}-${c.machine || ''}`,
       }
       return row

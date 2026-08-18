@@ -11,11 +11,50 @@
 // (benchmarks/swe-personal/eval-tags.toml), never as the cell slug. Those tags are
 // derived from each run's own recorded request, so they say what happened rather than
 // what a filename implies.
+import { computed, ref } from 'vue'
 import { useI18n } from '@/lib/i18n'
 import { num } from '@/components/CellHelpers'
+import { sortVariants, type VariantSortDir } from '@/lib/variantSort'
 
 const { t } = useI18n()
-defineProps<{ row: any }>()
+const props = defineProps<{ row: any }>()
+
+// Header-driven ordering, owned here rather than by the view that builds the rows —
+// the default below is the same "fastest first" the view used to hard-code.
+type VariantCol = { key: string; label: string; num?: boolean; sortVal: (v: any) => unknown }
+// computed, not a const: labels come from t() and must re-render on a language switch.
+const columns = computed<VariantCol[]>(() => [
+  { key: 'thinking', label: t('tag.thinking'), sortVal: (v) => v.tags.thinking },
+  { key: 'effort', label: t('tag.effort'), sortVal: (v) => v.tags.effort },
+  { key: 'temp', label: t('tag.temp'), sortVal: (v) => v.tags.temp },
+  { key: 'draft', label: t('tag.draft'), sortVal: (v) => v.tags.draft },
+  { key: 'engine', label: t('tag.engine'), sortVal: (v) => v.tags.engine },
+  { key: 'machine', label: t('col.machineSwe'), sortVal: (v) => v.machine },
+  { key: 'n', label: 'n', num: true, sortVal: (v) => v.n },
+  { key: 'acc', label: t('col.passRateCI'), num: true, sortVal: (v) => v.accRaw },
+  { key: 'perMin', label: t('cloud.col.solve'), num: true, sortVal: (v) => v.perMin },
+  { key: 'sec', label: t('col.solveSpeed'), num: true, sortVal: (v) => v.sec },
+])
+
+const sortKey = ref<string | null>('perMin')
+// Numeric columns open descending (best first); text columns A→Z.
+const sortDir = ref<VariantSortDir>('desc')
+
+const toggleSort = (col: VariantCol) => {
+  if (sortKey.value === col.key) {
+    sortDir.value = sortDir.value === 'asc' ? 'desc' : 'asc'
+  } else {
+    sortKey.value = col.key
+    sortDir.value = col.num ? 'desc' : 'asc'
+  }
+}
+
+const sortedVariants = computed(() => {
+  const col = columns.value.find((c) => c.key === sortKey.value)
+  return sortVariants(props.row.variants || [], col ? col.sortVal : null, sortDir.value)
+})
+
+const sortArrow = (key: string) => (sortKey.value !== key ? '' : sortDir.value === 'asc' ? '\u2191' : '\u2193')
 
 const fmt = (v: any, digits = 1) => (num(v) === null ? '—' : Number(v).toFixed(digits))
 // Thinking-on and spec-decode are badged because on this fleet they are the two knobs
@@ -37,20 +76,25 @@ const specClass = (v: string) =>
       <table class="w-full text-left text-[11px]">
         <thead class="border-b border-border/60 text-muted-foreground">
           <tr>
-            <th class="px-2 py-1.5 font-semibold">{{ t('tag.thinking') }}</th>
-            <th class="px-2 py-1.5 font-semibold">{{ t('tag.effort') }}</th>
-            <th class="px-2 py-1.5 font-semibold">{{ t('tag.temp') }}</th>
-            <th class="px-2 py-1.5 font-semibold">{{ t('tag.draft') }}</th>
-            <th class="px-2 py-1.5 font-semibold">{{ t('tag.engine') }}</th>
-            <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
-            <th class="px-2 py-1.5 text-right font-semibold">n</th>
-            <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
-            <th class="px-2 py-1.5 text-right font-semibold">{{ t('cloud.col.solve') }}</th>
-            <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.solveSpeed') }}</th>
+            <th
+              v-for="col in columns"
+              :key="col.key"
+              scope="col"
+              :aria-sort="sortKey === col.key ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'"
+              :class="['px-2 py-1.5 font-semibold', col.num ? 'text-right' : 'text-left']"
+            >
+              <button
+                type="button"
+                :class="['inline-flex items-center gap-0.5 hover:text-foreground', sortKey === col.key ? 'text-foreground' : '']"
+                @click="toggleSort(col)"
+              >
+                {{ col.label }}<span class="font-mono">{{ sortArrow(col.key) }}</span>
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="v in row.variants" :key="v.cell" :class="v.isRepresentative ? 'bg-primary/5 font-medium' : ''">
+          <tr v-for="v in sortedVariants" :key="v.cell" :class="v.isRepresentative ? 'bg-primary/5 font-medium' : ''">
             <td class="px-2 py-1.5">
               <span :class="['inline-flex items-center rounded px-1.5 py-0.5 font-mono text-[10px]', thinkClass(v.tags.thinking)]">
                 {{ v.tags.thinking || '—' }}
@@ -80,7 +124,7 @@ const specClass = (v: string) =>
 
     <div class="grid grid-cols-1 gap-2 md:hidden">
       <div
-        v-for="v in row.variants"
+        v-for="v in sortedVariants"
         :key="`${v.cell}-card`"
         :class="['rounded-md border border-border/60 bg-card p-2.5 text-xs', v.isRepresentative ? 'ring-1 ring-primary/40' : '']"
       >

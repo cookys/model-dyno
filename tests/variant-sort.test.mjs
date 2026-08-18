@@ -75,3 +75,33 @@ test('no sortVal returns a copy in input order', async () => {
   assert.deepEqual(out.map((r) => r.cell), rows.map((r) => r.cell))
   assert.notEqual(out, rows)
 })
+
+test('partial-exam variants never rank on pass rate', async () => {
+  const { sortVariants } = await loadVariantSort()
+  // A pass rate over a partial exam is a different quantity: 6/6 on a sixth of the
+  // tasks is not 100%. The column accessor drops it to null so it sinks either way.
+  const accSortVal = (v) => (v.accComparable ? v.accRaw : null)
+  const cells = [
+    { cell: 'full-low', accRaw: 0.5, accComparable: true },
+    { cell: 'partial-perfect', accRaw: 1.0, accComparable: false },
+    { cell: 'full-high', accRaw: 0.85, accComparable: true },
+    { cell: 'partial-zero', accRaw: 0.0, accComparable: false },
+  ]
+  assert.deepEqual(
+    sortVariants(cells, accSortVal, 'desc').map((r) => r.cell),
+    ['full-high', 'full-low', 'partial-perfect', 'partial-zero'],
+  )
+  assert.deepEqual(
+    sortVariants(cells, accSortVal, 'asc').map((r) => r.cell),
+    ['full-low', 'full-high', 'partial-perfect', 'partial-zero'],
+  )
+})
+
+test('the sub-table wires that rule to the pass-rate column', () => {
+  // Guards the two halves staying connected: the view has to emit the flag and the
+  // column has to consult it. Either alone silently restores the old ranking.
+  const view = readFileSync(join(root, 'src/views/SpeedCloud.vue'), 'utf8')
+  const table = readFileSync(join(root, 'src/components/SpeedVariants.vue'), 'utf8')
+  assert.match(view, /accComparable:/, 'SpeedCloud must mark each variant comparable-or-not')
+  assert.match(table, /key: 'acc'[^\n]*accComparable \? v\.accRaw : null/)
+})

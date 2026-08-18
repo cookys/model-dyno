@@ -31,7 +31,11 @@ const columns = computed<VariantCol[]>(() => [
   { key: 'engine', label: t('tag.engine'), sortVal: (v) => v.tags.engine },
   { key: 'machine', label: t('col.machineSwe'), sortVal: (v) => v.machine },
   { key: 'n', label: 'n', num: true, sortVal: (v) => v.n },
-  { key: 'acc', label: t('col.passRateCI'), num: true, sortVal: (v) => v.accRaw },
+  // Ranking on a pass rate only compares like with like: a variant that ran a
+  // partial exam returns null here, which the shared comparator sinks to the
+  // bottom in both directions. It is still shown, just never ranked against a
+  // full run it did not sit.
+  { key: 'acc', label: t('col.passRateCI'), num: true, sortVal: (v) => (v.accComparable ? v.accRaw : null) },
   { key: 'perMin', label: t('cloud.col.solve'), num: true, sortVal: (v) => v.perMin },
   { key: 'sec', label: t('col.solveSpeed'), num: true, sortVal: (v) => v.sec },
 ])
@@ -114,7 +118,11 @@ const specClass = (v: string) =>
               <span v-if="v.tags.variant" class="ml-1 rounded bg-muted px-1 text-[10px]">{{ v.tags.variant }}</span>
             </td>
             <td class="px-2 py-1.5 text-right font-mono">{{ v.n ?? '—' }}</td>
-            <td class="px-2 py-1.5 text-right font-mono">{{ v.acc }}</td>
+            <td class="px-2 py-1.5 text-right font-mono">
+              <span :class="v.accComparable ? '' : 'text-muted-foreground'" :title="v.accComparable ? undefined : t('fold.variants.partialAcc')">
+                {{ v.acc }}<template v-if="!v.accComparable">*</template>
+              </span>
+            </td>
             <td class="px-2 py-1.5 text-right font-mono">{{ fmt(v.perMin, 2) }}</td>
             <td class="px-2 py-1.5 text-right font-mono">{{ fmt(v.sec, 0) }}</td>
           </tr>

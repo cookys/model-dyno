@@ -181,6 +181,10 @@ const agenticData = computed(() =>
           // Kept raw beside the formatted string: sorting the sub-table by pass rate on
           // "85.3%" would order it lexically (100% < 85.3% < 9%).
           accRaw: num(v.acc),
+          // A pass rate over a partial exam is not the same quantity as one over the
+          // full exam — 6/6 on an easy sixth of the tasks is not 100%. So a partial
+          // variant carries its accuracy for display but is excluded from ranking on it.
+          accComparable: num(v.n) !== null && fullN !== null && num(v.n)! >= fullN,
           perMin: primarySolvedPerMinOf(v),
           sec: primarySolveSecOf(v),
           tokS: num(v.agentic_tok_s),

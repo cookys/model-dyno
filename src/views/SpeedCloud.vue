@@ -18,6 +18,7 @@ import {
 } from '@/lib/modelFolding'
 import { foldedRoutesBadge } from '@/components/CellHelpers'
 import SpeedVariants from '@/components/SpeedVariants.vue'
+import { sortAwareChooser } from '@/lib/foldRepresentative'
 import { useBoardFilter } from '@/lib/useBoardFilter'
 import { publishersOf } from '@/lib/modelFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
@@ -113,10 +114,48 @@ const canonicalN = computed(() => {
 // throughput answers a question nobody asked, and the reverse is equally wrong.
 const SPEED_SORT_KEYS = new Set(['perMin', 'perHour', 'sec', 'secAll', 'medWall', 'tokS', 'tokSolved', 'latency', 'rawTokS'])
 const sortKey = ref<string | null>('perMin')
+const sortDir = ref<'asc' | 'desc'>('desc')
 const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
   sortKey.value = payload.key
+  sortDir.value = payload.dir
 }
 const speedFirst = computed(() => !!sortKey.value && SPEED_SORT_KEYS.has(sortKey.value))
+
+/** The active column's value for a cell, or null when that column cannot rank cells. */
+const activeSortValue = (c: any): number | string | null => {
+  switch (sortKey.value) {
+    case 'eff': return num(c.acc)
+    case 'perMin': return primarySolvedPerMinOf(c)
+    case 'perHour': return primarySolvedPerHourOf(c)
+    case 'sec': return primarySolveSecOf(c)
+    case 'secAll': return examCostSecOf(c)
+    case 'medWall': return num(c.med_wall)
+    case 'tokS': return num(c.agentic_tok_s)
+    case 'rawTokS': return num(c.raw_tok_s)
+    case 'latency': return num(c.raw_latency_s)
+    case 'run': return num(c.n)
+    default: return null
+  }
+}
+
+// The two-way speed/accuracy switch below picked a representative by CATEGORY of sort,
+// so ranking by tok/s still showed the group's fastest-by-solve-time route: close, but
+// still not the row the reader is ranking. This picks the actual leader on the clicked
+// column and keeps the old rule for ties and for columns that cannot rank.
+const chooseBySort = sortAwareChooser<any>({
+  activeValue: activeSortValue,
+  direction: () => sortDir.value,
+  // Full-exam cells win first, in both directions. The representative also decides
+  // which of the two tables the whole row lands in, so letting a partial cell take the
+  // cover on a good number would move a complete model into the incomplete section.
+  rankFirst: (c) => {
+    const n = num(c.n)
+    const fullN = canonicalN.value
+    return n !== null && fullN !== null && n >= fullN ? 1 : 0
+  },
+  fallback: (current, candidate) =>
+    (speedFirst.value ? chooseBestSpeedCell : chooseBestCompCell)(current, candidate),
+})
 
 const visibleCells = computed(() =>
   boardFilter.applyTo((dashboardSpeedComp.value?.cells || [])
@@ -126,7 +165,7 @@ const visibleCells = computed(() =>
 const foldedGroups = computed(() =>
   groupByCanonicalModel(
     visibleCells.value,
-    speedFirst.value ? chooseBestSpeedCell : chooseBestCompCell,
+    chooseBySort,
     (c: any) => `${c.cell}-${c.source}-${c.machine || ''}`,
   )
 )

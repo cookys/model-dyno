@@ -22,6 +22,9 @@ import {
 
 import { useBoardFilter } from '@/lib/useBoardFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
+import { useFoldSort, type FoldColumn } from '@/lib/foldSort'
+import { sortAwareChooser } from '@/lib/foldRepresentative'
+import FoldSortHeader from '@/components/FoldSortHeader.vue'
 
 const { t } = useI18n()
 const boardFilter = useBoardFilter()
@@ -93,6 +96,9 @@ function mapCompRow(c: any, group?: { records: any[]; key: string }) {
       machine: v.machine || '—',
       n: `${v.passed}/${v.n}`,
       eff: `${Math.round(v.acc * 100)}%`,
+      effRaw: num(v.acc),
+      nRaw: num(v.n),
+      secSolvedRaw: primarySolveSecOf(v),
       ci: `[${Math.round(v.ci_lo * 100)}–${Math.round(v.ci_hi * 100)}]`,
       secSolved: primarySolveSecOf(v) === null ? '—' : `${Math.round(primarySolveSecOf(v)!)}s`,
       comparable: classifyCell(v, examMeta.value).rankable,
@@ -103,13 +109,60 @@ function mapCompRow(c: any, group?: { records: any[]; key: string }) {
 
 const rawCompRows = computed(() => rawCells.value.map((c) => mapCompRow(c)))
 
+// The column the reader is ranking by. A folded row shows ONE cell out of several, so a
+// cover picked by a fixed rule leaves the board ordering rows by a number that is not
+// the one displayed. Both tables here report into the same state; a row belongs to
+// exactly one of them.
+const sortKey = ref<string | null>('eff')
+const sortDir = ref<'asc' | 'desc'>('desc')
+const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
+  sortKey.value = payload.key
+  sortDir.value = payload.dir
+}
+
+/** The active column's value for a cell, or null when that column cannot rank cells. */
+const activeSortValue = (c: any): number | string | null => {
+  switch (sortKey.value) {
+    case 'eff': return num(c.acc)
+    case 'n': return num(c.n)
+    case 'secSolved': return primarySolveSecOf(c)
+    case 'agency': return num(c.agency?.noop_pct)
+    case 'operator': return c.operator || ''
+    case 'publisher': return c.publisher || ''
+    case 'harness': return c.harness || c.access_label || ''
+    case 'machine': return c.machine || ''
+    default: return null
+  }
+}
+
+const chooseBySort = sortAwareChooser<any>({
+  activeValue: activeSortValue,
+  direction: () => sortDir.value,
+  // Comparability first, both directions: an arrow-flip must not hand the cover to a
+  // cell that sat a partial exam.
+  rankFirst: (c) => (classifyCell(c, examMeta.value).rankable ? 1 : 0),
+  fallback: chooseBestCompCell,
+})
+
 const foldedCompGroups = computed(() =>
   groupByCanonicalModel(
     rawCells.value,
-    chooseBestCompCell,
+    chooseBySort,
     (c) => `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
   )
 )
+
+// Sortable fold, with the pass rate withheld from ranking for a partial exam.
+const foldCols = computed<FoldColumn[]>(() => [
+  { key: 'model', label: t('col.model'), sortVal: (v) => v.model },
+  { key: 'operator', label: t('col.operator'), sortVal: (v) => v.operator },
+  { key: 'harness', label: t('col.harness'), sortVal: (v) => v.harness },
+  { key: 'machine', label: t('col.machineSwe'), sortVal: (v) => v.machine },
+  { key: 'n', label: t('col.passed50'), num: true, sortVal: (v) => v.nRaw },
+  { key: 'eff', label: t('col.passRateCI'), num: true, sortVal: (v) => (v.comparable ? v.effRaw : null) },
+  { key: 'secSolved', label: t('col.solveSpeed'), num: true, sortVal: (v) => v.secSolvedRaw },
+])
+const foldSort = useFoldSort(() => foldCols.value, 'eff', 'desc')
 
 const foldedCompRows = computed(() =>
   foldedCompGroups.value.map((group) => mapCompRow(group.representative, group))
@@ -457,6 +510,7 @@ onUnmounted(() => {
             :default-sort="'eff'"
             :default-dir="'desc'"
             :expandable="true"
+            @sort-change="onSortChange"
             fixed-layout
           >
             <template #detail="{ row }">
@@ -468,18 +522,10 @@ onUnmounted(() => {
                 <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <tr>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passed50') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.solveSpeed') }}</th>
-                      </tr>
+                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
                     </thead>
                     <tbody>
-                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
+                      <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
                         <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
@@ -493,7 +539,7 @@ onUnmounted(() => {
                 </div>
                 <div class="grid grid-cols-1 gap-2 md:hidden">
                   <div
-                    v-for="variant in row.variants"
+                    v-for="variant in foldSort.sortRows(row.variants)"
                     :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}-card`"
                     :class="[
                       'rounded-md border border-border/60 bg-card p-2.5 text-xs',
@@ -553,6 +599,7 @@ onUnmounted(() => {
             :default-sort="'nRaw'"
             :default-dir="'desc'"
             :expandable="true"
+            @sort-change="onSortChange"
             fixed-layout
           >
             <template #detail="{ row }">
@@ -564,18 +611,10 @@ onUnmounted(() => {
                 <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <tr>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
-                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passed50') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
-                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.solveSpeed') }}</th>
-                      </tr>
+                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
                     </thead>
                     <tbody>
-                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
+                      <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
                         <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>

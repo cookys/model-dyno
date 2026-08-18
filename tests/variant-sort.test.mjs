@@ -113,7 +113,7 @@ test('the efficiency fold shows a pass RATE and keeps partials out of its rankin
   assert.match(view, /accSortable: classifyCell\([^)]*\)\.rankable \? num\(c\.acc\) : null/,
     'a partial-exam route contributes no sortable pass rate')
   assert.match(view, /key: 'acc'[^\n]*sortVal: \(r\) => r\.accSortable/)
-  assert.match(view, /sortFoldRows\(row\.routeRows\)/, 'the fold renders in the clicked order')
+  assert.match(view, /foldSort\.sortRows\(row\.routeRows\)/, 'the fold renders in the clicked order')
 })
 
 test('the efficiency cover row follows the active sort', () => {
@@ -124,6 +124,6 @@ test('the efficiency cover row follows the active sort', () => {
   assert.match(view, /groupByCanonicalModel\(\s*boardFilter\.applyTo\(eligibleCells\.value\),\s*chooseBySort/,
     'folding picks the representative with the sort-aware chooser')
   // Comparability must still win first, or flipping the arrow promotes a partial cell.
-  const chooser = view.slice(view.indexOf('const chooseBySort'))
-  assert.match(chooser.slice(0, 600), /comparableRank\(candidate\), comparableRank\(current\)/)
+  const chooser = view.slice(view.indexOf('const chooseBySort'), view.indexOf('const chooseBySort') + 400)
+  assert.match(chooser, /rankFirst: \(c\) => comparableRank\(c\)/)
 })

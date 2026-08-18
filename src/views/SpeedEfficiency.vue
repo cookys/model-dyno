@@ -9,7 +9,9 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { num } from '@/components/CellHelpers'
 import { groupByCanonicalModel, recordCanonicalModel } from '@/lib/modelFolding'
 import type { ChooseBest } from '@/lib/modelFolding'
-import { sortVariants } from '@/lib/variantSort'
+import { useFoldSort, type FoldColumn } from '@/lib/foldSort'
+import { sortAwareChooser } from '@/lib/foldRepresentative'
+import FoldSortHeader from '@/components/FoldSortHeader.vue'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { foldedRoutesBadge } from '@/components/CellHelpers'
@@ -108,28 +110,18 @@ const activeSortValue = (c: CompCell): number | string | null => {
   }
 }
 
-// Comparable (full-exam) cells still win first, in BOTH directions: a partial cell with
-// a freak number must never become the cover just because the reader flipped the arrow.
-// Ties fall through to the board's existing fastest-route rule.
-const chooseBySort: ChooseBest<CompCell> = (current, candidate) => {
-  const rank = compareDesc(comparableRank(candidate), comparableRank(current))
-  if (rank !== 0) return rank > 0 ? candidate : current
-  const a = activeSortValue(candidate)
-  const b = activeSortValue(current)
-  if (a !== null && b !== null && a !== b) {
-    const candidateIsSmaller = typeof a === 'number' && typeof b === 'number'
-      ? a < b
-      : String(a).localeCompare(String(b), undefined, { numeric: true }) < 0
-    return (sortDir.value === 'asc') === candidateIsSmaller ? candidate : current
-  }
-  return chooseFastestEfficiencyCell(current, candidate)
-}
+// Comparability first, then the active column, then the board's fastest-route rule.
+const chooseBySort: ChooseBest<CompCell> = sortAwareChooser<CompCell>({
+  activeValue: activeSortValue,
+  direction: () => sortDir.value,
+  rankFirst: (c) => comparableRank(c),
+  fallback: chooseFastestEfficiencyCell,
+})
 
 // Ordering inside an expanded fold. Same rule as /speed/cloud's fold: every column
 // sorts, numeric columns open descending, and a missing value sinks in BOTH directions
 // so flipping an arrow never promotes an unmeasured route.
-type FoldCol = { key: string; label: string; num?: boolean; sortVal: (r: any) => unknown }
-const foldCols = computed<FoldCol[]>(() => [
+const foldCols = computed<FoldColumn[]>(() => [
   { key: 'thinking', label: t('tag.thinking'), sortVal: (r) => r.tags.thinking },
   { key: 'effort', label: t('tag.effort'), sortVal: (r) => r.tags.effort },
   { key: 'temp', label: t('tag.temp'), sortVal: (r) => r.tags.temp },
@@ -142,22 +134,7 @@ const foldCols = computed<FoldCol[]>(() => [
   { key: 'sec', label: t('vega.tt.secSolved'), num: true, sortVal: (r) => r.sec },
   { key: 'run', label: t('cloud.col.run'), sortVal: (r) => r.run },
 ])
-const foldSortKey = ref<string>('perHour')
-const foldSortDir = ref<'asc' | 'desc'>('desc')
-const toggleFoldSort = (col: FoldCol) => {
-  if (foldSortKey.value === col.key) {
-    foldSortDir.value = foldSortDir.value === 'asc' ? 'desc' : 'asc'
-  } else {
-    foldSortKey.value = col.key
-    foldSortDir.value = col.num ? 'desc' : 'asc'
-  }
-}
-const foldSortArrow = (key: string) =>
-  (foldSortKey.value !== key ? '' : foldSortDir.value === 'asc' ? '\u2191' : '\u2193')
-const sortFoldRows = (rows: readonly any[]) => {
-  const col = foldCols.value.find((c) => c.key === foldSortKey.value)
-  return sortVariants(rows, col ? col.sortVal : null, foldSortDir.value)
-}
+const foldSort = useFoldSort(() => foldCols.value, 'perHour', 'desc')
 
 // Filter BEFORE folding so the representative is chosen within the family, not globally.
 const throughputGroups = computed(() =>
@@ -611,27 +588,11 @@ const focusRow = (key: string) => {
                 <div class="overflow-x-auto rounded-md border border-border/60 bg-card">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <tr>
-                        <th
-                          v-for="col in foldCols"
-                          :key="col.key"
-                          scope="col"
-                          :aria-sort="foldSortKey === col.key ? (foldSortDir === 'asc' ? 'ascending' : 'descending') : 'none'"
-                          :class="['px-2 py-1.5 font-semibold', col.num ? 'text-right' : 'text-left']"
-                        >
-                          <button
-                            type="button"
-                            :class="['inline-flex items-center gap-0.5 hover:text-foreground', foldSortKey === col.key ? 'text-foreground' : '']"
-                            @click="toggleFoldSort(col)"
-                          >
-                            {{ col.label }}<span class="font-mono">{{ foldSortArrow(col.key) }}</span>
-                          </button>
-                        </th>
-                      </tr>
+                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
                     </thead>
                     <tbody>
                       <tr
-                        v-for="rt in sortFoldRows(row.routeRows)"
+                        v-for="rt in foldSort.sortRows(row.routeRows)"
                         :key="rt.key"
                         :class="[rt.comparable ? '' : 'opacity-50', rt.shown ? 'bg-primary/5 font-medium' : '']"
                       >

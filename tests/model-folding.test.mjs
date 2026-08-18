@@ -112,11 +112,39 @@ test('COMP default is folded but model query remains route-level drilldown', () 
   assert.match(view, /incompleteCompData/)
 })
 
-test('route-first speed cloud page does not import or apply model folding', () => {
+test('speed cloud folds by canonical model with a sort-aware representative', () => {
   const view = read('src/views/SpeedCloud.vue')
 
-  assert.doesNotMatch(view, /modelFolding/)
-  assert.doesNotMatch(view, /groupByCanonicalModel/)
+  // REVERSAL, 2026-08-18, at the owner's explicit request (twice). This page used to
+  // assert the OPPOSITE — that it must not fold — on the grounds that it is the
+  // route-first board. That reasoning held while it listed a handful of routes per
+  // model. It stopped holding at 163 rows for 72 models, one model contributing 23 of
+  // them: an unfoldable board is not a drilldown, it is a wall, and the owner reported
+  // it as unreadable rather than as detailed.
+  //
+  // The routes are not lost — they moved into the row expansion, where comparing them
+  // is a deliberate act instead of the default state, and they are shown as tag COLUMNS
+  // rather than cell slugs.
+  assert.match(view, /groupByCanonicalModel/)
+
+  // The representative must follow the active sort: accuracy-first by default (matching
+  // /swe/comp), speed-first once the reader ranks by a speed column. A folded row that
+  // shows its most accurate member while the reader ranks by throughput is answering a
+  // question nobody asked.
+  assert.match(view, /chooseBestCompCell/)
+  assert.match(view, /chooseBestSpeedCell/)
+  assert.match(view, /SPEED_SORT_KEYS/)
+  assert.match(view, /@sort-change="onSortChange"/)
+})
+
+test('folded variant panels identify a config by tags, never by its cell slug', () => {
+  const panel = read('src/components/SpeedVariants.vue')
+
+  // The whole point of the tag vocabulary is that a reader should not have to parse
+  // `qwen3.8-27b-nvfp4-sglang-thinkon-t0-dspark-local` to learn what a row is.
+  for (const dim of ['thinking', 'effort', 'temp', 'draft', 'engine']) {
+    assert.match(panel, new RegExp(`tags\\.${dim}`))
+  }
 })
 
 test('speed efficiency folds by canonical model with speed-first drilldown', () => {

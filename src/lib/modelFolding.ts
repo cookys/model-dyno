@@ -141,6 +141,34 @@ export const chooseBestCompCell: ChooseBest<CompCell> = (current, candidate) => 
   return checks.find((v) => v !== 0)! > 0 ? candidate : current
 }
 
+/**
+ * Speed-first representative, for a board being ranked by throughput.
+ *
+ * Still gated on comparability FIRST. A speed board that showed each model's fastest
+ * cell unconditionally would rank models by their most degenerate configuration — a
+ * capped or truncated run is often the quickest, and it is the one you would never
+ * use. Comparability first keeps the row honest; among equally usable cells, fastest
+ * wins. Accuracy survives only as the last tie-break, which is what makes this the
+ * mirror of chooseBestCompCell rather than a duplicate of it.
+ */
+export const chooseBestSpeedCell: ChooseBest<CompCell> = (current, candidate) => {
+  const checks = [
+    compareDesc(comparableRank(candidate), comparableRank(current)),
+    compareDesc(num(candidate.n), num(current.n)),
+    compareDesc(
+      num(candidate.solved_per_hour_pass ?? candidate.solved_per_hour),
+      num(current.solved_per_hour_pass ?? current.solved_per_hour),
+    ),
+    compareAscNullable(
+      candidate.med_wall_pass ?? candidate.sec_per_solved,
+      current.med_wall_pass ?? current.sec_per_solved,
+    ),
+    compareDesc(num(candidate.acc), num(current.acc)),
+    compareDesc(num(candidate.ci_lo), num(current.ci_lo)),
+  ]
+  return checks.find((v) => v !== 0)! > 0 ? candidate : current
+}
+
 export const chooseBestNormCell: ChooseBest<NormCell> = (current, candidate) => {
   const currentLo = Array.isArray(current.ci) ? num(current.ci[0]) : -Infinity
   const candidateLo = Array.isArray(candidate.ci) ? num(candidate.ci[0]) : -Infinity

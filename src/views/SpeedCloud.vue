@@ -11,6 +11,13 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { modelBadges, modelName, num, speedCredibilityBadge } from '@/components/CellHelpers'
 import { deploymentLine, routeProvenanceOf } from '@/lib/modelProvenance'
 import { primarySolveSecOf, primarySolvedPerHourOf, primarySolvedPerMinOf, examCostSecOf } from '@/lib/speedMetrics'
+import {
+  chooseBestCompCell,
+  chooseBestSpeedCell,
+  groupByCanonicalModel,
+} from '@/lib/modelFolding'
+import { foldedRoutesBadge } from '@/components/CellHelpers'
+import SpeedVariants from '@/components/SpeedVariants.vue'
 import { useBoardFilter } from '@/lib/useBoardFilter'
 import { publishersOf } from '@/lib/modelFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
@@ -95,10 +102,39 @@ const canonicalN = computed(() => {
 
 // Agentic SWE cells, cloud + local. Raw decode columns are still shown when a
 // tool-free probe exists, but the main speed metric is end-to-end agentic t/s.
-const agenticData = computed(() =>
+// Folded to one row per canonical model, because 163 route rows for 72 models is not a
+// board anyone reads — one model alone contributed 23 of them. The routes are still all
+// here, in the expansion, where comparing them is a deliberate act rather than the
+// default state.
+//
+// WHICH member represents a group follows the active sort. Default is accuracy-then-
+// speed, matching /swe/comp; click a speed column and the representative becomes
+// speed-then-accuracy. Showing a group's most accurate cell while the reader ranks by
+// throughput answers a question nobody asked, and the reverse is equally wrong.
+const SPEED_SORT_KEYS = new Set(['perMin', 'perHour', 'sec', 'secAll', 'medWall', 'tokS', 'tokSolved', 'latency', 'rawTokS'])
+const sortKey = ref<string | null>('perMin')
+const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
+  sortKey.value = payload.key
+}
+const speedFirst = computed(() => !!sortKey.value && SPEED_SORT_KEYS.has(sortKey.value))
+
+const visibleCells = computed(() =>
   boardFilter.applyTo((dashboardSpeedComp.value?.cells || [])
     .filter((c) => num(c.acc) !== null && !c.frozen))
-    .map((c) => {
+)
+
+const foldedGroups = computed(() =>
+  groupByCanonicalModel(
+    visibleCells.value,
+    speedFirst.value ? chooseBestSpeedCell : chooseBestCompCell,
+    (c: any) => `${c.cell}-${c.source}-${c.machine || ''}`,
+  )
+)
+
+const agenticData = computed(() =>
+  foldedGroups.value
+    .map((group) => {
+      const c: any = group.representative
       const source = placementOf(c)
       const n = num(c.n)
       const fullN = canonicalN.value
@@ -131,6 +167,22 @@ const agenticData = computed(() =>
         rawTokS: num(c.raw_tok_s),
         latency: num(c.raw_latency_s),
         ...provenance,
+        variantCount: Math.max(0, group.records.length - 1),
+        // Config axes come from the validated tag vocabulary, not from the cell slug.
+        // Reading `qwen3.8-27b-nvfp4-sglang-thinkon-t0-dspark-local` to find out what a
+        // row IS is not a UI.
+        variants: group.records.map((v: any) => ({
+          cell: v.cell,
+          tags: v.tags || {},
+          machine: v.machine || '—',
+          source: placementLabel(placementOf(v)),
+          n: num(v.n),
+          acc: num(v.acc) !== null ? `${(v.acc * 100).toFixed(1)}%` : '—',
+          perMin: primarySolvedPerMinOf(v),
+          sec: primarySolveSecOf(v),
+          tokS: num(v.agentic_tok_s),
+          isRepresentative: v === c,
+        })).sort((a: any, b: any) => (b.perMin ?? -Infinity) - (a.perMin ?? -Infinity)),
         id: `${c.cell}-${c.source}-${c.machine || ''}`,
       }
       return row
@@ -170,7 +222,13 @@ const focusCloudRoute = (id: string) => {
 }
 
 const cols = computed<Column<any>[]>(() => [
-  { key: 'model', label: t('col.modelGroup'), sortVal: (r) => r.label, render: (r) => compactModelCell(r._rec) },
+  {
+    key: 'model', label: t('col.modelGroup'), sortVal: (r) => r.label,
+    render: (r) => h('span', { class: 'inline-flex flex-wrap items-center gap-1' }, [
+      compactModelCell(r._rec),
+      ...(r.variantCount > 0 ? [foldedRoutesBadge(r.variantCount, t)] : []),
+    ]),
+  },
   {
     key: 'route', label: t('cloud.col.route'), mobileHide: true,
     sortVal: (r) => `${r.source}-${r.coverage ?? 0}`,
@@ -456,7 +514,10 @@ onUnmounted(() => {
           fixed-layout
           :highlight-row-id="focusedCloudRowId"
           :detail-fields="routeDetailFields"
-        />
+          @sort-change="onSortChange"
+        >
+          <template #detail="{ row }"><SpeedVariants :row="row" /></template>
+        </DataTable>
         <div v-else class="text-muted-foreground text-sm p-4 text-center">{{ t('cloud.empty.fullOnly') }}</div>
 
         <div v-if="partialData.length" class="mt-5 border-t border-border/60 pt-4 space-y-3">
@@ -479,7 +540,10 @@ onUnmounted(() => {
             fixed-layout
             :highlight-row-id="focusedCloudRowId"
             :detail-fields="routeDetailFields"
-          />
+            @sort-change="onSortChange"
+          >
+            <template #detail="{ row }"><SpeedVariants :row="row" /></template>
+          </DataTable>
         </div>
       </CardContent>
     </Card>

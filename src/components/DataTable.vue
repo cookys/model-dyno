@@ -62,6 +62,14 @@ const props = defineProps<{
   highlightRowId?: any
 }>()
 
+// A board that FOLDS rows needs to know what the reader is ranking by: the right
+// representative for a group depends on the active sort. Sorting by speed and then
+// showing the group's most accurate member answers a question nobody asked. Purely
+// additive — nothing is emitted until a caller listens.
+const emit = defineEmits<{
+  (e: 'sort-change', payload: { key: string | null; dir: 'asc' | 'desc' }): void
+}>()
+
 // Track the mobile breakpoint so the expand-detail row's colspan matches the number
 // of VISIBLE columns. mobileHidden columns are display:none on mobile, so a colspan
 // counting all columns makes table-fixed think there are more columns than rendered
@@ -154,6 +162,7 @@ const handleSort = (col: Column<T>) => {
   }
   // Collapse open detail rows on re-sort
   expandedRows.value = new Set()
+  emit('sort-change', { key: sortKey.value, dir: sortDir.value })
 }
 
 const getSortVal = (col: Column<T>, row: T) => {

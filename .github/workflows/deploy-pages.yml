@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - 'public/public-bundles/**'
+      - 'public/2080ti-swe/**'
   workflow_dispatch: {}
 
 permissions:

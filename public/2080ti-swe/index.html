@@ -1,0 +1,1509 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2080 Ti · Qwen3.8-27B SWE 34t</title>
+  <style>
+    :root {
+      --bg: #12110f;
+      --bg-2: #1b1a17;
+      --bg-3: #24221e;
+      --line: #3a372f;
+      --ink: #ece7dc;
+      --muted: #9a9384;
+      --dim: #6e685c;
+      --pass: #7dba6a;
+      --pass-bg: #1d2a1a;
+      --fail: #d37a6a;
+      --fail-bg: #2a1b18;
+      --warn: #d4a24c;
+      --nospec: #b9a98a;
+      --mtp: #6aa8c2;
+      --ref: #8b8499;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); }
+    body {
+      font: 14px/1.45 "IBM Plex Sans", "Source Han Sans TC", "Noto Sans CJK TC", sans-serif;
+      padding: 28px 24px 64px;
+    }
+    h1 { font-size: 22px; font-weight: 620; letter-spacing: -0.02em; margin: 0 0 4px; }
+    .sub { color: var(--muted); font-size: 13px; }
+    .banner {
+      margin: 16px 0 22px;
+      padding: 10px 12px;
+      border: 1px solid #5a4a22;
+      background: #241c10;
+      color: var(--warn);
+      font-size: 13px;
+    }
+    .row { display: grid; gap: 12px; }
+    .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .stats { grid-template-columns: 1.2fr 1fr; margin-top: 12px; }
+    .splits { grid-template-columns: 1fr 1fr; margin-top: 12px; }
+    @media (max-width: 960px) {
+      .cards, .stats, .splits { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+    }
+    .card h2 { margin: 0 0 10px; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .score { font-variant-numeric: tabular-nums; font-size: 34px; font-weight: 650; letter-spacing: -0.03em; }
+    .score small { font-size: 16px; color: var(--muted); font-weight: 500; }
+    .ci { margin-top: 8px; height: 6px; background: var(--bg-3); position: relative; }
+    .ci > i { position: absolute; top: 0; bottom: 0; background: currentColor; opacity: 0.85; }
+    .ci > b { position: absolute; top: -3px; width: 2px; bottom: -3px; background: var(--ink); }
+    .meta { margin-top: 8px; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+    .kvs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; font-variant-numeric: tabular-nums; }
+    .kvs div { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--bg-3); padding: 4px 0; }
+    .kvs span { color: var(--muted); }
+    .barline { display: grid; grid-template-columns: 92px 1fr auto; gap: 8px; align-items: center; margin: 6px 0; }
+    .barline .name { color: var(--muted); font-size: 12px; }
+    .track { height: 10px; background: var(--bg-3); display: flex; overflow: hidden; }
+    .track .a { background: var(--nospec); }
+    .track .b { background: var(--mtp); }
+    .frac { font-variant-numeric: tabular-nums; font-size: 12px; color: var(--ink); min-width: 92px; text-align: right; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 10px; align-items: center; }
+    button, select, input[type="search"] {
+      background: var(--bg-3); color: var(--ink); border: 1px solid var(--line);
+      padding: 6px 10px; font: inherit;
+    }
+    button.active { border-color: var(--ink); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 7px 8px; border-bottom: 1px solid var(--bg-3); text-align: left; vertical-align: middle; }
+    th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; user-select: none; }
+    th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    tr.diff td { background: #221c14; }
+    .pill {
+      display: inline-block; min-width: 46px; text-align: center;
+      padding: 1px 6px; font-size: 11px; font-weight: 650; letter-spacing: 0.04em;
+    }
+    .pill.pass { background: var(--pass-bg); color: var(--pass); }
+    .pill.fail { background: var(--fail-bg); color: var(--fail); }
+    .pill.na { background: var(--bg-3); color: var(--dim); }
+    .pill.game { outline: 1px solid var(--warn); }
+    .delta { color: var(--warn); font-weight: 650; font-size: 11px; }
+    .legend { color: var(--dim); font-size: 12px; margin-top: 10px; }
+    .foot { margin-top: 28px; color: var(--dim); font-size: 12px; }
+    code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Qwen3.8-27B · SWE 34t on 2080 Ti</h1>
+  <div class="sub" id="sub"></div>
+  <div class="banner" id="banner"></div>
+
+  <div class="row cards" id="cards"></div>
+  <div class="row stats">
+    <div class="card">
+      <h2>Paired stats</h2>
+      <div class="kvs" id="paired"></div>
+    </div>
+    <div class="card">
+      <h2>Wall clock (dirty)</h2>
+      <div class="kvs" id="wall"></div>
+      <div class="legend">WSL rebooted mid-run on both cells. Do not read the sum as a clean speedup. Paired per-task ratio is the less-dirty number.</div>
+    </div>
+  </div>
+  <div class="row splits">
+    <div class="card">
+      <h2>Language</h2>
+      <div id="langs"></div>
+    </div>
+    <div class="card">
+      <h2>Difficulty</h2>
+      <div id="diffs"></div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button data-filter="all" class="active">All 34</button>
+    <button data-filter="diff">Disagree</button>
+    <button data-filter="fail">Any fail</button>
+    <button data-filter="game">Gaming</button>
+    <select id="lang">
+      <option value="">Language</option>
+    </select>
+    <input id="q" type="search" placeholder="Filter task id" />
+    <span class="legend" id="shown"></span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th data-sort="short">Task</th>
+        <th data-sort="language">Lang</th>
+        <th data-sort="difficulty">Diff</th>
+        <th data-sort="nospec.passed">No MTP</th>
+        <th data-sort="mtp.passed">MTP</th>
+        <th data-sort="ref4090.passed">4090</th>
+        <th class="num" data-sort="nospec.wall_s">No MTP s</th>
+        <th class="num" data-sort="mtp.wall_s">MTP s</th>
+        <th class="num" data-sort="ratio">MTP/no</th>
+        <th data-sort="delta"></th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="legend">Green = official pass (`passed` and `status=ok`). Gaming = post gold passed but test files were edited. 4090 is UD-Q4_K_XL / 114K / no MTP — not a like-for-like loss.</div>
+  <div class="foot" id="foot"></div>
+
+<!--DASH_DATA_START-->
+<script id="dash-data" type="application/json">{
+  "generated_at": "2026-08-19T06:06:42Z",
+  "exam": "34t-4885e69a",
+  "machine": "COOKYS-R5950-ITX WSL2 · RTX 2080 Ti sm_75",
+  "model": "Qwen3.8-27B-IQ4_XS",
+  "sampling": "thinking on / low · temp 1.0 / top_p 0.95 / top_k 20",
+  "promote": false,
+  "paths": {
+    "nospec": "results-qwen3.8-27b-iq4-2080ti-vendor-Qwen3.8-27B-IQ4_XS-20260818-171947",
+    "mtp": "results-qwen3.8-27b-iq4-2080ti-vendor-mtp-Qwen3.8-27B-IQ4_XS-20260819-030645",
+    "ref4090": "results-qwen38-27b-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-20260817-151052"
+  },
+  "cells": {
+    "nospec": {
+      "slug": "nospec",
+      "label": "no MTP",
+      "passed": 26,
+      "n": 34,
+      "rate": 0.7647058823529411,
+      "ci95": [
+        0.6000353719173557,
+        0.8756316189075566
+      ],
+      "post_fix": 26,
+      "status_ok": 34,
+      "flaky": 0,
+      "gaming": 1,
+      "infra": 0,
+      "wall_s": 16738.8,
+      "wall_median_s": 265.6,
+      "steps": 835,
+      "steps_median": 20.0,
+      "tokens_out": 296330
+    },
+    "mtp": {
+      "slug": "mtp",
+      "label": "MTP n=3 p=0.4",
+      "passed": 27,
+      "n": 34,
+      "rate": 0.7941176470588235,
+      "ci95": [
+        0.6320128389178601,
+        0.8965060397764868
+      ],
+      "post_fix": 28,
+      "status_ok": 34,
+      "flaky": 0,
+      "gaming": 1,
+      "infra": 0,
+      "wall_s": 12393.5,
+      "wall_median_s": 184.3,
+      "steps": 895,
+      "steps_median": 21.0,
+      "tokens_out": 286677
+    },
+    "ref4090": {
+      "slug": "ref4090",
+      "label": "4090 vendor (ref)",
+      "passed": 29,
+      "n": 34,
+      "note": "UD-Q4_K_XL · ctx 114688 · no MTP · different card"
+    }
+  },
+  "stats": {
+    "both_pass": 26,
+    "both_fail": 7,
+    "mtp_only": [
+      "cookys/autopilot/6780a2bc"
+    ],
+    "nospec_only": [],
+    "agree": 0.9705882352941176,
+    "kappa": 0.914572864321608,
+    "mcnemar_p": 1.0,
+    "discordant": 1,
+    "wall_ratio": 0.7404055248882836,
+    "paired_geomean": 0.6539797781388093,
+    "paired_geomean_excl_outlier": 0.5926083157453167,
+    "paired_median_ratio": 0.622308609599332,
+    "mtp_faster_n": 30,
+    "outlier_task": "cookys-claude-twgame/autopilot/1e3f71408"
+  },
+  "by_language": [
+    {
+      "key": "rust",
+      "nospec": {
+        "passed": 11,
+        "n": 14
+      },
+      "mtp": {
+        "passed": 11,
+        "n": 14
+      }
+    },
+    {
+      "key": "python",
+      "nospec": {
+        "passed": 2,
+        "n": 5
+      },
+      "mtp": {
+        "passed": 2,
+        "n": 5
+      }
+    },
+    {
+      "key": "javascript",
+      "nospec": {
+        "passed": 0,
+        "n": 2
+      },
+      "mtp": {
+        "passed": 1,
+        "n": 2
+      }
+    },
+    {
+      "key": "go",
+      "nospec": {
+        "passed": 3,
+        "n": 3
+      },
+      "mtp": {
+        "passed": 3,
+        "n": 3
+      }
+    },
+    {
+      "key": "shell",
+      "nospec": {
+        "passed": 5,
+        "n": 5
+      },
+      "mtp": {
+        "passed": 5,
+        "n": 5
+      }
+    },
+    {
+      "key": "bash",
+      "nospec": {
+        "passed": 1,
+        "n": 1
+      },
+      "mtp": {
+        "passed": 1,
+        "n": 1
+      }
+    },
+    {
+      "key": "markdown",
+      "nospec": {
+        "passed": 3,
+        "n": 3
+      },
+      "mtp": {
+        "passed": 3,
+        "n": 3
+      }
+    },
+    {
+      "key": "vue",
+      "nospec": {
+        "passed": 1,
+        "n": 1
+      },
+      "mtp": {
+        "passed": 1,
+        "n": 1
+      }
+    }
+  ],
+  "by_difficulty": [
+    {
+      "key": "trivial",
+      "nospec": {
+        "passed": 3,
+        "n": 4
+      },
+      "mtp": {
+        "passed": 3,
+        "n": 4
+      }
+    },
+    {
+      "key": "easy",
+      "nospec": {
+        "passed": 11,
+        "n": 12
+      },
+      "mtp": {
+        "passed": 11,
+        "n": 12
+      }
+    },
+    {
+      "key": "medium",
+      "nospec": {
+        "passed": 10,
+        "n": 14
+      },
+      "mtp": {
+        "passed": 10,
+        "n": 14
+      }
+    },
+    {
+      "key": "hard",
+      "nospec": {
+        "passed": 2,
+        "n": 4
+      },
+      "mtp": {
+        "passed": 3,
+        "n": 4
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "cookys-claude-twgame/autopilot/1e3f71408",
+      "short": "autopilot/1e3f71408",
+      "language": "bash",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 20,
+        "wall_s": 211.1,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 85,
+        "wall_s": 3567.3,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys-claude/claude-statusline/113b11a",
+      "short": "claude-statusline/113b11a",
+      "language": "go",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 31,
+        "wall_s": 597.3,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 25,
+        "wall_s": 158.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys-claude/claude-statusline/3f0cea0",
+      "short": "claude-statusline/3f0cea0",
+      "language": "go",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 11,
+        "wall_s": 86.9,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 17,
+        "wall_s": 82.3,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys-claude/claude-statusline/410edc4",
+      "short": "claude-statusline/410edc4",
+      "language": "go",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 17,
+        "wall_s": 169.6,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 21,
+        "wall_s": 136.9,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/autopilot/2ec6cdb-dev-flow-ceo-scope-creep-tracking",
+      "short": "autopilot/2ec6cdb-dev-flow-ceo-scope-creep-tracking",
+      "language": "markdown",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 43,
+        "wall_s": 781.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 61,
+        "wall_s": 741.8,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/autopilot/481ab981",
+      "short": "autopilot/481ab981",
+      "language": "shell",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 12,
+        "wall_s": 89.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 13,
+        "wall_s": 53.3,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/autopilot/6780a2bc",
+      "short": "autopilot/6780a2bc",
+      "language": "javascript",
+      "difficulty": "hard",
+      "nospec": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 21,
+        "wall_s": 341.4,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 24,
+        "wall_s": 241.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "mtp_plus"
+    },
+    {
+      "id": "cookys/autopilot/8bf6e47-dev-flow-fix-workflow",
+      "short": "autopilot/8bf6e47-dev-flow-fix-workflow",
+      "language": "markdown",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 36,
+        "wall_s": 853.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 25,
+        "wall_s": 520.8,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/autopilot/f179ac2-finish-flow-forcing-function",
+      "short": "autopilot/f179ac2-finish-flow-forcing-function",
+      "language": "markdown",
+      "difficulty": "hard",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 52,
+        "wall_s": 1255.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 61,
+        "wall_s": 667.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/codeforge/020aba40",
+      "short": "codeforge/020aba40",
+      "language": "rust",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 7,
+        "wall_s": 82.2,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 7,
+        "wall_s": 70.8,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": false,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/codeforge/21b87ac9",
+      "short": "codeforge/21b87ac9",
+      "language": "rust",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 30,
+        "wall_s": 673.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 31,
+        "wall_s": 251.1,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/codeforge/67e94736",
+      "short": "codeforge/67e94736",
+      "language": "rust",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 29,
+        "wall_s": 266.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 29,
+        "wall_s": 368.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/codeforge/8522c77a",
+      "short": "codeforge/8522c77a",
+      "language": "rust",
+      "difficulty": "trivial",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 7,
+        "wall_s": 114.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 10,
+        "wall_s": 101.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/codeforge/b2478b0-phase2b-combat-review-hardening",
+      "short": "codeforge/b2478b0-phase2b-combat-review-hardening",
+      "language": "rust",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 65,
+        "wall_s": 1767.1,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 46,
+        "wall_s": 820.9,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/codeforge/d43b4ff-world-footer-home-unlocked-count",
+      "short": "codeforge/d43b4ff-world-footer-home-unlocked-count",
+      "language": "rust",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 24,
+        "wall_s": 284.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 34,
+        "wall_s": 205.4,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/codeforge/e3ccc843",
+      "short": "codeforge/e3ccc843",
+      "language": "rust",
+      "difficulty": "trivial",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 16,
+        "wall_s": 264.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 36,
+        "wall_s": 231.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": false,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/codeforge/fcdaf3cb",
+      "short": "codeforge/fcdaf3cb",
+      "language": "rust",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 22,
+        "wall_s": 596.4,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 22,
+        "wall_s": 397.3,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/hangar/ae9829f7",
+      "short": "hangar/ae9829f7",
+      "language": "shell",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 14,
+        "wall_s": 212.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 13,
+        "wall_s": 220.9,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": false,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/nikki/56c69f85",
+      "short": "nikki/56c69f85",
+      "language": "rust",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 15,
+        "wall_s": 115.2,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 11,
+        "wall_s": 46.8,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/nikki/8459d1ed",
+      "short": "nikki/8459d1ed",
+      "language": "rust",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 31,
+        "wall_s": 518.9,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 45,
+        "wall_s": 529.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/nikki/b24691a7",
+      "short": "nikki/b24691a7",
+      "language": "rust",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 43,
+        "wall_s": 1429.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 54,
+        "wall_s": 804.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/personal-knowledge-base/354b067f",
+      "short": "personal-knowledge-base/354b067f",
+      "language": "python",
+      "difficulty": "hard",
+      "nospec": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 19,
+        "wall_s": 108.1,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 12,
+        "wall_s": 60.9,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": false,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/personal-knowledge-base/40cebea6",
+      "short": "personal-knowledge-base/40cebea6",
+      "language": "shell",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 13,
+        "wall_s": 206.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 11,
+        "wall_s": 89.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/personal-knowledge-base/60e5ccf3",
+      "short": "personal-knowledge-base/60e5ccf3",
+      "language": "python",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 41,
+        "wall_s": 1813.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 33,
+        "wall_s": 552.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/personal-knowledge-base/b2abd82a",
+      "short": "personal-knowledge-base/b2abd82a",
+      "language": "python",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 16,
+        "wall_s": 280.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 21,
+        "wall_s": 274.4,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/personal-knowledge-base/b6bdbc84",
+      "short": "personal-knowledge-base/b6bdbc84",
+      "language": "python",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 42,
+        "wall_s": 1012.3,
+        "gaming": true,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": false,
+        "post": true,
+        "status": "ok",
+        "steps": 21,
+        "wall_s": 160.8,
+        "gaming": true,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/personal-knowledge-base/bd7ef3d9",
+      "short": "personal-knowledge-base/bd7ef3d9",
+      "language": "shell",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 5,
+        "wall_s": 73.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 5,
+        "wall_s": 41.6,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/personal-knowledge-base/c73054ac",
+      "short": "personal-knowledge-base/c73054ac",
+      "language": "python",
+      "difficulty": "hard",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 18,
+        "wall_s": 254.8,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 13,
+        "wall_s": 163.2,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys/personal-knowledge-base/dad768fc",
+      "short": "personal-knowledge-base/dad768fc",
+      "language": "shell",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 9,
+        "wall_s": 132.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 9,
+        "wall_s": 80.1,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys-claude/codeforge/26907a0",
+      "short": "codeforge/26907a0",
+      "language": "rust",
+      "difficulty": "trivial",
+      "nospec": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 9,
+        "wall_s": 77.3,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 9,
+        "wall_s": 50.9,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys-claude/codepower/571799c",
+      "short": "codepower/571799c",
+      "language": "rust",
+      "difficulty": "trivial",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 20,
+        "wall_s": 96.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 15,
+        "wall_s": 54.6,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys-claude/codeforge/0c19e49",
+      "short": "codeforge/0c19e49",
+      "language": "javascript",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 57,
+        "wall_s": 1505.2,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": false,
+        "post": false,
+        "status": "ok",
+        "steps": 45,
+        "wall_s": 463.0,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": false,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys-claude/codepower/6b54747",
+      "short": "codepower/6b54747",
+      "language": "vue",
+      "difficulty": "easy",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 14,
+        "wall_s": 70.3,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 13,
+        "wall_s": 44.6,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    },
+    {
+      "id": "cookys-claude/codepower/e1b8e5e",
+      "short": "codepower/e1b8e5e",
+      "language": "rust",
+      "difficulty": "medium",
+      "nospec": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 26,
+        "wall_s": 398.7,
+        "gaming": false,
+        "flaky": false
+      },
+      "mtp": {
+        "passed": true,
+        "post": true,
+        "status": "ok",
+        "steps": 18,
+        "wall_s": 139.5,
+        "gaming": false,
+        "flaky": false
+      },
+      "ref4090": {
+        "passed": true,
+        "present": true
+      },
+      "delta": "same"
+    }
+  ]
+}</script>
+<!--DASH_DATA_END-->
+
+<script>
+const DATA = JSON.parse(document.getElementById("dash-data").textContent);
+const $ = (id) => document.getElementById(id);
+const pct = (x) => (100 * x).toFixed(1) + "%";
+const hms = (s) => {
+  if (s == null) return "—";
+  if (s < 120) return s.toFixed(1) + "s";
+  return (s / 3600).toFixed(2) + "h";
+};
+const pill = (ok, extra) => {
+  if (ok === null || ok === undefined) return '<span class="pill na">—</span>';
+  const g = extra && extra.gaming ? " game" : "";
+  return `<span class="pill ${ok ? "pass" : "fail"}${g}">${ok ? "PASS" : "FAIL"}</span>`;
+};
+
+function card(cell, color, note) {
+  const lo = cell.ci95 ? (100 * cell.ci95[0]).toFixed(1) : "—";
+  const hi = cell.ci95 ? (100 * cell.ci95[1]).toFixed(1) : "—";
+  const left = cell.ci95 ? (100 * cell.ci95[0]) : 0;
+  const width = cell.ci95 ? (100 * (cell.ci95[1] - cell.ci95[0])) : 0;
+  const mark = cell.rate != null ? (100 * cell.rate) : 0;
+  return `<div class="card" style="color:${color}">
+    <h2>${cell.label}</h2>
+    <div class="score">${cell.passed}<small>/${cell.n} · ${pct(cell.rate || cell.passed/cell.n)}</small></div>
+    ${cell.ci95 ? `<div class="ci"><i style="left:${left}%;width:${width}%"></i><b style="left:${mark}%"></b></div>
+    <div class="meta">Wilson 95% ${lo}–${hi}% · post_fix ${cell.post_fix}/${cell.n} · infra ${cell.infra} · gaming ${cell.gaming}</div>` : `<div class="meta">${note || ""}</div>`}
+  </div>`;
+}
+
+function kv(rows) {
+  return rows.map(([k, v]) => `<div><span>${k}</span><b>${v}</b></div>`).join("");
+}
+
+function split(rows) {
+  return rows.map((r) => {
+    const a = r.nospec, b = r.mtp;
+    const pa = a.n ? a.passed / a.n : 0;
+    const pb = b.n ? b.passed / b.n : 0;
+    return `<div class="barline">
+      <div class="name">${r.key}</div>
+      <div class="track">
+        <div class="a" style="width:${pa * 50}%"></div>
+        <div class="b" style="width:${pb * 50}%"></div>
+      </div>
+      <div class="frac">no ${a.passed}/${a.n} · mtp ${b.passed}/${b.n}</div>
+    </div>`;
+  }).join("");
+}
+
+const ns = DATA.cells.nospec, mtp = DATA.cells.mtp, ref = DATA.cells.ref4090, st = DATA.stats;
+$("sub").textContent = `${DATA.machine} · ${DATA.model} · ${DATA.exam} · ${DATA.sampling}`;
+$("banner").textContent = `McNemar p = ${st.mcnemar_p.toFixed(2)} on ${st.discordant} discordant task(s). Do not claim MTP is more accurate. Do not promote either cell.`;
+$("cards").innerHTML = card(ns, "var(--nospec)") + card(mtp, "var(--mtp)") + card(ref, "var(--ref)", ref.note);
+$("paired").innerHTML = kv([
+  ["Both pass", st.both_pass],
+  ["Both fail", st.both_fail],
+  ["MTP only", st.mtp_only.map(x => x.split("/").slice(-1)[0]).join(", ") || "—"],
+  ["No-MTP only", st.nospec_only.map(x => x.split("/").slice(-1)[0]).join(", ") || "—"],
+  ["Agree", pct(st.agree)],
+  ["Cohen κ", st.kappa.toFixed(3)],
+  ["McNemar p", st.mcnemar_p.toFixed(2)],
+]);
+$("wall").innerHTML = kv([
+  ["Sum no MTP", hms(ns.wall_s)],
+  ["Sum MTP", hms(mtp.wall_s)],
+  ["Sum ratio", st.wall_ratio.toFixed(2) + "×"],
+  ["Paired geomean", st.paired_geomean ? st.paired_geomean.toFixed(2) + "×" : "—"],
+  ["Geomean excl. 3567s outlier", st.paired_geomean_excl_outlier ? st.paired_geomean_excl_outlier.toFixed(2) + "×" : "—"],
+  ["MTP faster", `${st.mtp_faster_n}/34`],
+  ["Median wall", `${ns.wall_median_s.toFixed(0)}s → ${mtp.wall_median_s.toFixed(0)}s`],
+]);
+$("langs").innerHTML = split(DATA.by_language);
+$("diffs").innerHTML = split(DATA.by_difficulty);
+
+const langs = [...new Set(DATA.tasks.map(t => t.language).filter(Boolean))].sort();
+langs.forEach((l) => {
+  const o = document.createElement("option");
+  o.value = l; o.textContent = l;
+  $("lang").appendChild(o);
+});
+
+let filter = "all", lang = "", q = "", sortKey = "short", sortDir = 1;
+
+function get(t, key) {
+  return key.split(".").reduce((x, k) => (x == null ? x : x[k]), t);
+}
+function ratio(t) {
+  const a = t.nospec.wall_s, b = t.mtp.wall_s;
+  return a && b ? b / a : null;
+}
+
+function render() {
+  let rows = DATA.tasks.slice();
+  if (filter === "diff") rows = rows.filter(t => t.delta !== "same");
+  if (filter === "fail") rows = rows.filter(t => !t.nospec.passed || !t.mtp.passed);
+  if (filter === "game") rows = rows.filter(t => t.nospec.gaming || t.mtp.gaming);
+  if (lang) rows = rows.filter(t => t.language === lang);
+  if (q) rows = rows.filter(t => t.id.toLowerCase().includes(q) || t.short.toLowerCase().includes(q));
+  rows.sort((x, y) => {
+    let av = sortKey === "ratio" ? ratio(x) : get(x, sortKey);
+    let bv = sortKey === "ratio" ? ratio(y) : get(y, sortKey);
+    if (typeof av === "boolean") { av = av ? 1 : 0; bv = bv ? 1 : 0; }
+    if (av == null) av = "";
+    if (bv == null) bv = "";
+    if (av < bv) return -1 * sortDir;
+    if (av > bv) return 1 * sortDir;
+    return 0;
+  });
+  $("shown").textContent = `${rows.length} shown`;
+  $("tbody").innerHTML = rows.map((t) => {
+    const r = ratio(t);
+    return `<tr class="${t.delta !== "same" ? "diff" : ""}">
+      <td><code title="${t.id}">${t.short}</code></td>
+      <td>${t.language || ""}</td>
+      <td>${t.difficulty || ""}</td>
+      <td>${pill(t.nospec.passed, t.nospec)}</td>
+      <td>${pill(t.mtp.passed, t.mtp)}</td>
+      <td>${pill(t.ref4090.present ? t.ref4090.passed : null)}</td>
+      <td class="num">${t.nospec.wall_s != null ? t.nospec.wall_s.toFixed(0) : "—"}</td>
+      <td class="num">${t.mtp.wall_s != null ? t.mtp.wall_s.toFixed(0) : "—"}</td>
+      <td class="num">${r != null ? r.toFixed(2) : "—"}</td>
+      <td>${t.delta === "mtp_plus" ? '<span class="delta">MTP+</span>' : t.delta === "mtp_minus" ? '<span class="delta">MTP−</span>' : ""}</td>
+    </tr>`;
+  }).join("");
+}
+
+document.querySelectorAll("button[data-filter]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filter = btn.dataset.filter;
+    document.querySelectorAll("button[data-filter]").forEach((b) => b.classList.toggle("active", b === btn));
+    render();
+  });
+});
+$("lang").addEventListener("change", (e) => { lang = e.target.value; render(); });
+$("q").addEventListener("input", (e) => { q = e.target.value.trim().toLowerCase(); render(); });
+document.querySelectorAll("th[data-sort]").forEach((th) => {
+  th.addEventListener("click", () => {
+    const k = th.dataset.sort;
+    if (sortKey === k) sortDir *= -1;
+    else { sortKey = k; sortDir = 1; }
+    render();
+  });
+});
+$("foot").textContent = `Generated ${DATA.generated_at} · ${DATA.paths.nospec || ""} · ${DATA.paths.mtp || ""} · not a fleet cell`;
+render();
+</script>
+</body>
+</html>

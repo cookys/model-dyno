@@ -10,6 +10,7 @@ import type { Column, DetailField } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { modelBadges, modelName, num, speedCredibilityBadge } from '@/components/CellHelpers'
 import { deploymentLine, routeProvenanceOf } from '@/lib/modelProvenance'
+import { modelPageHref } from '@/lib/modelLink'
 import { primarySolveSecOf, primarySolvedPerHourOf, primarySolvedPerMinOf, examCostSecOf } from '@/lib/speedMetrics'
 import {
   chooseBestCompCell,
@@ -67,11 +68,13 @@ function fmt0(v: number | null): string {
 
 function compactModelCell(c: any) {
   const badges = modelBadges(c)
+  const href = modelPageHref(c)
+  const nameClass = 'min-w-0 break-words font-mono font-medium leading-snug'
+  const title = (c && (c.cell || c.profile || c.model)) || ''
   return h('span', { class: 'flex min-w-0 flex-col items-start gap-1' }, [
-    h('span', {
-      class: 'min-w-0 break-words font-mono font-medium leading-snug text-foreground',
-      title: (c && (c.cell || c.profile || c.model)) || '',
-    }, modelName(c)),
+    href
+      ? h('a', { href, class: `${nameClass} text-primary hover:underline`, title }, modelName(c))
+      : h('span', { class: `${nameClass} text-foreground`, title }, modelName(c)),
     badges,
   ].filter(Boolean))
 }
@@ -505,7 +508,13 @@ onUnmounted(() => {
               </div>
               <div class="mt-2 flex items-end justify-between gap-3">
                 <div class="min-w-0">
-                  <div class="truncate font-mono text-xs font-semibold text-foreground" :title="modelName(row._rec)">
+                  <a
+                    v-if="modelPageHref(row._rec)"
+                    :href="modelPageHref(row._rec)!"
+                    class="block truncate font-mono text-xs font-semibold text-primary hover:underline"
+                    :title="modelName(row._rec)"
+                  >{{ modelName(row._rec) }}</a>
+                  <div v-else class="truncate font-mono text-xs font-semibold text-foreground" :title="modelName(row._rec)">
                     {{ modelName(row._rec) }}
                   </div>
                   <div class="mt-1 text-[11px] text-muted-foreground">

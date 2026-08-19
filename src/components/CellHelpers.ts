@@ -224,11 +224,18 @@ export function modelBadges(c: any): VNode | null {
   return Object.keys(t).length ? sweTagBadges(t) : null
 }
 
-export function modelCell(c: any): VNode {
+// `href` is opt-in: pass `modelPageHref(record)` to make the NAME (not the badges) a link
+// to the model page. Left undefined at a call site, the cell renders exactly as before —
+// so already-shipped boards don't change shape just because a helper learned a new trick.
+export function modelCell(c: any, href?: string | null): VNode {
   const { t } = useI18n()
   const nameText = modelName(c)
+  const nameClass = 'profname min-w-0 max-w-full break-words font-mono font-medium leading-snug'
+  const nameTitle = (c && (c.cell || c.profile || c.model)) || ''
   const nameKids: VNode[] = [
-    h('span', { class: 'profname min-w-0 max-w-full break-words font-mono font-medium leading-snug', title: (c && (c.cell || c.profile || c.model)) || '' }, nameText)
+    href
+      ? h('a', { href, class: `${nameClass} text-primary hover:underline`, title: nameTitle }, nameText)
+      : h('span', { class: nameClass, title: nameTitle }, nameText)
   ]
   if (c && c.source === 'survey-p4c') {
     nameKids.push(

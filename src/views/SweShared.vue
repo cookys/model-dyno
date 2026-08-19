@@ -6,6 +6,7 @@ import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { harnessCell, machineCell, modelCell, num, pct, suspectErrorBadge } from '@/components/CellHelpers'
+import { modelPageHref } from '@/lib/modelLink'
 
 const { t } = useI18n()
 
@@ -36,7 +37,7 @@ const cols = computed<Column<any>[]>(() => [
     key: 'model',
     label: t('col.model'),
     description: t('table.tip.modelGroup'),
-    render: (r) => modelCell(r.__record)
+    render: (r) => modelCell(r.__record, modelPageHref(r.__record))
   },
   {
     key: 'owner',

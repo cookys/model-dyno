@@ -127,3 +127,25 @@ test('the efficiency cover row follows the active sort', () => {
   const chooser = view.slice(view.indexOf('const chooseBySort'), view.indexOf('const chooseBySort') + 400)
   assert.match(chooser, /rankFirst: \(c\) => comparableRank\(c\)/)
 })
+
+test('a pool big enough does not mean one allocation can be that big', async () => {
+  // The Strix Halo case: ~100GB available, ~61GB per hipMalloc. llama.cpp asks for the
+  // whole weight buffer at once, so a 78GB model that comfortably fits still fails to
+  // load and has to be split. Reporting that as "does not fit" is a different — and for
+  // a MoE model, much more expensive — answer than "must split".
+  const src = readFileSync(join(root, 'src/lib/hardware.ts'), 'utf8')
+  // fitVerdict is pure; the module's other exports are Vue computeds over the store, so
+  // the imports are replaced with the smallest stubs that let the module evaluate.
+  const stubs = 'const computed = (f) => ({ get value() { return f() } });'
+    + 'const machines = { value: [] }; const modelFootprints = { value: [] };'
+  const output = ts.transpileModule(stubs + src.replace(/^import .*$/gm, ''), {
+    compilerOptions: { module: ts.ModuleKind.ES2022, target: ts.ScriptTarget.ES2022 },
+  }).outputText
+  const { fitVerdict } = await import(`data:text/javascript;base64,${Buffer.from(output).toString('base64')}`)
+
+  assert.equal(fitVerdict(78.65, 100, 61), 'split', 'room but no single buffer that large')
+  assert.equal(fitVerdict(78.65, 96, null), 'fits', 'no cap recorded and plenty of room')
+  assert.equal(fitVerdict(78.65, 64, 64), 'no', 'pool itself is too small')
+  assert.equal(fitVerdict(59, 61, 61), 'tight', 'fits under the cap but leaves no context room')
+  assert.equal(fitVerdict(78.65, null, 61), 'unknown', 'an unknown pool is never a verdict')
+})

@@ -90,6 +90,8 @@ export interface MachineHardware {
   vram_practical_gb: number | null
   /** The figure to subtract a model's weights from. Not the same quantity on both kinds. */
   vram_usable_gb: number | null
+  /** Largest SINGLE allocation the driver grants — a separate limit from the pool. */
+  alloc_cap_gb: number | null
   aliases: string[]
 }
 
@@ -932,6 +934,7 @@ function projectMachines(raw: unknown): MachineHardware[] {
       vram_pool_gb: typeof m.vram_pool_gb === 'number' ? m.vram_pool_gb : null,
       vram_practical_gb: typeof m.vram_practical_gb === 'number' ? m.vram_practical_gb : null,
       vram_usable_gb: typeof m.vram_usable_gb === 'number' ? m.vram_usable_gb : null,
+      alloc_cap_gb: typeof m.alloc_cap_gb === 'number' ? m.alloc_cap_gb : null,
       aliases: Array.isArray(m.aliases) ? m.aliases.map(String) : [],
     }))
     .filter((m) => m.profile)

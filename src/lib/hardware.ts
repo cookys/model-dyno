@@ -33,23 +33,40 @@ export function machineLabel(profile: string | null | undefined): string {
   return `${count}${card}${mem}`
 }
 
-export type FitVerdict = 'fits' | 'tight' | 'no' | 'unknown'
+export type FitVerdict = 'fits' | 'tight' | 'split' | 'no' | 'unknown'
 
 /**
  * Whether `weightsGb` loads on a machine, as an ESTIMATE and never as a measurement.
  *
- * Weights are only part of the working set — KV cache, compute buffers and the OS all
- * want the same memory — so a model that merely fits on paper does not run. The headroom
- * band below is the difference between "this loads" and "this loads and you can hold a
- * conversation with it", and it is why the middle verdict exists rather than a bare
- * fits/does-not boolean. Anything derived from it must be labelled an estimate: the site's
- * credibility rests on measured numbers, and this is not one.
+ * Two independent limits, and they answer different questions:
+ *
+ *   usableGb  — is there ROOM for the weights at all.
+ *   allocCap  — can ONE allocation be that big. llama.cpp asks for the whole weight
+ *               buffer in a single call, so on a machine whose driver caps a single
+ *               allocation well below its pool (the Strix Halo boxes: ~100GB available,
+ *               ~61GB per hipMalloc) a model that comfortably fits still fails to load
+ *               unless it is split across devices or partly offloaded to system RAM.
+ *
+ * Collapsing them into one number reported "does not fit" for a machine that fits it
+ * fine and merely needs `-ot` expert offload — a materially different answer, and for a
+ * MoE model the cheap one.
+ *
+ * Weights are also only part of the working set: KV cache and compute buffers want the
+ * same memory, which is why `tight` exists between fits and no. Everything here must be
+ * labelled an estimate — the site's credibility rests on measured numbers and this is
+ * not one.
  */
-export function fitVerdict(weightsGb: number | null | undefined, usableGb: number | null | undefined): FitVerdict {
+export function fitVerdict(
+  weightsGb: number | null | undefined,
+  usableGb: number | null | undefined,
+  allocCapGb?: number | null,
+): FitVerdict {
   if (!weightsGb || !usableGb) return 'unknown'
   const headroom = usableGb - weightsGb
   if (headroom < 0) return 'no'
-  // ~15% of the card, floored at 2GB: below that there is no room for a usable context.
+  // Room exists, but no single buffer that large can be allocated.
+  if (allocCapGb && weightsGb > allocCapGb) return 'split'
+  // ~15% of the pool, floored at 2GB: below that there is no room for a usable context.
   if (headroom < Math.max(2, usableGb * 0.15)) return 'tight'
   return 'fits'
 }

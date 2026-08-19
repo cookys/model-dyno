@@ -25,13 +25,19 @@ const rows = computed(() => {
   // One row per distinct memory size in the fleet, plus the cards people actually own.
   const fleet = machines.value
     .filter((m) => m.vram_usable_gb)
-    .map((m) => ({ label: `${m.gpu_name ?? m.profile} · ${m.vram_usable_gb}GB`, gb: m.vram_usable_gb as number }))
-  const common = [12, 16, 24, 32, 48].map((gb) => ({ label: `${gb}GB`, gb }))
+    .map((m) => ({
+      label: `${m.gpu_name ?? m.profile} · ${m.vram_usable_gb}GB`,
+      gb: m.vram_usable_gb as number,
+      // Its driver's single-allocation cap, where one is recorded: a pool big enough does
+      // not mean one buffer that big can be allocated.
+      cap: m.alloc_cap_gb ?? null,
+    }))
+  const common = [12, 16, 24, 32, 48].map((gb) => ({ label: `${gb}GB`, gb, cap: null as number | null }))
   const seen = new Set<number>()
   return [...common, ...fleet]
     .filter((r) => (seen.has(r.gb) ? false : (seen.add(r.gb), true)))
     .sort((a, b) => a.gb - b.gb)
-    .map((r) => ({ ...r, verdict: fitVerdict(w, r.gb), headroom: +(r.gb - w).toFixed(1) }))
+    .map((r) => ({ ...r, verdict: fitVerdict(w, r.gb, r.cap), headroom: +(r.gb - w).toFixed(1) }))
 })
 
 // How this model was actually served. The knobs, not a command line: the command is
@@ -52,7 +58,7 @@ const recipes = computed(() =>
 
 const cls = (v: string) =>
   v === 'fits' ? 'text-emerald-700 dark:text-emerald-400'
-  : v === 'tight' ? 'text-amber-700 dark:text-amber-400'
+  : v === 'tight' || v === 'split' ? 'text-amber-700 dark:text-amber-400'
   : 'text-muted-foreground'
 </script>
 

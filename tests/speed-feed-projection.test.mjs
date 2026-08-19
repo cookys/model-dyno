@@ -118,3 +118,43 @@ test('every published machine can be used for fit arithmetic', () => {
     }
   }
 })
+
+test('itx-5950x 2080 Ti IQ4 vendor cells are on the official feed', () => {
+  const snap = JSON.parse(readFileSync(join(root, 'public/public-bundles/dashboard-snapshot.json'), 'utf8'))
+  const feed = JSON.parse(readFileSync(join(root, 'public/public-bundles/index.json'), 'utf8'))
+  const itx = snap.machines.find((m) => m.profile === 'itx-5950x')
+  assert.ok(itx, 'itx-5950x is in machines')
+  assert.equal(itx.memory_kind, 'dedicated')
+  assert.equal(itx.vram_usable_gb, 22)
+  assert.match(itx.gpu_name || '', /2080 Ti/)
+  assert.ok(itx.aliases.includes('COOKYS-R5950-ITX'))
+
+  const iq4 = snap.model_registry.find((m) => m.alias === 'Qwen3.8-27B-IQ4_XS')
+  assert.ok(iq4, 'IQ4_XS registry row')
+  assert.equal(iq4.quant, 'IQ4_XS')
+
+  const speed = snap.speed_records.filter((r) => r.profile === 'itx-5950x')
+  assert.ok(speed.length > 0, 'speed row for itx-5950x')
+  assert.ok(speed.every((r) => r.model_alias === 'Qwen3.8-27B-IQ4_XS'))
+  assert.ok(speed.every((r) => r.tg128_tps === 35.55))
+
+  const findings = snap.spec_decode_findings.filter((f) => f.machine === 'itx-5950x')
+  assert.ok(findings.length > 0, 'spec-decode finding for itx-5950x')
+  assert.ok(findings.every((f) => f.method === 'mtp' && f.verdict === 'win'))
+
+  const recipes = snap.run_configs.filter((c) => String(c.config).includes('iq4xs-64k-vendor'))
+  assert.equal(recipes.length, 2, 'nospec + mtp serve recipes')
+  assert.ok(recipes.every((c) => c.model === 'Qwen3.8-27B-IQ4_XS'))
+  assert.ok(recipes.every((c) => c.ctx_size === 65536))
+
+  const cells = [
+    ...snap.bundles.map((b) => b.entry),
+    ...feed.bundles,
+  ].filter((e) => (e.base_url || '').includes('2080ti'))
+  const slugs = new Set(cells.map((e) => e.base_url))
+  assert.equal(slugs.size, 2)
+  const drafts = new Set(cells.map((e) => e.tags && e.tags.draft))
+  assert.deepEqual([...drafts].sort(), ['mtp', 'none'])
+  assert.ok(cells.every((e) => e.machine === 'itx-5950x'))
+  assert.ok(cells.every((e) => e.tags && e.tags.quant === 'IQ4_XS'))
+})

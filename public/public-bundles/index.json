@@ -1749,7 +1749,9 @@
         "quant": "IQ4_XS",
         "role": "candidate",
         "temp": "1.0",
-        "thinking": "on"
+        "thinking": "on",
+        "draft_n": "3",
+        "draft_packaging": "embedded"
       }
     },
     {

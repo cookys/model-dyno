@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
 import vegaEmbed from 'vega-embed'
+import { modelPageHref } from '@/lib/modelLink'
 import { useI18n } from '@/lib/i18n'
 import { dashboardNorm, loading } from '@/lib/store'
 import { isDark, chartTheme } from '@/lib/theme'
@@ -156,6 +157,7 @@ const normData = computed(() => {
       variantCount: foldedVariantCount(group),
       variants: group.records.map((v) => ({
         model: modelName(v),
+        href: modelPageHref(v),
         publisher: v.publisher || '—',
         operator: v.operator || '—',
         harness: v.harness || v.access_label || '—',
@@ -434,7 +436,10 @@ onUnmounted(() => {
                     </thead>
                     <tbody>
                       <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 font-mono">
+                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
+                          <template v-else>{{ variant.model }}</template>
+                        </td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.source }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
@@ -483,7 +488,10 @@ onUnmounted(() => {
                     </thead>
                     <tbody>
                       <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 font-mono">
+                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
+                          <template v-else>{{ variant.model }}</template>
+                        </td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.source }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>

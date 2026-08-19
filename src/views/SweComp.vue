@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import vegaEmbed from 'vega-embed'
+import { modelPageHref } from '@/lib/modelLink'
 import { useI18n } from '@/lib/i18n'
 import { dashboardComp, loading } from '@/lib/store'
 import { isDark, chartTheme } from '@/lib/theme'
@@ -90,6 +91,7 @@ function mapCompRow(c: any, group?: { records: any[]; key: string }) {
     variantCount: group ? Math.max(0, records.length - 1) : 0,
     variants: (group ? records : []).map((v: any) => ({
       model: modelName(v),
+      href: modelPageHref(v),
       publisher: v.publisher || '—',
       operator: v.operator || '—',
       harness: v.harness || v.access_label || '—',
@@ -526,7 +528,10 @@ onUnmounted(() => {
                     </thead>
                     <tbody>
                       <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 font-mono">
+                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
+                          <template v-else>{{ variant.model }}</template>
+                        </td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
@@ -546,7 +551,10 @@ onUnmounted(() => {
                       variant.comparable ? '' : 'opacity-50',
                     ]"
                   >
-                    <div class="break-words font-mono font-semibold text-foreground">{{ variant.model }}</div>
+                    <div class="break-words font-mono font-semibold text-foreground">
+                      <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
+                      <template v-else>{{ variant.model }}</template>
+                    </div>
                     <div class="mt-2 grid grid-cols-2 gap-2 text-[11px]">
                       <div>
                         <div class="text-muted-foreground">{{ t('col.operator') }}</div>
@@ -615,7 +623,10 @@ onUnmounted(() => {
                     </thead>
                     <tbody>
                       <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 font-mono">
+                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
+                          <template v-else>{{ variant.model }}</template>
+                        </td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>

@@ -3,6 +3,7 @@ import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
 import { RouterLink } from 'vue-router'
 import { History, Trophy } from 'lucide-vue-next'
 import vegaEmbed from 'vega-embed'
+import { modelPageHref } from '@/lib/modelLink'
 import { useI18n } from '@/lib/i18n'
 import { scorecardSweMeta, selectedExam, sweCellsByExam, loading } from '@/lib/store'
 import { isDark, chartTheme, chartBlueScheme } from '@/lib/theme'
@@ -194,6 +195,7 @@ const scorecardRows = computed(() => {
       variantCount: foldedVariantCount(group),
       variants: group.records.map((v) => ({
         model: modelName(v),
+        href: modelPageHref(v),
         profile: v.profile && v.profile !== '?' ? v.profile : '—',
         machine: v.machine || '—',
         n: `${v.n_passed ?? '?'}/${v.n_graded ?? '?'}`,
@@ -554,7 +556,10 @@ onUnmounted(() => {
                     </thead>
                     <tbody>
                       <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.profile}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 font-mono">
+                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
+                          <template v-else>{{ variant.model }}</template>
+                        </td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.profile }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
                         <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>
@@ -603,7 +608,10 @@ onUnmounted(() => {
                     </thead>
                     <tbody>
                       <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.profile}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
+                        <td class="px-2 py-1.5 font-mono">
+                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
+                          <template v-else>{{ variant.model }}</template>
+                        </td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.profile }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
                         <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>

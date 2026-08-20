@@ -115,3 +115,16 @@ test('both locales carry every new preset string', () => {
     assert.equal(hits, 2, `${key} must be defined in both en and zh`)
   }
 })
+
+test('the labels the new columns BORROW are guarded too', () => {
+  // The four preset-only columns reuse labels that already existed rather than minting
+  // new ones. Nothing else in the suite pins them, so deleting one elsewhere would ship
+  // a header rendering the literal key — t() is string-keyed, so vue-tsc stays green.
+  // (A cross-family reviewer raised this as a possible missing-key defect; the keys are
+  // in fact present, but it was right that no gate held them here.)
+  const i18n = read('src/lib/i18n.ts')
+  for (const key of ['col.coverage', 'col.perHour', 'cloud.col.agenticTokS', 'cloud.col.medWall']) {
+    const hits = (i18n.match(new RegExp(`"${key.replace(/\./g, '\\.')}":`, 'g')) || []).length
+    assert.equal(hits, 2, `${key} is bound by a preset column and must exist in both en and zh`)
+  }
+})

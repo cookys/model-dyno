@@ -3075,6 +3075,7 @@
     }
   ],
   "comparable_min": 31,
+  "content_digest": "f600e4afdf3e4e701c92c0d824f94a366ac30a2885f4a13bcc6a26d154a63b54",
   "current_exam": "34t-4885e69a",
   "current_exam_label": "cookys-frontier v1.1",
   "current_exam_n_tasks": 34,
@@ -3099,7 +3100,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-20T07:46:14Z",
+  "generated_at": "2026-08-20T08:21:29Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

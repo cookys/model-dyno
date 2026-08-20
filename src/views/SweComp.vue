@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 import vegaEmbed from 'vega-embed'
 import { modelPageHref } from '@/lib/modelLink'
 import { useI18n } from '@/lib/i18n'
@@ -24,6 +24,7 @@ import {
 import { useBoardFilter } from '@/lib/useBoardFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
 import { useFoldSort, type FoldColumn } from '@/lib/foldSort'
+import { applyCompPreset, COMP_PRESET_IDS, resolveCompPreset, type CompPresetId } from '@/lib/compPresets'
 import { sortAwareChooser } from '@/lib/foldRepresentative'
 import FoldSortHeader from '@/components/FoldSortHeader.vue'
 
@@ -36,6 +37,16 @@ const modelFilter = computed(() => {
   const m = route.query.model
   return typeof m === 'string' ? m : null
 })
+
+// Named views live in the query, not the path: `#/swe/comp` keeps its URL because fleet
+// notes paste it everywhere, and an unknown `?view=` falls back rather than blanking.
+const router = useRouter()
+const preset = computed<CompPresetId>(() => resolveCompPreset(route.query.view))
+function setPreset(id: CompPresetId) {
+  if (id === preset.value) return
+  // replace, not push — flipping lenses should not build up back-button history.
+  router.replace({ query: { ...route.query, view: id } })
+}
 
 let vegaView: any = null
 const chartContainer = ref<HTMLDivElement | null>(null)
@@ -87,6 +98,9 @@ function mapCompRow(c: any, group?: { records: any[]; key: string }) {
     secSolved: speed,
     secAll: examCostSecOf(c),
     perHour: num(c.solved_per_hour),
+    coverage: cls.nExam ? cls.n / cls.nExam : null,
+    tokS: num(c.agentic_tok_s),
+    medWall: num(c.med_wall),
     usage,
     variantCount: group ? Math.max(0, records.length - 1) : 0,
     variants: (group ? records : []).map((v: any) => ({
@@ -206,7 +220,8 @@ const UsageBadge = {
   },
 }
 
-const cols = computed<Column<any>[]>(() => [
+// The full column POOL. What actually renders is `cols` below, ordered by the preset.
+const allCols = computed<Column<any>[]>(() => [
   {
     key: 'publisher',
     label: t('col.publisher'),
@@ -316,8 +331,65 @@ const cols = computed<Column<any>[]>(() => [
     mobileHide: true,
     sortVal: (r) => r._rec.agency?.noop_pct ?? -1,
     render: (r) => agencyBadge(r._rec.agency, r._rec)
+  },
+  {
+    // coverage = graded / exam size. A 62% on two thirds of the exam is not a peer of a
+    // 62% on all of it, and the scorecard lens exists to make that visible in place.
+    key: 'coverage',
+    label: t('col.coverage'),
+    num: true,
+    mobileHide: true,
+    sortVal: (r) => (r.coverage === null ? -1 : r.coverage),
+    render: (r) => r.coverage === null
+      ? '—'
+      : h('span', { class: 'font-mono' }, `${Math.round(r.coverage * 100)}%`)
+  },
+  {
+    key: 'perHour',
+    label: t('col.perHour'),
+    num: true,
+    mobileHide: true,
+    tabletHide: true,
+    sortVal: (r) => (r.perHour === null ? -1 : r.perHour),
+    // A rate carries the same credibility caveat as the median it is derived from: when
+    // failed turns dominate the wall clock, solved/hour flatters the run. Same chip as
+    // the solve-speed column, deliberately — a speed number without its flag is exactly
+    // what this project's eval discipline forbids.
+    render: (r) => r.perHour === null
+      ? '—'
+      : h('span', { class: 'inline-flex items-center gap-1' }, [
+        h('span', { class: 'font-mono' }, r.perHour.toFixed(1)),
+        speedCredibilityBadge(r._rec?.speed_credibility),
+      ])
+  },
+  {
+    key: 'tokS',
+    label: t('cloud.col.agenticTokS'),
+    num: true,
+    mobileHide: true,
+    tabletHide: true,
+    sortVal: (r) => (r.tokS === null ? -1 : r.tokS),
+    render: (r) => r.tokS === null ? '—' : h('span', { class: 'font-mono' }, Math.round(r.tokS))
+  },
+  {
+    key: 'medWall',
+    label: t('cloud.col.medWall'),
+    num: true,
+    mobileHide: true,
+    tabletHide: true,
+    sortVal: (r) => (r.medWall === null ? 1e12 : r.medWall),
+    render: (r) => r.medWall === null ? '—' : h('span', { class: 'font-mono' }, `${Math.round(r.medWall)}s`)
   }
 ])
+
+/** What the tables actually render: the pool, filtered and ordered by the active preset. */
+const cols = computed<Column<any>[]>(() => applyCompPreset(allCols.value, preset.value))
+
+const presetTabs = computed(() => COMP_PRESET_IDS.map((id) => ({
+  id,
+  label: t(`comp.view.${id}`),
+  tip: t(`comp.view.${id}.tip`),
+})))
 
 const drawChart = () => {
   if (vegaView) {
@@ -495,6 +567,32 @@ onUnmounted(() => {
         </CardTitle>
         <p class="text-xs text-muted-foreground">{{ t('swe.comp.scope') }}</p>
         <p class="text-xs text-muted-foreground" v-html="t('swe.comp.desc2').replace('{examName}', examName)"></p>
+
+        <!-- Named views: the same rows re-columned for the question being asked. Fixed
+             sets, not a column picker — see docs/comp-named-views.md. -->
+        <div class="mt-3 flex flex-wrap items-center gap-2">
+          <span class="text-xs font-semibold text-muted-foreground">{{ t('comp.view.label') }}</span>
+          <div
+            class="inline-flex rounded-md border border-border bg-muted/40 p-0.5"
+            role="tablist"
+            :aria-label="t('comp.view.label')"
+          >
+            <button
+              v-for="tab in presetTabs"
+              :key="tab.id"
+              type="button"
+              role="tab"
+              :aria-selected="preset === tab.id"
+              :title="tab.tip"
+              class="rounded px-2.5 py-1 text-xs font-medium transition-colors"
+              :class="preset === tab.id
+                ? 'bg-background text-foreground shadow-sm'
+                : 'text-muted-foreground hover:text-foreground'"
+              @click="setPreset(tab.id)"
+            >{{ tab.label }}</button>
+          </div>
+          <span class="text-xs text-muted-foreground">{{ t(`comp.view.${preset}.tip`) }}</span>
+        </div>
       </CardHeader>
       <CardContent class="space-y-5">
         <div class="space-y-2">

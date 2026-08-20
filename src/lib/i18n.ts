@@ -446,6 +446,13 @@ const STRINGS = {
     "error.prefix": "Error: ",
     "error.suspect.tip": "Suspect infra/verification errors",
     "error.suspect.label": "({n} suspect)",
+    "comp.view.label": "View",
+    "comp.view.overview": "Overview",
+    "comp.view.overview.tip": "Which model solves the tasks, and how fast per solve.",
+    "comp.view.scorecard": "Scorecard",
+    "comp.view.scorecard.tip": "Is the number credible — full exam, and model or harness.",
+    "comp.view.throughput": "Throughput",
+    "comp.view.throughput.tip": "What that accuracy costs in wall time and tokens.",
   },
   zh: {
     "tab.speed": "原始速度",
@@ -876,6 +883,13 @@ const STRINGS = {
     "error.prefix": "錯誤：",
     "error.suspect.tip": "疑似基礎設施/驗證錯誤",
     "error.suspect.label": "（{n} 處疑似）",
+    "comp.view.label": "檢視",
+    "comp.view.overview": "總覽",
+    "comp.view.overview.tip": "哪個模型解得掉題,以及每題多快。",
+    "comp.view.scorecard": "可信度",
+    "comp.view.scorecard.tip": "這個數字可不可信 —— 有沒有跑滿考卷,是模型還是 harness。",
+    "comp.view.throughput": "吞吐",
+    "comp.view.throughput.tip": "那個正確率在牆鐘時間與 token 上的代價。",
   },
 }
 

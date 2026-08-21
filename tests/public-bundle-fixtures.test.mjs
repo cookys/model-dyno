@@ -87,7 +87,7 @@ test('PublicBundle projection builds scorecard rows without legacy INDEX fields'
   })
   const rows = projectScorecardRowsFromPublicBundle(bundle)
 
-  assert.deepEqual(PUBLIC_BUNDLE_SCHEMA_VERSIONS, ['public_bundle.v1', 'public_bundle.v2', 'public_bundle.v3', 'public_bundle.v4'])
+  assert.deepEqual(PUBLIC_BUNDLE_SCHEMA_VERSIONS, ['public_bundle.v1', 'public_bundle.v2', 'public_bundle.v3', 'public_bundle.v4', 'public_bundle.v5'])
   assert.equal(bundle.manifest.schema_version, 'public_bundle.v3')
   assert.equal(rows.length, 1)
   assert.equal(rows[0].model, 'dummy')

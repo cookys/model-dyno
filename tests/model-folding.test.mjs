@@ -160,3 +160,36 @@ test('speed efficiency folds by canonical model with speed-first drilldown', () 
   assert.match(view, /scrollIntoView/)
   assert.match(view, /detailFlash/)
 })
+
+
+// llm-playground plan 057: among comparable cells of one model, the representative should be
+// the DEPLOYABLE configuration (role=vendor-settings), not merely the highest scorer.
+test('fold prefers a vendor-settings cell over a higher-scoring sibling', async () => {
+  const { groupByCanonicalModel, chooseBestCompCell } = await loadFoldingModule()
+  const rows = [
+    { cell: 'higher', identity: { canonical_model: 'm' }, comparable: true, acc: 0.88, ci_lo: 0.73, n: 34, tags: { role: 'candidate' } },
+    { cell: 'vendor', identity: { canonical_model: 'm' }, comparable: true, acc: 0.85, ci_lo: 0.70, n: 34, tags: { role: 'vendor-settings' } },
+  ]
+  const groups = groupByCanonicalModel(rows, chooseBestCompCell)
+  assert.equal(groups[0].representative.cell, 'vendor')
+})
+
+test('role preference never promotes an incomparable cell', async () => {
+  const { groupByCanonicalModel, chooseBestCompCell } = await loadFoldingModule()
+  const rows = [
+    { cell: 'vendor-but-partial', identity: { canonical_model: 'm' }, comparable: false, acc: 0.99, ci_lo: 0.90, n: 4, tags: { role: 'vendor-settings' } },
+    { cell: 'plain-full', identity: { canonical_model: 'm' }, comparable: true, acc: 0.50, ci_lo: 0.35, n: 34 },
+  ]
+  const groups = groupByCanonicalModel(rows, chooseBestCompCell)
+  assert.equal(groups[0].representative.cell, 'plain-full')
+})
+
+test('untagged cells fold exactly as before — v4 bundles carry no role', async () => {
+  const { groupByCanonicalModel, chooseBestCompCell } = await loadFoldingModule()
+  const rows = [
+    { cell: 'lower', identity: { canonical_model: 'm' }, comparable: true, acc: 0.60, ci_lo: 0.45, n: 34 },
+    { cell: 'higher', identity: { canonical_model: 'm' }, comparable: true, acc: 0.80, ci_lo: 0.65, n: 34 },
+  ]
+  const groups = groupByCanonicalModel(rows, chooseBestCompCell)
+  assert.equal(groups[0].representative.cell, 'higher')
+})

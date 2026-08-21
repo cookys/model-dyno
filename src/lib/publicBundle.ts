@@ -15,6 +15,11 @@ export const PUBLIC_BUNDLE_SCHEMA_VERSIONS = [
   'public_bundle.v2',
   'public_bundle.v3',
   'public_bundle.v4',
+  // v5 adds scores[].footing.role — the profile's [tags].role, so the board can prefer the
+  // DEPLOYABLE configuration over the highest-scoring one (llm-playground plan 057).
+  // Accepted BEFORE the producer emits it, on purpose: the version string is validated here,
+  // so publishing v5 to a frontend that only knows v4 would break the live board.
+  'public_bundle.v5',
 ] as const
 
 export type PublicBundleSchemaVersion = typeof PUBLIC_BUNDLE_SCHEMA_VERSIONS[number]
@@ -535,9 +540,17 @@ export function projectScorecardRowsFromPublicBundle(
       // placement-only object out of the backend string, so every other tag column
       // rendered empty here while looking populated against a private aggregate — a
       // failure that only shows up on the published site, never in local development.
-      tags: (metadata.tags && Object.keys(metadata.tags).length)
-        ? metadata.tags
-        : (backend ? { placement: backend.includes('local') ? 'local' : 'remote' } : undefined),
+      // v5: footing.role is the profile's [tags].role. It rides in `tags` because that is
+      // where every other config axis already lives, and it is merged rather than replacing
+      // the feed's tags so a v4 bundle (no role) projects exactly as before.
+      tags: (() => {
+        const base: Record<string, string> = (metadata.tags && Object.keys(metadata.tags).length)
+          ? { ...metadata.tags }
+          : (backend ? { placement: backend.includes('local') ? 'local' : 'remote' } : {})
+        const role = stringOrNull(footing.role)
+        if (role) base.role = role
+        return Object.keys(base).length ? base : undefined
+      })(),
       identity: {
         access: subjectAccess(backend),
         canonical_model: stringOrNull(comparisonKey.model) ?? stringOrNull(subject?.model) ?? undefined,

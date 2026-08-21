@@ -36,7 +36,10 @@ test('published PublicBundle snapshot is complete, hashed, and raw-private-data 
     assert.deepEqual(readdirSync(dir).sort(), exactBundleFiles, `${slug} exact file set`)
 
     const manifest = JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8'))
-    assert.match(manifest.schema_version, /^public_bundle\.v[1234]$/)
+    // v5 adds footing.role (llm-playground plan 057). This regex is a SECOND, independent
+    // version guard — updating PUBLIC_BUNDLE_SCHEMA_VERSIONS in src/ does not update it,
+    // and it is the one that fires against real published data rather than a fixture.
+    assert.match(manifest.schema_version, /^public_bundle\.v[12345]$/)
     assert.deepEqual(Object.keys(manifest.file_hashes).sort(), dataFiles)
     for (const file of dataFiles) {
       const text = readFileSync(join(dir, file), 'utf8')

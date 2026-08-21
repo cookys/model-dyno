@@ -54364,6 +54364,31 @@
           "temp": "0",
           "thinking": "off"
         }
+      },
+      {
+        "access_label": "local",
+        "base_url": "./public-bundles/results-qwen3.8-27b-jc-iq4-2080ti-vendor-local-Qwen3.8-27B-Uncensored-IQ4_XS-d59be14704b4/",
+        "current": true,
+        "id": "34t-4885e69a",
+        "label": "Qwen3.8-27B · JonathanColetti",
+        "machine": "itx-5950x",
+        "operator": "自架",
+        "operator_url": "",
+        "owner": "cookys",
+        "publisher": "",
+        "publisher_url": "",
+        "tags": {
+          "draft": "none",
+          "effort": "low",
+          "engine": "llama.cpp",
+          "lineage": "abliterated",
+          "machine": "itx-5950x",
+          "placement": "local",
+          "quant": "IQ4_XS",
+          "role": "candidate",
+          "temp": "1.0",
+          "thinking": "on"
+        }
       }
     ],
     "comparable_min": 31,

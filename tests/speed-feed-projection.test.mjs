@@ -162,15 +162,17 @@ test('itx-5950x 2080 Ti IQ4 vendor cells are on the official feed', () => {
   assert.ok(jcReg, 'JC Uncensored IQ4_XS registry row')
   assert.equal(jcReg.quant, 'IQ4_XS')
   const jcRecipes = snap.run_configs.filter((c) => String(c.config).includes('jc-iq4xs-64k-vendor'))
-  assert.equal(jcRecipes.length, 1, 'JC IQ4 vendor serve recipe')
+  assert.equal(jcRecipes.length, 2, 'JC IQ4 nospec + mtp serve recipes')
   assert.ok(jcRecipes.every((c) => c.model === 'Qwen3.8-27B-Uncensored-IQ4_XS'))
   assert.ok(jcRecipes.every((c) => c.ctx_size === 65536))
   const jcCells = [
     ...snap.bundles.map((b) => b.entry),
     ...feed.bundles,
   ].filter((e) => (e.base_url || '').includes('jc-iq4-2080ti'))
-  assert.ok(jcCells.length >= 1, 'JC IQ4 2080ti SWE cell')
+  const jcSlugs = new Set(jcCells.map((e) => e.base_url))
+  assert.equal(jcSlugs.size, 2, 'JC IQ4 nospec + mtp SWE cells')
   assert.ok(jcCells.every((e) => e.machine === 'itx-5950x'))
   assert.ok(jcCells.every((e) => e.tags && e.tags.lineage === 'abliterated'))
-  assert.ok(jcCells.every((e) => e.tags && e.tags.draft === 'none'))
+  const jcDrafts = new Set(jcCells.map((e) => e.tags && e.tags.draft))
+  assert.deepEqual([...jcDrafts].sort(), ['mtp', 'none'])
 })

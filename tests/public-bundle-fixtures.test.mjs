@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { dirname, join } from 'node:path'
 import test from 'node:test'
 import ts from 'typescript'
 
@@ -30,17 +30,44 @@ function canonicalJson(value) {
   return JSON.stringify(value)
 }
 
+// `node --test` cannot import .ts, so each module is transpiled into a data: URL.
+// A data: URL has no resolver, so a relative import inside the transpiled source
+// would throw ERR_UNSUPPORTED_RESOLVE_REQUEST. Inline the dependency graph instead:
+// each relative specifier is replaced by the data: URL of its own transpiled form.
+// Without this the harness silently constrains production code to be import-free.
+const TS_COMPILER_OPTIONS = {
+  module: ts.ModuleKind.ES2022,
+  target: ts.ScriptTarget.ES2022,
+  importsNotUsedAsValues: ts.ImportsNotUsedAsValues.Remove,
+}
+
+function resolveTsPath(fromDir, specifier) {
+  for (const candidate of [`${specifier}.ts`, `${specifier}.mjs`, `${specifier}/index.ts`, specifier]) {
+    const abs = join(fromDir, candidate)
+    if (existsSync(abs)) return abs
+  }
+  return null
+}
+
+function transpileToDataUrl(absPath, seen = new Map()) {
+  const cached = seen.get(absPath)
+  if (cached) return cached
+  // Placeholder first: a cyclic import would otherwise recurse forever.
+  seen.set(absPath, 'data:text/javascript;base64,')
+  const output = ts
+    .transpileModule(readFileSync(absPath, 'utf8'), { compilerOptions: TS_COMPILER_OPTIONS })
+    .outputText
+    .replace(/(\bfrom\s*)['"](\.\.?\/[^'"]+)['"]/g, (whole, prefix, specifier) => {
+      const dep = resolveTsPath(dirname(absPath), specifier)
+      return dep ? `${prefix}'${transpileToDataUrl(dep, seen)}'` : whole
+    })
+  const url = `data:text/javascript;base64,${Buffer.from(output, 'utf8').toString('base64')}`
+  seen.set(absPath, url)
+  return url
+}
+
 async function importTsModule(relativePath) {
-  const source = readFileSync(join(root, relativePath), 'utf8')
-  const output = ts.transpileModule(source, {
-    compilerOptions: {
-      module: ts.ModuleKind.ES2022,
-      target: ts.ScriptTarget.ES2022,
-      importsNotUsedAsValues: ts.ImportsNotUsedAsValues.Remove,
-    },
-  }).outputText
-  const encoded = Buffer.from(output, 'utf8').toString('base64')
-  return import(`data:text/javascript;base64,${encoded}`)
+  return import(transpileToDataUrl(join(root, relativePath)))
 }
 
 test('checked-in PublicBundle fixtures have exact files and pinned manifest hashes', () => {

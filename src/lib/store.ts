@@ -171,6 +171,8 @@ export interface NormIndex {
   comparable_min?: number
   n_exam?: number
   n_canon?: number
+  /** Graded-task floor below which a cell is TRIVIAL and hidden (see runClass). */
+  display_floor?: number
 }
 
 export interface CompCell {
@@ -245,6 +247,7 @@ export interface CompIndex {
   comparable_min?: number
   n_exam?: number
   n_canon?: number
+  display_floor?: number
 }
 
 export interface DomainCell {
@@ -271,6 +274,8 @@ export interface SweMeta {
   /** plan 053 SSOT: current exam task count (= n_canon / current_exam_n_tasks). */
   n_exam?: number | null
   comparable_min?: number
+  /** Graded-task floor below which a cell is TRIVIAL and hidden (see runClass). */
+  display_floor?: number
   version_aware?: boolean
   exam_versions?: ExamVersionInfo[]
 }

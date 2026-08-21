@@ -1,3 +1,5 @@
+import { classifyCell } from './runClass'
+import { resolveExamMeta } from './examMeta'
 import type {
   CompIndex,
   DomainCell,
@@ -640,6 +642,7 @@ export function projectNormIndexFromScorecardRows(cells: SweCell[], meta: SweMet
     n_exam: currentTaskCount || undefined,
     n_canon: currentTaskCount || undefined,
     comparable_min: comparableMin,
+    display_floor: meta?.display_floor,
   }
 }
 
@@ -651,6 +654,7 @@ export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMet
     n_exam: nExam || undefined,
     n_canon: nExam || undefined,
     comparable_min: comparableMin,
+    display_floor: meta?.display_floor,
     cells: cells.map((cell) => {
       const acc = finiteNumberOrNull(cell.headline) ?? 0
       const ci = cell.headline_ci ?? wilsonCi(cell.n_passed ?? 0, cell.n_graded ?? 0)
@@ -795,6 +799,7 @@ function buildScorecardMeta(
       n_canon: nExam,
       n_exam: nExam,
       comparable_min: comparableMin,
+      display_floor: feedMeta.display_floor,
       version_aware: feedMeta.version_aware ?? true,
       exam_versions: versions,
     }
@@ -836,6 +841,10 @@ function buildScorecardMeta(
     n_canon: nExam,
     n_exam: nExam,
     comparable_min: comparableMin,
+    // Carried on this branch too: a feed without exam_versions still stamped a
+    // floor, and dropping it here would let the meta disagree with the filter
+    // that already ran at the choke point.
+    display_floor: feedMeta?.display_floor,
     version_aware: true,
     exam_versions: versions,
   }
@@ -886,6 +895,7 @@ function normalizeFeedEntries(raw: unknown): NormalizedPublicBundleFeed {
       n_canon: nonNegativeInt(feed.n_canon) ?? nonNegativeInt(feed.n_exam),
       n_exam: nonNegativeInt(feed.n_exam) ?? nonNegativeInt(feed.n_canon) ?? nonNegativeInt(feed.current_exam_n_tasks),
       comparable_min: nonNegativeInt(feed.comparable_min) ?? undefined,
+      display_floor: nonNegativeInt(feed.display_floor) ?? undefined,
       version_aware: boolOrNull(feed.version_aware) ?? true,
       exam_versions: examVersions,
     },
@@ -1049,8 +1059,28 @@ export async function loadPublicBundleDashboardFeed(
     throw new Error(`dashboard snapshot bundle count mismatch: ${loadedBundles.length}/${feed.entries.length}`)
   }
   const taskDomains = normalizeTaskDomains(snapshot.task_domains)
-  const bundles = loadedBundles.map((item) => item.bundle)
-  const cells = loadedBundles.flatMap(({ entry, bundle }) => projectScorecardRowsFromPublicBundle(bundle, entry))
+
+  // Drop TRIVIAL cells once, here, rather than in each view: this is the single
+  // point every downstream projection (scorecard / norm / comp / shared / domain)
+  // reads from, so a run below the display floor is genuinely absent instead of
+  // merely unranked — including from the expanded per-model sub-tables, which
+  // render group members and would otherwise still list the hidden rows.
+  const floorOpts = resolveExamMeta(feed.meta)
+  const kept = loadedBundles
+    .map(({ entry, bundle }) => ({
+      bundle,
+      rows: projectScorecardRowsFromPublicBundle(bundle, entry).filter(
+        (c) =>
+          classifyCell(
+            { n_graded: c.n_graded, comparable: c.comparable, owed: c.owed, n_exam: c.n_canon ?? c.n_exam, n_canon: c.n_canon },
+            floorOpts,
+          ).coverage !== 'TRIVIAL',
+      ),
+    }))
+    .filter((item) => item.rows.length > 0)
+
+  const bundles = kept.map((item) => item.bundle)
+  const cells = kept.flatMap((item) => item.rows)
   const meta = buildScorecardMeta(cells, bundles, feed.current, feed.meta)
   return {
     cells,

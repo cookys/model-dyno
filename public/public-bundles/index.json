@@ -197,6 +197,33 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-jc-iq4-2080ti-vendor-mtp-local-Qwen3.8-27B-Uncensored-IQ4_XS-1d2f51a4e1f7/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · JonathanColetti",
+      "machine": "itx-5950x",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "3",
+        "draft_packaging": "embedded",
+        "effort": "low",
+        "engine": "llama.cpp",
+        "lineage": "abliterated",
+        "machine": "itx-5950x",
+        "placement": "local",
+        "quant": "IQ4_XS",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-94d691a821b6/",
       "current": true,
@@ -454,6 +481,31 @@
         "effort": "low",
         "engine": "llama.cpp",
         "lineage": "base",
+        "machine": "itx-5950x",
+        "placement": "local",
+        "quant": "IQ4_XS",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-jc-iq4-2080ti-vendor-local-Qwen3.8-27B-Uncensored-IQ4_XS-d59be14704b4/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · JonathanColetti",
+      "machine": "itx-5950x",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "effort": "low",
+        "engine": "llama.cpp",
+        "lineage": "abliterated",
         "machine": "itx-5950x",
         "placement": "local",
         "quant": "IQ4_XS",
@@ -3225,62 +3277,10 @@
         "temp": "0",
         "thinking": "off"
       }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-jc-iq4-2080ti-vendor-local-Qwen3.8-27B-Uncensored-IQ4_XS-d59be14704b4/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "Qwen3.8-27B · JonathanColetti",
-      "machine": "itx-5950x",
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "draft": "none",
-        "effort": "low",
-        "engine": "llama.cpp",
-        "lineage": "abliterated",
-        "machine": "itx-5950x",
-        "placement": "local",
-        "quant": "IQ4_XS",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-jc-iq4-2080ti-vendor-mtp-local-Qwen3.8-27B-Uncensored-IQ4_XS-1d2f51a4e1f7/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "Qwen3.8-27B · JonathanColetti",
-      "machine": "itx-5950x",
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "draft": "mtp",
-        "draft_n": "3",
-        "draft_packaging": "embedded",
-        "effort": "low",
-        "engine": "llama.cpp",
-        "lineage": "abliterated",
-        "machine": "itx-5950x",
-        "placement": "local",
-        "quant": "IQ4_XS",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "on"
-      }
     }
   ],
   "comparable_min": 31,
-  "content_digest": "177351cc3e12bcb11c5f76de7e3a92b277108c55b2e8072724a6955f6c891830",
+  "content_digest": "7efcacf26e7f0002960a2697d6eaf61a66ee3abd2b7537b9d834a7e92c17580c",
   "current_exam": "34t-4885e69a",
   "current_exam_label": "cookys-frontier v1.1",
   "current_exam_n_tasks": 34,
@@ -3306,7 +3306,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-22T10:29:51Z",
+  "generated_at": "2026-08-22T14:12:44Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

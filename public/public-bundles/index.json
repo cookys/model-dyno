@@ -224,6 +224,59 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-vendor-local-edp1096-abliterated-NVFP4-b8ff26ec09a0/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · huihui",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-dflash2-vendor-local-edp1096-abliterated-NVFP4-fc7fe43c4fdf/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · huihui",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "8",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-94d691a821b6/",
       "current": true,
@@ -750,6 +803,32 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-mtp-vendor-local-edp1096-abliterated-NVFP4-deb192e6946a/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · huihui",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "6",
+        "draft_packaging": "embedded",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-5-916a75a23211/",
       "current": true,
@@ -967,6 +1046,32 @@
         "temp": "1.0",
         "thinking": "on",
         "variant": "trimfloor045"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-nospec-dflash2img-local-Qwen3.8-27B-NVFP4-9f53abb00bf2/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
       }
     },
     {
@@ -1552,6 +1657,33 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-dflash2-local-Qwen3.8-27B-NVFP4-db045806c24a/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "8",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-kimi-k2.6-4968b92011ab/",
       "current": true,
@@ -1810,6 +1942,32 @@
         "role": "ab-leg",
         "temp": "0",
         "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-ablit-huihui-nvfp4-vendor-local-Huihui-Qwen3.8-27B-abliterated-NVFP4-381c87d0f75e/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · huihui",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
       }
     },
     {
@@ -3280,7 +3438,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "7efcacf26e7f0002960a2697d6eaf61a66ee3abd2b7537b9d834a7e92c17580c",
+  "content_digest": "5f5a3f3caaaf304a00af377fdcd29b867397e2a6b3396c6b16f1e4d23b507620",
   "current_exam": "34t-4885e69a",
   "current_exam_label": "cookys-frontier v1.1",
   "current_exam_n_tasks": 34,
@@ -3306,7 +3464,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-22T14:12:44Z",
+  "generated_at": "2026-08-23T19:05:20Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

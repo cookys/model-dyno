@@ -64,6 +64,22 @@
     },
     {
       "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.5-low-81cb19543ff2/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "grok-4.5 · Grok",
+      "machine": "?",
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Grok",
       "base_url": "./public-bundles/grok-4.6-9a6574cf6e40/",
       "current": true,
       "id": "34t-4885e69a",
@@ -224,59 +240,6 @@
       }
     },
     {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-vendor-local-edp1096-abliterated-NVFP4-b8ff26ec09a0/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "Qwen3.8-27B · huihui",
-      "machine": "cookys-cuda",
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "draft": "none",
-        "draft_n": "n/a",
-        "draft_packaging": "n/a",
-        "effort": "low",
-        "engine": "sglang",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "vendor-settings",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-dflash2-vendor-local-edp1096-abliterated-NVFP4-fc7fe43c4fdf/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "Qwen3.8-27B · huihui",
-      "machine": "cookys-cuda",
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "draft": "dflash2",
-        "draft_n": "8",
-        "draft_packaging": "sidecar",
-        "draft_quant": "BF16",
-        "effort": "low",
-        "engine": "sglang",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "vendor-settings",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-94d691a821b6/",
       "current": true,
@@ -320,22 +283,6 @@
       "owner": "?",
       "publisher": "",
       "publisher_url": "",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-4.5-d6d1000f0f9d/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "grok-4.5 · Grok",
-      "machine": "?",
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
-      "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -404,6 +351,28 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-ablit-huihui-udq4xl-thinkon-local-Huihui-Qwen3.8-27B-abliter-ba3f2fa351aff47f-c3c743d28660/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · huihui",
+      "machine": "cookys-gentoo",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "engine": "llama.cpp",
+        "lineage": "abliterated",
+        "placement": "local",
+        "quant": "UD-Q4_K_XL",
+        "role": "ab-leg",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-4.6-ffb95c6434ff/",
       "current": true,
@@ -457,6 +426,22 @@
       "current": true,
       "id": "34t-4885e69a",
       "label": "gemini-3.7-flash-high · Direct",
+      "machine": "?",
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.7-flash-low-73195cf8f04f/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "gemini-3.7-flash-low · Direct",
       "machine": "?",
       "operator": "Google",
       "operator_url": "https://ai.google.dev/gemini-api/docs/models",
@@ -568,6 +553,32 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-nospec-dflash2img-local-Qwen3.8-27B-NVFP4-9f53abb00bf2/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-5-578dd1324db4/",
       "current": true,
@@ -579,6 +590,22 @@
       "owner": "?",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.7-flash-medium-e6474456eea3/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "gemini-3.7-flash-medium · Direct",
+      "machine": "?",
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
         "engine": "n/a"
       }
@@ -748,6 +775,33 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-dflash2-vendor-local-edp1096-abliterated-NVFP4-fc7fe43c4fdf/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · huihui",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "8",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-fable-5-bd7af1f86a7b/",
       "current": true,
@@ -818,6 +872,32 @@
         "draft": "mtp",
         "draft_n": "6",
         "draft_packaging": "embedded",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sksmile-vendor-nospec-local-sakamakismile-Qwen3.8-27B-MTP-NVFP4-fa49baf07b69/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
         "effort": "low",
         "engine": "sglang",
         "lineage": "base",
@@ -1046,32 +1126,6 @@
         "temp": "1.0",
         "thinking": "on",
         "variant": "trimfloor045"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-nospec-dflash2img-local-Qwen3.8-27B-NVFP4-9f53abb00bf2/",
-      "current": true,
-      "id": "34t-4885e69a",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "none",
-        "draft_n": "n/a",
-        "draft_packaging": "n/a",
-        "effort": "low",
-        "engine": "sglang",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "vendor-settings",
-        "temp": "1.0",
-        "thinking": "on"
       }
     },
     {
@@ -1328,6 +1382,32 @@
         "quant": "NVFP4",
         "role": "ab-leg",
         "temp": "0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-vendor-local-edp1096-abliterated-NVFP4-b8ff26ec09a0/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "Qwen3.8-27B · huihui",
+      "machine": "cookys-cuda",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
         "thinking": "on"
       }
     },
@@ -3435,10 +3515,26 @@
         "temp": "0",
         "thinking": "off"
       }
+    },
+    {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.5-d6d1000f0f9d/",
+      "current": true,
+      "id": "34t-4885e69a",
+      "label": "grok-4.5 · Grok",
+      "machine": "?",
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
     }
   ],
   "comparable_min": 31,
-  "content_digest": "5f5a3f3caaaf304a00af377fdcd29b867397e2a6b3396c6b16f1e4d23b507620",
+  "content_digest": "509ef952065d6841bb7f0f008c77fc7d88a916929a4fbcbe9eb051bbc6fc523d",
   "current_exam": "34t-4885e69a",
   "current_exam_label": "cookys-frontier v1.1",
   "current_exam_n_tasks": 34,
@@ -3464,7 +3560,7 @@
       "version": "34t-4885e69a"
     }
   ],
-  "generated_at": "2026-08-23T19:05:20Z",
+  "generated_at": "2026-08-24T22:07:22Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

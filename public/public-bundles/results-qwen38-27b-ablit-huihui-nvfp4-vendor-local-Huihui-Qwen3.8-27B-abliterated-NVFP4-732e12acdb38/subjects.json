@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen38-27b-ablit-huihui-nvfp4-vendor-local-Huihui-Qwen3.8-27B-abliterated-NVFP4-732e12acdb38","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@6","model":"huihui-3.8-27b","policy":"dashboard-public-feed","subject_digest":"7d272896c63ce2eb025acb8584121985fa683abe79ae7045bb6e15ebde97ff62"}]

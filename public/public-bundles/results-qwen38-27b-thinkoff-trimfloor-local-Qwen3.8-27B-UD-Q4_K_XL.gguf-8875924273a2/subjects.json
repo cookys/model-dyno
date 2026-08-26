@@ -1,1 +1,0 @@
-[{"backend":"local","display_slug":"results-qwen38-27b-thinkoff-trimfloor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-8875924273a2","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@6+trimfloor045","model":"qwen3.8-27b","policy":"dashboard-public-feed","subject_digest":"b0e8cd4c09b07908f8ea70846095a4002b7433115293aee6cb768619c1fd3d0a"}]

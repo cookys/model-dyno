@@ -1,1 +1,0 @@
-[{"backend":"direct-api","display_slug":"results-gemini-35-flash-lite-direct-gemini-3.5-flash-lite-a4585fae0d0d","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@5","model":"gemini-3.5-flash-lite","policy":"dashboard-public-feed","subject_digest":"6fdb6e826a9e8512b96255cffb2dc364b1ec252b77856b6e6b25a16501f1bb47"}]

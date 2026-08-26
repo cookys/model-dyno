@@ -1,1 +1,0 @@
-[{"backend":"local","display_slug":"results-qwen38-27b-ablit-jc-thinkon-local-Qwen3.8-27B-Uncensored-Q4_K_M.gguf-0c07b323711b","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@6","model":"jc-3.8-27b","policy":"dashboard-public-feed","subject_digest":"42ac0b2c40b5fb1c51730f2878c1cf89f6e68251547a3dc04160880a0eb3fbc8"}]

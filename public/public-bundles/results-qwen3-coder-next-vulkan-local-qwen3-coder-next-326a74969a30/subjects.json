@@ -1,1 +1,0 @@
-[{"backend":"local","display_slug":"results-qwen3-coder-next-vulkan-local-qwen3-coder-next-326a74969a30","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"qwen3-coder-next","policy":"dashboard-public-feed","subject_digest":"53ee6c058eadc8c1663d020443524ab1e2cad1278e0393bd847032c61d67ecac"}]

@@ -1,1 +1,0 @@
-[{"backend":"local","display_slug":"results-qwen3.8-27b-q4km-unsloth-mtp-n2-local-Qwen3.8-27B-Q4_K_M-unsloth-5e0a00db4ba1","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@6","model":"qwen3.8-27b","policy":"dashboard-public-feed","subject_digest":"59e0bfc7c8a2044c74b387d5de2a51e9b64efb151ff027a08f05370d8ad3815f"}]

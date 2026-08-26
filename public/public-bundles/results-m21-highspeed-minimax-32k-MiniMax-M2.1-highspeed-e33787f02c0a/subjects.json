@@ -1,1 +1,0 @@
-[{"backend":"direct-api","display_slug":"results-m21-highspeed-minimax-32k-MiniMax-M2.1-highspeed-e33787f02c0a","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@4","model":"minimax-m2.1-highspeed","policy":"dashboard-public-feed","subject_digest":"cd1921e77cae1eae9f9d3097099d5c1fb3ee5f1f93a5f4fe6ee1e980c7f3d228"}]

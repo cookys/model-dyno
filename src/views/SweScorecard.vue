@@ -310,6 +310,22 @@ const cols = computed<Column<any>[]>(() => [
           title,
         ))
       }
+      // plan 060 T1c: same-condition rerun count. A single run's headline is a sample
+      // (this fleet measured 15-24% task-flip on unchanged configs); when more samples
+      // exist, say so and show the spread instead of letting one number look exact.
+      const nRuns = r.__record.n_runs
+      if (typeof nRuns === 'number' && nRuns > 1) {
+        const range = r.__record.headline_range
+        const rangeText = Array.isArray(range)
+          ? `${Math.round(range[0] * 100)}–${Math.round(range[1] * 100)}%`
+          : '—'
+        const tip = t('tip.nRuns').replace('{n}', String(nRuns)).replace('{range}', rangeText)
+        kids.push(h('span', {
+          class: 'text-[10px] text-muted-foreground font-mono border border-border rounded-full px-1.5 py-0.5',
+          title: tip,
+          'aria-label': tip,
+        }, `×${nRuns}`))
+      }
       return h('span', { class: 'inline-flex min-w-0 flex-wrap items-center justify-end gap-x-1 gap-y-1' }, kids)
     }
   },

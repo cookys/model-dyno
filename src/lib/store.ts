@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
 import { loadPublicBundleDashboardFeed } from './publicBundle'
-import type { SpecDecodeFinding, MachineHardware, ModelFootprint, RunConfig } from './publicBundle'
+import type { SpecDecodeFinding, MachineHardware, ModelFootprint, RunConfig, PublicFinding, DepthFinding } from './publicBundle'
 
 export interface ExamVersionInfo {
   version: string
@@ -107,6 +107,12 @@ export interface SweCell {
   }
   // agency / no-op credibility dim — is a low score the model, env, or tools?
   agency?: AgencyBlock
+  // plan 060: cap-gate detail (renders the cap dim in the credibility badge) +
+  // run-to-run sample count/range — a single run's headline is a sample, not a constant.
+  trunc_pct?: number
+  maxstep_pct?: number
+  n_runs?: number
+  headline_range?: [number, number]
 }
 
 export interface SharedSweCell {
@@ -236,6 +242,8 @@ export interface CompCell {
   // agency / no-op credibility — is a low score the model, the env, or the tools? (same shape
   // the SWE scorecard renders; emitted by competitiveness.py via footing.agency_block)
   agency?: AgencyBlock
+  n_runs?: number
+  headline_range?: [number, number]
   owed?: number | null
   n_exam?: number | null
   n_canon?: number | null
@@ -358,6 +366,11 @@ export const specDecodeFindings = ref<SpecDecodeFinding[]>([])
 export const machines = ref<MachineHardware[]>([])
 export const modelFootprints = ref<ModelFootprint[]>([])
 export const runConfigs = ref<RunConfig[]>([])
+// plan 060: evidence-backed findings + depth-dependent speed rows (producer-owned TOMLs).
+export const publicFindings = ref<PublicFinding[]>([])
+export const depthFindings = ref<DepthFinding[]>([])
+export const dashboardFindings = computed<PublicFinding[]>(() => publicFindings.value)
+export const dashboardDepthFindings = computed<DepthFinding[]>(() => depthFindings.value)
 export const dashboardSpecDecodeFindings = computed<SpecDecodeFinding[]>(() => specDecodeFindings.value)
 export const scorecardSweCells = computed<SweCell[]>(() => publicBundleSweCells.value)
 export const scorecardSweMeta = computed<SweMeta | null>(() => publicBundleSweMeta.value)
@@ -482,6 +495,8 @@ export async function loadAllData() {
       speedRecords.value = publicDashboard.records
     }
     specDecodeFindings.value = publicDashboard.specDecodeFindings
+    publicFindings.value = publicDashboard.findings
+    depthFindings.value = publicDashboard.depthFindings
     machines.value = publicDashboard.machines
     modelFootprints.value = publicDashboard.modelFootprints
     runConfigs.value = publicDashboard.runConfigs

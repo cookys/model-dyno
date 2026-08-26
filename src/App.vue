@@ -52,13 +52,16 @@ const activeTopTab = computed(() => {
   if (EXAM_ROUTES.has(route.path)) return 'swe'
   if (route.path.startsWith('/speed')) return 'speed'
   if (route.path.startsWith('/swe')) return 'swe'
+  if (route.path.startsWith('/findings')) return 'findings'
   return null
 })
 
 // Navigation helpers
-const navigateToTopTab = (tab: 'speed' | 'swe') => {
+const navigateToTopTab = (tab: 'speed' | 'swe' | 'findings') => {
   if (tab === 'speed') {
     router.push('/speed/heatmap')
+  } else if (tab === 'findings') {
+    router.push('/findings')
   } else {
     // The comparability board, not the shared-workspace one: it is the only view that
     // answers both decisions a reader arrives with — does this model solve the tasks,
@@ -103,6 +106,8 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
     } else if (route.path === '/swe/by-domain') {
       list.push({ label: t('subtab.swe.byDomain') })
     }
+  } else if (route.path === '/findings') {
+    list.push({ label: t('tab.findings') })
   } else if (route.name === 'ModelDetail') {
     list.push({ label: t('crumb.model') }, { label: String(route.params.alias) })
   } else if (route.name === 'OwnerDetail') {
@@ -269,6 +274,18 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
                 @click="navigateToTopTab('swe')"
               >
               {{ t('tab.swe') }}
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 border-b-2 font-semibold text-sm transition-all relative cursor-pointer"
+                :class="[
+                activeTopTab === 'findings'
+                  ? 'border-brand text-brand font-bold bg-brand/10 dark:bg-brand/20'
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/50'
+              ]"
+                @click="navigateToTopTab('findings')"
+              >
+              {{ t('tab.findings') }}
             </button>
           </div>
 

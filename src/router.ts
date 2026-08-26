@@ -13,6 +13,7 @@ const SweByDomain = () => import('@/views/SweByDomain.vue')
 const SweExamHistory = () => import('@/views/ExamHistory.vue')
 const ModelDetail = () => import('@/views/ModelDetail.vue')
 const OwnerDetail = () => import('@/views/OwnerDetail.vue')
+const Findings = () => import('@/views/Findings.vue')
 
 const routes = [
   // The front door is the board that answers what a reader came for: which model solves
@@ -32,6 +33,7 @@ const routes = [
   { path: '/swe/scorecard', name: 'SweScorecard', component: SweScorecard },
   { path: '/swe/by-domain', name: 'SweByDomain', component: SweByDomain },
   { path: '/swe/exam-history', name: 'SweExamHistory', component: SweExamHistory },
+  { path: '/findings', name: 'Findings', component: Findings },
   { path: '/model/:alias', name: 'ModelDetail', component: ModelDetail, props: true },
   { path: '/owner/:id', name: 'OwnerDetail', component: OwnerDetail, props: true },
   { path: '/:pathMatch(.*)*', redirect: '/swe/comp' }

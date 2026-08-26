@@ -51,6 +51,16 @@ export interface PublicBundle {
   scores: JsonObject[]
 }
 
+/** plan 060 T1a: the three score-credibility gates, published per cell by the producer
+ *  (single source: the same footing math the private boards read). */
+export interface PublicGates {
+  verdict?: string
+  infra_pct?: number
+  trunc_pct?: number
+  maxstep_pct?: number
+  noop_pct?: number
+}
+
 export interface PublicBundleFeedEntry {
   id?: string
   base_url: string
@@ -62,6 +72,9 @@ export interface PublicBundleFeedEntry {
   publisher?: string
   operator?: string
   access_label?: string
+  gates?: PublicGates
+  n_runs?: number
+  headline_range?: [number, number]
 }
 
 export interface PublicBundleScorecardProjection {
@@ -124,10 +137,41 @@ export interface RunConfig {
   [k: string]: unknown
 }
 
+export interface PublicFinding {
+  id: string
+  title_en: string
+  title_zh: string
+  claim_en: string
+  claim_zh: string
+  measured_en: string
+  measured_zh: string
+  conditions: string
+  evidence: { metric: string; value: string; detail?: string }[]
+  repro_en: string
+  caveat_en: string
+  date: string
+  source: string
+}
+
+export interface DepthFinding {
+  machine: string
+  config: string
+  metric: string
+  context: number
+  concurrency: number
+  state: string
+  value: number
+  note: string
+  date: string
+  source: string
+}
+
 export interface PublicBundleDashboardProjection extends PublicBundleScorecardProjection {
   generatedAt: string | null
   records: SpeedRecord[]
   specDecodeFindings: SpecDecodeFinding[]
+  findings: PublicFinding[]
+  depthFindings: DepthFinding[]
   machines: MachineHardware[]
   modelFootprints: ModelFootprint[]
   runConfigs: RunConfig[]
@@ -144,6 +188,9 @@ interface PublicBundleProjectionMetadata {
   publisher?: string
   operator?: string
   access_label?: string
+  gates?: PublicGates
+  n_runs?: number
+  headline_range?: [number, number]
 }
 
 interface NormalizedPublicBundleFeed {
@@ -286,6 +333,21 @@ function subjectProfile(subject: JsonObject | undefined, comparisonKey: JsonObje
   return stringOrNull(subject?.display_slug)
     ?? stringOrNull(comparisonKey.policy)
     ?? undefined
+}
+
+/** Map the producer's gates onto the AgencyBlock shape the existing agencyBadge renders.
+ *  budget_pct = max(trunc, maxstep), matching credibilityDims' fallback chain. */
+function gatesToAgency(gates: PublicGates | undefined): Record<string, unknown> | undefined {
+  if (!gates || typeof gates.verdict !== 'string') return undefined
+  const trunc = finiteNumberOrNull(gates.trunc_pct)
+  const maxstep = finiteNumberOrNull(gates.maxstep_pct)
+  const budget = trunc === null && maxstep === null ? null : Math.max(trunc ?? 0, maxstep ?? 0)
+  return {
+    verdict: gates.verdict,
+    noop_pct: finiteNumberOrNull(gates.noop_pct),
+    infra_pct: finiteNumberOrNull(gates.infra_pct),
+    budget_pct: budget,
+  }
 }
 
 function subjectAccess(backend: string | null): string | undefined {
@@ -553,6 +615,13 @@ export function projectScorecardRowsFromPublicBundle(
         if (role) base.role = role
         return Object.keys(base).length ? base : undefined
       })(),
+      // plan 060 T1a/T1c: gates ride the feed entry; project them into the agency slot the
+      // existing badge already renders, plus the cap-detail and rerun-sample fields.
+      agency: gatesToAgency(metadata.gates) as SweCell['agency'],
+      trunc_pct: finiteNumberOrNull(metadata.gates?.trunc_pct) ?? undefined,
+      maxstep_pct: finiteNumberOrNull(metadata.gates?.maxstep_pct) ?? undefined,
+      n_runs: metadata.n_runs,
+      headline_range: metadata.headline_range,
       identity: {
         access: subjectAccess(backend),
         canonical_model: stringOrNull(comparisonKey.model) ?? stringOrNull(subject?.model) ?? undefined,
@@ -700,6 +769,10 @@ export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMet
         suspect_error_count: cell.suspect_error_count,
         suspect_error_rate: cell.suspect_error_rate,
         agency: cell.agency,
+        trunc_pct: cell.trunc_pct,
+        maxstep_pct: cell.maxstep_pct,
+        n_runs: cell.n_runs,
+        headline_range: cell.headline_range,
       }
     }),
   }
@@ -919,6 +992,12 @@ function normalizeFeedEntry(raw: unknown): PublicBundleFeedEntry | null {
     publisher: stringOrNull(entry.publisher) ?? undefined,
     operator: stringOrNull(entry.operator) ?? undefined,
     access_label: stringOrNull(entry.access_label) ?? undefined,
+    gates: isObject(entry.gates) ? (entry.gates as PublicGates) : undefined,
+    n_runs: nonNegativeInt(entry.n_runs) ?? undefined,
+    headline_range: (Array.isArray(entry.headline_range) && entry.headline_range.length === 2
+      && entry.headline_range.every((v) => typeof v === 'number' && Number.isFinite(v)))
+      ? (entry.headline_range as [number, number])
+      : undefined,
   }
 }
 
@@ -971,6 +1050,53 @@ function projectModelFootprints(raw: unknown): ModelFootprint[] {
     .filter((m) => m.alias)
 }
 
+function projectPublicFindings(raw: unknown): PublicFinding[] {
+  if (!Array.isArray(raw)) return []
+  return raw
+    .filter((f): f is Record<string, unknown> => !!f && typeof f === 'object')
+    .map((f) => ({
+      id: String(f.id ?? ''),
+      title_en: String(f.title_en ?? ''),
+      title_zh: String(f.title_zh ?? ''),
+      claim_en: String(f.claim_en ?? ''),
+      claim_zh: String(f.claim_zh ?? ''),
+      measured_en: String(f.measured_en ?? ''),
+      measured_zh: String(f.measured_zh ?? ''),
+      conditions: String(f.conditions ?? ''),
+      evidence: Array.isArray(f.evidence)
+        ? f.evidence.filter(isObject).map((e) => ({
+            metric: String(e.metric ?? ''),
+            value: String(e.value ?? ''),
+            detail: e.detail ? String(e.detail) : undefined,
+          }))
+        : [],
+      repro_en: String(f.repro_en ?? ''),
+      caveat_en: String(f.caveat_en ?? ''),
+      date: String(f.date ?? ''),
+      source: String(f.source ?? ''),
+    }))
+    .filter((f) => f.id && f.title_en)
+}
+
+function projectDepthFindings(raw: unknown): DepthFinding[] {
+  if (!Array.isArray(raw)) return []
+  return raw
+    .filter((f): f is Record<string, unknown> => !!f && typeof f === 'object')
+    .map((f) => ({
+      machine: String(f.machine ?? ''),
+      config: String(f.config ?? ''),
+      metric: String(f.metric ?? ''),
+      context: typeof f.context === 'number' ? f.context : 0,
+      concurrency: typeof f.concurrency === 'number' ? f.concurrency : 1,
+      state: String(f.state ?? 'n/a'),
+      value: typeof f.value === 'number' ? f.value : NaN,
+      note: String(f.note ?? ''),
+      date: String(f.date ?? ''),
+      source: String(f.source ?? ''),
+    }))
+    .filter((f) => f.machine && Number.isFinite(f.value))
+}
+
 function projectSpecDecodeFindings(raw: unknown): SpecDecodeFinding[] {
   if (!Array.isArray(raw)) return []
   return raw
@@ -1003,6 +1129,8 @@ export async function loadPublicBundleDashboardFeed(
         generatedAt: null,
         records: [],
         specDecodeFindings: [],
+        findings: [],
+        depthFindings: [],
         machines: [],
         modelFootprints: [],
         runConfigs: [],
@@ -1028,6 +1156,8 @@ export async function loadPublicBundleDashboardFeed(
       generatedAt: feed.generatedAt,
       records: [],
       specDecodeFindings: [],
+      findings: [],
+      depthFindings: [],
       machines: [],
       modelFootprints: [],
       runConfigs: [],
@@ -1089,6 +1219,8 @@ export async function loadPublicBundleDashboardFeed(
     generatedAt: feed.generatedAt,
     records: projectSpeedRecords(snapshot.speed_records),
     specDecodeFindings: projectSpecDecodeFindings(snapshot.spec_decode_findings),
+    findings: projectPublicFindings(snapshot.findings),
+    depthFindings: projectDepthFindings(snapshot.depth_findings),
     machines: projectMachines(snapshot.machines),
     modelFootprints: projectModelFootprints(snapshot.model_registry),
     runConfigs: Array.isArray(snapshot.run_configs)

@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-ornith-1.5-35b-a3b-rocmfp4-256k-vendor-local-Ornith-1.5-35B-A3B-ROCmFP4-98807629a856","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@6","model":"ornith-1.5-35b-a3b","policy":"dashboard-public-feed","subject_digest":"6e36cdc4acfc10ebfca9e9c2346c4293d12edd109604e585e1b95f87d7afbeb2"}]

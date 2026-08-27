@@ -3013,7 +3013,7 @@
       "base_url": "./public-bundles/results-gemini-35-flash-lite-direct-gemini-3.5-flash-lite-e10396502920/",
       "current": true,
       "gates": {
-        "infra_pct": 3.0,
+        "infra_pct": 0.0,
         "maxstep_pct": 0.0,
         "noop_pct": 0.0,
         "trunc_pct": 3.0,
@@ -4017,6 +4017,37 @@
     },
     {
       "access_label": "local",
+      "base_url": "./public-bundles/results-ornith-1.5-35b-a3b-rocmfp4-256k-vendor-local-Ornith-1.5-35B-A3B-ROCmFP4-98807629a856/",
+      "current": true,
+      "gates": {
+        "infra_pct": 14.3,
+        "maxstep_pct": 7.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 29.0,
+        "verdict": "INFRA"
+      },
+      "id": "34t-559c010f",
+      "label": "ornith-1.5-35b-a3b-rocmfp4-256k-vendor",
+      "machine": "cookys-aimax395",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_0_ROCMFP4_STRIX_LEAN",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-gemma-4-12b-fixed-local-gemma-4-12b-it-Q4_K_M.gguf-a3188e794aed/",
       "current": true,
       "gates": {
@@ -4230,6 +4261,37 @@
         "role": "candidate",
         "temp": "1.0",
         "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-ornith-1.5-35b-a3b-rocmfp4-256k-vendor-think8k-local-Ornith-1.5-35B-A3B-ROCmFP4-d4221626cca1/",
+      "current": true,
+      "gates": {
+        "infra_pct": 6.1,
+        "maxstep_pct": 9.0,
+        "noop_pct": 21.0,
+        "trunc_pct": 27.0,
+        "verdict": "CAPPED"
+      },
+      "id": "34t-559c010f",
+      "label": "ornith-1.5-35b-a3b-rocmfp4-256k-vendor-think8k",
+      "machine": "cookys-aimax395",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_0_ROCMFP4_STRIX_LEAN",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
       }
     },
     {
@@ -4978,7 +5040,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "bf113effb553ced00ddfe729140150cb872331f42c5f12b024277e6705dbe223",
+  "content_digest": "6f191841db7ac2433b6ee0629d39220d4292c4a5220901da77d984abfcbdeccf",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -5013,7 +5075,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-08-26T10:31:34Z",
+  "generated_at": "2026-08-27T20:41:02Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

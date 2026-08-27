@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, nextTick, onUnmounted, watch, h } from 'vue'
+import { ref, computed, nextTick, onUnmounted, watch } from 'vue'
 import vegaEmbed from 'vega-embed'
 import { useI18n } from '@/lib/i18n'
 import { dashboardSpeedComp, speedLoading as loading } from '@/lib/store'
@@ -8,18 +8,10 @@ import { isDark, chartTheme } from '@/lib/theme'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { num } from '@/components/CellHelpers'
 import { groupByCanonicalModel, recordCanonicalModel } from '@/lib/modelFolding'
-import type { ChooseBest } from '@/lib/modelFolding'
-import { useFoldSort, type FoldColumn } from '@/lib/foldSort'
-import { sortAwareChooser } from '@/lib/foldRepresentative'
-import FoldSortHeader from '@/components/FoldSortHeader.vue'
-import DataTable from '@/components/DataTable.vue'
-import type { Column } from '@/components/DataTable.vue'
-import { foldedRoutesBadge } from '@/components/CellHelpers'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
 import { resolveExamMeta } from '@/lib/examMeta'
 import { primarySolveSecOf, primarySolvedPerHourOf, examCostSecOf } from '@/lib/speedMetrics'
 import { useBoardFilter } from '@/lib/useBoardFilter'
-import { publishersOf } from '@/lib/modelFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
 
 const { t } = useI18n()
@@ -70,77 +62,19 @@ const eligibleCells = computed(() =>
   (dashboardSpeedComp.value?.cells || []).filter((c) => primarySolvedPerHourOf(c) !== null && !c.frozen)
 )
 
-/** Vendors present as a registry `publisher`. The chart's `vendor` field falls back to
- * operator/local/harness for rows the registry deliberately leaves publisher-less (local
- * abliterations/merges — never guess a vendor); those buckets are not offered, since a
- * filter on them would empty the board rather than narrow it.
- *
- * This is an explicit control rather than a click on the colour legend: Vega-Lite legends
- * are non-interactive unless a selection is bound to them, so a legend click never reaches
- * the view's click handler (verified in-browser on the live site — label and swatch both
- * dead). It is also simply easier to find. */
-const vendorOptions = computed(() => publishersOf(eligibleCells.value))
-const activeVendor = computed(() =>
-  boardFilter.active.value?.kind === 'publisher' ? boardFilter.active.value.value : null
+/** Vendors actually present as a registry `publisher`. The chart's `vendor` field falls
+ * back to operator/local/harness for rows the registry deliberately leaves publisher-less
+ * (local abliterations/merges — never guess a vendor), and those buckets are NOT
+ * filterable: clicking one would empty the board rather than narrow it. */
+const knownPublishers = computed(
+  () => new Set(eligibleCells.value.map((c) => c.publisher).filter((p): p is string => !!p && !!p.trim()))
 )
-
-// Which column the reader is ranking by. A folded row shows ONE route out of several,
-// so a representative picked by a fixed rule contradicts the sort the moment the reader
-// asks a different question: ranking by pass rate while the cover row is the group's
-// FASTEST route means the number on screen is not the number being ranked. The cover
-// follows the active sort instead.
-const sortKey = ref<string | null>('perHour')
-const sortDir = ref<'asc' | 'desc'>('desc')
-const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
-  sortKey.value = payload.key
-  sortDir.value = payload.dir
-}
-
-/** The active column's value for a cell, or null when that column cannot rank cells. */
-const activeSortValue = (c: CompCell): number | string | null => {
-  switch (sortKey.value) {
-    case 'perHour': return primarySolvedPerHourOf(c)
-    case 'sec': return primarySolveSecOf(c)
-    case 'secAll': return examCostSecOf(c)
-    case 'acc': return num(c.acc)
-    case 'n': return num(c.n)
-    case 'vendor': return c.publisher || c.operator || ''
-    case 'machine': return c.machine || ''
-    default: return null
-  }
-}
-
-// Comparability first, then the active column, then the board's fastest-route rule.
-const chooseBySort: ChooseBest<CompCell> = sortAwareChooser<CompCell>({
-  activeValue: activeSortValue,
-  direction: () => sortDir.value,
-  rankFirst: (c) => comparableRank(c),
-  fallback: chooseFastestEfficiencyCell,
-})
-
-// Ordering inside an expanded fold. Same rule as /speed/cloud's fold: every column
-// sorts, numeric columns open descending, and a missing value sinks in BOTH directions
-// so flipping an arrow never promotes an unmeasured route.
-const foldCols = computed<FoldColumn[]>(() => [
-  { key: 'thinking', label: t('tag.thinking'), sortVal: (r) => r.tags.thinking },
-  { key: 'effort', label: t('tag.effort'), sortVal: (r) => r.tags.effort },
-  { key: 'temp', label: t('tag.temp'), sortVal: (r) => r.tags.temp },
-  { key: 'draft', label: t('tag.draft'), sortVal: (r) => r.tags.draft },
-  { key: 'engine', label: t('tag.engine'), sortVal: (r) => r.tags.engine },
-  { key: 'machine', label: t('col.machineSwe'), sortVal: (r) => r.machine },
-  { key: 'acc', label: t('cloud.col.pass'), num: true, sortVal: (r) => r.accSortable },
-  { key: 'n', label: t('eff.tt.solved'), num: true, sortVal: (r) => r.nRaw },
-  { key: 'perHour', label: t('eff.tt.perHour'), num: true, sortVal: (r) => r.perHour },
-  { key: 'sec', label: t('vega.tt.secSolved'), num: true, sortVal: (r) => r.sec },
-  { key: 'run', label: t('cloud.col.run'), sortVal: (r) => r.run },
-])
-const foldSort = useFoldSort(() => foldCols.value, 'perHour', 'desc')
 
 // Filter BEFORE folding so the representative is chosen within the family, not globally.
 const throughputGroups = computed(() =>
   groupByCanonicalModel(
     boardFilter.applyTo(eligibleCells.value),
-    chooseBySort,
+    chooseFastestEfficiencyCell,
     (c) => `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
   )
 )
@@ -156,39 +90,6 @@ const routeRank = (a: CompCell, b: CompCell): number => {
   ]
   return -(checks.find((v) => v !== 0) ?? 0)
 }
-
-// One implementation for both the per-row expansion and the chart-driven panel; they
-// showed the same thing built two ways before, which is how they drift apart.
-const mapRoutes = (records: readonly CompCell[], representative: CompCell | null | undefined) =>
-  records
-    .slice()
-    .sort(routeRank)
-    .map((c) => ({
-      key: `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
-      route: c.cell,
-      // The config axes, so a reader does not have to parse the cell slug to find out
-      // what a row IS. These are validated against benchmarks/swe-personal/eval-tags.toml
-      // and derived from each run's own recorded request, not from its filename.
-      tags: (c as any).tags || {},
-      provider: c.publisher || c.operator || '—',
-      harness: c.harness || c.access_label || '—',
-      machine: c.machine || 'cloud',
-      run: classifyCell(c, examMeta.value).rankable ? t('cloud.run.full') : t('cloud.run.partial'),
-      comparable: classifyCell(c, examMeta.value).rankable,
-      shown: c === representative,
-      n: `${c.passed}/${c.n}`,
-      nRaw: num(c.n),
-      perHour: primarySolvedPerHourOf(c),
-      sec: primarySolveSecOf(c),
-      secAll: examCostSecOf(c),
-      acc: num(c.acc),
-      // The fold showed passed/n but never the RATE, which is the number the outer
-      // board ranks on. `accSortable` is null for a partial exam: 6/6 on a sixth of
-      // the tasks is not a 100% that outranks 29/34, so it is shown but never ranked
-      // against a full run it did not sit.
-      accPct: num(c.acc) !== null ? `${(c.acc * 100).toFixed(1)}%` : '—',
-      accSortable: classifyCell(c, examMeta.value).rankable ? num(c.acc) : null,
-    }))
 
 // One canonical-model representative per row. Full-exam cells win before partials;
 // within the same run status, the page shows the fastest solving-throughput route.
@@ -213,12 +114,6 @@ const allRows = computed(() =>
         nRaw: c.n,
         route: c.cell,
         routes: group.records.length,
-        // Every row carries its own routes, so the table can expand any number of them
-        // at once. Previously the only way to see a model's routes was to click its
-        // point on the chart, which showed exactly one at a time and left the complete
-        // rows with no table at all.
-        routeRows: mapRoutes(group.records, c),
-        variantCount: Math.max(0, group.records.length - 1),
         canonical: recordCanonicalModel(c) || c.cell,
         selected: selectedKey.value === group.key,
         _section: cls.section,
@@ -269,17 +164,10 @@ const selectedRoutes = computed(() =>
       comparable: classifyCell(c, examMeta.value).rankable,
       shown: c === selectedGroup.value?.representative,
       n: `${c.passed}/${c.n}`,
-      nRaw: num(c.n),
       perHour: primarySolvedPerHourOf(c),
       sec: primarySolveSecOf(c),
       secAll: examCostSecOf(c),
       acc: num(c.acc),
-      // The fold showed passed/n but never the RATE, which is the number the outer
-      // board ranks on. `accSortable` is null for a partial exam: 6/6 on a sixth of
-      // the tasks is not a 100% that outranks 29/34, so it is shown but never ranked
-      // against a full run it did not sit.
-      accPct: num(c.acc) !== null ? `${(c.acc * 100).toFixed(1)}%` : '—',
-      accSortable: classifyCell(c, examMeta.value).rankable ? num(c.acc) : null,
     }))
 )
 
@@ -369,10 +257,15 @@ function render() {
         const key = item?.datum?.key
         if (typeof key === 'string') {
           selectedKey.value = key
-          // Highlight the row in the main table as well as opening the shared panel —
-          // the chart is now one way into the table, not the only way to see routes.
-          focusRow(key)
           focusSelectedRoutes()
+          return
+        }
+        // Colour-legend entry: the vendor family. Bars carry `key`, legend entries carry
+        // `value`, so one handler serves both. Only real registry publishers are
+        // actionable — see knownPublishers.
+        const vendor = item?.datum?.value
+        if (typeof vendor === 'string' && knownPublishers.value.has(vendor)) {
+          boardFilter.filterByPublisher(vendor)
         }
       })
     })
@@ -387,37 +280,6 @@ onUnmounted(() => {
   if (vegaView) { vegaView.finalize(); vegaView = null }
   if (detailFlashTimer) clearTimeout(detailFlashTimer)
 })
-// The main table. The chart stays, but it is no longer the ONLY way in: every folded
-// model is a row here and any number of them can be expanded at once. Clicking a chart
-// point now highlights and scrolls to its row instead of driving a single shared panel.
-const fmt1 = (v: any) => (v === null || v === undefined ? '—' : Number(v).toFixed(1))
-const fmt0 = (v: any) => (v === null || v === undefined ? '—' : String(Math.round(Number(v))))
-
-const cols = computed<Column<any>[]>(() => [
-  {
-    key: 'label', label: t('col.modelZh'), sortVal: (r) => r.label,
-    render: (r) => h('span', { class: 'inline-flex flex-wrap items-center gap-1' }, [
-      h('span', { class: 'font-mono font-medium text-foreground' }, r.label),
-      ...(r.variantCount > 0 ? [foldedRoutesBadge(r.variantCount, t)] : []),
-    ]),
-  },
-  { key: 'vendor', label: t('col.operator'), mobileHide: true, sortVal: (r) => r.vendor },
-  { key: 'perHour', label: t('eff.tt.perHour'), num: true, sortVal: (r) => r.perHour ?? -1, render: (r) => fmt1(r.perHour) },
-  { key: 'sec', label: t('vega.tt.secSolved'), num: true, sortVal: (r) => r.sec ?? Infinity, render: (r) => fmt0(r.sec) },
-  { key: 'acc', label: t('cloud.col.pass'), num: true, sortVal: (r) => r.acc ?? -1, render: (r) => (r.acc === null ? '—' : `${r.acc}%`) },
-  { key: 'n', label: t('cloud.col.run'), sortVal: (r) => r.nRaw ?? 0 },
-  { key: 'machine', label: t('col.machineSwe'), mobileHide: true, tabletHide: true, sortVal: (r) => r.machine },
-])
-
-const focusedRowKey = ref<string | null>(null)
-const tableRef = ref<any>(null)
-const focusRow = (key: string) => {
-  focusedRowKey.value = key
-  nextTick(() => {
-    const el = tableRef.value instanceof HTMLElement ? tableRef.value : tableRef.value?.$el
-    el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  })
-}
 </script>
 
 <template>
@@ -426,23 +288,7 @@ const focusRow = (key: string) => {
     <Card>
       <CardHeader class="pb-2">
         <CardTitle class="text-base">{{ t('eff.title') }}</CardTitle>
-        <div class="flex items-center justify-between gap-3 flex-wrap">
-          <p class="text-xs text-muted-foreground">{{ t('eff.subtitle') }} · {{ examName }}</p>
-          <div v-if="vendorOptions.length" class="inline-flex items-center gap-1.5">
-            <span class="text-xs text-muted-foreground">{{ t('filter.vendorLabel') }}</span>
-            <select
-              class="rounded-md border border-border bg-muted/50 px-2 py-1 text-xs font-semibold text-foreground"
-              :value="activeVendor || ''"
-              @change="(e) => {
-                const v = (e.target as HTMLSelectElement).value
-                v ? boardFilter.filterByPublisher(v) : boardFilter.clearFilter()
-              }"
-            >
-              <option value="">{{ t('filter.vendorAll') }}</option>
-              <option v-for="v in vendorOptions" :key="v" :value="v">{{ v }}</option>
-            </select>
-          </div>
-        </div>
+        <p class="text-xs text-muted-foreground">{{ t('eff.subtitle') }} · {{ examName }}</p>
       </CardHeader>
       <CardContent>
         <div v-if="loading && !allRows.length" class="py-16 text-center text-sm text-muted-foreground">
@@ -568,74 +414,6 @@ const focusRow = (key: string) => {
         </div>
 
         <!-- plan 053: incomplete dual list (not a ranked bar chart) -->
-        <div ref="tableRef" class="mt-5">
-          <DataTable
-            :columns="cols"
-            :rows="mainRows"
-            row-id-key="key"
-            :default-sort="'perHour'"
-            :default-dir="'desc'"
-            expandable
-            :highlight-row-id="focusedRowKey"
-            @sort-change="onSortChange"
-          >
-            <template #detail="{ row }">
-              <div v-if="row.routeRows && row.routeRows.length > 1" class="space-y-2">
-                <div>
-                  <div class="text-xs font-semibold text-foreground">{{ t('fold.variants.title') }}</div>
-                  <p class="text-[11px] text-muted-foreground">{{ t('fold.variants.explainer') }}</p>
-                </div>
-                <div class="overflow-x-auto rounded-md border border-border/60 bg-card">
-                  <table class="w-full text-left text-[11px]">
-                    <thead class="border-b border-border/60 text-muted-foreground">
-                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
-                    </thead>
-                    <tbody>
-                      <tr
-                        v-for="rt in foldSort.sortRows(row.routeRows)"
-                        :key="rt.key"
-                        :class="[rt.comparable ? '' : 'opacity-50', rt.shown ? 'bg-primary/5 font-medium' : '']"
-                      >
-                        <td class="px-2 py-1.5">
-                          <span :class="['inline-flex items-center rounded px-1.5 py-0.5 font-mono text-[10px]',
-                                         rt.tags.thinking === 'on' ? 'bg-brand/15 text-brand' : 'bg-muted text-muted-foreground']">
-                            {{ rt.tags.thinking || '—' }}
-                          </span>
-                          <span v-if="rt.shown" class="ml-1 text-[10px] text-primary">&#9664;</span>
-                        </td>
-                        <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ rt.tags.effort || '—' }}</td>
-                        <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ rt.tags.temp || '—' }}</td>
-                        <td class="px-2 py-1.5">
-                          <span :class="['inline-flex items-center rounded px-1.5 py-0.5 font-mono text-[10px]',
-                                         (rt.tags.draft && rt.tags.draft !== 'none') ? 'bg-amber-500/15 text-amber-700 dark:text-amber-400' : 'bg-muted text-muted-foreground']">
-                            {{ rt.tags.draft || '—' }}<template v-if="rt.tags.draft_n && rt.tags.draft_n !== 'n/a'">·{{ rt.tags.draft_n }}</template>
-                          </span>
-                        </td>
-                        <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ rt.tags.engine || '—' }}</td>
-                        <td class="px-2 py-1.5 font-mono text-muted-foreground">
-                          {{ rt.machine }}
-                          <span v-if="rt.tags.variant" class="ml-1 rounded bg-muted px-1 text-[10px]">{{ rt.tags.variant }}</span>
-                        </td>
-                        <td class="px-2 py-1.5 text-right font-mono">
-                          <span :class="rt.accSortable === null ? 'text-muted-foreground' : ''"
-                                :title="rt.accSortable === null ? t('fold.variants.partialAcc') : undefined">
-                            {{ rt.accPct }}<template v-if="rt.accSortable === null">*</template>
-                          </span>
-                        </td>
-                        <td class="px-2 py-1.5 text-right font-mono">{{ rt.n }}</td>
-                        <td class="px-2 py-1.5 text-right font-mono">{{ rt.perHour === null ? '—' : rt.perHour.toFixed(1) }}</td>
-                        <td class="px-2 py-1.5 text-right font-mono">{{ rt.sec === null ? '—' : Math.round(rt.sec) }}</td>
-                        <td class="px-2 py-1.5 text-muted-foreground">{{ rt.run }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <p v-else class="text-[11px] text-muted-foreground">{{ t('fold.variants.none') }}</p>
-            </template>
-          </DataTable>
-        </div>
-
         <div v-if="incompleteRows.length" class="mt-5 border-t border-border/60 pt-4 space-y-2">
           <div class="flex items-start justify-between gap-3 flex-wrap">
             <div class="space-y-1">

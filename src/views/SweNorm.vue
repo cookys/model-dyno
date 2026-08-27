@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
 import vegaEmbed from 'vega-embed'
-import { modelPageHref } from '@/lib/modelLink'
 import { useI18n } from '@/lib/i18n'
 import { dashboardNorm, loading } from '@/lib/store'
 import { isDark, chartTheme } from '@/lib/theme'
@@ -21,9 +20,6 @@ import {
 
 import { useBoardFilter } from '@/lib/useBoardFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
-import { useFoldSort, type FoldColumn } from '@/lib/foldSort'
-import { sortAwareChooser } from '@/lib/foldRepresentative'
-import FoldSortHeader from '@/components/FoldSortHeader.vue'
 
 const { t } = useI18n()
 const boardFilter = useBoardFilter()
@@ -57,61 +53,13 @@ const rawCells = computed(() => {
   ))
 })
 
-// The column the reader is ranking by. A folded row shows ONE cell out of several, so a
-// cover picked by a fixed rule leaves the board ordering rows by a number that is not
-// the one displayed. Both tables here report into the same state; a row belongs to
-// exactly one of them.
-const sortKey = ref<string | null>('eff')
-const sortDir = ref<'asc' | 'desc'>('desc')
-const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
-  sortKey.value = payload.key
-  sortDir.value = payload.dir
-}
-
-/** The active column's value for a cell, or null when that column cannot rank cells. */
-const activeSortValue = (c: any): number | string | null => {
-  switch (sortKey.value) {
-    case 'eff': return num(c.pass_rate)
-    case 'n': return num(c.n_graded)
-    case 'cov': return num(c.n_on_set)
-    case 'operator': return c.operator || ''
-    case 'publisher': return c.publisher || ''
-    case 'harness': return c.harness || c.access_label || ''
-    default: return null
-  }
-}
-
-const chooseBySort = sortAwareChooser<any>({
-  activeValue: activeSortValue,
-  direction: () => sortDir.value,
-  // Comparability first, both directions: an arrow-flip must not hand the cover to a
-  // cell that sat a partial exam.
-  rankFirst: (c) => (classifyCell(
-    { ...c, n: c.n_graded ?? c.n_on_set, n_graded: c.n_graded, comparable: c.comparable, owed: c.owed },
-    examMeta.value,
-  ).rankable ? 1 : 0),
-  fallback: chooseBestNormCell,
-})
-
 const foldedNormGroups = computed(() =>
   groupByCanonicalModel(
     rawCells.value,
-    chooseBySort,
+    chooseBestNormCell,
     (c) => `${c.model}-${c.source}-${c.harness || ''}-${c.operator || ''}`,
   )
 )
-
-// Sortable fold, with the pass rate withheld from ranking for a partial exam.
-const foldCols = computed<FoldColumn[]>(() => [
-  { key: 'model', label: t('col.model'), sortVal: (v) => v.model },
-  { key: 'source', label: t('col.source'), sortVal: (v) => v.source },
-  { key: 'operator', label: t('col.operator'), sortVal: (v) => v.operator },
-  { key: 'harness', label: t('col.harness'), sortVal: (v) => v.harness },
-  { key: 'n', label: t('col.passedGraded'), num: true, sortVal: (v) => v.nGradedRaw },
-  { key: 'cov', label: t('col.coverage'), num: true, sortVal: (v) => v.covRaw },
-  { key: 'eff', label: t('col.passRateCI'), num: true, sortVal: (v) => (v.comparable ? v.effRaw : null) },
-])
-const foldSort = useFoldSort(() => foldCols.value, 'eff', 'desc')
 
 const normData = computed(() => {
   // Chart and table data helper
@@ -157,7 +105,6 @@ const normData = computed(() => {
       variantCount: foldedVariantCount(group),
       variants: group.records.map((v) => ({
         model: modelName(v),
-        href: modelPageHref(v),
         publisher: v.publisher || '—',
         operator: v.operator || '—',
         harness: v.harness || v.access_label || '—',
@@ -165,9 +112,6 @@ const normData = computed(() => {
         n: `${v.n_passed}/${v.n_graded}`,
         cov: `${v.n_on_set}/${nTasks.value}`,
         eff: `${Math.round(v.pass_rate * 100)}%`,
-        effRaw: num(v.pass_rate),
-        nGradedRaw: num(v.n_graded),
-        covRaw: num(v.n_on_set),
         ci: `[${Math.round(v.ci[0] * 100)}–${Math.round(v.ci[1] * 100)}]`,
         comparable: classifyCell(
           { ...v, n: v.n_graded ?? v.n_on_set, n_graded: v.n_graded, comparable: v.comparable, owed: v.owed },
@@ -421,7 +365,6 @@ onUnmounted(() => {
             :default-sort="'eff'"
             :default-dir="'desc'"
             :expandable="true"
-            @sort-change="onSortChange"
           >
             <template #detail="{ row }">
               <div v-if="row.variantCount > 0" class="space-y-2">
@@ -432,14 +375,19 @@ onUnmounted(() => {
                 <div class="overflow-x-auto rounded-md border border-border/60 bg-card">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.source') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passedGraded') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.coverage') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                      </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">
-                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
-                          <template v-else>{{ variant.model }}</template>
-                        </td>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.source }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
@@ -473,7 +421,6 @@ onUnmounted(() => {
             :default-sort="'nRaw'"
             :default-dir="'desc'"
             :expandable="true"
-            @sort-change="onSortChange"
           >
             <template #detail="{ row }">
               <div v-if="row.variantCount > 0" class="space-y-2">
@@ -484,14 +431,19 @@ onUnmounted(() => {
                 <div class="overflow-x-auto rounded-md border border-border/60 bg-card">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.source') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passedGraded') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.coverage') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                      </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">
-                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
-                          <template v-else>{{ variant.model }}</template>
-                        </td>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.source}-${variant.operator}-${variant.harness}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.source }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>

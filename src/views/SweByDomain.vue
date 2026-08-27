@@ -5,7 +5,6 @@ import { useI18n } from '@/lib/i18n'
 import { dashboardDomainIndex, loading } from '@/lib/store'
 import { isDark, chartTheme, chartBlueScheme } from '@/lib/theme'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { modelPageHref } from '@/lib/modelLink'
 
 const { t } = useI18n()
 const examName = computed(() => dashboardDomainIndex.value?.exam ?? '—')
@@ -254,10 +253,7 @@ onUnmounted(() => {
               </thead>
               <tbody>
                 <tr v-for="cell in completeCells" :key="cell.c.cell" class="border-t border-border">
-                  <th scope="row" class="px-2 py-1.5 font-mono font-medium max-w-56 truncate" :title="cell.label">
-                    <a v-if="modelPageHref(cell.c)" :href="modelPageHref(cell.c)!" class="text-primary hover:underline">{{ cell.label }}</a>
-                    <template v-else>{{ cell.label }}</template>
-                  </th>
+                  <th scope="row" class="px-2 py-1.5 font-mono font-medium max-w-56 truncate" :title="cell.label">{{ cell.label }}</th>
                   <td v-for="domain in domains" :key="domain" class="px-2 py-1.5 whitespace-nowrap">
                     <span
                       class="sr-only"
@@ -306,10 +302,7 @@ onUnmounted(() => {
               </thead>
               <tbody>
                 <tr v-for="cell in partialCells" :key="cell.c.cell" class="border-t border-border">
-                  <th scope="row" class="px-2 py-1.5 font-mono font-medium max-w-56 truncate" :title="cell.label">
-                    <a v-if="modelPageHref(cell.c)" :href="modelPageHref(cell.c)!" class="text-primary hover:underline">{{ cell.label }}</a>
-                    <template v-else>{{ cell.label }}</template>
-                  </th>
+                  <th scope="row" class="px-2 py-1.5 font-mono font-medium max-w-56 truncate" :title="cell.label">{{ cell.label }}</th>
                   <td v-for="domain in domains" :key="domain" class="px-2 py-1.5 whitespace-nowrap">
                     <span
                       class="sr-only"

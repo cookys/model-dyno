@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch, h } from 'vue'
 import vegaEmbed from 'vega-embed'
-import { dashboardRecords, dashboardSpecDecodeFindings, speedLoading as loading, error } from '@/lib/store'
+import { dashboardRecords, speedLoading as loading, error } from '@/lib/store'
 import { useI18n } from '@/lib/i18n'
 import { isDark, chartTheme, chartBlueScheme } from '@/lib/theme'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { num } from '@/components/CellHelpers'
-import { machineLabel } from '@/lib/hardware'
-import { useVramFilter } from '@/lib/useVramFilter'
-import VramFilterBar from '@/components/VramFilterBar.vue'
 
 const { t } = useI18n()
-const { machineFits } = useVramFilter()
 
 // Vega Embed instances to finalize on unmount
 let vegaView: any = null
@@ -25,31 +21,20 @@ const chartOpen = ref(true)
 let mq: MediaQueryList | null = null
 const onMq = (e: MediaQueryListEvent | MediaQueryList) => { isMobile.value = e.matches; chartOpen.value = !e.matches }
 
-// Spec-decode findings come from the published feed (producer:
-// benchmarks/spec-decode-findings.toml), not from this file. They used to be six
-// literal rows here, all Apple Silicon, which meant every CUDA / llama.cpp
-// measurement this fleet took could not reach the page without a frontend edit in
-// a different repo.
-const specDecodeRows = computed(() =>
-  // machine+method+workload is what makes a leg unique — the same machine appears
-  // under two methods and the same method under two workloads, deliberately.
-  dashboardSpecDecodeFindings.value.map((f) => ({ ...f, rowId: `${f.machine}|${f.method}|${f.workload}` })))
-
-// A "win" on decode and a "win" end-to-end are different claims, and on this fleet
-// the same drafter scores both: DSpark is 2.83x on short bench prompts and 0.68x on
-// agentic ones. Showing the ratio without the metric is how that gets misread.
-const METRIC_LABEL: Record<string, string> = { decode: 'decode t/s', agentic: 'task wall' }
+// Spec decode data
+const SPEC_DECODE_FINDINGS = [
+  { machine: "M5 Pro 24GB",  target: "Qwen3-4B-bf16 (dense)",       workload: "realistic, tg512", speedup: 2.19, accept: "5.02/16", win: true,  note: "specdecode.note.bestApple" },
+  { machine: "M4 Max 36GB",  target: "Qwen3-4B-bf16 (dense)",       workload: "realistic, tg512", speedup: 1.92, accept: "5.33/16", win: true,  note: "" },
+  { machine: "M4 Pro 24GB",  target: "Qwen3-4B-bf16 (dense)",       workload: "realistic, tg512", speedup: 1.71, accept: "5.33/16", win: true,  note: "" },
+  { machine: "M5 Pro 24GB",  target: "Qwen3-4B-bf16 (dense)",       workload: "filler, tg128",    speedup: 1.14, accept: "2.65/16", win: true,  note: "specdecode.note.netPositive" },
+  { machine: "M5 Pro 24GB",  target: "Qwen3-Coder-30B-A3B (MoE)",   workload: "realistic, tg512", speedup: 0.86, accept: "6.63/16", win: false, note: "specdecode.note.narrowed" },
+  { machine: "M4 Pro 24GB",  target: "Qwen3-Coder-30B-A3B (MoE)",   workload: "realistic, tg512", speedup: 0.76, accept: "6.34/16", win: false, note: "" },
+]
 
 const specDecodeCols = computed<Column<any>[]>(() => [
   { key: 'machine', label: t('col.machine') },
-  { key: 'method', label: t('col.method'), render: (r) => h('span', { class: 'font-mono text-xs uppercase' }, r.method) },
   { key: 'target', label: t('col.target'), mobileHide: true },
   { key: 'workload', label: t('col.prompt'), mobileHide: true },
-  {
-    key: 'metric',
-    label: t('col.metric'),
-    render: (r) => h('span', { class: 'text-xs text-muted-foreground' }, METRIC_LABEL[r.metric] || r.metric),
-  },
   {
     key: 'speedup',
     label: t('col.dflashSpeedup'),
@@ -57,15 +42,15 @@ const specDecodeCols = computed<Column<any>[]>(() => [
     render: (r) => h(
       'span',
       {
-        class: r.verdict === 'win'
+        class: r.win
           ? 'text-emerald-700 dark:text-emerald-400 font-semibold border border-emerald-500/30 bg-emerald-950/20 px-2 py-0.5 rounded'
           : 'text-muted-foreground border border-border bg-muted/40 px-2 py-0.5 rounded'
       },
-      `${r.verdict === 'win' ? '✅' : '❌'} ${r.speedup.toFixed(2)}×`
+      `${r.win ? '✅' : '❌'} ${r.speedup.toFixed(2)}×`
     )
   },
-  { key: 'accept', label: t('col.accept'), mobileHide: true, render: (r) => r.accept || '—' },
-  { key: 'note', label: t('col.note'), mobileHide: true, render: (r) => r.note || '—' }
+  { key: 'accept', label: t('col.accept'), mobileHide: true },
+  { key: 'note', label: t('col.note'), mobileHide: true, render: (r) => r.note ? t(r.note) : '—' }
 ])
 
 const drawChart = () => {
@@ -78,11 +63,8 @@ const drawChart = () => {
 
   const data = dashboardRecords.value
     .filter((r) => r.profile && r.tier && r.model_alias && num(r.tg128_tps) !== null)
-    .filter((r) => machineFits(r.profile))
     .map((r) => ({
-      // Axis label is the CARD, not the hostname: `cookys-gentoo` tells a stranger
-      // nothing, `RTX 4090 · 24GB` tells them whether the row is about them.
-      profile: machineLabel(r.profile),
+      profile: r.profile,
       cell: `${r.tier} · ${r.model_alias}`,
       tier: r.tier,
       tg: r.tg128_tps,
@@ -220,7 +202,6 @@ onUnmounted(() => {
           {{ t('empty.heatmap') }}
         </div>
         <template v-else>
-          <VramFilterBar class="mb-3" />
           <button type="button" class="md:hidden w-full mb-2 py-2 text-xs font-medium rounded-md border border-border bg-muted/40 text-muted-foreground hover:text-foreground transition-colors" @click="chartOpen = !chartOpen">
             {{ chartOpen ? t("chart.hide") : t("chart.show") }}
           </button>
@@ -245,8 +226,8 @@ onUnmounted(() => {
       <CardContent>
         <DataTable
           :columns="specDecodeCols"
-          :rows="specDecodeRows"
-          row-id-key="rowId"
+          :rows="SPEC_DECODE_FINDINGS"
+          row-id-key="target"
           :expandable="true"
           :default-sort="'speedup'"
           :default-dir="'desc'"

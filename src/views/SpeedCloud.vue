@@ -10,18 +10,8 @@ import type { Column, DetailField } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { modelBadges, modelName, num, speedCredibilityBadge } from '@/components/CellHelpers'
 import { deploymentLine, routeProvenanceOf } from '@/lib/modelProvenance'
-import { modelPageHref } from '@/lib/modelLink'
 import { primarySolveSecOf, primarySolvedPerHourOf, primarySolvedPerMinOf, examCostSecOf } from '@/lib/speedMetrics'
-import {
-  chooseBestCompCell,
-  chooseBestSpeedCell,
-  groupByCanonicalModel,
-} from '@/lib/modelFolding'
-import { foldedRoutesBadge } from '@/components/CellHelpers'
-import SpeedVariants from '@/components/SpeedVariants.vue'
-import { sortAwareChooser } from '@/lib/foldRepresentative'
 import { useBoardFilter } from '@/lib/useBoardFilter'
-import { publishersOf } from '@/lib/modelFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
 
 const { t } = useI18n()
@@ -34,16 +24,6 @@ const tableFlash = ref(false)
 let tableFlashTimer: ReturnType<typeof setTimeout> | null = null
 
 const examName = computed(() => dashboardSpeedComp.value?.exam ?? '—')
-// Vendors present on this board. Derived from the registry `publisher` only: rows the
-// registry deliberately leaves publisher-less (local abliterations/merges — never guess a
-// vendor) simply do not offer a family, rather than inventing one from a display fallback.
-const vendorOptions = computed(() =>
-  publishersOf((dashboardSpeedComp.value?.cells || []).filter((c) => num(c.acc) !== null && !c.frozen))
-)
-const activeVendor = computed(() =>
-  boardFilter.active.value?.kind === 'publisher' ? boardFilter.active.value.value : null
-)
-
 const placementFilter = ref<'all' | 'cloud' | 'local'>('all')
 const placementOptions = ['all', 'cloud', 'local'] as const
 const setPlacementFilter = (value: 'all' | 'cloud' | 'local') => {
@@ -68,13 +48,11 @@ function fmt0(v: number | null): string {
 
 function compactModelCell(c: any) {
   const badges = modelBadges(c)
-  const href = modelPageHref(c)
-  const nameClass = 'min-w-0 break-words font-mono font-medium leading-snug'
-  const title = (c && (c.cell || c.profile || c.model)) || ''
   return h('span', { class: 'flex min-w-0 flex-col items-start gap-1' }, [
-    href
-      ? h('a', { href, class: `${nameClass} text-primary hover:underline`, title }, modelName(c))
-      : h('span', { class: `${nameClass} text-foreground`, title }, modelName(c)),
+    h('span', {
+      class: 'min-w-0 break-words font-mono font-medium leading-snug text-foreground',
+      title: (c && (c.cell || c.profile || c.model)) || '',
+    }, modelName(c)),
     badges,
   ].filter(Boolean))
 }
@@ -106,77 +84,10 @@ const canonicalN = computed(() => {
 
 // Agentic SWE cells, cloud + local. Raw decode columns are still shown when a
 // tool-free probe exists, but the main speed metric is end-to-end agentic t/s.
-// Folded to one row per canonical model, because 163 route rows for 72 models is not a
-// board anyone reads — one model alone contributed 23 of them. The routes are still all
-// here, in the expansion, where comparing them is a deliberate act rather than the
-// default state.
-//
-// WHICH member represents a group follows the active sort. Default is accuracy-then-
-// speed, matching /swe/comp; click a speed column and the representative becomes
-// speed-then-accuracy. Showing a group's most accurate cell while the reader ranks by
-// throughput answers a question nobody asked, and the reverse is equally wrong.
-const SPEED_SORT_KEYS = new Set(['perMin', 'perHour', 'sec', 'secAll', 'medWall', 'tokS', 'tokSolved', 'latency', 'rawTokS'])
-const sortKey = ref<string | null>('perMin')
-const sortDir = ref<'asc' | 'desc'>('desc')
-const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
-  sortKey.value = payload.key
-  sortDir.value = payload.dir
-}
-const speedFirst = computed(() => !!sortKey.value && SPEED_SORT_KEYS.has(sortKey.value))
-
-/** The active column's value for a cell, or null when that column cannot rank cells. */
-const activeSortValue = (c: any): number | string | null => {
-  switch (sortKey.value) {
-    case 'eff': return num(c.acc)
-    case 'perMin': return primarySolvedPerMinOf(c)
-    case 'perHour': return primarySolvedPerHourOf(c)
-    case 'sec': return primarySolveSecOf(c)
-    case 'secAll': return examCostSecOf(c)
-    case 'medWall': return num(c.med_wall)
-    case 'tokS': return num(c.agentic_tok_s)
-    case 'rawTokS': return num(c.raw_tok_s)
-    case 'latency': return num(c.raw_latency_s)
-    case 'run': return num(c.n)
-    default: return null
-  }
-}
-
-// The two-way speed/accuracy switch below picked a representative by CATEGORY of sort,
-// so ranking by tok/s still showed the group's fastest-by-solve-time route: close, but
-// still not the row the reader is ranking. This picks the actual leader on the clicked
-// column and keeps the old rule for ties and for columns that cannot rank.
-const chooseBySort = sortAwareChooser<any>({
-  activeValue: activeSortValue,
-  direction: () => sortDir.value,
-  // Full-exam cells win first, in both directions. The representative also decides
-  // which of the two tables the whole row lands in, so letting a partial cell take the
-  // cover on a good number would move a complete model into the incomplete section.
-  rankFirst: (c) => {
-    const n = num(c.n)
-    const fullN = canonicalN.value
-    return n !== null && fullN !== null && n >= fullN ? 1 : 0
-  },
-  fallback: (current, candidate) =>
-    (speedFirst.value ? chooseBestSpeedCell : chooseBestCompCell)(current, candidate),
-})
-
-const visibleCells = computed(() =>
+const agenticData = computed(() =>
   boardFilter.applyTo((dashboardSpeedComp.value?.cells || [])
     .filter((c) => num(c.acc) !== null && !c.frozen))
-)
-
-const foldedGroups = computed(() =>
-  groupByCanonicalModel(
-    visibleCells.value,
-    chooseBySort,
-    (c: any) => `${c.cell}-${c.source}-${c.machine || ''}`,
-  )
-)
-
-const agenticData = computed(() =>
-  foldedGroups.value
-    .map((group) => {
-      const c: any = group.representative
+    .map((c) => {
       const source = placementOf(c)
       const n = num(c.n)
       const fullN = canonicalN.value
@@ -209,29 +120,6 @@ const agenticData = computed(() =>
         rawTokS: num(c.raw_tok_s),
         latency: num(c.raw_latency_s),
         ...provenance,
-        variantCount: Math.max(0, group.records.length - 1),
-        // Config axes come from the validated tag vocabulary, not from the cell slug.
-        // Reading `qwen3.8-27b-nvfp4-sglang-thinkon-t0-dspark-local` to find out what a
-        // row IS is not a UI.
-        variants: group.records.map((v: any) => ({
-          cell: v.cell,
-          tags: v.tags || {},
-          machine: v.machine || '—',
-          source: placementLabel(placementOf(v)),
-          n: num(v.n),
-          acc: num(v.acc) !== null ? `${(v.acc * 100).toFixed(1)}%` : '—',
-          // Kept raw beside the formatted string: sorting the sub-table by pass rate on
-          // "85.3%" would order it lexically (100% < 85.3% < 9%).
-          accRaw: num(v.acc),
-          // A pass rate over a partial exam is not the same quantity as one over the
-          // full exam — 6/6 on an easy sixth of the tasks is not 100%. So a partial
-          // variant carries its accuracy for display but is excluded from ranking on it.
-          accComparable: num(v.n) !== null && fullN !== null && num(v.n)! >= fullN,
-          perMin: primarySolvedPerMinOf(v),
-          sec: primarySolveSecOf(v),
-          tokS: num(v.agentic_tok_s),
-          isRepresentative: v === c,
-        })),
         id: `${c.cell}-${c.source}-${c.machine || ''}`,
       }
       return row
@@ -271,13 +159,7 @@ const focusCloudRoute = (id: string) => {
 }
 
 const cols = computed<Column<any>[]>(() => [
-  {
-    key: 'model', label: t('col.modelGroup'), sortVal: (r) => r.label,
-    render: (r) => h('span', { class: 'inline-flex flex-wrap items-center gap-1' }, [
-      compactModelCell(r._rec),
-      ...(r.variantCount > 0 ? [foldedRoutesBadge(r.variantCount, t)] : []),
-    ]),
-  },
+  { key: 'model', label: t('col.modelGroup'), sortVal: (r) => r.label, render: (r) => compactModelCell(r._rec) },
   {
     key: 'route', label: t('cloud.col.route'), mobileHide: true,
     sortVal: (r) => `${r.source}-${r.coverage ?? 0}`,
@@ -460,22 +342,6 @@ onUnmounted(() => {
               {{ t(`cloud.filter.${opt}`) }}
             </button>
           </div>
-          <!-- Vendor family. This board colours by placement, not by vendor, so there is
-               no legend to click — an explicit control is the discoverable affordance. -->
-          <div v-if="vendorOptions.length" class="inline-flex items-center gap-1.5">
-            <span class="text-xs text-muted-foreground">{{ t('filter.vendorLabel') }}</span>
-            <select
-              class="rounded-md border border-border bg-muted/50 px-2 py-1 text-xs font-semibold text-foreground"
-              :value="activeVendor || ''"
-              @change="(e) => {
-                const v = (e.target as HTMLSelectElement).value
-                v ? boardFilter.filterByPublisher(v) : boardFilter.clearFilter()
-              }"
-            >
-              <option value="">{{ t('filter.vendorAll') }}</option>
-              <option v-for="v in vendorOptions" :key="v" :value="v">{{ v }}</option>
-            </select>
-          </div>
         </div>
       </CardHeader>
       <CardContent>
@@ -508,13 +374,7 @@ onUnmounted(() => {
               </div>
               <div class="mt-2 flex items-end justify-between gap-3">
                 <div class="min-w-0">
-                  <a
-                    v-if="modelPageHref(row._rec)"
-                    :href="modelPageHref(row._rec)!"
-                    class="block truncate font-mono text-xs font-semibold text-primary hover:underline"
-                    :title="modelName(row._rec)"
-                  >{{ modelName(row._rec) }}</a>
-                  <div v-else class="truncate font-mono text-xs font-semibold text-foreground" :title="modelName(row._rec)">
+                  <div class="truncate font-mono text-xs font-semibold text-foreground" :title="modelName(row._rec)">
                     {{ modelName(row._rec) }}
                   </div>
                   <div class="mt-1 text-[11px] text-muted-foreground">
@@ -569,10 +429,7 @@ onUnmounted(() => {
           fixed-layout
           :highlight-row-id="focusedCloudRowId"
           :detail-fields="routeDetailFields"
-          @sort-change="onSortChange"
-        >
-          <template #detail="{ row }"><SpeedVariants :row="row" /></template>
-        </DataTable>
+        />
         <div v-else class="text-muted-foreground text-sm p-4 text-center">{{ t('cloud.empty.fullOnly') }}</div>
 
         <div v-if="partialData.length" class="mt-5 border-t border-border/60 pt-4 space-y-3">
@@ -595,10 +452,7 @@ onUnmounted(() => {
             fixed-layout
             :highlight-row-id="focusedCloudRowId"
             :detail-fields="routeDetailFields"
-            @sort-change="onSortChange"
-          >
-            <template #detail="{ row }"><SpeedVariants :row="row" /></template>
-          </DataTable>
+          />
         </div>
       </CardContent>
     </Card>

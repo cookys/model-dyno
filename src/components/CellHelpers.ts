@@ -156,6 +156,30 @@ function credibilityDims(agency: any, source: any) {
   }
 }
 
+/**
+ * 3-gate credibility badge. Prefers the rich per-cell agency block; falls back
+ * to the producer's `entry.gates` summary (public bundle) so CLEAN/CAPPED/INFRA
+ * still renders when the agency dimension is absent.
+ */
+export function gatesBadge(cell: any): VNode {
+  if (cell?.agency?.noop_pct != null) return agencyBadge(cell.agency, cell)
+  const g = cell?.gates
+  if (!g?.verdict) return h('span', { class: 'text-muted-foreground/40' }, '—')
+  const pct = (v: any) => (typeof v === 'number' && isFinite(v) ? `${v}%` : '?')
+  const tip = `infra ${pct(g.infra_pct)} · no-op ${pct(g.noop_pct)} · trunc ${pct(g.trunc_pct)} · maxstep ${pct(g.maxstep_pct)}`
+  const hit = AGENCY_MAP[g.verdict]
+  if (!hit) {
+    return indicatorIconBadge(
+      CircleCheck,
+      `CLEAN — ${tip}`,
+      'border-emerald-500/25 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400',
+      `CLEAN: ${tip}`,
+    )
+  }
+  const [icon, , cls] = hit
+  return indicatorIconBadge(icon, `${g.verdict} — ${tip}`, cls, `${g.verdict}: ${tip}`)
+}
+
 export function agencyBadge(agency: any, source: any = null): VNode {
   const { t } = useI18n()
   if (!agency || agency.noop_pct == null) return h('span', { class: 'text-muted-foreground/40' }, '—')
@@ -224,18 +248,11 @@ export function modelBadges(c: any): VNode | null {
   return Object.keys(t).length ? sweTagBadges(t) : null
 }
 
-// `href` is opt-in: pass `modelPageHref(record)` to make the NAME (not the badges) a link
-// to the model page. Left undefined at a call site, the cell renders exactly as before —
-// so already-shipped boards don't change shape just because a helper learned a new trick.
-export function modelCell(c: any, href?: string | null): VNode {
+export function modelCell(c: any): VNode {
   const { t } = useI18n()
   const nameText = modelName(c)
-  const nameClass = 'profname min-w-0 max-w-full break-words font-mono font-medium leading-snug'
-  const nameTitle = (c && (c.cell || c.profile || c.model)) || ''
   const nameKids: VNode[] = [
-    href
-      ? h('a', { href, class: `${nameClass} text-primary hover:underline`, title: nameTitle }, nameText)
-      : h('span', { class: nameClass, title: nameTitle }, nameText)
+    h('span', { class: 'profname min-w-0 max-w-full break-words font-mono font-medium leading-snug', title: (c && (c.cell || c.profile || c.model)) || '' }, nameText)
   ]
   if (c && c.source === 'survey-p4c') {
     nameKids.push(

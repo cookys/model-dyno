@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
-import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 import vegaEmbed from 'vega-embed'
-import { modelPageHref } from '@/lib/modelLink'
 import { useI18n } from '@/lib/i18n'
 import { dashboardComp, loading } from '@/lib/store'
 import { isDark, chartTheme } from '@/lib/theme'
@@ -23,10 +22,6 @@ import {
 
 import { useBoardFilter } from '@/lib/useBoardFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
-import { useFoldSort, type FoldColumn } from '@/lib/foldSort'
-import { applyCompPreset, COMP_PRESET_IDS, resolveCompPreset, type CompPresetId } from '@/lib/compPresets'
-import { sortAwareChooser } from '@/lib/foldRepresentative'
-import FoldSortHeader from '@/components/FoldSortHeader.vue'
 
 const { t } = useI18n()
 const boardFilter = useBoardFilter()
@@ -37,16 +32,6 @@ const modelFilter = computed(() => {
   const m = route.query.model
   return typeof m === 'string' ? m : null
 })
-
-// Named views live in the query, not the path: `#/swe/comp` keeps its URL because fleet
-// notes paste it everywhere, and an unknown `?view=` falls back rather than blanking.
-const router = useRouter()
-const preset = computed<CompPresetId>(() => resolveCompPreset(route.query.view))
-function setPreset(id: CompPresetId) {
-  if (id === preset.value) return
-  // replace, not push — flipping lenses should not build up back-button history.
-  router.replace({ query: { ...route.query, view: id } })
-}
 
 let vegaView: any = null
 const chartContainer = ref<HTMLDivElement | null>(null)
@@ -98,23 +83,16 @@ function mapCompRow(c: any, group?: { records: any[]; key: string }) {
     secSolved: speed,
     secAll: examCostSecOf(c),
     perHour: num(c.solved_per_hour),
-    coverage: cls.nExam ? cls.n / cls.nExam : null,
-    tokS: num(c.agentic_tok_s),
-    medWall: num(c.med_wall),
     usage,
     variantCount: group ? Math.max(0, records.length - 1) : 0,
     variants: (group ? records : []).map((v: any) => ({
       model: modelName(v),
-      href: modelPageHref(v),
       publisher: v.publisher || '—',
       operator: v.operator || '—',
       harness: v.harness || v.access_label || '—',
       machine: v.machine || '—',
       n: `${v.passed}/${v.n}`,
       eff: `${Math.round(v.acc * 100)}%`,
-      effRaw: num(v.acc),
-      nRaw: num(v.n),
-      secSolvedRaw: primarySolveSecOf(v),
       ci: `[${Math.round(v.ci_lo * 100)}–${Math.round(v.ci_hi * 100)}]`,
       secSolved: primarySolveSecOf(v) === null ? '—' : `${Math.round(primarySolveSecOf(v)!)}s`,
       comparable: classifyCell(v, examMeta.value).rankable,
@@ -125,60 +103,13 @@ function mapCompRow(c: any, group?: { records: any[]; key: string }) {
 
 const rawCompRows = computed(() => rawCells.value.map((c) => mapCompRow(c)))
 
-// The column the reader is ranking by. A folded row shows ONE cell out of several, so a
-// cover picked by a fixed rule leaves the board ordering rows by a number that is not
-// the one displayed. Both tables here report into the same state; a row belongs to
-// exactly one of them.
-const sortKey = ref<string | null>('eff')
-const sortDir = ref<'asc' | 'desc'>('desc')
-const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
-  sortKey.value = payload.key
-  sortDir.value = payload.dir
-}
-
-/** The active column's value for a cell, or null when that column cannot rank cells. */
-const activeSortValue = (c: any): number | string | null => {
-  switch (sortKey.value) {
-    case 'eff': return num(c.acc)
-    case 'n': return num(c.n)
-    case 'secSolved': return primarySolveSecOf(c)
-    case 'agency': return num(c.agency?.noop_pct)
-    case 'operator': return c.operator || ''
-    case 'publisher': return c.publisher || ''
-    case 'harness': return c.harness || c.access_label || ''
-    case 'machine': return c.machine || ''
-    default: return null
-  }
-}
-
-const chooseBySort = sortAwareChooser<any>({
-  activeValue: activeSortValue,
-  direction: () => sortDir.value,
-  // Comparability first, both directions: an arrow-flip must not hand the cover to a
-  // cell that sat a partial exam.
-  rankFirst: (c) => (classifyCell(c, examMeta.value).rankable ? 1 : 0),
-  fallback: chooseBestCompCell,
-})
-
 const foldedCompGroups = computed(() =>
   groupByCanonicalModel(
     rawCells.value,
-    chooseBySort,
+    chooseBestCompCell,
     (c) => `${c.cell}-${c.source}-${c.harness || ''}-${c.operator || ''}-${c.machine || ''}`,
   )
 )
-
-// Sortable fold, with the pass rate withheld from ranking for a partial exam.
-const foldCols = computed<FoldColumn[]>(() => [
-  { key: 'model', label: t('col.model'), sortVal: (v) => v.model },
-  { key: 'operator', label: t('col.operator'), sortVal: (v) => v.operator },
-  { key: 'harness', label: t('col.harness'), sortVal: (v) => v.harness },
-  { key: 'machine', label: t('col.machineSwe'), sortVal: (v) => v.machine },
-  { key: 'n', label: t('col.passed50'), num: true, sortVal: (v) => v.nRaw },
-  { key: 'eff', label: t('col.passRateCI'), num: true, sortVal: (v) => (v.comparable ? v.effRaw : null) },
-  { key: 'secSolved', label: t('col.solveSpeed'), num: true, sortVal: (v) => v.secSolvedRaw },
-])
-const foldSort = useFoldSort(() => foldCols.value, 'eff', 'desc')
 
 const foldedCompRows = computed(() =>
   foldedCompGroups.value.map((group) => mapCompRow(group.representative, group))
@@ -220,8 +151,7 @@ const UsageBadge = {
   },
 }
 
-// The full column POOL. What actually renders is `cols` below, ordered by the preset.
-const allCols = computed<Column<any>[]>(() => [
+const cols = computed<Column<any>[]>(() => [
   {
     key: 'publisher',
     label: t('col.publisher'),
@@ -331,65 +261,8 @@ const allCols = computed<Column<any>[]>(() => [
     mobileHide: true,
     sortVal: (r) => r._rec.agency?.noop_pct ?? -1,
     render: (r) => agencyBadge(r._rec.agency, r._rec)
-  },
-  {
-    // coverage = graded / exam size. A 62% on two thirds of the exam is not a peer of a
-    // 62% on all of it, and the scorecard lens exists to make that visible in place.
-    key: 'coverage',
-    label: t('col.coverage'),
-    num: true,
-    mobileHide: true,
-    sortVal: (r) => (r.coverage === null ? -1 : r.coverage),
-    render: (r) => r.coverage === null
-      ? '—'
-      : h('span', { class: 'font-mono' }, `${Math.round(r.coverage * 100)}%`)
-  },
-  {
-    key: 'perHour',
-    label: t('col.perHour'),
-    num: true,
-    mobileHide: true,
-    tabletHide: true,
-    sortVal: (r) => (r.perHour === null ? -1 : r.perHour),
-    // A rate carries the same credibility caveat as the median it is derived from: when
-    // failed turns dominate the wall clock, solved/hour flatters the run. Same chip as
-    // the solve-speed column, deliberately — a speed number without its flag is exactly
-    // what this project's eval discipline forbids.
-    render: (r) => r.perHour === null
-      ? '—'
-      : h('span', { class: 'inline-flex items-center gap-1' }, [
-        h('span', { class: 'font-mono' }, r.perHour.toFixed(1)),
-        speedCredibilityBadge(r._rec?.speed_credibility),
-      ])
-  },
-  {
-    key: 'tokS',
-    label: t('cloud.col.agenticTokS'),
-    num: true,
-    mobileHide: true,
-    tabletHide: true,
-    sortVal: (r) => (r.tokS === null ? -1 : r.tokS),
-    render: (r) => r.tokS === null ? '—' : h('span', { class: 'font-mono' }, Math.round(r.tokS))
-  },
-  {
-    key: 'medWall',
-    label: t('cloud.col.medWall'),
-    num: true,
-    mobileHide: true,
-    tabletHide: true,
-    sortVal: (r) => (r.medWall === null ? 1e12 : r.medWall),
-    render: (r) => r.medWall === null ? '—' : h('span', { class: 'font-mono' }, `${Math.round(r.medWall)}s`)
   }
 ])
-
-/** What the tables actually render: the pool, filtered and ordered by the active preset. */
-const cols = computed<Column<any>[]>(() => applyCompPreset(allCols.value, preset.value))
-
-const presetTabs = computed(() => COMP_PRESET_IDS.map((id) => ({
-  id,
-  label: t(`comp.view.${id}`),
-  tip: t(`comp.view.${id}.tip`),
-})))
 
 const drawChart = () => {
   if (vegaView) {
@@ -567,32 +440,6 @@ onUnmounted(() => {
         </CardTitle>
         <p class="text-xs text-muted-foreground">{{ t('swe.comp.scope') }}</p>
         <p class="text-xs text-muted-foreground" v-html="t('swe.comp.desc2').replace('{examName}', examName)"></p>
-
-        <!-- Named views: the same rows re-columned for the question being asked. Fixed
-             sets, not a column picker — see docs/comp-named-views.md. -->
-        <div class="mt-3 flex flex-wrap items-center gap-2">
-          <span class="text-xs font-semibold text-muted-foreground">{{ t('comp.view.label') }}</span>
-          <div
-            class="inline-flex rounded-md border border-border bg-muted/40 p-0.5"
-            role="tablist"
-            :aria-label="t('comp.view.label')"
-          >
-            <button
-              v-for="tab in presetTabs"
-              :key="tab.id"
-              type="button"
-              role="tab"
-              :aria-selected="preset === tab.id"
-              :title="tab.tip"
-              class="rounded px-2.5 py-1 text-xs font-medium transition-colors"
-              :class="preset === tab.id
-                ? 'bg-background text-foreground shadow-sm'
-                : 'text-muted-foreground hover:text-foreground'"
-              @click="setPreset(tab.id)"
-            >{{ tab.label }}</button>
-          </div>
-          <span class="text-xs text-muted-foreground">{{ t(`comp.view.${preset}.tip`) }}</span>
-        </div>
       </CardHeader>
       <CardContent class="space-y-5">
         <div class="space-y-2">
@@ -610,7 +457,6 @@ onUnmounted(() => {
             :default-sort="'eff'"
             :default-dir="'desc'"
             :expandable="true"
-            @sort-change="onSortChange"
             fixed-layout
           >
             <template #detail="{ row }">
@@ -622,14 +468,19 @@ onUnmounted(() => {
                 <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passed50') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.solveSpeed') }}</th>
+                      </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">
-                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
-                          <template v-else>{{ variant.model }}</template>
-                        </td>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
@@ -642,17 +493,14 @@ onUnmounted(() => {
                 </div>
                 <div class="grid grid-cols-1 gap-2 md:hidden">
                   <div
-                    v-for="variant in foldSort.sortRows(row.variants)"
+                    v-for="variant in row.variants"
                     :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}-card`"
                     :class="[
                       'rounded-md border border-border/60 bg-card p-2.5 text-xs',
                       variant.comparable ? '' : 'opacity-50',
                     ]"
                   >
-                    <div class="break-words font-mono font-semibold text-foreground">
-                      <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
-                      <template v-else>{{ variant.model }}</template>
-                    </div>
+                    <div class="break-words font-mono font-semibold text-foreground">{{ variant.model }}</div>
                     <div class="mt-2 grid grid-cols-2 gap-2 text-[11px]">
                       <div>
                         <div class="text-muted-foreground">{{ t('col.operator') }}</div>
@@ -705,7 +553,6 @@ onUnmounted(() => {
             :default-sort="'nRaw'"
             :default-dir="'desc'"
             :expandable="true"
-            @sort-change="onSortChange"
             fixed-layout
           >
             <template #detail="{ row }">
@@ -717,14 +564,19 @@ onUnmounted(() => {
                 <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.operator') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.harness') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passed50') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.solveSpeed') }}</th>
+                      </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">
-                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
-                          <template v-else>{{ variant.model }}</template>
-                        </td>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.operator}-${variant.harness}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.operator }}</td>
                         <td class="px-2 py-1.5 text-muted-foreground">{{ variant.harness }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>

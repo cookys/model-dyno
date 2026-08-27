@@ -1,6 +1,15 @@
 import { computed, ref } from 'vue'
-import { loadPublicBundleDashboardFeed } from './publicBundle'
-import type { SpecDecodeFinding, MachineHardware, ModelFootprint, RunConfig, PublicFinding, DepthFinding } from './publicBundle'
+import {
+  loadPublicBundleDashboardFeed,
+  fetchPublicJson,
+  resolvePublicPath,
+  type DepthFinding,
+  type Finding,
+  type FleetMachine,
+  type RegistryModel,
+  type RunConfig,
+  type SpecDecodeFinding,
+} from './publicBundle'
 
 export interface ExamVersionInfo {
   version: string
@@ -75,14 +84,6 @@ export interface SweCell {
   suspect_error_rate?: number
   pps?: number
   tok_per_solved?: number
-  /** Outcome-split output-token medians (perf.v2). tok_per_solved divides all
-   *  output by the passes, so "spent it solving" and "burned it retrying" score
-   *  the same. tok_fail_ratio = median(fail)/median(pass); >1 is the flailing one.
-   *  Publisher nulls all of them together below the privacy floor. */
-  tok_med?: number
-  tok_med_pass?: number
-  tok_med_fail?: number
-  tok_fail_ratio?: number
   sec_per_solved?: number
   sec_per_solved_all?: number
   usd_per_solved?: number
@@ -107,12 +108,26 @@ export interface SweCell {
   }
   // agency / no-op credibility dim — is a low score the model, env, or tools?
   agency?: AgencyBlock
-  // plan 060: cap-gate detail (renders the cap dim in the credibility badge) +
-  // run-to-run sample count/range — a single run's headline is a sample, not a constant.
+  /** ISO timestamp the cell was scored — the "benchmark receipt date" shown in v1 views. */
+  scored_at?: string
+  /** Experiment role from the producer footing (e.g. 'ab-leg', 'vendor-settings'). */
+  run_role?: string
+  /** 3-gate credibility block from the producer (plan 017/020): CLEAN / TOOL-USE / CAPPED / INFRA. */
+  gates?: CellGates
+  /** Number of independent runs folded into this cell (1 for most). */
+  n_runs?: number
+  /** [min, max] headline across runs when n_runs > 1. */
+  headline_range?: [number, number]
+  /** Per-task verdicts (task id → PASS/FAIL/ERROR/SKIP) — the 166×34 matrix layer. */
+  task_verdicts?: Record<string, string>
+}
+
+export interface CellGates {
+  infra_pct?: number
+  noop_pct?: number
   trunc_pct?: number
   maxstep_pct?: number
-  n_runs?: number
-  headline_range?: [number, number]
+  verdict?: string
 }
 
 export interface SharedSweCell {
@@ -177,8 +192,6 @@ export interface NormIndex {
   comparable_min?: number
   n_exam?: number
   n_canon?: number
-  /** Graded-task floor below which a cell is TRIVIAL and hidden (see runClass). */
-  display_floor?: number
 }
 
 export interface CompCell {
@@ -242,8 +255,6 @@ export interface CompCell {
   // agency / no-op credibility — is a low score the model, the env, or the tools? (same shape
   // the SWE scorecard renders; emitted by competitiveness.py via footing.agency_block)
   agency?: AgencyBlock
-  n_runs?: number
-  headline_range?: [number, number]
   owed?: number | null
   n_exam?: number | null
   n_canon?: number | null
@@ -255,7 +266,6 @@ export interface CompIndex {
   comparable_min?: number
   n_exam?: number
   n_canon?: number
-  display_floor?: number
 }
 
 export interface DomainCell {
@@ -282,8 +292,6 @@ export interface SweMeta {
   /** plan 053 SSOT: current exam task count (= n_canon / current_exam_n_tasks). */
   n_exam?: number | null
   comparable_min?: number
-  /** Graded-task floor below which a cell is TRIVIAL and hidden (see runClass). */
-  display_floor?: number
   version_aware?: boolean
   exam_versions?: ExamVersionInfo[]
 }
@@ -357,21 +365,6 @@ export const publicBundleDomainIndex = ref<DomainIndex | null>(null)
 export const speedRecords = ref<SpeedRecord[]>([])
 export const speedComp = ref<CompIndex | null>(null)
 export const dashboardRecords = computed<SpeedRecord[]>(() => speedRecords.value)
-// Spec-decode findings ride the published snapshot (producer:
-// benchmarks/spec-decode-findings.toml). They used to be a literal array inside
-// SpeedHeatmap.vue — Apple-only, and a frontend edit for every new measurement.
-export const specDecodeFindings = ref<SpecDecodeFinding[]>([])
-// Hardware behind each profile, and weight footprint per model. Both answer the question
-// a home reader asks before any tok/s means anything: whose card is this, and does it fit.
-export const machines = ref<MachineHardware[]>([])
-export const modelFootprints = ref<ModelFootprint[]>([])
-export const runConfigs = ref<RunConfig[]>([])
-// plan 060: evidence-backed findings + depth-dependent speed rows (producer-owned TOMLs).
-export const publicFindings = ref<PublicFinding[]>([])
-export const depthFindings = ref<DepthFinding[]>([])
-export const dashboardFindings = computed<PublicFinding[]>(() => publicFindings.value)
-export const dashboardDepthFindings = computed<DepthFinding[]>(() => depthFindings.value)
-export const dashboardSpecDecodeFindings = computed<SpecDecodeFinding[]>(() => specDecodeFindings.value)
 export const scorecardSweCells = computed<SweCell[]>(() => publicBundleSweCells.value)
 export const scorecardSweMeta = computed<SweMeta | null>(() => publicBundleSweMeta.value)
 export const compatibilityFallbackActive = computed<boolean>(() => false)
@@ -385,15 +378,24 @@ export const dashboardNorm = computed<NormIndex | null>(() => publicBundleNorm.v
 export const dashboardComp = computed<CompIndex | null>(() => publicBundleComp.value)
 export const dashboardSpeedComp = computed<CompIndex | null>(() => speedComp.value)
 export const dashboardDomainIndex = computed<DomainIndex | null>(() => publicBundleDomainIndex.value)
+// Real snapshot sections (plan 060 data layer) — everything v1 comparison views derive from.
+export const fleetMachines = ref<FleetMachine[]>([])
+export const modelRegistry = ref<RegistryModel[]>([])
+export const runConfigs = ref<RunConfig[]>([])
+export const findings = ref<Finding[]>([])
+export const depthFindings = ref<DepthFinding[]>([])
+export const specDecodeFindings = ref<SpecDecodeFinding[]>([])
+/** Task id → domain id for the exam bank (drives per-task derivations). */
+export const taskDomains = ref<Record<string, string>>({})
 export const speedLoading = ref<boolean>(true)
 export const sweLoading = ref<boolean>(true)
 export const loading = computed<boolean>(() => speedLoading.value || sweLoading.value)
 export const error = ref<string | null>(null)
 
 async function fetchDashboardJson<T>(url: string): Promise<T> {
-  const response = await fetch(url, { cache: 'no-cache' })
-  if (!response.ok) throw new Error(`HTTP ${response.status} fetching ${url}`)
-  return response.json() as Promise<T>
+  const data = await fetchPublicJson<T>(url, { missingOk: true })
+  if (data == null) throw new Error(`HTTP 404 fetching ${resolvePublicPath(url)}`)
+  return data
 }
 
 export function orderedExamVersions(versions: ExamVersionInfo[]): ExamVersionInfo[] {
@@ -482,6 +484,13 @@ export async function loadAllData() {
     publicBundleNorm.value = publicDashboard.norm
     publicBundleComp.value = publicDashboard.comp
     publicBundleDomainIndex.value = publicDashboard.domainIndex
+    fleetMachines.value = publicDashboard.machines
+    modelRegistry.value = publicDashboard.modelRegistry
+    runConfigs.value = publicDashboard.runConfigs
+    findings.value = publicDashboard.findings
+    depthFindings.value = publicDashboard.depthFindings
+    specDecodeFindings.value = publicDashboard.specDecodeFindings
+    taskDomains.value = publicDashboard.taskDomains
     generatedAt.value = publicDashboard.generatedAt
     nowMs.value = generatedAt.value ? Date.parse(generatedAt.value) || Date.now() : Date.now()
 
@@ -494,12 +503,6 @@ export async function loadAllData() {
     if (!speedRecords.value.length && publicDashboard.records.length) {
       speedRecords.value = publicDashboard.records
     }
-    specDecodeFindings.value = publicDashboard.specDecodeFindings
-    publicFindings.value = publicDashboard.findings
-    depthFindings.value = publicDashboard.depthFindings
-    machines.value = publicDashboard.machines
-    modelFootprints.value = publicDashboard.modelFootprints
-    runConfigs.value = publicDashboard.runConfigs
   } catch (e: any) {
     publicBundleFeedLoaded.value = false
     publicBundleRecords.value = []
@@ -509,6 +512,13 @@ export async function loadAllData() {
     publicBundleNorm.value = null
     publicBundleComp.value = null
     publicBundleDomainIndex.value = null
+    fleetMachines.value = []
+    modelRegistry.value = []
+    runConfigs.value = []
+    findings.value = []
+    depthFindings.value = []
+    specDecodeFindings.value = []
+    taskDomains.value = {}
     generatedAt.value = null
     nowMs.value = Date.now()
     error.value = e.message

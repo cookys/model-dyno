@@ -3,7 +3,6 @@ import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
 import { RouterLink } from 'vue-router'
 import { History, Trophy } from 'lucide-vue-next'
 import vegaEmbed from 'vega-embed'
-import { modelPageHref } from '@/lib/modelLink'
 import { useI18n } from '@/lib/i18n'
 import { scorecardSweMeta, selectedExam, sweCellsByExam, loading } from '@/lib/store'
 import { isDark, chartTheme, chartBlueScheme } from '@/lib/theme'
@@ -22,9 +21,6 @@ import {
 
 import { useBoardFilter } from '@/lib/useBoardFilter'
 import BoardFilterBanner from '@/components/BoardFilterBanner.vue'
-import { useFoldSort, type FoldColumn } from '@/lib/foldSort'
-import { sortAwareChooser } from '@/lib/foldRepresentative'
-import FoldSortHeader from '@/components/FoldSortHeader.vue'
 
 const { t } = useI18n()
 const boardFilter = useBoardFilter()
@@ -42,63 +38,14 @@ const MIN_GRADED = 8
 /** plan 053: exam size SSOT from scorecard meta (not invented). */
 const examMeta = computed(() => resolveExamMeta(scorecardSweMeta.value))
 
-// The column the reader is ranking by. A folded row shows ONE cell out of several, so
-// a cover picked by a fixed rule means the board orders rows by a number that is not
-// the one on screen. Both tables on this page report into the same state: a row belongs
-// to exactly one of them, and the reader is sorting one at a time.
-const sortKey = ref<string | null>('eff')
-const sortDir = ref<'asc' | 'desc'>('desc')
-const onSortChange = (payload: { key: string | null; dir: 'asc' | 'desc' }) => {
-  sortKey.value = payload.key
-  sortDir.value = payload.dir
-}
-
-/** The active column's value for a cell, or null when that column cannot rank cells. */
-const activeSortValue = (c: any): number | string | null => {
-  switch (sortKey.value) {
-    case 'eff': return sweRate(c) ?? null
-    case 'n': case 'coverage': return num(c.n_graded)
-    case 'perHour': return num(c.solved_per_hour)
-    case 'secSolved': return num(c.med_wall_pass) ?? num(c.sec_per_solved)
-    case 'pps': return num(c.pps)
-    case 'tokSolved': return num(c.tok_per_solved)
-    case 'usdSolved': return num(c.usd_per_solved)
-    case 'agency': return num(c.agency?.noop_pct)
-    case 'machine': return c.machine || ''
-    case 'profile': return c.profile || ''
-    default: return null
-  }
-}
-
-const chooseBySort = sortAwareChooser<any>({
-  activeValue: activeSortValue,
-  direction: () => sortDir.value,
-  // Comparability first, in both directions, or flipping the arrow hands the cover to
-  // a cell that sat a partial exam and happens to hold a freak number.
-  rankFirst: (c) => (classifyCell(c, examMeta.value).rankable ? 1 : 0),
-  fallback: chooseBestScorecardCell,
-})
-
 const foldedScorecardGroups = computed(() =>
   groupByCanonicalModel(
     // Filter before folding so a family view picks its representative within the family.
     boardFilter.applyTo(sweCellsByExam.value),
-    chooseBySort,
+    chooseBestScorecardCell,
     (c) => `${c.model}-${c.profile || ''}-${c.machine || ''}-${c.canonical_version || ''}`,
   )
 )
-
-// Sortable fold: same columns the sub-table already showed, now clickable, with the
-// pass rate withheld from ranking for a cell that did not sit the full exam.
-const foldCols = computed<FoldColumn[]>(() => [
-  { key: 'model', label: t('col.model'), sortVal: (v) => v.model },
-  { key: 'profile', label: t('col.evalProfile'), sortVal: (v) => v.profile },
-  { key: 'machine', label: t('col.machineSwe'), sortVal: (v) => v.machine },
-  { key: 'n', label: t('col.passedGraded'), num: true, sortVal: (v) => v.nGradedRaw },
-  { key: 'eff', label: t('col.passRateCI'), num: true, sortVal: (v) => (v.comparable ? v.effRaw : null) },
-  { key: 'perHour', label: t('col.perHour'), num: true, sortVal: (v) => v.perHourRaw },
-])
-const foldSort = useFoldSort(() => foldCols.value, 'eff', 'desc')
 
 const comparableRepresentativeCells = computed(() => {
   return foldedScorecardGroups.value
@@ -188,21 +135,16 @@ const scorecardRows = computed(() => {
       tie,
       pps: num(c.pps),
       tokSolved: num(c.tok_per_solved),
-      tokWaste: num(c.tok_fail_ratio),
       secSolved: num(c.med_wall_pass) ?? num(c.sec_per_solved),
       usdSolved: c.price_known ? num(c.usd_per_solved) : null,
       perHour: num(c.solved_per_hour),
       variantCount: foldedVariantCount(group),
       variants: group.records.map((v) => ({
         model: modelName(v),
-        href: modelPageHref(v),
         profile: v.profile && v.profile !== '?' ? v.profile : '—',
         machine: v.machine || '—',
         n: `${v.n_passed ?? '?'}/${v.n_graded ?? '?'}`,
         eff: pct(sweRate(v)),
-        effRaw: sweRate(v) ?? null,
-        nGradedRaw: num(v.n_graded),
-        perHourRaw: num(v.solved_per_hour),
         ci: sweCI(v) ? `[${pct(sweCI(v)?.[0])}–${pct(sweCI(v)?.[1])}]` : '—',
         perHour: fmt(num(v.solved_per_hour), 1),
         comparable: classifyCell(
@@ -310,22 +252,6 @@ const cols = computed<Column<any>[]>(() => [
           title,
         ))
       }
-      // plan 060 T1c: same-condition rerun count. A single run's headline is a sample
-      // (this fleet measured 15-24% task-flip on unchanged configs); when more samples
-      // exist, say so and show the spread instead of letting one number look exact.
-      const nRuns = r.__record.n_runs
-      if (typeof nRuns === 'number' && nRuns > 1) {
-        const range = r.__record.headline_range
-        const rangeText = Array.isArray(range)
-          ? `${Math.round(range[0] * 100)}–${Math.round(range[1] * 100)}%`
-          : '—'
-        const tip = t('tip.nRuns').replace('{n}', String(nRuns)).replace('{range}', rangeText)
-        kids.push(h('span', {
-          class: 'text-[10px] text-muted-foreground font-mono border border-border rounded-full px-1.5 py-0.5',
-          title: tip,
-          'aria-label': tip,
-        }, `×${nRuns}`))
-      }
       return h('span', { class: 'inline-flex min-w-0 flex-wrap items-center justify-end gap-x-1 gap-y-1' }, kids)
     }
   },
@@ -338,11 +264,6 @@ const cols = computed<Column<any>[]>(() => [
   },
   { key: 'pps', label: t('col.pps'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.pps, 0) },
   { key: 'tokSolved', label: t('col.tokSolved'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.tokSolved, 0) },
-  // median output tokens on FAILED tasks : on SOLVED ones. tok/✓ divides all output
-  // by the passes, so a cell that spent its budget solving and one that burned it
-  // retrying score the same; this separates them. >1 means the budget went to
-  // flailing. Blank when either outcome subset is under the publisher's privacy floor.
-  { key: 'tokWaste', label: t('col.tokWaste'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.tokWaste, 2) },
   { key: 'secSolved', label: t('col.solveSpeedPass'), num: true, mobileHide: true, tabletHide: true, render: (r) => fmt(r.secSolved, 0) },
   {
     key: 'usdSolved',
@@ -557,7 +478,6 @@ onUnmounted(() => {
             :default-dir="'desc'"
             :expandable="true"
             fixed-layout
-            @sort-change="onSortChange"
           >
             <template #detail="{ row }">
               <div v-if="row.variantCount > 0" class="space-y-2">
@@ -568,14 +488,18 @@ onUnmounted(() => {
                 <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.evalProfile') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passedGraded') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.perHour') }}</th>
+                      </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.profile}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">
-                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
-                          <template v-else>{{ variant.model }}</template>
-                        </td>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.profile}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.profile }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
                         <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>
@@ -609,7 +533,6 @@ onUnmounted(() => {
             :default-dir="'desc'"
             :expandable="true"
             fixed-layout
-            @sort-change="onSortChange"
           >
             <template #detail="{ row }">
               <div v-if="row.variantCount > 0" class="space-y-2">
@@ -620,14 +543,18 @@ onUnmounted(() => {
                 <div class="hidden overflow-x-auto rounded-md border border-border/60 bg-card md:block">
                   <table class="w-full text-left text-[11px]">
                     <thead class="border-b border-border/60 text-muted-foreground">
-                      <FoldSortHeader :columns="foldCols" :sort="foldSort" />
+                      <tr>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.model') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.evalProfile') }}</th>
+                        <th class="px-2 py-1.5 font-semibold">{{ t('col.machineSwe') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passedGraded') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.passRateCI') }}</th>
+                        <th class="px-2 py-1.5 text-right font-semibold">{{ t('col.perHour') }}</th>
+                      </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="variant in foldSort.sortRows(row.variants)" :key="`${variant.model}-${variant.profile}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
-                        <td class="px-2 py-1.5 font-mono">
-                          <a v-if="variant.href" :href="variant.href" class="text-primary hover:underline">{{ variant.model }}</a>
-                          <template v-else>{{ variant.model }}</template>
-                        </td>
+                      <tr v-for="variant in row.variants" :key="`${variant.model}-${variant.profile}-${variant.machine}`" :class="variant.comparable ? '' : 'opacity-50'">
+                        <td class="px-2 py-1.5 font-mono">{{ variant.model }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.profile }}</td>
                         <td class="px-2 py-1.5 font-mono text-muted-foreground">{{ variant.machine }}</td>
                         <td class="px-2 py-1.5 text-right font-mono">{{ variant.n }}</td>

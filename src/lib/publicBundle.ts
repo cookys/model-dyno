@@ -1,6 +1,5 @@
-import { classifyCell } from './runClass'
-import { resolveExamMeta } from './examMeta'
 import type {
+  CellGates,
   CompIndex,
   DomainCell,
   DomainIndex,
@@ -17,10 +16,6 @@ export const PUBLIC_BUNDLE_SCHEMA_VERSIONS = [
   'public_bundle.v2',
   'public_bundle.v3',
   'public_bundle.v4',
-  // v5 adds scores[].footing.role — the profile's [tags].role, so the board can prefer the
-  // DEPLOYABLE configuration over the highest-scoring one (llm-playground plan 057).
-  // Accepted BEFORE the producer emits it, on purpose: the version string is validated here,
-  // so publishing v5 to a frontend that only knows v4 would break the live board.
   'public_bundle.v5',
 ] as const
 
@@ -51,16 +46,6 @@ export interface PublicBundle {
   scores: JsonObject[]
 }
 
-/** plan 060 T1a: the three score-credibility gates, published per cell by the producer
- *  (single source: the same footing math the private boards read). */
-export interface PublicGates {
-  verdict?: string
-  infra_pct?: number
-  trunc_pct?: number
-  maxstep_pct?: number
-  noop_pct?: number
-}
-
 export interface PublicBundleFeedEntry {
   id?: string
   base_url: string
@@ -68,11 +53,13 @@ export interface PublicBundleFeedEntry {
   label?: string
   owner?: string
   machine?: string
-  tags?: Record<string, string>
   publisher?: string
   operator?: string
   access_label?: string
-  gates?: PublicGates
+  /** Producer's structured experiment-axis tags (engine/quant/draft/lineage/thinking/temp/variant/…). */
+  tags?: Record<string, string>
+  /** 3-gate credibility block (infra/noop/trunc/maxstep pct + verdict). */
+  gates?: CellGates
   n_runs?: number
   headline_range?: [number, number]
 }
@@ -83,112 +70,129 @@ export interface PublicBundleScorecardProjection {
   loaded: boolean
 }
 
-export interface SpecDecodeFinding {
-  machine: string
-  target: string
-  method: string
-  workload: string
-  /** `decode` = tok/s ratio, `agentic` = end-to-end task wall. They disagree, often. */
-  metric: string
-  speedup: number
-  accept: string
-  verdict: string
-  note: string
-  source: string
-}
-
-export interface MachineHardware {
+/** Fleet machine spec row from the snapshot `machines` section (real hardware, not editorial). */
+export interface FleetMachine {
   profile: string
+  aliases: string[]
   gpu_name: string | null
   gpu_vendor: string | null
   gpu_count: number | null
-  /** dedicated = a discrete card's own VRAM; unified = one pool shared with the OS. */
-  memory_kind: string
-  vram_per_gpu_gb: number | null
-  vram_total_gb: number | null
+  memory_kind: string | null
   vram_pool_gb: number | null
+  vram_total_gb: number | null
+  vram_per_gpu_gb: number | null
   vram_practical_gb: number | null
-  /** The figure to subtract a model's weights from. Not the same quantity on both kinds. */
   vram_usable_gb: number | null
-  /** Largest SINGLE allocation the driver grants — a separate limit from the pool. */
   alloc_cap_gb: number | null
-  aliases: string[]
 }
 
-export interface ModelFootprint {
+/** Weight checkpoint row from the snapshot `model_registry` section (models/registry/*.toml). */
+export interface RegistryModel {
   alias: string
-  family?: string
-  quant?: string
-  weights_gb?: number
-  params_total_b?: number
-  params_active_b?: number
-  context_max?: number
-  hf_repo?: string
-  license?: string
+  family: string | null
+  hf_repo: string | null
+  license: string | null
+  quant: string | null
+  weights_gb: number | null
+  params_total_b: number | null
+  params_active_b: number | null
+  context_max: number | null
 }
 
+/** Launch config row from the snapshot `run_configs` section (configs/<tier>/*.toml). */
 export interface RunConfig {
   config: string
-  tier: string
-  model: string
+  model: string | null
+  model_key: string | null
+  engine: string | null
+  tier: string | null
+  ctx_size: number | null
+  n_gpu_layers: number | null
+  split_mode: string | null
+  jinja: boolean | null
   methods: string[]
-  engine?: string
-  ctx_size?: number
-  [k: string]: unknown
+  sampler_temp: number | null
+  sampler_top_p: number | null
+  sampler_top_k: number | null
+  sampler_min_p: number | null
 }
 
-export interface PublicFinding {
+/** Curated finding (plan 060 narrative layer): claim vs measured, with evidence + repro. */
+export interface FindingEvidence {
+  metric: string | null
+  value: string | null
+  detail: string | null
+}
+
+export interface Finding {
   id: string
-  title_en: string
-  title_zh: string
-  claim_en: string
-  claim_zh: string
-  measured_en: string
-  measured_zh: string
-  conditions: string
-  evidence: { metric: string; value: string; detail?: string }[]
-  repro_en: string
-  caveat_en: string
-  date: string
-  source: string
+  title_en: string | null
+  title_zh: string | null
+  claim_en: string | null
+  claim_zh: string | null
+  measured_en: string | null
+  measured_zh: string | null
+  caveat_en: string | null
+  conditions: string | null
+  date: string | null
+  source: string | null
+  repro_en: string | null
+  evidence: FindingEvidence[]
 }
 
+/** Deep-context latency receipt (cold vs hot TTFT at real context depths). */
 export interface DepthFinding {
-  machine: string
-  config: string
-  metric: string
-  context: number
-  concurrency: number
-  state: string
-  value: number
-  note: string
-  date: string
-  source: string
+  machine: string | null
+  config: string | null
+  metric: string | null
+  context: number | null
+  concurrency: number | null
+  state: string | null
+  value: number | null
+  date: string | null
+  note: string | null
+  source: string | null
+}
+
+/** Speculative-decoding verdict row (real measured speedups, wins AND losses). */
+export interface SpecDecodeFinding {
+  machine: string | null
+  target: string | null
+  method: string | null
+  metric: string | null
+  workload: string | null
+  speedup: number | null
+  accept: string | null
+  verdict: string | null
+  note: string | null
+  source: string | null
 }
 
 export interface PublicBundleDashboardProjection extends PublicBundleScorecardProjection {
   generatedAt: string | null
   records: SpeedRecord[]
-  specDecodeFindings: SpecDecodeFinding[]
-  findings: PublicFinding[]
-  depthFindings: DepthFinding[]
-  machines: MachineHardware[]
-  modelFootprints: ModelFootprint[]
-  runConfigs: RunConfig[]
   sharedCells: SharedSweCell[]
   norm: NormIndex | null
   comp: CompIndex | null
   domainIndex: DomainIndex | null
+  machines: FleetMachine[]
+  modelRegistry: RegistryModel[]
+  runConfigs: RunConfig[]
+  findings: Finding[]
+  depthFindings: DepthFinding[]
+  specDecodeFindings: SpecDecodeFinding[]
+  /** Task id → domain id map for the exam bank (drives the per-task matrix layer). */
+  taskDomains: Record<string, string>
 }
 
 interface PublicBundleProjectionMetadata {
   owner?: string
   machine?: string
-  tags?: Record<string, string>
   publisher?: string
   operator?: string
   access_label?: string
-  gates?: PublicGates
+  tags?: Record<string, string>
+  gates?: CellGates
   n_runs?: number
   headline_range?: [number, number]
 }
@@ -335,21 +339,6 @@ function subjectProfile(subject: JsonObject | undefined, comparisonKey: JsonObje
     ?? undefined
 }
 
-/** Map the producer's gates onto the AgencyBlock shape the existing agencyBadge renders.
- *  budget_pct = max(trunc, maxstep), matching credibilityDims' fallback chain. */
-function gatesToAgency(gates: PublicGates | undefined): Record<string, unknown> | undefined {
-  if (!gates || typeof gates.verdict !== 'string') return undefined
-  const trunc = finiteNumberOrNull(gates.trunc_pct)
-  const maxstep = finiteNumberOrNull(gates.maxstep_pct)
-  const budget = trunc === null && maxstep === null ? null : Math.max(trunc ?? 0, maxstep ?? 0)
-  return {
-    verdict: gates.verdict,
-    noop_pct: finiteNumberOrNull(gates.noop_pct),
-    infra_pct: finiteNumberOrNull(gates.infra_pct),
-    budget_pct: budget,
-  }
-}
-
 function subjectAccess(backend: string | null): string | undefined {
   if (!backend) return undefined
   return backend.includes('local') ? 'local' : 'remote'
@@ -401,10 +390,6 @@ function derivePerfMetrics(
   med_wall_pass?: number
   mean_wall_pass?: number
   tok_per_solved?: number
-  tok_med?: number
-  tok_med_pass?: number
-  tok_med_fail?: number
-  tok_fail_ratio?: number
   perf_coverage?: string
   fail_wall_share?: number
   maxstep_fail_n?: number
@@ -428,10 +413,6 @@ function derivePerfMetrics(
     med_wall_pass?: number
     mean_wall_pass?: number
     tok_per_solved?: number
-    tok_med?: number
-    tok_med_pass?: number
-    tok_med_fail?: number
-    tok_fail_ratio?: number
     perf_coverage?: string
     fail_wall_share?: number
     maxstep_fail_n?: number
@@ -472,20 +453,17 @@ function derivePerfMetrics(
 
   const tok = tokensPerSolved(usage, nPassed)
   if (tok !== undefined) out.tok_per_solved = tok
-
-  // Outcome-split output-token medians. The publisher nulls all three together
-  // when either subset is under the privacy floor, so treat them as one set and
-  // derive the ratio only when both sides are present and the pass side is > 0.
-  const tMed = finiteNumberOrNull(perf.tokens_out_median)
-  const tPass = finiteNumberOrNull(perf.tokens_out_median_pass)
-  const tFail = finiteNumberOrNull(perf.tokens_out_median_fail)
-  if (tMed !== null && tPass !== null && tFail !== null) {
-    out.tok_med = tMed
-    out.tok_med_pass = tPass
-    out.tok_med_fail = tFail
-    if (tPass > 0) out.tok_fail_ratio = tFail / tPass
-  }
   return out
+}
+
+function taskVerdictsOf(run: JsonObject | undefined): Record<string, string> | undefined {
+  const raw = run?.task_verdicts
+  if (!isObject(raw)) return undefined
+  const out: Record<string, string> = {}
+  for (const [k, v] of Object.entries(raw)) {
+    if (typeof v === 'string' && v) out[k] = v.toUpperCase()
+  }
+  return Object.keys(out).length ? out : undefined
 }
 
 export function projectScorecardRowsFromPublicBundle(
@@ -573,10 +551,6 @@ export function projectScorecardRowsFromPublicBundle(
         ? ((nonNegativeInt(aggregate.n_error) ?? 0) + (nonNegativeInt(aggregate.n_infra_error) ?? 0)) / nTasks
         : 0,
       tok_per_solved: perfMetrics.tok_per_solved,
-      tok_med: perfMetrics.tok_med,
-      tok_med_pass: perfMetrics.tok_med_pass,
-      tok_med_fail: perfMetrics.tok_med_fail,
-      tok_fail_ratio: perfMetrics.tok_fail_ratio,
       sec_per_solved: perfMetrics.sec_per_solved,
       sec_per_solved_all: perfMetrics.sec_per_solved,
       solved_per_hour: perfMetrics.solved_per_hour,
@@ -592,40 +566,20 @@ export function projectScorecardRowsFromPublicBundle(
         ? { verdict: perfMetrics.speed_verdict }
         : undefined,
       usd_per_solved: costCoverage === 'full' ? nanoUsdPerSolved(cost, nPassed) : undefined,
-      // `coverage: "full"` means every token was OBSERVED, not that a rate exists to
-      // price them with. Every local cell in the feed is coverage:"full" with
-      // total_cost_nano_usd:null and reason:"rate_unavailable" — 65 of them — so
-      // conflating the two published a confident "price known" for runs whose price is
-      // explicitly unavailable, and the $0 branch downstream reads that as "local is
-      // free". A price is known when there is a number.
-      price_known: costCoverage === 'full' && finiteNumberOrNull(cost.total_cost_nano_usd) !== null,
-      // Config axes come from the feed entry, which carries what the eval profile
-      // declared and the tag validator checked. The old fallback synthesized a
-      // placement-only object out of the backend string, so every other tag column
-      // rendered empty here while looking populated against a private aggregate — a
-      // failure that only shows up on the published site, never in local development.
-      // v5: footing.role is the profile's [tags].role. It rides in `tags` because that is
-      // where every other config axis already lives, and it is merged rather than replacing
-      // the feed's tags so a v4 bundle (no role) projects exactly as before.
-      tags: (() => {
-        const base: Record<string, string> = (metadata.tags && Object.keys(metadata.tags).length)
-          ? { ...metadata.tags }
-          : (backend ? { placement: backend.includes('local') ? 'local' : 'remote' } : {})
-        const role = stringOrNull(footing.role)
-        if (role) base.role = role
-        return Object.keys(base).length ? base : undefined
-      })(),
-      // plan 060 T1a/T1c: gates ride the feed entry; project them into the agency slot the
-      // existing badge already renders, plus the cap-detail and rerun-sample fields.
-      agency: gatesToAgency(metadata.gates) as SweCell['agency'],
-      trunc_pct: finiteNumberOrNull(metadata.gates?.trunc_pct) ?? undefined,
-      maxstep_pct: finiteNumberOrNull(metadata.gates?.maxstep_pct) ?? undefined,
-      n_runs: metadata.n_runs,
-      headline_range: metadata.headline_range,
+      price_known: costCoverage === 'full',
+      // Producer's structured axis tags win; the placement fallback survives for feeds without tags.
+      tags: metadata.tags
+        ?? (backend ? { placement: backend.includes('local') ? 'local' : 'remote' } : undefined),
       identity: {
         access: subjectAccess(backend),
         canonical_model: stringOrNull(comparisonKey.model) ?? stringOrNull(subject?.model) ?? undefined,
       },
+      scored_at: stringOrNull(score.scored_at) ?? undefined,
+      run_role: stringOrNull(footing.role) ?? undefined,
+      gates: metadata.gates,
+      n_runs: metadata.n_runs,
+      headline_range: metadata.headline_range,
+      task_verdicts: taskVerdictsOf(run),
     }]
   })
 }
@@ -711,7 +665,6 @@ export function projectNormIndexFromScorecardRows(cells: SweCell[], meta: SweMet
     n_exam: currentTaskCount || undefined,
     n_canon: currentTaskCount || undefined,
     comparable_min: comparableMin,
-    display_floor: meta?.display_floor,
   }
 }
 
@@ -723,7 +676,6 @@ export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMet
     n_exam: nExam || undefined,
     n_canon: nExam || undefined,
     comparable_min: comparableMin,
-    display_floor: meta?.display_floor,
     cells: cells.map((cell) => {
       const acc = finiteNumberOrNull(cell.headline) ?? 0
       const ci = cell.headline_ci ?? wilsonCi(cell.n_passed ?? 0, cell.n_graded ?? 0)
@@ -769,10 +721,6 @@ export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMet
         suspect_error_count: cell.suspect_error_count,
         suspect_error_rate: cell.suspect_error_rate,
         agency: cell.agency,
-        trunc_pct: cell.trunc_pct,
-        maxstep_pct: cell.maxstep_pct,
-        n_runs: cell.n_runs,
-        headline_range: cell.headline_range,
       }
     }),
   }
@@ -872,7 +820,6 @@ function buildScorecardMeta(
       n_canon: nExam,
       n_exam: nExam,
       comparable_min: comparableMin,
-      display_floor: feedMeta.display_floor,
       version_aware: feedMeta.version_aware ?? true,
       exam_versions: versions,
     }
@@ -914,10 +861,6 @@ function buildScorecardMeta(
     n_canon: nExam,
     n_exam: nExam,
     comparable_min: comparableMin,
-    // Carried on this branch too: a feed without exam_versions still stamped a
-    // floor, and dropping it here would let the meta disagree with the filter
-    // that already ran at the choke point.
-    display_floor: feedMeta?.display_floor,
     version_aware: true,
     exam_versions: versions,
   }
@@ -968,11 +911,39 @@ function normalizeFeedEntries(raw: unknown): NormalizedPublicBundleFeed {
       n_canon: nonNegativeInt(feed.n_canon) ?? nonNegativeInt(feed.n_exam),
       n_exam: nonNegativeInt(feed.n_exam) ?? nonNegativeInt(feed.n_canon) ?? nonNegativeInt(feed.current_exam_n_tasks),
       comparable_min: nonNegativeInt(feed.comparable_min) ?? undefined,
-      display_floor: nonNegativeInt(feed.display_floor) ?? undefined,
       version_aware: boolOrNull(feed.version_aware) ?? true,
       exam_versions: examVersions,
     },
   }
+}
+
+function normalizeEntryTags(raw: unknown): Record<string, string> | undefined {
+  if (!isObject(raw)) return undefined
+  const out: Record<string, string> = {}
+  for (const [k, v] of Object.entries(raw)) {
+    if (typeof v === 'string' && v.trim()) out[k] = v.trim()
+    else if (typeof v === 'number' && Number.isFinite(v)) out[k] = String(v)
+  }
+  return Object.keys(out).length ? out : undefined
+}
+
+function normalizeEntryGates(raw: unknown): CellGates | undefined {
+  if (!isObject(raw)) return undefined
+  const gates: CellGates = {
+    infra_pct: finiteNumberOrNull(raw.infra_pct) ?? undefined,
+    noop_pct: finiteNumberOrNull(raw.noop_pct) ?? undefined,
+    trunc_pct: finiteNumberOrNull(raw.trunc_pct) ?? undefined,
+    maxstep_pct: finiteNumberOrNull(raw.maxstep_pct) ?? undefined,
+    verdict: stringOrNull(raw.verdict) ?? undefined,
+  }
+  return gates.verdict != null || gates.infra_pct != null ? gates : undefined
+}
+
+function normalizeHeadlineRange(raw: unknown): [number, number] | undefined {
+  if (!Array.isArray(raw) || raw.length !== 2) return undefined
+  const lo = finiteNumberOrNull(raw[0])
+  const hi = finiteNumberOrNull(raw[1])
+  return lo != null && hi != null ? [lo, hi] : undefined
 }
 
 function normalizeFeedEntry(raw: unknown): PublicBundleFeedEntry | null {
@@ -986,19 +957,150 @@ function normalizeFeedEntry(raw: unknown): PublicBundleFeedEntry | null {
     label: stringOrNull(entry.label) ?? undefined,
     owner: stringOrNull(entry.owner) ?? undefined,
     machine: stringOrNull(entry.machine) ?? undefined,
-    tags: (entry.tags && typeof entry.tags === 'object' && !Array.isArray(entry.tags))
-      ? (entry.tags as Record<string, string>)
-      : undefined,
     publisher: stringOrNull(entry.publisher) ?? undefined,
     operator: stringOrNull(entry.operator) ?? undefined,
     access_label: stringOrNull(entry.access_label) ?? undefined,
-    gates: isObject(entry.gates) ? (entry.gates as PublicGates) : undefined,
+    tags: normalizeEntryTags(entry.tags),
+    gates: normalizeEntryGates(entry.gates),
     n_runs: nonNegativeInt(entry.n_runs) ?? undefined,
-    headline_range: (Array.isArray(entry.headline_range) && entry.headline_range.length === 2
-      && entry.headline_range.every((v) => typeof v === 'number' && Number.isFinite(v)))
-      ? (entry.headline_range as [number, number])
-      : undefined,
+    headline_range: normalizeHeadlineRange(entry.headline_range),
   }
+}
+
+function stringArray(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : []
+}
+
+function normalizeMachines(raw: unknown): FleetMachine[] {
+  if (!Array.isArray(raw)) return []
+  return raw.filter(isObject).flatMap((m): FleetMachine[] => {
+    const profile = stringOrNull(m.profile)
+    if (!profile) return []
+    return [{
+      profile,
+      aliases: stringArray(m.aliases),
+      gpu_name: stringOrNull(m.gpu_name),
+      gpu_vendor: stringOrNull(m.gpu_vendor),
+      gpu_count: finiteNumberOrNull(m.gpu_count),
+      memory_kind: stringOrNull(m.memory_kind),
+      vram_pool_gb: finiteNumberOrNull(m.vram_pool_gb),
+      vram_total_gb: finiteNumberOrNull(m.vram_total_gb),
+      vram_per_gpu_gb: finiteNumberOrNull(m.vram_per_gpu_gb),
+      vram_practical_gb: finiteNumberOrNull(m.vram_practical_gb),
+      vram_usable_gb: finiteNumberOrNull(m.vram_usable_gb),
+      alloc_cap_gb: finiteNumberOrNull(m.alloc_cap_gb),
+    }]
+  })
+}
+
+function normalizeModelRegistry(raw: unknown): RegistryModel[] {
+  if (!Array.isArray(raw)) return []
+  return raw.filter(isObject).flatMap((m): RegistryModel[] => {
+    const alias = stringOrNull(m.alias)
+    if (!alias) return []
+    return [{
+      alias,
+      family: stringOrNull(m.family),
+      hf_repo: stringOrNull(m.hf_repo),
+      license: stringOrNull(m.license),
+      quant: stringOrNull(m.quant),
+      weights_gb: finiteNumberOrNull(m.weights_gb),
+      params_total_b: finiteNumberOrNull(m.params_total_b),
+      params_active_b: finiteNumberOrNull(m.params_active_b),
+      context_max: finiteNumberOrNull(m.context_max),
+    }]
+  })
+}
+
+function normalizeRunConfigs(raw: unknown): RunConfig[] {
+  if (!Array.isArray(raw)) return []
+  return raw.filter(isObject).flatMap((c): RunConfig[] => {
+    const config = stringOrNull(c.config)
+    if (!config) return []
+    return [{
+      config,
+      model: stringOrNull(c.model),
+      model_key: stringOrNull(c.model_key),
+      engine: stringOrNull(c.engine),
+      tier: stringOrNull(c.tier),
+      ctx_size: finiteNumberOrNull(c.ctx_size),
+      n_gpu_layers: finiteNumberOrNull(c.n_gpu_layers),
+      split_mode: stringOrNull(c.split_mode),
+      jinja: boolOrNull(c.jinja),
+      methods: stringArray(c.methods),
+      sampler_temp: finiteNumberOrNull(c.sampler_temp),
+      sampler_top_p: finiteNumberOrNull(c.sampler_top_p),
+      sampler_top_k: finiteNumberOrNull(c.sampler_top_k),
+      sampler_min_p: finiteNumberOrNull(c.sampler_min_p),
+    }]
+  })
+}
+
+function normalizeFindings(raw: unknown): Finding[] {
+  if (!Array.isArray(raw)) return []
+  return raw.filter(isObject).flatMap((f): Finding[] => {
+    const id = stringOrNull(f.id)
+    if (!id) return []
+    const evidence = Array.isArray(f.evidence)
+      ? f.evidence.filter(isObject).map((e): FindingEvidence => ({
+          metric: stringOrNull(e.metric),
+          value: stringOrNull(e.value),
+          detail: stringOrNull(e.detail),
+        }))
+      : []
+    return [{
+      id,
+      title_en: stringOrNull(f.title_en),
+      title_zh: stringOrNull(f.title_zh),
+      claim_en: stringOrNull(f.claim_en),
+      claim_zh: stringOrNull(f.claim_zh),
+      measured_en: stringOrNull(f.measured_en),
+      measured_zh: stringOrNull(f.measured_zh),
+      caveat_en: stringOrNull(f.caveat_en),
+      conditions: stringOrNull(f.conditions),
+      date: stringOrNull(f.date),
+      source: stringOrNull(f.source),
+      repro_en: stringOrNull(f.repro_en),
+      evidence,
+    }]
+  })
+}
+
+function normalizeDepthFindings(raw: unknown): DepthFinding[] {
+  if (!Array.isArray(raw)) return []
+  return raw.filter(isObject).map((d): DepthFinding => ({
+    machine: stringOrNull(d.machine),
+    config: stringOrNull(d.config),
+    metric: stringOrNull(d.metric),
+    context: finiteNumberOrNull(d.context),
+    concurrency: finiteNumberOrNull(d.concurrency),
+    state: stringOrNull(d.state),
+    value: finiteNumberOrNull(d.value),
+    date: stringOrNull(d.date),
+    note: stringOrNull(d.note),
+    source: stringOrNull(d.source),
+  }))
+}
+
+function normalizeSpecDecodeFindings(raw: unknown): SpecDecodeFinding[] {
+  if (!Array.isArray(raw)) return []
+  return raw.filter(isObject).map((s): SpecDecodeFinding => ({
+    machine: stringOrNull(s.machine),
+    target: stringOrNull(s.target),
+    method: stringOrNull(s.method),
+    metric: stringOrNull(s.metric),
+    workload: stringOrNull(s.workload),
+    speedup: finiteNumberOrNull(s.speedup),
+    accept: stringOrNull(s.accept),
+    verdict: stringOrNull(s.verdict),
+    note: stringOrNull(s.note),
+    source: stringOrNull(s.source),
+  }))
+}
+
+function normalizeSpeedRecords(raw: unknown): SpeedRecord[] {
+  if (!Array.isArray(raw)) return []
+  return raw.filter(isObject).map((r) => r as unknown as SpeedRecord)
 }
 
 function normalizeTaskDomains(raw: unknown): Record<string, string> {
@@ -1010,143 +1112,108 @@ function normalizeTaskDomains(raw: unknown): Record<string, string> {
   return out
 }
 
-// The speed routes' data, straight off the snapshot.
-//
-// These used to be hard-coded to [] here, with a comment deferring them to a future
-// ABI — which meant /speed/heatmap, /speed/leaderboard and /speed/contributors
-// rendered nothing in production while looking healthy on a dev checkout, where the
-// private INDEX.json still exists. The producer publishes both arrays now; this only
-// has to not throw when an older snapshot lacks them.
-function projectSpeedRecords(raw: unknown): SpeedRecord[] {
-  return Array.isArray(raw) ? (raw.filter((r) => r && typeof r === 'object') as SpeedRecord[]) : []
+/** Resolve a Vite ``public/`` asset path from any vue-router view (hash or history). */
+export function resolvePublicPath(relativePath: string): string {
+  const cleanPath = relativePath.replace(/^\.?\//, '')
+  if (typeof window === 'undefined') {
+    return `./${cleanPath}`
+  }
+
+  const viteBase = import.meta.env.BASE_URL || '/'
+  if (viteBase.startsWith('http://') || viteBase.startsWith('https://')) {
+    const base = viteBase.endsWith('/') ? viteBase : `${viteBase}/`
+    return new URL(cleanPath, base).href
+  }
+
+  if (viteBase.startsWith('/')) {
+    const prefix = viteBase.endsWith('/') ? viteBase : `${viteBase}/`
+    return `${prefix}${cleanPath}`.replace(/([^:]\/)\/+/g, '$1')
+  }
+
+  // base './' — hash-router keeps pathname at the deploy root; ignore #/v1/… segments.
+  const { pathname } = window.location
+  const deployRoot = pathname.endsWith('/')
+    ? pathname
+    : pathname.replace(/\/[^/]*$/, '/')
+  return `${deployRoot}${cleanPath}`.replace(/([^:]\/)\/+/g, '/')
 }
 
-function projectMachines(raw: unknown): MachineHardware[] {
-  if (!Array.isArray(raw)) return []
-  return raw
-    .filter((m): m is Record<string, unknown> => !!m && typeof m === 'object')
-    .map((m) => ({
-      profile: String(m.profile ?? ''),
-      gpu_name: (m.gpu_name as string) ?? null,
-      gpu_vendor: (m.gpu_vendor as string) ?? null,
-      gpu_count: typeof m.gpu_count === 'number' ? m.gpu_count : null,
-      memory_kind: String(m.memory_kind ?? 'dedicated'),
-      vram_per_gpu_gb: typeof m.vram_per_gpu_gb === 'number' ? m.vram_per_gpu_gb : null,
-      vram_total_gb: typeof m.vram_total_gb === 'number' ? m.vram_total_gb : null,
-      vram_pool_gb: typeof m.vram_pool_gb === 'number' ? m.vram_pool_gb : null,
-      vram_practical_gb: typeof m.vram_practical_gb === 'number' ? m.vram_practical_gb : null,
-      vram_usable_gb: typeof m.vram_usable_gb === 'number' ? m.vram_usable_gb : null,
-      alloc_cap_gb: typeof m.alloc_cap_gb === 'number' ? m.alloc_cap_gb : null,
-      aliases: Array.isArray(m.aliases) ? m.aliases.map(String) : [],
-    }))
-    .filter((m) => m.profile)
-}
+const LOCAL_DATA_CMD = 'python3 scripts/build-dashboard.py --no-build'
 
-function projectModelFootprints(raw: unknown): ModelFootprint[] {
-  if (!Array.isArray(raw)) return []
-  return raw
-    .filter((m): m is Record<string, unknown> => !!m && typeof m === 'object')
-    .map((m) => ({ ...(m as unknown as ModelFootprint), alias: String(m.alias ?? '') }))
-    .filter((m) => m.alias)
-}
+export async function fetchPublicJson<T>(
+  url: string,
+  opts?: { missingOk?: boolean },
+): Promise<T | null> {
+  const resolvedUrl = resolvePublicPath(url)
+  const response = await fetch(resolvedUrl, { cache: 'no-cache' })
+  if (!response.ok) {
+    if (response.status === 404 && opts?.missingOk) return null
+    if (response.status === 404) {
+      throw new Error(
+        `Dashboard data missing at ${resolvedUrl} — run ${LOCAL_DATA_CMD} (or python3 scripts/build-dashboard.py --serve).`,
+      )
+    }
+    throw new Error(`HTTP ${response.status} fetching ${resolvedUrl}`)
+  }
 
-function projectPublicFindings(raw: unknown): PublicFinding[] {
-  if (!Array.isArray(raw)) return []
-  return raw
-    .filter((f): f is Record<string, unknown> => !!f && typeof f === 'object')
-    .map((f) => ({
-      id: String(f.id ?? ''),
-      title_en: String(f.title_en ?? ''),
-      title_zh: String(f.title_zh ?? ''),
-      claim_en: String(f.claim_en ?? ''),
-      claim_zh: String(f.claim_zh ?? ''),
-      measured_en: String(f.measured_en ?? ''),
-      measured_zh: String(f.measured_zh ?? ''),
-      conditions: String(f.conditions ?? ''),
-      evidence: Array.isArray(f.evidence)
-        ? f.evidence.filter(isObject).map((e) => ({
-            metric: String(e.metric ?? ''),
-            value: String(e.value ?? ''),
-            detail: e.detail ? String(e.detail) : undefined,
-          }))
-        : [],
-      repro_en: String(f.repro_en ?? ''),
-      caveat_en: String(f.caveat_en ?? ''),
-      date: String(f.date ?? ''),
-      source: String(f.source ?? ''),
-    }))
-    .filter((f) => f.id && f.title_en)
-}
+  const contentType = response.headers.get('content-type') ?? ''
+  const text = await response.text()
+  if (contentType.includes('text/html') || text.trimStart().startsWith('<!')) {
+    throw new Error(
+      `PublicBundle dashboard feed missing at ${resolvedUrl} (server returned HTML). `
+      + `Run ${LOCAL_DATA_CMD}, then npm run dev or python3 scripts/build-dashboard.py --serve.`,
+    )
+  }
 
-function projectDepthFindings(raw: unknown): DepthFinding[] {
-  if (!Array.isArray(raw)) return []
-  return raw
-    .filter((f): f is Record<string, unknown> => !!f && typeof f === 'object')
-    .map((f) => ({
-      machine: String(f.machine ?? ''),
-      config: String(f.config ?? ''),
-      metric: String(f.metric ?? ''),
-      context: typeof f.context === 'number' ? f.context : 0,
-      concurrency: typeof f.concurrency === 'number' ? f.concurrency : 1,
-      state: String(f.state ?? 'n/a'),
-      value: typeof f.value === 'number' ? f.value : NaN,
-      note: String(f.note ?? ''),
-      date: String(f.date ?? ''),
-      source: String(f.source ?? ''),
-    }))
-    .filter((f) => f.machine && Number.isFinite(f.value))
-}
-
-function projectSpecDecodeFindings(raw: unknown): SpecDecodeFinding[] {
-  if (!Array.isArray(raw)) return []
-  return raw
-    .filter((f): f is Record<string, unknown> => !!f && typeof f === 'object')
-    .map((f) => ({
-      machine: String(f.machine ?? ''),
-      target: String(f.target ?? ''),
-      method: String(f.method ?? ''),
-      metric: String(f.metric ?? ''),
-      workload: String(f.workload ?? ''),
-      speedup: typeof f.speedup === 'number' ? f.speedup : NaN,
-      accept: String(f.accept ?? ''),
-      verdict: String(f.verdict ?? ''),
-      note: String(f.note ?? ''),
-      source: String(f.source ?? ''),
-    }))
-    .filter((f) => f.machine && Number.isFinite(f.speedup))
+  try {
+    return JSON.parse(text) as T
+  } catch (e) {
+    const detail = e instanceof Error ? e.message : String(e)
+    throw new Error(`Invalid JSON from ${resolvedUrl}: ${detail}`)
+  }
 }
 
 export async function loadPublicBundleDashboardFeed(
   snapshotUrl = './public-bundles/dashboard-snapshot.json',
 ): Promise<PublicBundleDashboardProjection> {
-  const snapshotRes = await fetch(snapshotUrl, { cache: 'no-cache' })
-  if (!snapshotRes.ok) {
-    if (snapshotRes.status === 404) {
-      return {
-        cells: [],
-        meta: null,
-        loaded: false,
-        generatedAt: null,
-        records: [],
-        specDecodeFindings: [],
-        findings: [],
-        depthFindings: [],
-        machines: [],
-        modelFootprints: [],
-        runConfigs: [],
-        sharedCells: [],
-        norm: null,
-        comp: null,
-        domainIndex: null,
-      }
+  const emptySections = {
+    machines: [] as FleetMachine[],
+    modelRegistry: [] as RegistryModel[],
+    runConfigs: [] as RunConfig[],
+    findings: [] as Finding[],
+    depthFindings: [] as DepthFinding[],
+    specDecodeFindings: [] as SpecDecodeFinding[],
+  }
+  const snapshotRaw = await fetchPublicJson<unknown>(snapshotUrl, { missingOk: true })
+  if (!snapshotRaw) {
+    return {
+      cells: [],
+      meta: null,
+      loaded: false,
+      generatedAt: null,
+      records: [],
+      sharedCells: [],
+      norm: null,
+      comp: null,
+      domainIndex: null,
+      taskDomains: {},
+      ...emptySections,
     }
-    throw new Error(`HTTP ${snapshotRes.status} fetching ${snapshotUrl}`)
   }
 
-  const snapshot = asObject(await snapshotRes.json())
+  const snapshot = asObject(snapshotRaw)
   if (snapshot.schema_version !== 'dashboard_public_bundle_snapshot.v1') {
     throw new Error(`Unsupported dashboard snapshot schema: ${String(snapshot.schema_version ?? 'missing')}`)
   }
+  const sections = {
+    machines: normalizeMachines(snapshot.machines),
+    modelRegistry: normalizeModelRegistry(snapshot.model_registry),
+    runConfigs: normalizeRunConfigs(snapshot.run_configs),
+    findings: normalizeFindings(snapshot.findings),
+    depthFindings: normalizeDepthFindings(snapshot.depth_findings),
+    specDecodeFindings: normalizeSpecDecodeFindings(snapshot.spec_decode_findings),
+  }
+  const snapshotSpeedRecords = normalizeSpeedRecords(snapshot.speed_records)
   const feed = normalizeFeedEntries(snapshot.feed)
   if (!feed.entries.length) {
     return {
@@ -1154,17 +1221,13 @@ export async function loadPublicBundleDashboardFeed(
       meta: null,
       loaded: true,
       generatedAt: feed.generatedAt,
-      records: [],
-      specDecodeFindings: [],
-      findings: [],
-      depthFindings: [],
-      machines: [],
-      modelFootprints: [],
-      runConfigs: [],
+      records: snapshotSpeedRecords,
       sharedCells: [],
       norm: null,
       comp: null,
       domainIndex: null,
+      taskDomains: normalizeTaskDomains(snapshot.task_domains),
+      ...sections,
     }
   }
 
@@ -1189,47 +1252,21 @@ export async function loadPublicBundleDashboardFeed(
     throw new Error(`dashboard snapshot bundle count mismatch: ${loadedBundles.length}/${feed.entries.length}`)
   }
   const taskDomains = normalizeTaskDomains(snapshot.task_domains)
-
-  // Drop TRIVIAL cells once, here, rather than in each view: this is the single
-  // point every downstream projection (scorecard / norm / comp / shared / domain)
-  // reads from, so a run below the display floor is genuinely absent instead of
-  // merely unranked — including from the expanded per-model sub-tables, which
-  // render group members and would otherwise still list the hidden rows.
-  const floorOpts = resolveExamMeta(feed.meta)
-  const kept = loadedBundles
-    .map(({ entry, bundle }) => ({
-      bundle,
-      rows: projectScorecardRowsFromPublicBundle(bundle, entry).filter(
-        (c) =>
-          classifyCell(
-            { n_graded: c.n_graded, comparable: c.comparable, owed: c.owed, n_exam: c.n_canon ?? c.n_exam, n_canon: c.n_canon },
-            floorOpts,
-          ).coverage !== 'TRIVIAL',
-      ),
-    }))
-    .filter((item) => item.rows.length > 0)
-
-  const bundles = kept.map((item) => item.bundle)
-  const cells = kept.flatMap((item) => item.rows)
+  const bundles = loadedBundles.map((item) => item.bundle)
+  const cells = loadedBundles.flatMap(({ entry, bundle }) => projectScorecardRowsFromPublicBundle(bundle, entry))
   const meta = buildScorecardMeta(cells, bundles, feed.current, feed.meta)
   return {
     cells,
     meta,
     loaded: true,
     generatedAt: feed.generatedAt,
-    records: projectSpeedRecords(snapshot.speed_records),
-    specDecodeFindings: projectSpecDecodeFindings(snapshot.spec_decode_findings),
-    findings: projectPublicFindings(snapshot.findings),
-    depthFindings: projectDepthFindings(snapshot.depth_findings),
-    machines: projectMachines(snapshot.machines),
-    modelFootprints: projectModelFootprints(snapshot.model_registry),
-    runConfigs: Array.isArray(snapshot.run_configs)
-      ? (snapshot.run_configs.filter((c) => c && typeof c === 'object') as RunConfig[])
-      : [],
+    records: snapshotSpeedRecords,
     sharedCells: projectSharedCellsFromScorecardRows(cells),
     norm: projectNormIndexFromScorecardRows(cells, meta),
     comp: projectCompIndexFromScorecardRows(cells, meta),
     domainIndex: projectDomainIndexFromPublicBundles(bundles, meta, taskDomains),
+    taskDomains,
+    ...sections,
   }
 }
 

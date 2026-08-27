@@ -62,14 +62,6 @@ const props = defineProps<{
   highlightRowId?: any
 }>()
 
-// A board that FOLDS rows needs to know what the reader is ranking by: the right
-// representative for a group depends on the active sort. Sorting by speed and then
-// showing the group's most accurate member answers a question nobody asked. Purely
-// additive — nothing is emitted until a caller listens.
-const emit = defineEmits<{
-  (e: 'sort-change', payload: { key: string | null; dir: 'asc' | 'desc' }): void
-}>()
-
 // Track the mobile breakpoint so the expand-detail row's colspan matches the number
 // of VISIBLE columns. mobileHidden columns are display:none on mobile, so a colspan
 // counting all columns makes table-fixed think there are more columns than rendered
@@ -99,18 +91,6 @@ onUnmounted(() => {
 // hides through mobile..<xl (xl:table-cell reveals at 1280), so it wins over mobileHide.
 const hideClass = (c: Column<T>) =>
   c.tabletHide ? 'hidden xl:table-cell' : (c.mobileHide ? 'hidden md:table-cell' : '')
-
-// Columns the CURRENT breakpoint is hiding. mobileHide/tabletHide promise the value
-// "stays reachable via the row's expand-detail grid", but nothing was keeping that
-// promise: no view populates detailFields, and the fallback grid dumps RAW record
-// fields, which are neither labelled like the columns nor formatted by their render().
-// On SweScorecard that meant 10 of 12 columns simply vanished on a phone. This
-// re-renders exactly the hidden ones, with their own label and their own render().
-const hiddenCols = computed(() =>
-  props.columns.filter((c) =>
-    c.tabletHide ? (isMobile.value || isMid.value) : (c.mobileHide ? isMobile.value : false),
-  ),
-)
 
 const columnDescription = (c: Column<T>) => {
   if (c.description) return c.description
@@ -162,7 +142,6 @@ const handleSort = (col: Column<T>) => {
   }
   // Collapse open detail rows on re-sort
   expandedRows.value = new Set()
-  emit('sort-change', { key: sortKey.value, dir: sortDir.value })
 }
 
 const getSortVal = (col: Column<T>, row: T) => {
@@ -363,29 +342,6 @@ const getRecordFields = (row: T, excludeKeys = new Set<string>()) => {
                       class="text-xs text-foreground/90"
                     >
                       <slot name="detail" :row="row" />
-                    </div>
-
-                    <!-- Columns hidden by the current breakpoint, with their real labels
-                         and render(). Without this the value is unreachable on a phone. -->
-                    <div
-                      v-if="hiddenCols.length"
-                      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 text-xs text-foreground/90"
-                    >
-                      <div
-                        v-for="col in hiddenCols"
-                        :key="'hidden-' + String(col.key)"
-                        class="flex flex-col min-w-0 overflow-hidden bg-card p-2.5 rounded border border-border/60"
-                      >
-                        <span class="text-[10px] text-muted-foreground font-semibold uppercase tracking-wide truncate">
-                          {{ col.label }}
-                        </span>
-                        <span class="mt-1 min-w-0 truncate text-foreground text-xs font-mono">
-                          <template v-if="typeof renderCell(col, row, i) === 'function'">
-                            <component :is="renderCell(col, row, i)" />
-                          </template>
-                          <template v-else>{{ renderCell(col, row, i) }}</template>
-                        </span>
-                      </div>
                     </div>
 
                     <div

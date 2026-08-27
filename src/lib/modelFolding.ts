@@ -93,24 +93,6 @@ const num = (value: unknown, fallback = -Infinity): number =>
 const comparableRank = (record: { comparable?: boolean }): number =>
   record.comparable === false ? 0 : 1
 
-/**
- * llm-playground plan 057. Which CONFIGURATION should front a model when several
- * comparable cells share one canonical_model?
- *
- * Today that is decided by score, so the winner is whichever config happened to test
- * best — which on qwen3.8-27b is a think-off SGLang cell that is nobody's deployment
- * setup, chosen over a vendor-settings cell with the identical 29/34 because it has a
- * higher solved/h. `vendor-settings` marks the cell that follows the model card, i.e.
- * the one you would actually run.
- *
- * FAIL-SAFE BY CONSTRUCTION: everything that is not vendor-settings — including a cell
- * with no tags at all, which is every v4 bundle — returns the same rank, so this
- * comparison is a no-op until a cell is explicitly tagged. It sits AFTER comparableRank
- * so a preferred role can never promote an incomparable cell.
- */
-const roleRank = (record: { tags?: Record<string, string> }): number =>
-  record.tags?.role === 'vendor-settings' ? 1 : 0
-
 const compareDesc = (a: number, b: number): number =>
   a === b ? 0 : (a > b ? 1 : -1)
 
@@ -132,7 +114,6 @@ const sweWilsonLow = (record: SweCell): number => {
 export const chooseBestScorecardCell: ChooseBest<SweCell> = (current, candidate) => {
   const checks = [
     compareDesc(comparableRank(candidate), comparableRank(current)),
-    compareDesc(roleRank(candidate), roleRank(current)),
     compareDesc(sweWilsonLow(candidate), sweWilsonLow(current)),
     compareDesc(sweRate(candidate), sweRate(current)),
     compareDesc(num(candidate.n_graded), num(current.n_graded)),
@@ -144,7 +125,6 @@ export const chooseBestScorecardCell: ChooseBest<SweCell> = (current, candidate)
 export const chooseBestCompCell: ChooseBest<CompCell> = (current, candidate) => {
   const checks = [
     compareDesc(comparableRank(candidate), comparableRank(current)),
-    compareDesc(roleRank(candidate), roleRank(current)),
     compareDesc(num(candidate.ci_lo), num(current.ci_lo)),
     compareDesc(num(candidate.acc), num(current.acc)),
     compareDesc(num(candidate.n), num(current.n)),
@@ -161,40 +141,11 @@ export const chooseBestCompCell: ChooseBest<CompCell> = (current, candidate) => 
   return checks.find((v) => v !== 0)! > 0 ? candidate : current
 }
 
-/**
- * Speed-first representative, for a board being ranked by throughput.
- *
- * Still gated on comparability FIRST. A speed board that showed each model's fastest
- * cell unconditionally would rank models by their most degenerate configuration — a
- * capped or truncated run is often the quickest, and it is the one you would never
- * use. Comparability first keeps the row honest; among equally usable cells, fastest
- * wins. Accuracy survives only as the last tie-break, which is what makes this the
- * mirror of chooseBestCompCell rather than a duplicate of it.
- */
-export const chooseBestSpeedCell: ChooseBest<CompCell> = (current, candidate) => {
-  const checks = [
-    compareDesc(comparableRank(candidate), comparableRank(current)),
-    compareDesc(num(candidate.n), num(current.n)),
-    compareDesc(
-      num(candidate.solved_per_hour_pass ?? candidate.solved_per_hour),
-      num(current.solved_per_hour_pass ?? current.solved_per_hour),
-    ),
-    compareAscNullable(
-      candidate.med_wall_pass ?? candidate.sec_per_solved,
-      current.med_wall_pass ?? current.sec_per_solved,
-    ),
-    compareDesc(num(candidate.acc), num(current.acc)),
-    compareDesc(num(candidate.ci_lo), num(current.ci_lo)),
-  ]
-  return checks.find((v) => v !== 0)! > 0 ? candidate : current
-}
-
 export const chooseBestNormCell: ChooseBest<NormCell> = (current, candidate) => {
   const currentLo = Array.isArray(current.ci) ? num(current.ci[0]) : -Infinity
   const candidateLo = Array.isArray(candidate.ci) ? num(candidate.ci[0]) : -Infinity
   const checks = [
     compareDesc(comparableRank(candidate), comparableRank(current)),
-    compareDesc(roleRank(candidate), roleRank(current)),
     compareDesc(candidateLo, currentLo),
     compareDesc(num(candidate.pass_rate), num(current.pass_rate)),
     compareDesc(num(candidate.coverage), num(current.coverage)),

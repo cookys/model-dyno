@@ -1,33 +1,12 @@
 /**
  * plan 053 — board run-class (exam coverage) SSOT for dashboard presentation.
  *
- * Coverage: FULL | PARTIAL | EMPTY (| FROZEN feed-level | TRIVIAL below the floor).
+ * Coverage: FULL | PARTIAL | EMPTY (| FROZEN feed-level).
  * OWED is orthogonal (badge + incomplete section), not a coverage peer.
  * Rankable = FULL ∧ owed∈{null,0} ∧ ¬frozen.
- *
- * TRIVIAL — a run with so few graded tasks that it carries no signal at all
- * (bake-off smoke runs, aborted starts). It is NOT "a small partial": a partial
- * is an incomplete attempt at the exam worth showing as incomplete, whereas a
- * 3-of-34 row only adds noise to the incomplete section. Hidden, not ranked.
- *
- * The floor is a CURATION threshold, not a statistical cliff — there is no n at
- * which noise suddenly becomes signal. `DEFAULT_DISPLAY_FLOOR` is where the
- * board draws the line; producers override it by stamping `display_floor` in
- * feed meta (plan 053: producers stamp, UI reads), so it can be retuned without
- * a frontend deploy. Raising it hides more rows; setting it to 0 disables the
- * class entirely and restores pre-floor behaviour.
  */
 
-export type CoverageClass = 'FULL' | 'PARTIAL' | 'EMPTY' | 'FROZEN' | 'TRIVIAL'
-
-/**
- * Below 6 graded tasks a cell cannot separate itself from any other cell: at
- * n=3 even a perfect score has a Wilson lower bound near chance. Chosen against
- * the 2026-08 board, where it hides 18 rows (13 bake-off smoke runs + 5 aborted
- * starts) and leaves every full-scale run — including the 34-task cells that
- * also happen to live under `bake-off-*` profile names — untouched.
- */
-export const DEFAULT_DISPLAY_FLOOR = 6
+export type CoverageClass = 'FULL' | 'PARTIAL' | 'EMPTY' | 'FROZEN'
 export type BoardSection = 'main' | 'incomplete' | 'hide'
 
 export type RunClassCarrier = {
@@ -44,32 +23,12 @@ export function coverageClass(opts: {
   nGraded: number
   comparableMin: number
   frozen?: boolean
-  displayFloor?: number | null
 }): CoverageClass {
   if (opts.frozen) return 'FROZEN'
   const n = opts.nGraded
   if (n <= 0) return 'EMPTY'
-  if (n < effectiveFloor(opts.displayFloor, opts.comparableMin)) return 'TRIVIAL'
   if (n < opts.comparableMin) return 'PARTIAL'
   return 'FULL'
-}
-
-/** `null`/absent means "producer did not stamp one" → default. 0 disables. */
-export function resolveDisplayFloor(v: number | null | undefined): number {
-  if (typeof v === 'number' && Number.isFinite(v) && v >= 0) return Math.floor(v)
-  return DEFAULT_DISPLAY_FLOOR
-}
-
-/**
- * The floor is meaningless above the comparability threshold: at or above
- * `comparableMin` a cell is FULL by definition, so TRIVIAL must never be able to
- * swallow it. Clamping also keeps small exams working — a 1-task toy bench has
- * comparableMin=1, where an unclamped floor of 6 would hide every possible run.
- */
-function effectiveFloor(displayFloor: number | null | undefined, comparableMin: number): number {
-  const floor = resolveDisplayFloor(displayFloor)
-  const cap = Number.isFinite(comparableMin) && comparableMin > 0 ? comparableMin : floor
-  return Math.min(floor, cap)
 }
 
 export function isRankable(opts: {
@@ -85,7 +44,7 @@ export function boardSection(opts: {
   coverage: CoverageClass
   owed?: number | null
 }): BoardSection {
-  if (opts.coverage === 'EMPTY' || opts.coverage === 'FROZEN' || opts.coverage === 'TRIVIAL') return 'hide'
+  if (opts.coverage === 'EMPTY' || opts.coverage === 'FROZEN') return 'hide'
   if (isRankable(opts)) return 'main'
   return 'incomplete'
 }
@@ -108,7 +67,7 @@ export function examN(c: RunClassCarrier, fallback: number): number {
  */
 export function classifyCell(
   c: RunClassCarrier,
-  opts: { comparableMin: number; nExam: number; displayFloor?: number | null },
+  opts: { comparableMin: number; nExam: number },
 ): {
   coverage: CoverageClass
   rankable: boolean
@@ -122,28 +81,19 @@ export function classifyCell(
   const owed = typeof c.owed === 'number' && c.owed > 0 ? c.owed : null
   const frozen = !!c.frozen
 
-  const floor = effectiveFloor(opts.displayFloor, opts.comparableMin)
-
   let coverage: CoverageClass
   if (frozen) {
     coverage = 'FROZEN'
-  } else if (n <= 0) {
-    coverage = 'EMPTY'
-  } else if (n < floor) {
-    // Ahead of the backend `comparable` override on purpose: every smoke run
-    // already carries comparable=false, so checking that first would classify
-    // these as PARTIAL and the floor would silently do nothing.
-    coverage = 'TRIVIAL'
   } else if (c.comparable === false) {
-    coverage = 'PARTIAL'
+    coverage = n <= 0 ? 'EMPTY' : 'PARTIAL'
   } else if (c.comparable === true) {
-    coverage = 'FULL'
+    // Backend asserts full coverage; still report EMPTY if n==0
+    coverage = n <= 0 ? 'EMPTY' : 'FULL'
   } else {
     coverage = coverageClass({
       nGraded: n,
       comparableMin: opts.comparableMin,
       frozen: false,
-      displayFloor: floor,
     })
   }
 

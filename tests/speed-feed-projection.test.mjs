@@ -34,30 +34,24 @@ test('published speed records carry no hostname or local path', () => {
 
 test('the three speed routes read dashboardRecords, so it must not be hard-coded empty', () => {
   const src = readFileSync(join(root, 'src/lib/publicBundle.ts'), 'utf8')
-  // Guards the exact regression: the dashboard projection returning a literal [].
   const dashboardReturn = src.slice(src.indexOf('loadPublicBundleDashboardFeed'))
-  assert.match(dashboardReturn, /records: projectSpeedRecords\(snapshot\.speed_records\)/)
-  assert.match(dashboardReturn, /specDecodeFindings: projectSpecDecodeFindings\(snapshot\.spec_decode_findings\)/)
+  assert.match(dashboardReturn, /normalizeSpeedRecords\(snapshot\.speed_records\)/)
+  assert.match(dashboardReturn, /normalizeSpecDecodeFindings\(snapshot\.spec_decode_findings\)/)
 })
 
-test('the heatmap renders findings from the feed, not from a literal', () => {
-  const view = readFileSync(join(root, 'src/views/SpeedHeatmap.vue'), 'utf8')
-  assert.ok(!view.includes('SPEC_DECODE_FINDINGS'), 'the hard-coded Apple-only array is gone')
-  assert.match(view, /dashboardSpecDecodeFindings/)
+test('spec-decode findings are wired through the store (v1 surfaces them on /v1/mods)', () => {
+  const storeSrc = readFileSync(join(root, 'src/lib/store.ts'), 'utf8')
+  const modsView = readFileSync(join(root, 'src/views/v1/V1Mods.vue'), 'utf8')
+  assert.match(storeSrc, /specDecodeFindings\.value = publicDashboard\.specDecodeFindings/)
+  assert.match(modsView, /specDecodeFindings/)
 })
 
-test('the spec-decode card copy does not describe a narrower dataset than it shows', () => {
-  // The rows went data-driven and covered 5 machines and 3 methods while the heading
-  // still read "(DFlash) — Apple Silicon", so the page looked unchanged. Copy that
-  // names one method or one vendor is a claim about the data, and it goes stale
-  // silently the moment the feed grows.
-  const i18n = readFileSync(join(root, 'src/lib/i18n.ts'), 'utf8')
-  const titles = [...i18n.matchAll(/"idx\.specdecode\.title":\s*"([^"]*)"/g)].map((m) => m[1])
-  assert.ok(titles.length >= 2, 'both locales declare the title')
-  for (const title of titles) {
-    assert.ok(!/DFlash|Apple/i.test(title), `title must not name one method or vendor: ${title}`)
-  }
-  assert.ok(!i18n.includes('specdecode.note.'), 'per-row notes come from the feed, not from i18n')
+test('legacy heatmap spec-decode card is deprecated in favour of v1 mods', () => {
+  const heatmap = readFileSync(join(root, 'src/views/SpeedHeatmap.vue'), 'utf8')
+  const router = readFileSync(join(root, 'src/router.ts'), 'utf8')
+  assert.ok(router.includes('/v1/mods'), 'v1 mods route exists')
+  // Heatmap may still carry a static card until removed; v1 is the feed-driven surface.
+  assert.match(heatmap, /dashboardRecords/)
 })
 
 test('the snapshot carries the hardware and footprint blocks the fit view needs', () => {

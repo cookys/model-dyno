@@ -57,15 +57,15 @@ test('findings content passes the publish leak guard patterns', () => {
 test('the projector and store are wired, not hard-coded empty', () => {
   const bundleSrc = readFileSync(join(root, 'src/lib/publicBundle.ts'), 'utf8')
   const dashboardReturn = bundleSrc.slice(bundleSrc.indexOf('loadPublicBundleDashboardFeed'))
-  assert.match(dashboardReturn, /findings: projectPublicFindings\(snapshot\.findings\)/)
-  assert.match(dashboardReturn, /depthFindings: projectDepthFindings\(snapshot\.depth_findings\)/)
-  assert.match(bundleSrc, /gates: isObject\(entry\.gates\)/, 'feed entry passes gates through')
-  assert.match(bundleSrc, /agency: gatesToAgency\(metadata\.gates\)/, 'gates project into the credibility badge slot')
+  assert.match(dashboardReturn, /findings: normalizeFindings\(snapshot\.findings\)/)
+  assert.match(dashboardReturn, /depthFindings: normalizeDepthFindings\(snapshot\.depth_findings\)/)
+  assert.match(bundleSrc, /gates: normalizeEntryGates\(entry\.gates\)/, 'feed entry passes gates through')
+  assert.match(bundleSrc, /gates: metadata\.gates/, 'gates project into scorecard cells')
 
   const storeSrc = readFileSync(join(root, 'src/lib/store.ts'), 'utf8')
-  assert.match(storeSrc, /publicFindings\.value = publicDashboard\.findings/)
+  assert.match(storeSrc, /findings\.value = publicDashboard\.findings/)
   assert.match(storeSrc, /depthFindings\.value = publicDashboard\.depthFindings/)
 
   const routerSrc = readFileSync(join(root, 'src/router.ts'), 'utf8')
-  assert.ok(routerSrc.includes("path: '/findings'"), 'findings route exists')
+  assert.ok(routerSrc.includes("path: '/findings'"), 'findings redirect exists')
 })

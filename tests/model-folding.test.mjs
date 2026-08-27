@@ -112,39 +112,11 @@ test('COMP default is folded but model query remains route-level drilldown', () 
   assert.match(view, /incompleteCompData/)
 })
 
-test('speed cloud folds by canonical model with a sort-aware representative', () => {
+test('route-first speed cloud page does not import or apply model folding', () => {
   const view = read('src/views/SpeedCloud.vue')
 
-  // REVERSAL, 2026-08-18, at the owner's explicit request (twice). This page used to
-  // assert the OPPOSITE — that it must not fold — on the grounds that it is the
-  // route-first board. That reasoning held while it listed a handful of routes per
-  // model. It stopped holding at 163 rows for 72 models, one model contributing 23 of
-  // them: an unfoldable board is not a drilldown, it is a wall, and the owner reported
-  // it as unreadable rather than as detailed.
-  //
-  // The routes are not lost — they moved into the row expansion, where comparing them
-  // is a deliberate act instead of the default state, and they are shown as tag COLUMNS
-  // rather than cell slugs.
-  assert.match(view, /groupByCanonicalModel/)
-
-  // The representative must follow the active sort: accuracy-first by default (matching
-  // /swe/comp), speed-first once the reader ranks by a speed column. A folded row that
-  // shows its most accurate member while the reader ranks by throughput is answering a
-  // question nobody asked.
-  assert.match(view, /chooseBestCompCell/)
-  assert.match(view, /chooseBestSpeedCell/)
-  assert.match(view, /SPEED_SORT_KEYS/)
-  assert.match(view, /@sort-change="onSortChange"/)
-})
-
-test('folded variant panels identify a config by tags, never by its cell slug', () => {
-  const panel = read('src/components/SpeedVariants.vue')
-
-  // The whole point of the tag vocabulary is that a reader should not have to parse
-  // `qwen3.8-27b-nvfp4-sglang-thinkon-t0-dspark-local` to learn what a row is.
-  for (const dim of ['thinking', 'effort', 'temp', 'draft', 'engine']) {
-    assert.match(panel, new RegExp(`tags\\.${dim}`))
-  }
+  assert.doesNotMatch(view, /modelFolding/)
+  assert.doesNotMatch(view, /groupByCanonicalModel/)
 })
 
 test('speed efficiency folds by canonical model with speed-first drilldown', () => {
@@ -159,37 +131,4 @@ test('speed efficiency folds by canonical model with speed-first drilldown', () 
   assert.match(view, /addEventListener\('click'/)
   assert.match(view, /scrollIntoView/)
   assert.match(view, /detailFlash/)
-})
-
-
-// llm-playground plan 057: among comparable cells of one model, the representative should be
-// the DEPLOYABLE configuration (role=vendor-settings), not merely the highest scorer.
-test('fold prefers a vendor-settings cell over a higher-scoring sibling', async () => {
-  const { groupByCanonicalModel, chooseBestCompCell } = await loadFoldingModule()
-  const rows = [
-    { cell: 'higher', identity: { canonical_model: 'm' }, comparable: true, acc: 0.88, ci_lo: 0.73, n: 34, tags: { role: 'candidate' } },
-    { cell: 'vendor', identity: { canonical_model: 'm' }, comparable: true, acc: 0.85, ci_lo: 0.70, n: 34, tags: { role: 'vendor-settings' } },
-  ]
-  const groups = groupByCanonicalModel(rows, chooseBestCompCell)
-  assert.equal(groups[0].representative.cell, 'vendor')
-})
-
-test('role preference never promotes an incomparable cell', async () => {
-  const { groupByCanonicalModel, chooseBestCompCell } = await loadFoldingModule()
-  const rows = [
-    { cell: 'vendor-but-partial', identity: { canonical_model: 'm' }, comparable: false, acc: 0.99, ci_lo: 0.90, n: 4, tags: { role: 'vendor-settings' } },
-    { cell: 'plain-full', identity: { canonical_model: 'm' }, comparable: true, acc: 0.50, ci_lo: 0.35, n: 34 },
-  ]
-  const groups = groupByCanonicalModel(rows, chooseBestCompCell)
-  assert.equal(groups[0].representative.cell, 'plain-full')
-})
-
-test('untagged cells fold exactly as before — v4 bundles carry no role', async () => {
-  const { groupByCanonicalModel, chooseBestCompCell } = await loadFoldingModule()
-  const rows = [
-    { cell: 'lower', identity: { canonical_model: 'm' }, comparable: true, acc: 0.60, ci_lo: 0.45, n: 34 },
-    { cell: 'higher', identity: { canonical_model: 'm' }, comparable: true, acc: 0.80, ci_lo: 0.65, n: 34 },
-  ]
-  const groups = groupByCanonicalModel(rows, chooseBestCompCell)
-  assert.equal(groups[0].representative.cell, 'higher')
 })

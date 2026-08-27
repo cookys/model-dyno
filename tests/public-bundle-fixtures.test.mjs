@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { join } from 'node:path'
 import test from 'node:test'
 import ts from 'typescript'
 
@@ -30,44 +30,17 @@ function canonicalJson(value) {
   return JSON.stringify(value)
 }
 
-// `node --test` cannot import .ts, so each module is transpiled into a data: URL.
-// A data: URL has no resolver, so a relative import inside the transpiled source
-// would throw ERR_UNSUPPORTED_RESOLVE_REQUEST. Inline the dependency graph instead:
-// each relative specifier is replaced by the data: URL of its own transpiled form.
-// Without this the harness silently constrains production code to be import-free.
-const TS_COMPILER_OPTIONS = {
-  module: ts.ModuleKind.ES2022,
-  target: ts.ScriptTarget.ES2022,
-  importsNotUsedAsValues: ts.ImportsNotUsedAsValues.Remove,
-}
-
-function resolveTsPath(fromDir, specifier) {
-  for (const candidate of [`${specifier}.ts`, `${specifier}.mjs`, `${specifier}/index.ts`, specifier]) {
-    const abs = join(fromDir, candidate)
-    if (existsSync(abs)) return abs
-  }
-  return null
-}
-
-function transpileToDataUrl(absPath, seen = new Map()) {
-  const cached = seen.get(absPath)
-  if (cached) return cached
-  // Placeholder first: a cyclic import would otherwise recurse forever.
-  seen.set(absPath, 'data:text/javascript;base64,')
-  const output = ts
-    .transpileModule(readFileSync(absPath, 'utf8'), { compilerOptions: TS_COMPILER_OPTIONS })
-    .outputText
-    .replace(/(\bfrom\s*)['"](\.\.?\/[^'"]+)['"]/g, (whole, prefix, specifier) => {
-      const dep = resolveTsPath(dirname(absPath), specifier)
-      return dep ? `${prefix}'${transpileToDataUrl(dep, seen)}'` : whole
-    })
-  const url = `data:text/javascript;base64,${Buffer.from(output, 'utf8').toString('base64')}`
-  seen.set(absPath, url)
-  return url
-}
-
 async function importTsModule(relativePath) {
-  return import(transpileToDataUrl(join(root, relativePath)))
+  const source = readFileSync(join(root, relativePath), 'utf8')
+  const output = ts.transpileModule(source, {
+    compilerOptions: {
+      module: ts.ModuleKind.ES2022,
+      target: ts.ScriptTarget.ES2022,
+      importsNotUsedAsValues: ts.ImportsNotUsedAsValues.Remove,
+    },
+  }).outputText
+  const encoded = Buffer.from(output, 'utf8').toString('base64')
+  return import(`data:text/javascript;base64,${encoded}`)
 }
 
 test('checked-in PublicBundle fixtures have exact files and pinned manifest hashes', () => {
@@ -193,7 +166,14 @@ test('browser dashboard hydrates PublicBundle data from one materialized request
   let requests = 0
   globalThis.fetch = async () => {
     requests += 1
-    return { ok: true, status: 200, json: async () => snapshot }
+    const body = JSON.stringify(snapshot)
+    return {
+      ok: true,
+      status: 200,
+      headers: { get: (k) => (k === 'content-type' ? 'application/json' : null) },
+      text: async () => body,
+      json: async () => snapshot,
+    }
   }
   try {
     const projection = await loadPublicBundleDashboardFeed('./snapshot.json')
@@ -213,7 +193,7 @@ test('dashboard store requires PublicBundle for SWE and dedicated aggregates for
   const loader = readFileSync(join(root, 'src/lib/publicBundle.ts'), 'utf8')
   const ignore = readFileSync(join(root, '.gitignore'), 'utf8')
 
-  assert.match(store, /import \{ loadPublicBundleDashboardFeed \} from '\.\/publicBundle'/)
+  assert.match(store, /import \{\s*\n?\s*loadPublicBundleDashboardFeed,?[\s\S]{0,400}?\} from '\.\/publicBundle'/)
   assert.match(store, /const \[speedIndex, speedCompIndex\] = await Promise\.all/)
   assert.match(store, /const publicDashboard = await loadPublicBundleDashboardFeed\(\)/)
   // Aggregates are optional: public Pages has no *-INDEX.json. Fall back to
@@ -233,6 +213,14 @@ test('dashboard store requires PublicBundle for SWE and dedicated aggregates for
   assert.match(loader, /snapshotUrl = '\.\/public-bundles\/dashboard-snapshot\.json'/)
   assert.match(loader, /dashboard_public_bundle_snapshot\.v1/)
   assert.match(loader, /task_domains_url/)
+  const publicPath = readFileSync(join(root, 'src/lib/publicBundle.ts'), 'utf8')
+  assert.match(publicPath, /server returned HTML/)
+  assert.match(publicPath, /build-dashboard\.py --no-build/)
+  // Private monorepo dev script checks local snapshot freshness; public mirror
+  // commits the feed and uses plain `vite` (see SOURCE_PROVENANCE.json).
+  if (!existsSync(join(root, 'SOURCE_PROVENANCE.json'))) {
+    assert.match(readFileSync(join(root, 'package.json'), 'utf8'), /check-dashboard-data/)
+  }
   // Private monorepo regenerates public-bundles/ and gitignores it. Public
   // model-dyno commits the cleared feed (SOURCE_PROVENANCE marks that layout).
   if (existsSync(join(root, 'SOURCE_PROVENANCE.json'))) {

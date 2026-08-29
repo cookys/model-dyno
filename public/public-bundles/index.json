@@ -927,6 +927,41 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-mtp-262k-vendor-local-qwen3.8-flash-next-5702d9e1f1f6/",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "embedded",
+        "draft_quant": "unquant",
+        "effort": "xhigh",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-m3-fair-MiniMax-M3-dfa751b7dd49/",
       "current": true,
@@ -5040,7 +5075,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "6f191841db7ac2433b6ee0629d39220d4292c4a5220901da77d984abfcbdeccf",
+  "content_digest": "cad33ad3c724d10067dfee30da7e10da4fcd440db491438f6df15a380eb43291",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -5075,7 +5110,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-08-27T20:41:02Z",
+  "generated_at": "2026-08-29T18:57:16Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

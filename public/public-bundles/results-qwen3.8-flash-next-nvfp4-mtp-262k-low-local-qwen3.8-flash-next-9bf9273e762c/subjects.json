@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen3.8-flash-next-nvfp4-mtp-262k-low-local-qwen3.8-flash-next-9bf9273e762c","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@7","model":"qwen3.8-flash-next","policy":"dashboard-public-feed","subject_digest":"79fa571c113b520f849f9896062b3a731986efd55d244b3386c79821f006957f"}]

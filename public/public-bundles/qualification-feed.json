@@ -2,11 +2,11 @@
  "schema": "model-dyno.qualification-feed.v1",
  "artifact_type": "official-qualification-defaults",
  "generated_by": "build-qualification-feed.py@1",
- "generated_at": "2026-09-02T08:03:50.000Z",
+ "generated_at": "2026-09-02T08:11:42.000Z",
  "feed_url": "https://cookys.github.io/model-dyno/public-bundles/qualification-feed.json",
  "owner": "cookys",
  "exam": "34t-559c010f",
- "digest": "242f9c4985cc88149598ece03814f5d71e2d40d1f3bf9aedcd45c7ac59b256a6",
+ "digest": "c707e94eff3d2c92cfc738898f450f0b2eb0ad70792f0d36629ffcb35c5fcf9b",
  "disclosure_notice": "These rows record administrations run in the autopilot maintainer's environment, not yours. Every entry carries the full administration environment (engine/runner/CLI versions, transport harness, prompt_config_hash, effort, corpus_version, date) precisely because official environment != user environment. FAILED rows ship alongside QUALIFIED ones: a FAILED administration is routing information, not an embarrassment to hide.",
  "adr_0001_notice": "DISCLOSURE, NOT ATTESTATION. Nothing here is signed, hash-chained, or witnessed, and no field is tamper-evidence (ADR-0001). Adopting these defaults is an informed choice to reuse someone else's evidence; the only verification path is re-derivation — self-qualify in your own environment via the engine-qualify flow, which overrides a default on the same seat identity.",
  "downgrade_notice": "An adopted default is a seat-scoped strike target exactly like a self-qualified row (references/strike-decay.md). Authority is withdrawn by accumulated mechanical no-confidence, never because a date passed: `expires` is advisory here too.",
@@ -51,7 +51,7 @@
   }
  },
  "n_defaults": 29,
- "n_strikes": 0,
+ "n_strikes": 1,
  "n_priors": 53,
  "defaults": [
   {
@@ -6365,7 +6365,30 @@
    "board": null
   }
  ],
- "strikes": [],
+ "strikes": [
+  {
+   "artifact_sha256": "8f8bce04c12389cf253fb72276628b9c4167994561139d1149228745c18a1ed1",
+   "cause_class": "ambiguous",
+   "class": "ordinary_strike",
+   "dedup_key": "campaign-v1-3e0a55685829ecad260b440181ba7844107037d52fdacf1b99868b10e31e3bec:67aaef05343e224268e41676f71ee19e3679c757:67aaef05343e224268e41676f71ee19e3679c757:engine_unavailable:dispatch_hetero_classify_outcome",
+   "detector_id": "dispatch_hetero_classify_outcome",
+   "detector_version": "1",
+   "engine": "grok-4.6",
+   "event_id": 1,
+   "invalidates_event_id": null,
+   "kind": "strike",
+   "observed_at": "2026-08-31T08:31:02.697Z",
+   "predicate_id": null,
+   "proof_artifact_sha256": null,
+   "proof_detector_id": null,
+   "receipt_ref": "log=/tmp/hetero-l5-s0fix-no-downgrade-log-CnGmkL commit=67aaef05343e224268e41676f71ee19e3679c757",
+   "role": "implementer",
+   "runner": "grok",
+   "schema_version": 2,
+   "seat_hash": "813cee55afb3e633de84f89856399033f20c554594e838c86013c6059c0dde24",
+   "writer": "dispatch_hetero_failclosed"
+  }
+ ],
  "priors": [
   {
    "schema_version": 1,
@@ -6401,9 +6424,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6469,9 +6492,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6537,9 +6560,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-14T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6605,9 +6628,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6673,9 +6696,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6741,9 +6764,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6809,9 +6832,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6877,9 +6900,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-20T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6945,9 +6968,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-29T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7013,9 +7036,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7081,9 +7104,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7149,9 +7172,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-21T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7217,9 +7240,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7285,9 +7308,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-21T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7353,9 +7376,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7421,9 +7444,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-31T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7489,9 +7512,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7557,9 +7580,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7625,9 +7648,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-18T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7693,9 +7716,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7761,9 +7784,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7829,9 +7852,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7897,9 +7920,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-23T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7965,9 +7988,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-21T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8033,9 +8056,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8101,9 +8124,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8169,9 +8192,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8237,9 +8260,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8305,9 +8328,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-29T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8373,9 +8396,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8441,9 +8464,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8509,9 +8532,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-15T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8577,9 +8600,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-11T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8645,9 +8668,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-18T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8713,9 +8736,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-26T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8781,9 +8804,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-26T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8849,9 +8872,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-20T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8917,9 +8940,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-11T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8985,9 +9008,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-23T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9053,9 +9076,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-23T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9121,9 +9144,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9189,9 +9212,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9257,9 +9280,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-16T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9325,9 +9348,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9393,9 +9416,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-31T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9461,9 +9484,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-18T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9529,9 +9552,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-18T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9597,9 +9620,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-22T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9665,9 +9688,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9733,9 +9756,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9801,9 +9824,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9869,9 +9892,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-17T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9937,9 +9960,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-09-02T08:03:50.000Z",
+   "issued_at": "2026-09-02T08:11:42.000Z",
    "observed_at": "2026-08-23T00:00:00.000Z",
-   "expires_at": "2026-10-02T08:03:50.000Z",
+   "expires_at": "2026-10-02T08:11:42.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",

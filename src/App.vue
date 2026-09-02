@@ -2,7 +2,7 @@
 import { computed, watch } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
 import { useI18n } from '@/lib/i18n'
-import { Sun, Moon, Monitor, Sparkles, Layers, Target, Trophy, Gauge, FlaskConical, ShieldCheck, ClipboardList , BadgeCheck } from 'lucide-vue-next'
+import { Sun, Moon, Monitor, Sparkles, Layers, Target, Trophy, Gauge, FlaskConical, ShieldCheck, ClipboardList, BadgeCheck } from 'lucide-vue-next'
 import { mode } from '@/lib/theme'
 import { activeUiVersion, setUiVersion, isV1, type UiVersion } from '@/lib/uiVersion'
 import {

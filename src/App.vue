@@ -2,7 +2,7 @@
 import { computed, watch } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
 import { useI18n } from '@/lib/i18n'
-import { Sun, Moon, Monitor, Sparkles, Layers, Target, Trophy, Gauge, FlaskConical, ShieldCheck, ClipboardList } from 'lucide-vue-next'
+import { Sun, Moon, Monitor, Sparkles, Layers, Target, Trophy, Gauge, FlaskConical, ShieldCheck, ClipboardList , BadgeCheck } from 'lucide-vue-next'
 import { mode } from '@/lib/theme'
 import { activeUiVersion, setUiVersion, isV1, type UiVersion } from '@/lib/uiVersion'
 import {
@@ -67,6 +67,7 @@ const activeV1Tab = computed(() => {
   if (route.path.startsWith('/v1/mods')) return 'mods'
   if (route.path.startsWith('/v1/method')) return 'method'
   if (route.path.startsWith('/v1/exam')) return 'exam'
+  if (route.path.startsWith('/v1/licences')) return 'licences'
   return null
 })
 
@@ -131,6 +132,8 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
         list.push({ label: t('crumb.swe.examHistory') })
       } else if (route.path === '/swe/by-domain') {
         list.push({ label: t('subtab.swe.byDomain') })
+      } else if (route.path === '/swe/licences') {
+        list.push({ label: t('crumb.swe.licences') })
       }
     } else if (route.name === 'ModelDetail') {
       list.push({ label: t('crumb.model') }, { label: String(route.params.alias) })
@@ -396,6 +399,20 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
               <ShieldCheck class="h-4 w-4 mr-1.5" />
               {{ locale === 'zh' ? '為什麼可信' : 'Why trust this' }}
             </Button>
+            <Button
+              :as="RouterLink"
+              to="/v1/licences"
+              variant="ghost"
+              class="px-4 py-2 border-b-2 rounded-none font-bold text-sm transition-all relative cursor-pointer"
+              :class="[
+                activeV1Tab === 'licences'
+                  ? 'border-brand text-brand bg-brand/10 dark:bg-brand/20 shadow-sm'
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/50'
+              ]"
+            >
+              <BadgeCheck class="h-4 w-4 mr-1.5" />
+              {{ locale === 'zh' ? '執照' : 'Licences' }}
+            </Button>
           </div>
         </div>
 
@@ -544,6 +561,16 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => {
               :class="route.path === '/swe/exam-history' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
             >
               {{ t('subtab.swe.examHistory') }}
+            </Button>
+            <Button
+              :as="RouterLink"
+              to="/swe/licences"
+              variant="ghost"
+              size="sm"
+              class="h-7 text-xs rounded-full font-medium"
+              :class="route.path === '/swe/licences' ? 'bg-brand/10 dark:bg-brand/20 text-brand border border-brand/20' : 'text-muted-foreground hover:text-foreground hover:bg-muted'"
+            >
+              {{ t('subtab.swe.licences') }}
             </Button>
           </div>
         </div>

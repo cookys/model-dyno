@@ -10,6 +10,7 @@ import {
   type RunConfig,
   type SpecDecodeFinding,
 } from './publicBundle'
+import { loadQualificationFeed, type QualificationFeed } from './qualificationFeed'   // plan 065
 
 export interface ExamVersionInfo {
   version: string
@@ -389,6 +390,10 @@ export const specDecodeFindings = ref<SpecDecodeFinding[]>([])
 export const taskDomains = ref<Record<string, string>>({})
 export const speedLoading = ref<boolean>(true)
 export const sweLoading = ref<boolean>(true)
+// plan 065: autopilot qualification feed (side payload; null = not published). Loaded
+// non-fatally — a missing licence feed must never take the score boards down.
+export const qualificationFeed = ref<QualificationFeed | null>(null)
+export const qualificationFeedError = ref<string | null>(null)
 export const loading = computed<boolean>(() => speedLoading.value || sweLoading.value)
 export const error = ref<string | null>(null)
 
@@ -493,6 +498,13 @@ export async function loadAllData() {
     taskDomains.value = publicDashboard.taskDomains
     generatedAt.value = publicDashboard.generatedAt
     nowMs.value = generatedAt.value ? Date.parse(generatedAt.value) || Date.now() : Date.now()
+    try {
+      qualificationFeed.value = await loadQualificationFeed()
+      qualificationFeedError.value = null
+    } catch (qe: any) {
+      qualificationFeed.value = null
+      qualificationFeedError.value = qe?.message ?? String(qe)
+    }
 
     // Production model-dyno has no *-INDEX.json. Keep speed routes rendering
     // from the PublicBundle projection (metrics may be blank until plan 051
@@ -519,6 +531,7 @@ export async function loadAllData() {
     depthFindings.value = []
     specDecodeFindings.value = []
     taskDomains.value = {}
+    qualificationFeed.value = null
     generatedAt.value = null
     nowMs.value = Date.now()
     error.value = e.message

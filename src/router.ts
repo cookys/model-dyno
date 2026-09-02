@@ -12,6 +12,7 @@ const SweComp = () => import('@/views/SweComp.vue')
 const SweScorecard = () => import('@/views/SweScorecard.vue')
 const SweByDomain = () => import('@/views/SweByDomain.vue')
 const SweExamHistory = () => import('@/views/ExamHistory.vue')
+const SweLicences = () => import('@/views/SweLicences.vue')   // plan 065: autopilot licences
 const ModelDetail = () => import('@/views/ModelDetail.vue')
 const OwnerDetail = () => import('@/views/OwnerDetail.vue')
 
@@ -36,6 +37,7 @@ const routes = [
   { path: '/v1/mods', name: 'V1Mods', component: V1Mods },
   { path: '/v1/method', name: 'V1Method', component: V1Method },
   { path: '/v1/exam', name: 'V1Exam', component: V1Exam },
+  { path: '/v1/licences', name: 'V1Licences', component: SweLicences },
   { path: '/v1/model/:alias', name: 'V1ModelDetail', component: V1ModelDetail, props: true },
 
   // Legacy v1 paths from the first iteration
@@ -59,6 +61,7 @@ const routes = [
   { path: '/swe/scorecard', name: 'SweScorecard', component: SweScorecard },
   { path: '/swe/by-domain', name: 'SweByDomain', component: SweByDomain },
   { path: '/swe/exam-history', name: 'SweExamHistory', component: SweExamHistory },
+  { path: '/swe/licences', name: 'SweLicences', component: SweLicences },
   {
     path: '/model/:alias',
     name: 'ModelDetail',

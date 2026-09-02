@@ -779,6 +779,30 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.8-flash-high-1fd52d6668ed/",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.8-flash-high · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "local",
       "base_url": "./public-bundles/results-deepseek-v4-flash-0731-local-DeepSeek-V4-Flash-0731-166f50a45974/",
       "current": true,
@@ -1960,6 +1984,30 @@
     },
     {
       "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.8-flash-low-d4ee7ab0813e/",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.8-flash-low · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
       "base_url": "./public-bundles/results-m27-highspeed-minimax-MiniMax-M2.7-highspeed-de281ed75e25/",
       "current": true,
       "gates": {
@@ -2305,6 +2353,30 @@
         "placement": "local",
         "quant": "Q4_K_M",
         "thinking": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.8-flash-medium-870350945594/",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.8-flash-medium · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -5270,7 +5342,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "1e28be91a9a03bf459132e7d95b84aaeef579dc8c6721ac0b90ecaddc25f0256",
+  "content_digest": "65198562b45b5fe4d7bec7be3d043af92ea2f31acb529c192ea79dccccd82a6e",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -5305,7 +5377,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-02T08:03:03Z",
+  "generated_at": "2026-09-02T21:50:07Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

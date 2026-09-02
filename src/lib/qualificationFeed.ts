@@ -69,6 +69,7 @@ export interface QualificationStrike {
   engine: string
   runner: string
   role: string
+  effort: string | null   // null = legacy (recorded before effort partitioning), not "any effort"
   class: string | null
   cause_class: string | null
   detector_id: string | null
@@ -185,6 +186,7 @@ function sanitizeStrike(raw: unknown): QualificationStrike | null {
     engine,
     runner,
     role,
+    effort: str(s.effort),
     class: str(s.class),
     cause_class: str(s.cause_class),
     detector_id: str(s.detector_id),
@@ -241,10 +243,13 @@ export function adoptCommand(feed: Pick<QualificationFeed, 'feed_url'>, entry: Q
   return parts.join(' ')
 }
 
-/** Strikes that name an entry's seat (engine × runner × role) — the feed's "caught upstream" signal. */
+/** Strikes that name an entry's EXACT seat (engine × runner × role × effort) — a strike recorded
+ * against effort=high must never attach to the low-tier row, and a legacy (effort=null) strike
+ * attaches only to a legacy (effort=null) entry, never to "every effort tier of this engine". */
 export function strikesForEntry(feed: Pick<QualificationFeed, 'strikes'>, entry: QualificationEntry): QualificationStrike[] {
   return feed.strikes.filter(
-    (s) => s.engine === entry.seat.engine && s.runner === entry.seat.runner && s.role === entry.role,
+    (s) => s.engine === entry.seat.engine && s.runner === entry.seat.runner && s.role === entry.role
+      && s.effort === entry.seat.effort,
   )
 }
 

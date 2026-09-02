@@ -46,7 +46,7 @@
   }
  },
  "n_defaults": 4,
- "n_strikes": 1,
+ "n_strikes": 2,
  "n_priors": 1,
  "defaults": [
   {
@@ -1054,6 +1054,28 @@
    "invalidates_event_id": null,
    "proof_artifact_sha256": null,
    "proof_detector_id": null
+  },
+  {
+   "schema_version": 2,
+   "event_id": 2,
+   "kind": "strike",
+   "seat_hash": "f85d689bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "engine": "grok-4.6",
+   "runner": "grok",
+   "role": "implementer",
+   "effort": "high",
+   "class": "ordinary_strike",
+   "predicate_id": null,
+   "cause_class": "engine_output",
+   "writer": "dispatch_hetero_failclosed",
+   "dedup_key": "synthetic-fixture-effort-scoped-strike",
+   "detector_id": "dispatch_hetero_classify_outcome",
+   "detector_version": "1",
+   "artifact_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+   "receipt_ref": "synthetic fixture row for effort-scoping test",
+   "observed_at": "2026-09-02T00:00:00.000Z",
+   "invalidates_event_id": null,
+   "proof_artifact_sha256": null
   }
  ],
  "priors": [

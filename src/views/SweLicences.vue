@@ -203,8 +203,9 @@ async function copy(e: QualificationEntry) {
           <div class="text-xs text-muted-foreground">
             <span class="text-foreground font-medium">{{ t('licences.strikes') }}:</span>
             <template v-if="feed.strikes.length">
-              <span v-for="s in feed.strikes" :key="(s.receipt_ref ?? '') + s.engine" class="ml-2">
-                {{ s.engine }} · {{ s.runner }} · {{ s.role }} — {{ s.class ?? '?' }} / {{ s.cause_class ?? '?' }}
+              <span v-for="s in feed.strikes" :key="(s.receipt_ref ?? '') + s.engine + (s.effort ?? '')" class="ml-2">
+                {{ s.engine }} · {{ s.runner }} · {{ s.role }}<template v-if="s.effort"> · {{ s.effort }}</template> — {{ s.class ?? '?' }} / {{ s.cause_class ?? '?' }}
+                <span v-if="!s.effort" class="text-muted-foreground">({{ t('licences.strikeLegacy') }})</span>
               </span>
             </template>
             <span v-else class="ml-2">{{ t('licences.noStrikes') }}</span>

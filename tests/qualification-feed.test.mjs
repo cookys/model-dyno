@@ -29,7 +29,7 @@ test('fixture is a v1 feed and sanitizes into typed entries with effort in the s
   assert.equal(feed.schema, m.QUALIFICATION_FEED_SCHEMA)
   assert.equal(feed.owner, 'cookys')
   assert.equal(feed.n_defaults, 4)
-  assert.equal(feed.n_strikes, 1)
+  assert.equal(feed.n_strikes, 2)
   for (const e of feed.defaults) {
     assert.deepEqual(Object.keys(e.seat).sort(), ['effort', 'engine', 'role', 'runner'])
     assert.ok(['qualified', 'failed'].includes(e.status), e.default_id)
@@ -67,13 +67,22 @@ test('adopt command names the exact seat, including effort, against the publishe
   assert.doesNotMatch(m.adoptCommand(feed, legacy), /--effort/, 'no effort flag for a default-tier row')
 })
 
-test('strikes are matched to their seat, never to a look-alike', async () => {
+test('strikes are matched to their EXACT seat including effort, never to a look-alike or a sibling tier', async () => {
   const m = await loadModule()
   const feed = m.sanitizeQualificationFeed(fixture)
   const high = feed.defaults.find((e) => e.seat.engine === 'grok-4.6' && e.seat.effort === 'high')
+  const low = feed.defaults.find((e) => e.seat.engine === 'grok-4.6' && e.seat.effort === 'low')
   const gem = feed.defaults.find((e) => e.seat.engine === 'gemini-3.7-flash-high')
+  // fixture carries 2 strikes for grok-4.6/grok/implementer: one legacy (no effort, pre-partitioning)
+  // and one synthetic effort='high' row. The legacy one must NOT attach to either effort-specific
+  // entry (it belongs to neither), and the high-scoped one must never leak onto low.
   assert.equal(m.strikesForEntry(feed, high).length, 1)
+  assert.equal(m.strikesForEntry(feed, high)[0].effort, 'high')
+  assert.equal(m.strikesForEntry(feed, low).length, 0, 'a high-scoped strike must not attach to the low-tier row')
   assert.equal(m.strikesForEntry(feed, gem).length, 0)
+  const legacy = feed.strikes.find((s) => s.effort === null)
+  assert.ok(legacy, 'the legacy (effort-less) strike survives sanitizing')
+  assert.equal(legacy.engine, 'grok-4.6')
 })
 
 test('a payload that is not a v1 feed sanitizes to null (page says not-published, never guesses)', async () => {

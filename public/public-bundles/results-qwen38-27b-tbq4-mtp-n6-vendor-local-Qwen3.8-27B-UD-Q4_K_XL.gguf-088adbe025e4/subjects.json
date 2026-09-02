@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen38-27b-tbq4-mtp-n6-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-088adbe025e4","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@7","model":"qwen3.8-27b","policy":"dashboard-public-feed","subject_digest":"85abee17fda580efc1d97a6f78f48a49e09bbcdd94320edb7d77c248bb1a146e"}]

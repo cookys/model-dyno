@@ -150,3 +150,34 @@ test('tok/solved is output-token based, so cache-free routes are not penalised',
   // and the column says so, so nobody reads it as total tokens
   assert.match(view, /Output tokens burned per solved task/)
 })
+
+test('value frontier: log axes, capped accuracy, frontier-only labels, real hit targets', () => {
+  const view = read('src/components/v1/ValueFrontier.vue')
+  const rank = read('src/views/v1/V1Rank.vue')
+
+  // the chart is placed under the ranked table, fed from the RANKABLE rows only
+  assert.match(rank, /<ValueFrontier :rows="frontierRows" \/>/)
+  assert.match(rank, /rankedRows\.value\.map/)
+
+  // log x: the spread is ~360x on cost; a linear axis buries every cheap cell at the origin
+  assert.match(view, /scale: \{ type: 'log'/)
+  // an accuracy axis must never run past 100% (nice+padding pushed it to 110 before this)
+  assert.match(view, /domainMax: 100/)
+  assert.doesNotMatch(view, /nice: true/)
+
+  // only the frontier is direct-labelled — a label on every point is the named anti-pattern
+  assert.match(view, /transform: \[\{ filter: 'datum\.isFrontier' \}\]/)
+  assert.match(view, /!pts\.some\(\(q\) => q !== p && q\.x <= p\.x && q\.acc >= p\.acc/)
+
+  // hover must not require landing dead-centre on a ~10px dot
+  assert.match(view, /size: 560, opacity: 0, tooltip: true/)
+
+  // $ axis excludes cells with no published rate and cells that solved nothing —
+  // absent, never plotted at zero
+  assert.match(view, /if \(axis\.value === 'usd' && !r\.priceKnown\) continue/)
+  assert.match(view, /r\.passed <= 0\) continue/)
+
+  // colour is the producer-derived billing regime, and the notional caveat is stated
+  assert.match(view, /r\.billing \?\? 'unknown'/)
+  assert.match(view, /notional \(list price × measured usage\), not money actually billed/)
+})

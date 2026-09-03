@@ -26,6 +26,7 @@ import ExamCoverageChip from '@/components/v1/ExamCoverageChip.vue'
 import CredibilityChip from '@/components/v1/CredibilityChip.vue'
 import RunStabilityNote from '@/components/v1/RunStabilityNote.vue'
 import UsageQuadrantGrid from '@/components/v1/UsageQuadrantGrid.vue'
+import ValueFrontier from '@/components/v1/ValueFrontier.vue'
 import DomainHeatmapTable from '@/components/v1/DomainHeatmapTable.vue'
 import Term from '@/components/v1/Term.vue'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
@@ -146,6 +147,20 @@ const fmtUsd = (r: RankRow) => {
   const tilde = r.billing === 'subscription' || r.billing === 'token_plan' ? '~' : ''
   return `${tilde}$${r.usdPerSolved < 1 ? r.usdPerSolved.toFixed(2) : r.usdPerSolved.toFixed(1)}`
 }
+
+const frontierRows = computed(() =>
+  rankedRows.value.map((r) => ({
+    label: r.canonical,
+    acc: r.graded ? r.passed / r.graded : null,
+    usdPerSolved: r.usdPerSolved,
+    tokPerSolved: r.tokPerSolved,
+    priceKnown: r.priceKnown,
+    billing: r.billing,
+    isLocal: r.isLocal,
+    passed: r.passed,
+    graded: r.graded,
+  })),
+)
 
 const goModel = (r: RankRow) => router.push(`/v1/model/${encodeURIComponent(r.canonical)}`)
 
@@ -307,6 +322,13 @@ const pct = (v: number) => `${Math.round(v * 100)}%`
             </tr>
           </tbody>
         </table>
+      </CardContent>
+    </Card>
+
+    <!-- Value frontier: the table ranks by score; this asks whether the score was worth it -->
+    <Card v-if="frontierRows.length">
+      <CardContent class="pt-5">
+        <ValueFrontier :rows="frontierRows" />
       </CardContent>
     </Card>
 

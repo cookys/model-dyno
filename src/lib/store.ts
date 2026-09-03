@@ -102,6 +102,8 @@ export interface SweCell {
     flags?: string[]
   }
   price_known?: boolean
+  /** plan 056: metered | subscription | token_plan | local — the cell's route regime. */
+  billing?: string
   tags?: Record<string, string>
   identity?: {
     access?: string

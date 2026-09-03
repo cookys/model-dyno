@@ -118,3 +118,35 @@ test('licences page is routed, navigable, localized, and fed non-fatally from th
   assert.match(view, /strikesForEntry\(feed, e\)/)
   assert.doesNotMatch(view, /expires/, 'no expiry column: calendar never gates (autopilot rule)')
 })
+
+test('V1 rank exposes token + cost columns with honest empty states', () => {
+  const view = read('src/views/v1/V1Rank.vue')
+  const store = read('src/lib/store.ts')
+  const loader = read('src/lib/publicBundle.ts')
+
+  // the columns exist and read the projected fields
+  assert.match(view, /tokPerSolved: c\.tok_per_solved/)
+  assert.match(view, /usdPerSolved: c\.usd_per_solved/)
+  assert.match(view, /priceKnown: c\.price_known === true/)
+
+  // plan 056: no published rate must render as an em dash, never as $0
+  assert.match(view, /if \(r\.usdPerSolved == null \|\| !r\.priceKnown\) return '—'/)
+  assert.doesNotMatch(view, /\$0\.00/)
+
+  // a notional (plan/quota) figure is marked, and the mark comes from producer-side
+  // billing rather than being guessed from the access label in the frontend
+  assert.match(view, /r\.billing === 'subscription' \|\| r\.billing === 'token_plan'/)
+  assert.match(store, /billing\?: string/)
+  assert.match(loader, /billing: stringOrNull\(entry\.billing\)/)
+  assert.match(loader, /billing: metadata\.billing/)
+})
+
+test('tok/solved is output-token based, so cache-free routes are not penalised', () => {
+  const loader = read('src/lib/publicBundle.ts')
+  const view = read('src/views/v1/V1Rank.vue')
+  // the projection divides OUTPUT tokens by solved count, and refuses on partial coverage
+  assert.match(loader, /function tokensPerSolved[\s\S]{0,400}usage\.output_tokens/)
+  assert.match(loader, /function tokensPerSolved[\s\S]{0,300}coverage\) !== 'full'\) return undefined/)
+  // and the column says so, so nobody reads it as total tokens
+  assert.match(view, /Output tokens burned per solved task/)
+})

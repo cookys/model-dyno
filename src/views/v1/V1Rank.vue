@@ -54,6 +54,10 @@ interface RankRow {
   variants: number
   medWallMin: number | null
   solvedPerHour: number | null
+  tokPerSolved: number | null
+  usdPerSolved: number | null
+  priceKnown: boolean
+  billing: string | null
   scoredAt: string | null
   tie: boolean
   examVersion: string | null
@@ -91,6 +95,14 @@ const allRows = computed<RankRow[]>(() => {
       variants: foldedVariantCount(group),
       medWallMin: c.med_wall != null ? c.med_wall / 60 : null,
       solvedPerHour: c.solved_per_hour ?? null,
+      // OUTPUT tokens per solved task (the feed derives it from usage.output_tokens).
+      // Output — not input — on purpose: input counts are inflated on routes with no
+      // cache discount, which would make local cells look wasteful for a billing reason
+      // rather than a model one. Output is comparable across cache regimes.
+      tokPerSolved: c.tok_per_solved ?? null,
+      usdPerSolved: c.usd_per_solved ?? null,
+      priceKnown: c.price_known === true,
+      billing: c.billing ?? null,
       scoredAt: c.scored_at ? c.scored_at.slice(0, 10) : null,
       tie: false,
       examVersion: c.canonical_version ?? null,
@@ -123,6 +135,17 @@ const rankedRows = computed(() => {
 const unrankedRows = computed(() =>
   scoped.value.filter((r) => !r.rankable).sort((a, b) => b.graded - a.graded),
 )
+
+const fmtTok = (n: number | null) =>
+  n == null ? '—' : n >= 10000 ? `${(n / 1000).toFixed(0)}k` : n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(Math.round(n))
+
+/** `—` when no published rate exists (a data gap, never $0 — plan 056), `~` when the cell
+ *  is billed by subscription and the number is notional rather than money actually spent. */
+const fmtUsd = (r: RankRow) => {
+  if (r.usdPerSolved == null || !r.priceKnown) return '—'
+  const tilde = r.billing === 'subscription' || r.billing === 'token_plan' ? '~' : ''
+  return `${tilde}$${r.usdPerSolved < 1 ? r.usdPerSolved.toFixed(2) : r.usdPerSolved.toFixed(1)}`
+}
 
 const goModel = (r: RankRow) => router.push(`/v1/model/${encodeURIComponent(r.canonical)}`)
 
@@ -189,6 +212,22 @@ const pct = (v: number) => `${Math.round(v * 100)}%`
               <th class="px-3 py-2.5 text-right hidden lg:table-cell" :title="locale === 'zh' ? '每小時解掉幾題（含失敗題耗時）— 能力×速度的實用指標' : 'Tasks solved per wall-clock hour (fail time included) — capability × speed'">
                 {{ locale === 'zh' ? '解題/小時' : 'Solved/hr' }}
               </th>
+              <th
+                class="px-3 py-2.5 text-right hidden xl:table-cell"
+                :title="locale === 'zh'
+                  ? '每解一題花的輸出 token（中位以外的完整加總 ÷ 解出題數）。用輸出而非輸入：沒有 cache 折抵的路線輸入會膨脹，拿來比會冤枉本地模型。'
+                  : 'Output tokens burned per solved task. Output, not input: input is inflated on routes without a cache discount, which would penalise local cells for a billing reason rather than a model one.'"
+              >
+                {{ locale === 'zh' ? 'token/題' : 'tok/solved' }}
+              </th>
+              <th
+                class="px-3 py-2.5 text-right hidden xl:table-cell"
+                :title="locale === 'zh'
+                  ? '每解一題的現金成本(list price × 實測用量)。訂閱制標 ~ 表示名目值,真實限制是額度;沒有牌價的格顯示 — ,那是資料缺口而非免費。'
+                  : 'Cash per solved task (list price × measured usage). ~ marks a subscription cell, where the figure is notional and the real constraint is quota. — means no published rate: a data gap, never free.'"
+              >
+                {{ locale === 'zh' ? '$/題' : '$/solved' }}
+              </th>
               <th class="px-3 py-2.5 text-left hidden lg:table-cell">{{ locale === 'zh' ? '考卷' : 'Exam' }}</th>
               <th class="px-3 py-2.5 text-center hidden md:table-cell">
                 <Term k="gates" :label="locale === 'zh' ? '可信度' : 'Credibility'" />
@@ -238,6 +277,19 @@ const pct = (v: number) => `${Math.round(v * 100)}%`
               <td class="px-3 py-2.5 text-right font-mono text-xs hidden lg:table-cell">
                 {{ r.solvedPerHour != null ? r.solvedPerHour.toFixed(1) : '—' }}
               </td>
+              <td class="px-3 py-2.5 text-right font-mono text-xs hidden xl:table-cell"
+                  :class="r.tokPerSolved == null ? 'text-muted-foreground' : ''">
+                {{ fmtTok(r.tokPerSolved) }}
+              </td>
+              <td class="px-3 py-2.5 text-right font-mono text-xs hidden xl:table-cell"
+                  :class="fmtUsd(r) === '—' ? 'text-muted-foreground' : ''"
+                  :title="fmtUsd(r) === '—'
+                    ? (locale === 'zh' ? '這一格沒有已發布的牌價 — 是資料缺口,不是免費' : 'No published rate for this cell — a data gap, not free')
+                    : (r.billing === 'subscription' || r.billing === 'token_plan'
+                        ? (locale === 'zh' ? '訂閱/方案制:此為名目值,真實限制是額度' : 'Subscription/plan: notional figure; the real constraint is quota')
+                        : '')">
+                {{ fmtUsd(r) }}
+              </td>
               <td class="px-3 py-2.5 hidden lg:table-cell">
                 <ExamBadge :version="r.examVersion" :current-exam="currentExamId" />
               </td>
@@ -249,7 +301,7 @@ const pct = (v: number) => `${Math.round(v * 100)}%`
               </td>
             </tr>
             <tr v-if="!rankedRows.length">
-              <td colspan="8" class="px-3 py-8 text-center text-sm text-muted-foreground">
+              <td colspan="10" class="px-3 py-8 text-center text-sm text-muted-foreground">
                 {{ locale === 'zh' ? '這個範圍還沒有滿卷成績。' : 'No full-exam results in this scope yet.' }}
               </td>
             </tr>

@@ -56,6 +56,7 @@ export interface PublicBundleFeedEntry {
   publisher?: string
   operator?: string
   access_label?: string
+  billing?: string
   /** Producer's structured experiment-axis tags (engine/quant/draft/lineage/thinking/temp/variant/…). */
   tags?: Record<string, string>
   /** 3-gate credibility block (infra/noop/trunc/maxstep pct + verdict). */
@@ -191,6 +192,7 @@ interface PublicBundleProjectionMetadata {
   publisher?: string
   operator?: string
   access_label?: string
+  billing?: string
   tags?: Record<string, string>
   gates?: CellGates
   n_runs?: number
@@ -532,6 +534,7 @@ export function projectScorecardRowsFromPublicBundle(
       operator: metadata.operator,
       harness: stringOrNull(comparisonKey.harness) ?? stringOrNull(subject?.harness) ?? undefined,
       access_label: metadata.access_label,
+      billing: metadata.billing,
       comparable,
       n_graded: nTasks,
       n_passed: nPassed,
@@ -960,6 +963,10 @@ function normalizeFeedEntry(raw: unknown): PublicBundleFeedEntry | null {
     publisher: stringOrNull(entry.publisher) ?? undefined,
     operator: stringOrNull(entry.operator) ?? undefined,
     access_label: stringOrNull(entry.access_label) ?? undefined,
+    // plan 056: the billing REGIME, derived producer-side from the cell's access route.
+    // Lets the UI say whether a dollar figure is money actually spent (metered) or
+    // notional against a plan/quota (subscription, token_plan) without guessing.
+    billing: stringOrNull(entry.billing) ?? undefined,
     tags: normalizeEntryTags(entry.tags),
     gates: normalizeEntryGates(entry.gates),
     n_runs: nonNegativeInt(entry.n_runs) ?? undefined,

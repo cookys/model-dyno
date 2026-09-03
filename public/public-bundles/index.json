@@ -126,7 +126,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
+        "noop_pct": 0.0,
         "trunc_pct": 3.0,
         "verdict": "CLEAN"
       },
@@ -785,7 +785,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
+        "noop_pct": 3.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
@@ -874,7 +874,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
+        "noop_pct": 0.0,
         "trunc_pct": 6.0,
         "verdict": "CLEAN"
       },
@@ -970,7 +970,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
+        "noop_pct": 0.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
@@ -1146,6 +1146,31 @@
         "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "OpenCode",
+      "base_url": "./public-bundles/opencode-muse-spark-1.3-contributor-b32a18f4c6ef/",
+      "current": true,
+      "gates": {
+        "infra_pct": 5.9,
+        "maxstep_pct": 0.0,
+        "noop_pct": 9.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "muse-spark-1.3 · OpenCode",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenCode",
+      "operator_url": "",
+      "owner": "?",
+      "publisher": "Meta",
+      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
+      "tags": {
+        "engine": "n/a",
+        "placement": "cloud"
       }
     },
     {
@@ -1570,7 +1595,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
+        "noop_pct": 0.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
@@ -1804,7 +1829,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
+        "noop_pct": 0.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
@@ -1870,7 +1895,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 6.0,
+        "noop_pct": 3.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
@@ -1989,7 +2014,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
+        "noop_pct": 9.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
@@ -2239,7 +2264,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 6.0,
-        "noop_pct": 6.0,
+        "noop_pct": 3.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
@@ -2362,7 +2387,7 @@
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
+        "noop_pct": 9.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
@@ -5342,7 +5367,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "65198562b45b5fe4d7bec7be3d043af92ea2f31acb529c192ea79dccccd82a6e",
+  "content_digest": "be921cb837b61025afbad693f693fb4893bdaeaa99e9364a8ee823db40226288",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -5377,7 +5402,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-02T21:50:07Z",
+  "generated_at": "2026-09-03T05:01:28Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

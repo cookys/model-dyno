@@ -3,6 +3,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-dspark-local-Qwen3.8-27B-Q4_K_M-9d2df85f1ff8/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -35,6 +36,7 @@
     {
       "access_label": "Grok",
       "base_url": "./public-bundles/grok-4.5-baf7326ca6bc/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -50,6 +52,7 @@
       "operator": "xAI",
       "operator_url": "https://x.ai/",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-07-31 basis=sourced source=https://docs.x.ai/developers/models/grok-4.5",
       "publisher": "xAI",
       "publisher_url": "https://x.ai/",
       "tags": {
@@ -59,6 +62,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-tbq4-mtp-n5-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-d946f4c3f85f/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -91,6 +95,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-glm-53-coding-plan-glm-5.3-5b3b76bc9d56/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -122,6 +127,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-jc-thinkon-local-Qwen3.8-27B-Uncensored-Q4_K_M.gguf-3e11bf279b1e/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -152,6 +158,7 @@
     {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.6-luna-20ea34e83c3c/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -167,6 +174,7 @@
       "operator": "OpenAI",
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-07-30 basis=sourced source=https://www.eesel.ai/blog/gpt-5-6-pricing",
       "publisher": "",
       "publisher_url": "",
       "tags": {
@@ -176,6 +184,7 @@
     {
       "access_label": "Grok",
       "base_url": "./public-bundles/grok-4.6-18208342b669/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -200,6 +209,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-mtp-262k-low-local-qwen3.8-flash-next-9bf9273e762c/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -235,6 +245,7 @@
     {
       "access_label": "OpenCode",
       "base_url": "./public-bundles/results-v4-flash-opencode-deepseek-v4-flash-bc4edf5c982c/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -270,6 +281,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-febfee4ef214/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -302,6 +314,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkoff-local-Qwen3.8-27B-NVFP4-3a73d7eae55f/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -336,6 +349,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-exl3-thinkon-local-Qwen3.8-27B-exl3-4.0bpw-2232ab4c5e74/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -366,6 +380,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-jc-iq4-2080ti-vendor-mtp-local-Qwen3.8-27B-Uncensored-IQ4_XS-ff2000786e1f/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -401,6 +416,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-bc4c11beda51/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -416,6 +432,7 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-05-28 basis=sourced source=https://www.helpnetsecurity.com/2026/05/29/anthropic-claude-opus-4-8/",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -425,6 +442,7 @@
     {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-ebb3a91f6baf/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -440,6 +458,7 @@
       "operator": "OpenAI",
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-04-24 basis=sourced source=https://openrouter.ai/openai/gpt-5.5",
       "publisher": "OpenAI",
       "publisher_url": "https://platform.openai.com/docs/models",
       "tags": {
@@ -449,6 +468,7 @@
     {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.6-terra-85d84abcb48c/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -464,6 +484,7 @@
       "operator": "OpenAI",
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-07-30 basis=sourced source=https://www.eesel.ai/blog/gpt-5-6-pricing",
       "publisher": "",
       "publisher_url": "",
       "tags": {
@@ -473,6 +494,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-tbq4-mtp-n6-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-088adbe025e4/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -505,6 +527,7 @@
     {
       "access_label": "qoder-cli",
       "base_url": "./public-bundles/results-qoder-qwen3.8-max-f13bf4a4f949/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -533,6 +556,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-thinkon-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-4b9c4ddfa728/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -564,6 +588,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-vendor-local-Qwen3.8-27B-Q4_K_M-b8c4dbc97aae/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -596,6 +621,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-iq4-2080ti-vendor-mtp-Qwen3.8-27B-IQ4_XS-2f8764f3a78b/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -631,6 +657,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-huihui-udq4xl-thinkon-local-Huihui-Qwen3.8-27B-abliter-ba3f2fa351aff47f-e0357445ed99/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -661,6 +688,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-4.6-99a87696a24a/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -685,6 +713,7 @@
     {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.6-sol-5e5190cfa564/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -700,6 +729,7 @@
       "operator": "OpenAI",
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-07-09 basis=sourced source=https://simonwillison.net/2026/Jul/9/gpt-5-6/",
       "publisher": "",
       "publisher_url": "",
       "tags": {
@@ -709,6 +739,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.5-flash-d1263b2f955d/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -733,6 +764,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.7-flash-high-2fd5430b4d71/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -757,6 +789,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.7-flash-low-002d5b29d382/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -781,6 +814,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.8-flash-high-1fd52d6668ed/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -805,6 +839,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-deepseek-v4-flash-0731-local-DeepSeek-V4-Flash-0731-166f50a45974/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -838,6 +873,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-local-Qwen3.8-27B-Q4_K_M-86f27f0a3a30/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -870,6 +906,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-thinkon-mtp-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-4beb3ac21a43/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -901,6 +938,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-thinkon-t0-local-Qwen3.8-27B-Q4_K_M-8a95523e0cf0/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -933,6 +971,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-jc-iq4-2080ti-vendor-local-Qwen3.8-27B-Uncensored-IQ4_XS-1bad9db1c5bb/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -966,6 +1005,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-nospec-dflash2img-local-Qwen3.8-27B-NVFP4-f8b3cf2bb1c2/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1004,6 +1044,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-5-062379822091/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1019,6 +1060,7 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-07-24 basis=sourced source=https://www.anthropic.com/news/claude-opus-5",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -1028,6 +1070,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.7-flash-medium-e2d0eddd49bd/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1052,6 +1095,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-mtp-262k-vendor-local-qwen3.8-flash-next-5702d9e1f1f6/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1087,6 +1131,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-kvarn4-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-0e68f4e44249/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1119,6 +1164,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-tbq4-mtp-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-632c4bb2319c/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1151,6 +1197,7 @@
     {
       "access_label": "OpenCode",
       "base_url": "./public-bundles/opencode-muse-spark-1.3-contributor-b32a18f4c6ef/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 5.9,
@@ -1176,6 +1223,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-m3-fair-MiniMax-M3-dfa751b7dd49/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1195,6 +1243,7 @@
       "operator": "MiniMax",
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
+      "price_provenance": "model-economics.toml effective=2026-06-01 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
       "tags": {
@@ -1211,6 +1260,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-glm-52-coding-plan-glm-5.2-7d15cd75a5bd/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1246,6 +1296,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-m2-minimax-32k-MiniMax-M2-bd3672158ab8/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1277,6 +1328,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-muse-glimmer-30b-dflash-local-Muse-Glimmer-30B-dflash-b2119d34316c/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1308,6 +1360,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-iq4-2080ti-vendor-Qwen3.8-27B-IQ4_XS-c22f86bbd0ba/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1341,6 +1394,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-huihui-vendor-local-Huihui-Qwen3.8-27B-abliterated-Q4_K.gguf-cbc1edfb4d2e/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1371,6 +1425,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-dflash2-vendor-local-edp1096-abliterated-NVFP4-67f1a9d84c3b/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1410,6 +1465,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-dflash2-tp2-vendor-local-edp1096-abliterated-NVFP4-8bc9a3488d72/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1450,6 +1506,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-fable-5-0c09f65556f1/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1465,6 +1522,7 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-06-09 basis=sourced source=https://www.anthropic.com/news/claude-fable-5-mythos-5",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -1474,6 +1532,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/meta-muse-spark-1.2-7399ac225ab0/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1498,6 +1557,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-deepseek-v4-flash-lucifer-low-local-DeepSeek-V4-Flash-fffb66d32c67/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1529,6 +1589,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-step37-flash-iq4xs-64k-think8k-local-Step-3.7-Flash-IQ4_XS-think-645992ead90a/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1560,6 +1621,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-muse-glimmer-30b-local-Muse-Glimmer-30B-f2afb19f9660/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1591,6 +1653,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-mtp-vendor-local-edp1096-abliterated-NVFP4-e2eead1e30de/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1625,6 +1688,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sksmile-vendor-nospec-local-sakamakismile-Qwen3.8-27B-MTP-NVFP4-a79f86e5df84/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1659,6 +1723,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-5-f3dd5f77f91b/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1674,6 +1739,7 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-06-30 basis=sourced source=https://www.anthropic.com/news/claude-sonnet-5",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -1683,6 +1749,7 @@
     {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.3-spark-795b0987092b/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1707,6 +1774,7 @@
     {
       "access_label": "OpenRouter",
       "base_url": "./public-bundles/results-hy3-openrouter-paid-tencent_hy3-5d5f1a156721/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1738,6 +1806,7 @@
     {
       "access_label": "OpenCode",
       "base_url": "./public-bundles/results-glm-52-opencode-glm-5-320960bcfd6c/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1769,6 +1838,7 @@
     {
       "access_label": "Kimi Code",
       "base_url": "./public-bundles/results-kimi-k3-a3b35e9d9668/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1793,6 +1863,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-thinkoff-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-b302adba12e1/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -1825,6 +1896,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-vendor-trimfloor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-555b78f6f351/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1858,6 +1930,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-thinkoff-trimfloor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-e62f05221009/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1891,6 +1964,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-edp1096-nvfp4-vendor-local-edp1096-abliterated-NVFP4-db13a45a4843/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1929,6 +2003,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-zai-glm-5.1-befee77f01ae/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1953,6 +2028,7 @@
     {
       "access_label": "OpenCode",
       "base_url": "./public-bundles/opencode-deepseek-v4-pro-770c245b4b1d/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -1968,6 +2044,7 @@
       "operator": "OpenCode",
       "operator_url": "",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-04-26 basis=sourced source=https://apidog.com/blog/deepseek-v4-pro-permanent-price-cut/",
       "publisher": "DeepSeek",
       "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "tags": {
@@ -1978,6 +2055,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-tbq4-mtp-n4-vendor-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-2fafb081b83e/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2010,6 +2088,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.8-flash-low-d4ee7ab0813e/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2034,6 +2113,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-m27-highspeed-minimax-MiniMax-M2.7-highspeed-de281ed75e25/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2064,6 +2144,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-hy3-mxfp4-98k-mtp-local-4kout-hy3-9c74d226c89d/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -2095,6 +2176,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.5-122b-a10b-mtp-udq4xl-64k-local-Qwen3.5-122B-A10B-MTP-UD-Q4_K_XL-561226b55384/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2127,6 +2209,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-thinkingcap-qwen3.6-27b-thinkoff-local-ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf-b53b2afd52eb/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2159,6 +2242,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-thinkoff-mtp-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-00942b4fbe65/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -2191,6 +2275,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-dspark-local-Qwen3.8-27B-NVFP4-f2f01944cb5c/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2226,6 +2311,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkon-t0-local-Qwen3.8-27B-NVFP4-7006b4ff3caa/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2260,6 +2346,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkon-t0-dspark-local-Qwen3.8-27B-NVFP4-1b8386ca7b5c/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2295,6 +2382,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-dflash2-local-Qwen3.8-27B-NVFP4-e27d579a66c7/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2330,6 +2418,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.1-pro-c0d021132d9e/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2354,6 +2443,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/litellm-claude-devstral-24b-local-34b3bd473556/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2383,6 +2473,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.8-flash-medium-870350945594/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2407,6 +2498,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-qwopus-mtp-thinking-off-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf-c255b43ba63d/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2441,6 +2533,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-qwopus-mtp-thinking-on-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf-61fdd79f6201/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2474,6 +2567,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-qwopus-thinking-off-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf-d93feb6bcf24/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2507,6 +2601,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-qwopus-thinking-on-local-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf-c72c9b8d0b5a/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2539,6 +2634,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-mtp-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-62e63bfcbd5d/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 6.7,
@@ -2570,6 +2666,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-mtp-thinking-on-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-4b0a03665113/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2604,6 +2701,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-thinking-on-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-15578d14883b/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2638,6 +2736,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-mtp-thinkoff-v2-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-ba2be4a1f8f7/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2673,6 +2772,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-qwopus-mtp-thinkon-v2-Qwopus3.6-27B-v2-MTP-Q4_K_M.gguf-b18107498242/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2706,6 +2806,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-abliterated-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-86b6054f7fd6/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2741,6 +2842,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-m27-highspeed-minimax-32k-MiniMax-M2.7-highspeed-28a1646b309f/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2771,6 +2873,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-unsloth-mtp-local-Qwen3.8-27B-Q4_K_M-unsloth-7a1c67711ec0/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2803,6 +2906,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-local-Qwen3.8-27B-NVFP4-3e7644d29dd1/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -2837,6 +2941,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-local-Qwen3.8-27B-NVFP4-ec517b0497fc/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 6.1,
@@ -2872,6 +2977,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-huihui-thinkon-local-Huihui-Qwen3.8-27B-abliterated-Q4_K.gguf-0d2a6daa4666/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2902,6 +3008,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-kimi-k2.6-45eccbf65578/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2926,6 +3033,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-mtp-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-g-a416ec1d2bffe5a6-c5fc47c98c5a/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -2961,6 +3069,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-ggml-model-Q4_K.gguf-8956458d3f14/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2996,6 +3105,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3-coder-next-q4km-64k-local-Qwen3-Coder-Next-Q4_K_M-8187f5be81e0/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3028,6 +3138,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-m25-highspeed-minimax-32k-MiniMax-M2.5-highspeed-608601724afd/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3059,6 +3170,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-m21-minimax-32k-MiniMax-M2.1-fc36c1b8e0f5/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3074,6 +3186,7 @@
       "operator": "MiniMax",
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
+      "price_provenance": "model-economics.toml effective=2025-12-22 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
       "tags": {
@@ -3090,6 +3203,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-thinkingcap-dflash-local-ThinkingCap-Qwen3.6-27B-Q4_K_M.gguf-e53691a5e349/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3122,6 +3236,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-unsloth-mtp-n2-local-Qwen3.8-27B-Q4_K_M-unsloth-2ef77de32595/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -3154,6 +3269,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-ablit-huihui-nvfp4-vendor-local-Huihui-Qwen3.8-27B-abliterated-NVFP4-732e12acdb38/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3188,6 +3304,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-mimo-v2.5-pro-a188ba19ad30/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3212,6 +3329,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-ornith-1.0-35b-local-ornith-1.0-35b-504d38de0632/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3243,6 +3361,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-m21-highspeed-minimax-32k-MiniMax-M2.1-highspeed-5891595e9d7f/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -3258,6 +3377,7 @@
       "operator": "MiniMax",
       "operator_url": "https://www.minimax.io/",
       "owner": "cookys",
+      "price_provenance": "model-economics.toml effective=2025-12-22 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
       "tags": {
@@ -3274,6 +3394,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-huihui-mtp-runswe-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-1f9f1aa6a06c/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3306,6 +3427,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.6-35b-a3b-mtp-runswe-local-Qwen3.6-35B-A3B-UD-IQ4_XS.gguf-700bf69f1b24/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -3338,6 +3460,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-gemini-35-flash-lite-direct-gemini-3.5-flash-lite-e10396502920/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3369,6 +3492,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-local-Qwen3.8-27B-Q4_K_M-07fd56608668/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3401,6 +3525,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-bf16-local-Qwen3.8-27B-Q4_K_M-7cf7cffc5120/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3434,6 +3559,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendorinstruct-local-Qwen3.8-27B-NVFP4-c80713493bf1/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3468,6 +3594,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-haiku-4.5-d22353591337/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3492,6 +3619,7 @@
     {
       "access_label": "Grok",
       "base_url": "./public-bundles/grok-composer-2.5-fast-a2ec5012eae9/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3516,6 +3644,7 @@
     {
       "access_label": "OpenCode Free",
       "base_url": "./public-bundles/opencode-big-pickle-a001981ba574/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -3541,6 +3670,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-llamacpp-vulkan-huihui-3.6-27b-mtp-huihui-qwen3.6-27b-abliterated-mtp-ba0c44a84aef/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3570,6 +3700,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-qwen35a3b-apex-remote-OpenYourMind-Qwen3.6-35B-A3B-abliterated-062031abdfde6f2c-2bf80e02a586/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3598,6 +3729,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-miaai-local-Qwen3.8-27B-NVFP4-d37a6c1799ec/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3634,6 +3766,7 @@
     {
       "access_label": "OpenRouter",
       "base_url": "./public-bundles/results-hy3-free-openrouter-tencent_hy3_free-a0d422257755/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3665,6 +3798,7 @@
     {
       "access_label": "OpenCode",
       "base_url": "./public-bundles/results-mimo-v25-opencode-mimo-v2.5-2a52f986611c/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3697,6 +3831,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-heretic-thinkon-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf-ee38be3b89b3/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3729,6 +3864,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-qwen35a3b-local-_data_models_Qwen3.6-35B-A3B-GGUF_Qwen3.6-35B-87b2637034bb0eb2-8ff8aa083eda/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3761,6 +3897,7 @@
     {
       "access_label": "Kimi Code",
       "base_url": "./public-bundles/results-kimi-kimi-for-coding-5dd2a2535638/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3785,6 +3922,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/minimax-b33132e2a4d2/",
+      "billing": "token_plan",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3800,6 +3938,7 @@
       "operator": "MiniMax",
       "operator_url": "https://www.minimax.io/",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-03-18 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
       "tags": {
@@ -3809,6 +3948,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-926a1cdc1372/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 10.0,
@@ -3840,6 +3980,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-control-thinking-on-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf-a5a988537732/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3868,6 +4009,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-agy-gemini-3.6-flash-high-0fe5b5229931/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3892,6 +4034,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-laguna-xs21-bf16-256k-vllm-local-laguna-0afb5635e342/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3924,6 +4067,7 @@
     {
       "access_label": "OpenRouter",
       "base_url": "./public-bundles/results-nex-n2-pro-openrouter-paid-nex-agi_nex-n2-pro-16fd907b2b44/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3955,6 +4099,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local-73e20680a6c4/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3987,6 +4132,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/minimax-m2.5-4f9c6f718531/",
+      "billing": "token_plan",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4002,6 +4148,7 @@
       "operator": "MiniMax",
       "operator_url": "https://www.minimax.io/",
       "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-02-12 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
       "tags": {
@@ -4011,6 +4158,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-mimo-fair-q4km-MiMo-V2.5-Q4KM-1cefc9ed8050/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4042,6 +4190,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-hy3-iq1m-32k-thinkoff-local-hy3-iq1m-local-cf9e7b68b7a1/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4073,6 +4222,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-llamacpp-vulkan-qwen3.6-35b-a3b-mtp-qwen3.6-35b-a3b-mtp-86890e2d6be0/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4100,6 +4250,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-nemotron-cascade-2-30b-a3b-bf16-128k-local-openhands-prequal-nemotron-c-12f285f55f2dabbf-f7405a7554d7/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4132,6 +4283,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf-87696c77ee92/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 6.1,
@@ -4164,6 +4316,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-mimo-fair-MiMo-V2.5-f8f287fe9932/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -4195,6 +4348,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-control-qwen36-27b-dflash-local-Qwen3.6-27B-Abliterated-Hereti-d5b7e19c4f8f27f3-3538b61940bc/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4225,6 +4379,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-control-base-no-heretic-Qwen3.6-27B-Q4_K_M.gguf-b06d9515703a/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4255,6 +4410,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-heretic-dflash-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf-8eeac827f402/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4285,6 +4441,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-base-v2-Qwen3.6-27B-Q4_K_M.gguf-59c39509f92a/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 9.1,
@@ -4313,6 +4470,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-agents-a1-q4km-64k-local-Agents-A1-Q4_K_M-9010899fb1b3/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4345,6 +4503,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-ornith-1.5-35b-a3b-rocmfp4-256k-vendor-local-Ornith-1.5-35B-A3B-ROCmFP4-98807629a856/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 14.3,
@@ -4376,6 +4535,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-gemma-4-12b-fixed-local-gemma-4-12b-it-Q4_K_M.gguf-a3188e794aed/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4406,6 +4566,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-gemma4-coder-fable5-thinkon-local-gemma4-coding-Q8_0.gguf-cec145297456/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4437,6 +4598,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-nex-n2-pro-iq3xxs-64k-local-prequal-nex-n2-pro-local-34a8cc919a4c/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4469,6 +4631,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-nemotron-puzzle-75b-a9b-nvfp4-mtp-128k-local-prequal-nemotron-puzzle-75b-a9b-nvfp4-local-b08986272e62/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4501,6 +4664,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-devstral2-24b-thinkoff-local-Devstral-Small-2-24B-Instruct-2512-Q4_K_M.gguf-7fa2361e6e17/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4536,6 +4700,7 @@
     {
       "access_label": "OpenCode Free",
       "base_url": "./public-bundles/opencode-nemotron-3-ultra-free-9c8fe2f66beb/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 15.2,
@@ -4561,6 +4726,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-gemma-4-31b-dflash-turbo3-local-gemma-4-31B-it-IQ4_XS.gguf-ec4a15074e94/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -4593,6 +4759,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-ornith-1.5-35b-a3b-rocmfp4-256k-vendor-think8k-local-Ornith-1.5-35B-A3B-ROCmFP4-d4221626cca1/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 6.1,
@@ -4624,6 +4791,7 @@
     {
       "access_label": "OpenCode Free",
       "base_url": "./public-bundles/opencode-north-mini-code-free-40a0410f6f84/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 6.1,
@@ -4649,6 +4817,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-gemma-4-26b-a4b-dflash-turbo3-local-gemma-4-26B-A4B-it-UD-Q4_K_M.gguf-df9ad0f27aa7/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.0,
@@ -4681,6 +4850,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-glm47flash-local-_data_models_GLM-4.7-Flash-Q4_GLM-4.7-Flash-Q4_K_M.gguf-2bb499375bd3/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4713,6 +4883,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-minimax-m3-iq3xxs-64k-local-prequal-minimax-m3-local-2c939235b710/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4728,6 +4899,7 @@
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
+      "price_provenance": "model-economics.toml effective=2026-06-01 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
       "tags": {
@@ -4745,6 +4917,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-nex-n2-pro-iq2m-64k-local-prequal-nex-n2-pro-local-27b476ca37fd/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4777,6 +4950,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-nemotron-cascade-2-30b-a3b-bf16-128k-local-prequal-nemotron-cascade-2-30b-a3b-local-5904f14cd16a/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4809,6 +4983,7 @@
     {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gpt-oss-120b-5dbbac687b1d/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4833,6 +5008,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-llamacpp-vulkan-qwen3-30b-a3b-qwen3-30b-a3b-instruct-2507-913dd5be0cb3/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4859,6 +5035,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-lemonade-qwen3-30b-a3b-rocm-Qwen3-30B-A3B-Instruct-2507-GGUF-af6395ca92ee/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 4.8,
@@ -4885,6 +5062,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-gemma-4-12b-fixed-thinkoff-local-Gemma-4-12B-it-fd821142d4df/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4913,6 +5091,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-gemma-4-12b-fixed-local-Gemma-4-12B-it-5080ce9d6862/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4939,6 +5118,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-mlx-qwen3-30b-a3b-qwen3-30b-a3b-instruct-2507-mlx-4bit-f677179e6900/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.3,
@@ -4965,6 +5145,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-glm47flash-local-_data_models_GLM-4.7-Flash-Q4_GLM-4.7-Flash-Q-b3fcc6f8865be0cb-5d56f235f20d/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -4993,6 +5174,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-glm47flash-local-GLM-4.7-Flash-Q4_K_M.gguf-20260517-095011.nonrtr-superseded-75716f6e1326/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -5021,6 +5203,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-lemonade-qwen3-30b-a3b-Qwen3-30B-A3B-Instruct-2507-GGUF-e2283cdbfaf3/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 3.3,
@@ -5047,6 +5230,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-vibethinker-3b-local-VibeThinker-3B.Q8_0.gguf-c74798290cf1/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -5073,6 +5257,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-abliterated-local-_home_cookys_models_Huihui-Qwen3.6-27-5afb79c64232527c-c6486889e27a/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 100.0,
@@ -5104,6 +5289,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-gemma-4-12b-fixed-thinkoff-local-gemma-4-12b-it-Q4_K_M.gguf-e47c941c1f2c/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -5136,6 +5322,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-vibethinker-3b-local-vibethinker-3b-c56cf4b1524e/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -5162,6 +5349,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-minimax-m3-moq3-64k-local-prequal-minimax-m3-moq3-local-6128bb9e36f2/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -5177,6 +5365,7 @@
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
+      "price_provenance": "model-economics.toml effective=2026-06-01 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
       "tags": {
@@ -5194,6 +5383,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-minimax-m3-reap50-128k-sglang-prequal-minimax-m3-reap50-local-d7f827a27f3b/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -5209,6 +5399,7 @@
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
+      "price_provenance": "model-economics.toml effective=2026-06-01 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
       "publisher": "MiniMax",
       "publisher_url": "https://www.minimax.io/",
       "tags": {
@@ -5225,6 +5416,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-nemotron-super-120b-a12b-nvfp4-mtp-128k-local-prequal-nemotron-super-12-a20d75a79e21fac7-954553f469e2/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -5257,6 +5449,7 @@
     {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3-coder-next-vulkan-local-qwen3-coder-next-dfedc85e0655/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -5367,7 +5560,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "be921cb837b61025afbad693f693fb4893bdaeaa99e9364a8ee823db40226288",
+  "content_digest": "237a06042a8fc8c5df548611c577ea40e6c52471f70b768f23dde92804749cb4",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -5402,7 +5595,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-03T05:01:28Z",
+  "generated_at": "2026-09-03T09:05:12Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

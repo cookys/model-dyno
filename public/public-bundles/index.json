@@ -93,6 +93,41 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-glm-53-flash-exl3k4-fp8kv-dflash2-local-glm-5.3-flash-exl3-4bpw-433e67416b36/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "glm-53-flash-exl3k4-fp8kv-dflash2",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "7",
+        "draft_packaging": "external",
+        "engine": "vllm-b12x",
+        "kv": "fp8_ds_mla",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "EXL3-TR3-4bpw",
+        "role": "head",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-glm-53-coding-plan-glm-5.3-5b3b76bc9d56/",
       "billing": "subscription",
@@ -5560,7 +5595,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "237a06042a8fc8c5df548611c577ea40e6c52471f70b768f23dde92804749cb4",
+  "content_digest": "da95cabae0393d32eb00dee9c2529b4cb7dd87c21cf5cd4fd17a742fd602df75",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -5595,7 +5630,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-03T09:05:12Z",
+  "generated_at": "2026-09-04T07:33:31Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

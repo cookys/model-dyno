@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-glm-53-flash-exl3k4-fp8kv-dflash2-local-glm-5.3-flash-exl3-4bpw-433e67416b36","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"glm-5.3-flash","policy":"dashboard-public-feed","subject_digest":"ba2bace6c0f3c6996d5fac1683ba8db122bb8119eec932f856c30068e4caeda8"}]

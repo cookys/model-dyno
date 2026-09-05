@@ -111,8 +111,8 @@
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/",
       "tags": {
         "draft": "dflash2",
         "draft_n": "7",
@@ -125,6 +125,67 @@
         "role": "head",
         "temp": "1.0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-mtp-n6-dds-local-qwen3.8-27b-exl3-3.5bpw-wm-29dde35de9ad/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "6",
+        "draft_packaging": "embedded",
+        "effort": "low",
+        "engine": "exllamav3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "EXL3-3.5bpw",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt5.6-luna-20ea34e83c3c/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gpt-5.6-luna · Codex",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-07-30 basis=sourced source=https://www.eesel.ai/blog/gpt-5-6-pricing",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -191,32 +252,6 @@
       }
     },
     {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt5.6-luna-20ea34e83c3c/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-5.6-luna · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-07-30 basis=sourced source=https://www.eesel.ai/blog/gpt-5-6-pricing",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "Grok",
       "base_url": "./public-bundles/grok-4.6-18208342b669/",
       "billing": "subscription",
@@ -275,6 +310,58 @@
         "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/anthropic-opus-4.8-bc4c11beda51/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "opus-4.8 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-05-28 basis=sourced source=https://www.helpnetsecurity.com/2026/05/29/anthropic-claude-opus-4-8/",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt5.6-terra-85d84abcb48c/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gpt-5.6-terra · Codex",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-07-30 basis=sourced source=https://www.eesel.ai/blog/gpt-5-6-pricing",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -449,32 +536,6 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/anthropic-opus-4.8-bc4c11beda51/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "opus-4.8 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-05-28 basis=sourced source=https://www.helpnetsecurity.com/2026/05/29/anthropic-claude-opus-4-8/",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-ebb3a91f6baf/",
       "billing": "subscription",
@@ -496,32 +557,6 @@
       "price_provenance": "model-economics.toml effective=2026-04-24 basis=sourced source=https://openrouter.ai/openai/gpt-5.5",
       "publisher": "OpenAI",
       "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt5.6-terra-85d84abcb48c/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-5.6-terra · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-07-30 basis=sourced source=https://www.eesel.ai/blog/gpt-5-6-pricing",
-      "publisher": "",
-      "publisher_url": "",
       "tags": {
         "engine": "n/a"
       }
@@ -557,6 +592,141 @@
         "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-mtp-local-qwen3.8-27b-exl3-3.5bpw-wm-e8f5c97c0096/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 3.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_packaging": "embedded",
+        "effort": "low",
+        "engine": "exllamav3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "EXL3-3.5bpw",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/anthropic-sonnet-4.6-99a87696a24a/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "sonnet-4.6 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt5.6-sol-5e5190cfa564/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gpt-5.6-sol · Codex",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-07-09 basis=sourced source=https://simonwillison.net/2026/Jul/9/gpt-5-6/",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.7-flash-high-2fd5430b4d71/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 3.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.7-flash-high · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.7-flash-low-002d5b29d382/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.7-flash-low · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -722,57 +892,6 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/anthropic-sonnet-4.6-99a87696a24a/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "sonnet-4.6 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt5.6-sol-5e5190cfa564/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-5.6-sol · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-07-09 basis=sourced source=https://simonwillison.net/2026/Jul/9/gpt-5-6/",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.5-flash-d1263b2f955d/",
       "billing": "subscription",
       "current": true,
@@ -797,33 +916,104 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/agy-gemini-3.7-flash-high-2fd5430b4d71/",
-      "billing": "subscription",
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-dflash2-local-qwen3.8-27b-exl3-3.5bpw-wm-7cfe1054b690/",
+      "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
+        "maxstep_pct": 6.0,
+        "noop_pct": 0.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "gemini-3.7-flash-high · Direct",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "effort": "low",
+        "engine": "exllamav3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "EXL3-3.5bpw",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-mtp-n6-local-qwen3.8-27b-exl3-3.5bpw-wm-d0d8ff15e735/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 6.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "6",
+        "draft_packaging": "embedded",
+        "effort": "low",
+        "engine": "exllamav3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "EXL3-3.5bpw",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/anthropic-opus-5-062379822091/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "opus-5 · Direct",
       "machine": "?",
       "n_runs": 1,
-      "operator": "Google",
-      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "price_provenance": "model-economics.toml effective=2026-07-24 basis=sourced source=https://www.anthropic.com/news/claude-opus-5",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
         "engine": "n/a"
       }
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/agy-gemini-3.7-flash-low-002d5b29d382/",
+      "base_url": "./public-bundles/agy-gemini-3.7-flash-medium-e2d0eddd49bd/",
       "billing": "subscription",
       "current": true,
       "gates": {
@@ -834,7 +1024,7 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "gemini-3.7-flash-low · Direct",
+      "label": "gemini-3.7-flash-medium · Direct",
       "machine": "?",
       "n_runs": 1,
       "operator": "Google",
@@ -1077,57 +1267,6 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/anthropic-opus-5-062379822091/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "opus-5 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-07-24 basis=sourced source=https://www.anthropic.com/news/claude-opus-5",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/agy-gemini-3.7-flash-medium-e2d0eddd49bd/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gemini-3.7-flash-medium · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Google",
-      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
-      "owner": "?",
-      "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-mtp-262k-vendor-local-qwen3.8-flash-next-5702d9e1f1f6/",
       "billing": "local",
@@ -1227,6 +1366,88 @@
         "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/results-glm-53-flash-coding-plan-glm-5.3-flash-f4bb2f43dea7/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 2.9,
+        "maxstep_pct": 0.0,
+        "noop_pct": 3.0,
+        "trunc_pct": 6.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "glm-5.3-flash · Direct",
+      "machine": "cookys-7840hs",
+      "n_runs": 1,
+      "operator": "Z.AI",
+      "operator_url": "https://z.ai/",
+      "owner": "cookys",
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/",
+      "tags": {
+        "draft": "none",
+        "engine": "n/a",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/anthropic-fable-5-0c09f65556f1/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "fable-5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-06-09 basis=sourced source=https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/meta-muse-spark-1.2-7399ac225ab0/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "muse-spark-1.2 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Meta",
+      "operator_url": "https://developer.meta.com/ai/models/muse-spark/",
+      "owner": "?",
+      "publisher": "Meta",
+      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -1540,7 +1761,7 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/anthropic-fable-5-0c09f65556f1/",
+      "base_url": "./public-bundles/anthropic-sonnet-5-f3dd5f77f91b/",
       "billing": "metered",
       "current": true,
       "gates": {
@@ -1551,40 +1772,15 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "fable-5 · Direct",
+      "label": "sonnet-5 · Direct",
       "machine": "?",
       "n_runs": 1,
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-06-09 basis=sourced source=https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "price_provenance": "model-economics.toml effective=2026-06-30 basis=sourced source=https://www.anthropic.com/news/claude-sonnet-5",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/meta-muse-spark-1.2-7399ac225ab0/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "muse-spark-1.2 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Meta",
-      "operator_url": "https://developer.meta.com/ai/models/muse-spark/",
-      "owner": "?",
-      "publisher": "Meta",
-      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
       "tags": {
         "engine": "n/a"
       }
@@ -1756,32 +1952,6 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/anthropic-sonnet-5-f3dd5f77f91b/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "sonnet-5 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-06-30 basis=sourced source=https://www.anthropic.com/news/claude-sonnet-5",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.3-spark-795b0987092b/",
       "billing": "subscription",
@@ -1836,6 +2006,31 @@
         "role": "candidate",
         "temp": "0",
         "thinking": "off"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/litellm-claude-zai-glm-5.1-befee77f01ae/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "glm-5.1 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Z.AI",
+      "operator_url": "https://z.ai/",
+      "owner": "?",
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -2036,31 +2231,6 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/litellm-claude-zai-glm-5.1-befee77f01ae/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "glm-5.1 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Z.AI",
-      "operator_url": "https://z.ai/",
-      "owner": "?",
-      "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "OpenCode",
       "base_url": "./public-bundles/opencode-deepseek-v4-pro-770c245b4b1d/",
       "billing": "subscription",
@@ -2118,6 +2288,31 @@
         "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.1-pro-c0d021132d9e/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.1-pro · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -2451,31 +2646,6 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/agy-gemini-3.1-pro-c0d021132d9e/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gemini-3.1-pro · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Google",
-      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
-      "owner": "?",
-      "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "local",
       "base_url": "./public-bundles/litellm-claude-devstral-24b-local-34b3bd473556/",
       "billing": "local",
@@ -2526,6 +2696,31 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/litellm-claude-kimi-k2.6-45eccbf65578/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "kimi-k2.6 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
+      "owner": "?",
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -3042,7 +3237,7 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/litellm-claude-kimi-k2.6-45eccbf65578/",
+      "base_url": "./public-bundles/litellm-claude-mimo-v2.5-pro-a188ba19ad30/",
       "billing": "metered",
       "current": true,
       "gates": {
@@ -3053,14 +3248,14 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "kimi-k2.6 · Direct",
+      "label": "mimo-v2.5-pro · Direct",
       "machine": "?",
       "n_runs": 1,
-      "operator": "Moonshot",
-      "operator_url": "https://platform.moonshot.ai/",
+      "operator": "Xiaomi",
+      "operator_url": "https://www.mi.com/global/",
       "owner": "?",
-      "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
       "tags": {
         "engine": "n/a"
       }
@@ -3338,7 +3533,7 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/litellm-claude-mimo-v2.5-pro-a188ba19ad30/",
+      "base_url": "./public-bundles/anthropic-haiku-4.5-d22353591337/",
       "billing": "metered",
       "current": true,
       "gates": {
@@ -3349,14 +3544,14 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "mimo-v2.5-pro · Direct",
+      "label": "haiku-4.5 · Direct",
       "machine": "?",
       "n_runs": 1,
-      "operator": "Xiaomi",
-      "operator_url": "https://www.mi.com/global/",
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
         "engine": "n/a"
       }
@@ -3627,31 +3822,6 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/anthropic-haiku-4.5-d22353591337/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "haiku-4.5 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "Grok",
       "base_url": "./public-bundles/grok-composer-2.5-fast-a2ec5012eae9/",
       "billing": "subscription",
@@ -3831,6 +4001,32 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/minimax-b33132e2a4d2/",
+      "billing": "token_plan",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "minimax-m2.7 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-03-18 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "OpenCode",
       "base_url": "./public-bundles/results-mimo-v25-opencode-mimo-v2.5-2a52f986611c/",
       "billing": "subscription",
@@ -3950,32 +4146,6 @@
       "owner": "cookys",
       "publisher": "Moonshot",
       "publisher_url": "https://platform.moonshot.ai/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/minimax-b33132e2a4d2/",
-      "billing": "token_plan",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "minimax-m2.7 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "MiniMax",
-      "operator_url": "https://www.minimax.io/",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-03-18 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
-      "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/",
       "tags": {
         "engine": "n/a"
       }
@@ -4132,6 +4302,32 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/minimax-m2.5-4f9c6f718531/",
+      "billing": "token_plan",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "minimax-m2.5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-02-12 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local-73e20680a6c4/",
       "billing": "local",
@@ -4162,32 +4358,6 @@
         "role": "candidate",
         "temp": "0.7",
         "thinking": "off"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/minimax-m2.5-4f9c6f718531/",
-      "billing": "token_plan",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "minimax-m2.5 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "MiniMax",
-      "operator_url": "https://www.minimax.io/",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-02-12 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
-      "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/",
-      "tags": {
-        "engine": "n/a"
       }
     },
     {
@@ -5595,7 +5765,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "da95cabae0393d32eb00dee9c2529b4cb7dd87c21cf5cd4fd17a742fd602df75",
+  "content_digest": "ab52899643fad7878fdb8e9c5fdbdf5665275b0d3810e5c8972e65da9fd39833",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -5630,7 +5800,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-04T07:33:31Z",
+  "generated_at": "2026-09-05T16:49:21Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

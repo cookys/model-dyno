@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-mtp-n6-local-qwen3.8-27b-exl3-3.5bpw-wm-d0d8ff15e735","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"qwen3.8-27b","policy":"dashboard-public-feed","subject_digest":"1fa9fe18e26806881136770b6cc3b5570e2d85aebc6fbe32d77af82e1a6c09c0"}]

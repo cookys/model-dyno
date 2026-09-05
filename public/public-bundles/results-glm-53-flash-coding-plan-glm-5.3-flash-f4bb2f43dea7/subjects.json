@@ -1,0 +1,1 @@
+[{"backend":"direct-api","display_slug":"results-glm-53-flash-coding-plan-glm-5.3-flash-f4bb2f43dea7","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"glm-5.3-flash","policy":"dashboard-public-feed","subject_digest":"bb8d7d5fdae8c59798048171c762f9f81fde55bf3755e145ff0e193afc8de7e8"}]

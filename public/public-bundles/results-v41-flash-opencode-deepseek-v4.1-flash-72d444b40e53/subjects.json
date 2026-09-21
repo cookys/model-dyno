@@ -1,0 +1,1 @@
+[{"backend":"opencode-go","display_slug":"results-v41-flash-opencode-deepseek-v4.1-flash-72d444b40e53","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"deepseek-v4.1-flash","policy":"dashboard-public-feed","subject_digest":"d52abb141da1afce603c264b8c36c0a2b1bc8e8722223d8f079e562fd7541f46"}]

@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen3.8-flash-next-nvfp4-ablit-dealignai-cyber-fp8kv-low-local-qwen3.8-flash-next-2573f6cefc4f","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"qwen3.8-flash-next","policy":"dashboard-public-feed","subject_digest":"0e617a30637dbf84fd765159c0187e6a8b9bf5d0026488f9918611e9165c212a"}]

@@ -4,6 +4,9 @@ export interface RouteProvenance {
   engine: string | null
   engine_url: string | null
   runtime_context: string | null
+  kv_cache: string | null
+  engine_patch?: string | null
+  engine_patch_url?: string | null
   route_kind?: string | null
   route_url?: string | null
   provider?: string | null
@@ -177,6 +180,29 @@ export function quantOf(c: RouteCarrier): string | null {
   return null
 }
 
+/** Serve-time KV-cache dtype. Orthogonal to `quant`, which describes the WEIGHTS: a cell can
+ * be NVFP4 weights with fp8 KV or NVFP4 weights with nvfp4 KV, and those are different cells.
+ * Two Flash-Next cells differing only in this were otherwise indistinguishable on the board. */
+export function kvCacheOf(c: RouteCarrier): string | null {
+  return tagOf(c, 'kv')
+}
+
+const ENGINE_PATCH_URLS: Record<string, string> = {
+  'sglang-qsa-nvfp4-kv': 'https://github.com/cookys/sglang-qsa-nvfp4-kv',
+}
+
+/** An out-of-tree engine patch the cell REQUIRES. Without this, a row reading
+ * `engine: sglang` tells a reader a stock install reproduces the score, which for a patched
+ * build is false — and the row-detail spec lists route modifiers as mandatory disclosure. */
+export function enginePatchOf(c: RouteCarrier): string | null {
+  return tagOf(c, 'engine_patch')
+}
+
+export function enginePatchUrlOf(c: RouteCarrier): string | null {
+  const p = enginePatchOf(c)
+  return p ? ENGINE_PATCH_URLS[p] || null : null
+}
+
 export function contextOf(c: RouteCarrier): string | null {
   if (c.runtime_context) return c.runtime_context
   const text = routeText(c).toLowerCase()
@@ -287,6 +313,9 @@ export function routeProvenanceOf(c: RouteCarrier): RouteProvenance {
     engine: engineOf(c),
     engine_url: engineUrlOf(c),
     runtime_context: contextOf(c),
+    kv_cache: kvCacheOf(c),
+    engine_patch: enginePatchOf(c),
+    engine_patch_url: enginePatchUrlOf(c),
     route_kind: access ? ACCESS_LABELS[access] || access : null,
     route_url: access ? ACCESS_URLS[access] || entityUrl(operator) || entityUrl(publisher) : null,
     provider: publisher || operator || null,

@@ -242,6 +242,9 @@ const routeDetailFields = computed<DetailField<any>[]>(() => [
   { key: 'base_model', label: t('cloud.detail.base'), href: (r) => r.base_model_url || null, hrefKey: 'base_model_url' },
   { key: 'weight_format', label: t('cloud.detail.format') },
   { key: 'runtime_context', label: t('cloud.detail.context') },
+  { key: 'kv_cache', label: t('cloud.detail.kvCache') },
+  { key: 'engine_patch', label: t('cloud.detail.enginePatch'),
+    href: (r) => r.engine_patch_url || null, hrefKey: 'engine_patch_url' },
   { key: 'weight_path', label: t('cloud.detail.path'), wide: true },
 ])
 

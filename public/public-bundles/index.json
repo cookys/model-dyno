@@ -3421,6 +3421,41 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-mxfp4-splitkv-dflash7-local-mimo-f375b4bb99d8/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "dflash",
+        "draft_n": "7",
+        "engine": "sglang",
+        "engine_patch": "plan068-splitkv-verify",
+        "kv": "fp8_e4m3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "MXFP4",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-mimo-v2.5-pro-a188ba19ad30/",
       "billing": "metered",
@@ -3745,6 +3780,39 @@
         "quant": "none",
         "role": "candidate",
         "temp": "0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-tiyuvta-160k-local-mimo-nvfp4-7bb73afe38a0/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "none",
+        "engine": "sglang",
+        "kv": "bf16",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "1.0",
         "thinking": "on"
       }
     },
@@ -4122,6 +4190,73 @@
     },
     {
       "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fp4kv-262k-local-mimo-nvfp4-d78bd721182d/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "none",
+        "engine": "sglang",
+        "kv": "nvfp4",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fa2-dflash7-local-mimo-nvfp4-7f711532cb6e/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 5.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "attn": "fa2",
+        "draft": "dflash7",
+        "engine": "sglang",
+        "kv": "nvfp4",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-miaai-local-Qwen3.8-27B-NVFP4-d37a6c1799ec/",
       "billing": "local",
       "current": true,
@@ -4216,6 +4351,39 @@
         "placement": "remote",
         "temp": "0",
         "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fp4kv-dflash7-local-mimo-nvfp4-61fdd710d5d0/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "dflash7",
+        "engine": "sglang",
+        "kv": "nvfp4",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
       }
     },
     {
@@ -5983,7 +6151,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "6620db32f2cf038b9a5e890be5e0be911bfd77e5b834906a1da79051e531c608",
+  "content_digest": "5321ceab32eea62e2b7184ec36796aa45d13334e7605eb5e54084b870e9a71e1",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6018,7 +6186,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-21T06:01:43Z",
+  "generated_at": "2026-09-24T06:50:04Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

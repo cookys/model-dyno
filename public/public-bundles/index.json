@@ -95,6 +95,31 @@
       }
     },
     {
+      "access_label": "Kimi Code",
+      "base_url": "./public-bundles/results-kimi-k3-a3b35e9d9668/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "kimi-k3 · Kimi Code",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
+      "owner": "cookys",
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-glm-53-coding-plan-glm-5.3-5b3b76bc9d56/",
       "billing": "subscription",
@@ -2675,7 +2700,7 @@
     },
     {
       "access_label": "Kimi Code",
-      "base_url": "./public-bundles/results-kimi-k3-a3b35e9d9668/",
+      "base_url": "./public-bundles/results-kimi-kimi-for-coding-5dd2a2535638/",
       "billing": "metered",
       "current": true,
       "gates": {
@@ -2686,7 +2711,7 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "kimi-k3 · Kimi Code",
+      "label": "kimi-k2.7-code · Kimi Code",
       "machine": "cookys-cuda",
       "n_runs": 1,
       "operator": "Moonshot",
@@ -4095,6 +4120,31 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/results-agy-gemini-3.6-flash-high-0fe5b5229931/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.6-flash-high · Direct",
+      "machine": "cookys-linux-7840hs",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "cookys",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-bf16-local-Qwen3.8-27B-Q4_K_M-7cf7cffc5120/",
       "billing": "local",
@@ -4658,31 +4708,6 @@
       }
     },
     {
-      "access_label": "Kimi Code",
-      "base_url": "./public-bundles/results-kimi-kimi-for-coding-5dd2a2535638/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "kimi-k2.7-code · Kimi Code",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "Moonshot",
-      "operator_url": "https://platform.moonshot.ai/",
-      "owner": "cookys",
-      "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-huihui-thinking-off-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-926a1cdc1372/",
       "billing": "local",
@@ -4745,31 +4770,6 @@
         "placement": "cloud",
         "temp": "0",
         "thinking": "off"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/results-agy-gemini-3.6-flash-high-0fe5b5229931/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gemini-3.6-flash-high · Direct",
-      "machine": "cookys-linux-7840hs",
-      "n_runs": 1,
-      "operator": "Google",
-      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
-      "owner": "cookys",
-      "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {
-        "engine": "n/a"
       }
     },
     {
@@ -6229,7 +6229,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "3c55cade4939f4f3be6357575aaa12eb6802b2918cdb0067f3caec0be8244c37",
+  "content_digest": "3c399c95d3c5b8d9126f00bacec2a2a4c1977fe48992d7ac6369285154bdf001",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6264,7 +6264,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-28T16:38:00Z",
+  "generated_at": "2026-09-28T16:45:28Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

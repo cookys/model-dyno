@@ -60,6 +60,41 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-mtp-n6-dds-local-qwen3.8-27b-exl3-3.5bpw-wm-29dde35de9ad/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "6",
+        "draft_packaging": "embedded",
+        "effort": "low",
+        "engine": "exllamav3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "EXL3-3.5bpw",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-glm-53-coding-plan-glm-5.3-5b3b76bc9d56/",
       "billing": "subscription",
@@ -160,41 +195,6 @@
       }
     },
     {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-mtp-n6-dds-local-qwen3.8-27b-exl3-3.5bpw-wm-29dde35de9ad/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "mtp",
-        "draft_n": "6",
-        "draft_packaging": "embedded",
-        "effort": "low",
-        "engine": "exllamav3",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "EXL3-3.5bpw",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.6-luna-20ea34e83c3c/",
       "billing": "subscription",
@@ -218,6 +218,64 @@
       "publisher_url": "",
       "tags": {
         "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.8-flash-high-1fd52d6668ed/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 3.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.8-flash-high · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-vendor-local-Qwen3.8-27B-Q4_K_M-b8c4dbc97aae/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "low",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
       }
     },
     {
@@ -274,6 +332,40 @@
       "publisher_url": "https://x.ai/",
       "tags": {
         "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fa2-dflash7-local-mimo-nvfp4-7f711532cb6e/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 5.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "attn": "fa2",
+        "draft": "dflash7",
+        "engine": "sglang",
+        "kv": "nvfp4",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
       }
     },
     {
@@ -399,6 +491,39 @@
       "publisher_url": "",
       "tags": {
         "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-thinkon-t0-local-Qwen3.8-27B-Q4_K_M-8a95523e0cf0/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "effort": "xhigh",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "on"
       }
     },
     {
@@ -659,6 +784,146 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-mtp-n6-local-qwen3.8-27b-exl3-3.5bpw-wm-d0d8ff15e735/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 6.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "6",
+        "draft_packaging": "embedded",
+        "effort": "low",
+        "engine": "exllamav3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "EXL3-3.5bpw",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-ablit-dealignai-cyber-fp8kv-low-local-qwen3.8-flash-next-2573f6cefc4f/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "embedded",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "sglang",
+        "kv": "fp8_e4m3",
+        "lineage": "abliterated-new",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-tiyuvta-160k-local-mimo-nvfp4-7bb73afe38a0/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "none",
+        "engine": "sglang",
+        "kv": "bf16",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-mxfp4-splitkv-dflash7-local-mimo-f375b4bb99d8/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "dflash",
+        "draft_n": "7",
+        "engine": "sglang",
+        "engine_patch": "plan068-splitkv-verify",
+        "kv": "fp8_e4m3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "MXFP4",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-4.6-99a87696a24a/",
       "billing": "metered",
@@ -793,39 +1058,6 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-vendor-local-Qwen3.8-27B-Q4_K_M-b8c4dbc97aae/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "none",
-        "effort": "low",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "Q4_K_M",
-        "role": "vendor-settings",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-iq4-2080ti-vendor-mtp-Qwen3.8-27B-IQ4_XS-2f8764f3a78b/",
       "billing": "local",
       "current": true,
@@ -953,20 +1185,24 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-exl3-3.5bpw-3090-vendor-mtp-n6-local-qwen3.8-27b-exl3-3.5bpw-wm-d0d8ff15e735/",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-fp8kv-low-local-qwen3.8-flash-next-61c372768a6a/",
       "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
-        "maxstep_pct": 6.0,
+        "maxstep_pct": 0.0,
         "noop_pct": 0.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
+      "headline_range": [
+        0.8235294117647058,
+        0.8823529411764706
+      ],
       "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
+      "label": "Qwen3.8-Flash-Next",
       "machine": "cookys-cuda",
-      "n_runs": 1,
+      "n_runs": 2,
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
@@ -974,21 +1210,23 @@
       "publisher_url": "https://qwen.ai/",
       "tags": {
         "draft": "mtp",
-        "draft_n": "6",
+        "draft_n": "4",
         "draft_packaging": "embedded",
+        "draft_quant": "unquant",
         "effort": "low",
-        "engine": "exllamav3",
+        "engine": "sglang",
+        "kv": "fp8_e4m3",
         "lineage": "base",
         "placement": "local",
-        "quant": "EXL3-3.5bpw",
-        "role": "candidate",
+        "quant": "NVFP4",
+        "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
       }
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-ablit-dealignai-cyber-fp8kv-low-local-qwen3.8-flash-next-2573f6cefc4f/",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-fp4kv-low-local-qwen3.8-flash-next-5b32f97eafb1/",
       "billing": "local",
       "current": true,
       "gates": {
@@ -1014,11 +1252,45 @@
         "draft_quant": "unquant",
         "effort": "low",
         "engine": "sglang",
-        "kv": "fp8_e4m3",
-        "lineage": "abliterated-new",
+        "engine_patch": "sglang-qsa-nvfp4-kv",
+        "kv": "nvfp4",
+        "lineage": "base",
         "placement": "local",
         "quant": "NVFP4",
         "role": "ab-leg",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fp4kv-262k-local-mimo-nvfp4-d78bd721182d/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "none",
+        "engine": "sglang",
+        "kv": "nvfp4",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
         "temp": "1.0",
         "thinking": "on"
       }
@@ -1063,31 +1335,6 @@
       },
       "id": "34t-559c010f",
       "label": "gemini-3.7-flash-medium · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Google",
-      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
-      "owner": "?",
-      "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/agy-gemini-3.8-flash-high-1fd52d6668ed/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gemini-3.8-flash-high · Direct",
       "machine": "?",
       "n_runs": 1,
       "operator": "Google",
@@ -1200,39 +1447,6 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-thinkon-t0-local-Qwen3.8-27B-Q4_K_M-8a95523e0cf0/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "none",
-        "effort": "xhigh",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "Q4_K_M",
-        "role": "candidate",
-        "temp": "0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-jc-iq4-2080ti-vendor-local-Qwen3.8-27B-Uncensored-IQ4_XS-1bad9db1c5bb/",
       "billing": "local",
       "current": true,
@@ -1317,7 +1531,7 @@
         "verdict": "CLEAN"
       },
       "headline_range": [
-        0.6666666666666666,
+        0.7333333333333333,
         0.7941176470588235
       ],
       "id": "34t-559c010f",
@@ -1512,48 +1726,7 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-fp8kv-low-local-qwen3.8-flash-next-61c372768a6a/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "headline_range": [
-        0.7941176470588235,
-        0.8529411764705882
-      ],
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-Flash-Next",
-      "machine": "cookys-cuda",
-      "n_runs": 2,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "mtp",
-        "draft_n": "4",
-        "draft_packaging": "embedded",
-        "draft_quant": "unquant",
-        "effort": "low",
-        "engine": "sglang",
-        "kv": "fp8_e4m3",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "ab-leg",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-fp4kv-low-local-qwen3.8-flash-next-5b32f97eafb1/",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-ablit-dealignai-old-fp8kv-low-local-qwen3.8-flash-next-b327225e2d97/",
       "billing": "local",
       "current": true,
       "gates": {
@@ -1579,12 +1752,44 @@
         "draft_quant": "unquant",
         "effort": "low",
         "engine": "sglang",
-        "engine_patch": "sglang-qsa-nvfp4-kv",
+        "kv": "fp8_e4m3",
+        "lineage": "abliterated-old",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fp4kv-dflash7-local-mimo-nvfp4-61fdd710d5d0/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.6-Flash",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "dflash7",
+        "engine": "sglang",
         "kv": "nvfp4",
         "lineage": "base",
         "placement": "local",
         "quant": "NVFP4",
-        "role": "ab-leg",
+        "role": "candidate",
         "temp": "1.0",
         "thinking": "on"
       }
@@ -1609,6 +1814,32 @@
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
       "price_provenance": "model-economics.toml effective=2026-06-09 basis=sourced source=https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/anthropic-sonnet-5-f3dd5f77f91b/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "sonnet-5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-06-30 basis=sourced source=https://www.anthropic.com/news/claude-sonnet-5",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -1732,6 +1963,113 @@
     },
     {
       "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-dspark-local-Qwen3.8-27B-NVFP4-f2f01944cb5c/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 3.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dspark",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkon-t0-local-Qwen3.8-27B-NVFP4-7006b4ff3caa/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 3.0,
+        "noop_pct": 3.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkon-t0-dspark-local-Qwen3.8-27B-NVFP4-1b8386ca7b5c/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 6.0,
+        "noop_pct": 3.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dspark",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-iq4-2080ti-vendor-Qwen3.8-27B-IQ4_XS-c22f86bbd0ba/",
       "billing": "local",
       "current": true,
@@ -1808,7 +2146,7 @@
         "verdict": "CLEAN"
       },
       "headline_range": [
-        0.6666666666666666,
+        0.696969696969697,
         0.8787878787878788
       ],
       "id": "34t-559c010f",
@@ -1877,9 +2215,9 @@
       }
     },
     {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-ablit-dealignai-old-fp8kv-low-local-qwen3.8-flash-next-b327225e2d97/",
-      "billing": "local",
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-composer-2.5-fast-a2ec5012eae9/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1889,33 +2227,21 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "Qwen3.8-Flash-Next",
-      "machine": "cookys-cuda",
+      "label": "grok-composer-2.5 · Grok",
+      "machine": "?",
       "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
       "tags": {
-        "draft": "mtp",
-        "draft_n": "4",
-        "draft_packaging": "embedded",
-        "draft_quant": "unquant",
-        "effort": "low",
-        "engine": "sglang",
-        "kv": "fp8_e4m3",
-        "lineage": "abliterated-old",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "ab-leg",
-        "temp": "1.0",
-        "thinking": "on"
+        "engine": "n/a"
       }
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/anthropic-sonnet-5-f3dd5f77f91b/",
+      "base_url": "./public-bundles/litellm-claude-zai-glm-5.1-befee77f01ae/",
       "billing": "metered",
       "current": true,
       "gates": {
@@ -1926,15 +2252,14 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "sonnet-5 · Direct",
+      "label": "glm-5.1 · Direct",
       "machine": "?",
       "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "operator": "Z.AI",
+      "operator_url": "https://z.ai/",
       "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-06-30 basis=sourced source=https://www.anthropic.com/news/claude-sonnet-5",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "publisher": "Z.AI",
+      "publisher_url": "https://z.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -2032,6 +2357,110 @@
         "quant": "Q4_K_M",
         "role": "candidate",
         "temp": "0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-unsloth-mtp-local-Qwen3.8-27B-Q4_K_M-unsloth-7a1c67711ec0/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 18.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp-embedded",
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "ab-leg",
+        "temp": "0",
+        "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-local-Qwen3.8-27B-NVFP4-3e7644d29dd1/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 3.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 3.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-dflash2-local-Qwen3.8-27B-NVFP4-e27d579a66c7/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "8",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
         "thinking": "on"
       }
     },
@@ -2164,8 +2593,33 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/litellm-claude-zai-glm-5.1-befee77f01ae/",
-      "billing": "metered",
+      "base_url": "./public-bundles/agy-gemini-3.8-flash-medium-870350945594/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 9.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.8-flash-medium · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/minimax-m3.1-flash-preview-ce42ca639458/",
+      "billing": "token_plan",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2175,14 +2629,14 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "glm-5.1 · Direct",
+      "label": "minimax-m3.1-flash-preview · Direct",
       "machine": "?",
       "n_runs": 1,
-      "operator": "Z.AI",
-      "operator_url": "https://z.ai/",
+      "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "?",
-      "publisher": "Z.AI",
-      "publisher_url": "https://z.ai/",
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/",
       "tags": {
         "engine": "n/a"
       }
@@ -2273,6 +2727,42 @@
         "placement": "local",
         "quant": "UD-Q4_K_XL",
         "role": "candidate",
+        "temp": "0",
+        "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-local-Qwen3.8-27B-NVFP4-ec517b0497fc/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 6.1,
+        "maxstep_pct": 18.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 9.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dspark",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "unquant",
+        "effort": "n/a",
+        "engine": "sglang",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "ab-leg",
         "temp": "0",
         "thinking": "off"
       }
@@ -2476,6 +2966,37 @@
       }
     },
     {
+      "access_label": "OpenCode",
+      "base_url": "./public-bundles/results-v41-flash-opencode-deepseek-v4.1-flash-72d444b40e53/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 6.0,
+        "noop_pct": 10.0,
+        "trunc_pct": 9.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "deepseek-v4.1-flash · OpenCode",
+      "machine": "cookys-7840hs",
+      "n_runs": 1,
+      "operator": "OpenCode",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "engine": "n/a",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "candidate",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/agy-gemini-3.1-pro-c0d021132d9e/",
       "billing": "subscription",
@@ -2523,6 +3044,36 @@
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
         "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-llamacpp-vulkan-huihui-3.6-27b-mtp-huihui-qwen3.6-27b-abliterated-mtp-ba0c44a84aef/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 17.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 17.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.6-27B · huihui",
+      "machine": "cachyos-max395",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "mtp",
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -2658,15 +3209,15 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-dspark-local-Qwen3.8-27B-NVFP4-f2f01944cb5c/",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-unsloth-mtp-n2-local-Qwen3.8-27B-Q4_K_M-unsloth-2ef77de32595/",
       "billing": "local",
       "current": true,
       "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
+        "infra_pct": 3.0,
+        "maxstep_pct": 21.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CAPPED"
       },
       "id": "34t-559c010f",
       "label": "Qwen3.8-27B",
@@ -2678,31 +3229,28 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "draft": "dspark",
-        "draft_n": "7",
-        "draft_packaging": "sidecar",
-        "draft_quant": "unquant",
-        "effort": "low",
-        "engine": "sglang",
+        "draft": "mtp-embedded-n2",
+        "effort": "n/a",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
-        "quant": "NVFP4",
+        "quant": "Q4_K_M",
         "role": "ab-leg",
-        "temp": "1.0",
-        "thinking": "on"
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkon-t0-local-Qwen3.8-27B-NVFP4-7006b4ff3caa/",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendorinstruct-local-Qwen3.8-27B-NVFP4-c80713493bf1/",
       "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
-        "maxstep_pct": 3.0,
-        "noop_pct": 3.0,
+        "maxstep_pct": 27.0,
+        "noop_pct": 0.0,
         "trunc_pct": 0.0,
-        "verdict": "CLEAN"
+        "verdict": "CAPPED"
       },
       "id": "34t-559c010f",
       "label": "Qwen3.8-27B",
@@ -2717,86 +3265,14 @@
         "draft": "none",
         "draft_n": "n/a",
         "draft_packaging": "n/a",
-        "effort": "low",
-        "engine": "sglang",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "ab-leg",
-        "temp": "0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-thinkon-t0-dspark-local-Qwen3.8-27B-NVFP4-1b8386ca7b5c/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 6.0,
-        "noop_pct": 3.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "dspark",
-        "draft_n": "7",
-        "draft_packaging": "sidecar",
-        "draft_quant": "unquant",
-        "effort": "low",
-        "engine": "sglang",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "ab-leg",
-        "temp": "0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-dflash2-local-Qwen3.8-27B-NVFP4-e27d579a66c7/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "dflash2",
-        "draft_n": "8",
-        "draft_packaging": "sidecar",
-        "draft_quant": "BF16",
-        "effort": "low",
+        "effort": "n/a",
         "engine": "sglang",
         "lineage": "base",
         "placement": "local",
         "quant": "NVFP4",
         "role": "vendor-settings",
-        "temp": "1.0",
-        "thinking": "on"
+        "temp": "0.7",
+        "thinking": "off"
       }
     },
     {
@@ -2842,7 +3318,7 @@
         "verdict": "CLEAN"
       },
       "headline_range": [
-        0.5333333333333333,
+        0.6,
         0.6764705882352942
       ],
       "id": "34t-559c010f",
@@ -2862,27 +3338,29 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/agy-gemini-3.8-flash-medium-870350945594/",
-      "billing": "subscription",
+      "base_url": "./public-bundles/opencode-minimax-m2.5-minimax1p-6eb373a5d88f/",
+      "billing": "metered",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
-        "noop_pct": 9.0,
+        "noop_pct": 0.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "gemini-3.8-flash-medium · Direct",
+      "label": "minimax-m2.5 · Direct",
       "machine": "?",
       "n_runs": 1,
-      "operator": "Google",
-      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
       "owner": "?",
-      "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "price_provenance": "model-economics.toml effective=2026-02-12 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/",
       "tags": {
-        "engine": "n/a"
+        "engine": "n/a",
+        "placement": "cloud"
       }
     },
     {
@@ -2992,7 +3470,7 @@
         "verdict": "CLEAN"
       },
       "headline_range": [
-        0.4666666666666667,
+        0.5666666666666667,
         0.6666666666666666
       ],
       "id": "34t-559c010f",
@@ -3026,7 +3504,7 @@
         "verdict": "CLEAN"
       },
       "headline_range": [
-        0.4,
+        0.5,
         0.6666666666666666
       ],
       "id": "34t-559c010f",
@@ -3197,7 +3675,7 @@
         "verdict": "CLEAN"
       },
       "headline_range": [
-        0.4666666666666667,
+        0.5666666666666667,
         0.6666666666666666
       ],
       "id": "34t-559c010f",
@@ -3231,7 +3709,7 @@
         "verdict": "CLEAN"
       },
       "headline_range": [
-        0.4666666666666667,
+        0.5666666666666667,
         0.6666666666666666
       ],
       "id": "34t-559c010f",
@@ -3256,15 +3734,15 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-unsloth-mtp-local-Qwen3.8-27B-Q4_K_M-unsloth-7a1c67711ec0/",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-local-Qwen3.8-27B-Q4_K_M-07fd56608668/",
       "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
-        "maxstep_pct": 18.0,
+        "maxstep_pct": 24.0,
         "noop_pct": 0.0,
         "trunc_pct": 0.0,
-        "verdict": "CLEAN"
+        "verdict": "CAPPED"
       },
       "id": "34t-559c010f",
       "label": "Qwen3.8-27B",
@@ -3276,7 +3754,7 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "draft": "mtp-embedded",
+        "draft": "mtp",
         "effort": "n/a",
         "engine": "llama.cpp",
         "lineage": "base",
@@ -3289,50 +3767,15 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendor-local-Qwen3.8-27B-NVFP4-3e7644d29dd1/",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-miaai-local-Qwen3.8-27B-NVFP4-d37a6c1799ec/",
       "billing": "local",
       "current": true,
       "gates": {
-        "infra_pct": 3.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "none",
-        "draft_n": "n/a",
-        "draft_packaging": "n/a",
-        "effort": "low",
-        "engine": "sglang",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "vendor-settings",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-local-Qwen3.8-27B-NVFP4-ec517b0497fc/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 6.1,
-        "maxstep_pct": 18.0,
+        "infra_pct": 0.0,
+        "maxstep_pct": 21.0,
         "noop_pct": 0.0,
-        "trunc_pct": 9.0,
-        "verdict": "CLEAN"
+        "trunc_pct": 3.0,
+        "verdict": "CAPPED"
       },
       "id": "34t-559c010f",
       "label": "Qwen3.8-27B",
@@ -3355,7 +3798,8 @@
         "quant": "NVFP4",
         "role": "ab-leg",
         "temp": "0",
-        "thinking": "off"
+        "thinking": "off",
+        "variant": "miaai-flags"
       }
     },
     {
@@ -3390,72 +3834,6 @@
       }
     },
     {
-      "access_label": "OpenCode",
-      "base_url": "./public-bundles/results-v41-flash-opencode-deepseek-v4.1-flash-72d444b40e53/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 6.0,
-        "noop_pct": 10.0,
-        "trunc_pct": 9.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "deepseek-v4.1-flash · OpenCode",
-      "machine": "cookys-7840hs",
-      "n_runs": 1,
-      "operator": "OpenCode",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "draft": "none",
-        "engine": "n/a",
-        "lineage": "base",
-        "placement": "cloud",
-        "quant": "none",
-        "role": "candidate",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-mimo-v2.6-flash-mxfp4-splitkv-dflash7-local-mimo-f375b4bb99d8/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 3.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "MiMo-v2.6-Flash",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/",
-      "tags": {
-        "draft": "dflash",
-        "draft_n": "7",
-        "engine": "sglang",
-        "engine_patch": "plan068-splitkv-verify",
-        "kv": "fp8_e4m3",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "MXFP4",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
       "access_label": "Direct",
       "base_url": "./public-bundles/litellm-claude-mimo-v2.5-pro-a188ba19ad30/",
       "billing": "metered",
@@ -3478,6 +3856,39 @@
       "publisher_url": "https://www.mi.com/global/",
       "tags": {
         "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-bake-off-heretic-thinkon-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf-ee38be3b89b3/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 12.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 9.0,
+        "verdict": "CLEAN"
+      },
+      "headline_range": [
+        0.0,
+        1.0
+      ],
+      "id": "34t-559c010f",
+      "label": "Qwen3.6-27B",
+      "machine": "cookys-gentoo",
+      "n_runs": 4,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "engine": "llama.cpp",
+        "lineage": "heretic",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "on"
       }
     },
     {
@@ -3685,14 +4096,14 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-unsloth-mtp-n2-local-Qwen3.8-27B-Q4_K_M-unsloth-2ef77de32595/",
+      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-bf16-local-Qwen3.8-27B-Q4_K_M-7cf7cffc5120/",
       "billing": "local",
       "current": true,
       "gates": {
-        "infra_pct": 3.0,
-        "maxstep_pct": 21.0,
+        "infra_pct": 0.0,
+        "maxstep_pct": 24.0,
         "noop_pct": 0.0,
-        "trunc_pct": 3.0,
+        "trunc_pct": 0.0,
         "verdict": "CAPPED"
       },
       "id": "34t-559c010f",
@@ -3705,7 +4116,8 @@
       "publisher": "Alibaba",
       "publisher_url": "https://qwen.ai/",
       "tags": {
-        "draft": "mtp-embedded-n2",
+        "draft": "mtp",
+        "draft_quant": "BF16",
         "effort": "n/a",
         "engine": "llama.cpp",
         "lineage": "base",
@@ -3785,33 +4197,33 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-tiyuvta-160k-local-mimo-nvfp4-7bb73afe38a0/",
+      "base_url": "./public-bundles/results-bonsai2-27b-pq2-medium-vendor-local-Ternary-Bonsai-2-27B-PQ2_0.gguf-c5e3ed8d6904/",
       "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 3.0,
-        "verdict": "CLEAN"
+        "maxstep_pct": 3.0,
+        "noop_pct": 4.0,
+        "trunc_pct": 26.0,
+        "verdict": "CAPPED"
       },
       "id": "34t-559c010f",
-      "label": "MiMo-v2.6-Flash",
+      "label": "Qwen3.8-27B",
       "machine": "cookys-cuda",
       "n_runs": 1,
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
-      "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
       "tags": {
         "draft": "none",
-        "engine": "sglang",
-        "kv": "bf16",
+        "effort": "medium",
+        "engine": "llama.cpp",
         "lineage": "base",
         "placement": "local",
-        "quant": "NVFP4",
-        "role": "candidate",
+        "quant": "PQ2_0",
+        "role": "vendor-settings",
         "temp": "1.0",
         "thinking": "on"
       }
@@ -3839,6 +4251,39 @@
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
         "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-bake-off-qwen35a3b-local-_data_models_Qwen3.6-35B-A3B-GGUF_Qwen3.6-35B-87b2637034bb0eb2-8ff8aa083eda/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 3.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "headline_range": [
+        0.5666666666666667,
+        0.6060606060606061
+      ],
+      "id": "34t-559c010f",
+      "label": "Qwen3.6-35B-A3B",
+      "machine": "cookys-cuda",
+      "n_runs": 2,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "placement": "local",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -3904,6 +4349,39 @@
         "role": "candidate",
         "temp": "0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local-73e20680a6c4/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "qwen36-27b-nvfp4-unsloth-128k-thinkoff",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "effort": "n/a",
+        "engine": "vllm",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "0.7",
+        "thinking": "off"
       }
     },
     {
@@ -3974,129 +4452,35 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-local-Qwen3.8-27B-Q4_K_M-07fd56608668/",
+      "base_url": "./public-bundles/results-laguna-xs21-bf16-256k-vllm-local-laguna-0afb5635e342/",
       "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
-        "maxstep_pct": 24.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CAPPED"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "mtp",
-        "effort": "n/a",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "Q4_K_M",
-        "role": "ab-leg",
-        "temp": "0",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-bf16-local-Qwen3.8-27B-Q4_K_M-7cf7cffc5120/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 24.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CAPPED"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "mtp",
-        "draft_quant": "BF16",
-        "effort": "n/a",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "Q4_K_M",
-        "role": "ab-leg",
-        "temp": "0",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-vendorinstruct-local-Qwen3.8-27B-NVFP4-c80713493bf1/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 27.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CAPPED"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "none",
-        "draft_n": "n/a",
-        "draft_packaging": "n/a",
-        "effort": "n/a",
-        "engine": "sglang",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "vendor-settings",
-        "temp": "0.7",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-composer-2.5-fast-a2ec5012eae9/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
+        "maxstep_pct": 3.0,
         "noop_pct": 0.0,
         "trunc_pct": 0.0,
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "grok-composer-2.5 · Grok",
-      "machine": "?",
+      "label": "Laguna XS 2.1",
+      "machine": "cookys-cuda",
       "n_runs": 1,
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
-      "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/",
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Poolside",
+      "publisher_url": "",
       "tags": {
-        "engine": "n/a"
+        "draft": "none",
+        "effort": "xhigh",
+        "engine": "vllm",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "BF16",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
       }
     },
     {
@@ -4126,170 +4510,90 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/litellm-claude-minimax-m2.7-c81af4d61311/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "minimax-m2.7 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-03-18 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "local",
-      "base_url": "./public-bundles/results-llamacpp-vulkan-huihui-3.6-27b-mtp-huihui-qwen3.6-27b-abliterated-mtp-ba0c44a84aef/",
+      "base_url": "./public-bundles/results-bake-off-control-thinking-on-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf-a5a988537732/",
       "billing": "local",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
-        "maxstep_pct": 17.0,
+        "maxstep_pct": 12.0,
         "noop_pct": 0.0,
-        "trunc_pct": 17.0,
+        "trunc_pct": 15.0,
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "Qwen3.6-27B · huihui",
-      "machine": "cachyos-max395",
+      "label": "Qwen3.6-27B",
+      "machine": "cookys-gentoo",
       "n_runs": 1,
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
       "tags": {
-        "draft": "mtp",
-        "effort": "n/a",
         "engine": "llama.cpp",
         "placement": "local",
+        "role": "control",
         "temp": "0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-hy3-iq1m-32k-thinkoff-local-hy3-iq1m-local-cf9e7b68b7a1/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 15.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "hy3-iq1m-32k-thinkoff",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Tencent",
+      "publisher_url": "https://www.tencent.com/en-us/",
+      "tags": {
+        "draft": "none",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "IQ1_M",
+        "role": "candidate",
+        "temp": "0.6",
         "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-bonsai2-27b-pq2-medium-vendor-local-Ternary-Bonsai-2-27B-PQ2_0.gguf-c5e3ed8d6904/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 3.0,
-        "noop_pct": 4.0,
-        "trunc_pct": 26.0,
-        "verdict": "CAPPED"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "none",
-        "effort": "medium",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "PQ2_0",
-        "role": "vendor-settings",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fp4kv-262k-local-mimo-nvfp4-d78bd721182d/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 3.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "MiMo-v2.6-Flash",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/",
-      "tags": {
-        "draft": "none",
-        "engine": "sglang",
-        "kv": "nvfp4",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fa2-dflash7-local-mimo-nvfp4-7f711532cb6e/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 5.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "MiMo-v2.6-Flash",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/",
-      "tags": {
-        "attn": "fa2",
-        "draft": "dflash7",
-        "engine": "sglang",
-        "kv": "nvfp4",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-sglang-dspark-miaai-local-Qwen3.8-27B-NVFP4-d37a6c1799ec/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 21.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 3.0,
-        "verdict": "CAPPED"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.8-27B",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "dspark",
-        "draft_n": "7",
-        "draft_packaging": "sidecar",
-        "draft_quant": "unquant",
-        "effort": "n/a",
-        "engine": "sglang",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "ab-leg",
-        "temp": "0",
-        "thinking": "off",
-        "variant": "miaai-flags"
       }
     },
     {
@@ -4349,131 +4653,6 @@
         "effort": "n/a",
         "engine": "llama.cpp",
         "placement": "remote",
-        "temp": "0",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-mimo-v2.6-flash-nvfp4-fp4kv-dflash7-local-mimo-nvfp4-61fdd710d5d0/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 3.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "MiMo-v2.6-Flash",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/",
-      "tags": {
-        "draft": "dflash7",
-        "engine": "sglang",
-        "kv": "nvfp4",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/minimax-b33132e2a4d2/",
-      "billing": "token_plan",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "minimax-m2.7 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "MiniMax",
-      "operator_url": "https://www.minimax.io/",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-03-18 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
-      "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-bake-off-heretic-thinkon-v2-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf-ee38be3b89b3/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 12.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 9.0,
-        "verdict": "CLEAN"
-      },
-      "headline_range": [
-        0.0,
-        1.0
-      ],
-      "id": "34t-559c010f",
-      "label": "Qwen3.6-27B",
-      "machine": "cookys-gentoo",
-      "n_runs": 4,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "engine": "llama.cpp",
-        "lineage": "heretic",
-        "placement": "local",
-        "temp": "0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-bake-off-qwen35a3b-local-_data_models_Qwen3.6-35B-A3B-GGUF_Qwen3.6-35B-87b2637034bb0eb2-8ff8aa083eda/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 3.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "headline_range": [
-        0.4666666666666667,
-        0.5454545454545454
-      ],
-      "id": "34t-559c010f",
-      "label": "Qwen3.6-35B-A3B",
-      "machine": "cookys-cuda",
-      "n_runs": 2,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "effort": "n/a",
-        "engine": "llama.cpp",
-        "placement": "local",
         "temp": "0",
         "thinking": "off"
       }
@@ -4569,35 +4748,6 @@
       }
     },
     {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-bake-off-control-thinking-on-Qwen3.6-27B-Abliterated-Heretic-Uncensored-Q4_K_M.gguf-a5a988537732/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 12.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 15.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3.6-27B",
-      "machine": "cookys-gentoo",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "engine": "llama.cpp",
-        "placement": "local",
-        "role": "control",
-        "temp": "0",
-        "thinking": "on"
-      }
-    },
-    {
       "access_label": "Direct",
       "base_url": "./public-bundles/results-agy-gemini-3.6-flash-high-0fe5b5229931/",
       "billing": "subscription",
@@ -4620,39 +4770,6 @@
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
         "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-laguna-xs21-bf16-256k-vllm-local-laguna-0afb5635e342/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 3.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Laguna XS 2.1",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Poolside",
-      "publisher_url": "",
-      "tags": {
-        "draft": "none",
-        "effort": "xhigh",
-        "engine": "vllm",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "BF16",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "on"
       }
     },
     {
@@ -4688,61 +4805,35 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/minimax-m2.5-4f9c6f718531/",
-      "billing": "token_plan",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "minimax-m2.5 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "MiniMax",
-      "operator_url": "https://www.minimax.io/",
-      "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-02-12 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
-      "publisher": "MiniMax",
-      "publisher_url": "https://www.minimax.io/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local-73e20680a6c4/",
+      "base_url": "./public-bundles/results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf-87696c77ee92/",
       "billing": "local",
       "current": true,
       "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
+        "infra_pct": 6.1,
+        "maxstep_pct": 6.0,
         "noop_pct": 0.0,
         "trunc_pct": 3.0,
         "verdict": "CLEAN"
       },
+      "headline_range": [
+        0.3333333333333333,
+        0.4666666666666667
+      ],
       "id": "34t-559c010f",
-      "label": "qwen36-27b-nvfp4-unsloth-128k-thinkoff",
+      "label": "Qwen3.6-35B-A3B",
       "machine": "cookys-cuda",
-      "n_runs": 1,
+      "n_runs": 3,
       "operator": "自架",
       "operator_url": "",
       "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
       "tags": {
-        "draft": "none",
         "effort": "n/a",
-        "engine": "vllm",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "candidate",
-        "temp": "0.7",
+        "engine": "llama.cpp",
+        "placement": "remote",
+        "temp": "0",
         "thinking": "off"
       }
     },
@@ -4775,38 +4866,6 @@
         "placement": "local",
         "role": "candidate",
         "temp": "0",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-hy3-iq1m-32k-thinkoff-local-hy3-iq1m-local-cf9e7b68b7a1/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 15.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "hy3-iq1m-32k-thinkoff",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Tencent",
-      "publisher_url": "https://www.tencent.com/en-us/",
-      "tags": {
-        "draft": "none",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "IQ1_M",
-        "role": "candidate",
-        "temp": "0.6",
         "thinking": "off"
       }
     },
@@ -4869,71 +4928,6 @@
         "role": "probe",
         "temp": "1.0",
         "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf-87696c77ee92/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 6.1,
-        "maxstep_pct": 6.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 3.0,
-        "verdict": "CLEAN"
-      },
-      "headline_range": [
-        0.3333333333333333,
-        0.4
-      ],
-      "id": "34t-559c010f",
-      "label": "Qwen3.6-35B-A3B",
-      "machine": "cookys-cuda",
-      "n_runs": 3,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "effort": "n/a",
-        "engine": "llama.cpp",
-        "placement": "remote",
-        "temp": "0",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-mimo-fair-MiMo-V2.5-f8f287fe9932/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 3.0,
-        "maxstep_pct": 36.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 39.0,
-        "verdict": "CAPPED"
-      },
-      "id": "34t-559c010f",
-      "label": "MiMo-v2.5",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Xiaomi",
-      "publisher_url": "https://www.mi.com/global/",
-      "tags": {
-        "draft": "none",
-        "effort": "n/a",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "role": "candidate",
-        "temp": "0",
-        "thinking": "off"
       }
     },
     {
@@ -5054,6 +5048,38 @@
         "effort": "n/a",
         "engine": "llama.cpp",
         "placement": "local",
+        "temp": "0",
+        "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-mimo-fair-MiMo-V2.5-f8f287fe9932/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 3.0,
+        "maxstep_pct": 36.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 39.0,
+        "verdict": "CAPPED"
+      },
+      "id": "34t-559c010f",
+      "label": "MiMo-v2.5",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Xiaomi",
+      "publisher_url": "https://www.mi.com/global/",
+      "tags": {
+        "draft": "none",
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "role": "candidate",
         "temp": "0",
         "thinking": "off"
       }
@@ -6148,10 +6174,62 @@
       "tags": {
         "engine": "n/a"
       }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/minimax-b33132e2a4d2/",
+      "billing": "token_plan",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "minimax-m2.7 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-03-18 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/minimax-m2.5-4f9c6f718531/",
+      "billing": "token_plan",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "minimax-m2.5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-02-12 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "engine": "n/a"
+      }
     }
   ],
   "comparable_min": 31,
-  "content_digest": "5321ceab32eea62e2b7184ec36796aa45d13334e7605eb5e54084b870e9a71e1",
+  "content_digest": "3c55cade4939f4f3be6357575aaa12eb6802b2918cdb0067f3caec0be8244c37",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6186,7 +6264,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-24T06:50:04Z",
+  "generated_at": "2026-09-28T16:38:00Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

@@ -949,6 +949,42 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-radixark-bf16head-1catmain-dflash2-vendor-local-Qwen3-2e50157eb91a83b3-b87c15228fd2/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "1cat-vllm-main",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-4.6-99a87696a24a/",
       "billing": "metered",
@@ -1815,6 +1851,78 @@
         "placement": "local",
         "quant": "NVFP4",
         "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-quasar-1cat-dflash2-vendor-local-Qwen3.8-27B-QUASAR-NVFP4-9084b20d83d7/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "1cat-vllm",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-quasar-1catmain-dflash2-vendor-local-Qwen3.8-27B-QUASAR-NVFP4-4014b1f56234/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "1cat-vllm-main",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
         "temp": "1.0",
         "thinking": "on"
       }
@@ -3362,6 +3470,36 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf-87696c77ee92/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 18.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "headline_range": [
+        0.3333333333333333,
+        0.6764705882352942
+      ],
+      "id": "34t-559c010f",
+      "label": "Qwen3.6-35B-A3B",
+      "machine": "cookys-cuda",
+      "n_runs": 4,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "engine": "llama.cpp",
+        "placement": "remote"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/opencode-minimax-m2.5-minimax1p-6eb373a5d88f/",
       "billing": "metered",
@@ -4305,39 +4443,6 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-bake-off-qwen35a3b-local-_data_models_Qwen3.6-35B-A3B-GGUF_Qwen3.6-35B-87b2637034bb0eb2-8ff8aa083eda/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 3.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "headline_range": [
-        0.5666666666666667,
-        0.6060606060606061
-      ],
-      "id": "34t-559c010f",
-      "label": "Qwen3.6-35B-A3B",
-      "machine": "cookys-cuda",
-      "n_runs": 2,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "effort": "n/a",
-        "engine": "llama.cpp",
-        "placement": "local",
-        "temp": "0",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
       "base_url": "./public-bundles/results-ornith-1.0-35b-local-ornith-1.0-35b-504d38de0632/",
       "billing": "local",
       "current": true,
@@ -4773,6 +4878,36 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-bake-off-qwen35a3b-local-_data_models_Qwen3.6-35B-A3B-GGUF_Qwen3.6-35B-87b2637034bb0eb2-8ff8aa083eda/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 20.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CAPPED"
+      },
+      "headline_range": [
+        0.52,
+        0.6060606060606061
+      ],
+      "id": "34t-559c010f",
+      "label": "Qwen3.6-35B-A3B",
+      "machine": "cookys-cuda",
+      "n_runs": 3,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "engine": "llama.cpp",
+        "placement": "local"
+      }
+    },
+    {
       "access_label": "OpenRouter",
       "base_url": "./public-bundles/results-nex-n2-pro-openrouter-paid-nex-agi_nex-n2-pro-16fd907b2b44/",
       "billing": "metered",
@@ -4802,39 +4937,6 @@
         "role": "candidate",
         "temp": "0",
         "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-bake-off-qwen35a3b-mxfp4-remote-Qwen3.6-35B-A3B-MXFP4_MOE.gguf-87696c77ee92/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 6.1,
-        "maxstep_pct": 6.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 3.0,
-        "verdict": "CLEAN"
-      },
-      "headline_range": [
-        0.3333333333333333,
-        0.4666666666666667
-      ],
-      "id": "34t-559c010f",
-      "label": "Qwen3.6-35B-A3B",
-      "machine": "cookys-cuda",
-      "n_runs": 3,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "effort": "n/a",
-        "engine": "llama.cpp",
-        "placement": "remote",
-        "temp": "0",
-        "thinking": "off"
       }
     },
     {
@@ -6229,7 +6331,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "3c399c95d3c5b8d9126f00bacec2a2a4c1977fe48992d7ac6369285154bdf001",
+  "content_digest": "b7c0b5171df4daabccfbc5a7e1b751c906bc0224773d4e6a46489404a965bfa4",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6264,7 +6366,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-09-28T16:45:28Z",
+  "generated_at": "2026-10-02T11:40:53Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

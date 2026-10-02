@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen3.8-27b-nvfp4-quasar-1catmain-dflash2-vendor-local-Qwen3.8-27B-QUASAR-NVFP4-4014b1f56234","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"qwen3.8-27b","policy":"dashboard-public-feed","subject_digest":"1fa9fe18e26806881136770b6cc3b5570e2d85aebc6fbe32d77af82e1a6c09c0"}]

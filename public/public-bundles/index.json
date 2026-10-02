@@ -467,6 +467,43 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-1cat664-e4m3kv-mtp4-low-local-Qwen3.8-Flash-Next-NVFP4-3ca7091bea9f/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "embedded",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "1cat-vllm-main+pr664",
+        "kv": "fp8_e4m3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-bc4c11beda51/",
       "billing": "metered",
@@ -1352,6 +1389,43 @@
         "placement": "local",
         "quant": "NVFP4",
         "role": "candidate",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-1catmain-mtp4-low-local-Qwen3.8-Flash-Next-NVFP4-75b547b51fe8/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "embedded",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "1cat-vllm-main",
+        "kv": "fp16",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
         "temp": "1.0",
         "thinking": "on"
       }
@@ -6331,7 +6405,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "b7c0b5171df4daabccfbc5a7e1b751c906bc0224773d4e6a46489404a965bfa4",
+  "content_digest": "c6bd349ff28ea0c46ca2837c86f6754f80a06f4cab3cb5e3d4549e3290d0af60",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6366,7 +6440,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-02T11:40:53Z",
+  "generated_at": "2026-10-02T17:29:22Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

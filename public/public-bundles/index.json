@@ -296,6 +296,31 @@
       }
     },
     {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.6-low-jailtc-77634a4485e3/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "grok-4.6 · Grok",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-vendor-local-Qwen3.8-27B-Q4_K_M-b8c4dbc97aae/",
       "billing": "local",
@@ -1274,6 +1299,31 @@
       }
     },
     {
+      "access_label": "Kimi Code",
+      "base_url": "./public-bundles/kimi-k2.8-preview-low-f1728b591525/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "kimi-k2.8-preview · Kimi Code",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
+      "owner": "?",
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.6-sol-5e5190cfa564/",
       "billing": "subscription",
@@ -1469,31 +1519,6 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Kimi Code",
-      "base_url": "./public-bundles/kimi-k2.8-preview-low-f1728b591525/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "kimi-k2.8-preview · Kimi Code",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Moonshot",
-      "operator_url": "https://platform.moonshot.ai/",
-      "owner": "?",
-      "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -2442,31 +2467,6 @@
       "tags": {
         "engine": "n/a",
         "placement": "cloud"
-      }
-    },
-    {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-4.6-low-jailctl-f25eb247f966/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "grok-4.6 · Grok",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
-      "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/",
-      "tags": {
-        "engine": "n/a"
       }
     },
     {
@@ -6727,6 +6727,31 @@
     },
     {
       "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.6-low-jailctl-f25eb247f966/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "grok-4.6 · Grok",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Grok",
       "base_url": "./public-bundles/grok-build-cef7f062ccb3/",
       "current": true,
       "id": "34t-4885e69a",
@@ -6795,7 +6820,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "a5933972acc92e0d5e71c37aadb15955ef3b3e8f3650886e86638870c4e3c060",
+  "content_digest": "ee766bcfb0786da3b690a86f829cebaf95632aedf61a574b08e9d633083474dd",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6830,7 +6855,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-03T09:20:54Z",
+  "generated_at": "2026-10-03T13:59:47Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

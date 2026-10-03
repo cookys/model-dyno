@@ -220,6 +220,31 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/opus-5.5-low-3d45fd8b069b/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "opus-5.5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.6-luna-20ea34e83c3c/",
       "billing": "subscription",
@@ -332,31 +357,6 @@
         "quant": "Q4_K_M",
         "role": "ab-leg",
         "thinking": "on"
-      }
-    },
-    {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-4.6-18208342b669/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "grok-4.6 · Grok",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
-      "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/",
-      "tags": {
-        "engine": "n/a"
       }
     },
     {
@@ -525,6 +525,81 @@
       "price_provenance": "model-economics.toml effective=2026-05-28 basis=sourced source=https://www.helpnetsecurity.com/2026/05/29/anthropic-claude-opus-4-8/",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/sonnet-5.5-low-d382b3643c66/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "sonnet-5.5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt6-luna-high-e6b0e3aef941/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gpt-6-luna · Codex",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
+      "owner": "?",
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.7-high-8af9593664d8/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "grok-4.7 · Grok",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -1124,6 +1199,81 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/fable-5.1-low-7ce13432b0e2/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "fable-5.1 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt6-sol-high-df3b44c898fb/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gpt-6-sol · Codex",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
+      "owner": "?",
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt6-astra-high-ae006025482b/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gpt-6-astra · Codex",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
+      "owner": "?",
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt5.6-sol-5e5190cfa564/",
       "billing": "subscription",
@@ -1319,6 +1469,31 @@
       "owner": "?",
       "publisher": "Google",
       "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Kimi Code",
+      "base_url": "./public-bundles/kimi-k2.8-preview-low-f1728b591525/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "kimi-k2.8-preview · Kimi Code",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
+      "owner": "?",
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -1572,9 +1747,9 @@
       }
     },
     {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/opus-5.5-low-3d45fd8b069b/",
-      "billing": "metered",
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt6.1-sol-high-08ace4bcec5e/",
+      "billing": "subscription",
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1584,14 +1759,39 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "opus-5.5 · Direct",
+      "label": "gpt-6.1-sol · Codex",
       "machine": "?",
       "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.7-build-fast-high-90f5204a0b9d/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "grok-4.7-build-fast · Grok",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -2195,81 +2395,6 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/sonnet-5.5-low-d382b3643c66/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "sonnet-5.5 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6-luna-high-e6b0e3aef941/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6-luna · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-4.7-high-8af9593664d8/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "grok-4.7 · Grok",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
-      "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
       "base_url": "./public-bundles/meta-muse-spark-1.2-7399ac225ab0/",
       "billing": "metered",
       "current": true,
@@ -2317,6 +2442,31 @@
       "tags": {
         "engine": "n/a",
         "placement": "cloud"
+      }
+    },
+    {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.6-low-jailctl-f25eb247f966/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "grok-4.6 · Grok",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -2657,106 +2807,6 @@
       "owner": "?",
       "publisher": "xAI",
       "publisher_url": "https://x.ai/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/fable-5.1-low-7ce13432b0e2/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "fable-5.1 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6-sol-high-df3b44c898fb/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6-sol · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6-astra-high-ae006025482b/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6-astra · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Kimi Code",
-      "base_url": "./public-bundles/kimi-k2.8-preview-low-f1728b591525/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "kimi-k2.8-preview · Kimi Code",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Moonshot",
-      "operator_url": "https://platform.moonshot.ai/",
-      "owner": "?",
-      "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -3111,56 +3161,6 @@
         "role": "candidate",
         "temp": "0",
         "thinking": "off"
-      }
-    },
-    {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6.1-sol-high-08ace4bcec5e/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6.1-sol · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-4.7-build-fast-high-90f5204a0b9d/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "grok-4.7-build-fast · Grok",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
-      "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/",
-      "tags": {
-        "engine": "n/a"
       }
     },
     {
@@ -6702,6 +6702,31 @@
     },
     {
       "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.6-18208342b669/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "grok-4.6 · Grok",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Grok",
       "base_url": "./public-bundles/grok-build-cef7f062ccb3/",
       "current": true,
       "id": "34t-4885e69a",
@@ -6770,7 +6795,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "1f3de136cbb8c2a578f6b2339f8ed23ec3ea62b3eea92e9ed8b1e0c082fe09af",
+  "content_digest": "a5933972acc92e0d5e71c37aadb15955ef3b3e8f3650886e86638870c4e3c060",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6805,7 +6830,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-03T05:30:28Z",
+  "generated_at": "2026-10-03T09:20:54Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

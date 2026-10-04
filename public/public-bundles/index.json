@@ -96,6 +96,31 @@
     },
     {
       "access_label": "Kimi Code",
+      "base_url": "./public-bundles/kimi-k2.8-preview-high-3c2f862830e2/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "kimi-k2.8-preview · Kimi Code",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
+      "owner": "?",
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Kimi Code",
       "base_url": "./public-bundles/results-kimi-k3-a3b35e9d9668/",
       "billing": "metered",
       "current": true,
@@ -580,31 +605,6 @@
       }
     },
     {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6-luna-high-e6b0e3aef941/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6-luna · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "Grok",
       "base_url": "./public-bundles/grok-4.7-high-8af9593664d8/",
       "billing": "subscription",
@@ -618,6 +618,31 @@
       },
       "id": "34t-559c010f",
       "label": "grok-4.7 · Grok",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-4.7-build-fast-high-90f5204a0b9d/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "grok-4.7-build-fast · Grok",
       "machine": "?",
       "n_runs": 1,
       "operator": "xAI",
@@ -1288,31 +1313,6 @@
     },
     {
       "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6-sol-high-df3b44c898fb/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6-sol · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt6-astra-high-ae006025482b/",
       "billing": "subscription",
       "current": true,
@@ -1332,31 +1332,6 @@
       "owner": "?",
       "publisher": "OpenAI",
       "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Kimi Code",
-      "base_url": "./public-bundles/kimi-k2.8-preview-low-f1728b591525/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "kimi-k2.8-preview · Kimi Code",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Moonshot",
-      "operator_url": "https://platform.moonshot.ai/",
-      "owner": "?",
-      "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/",
       "tags": {
         "engine": "n/a"
       }
@@ -1873,8 +1848,8 @@
       }
     },
     {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-4.7-build-fast-high-90f5204a0b9d/",
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt6-sol-high-df3b44c898fb/",
       "billing": "subscription",
       "current": true,
       "gates": {
@@ -1885,14 +1860,39 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "grok-4.7-build-fast · Grok",
+      "label": "gpt-6-sol · Codex",
       "machine": "?",
       "n_runs": 1,
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/",
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt6-luna-low-d33e4bca3f31/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gpt-6-luna · Codex",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
+      "owner": "?",
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models",
       "tags": {
         "engine": "n/a"
       }
@@ -6751,6 +6751,31 @@
       }
     },
     {
+      "access_label": "Codex",
+      "base_url": "./public-bundles/codex-gpt6-luna-high-e6b0e3aef941/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gpt-6-luna · Codex",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "OpenAI",
+      "operator_url": "https://platform.openai.com/docs/models",
+      "owner": "?",
+      "publisher": "OpenAI",
+      "publisher_url": "https://platform.openai.com/docs/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/gemini-3-flash-preview-6afa520b9f36/",
       "current": true,
@@ -6881,6 +6906,31 @@
       }
     },
     {
+      "access_label": "Kimi Code",
+      "base_url": "./public-bundles/kimi-k2.8-preview-low-f1728b591525/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "kimi-k2.8-preview · Kimi Code",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Moonshot",
+      "operator_url": "https://platform.moonshot.ai/",
+      "owner": "?",
+      "publisher": "Moonshot",
+      "publisher_url": "https://platform.moonshot.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/minimax-b33132e2a4d2/",
       "billing": "token_plan",
@@ -6934,7 +6984,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "85ed02acb0aae20588f2f02439ba81074c9395a3d1496c6b3f4b2bd9f886bda3",
+  "content_digest": "207d7234ca6919d07968e3700ba72e244dec94c47422012a7ef1296ab7ac88c9",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6969,7 +7019,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-04T08:25:57Z",
+  "generated_at": "2026-10-04T08:31:01Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

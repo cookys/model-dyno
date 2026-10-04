@@ -6751,31 +6751,6 @@
       }
     },
     {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6-luna-high-e6b0e3aef941/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6-luna · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "Direct",
       "base_url": "./public-bundles/gemini-3-flash-preview-6afa520b9f36/",
       "current": true,
@@ -6906,31 +6881,6 @@
       }
     },
     {
-      "access_label": "Kimi Code",
-      "base_url": "./public-bundles/kimi-k2.8-preview-low-f1728b591525/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "kimi-k2.8-preview · Kimi Code",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Moonshot",
-      "operator_url": "https://platform.moonshot.ai/",
-      "owner": "?",
-      "publisher": "Moonshot",
-      "publisher_url": "https://platform.moonshot.ai/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "Direct",
       "base_url": "./public-bundles/minimax-b33132e2a4d2/",
       "billing": "token_plan",
@@ -6984,7 +6934,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "207d7234ca6919d07968e3700ba72e244dec94c47422012a7ef1296ab7ac88c9",
+  "content_digest": "3a2006ffc52c8caae1debab36489aab9a7eb9e8e4903c0e60bcdefb4a868d83c",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7019,7 +6969,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-04T08:31:01Z",
+  "generated_at": "2026-10-04T08:40:20Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

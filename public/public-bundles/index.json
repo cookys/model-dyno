@@ -1199,6 +1199,44 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-1catp069b-e4m3kv-uva-lowmem-p3-snapv2b-mtp4-lo-d2ecde41f426dd5c-7bad15eacac6/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "embedded",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "1cat-vllm-c4140-p069b-snapv2b",
+        "kv": "fp8_e4m3",
+        "lineage": "base",
+        "placement": "local",
+        "ple": "uva",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-4.6-99a87696a24a/",
       "billing": "metered",
@@ -1739,6 +1777,44 @@
         "lineage": "base",
         "placement": "local",
         "ple": "hybrid-pinned",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-1catp069b-e4m3kv-uva-lowmem-p3-mtp4-low-local-a13c60b9285b4473-714480e01471/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "embedded",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "1cat-vllm-c4140-p069b",
+        "kv": "fp8_e4m3",
+        "lineage": "base",
+        "placement": "local",
+        "ple": "uva",
         "quant": "NVFP4",
         "role": "vendor-settings",
         "temp": "1.0",
@@ -2809,6 +2885,44 @@
       "publisher_url": "https://x.ai/",
       "tags": {
         "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-1catp069b-e4m3kv-uva-lowmem-p3-mtp4-low-local-3eb058e6b1488068-913f7a393b50/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "embedded",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "1cat-vllm-c4140-p069b",
+        "kv": "fp8_e4m3",
+        "lineage": "base",
+        "placement": "local",
+        "ple": "uva",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
       }
     },
     {
@@ -6820,7 +6934,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "ee766bcfb0786da3b690a86f829cebaf95632aedf61a574b08e9d633083474dd",
+  "content_digest": "85ed02acb0aae20588f2f02439ba81074c9395a3d1496c6b3f4b2bd9f886bda3",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6855,7 +6969,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-03T13:59:47Z",
+  "generated_at": "2026-10-04T08:25:57Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

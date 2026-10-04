@@ -2,11 +2,11 @@
  "schema": "model-dyno.qualification-feed.v1",
  "artifact_type": "official-qualification-defaults",
  "generated_by": "build-qualification-feed.py@1",
- "generated_at": "2026-10-03T14:01:03.000Z",
+ "generated_at": "2026-10-04T08:27:14.000Z",
  "feed_url": "https://cookys.github.io/model-dyno/public-bundles/qualification-feed.json",
  "owner": "cookys",
  "exam": "34t-559c010f",
- "digest": "4c96e8a426e2c097af5f367325680b7c0d9f1c1d43756fc64351566aca2c3cf3",
+ "digest": "37b4d0481257f5b640ebac30026c9e72a9ecf9318520b6248d909103f8860c26",
  "digest_basis": "sha256(canonical_json({defaults, strikes, priors})), priors' issued_at/expires_at/observed_at stripped first (those are wall-clock, not content). Producer-internal change detection only (ADR-0001: disclosure, not attestation) — not specified as a wire format, not meant to be independently recomputed from the JSON alone.",
  "disclosure_notice": "These rows record administrations run in the autopilot maintainer's environment, not yours. Every entry carries the full administration environment (engine/runner/CLI versions, transport harness, prompt_config_hash, effort, corpus_version, date) precisely because official environment != user environment. FAILED rows ship alongside QUALIFIED ones: a FAILED administration is routing information, not an embarrassment to hide.",
  "adr_0001_notice": "DISCLOSURE, NOT ATTESTATION. Nothing here is signed, hash-chained, or witnessed, and no field is tamper-evidence (ADR-0001). Adopting these defaults is an informed choice to reuse someone else's evidence; the only verification path is re-derivation — self-qualify in your own environment via the engine-qualify flow, which overrides a default on the same seat identity.",
@@ -53,7 +53,7 @@
  },
  "n_defaults": 29,
  "n_strikes": 1,
- "n_priors": 102,
+ "n_priors": 105,
  "defaults": [
   {
    "row": {
@@ -6425,9 +6425,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6437,7 +6437,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "c2c5e119af6694e0b0b292cbc6105726b8d2bf9a1fd279cde1ccd511ddc84e0d",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -6493,9 +6493,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6505,7 +6505,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "6ab7a33f9f53ccc028db5a364f07c28ddb354fae9088c9b73547cc6d88b2722d",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -6561,9 +6561,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6573,7 +6573,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "575022ea13ea16871c28795e282646b49aa623ead474f5cf4de3704ea9ca3e99",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -6629,9 +6629,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6641,7 +6641,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "315b734b608e8468ba815887a3b24da7d2e2a4e8e21d23f883cc1cd39f972f4a",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -6697,9 +6697,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6709,7 +6709,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "cf612e52f6e4729c2e0c2856927e7ea95bea15a20f46d016f46084591aec4d25",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -6765,9 +6765,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6777,7 +6777,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "e511b732dc04450c23aa3975ce300b8e09356cb227f42ab8dcd9f99a82628a7d",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -6833,9 +6833,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6845,7 +6845,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "7a2407dcb04d6520e286b4bae63f822b5afea5e8daadb4c080ecc8d64f2ce912",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -6901,9 +6901,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6913,7 +6913,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "f8b8b7b87474a7c32434888776d08d8243e8bf6b2978f38bf1118c349ab89ecb",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -6969,9 +6969,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -6981,7 +6981,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "760c22534aaadc327b1e7894801b4636b550e0f72c387b8377393198b7488918",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7037,9 +7037,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7049,7 +7049,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "d237e60c9ce435abac12b59f83502855d917128ae145d26d1acb4c5610fa3dd3",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7105,9 +7105,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7117,7 +7117,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "46185cb2bf313382d267f4690304ceb35a1df00ddadc803362c81ce4622ecd26",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7173,9 +7173,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7185,7 +7185,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "1cdb4a7d7ee1e536c76dbd6ec4732f650946ca30ca14a010059757ae95ba014e",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7241,9 +7241,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7253,7 +7253,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "1db9f61134e38b90274eeab40c479d792a637f34a414db590e0165d2da1e270d",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7309,9 +7309,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7321,7 +7321,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "d6e091a123515b6cca77264d3d1a77fefdd1b52aa183250a597bd1edeb14bd0c",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7377,9 +7377,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7389,7 +7389,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "103a38dc1e93a85e5d65828f2bd9ce17a44ba8f5f533d66b3f89a029562d6df9",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7445,9 +7445,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7457,7 +7457,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "23bb4fb0f8e63694c6a5657d6a3bcbaa52bd0be3156c579106f0d548b786c9c9",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7513,9 +7513,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7525,7 +7525,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "cf9d60fe24c85cc1d8c8b145521dbd26056aadf7b274310362d80d26ff70ecbe",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7581,9 +7581,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7593,7 +7593,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "33189847a59ba72caae3f65cc365b92e8ed090033b547dc2d278c684860856c1",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7649,9 +7649,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7661,7 +7661,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "d25619f0bde76a76da07e0fa2cc3e601ec001af9b66c67bae61e731146fd74a5",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7717,9 +7717,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-29T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7729,7 +7729,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "21814b30d1c6f8d12142b3e5579fa972c836c0e2bc443b761b16ea05da873594",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7785,9 +7785,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7797,7 +7797,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "bb143a50231718eecc105534bdae57a40ec8c2a1036868699b63d2a9333b01a4",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7853,9 +7853,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7865,7 +7865,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "758230c112d9d75637033be50d0f812df5a1db6e41ad691ec29215218d39f4ce",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7921,9 +7921,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -7933,7 +7933,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "944b32d1081148566b7f4d7b444d7e663ac5775aecba4e8c7b48609164283ffc",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -7989,9 +7989,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8001,7 +8001,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "ff49d16c6ebd4a917d48521cc9d103e1028c1bb8afdd262511974e621f302334",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8057,9 +8057,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8069,7 +8069,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "10093b777f1b83bbfc2dbbbd4a8ad9368706f2908cb63001c85dfd87dab9d295",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8125,9 +8125,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8137,7 +8137,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "e4f1618ad828badd459669308780f58fd5b8ea423f9865af7d42a7c5a17fed2c",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8193,9 +8193,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8205,7 +8205,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "2123dae8fc5d42e96397c9a4b2fc91dacf19610cec730e621343ab41e48c5ed0",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8261,9 +8261,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8273,7 +8273,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "a73f93e5f8eb2f9c42dbea696ff39f7fd4b110c6b26716b4047308e722b39d35",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8329,9 +8329,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-24T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8341,7 +8341,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "4a34d54fe55c5379401785fe2c9f1bd73bfecd9217b3cdbd641152aa42ea2dce",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8397,9 +8397,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-22T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8409,7 +8409,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "fbc9c479516ea8aa4db4ad930ae9128b1ff2447f6555b18bebe0452a181ec37d",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8465,9 +8465,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8477,7 +8477,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "bfed6710f319208a34c1f95fb24fbb537afe80a3055b10744580ed08adc2ad49",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8533,9 +8533,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8545,7 +8545,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "bb29618cd32e793b6e14b900d99e6b2b634a9eed118e47396f93fab1d3f132c4",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8601,9 +8601,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8613,7 +8613,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "7b92bbcc28e974842c3fdc4ab4353198f20806e2378ab1ca58c207a217fb7c6b",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8669,9 +8669,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-11T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8681,7 +8681,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "90de46eae7251d13e9d3442a0226452c30edffc83da325d1f64185050469de3a",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8737,9 +8737,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8749,7 +8749,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "218c0757aa408f8c5814e51541c6e78468236049f023839259bad072ceff111b",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8805,9 +8805,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8817,7 +8817,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "72c992802538afc687c7e553140e849bb488a5461898a67e42f1e0e1a2c901a4",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8873,9 +8873,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8885,7 +8885,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "7c70d215fd47f32d88113bd2e7ee5a22663b22f198231859ff424daff4ccf8ce",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -8941,9 +8941,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -8953,8 +8953,76 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "cce6fbdff6cf5832b8566cdff771b2471ad4c7f9a31bc061b0e66de427957f99",
+     "dimensions": [
+      "canonical_exam_pass_rate",
+      "wilson_ci_low",
+      "agency_verdict"
+     ],
+     "applicability": [
+      "benchmark-language-en",
+      "deployment-unresolved",
+      "harness-unresolved",
+      "prompt-config-unresolved",
+      "proxy-only",
+      "runner-version-unresolved",
+      "single-run-no-repeat"
+     ]
+    }
+   },
+   "trials": [],
+   "revocation": null,
+   "supersedes": null
+  },
+  {
+   "schema_version": 1,
+   "source": "external_prior",
+   "source_ref": "model-dyno-competitiveness-board",
+   "state": "provisional",
+   "role": "implementer",
+   "scope": {
+    "task_classes": [
+     "swe_personal_task"
+    ],
+    "domains": [
+     "operator_repositories"
+    ],
+    "languages": [
+     "en"
+    ],
+    "tool_surface": [
+     "shell_tool"
+    ]
+   },
+   "identity": {
+    "identity": "qwen3.8-flash-next",
+    "model_alias": "qwen3.8-flash-next-nvfp4-1catp069b-e4m3kv-uva-lowmem-p3-snapv2b-mtp4-low-local",
+    "model_version": "unresolved",
+    "family": "alibaba",
+    "runner": "local",
+    "runner_version": "unresolved",
+    "harness_version": "unresolved",
+    "effort": "unresolved",
+    "prompt_config_hash": "c4b16cb77cfa295b7db6dfa96cb5aa3435b6cf4932e5fa93cb34719192713e5c",
+    "semantic_fingerprint": "8a8b3cda8e9a1d64ed4aa37ded23da520c8482277c44da9776641cfdff583a49",
+    "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
+    "identity_resolved": false
+   },
+   "issued_at": "2026-10-04T08:27:14.000Z",
+   "observed_at": "2026-10-03T00:00:00.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
+   "methodology": {
+    "kind": "external_prior",
+    "name": "model-dyno-canonical-exam-prior",
+    "version": "1.0.0",
+    "corpus_version": null,
+    "corpus_manifest_hash": null,
+    "thresholds": null,
+    "basis": {
+     "cohort": "model-dyno-34t-559c010f",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
+     "observation_hash": "a5f5c1f42aaf8b0b64a0c9253582580c2a20903f4e2e9e6401829769bc383563",
      "dimensions": [
       "canonical_exam_pass_rate",
       "wilson_ci_low",
@@ -9009,9 +9077,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-07T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9021,7 +9089,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "e3b526605a932cd5b4934a16241222118cac601c82352db0ed32a626035541a2",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9077,9 +9145,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9089,7 +9157,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "97828a8d01bbbca9eb86c7cbf425c330933023dd4b9b3342cc71c445dd7b0356",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9145,9 +9213,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-31T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9157,7 +9225,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "2f8d02a6a822acab238efa22230c35f9882752515a97468115db933d006f2442",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9213,9 +9281,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9225,7 +9293,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "312266d31777544131debc8e802d75bf3e0034c0a82402067bb900d10373a3fe",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9281,9 +9349,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9293,7 +9361,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "697c481ef154927697331403c4c55d28f2a5d57f005a0916ac3c2e1c9265e40f",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9349,9 +9417,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9361,7 +9429,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "17d7b6c5971629a1f3bec581791c2c72485072a9e19e5f1374fe236ab63990d3",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9417,9 +9485,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-22T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9429,7 +9497,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "53afa8871d834d643db09bdf53742e51d6fd68614ca8f47b1cafd5edcb29a4e2",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9485,9 +9553,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9497,7 +9565,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "c0b8e67612a2c312cf1c80e758e67ae6888777db569992af093b0475063a09e5",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9553,9 +9621,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9565,7 +9633,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "cf50b3e269b43f8a6ef76a26a2e19deca778d446d2561b22a6a6133bed76bbbb",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9621,9 +9689,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9633,7 +9701,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "a4c96aeca8c240103d3344866d696c99c3974ada0378228ccff0c3bcda631568",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9689,9 +9757,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9701,7 +9769,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "bd5a69ad3d22e289173e6289acdb24b240f17f69cef8dcb9dc3d546ed7e21806",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9757,9 +9825,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9769,7 +9837,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "4d5c490cbcca79cedd32d1a1b692c31d3bc088e02fa682cf7eec35d9f237cc4a",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9825,9 +9893,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9837,7 +9905,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "808b4b437bce6011b73a33ef868990c442414ab439d8ab9c502a18cf07dd285f",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -9893,9 +9961,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9905,8 +9973,76 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "e2f40587d51a8ccaa1a9ee926b0ff0207edb8afb233e71cc739b33286e5da9ee",
+     "dimensions": [
+      "canonical_exam_pass_rate",
+      "wilson_ci_low",
+      "agency_verdict"
+     ],
+     "applicability": [
+      "benchmark-language-en",
+      "deployment-unresolved",
+      "harness-unresolved",
+      "prompt-config-unresolved",
+      "proxy-only",
+      "runner-version-unresolved",
+      "single-run-no-repeat"
+     ]
+    }
+   },
+   "trials": [],
+   "revocation": null,
+   "supersedes": null
+  },
+  {
+   "schema_version": 1,
+   "source": "external_prior",
+   "source_ref": "model-dyno-competitiveness-board",
+   "state": "provisional",
+   "role": "implementer",
+   "scope": {
+    "task_classes": [
+     "swe_personal_task"
+    ],
+    "domains": [
+     "operator_repositories"
+    ],
+    "languages": [
+     "en"
+    ],
+    "tool_surface": [
+     "shell_tool"
+    ]
+   },
+   "identity": {
+    "identity": "qwen3.8-flash-next",
+    "model_alias": "qwen3.8-flash-next-nvfp4-1catp069b-e4m3kv-uva-lowmem-p3-mtp4-low-local-par3",
+    "model_version": "unresolved",
+    "family": "alibaba",
+    "runner": "local",
+    "runner_version": "unresolved",
+    "harness_version": "unresolved",
+    "effort": "unresolved",
+    "prompt_config_hash": "c4b16cb77cfa295b7db6dfa96cb5aa3435b6cf4932e5fa93cb34719192713e5c",
+    "semantic_fingerprint": "0ba9fbf2efd867529baa800c5169e006168d5f417686fb53e71e5bf4075143df",
+    "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
+    "identity_resolved": false
+   },
+   "issued_at": "2026-10-04T08:27:14.000Z",
+   "observed_at": "2026-10-04T00:00:00.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
+   "methodology": {
+    "kind": "external_prior",
+    "name": "model-dyno-canonical-exam-prior",
+    "version": "1.0.0",
+    "corpus_version": null,
+    "corpus_manifest_hash": null,
+    "thresholds": null,
+    "basis": {
+     "cohort": "model-dyno-34t-559c010f",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
+     "observation_hash": "451dbf017c16e4717a2252bbdc7eec6fd056208c80fd9a26a859ee6be476bb53",
      "dimensions": [
       "canonical_exam_pass_rate",
       "wilson_ci_low",
@@ -9961,9 +10097,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-21T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -9973,7 +10109,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "9d18f32c4f197072eaaf5b951a2cdb96b20a6f28254216d49114acad641f0202",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10029,9 +10165,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-21T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10041,7 +10177,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "69d008a26b2e198b0283008fcf1bd1a609c4d5e542e95e0292c2d25884492108",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10097,9 +10233,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10109,7 +10245,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "2fc072f90fb4abefe088b6eda7b5c7bef28b63c89a2f87a22241fc096d498d39",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10165,9 +10301,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10177,7 +10313,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "826eda074f66c794fc735242a71a2535e1aa8710cb5917287ad717ab13a0112f",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10233,9 +10369,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10245,7 +10381,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "1c1d418a72ebcb1ae6ddb552086e57c8a37dcdb59d328df14da4e0045cf64600",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10301,9 +10437,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10313,7 +10449,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "0838e35cc1478f7694e5726d32942458b1844ffb80d4bdc15f0bcd5ea0300635",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10369,9 +10505,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10381,7 +10517,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "a5bf515b0e6a1eea7baad238763f6979d3c5f9c73ba7c5047bd09814b7ac16b3",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10437,9 +10573,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10449,7 +10585,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "6718ec1d2f8eb62f9a732d2d471bd81796500b224f0c05bca87d81efdd758ec5",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10505,9 +10641,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10517,7 +10653,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "5fd308682a5739e2e85e93ba8fe32cfe474b1b6fb066538a90772e112e565120",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10573,9 +10709,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10585,7 +10721,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "41da0cdd205ade0859d04a7c4a620c9943f40e79400bac168c6a2351cd36712e",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10641,9 +10777,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10653,7 +10789,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "eb9f3fa1e1304447f2eade3d49048fb095e53e69e25022f3bc23ccd0c49db197",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10709,9 +10845,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10721,7 +10857,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "c651be34b89f8c7ac71b3263d7f3fea08d9d7f53dd9936fe473b563168506e6c",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10777,9 +10913,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10789,7 +10925,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "036be839fccde71355e17abfa8b28c549bf26a973836989fd0f0b241c48e7d65",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10845,9 +10981,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-23T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10857,7 +10993,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "2c9062e69b3eeefecc1a4a88003b4b49f387661e80da6b1bea97baf13c51d3e9",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10913,9 +11049,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10925,7 +11061,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "3ccc33695c8bac2ce010abd4803c5fbe91d39744dddfdbca3d667175c0f4d3fc",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -10981,9 +11117,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -10993,7 +11129,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "7abf35f8b4efa4a1b9c6e0f90747f35bcfb1b4689b7468a8111a0753d02755df",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11049,9 +11185,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11061,7 +11197,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "71f68790a336cd8fc77c5441e1979e712ea9238d0c93de3cdbd34195e2d39c1a",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11117,9 +11253,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11129,7 +11265,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "e1a983fd7937135998308e83f99457de647c69e8b11c1ee1e499d6e87a3298c1",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11185,9 +11321,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-07T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11197,7 +11333,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "8aa2345ed2d557bb9d9e93d2aaa17629a8774305b1112ec6da778b1c958602a6",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11253,9 +11389,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-29T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11265,7 +11401,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "caecccf3f77f32d5c610aabfe12db9c89927c61a8ddfac1532c7bb61b1ae7d7f",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11321,9 +11457,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11333,7 +11469,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "a2ef6e6803bd3e6edb7f3de09391cbdd264ca400a2649bdc2c03d7281a59a715",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11389,9 +11525,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11401,7 +11537,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "a94fcb61132c60d227e842fe13351c687a5ccd64cc30b5303570185365c1bc5a",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11457,9 +11593,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11469,7 +11605,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "7f35ca8ed76eedd1e0ca874912f0a1ee1a3aba03b736e4505bebccf1fc3df2f4",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11525,9 +11661,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11537,7 +11673,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "c15a7bf365f49003499a43c59d9ec949dcdade22e995f56fdc3a44abe461af18",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11593,9 +11729,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11605,8 +11741,76 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "f732cf3efc71d4b7cc3881586587e64258bb7457ed9846dcdf7efc2e81d67cfd",
+     "dimensions": [
+      "canonical_exam_pass_rate",
+      "wilson_ci_low",
+      "agency_verdict"
+     ],
+     "applicability": [
+      "benchmark-language-en",
+      "deployment-unresolved",
+      "harness-unresolved",
+      "prompt-config-unresolved",
+      "proxy-only",
+      "runner-version-unresolved",
+      "single-run-no-repeat"
+     ]
+    }
+   },
+   "trials": [],
+   "revocation": null,
+   "supersedes": null
+  },
+  {
+   "schema_version": 1,
+   "source": "external_prior",
+   "source_ref": "model-dyno-competitiveness-board",
+   "state": "provisional",
+   "role": "implementer",
+   "scope": {
+    "task_classes": [
+     "swe_personal_task"
+    ],
+    "domains": [
+     "operator_repositories"
+    ],
+    "languages": [
+     "en"
+    ],
+    "tool_surface": [
+     "shell_tool"
+    ]
+   },
+   "identity": {
+    "identity": "qwen3.8-flash-next",
+    "model_alias": "qwen3.8-flash-next-nvfp4-1catp069b-e4m3kv-uva-lowmem-p3-mtp4-low-local",
+    "model_version": "unresolved",
+    "family": "alibaba",
+    "runner": "local",
+    "runner_version": "unresolved",
+    "harness_version": "unresolved",
+    "effort": "unresolved",
+    "prompt_config_hash": "c4b16cb77cfa295b7db6dfa96cb5aa3435b6cf4932e5fa93cb34719192713e5c",
+    "semantic_fingerprint": "aadf54fca36ca63ad3345b144324e4514d1c34bdbee7545720cd9cef118b969f",
+    "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
+    "identity_resolved": false
+   },
+   "issued_at": "2026-10-04T08:27:14.000Z",
+   "observed_at": "2026-10-03T00:00:00.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
+   "methodology": {
+    "kind": "external_prior",
+    "name": "model-dyno-canonical-exam-prior",
+    "version": "1.0.0",
+    "corpus_version": null,
+    "corpus_manifest_hash": null,
+    "thresholds": null,
+    "basis": {
+     "cohort": "model-dyno-34t-559c010f",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
+     "observation_hash": "bc361561e113f94be61b42b20d4f4213324b260886e0f649e5679fb4aede3d2d",
      "dimensions": [
       "canonical_exam_pass_rate",
       "wilson_ci_low",
@@ -11661,9 +11865,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11673,7 +11877,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "cd2c9331701c8c012b9ea1b9413606439266e15f6c8d66f02dee3de466735c1b",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11729,9 +11933,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11741,7 +11945,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "450c8bef1d84f6589299a45162d836d84391ddc7d7998a1c954e1f62667861e2",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11797,9 +12001,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11809,7 +12013,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "5ad30cc1a48b6d9bf9a41e3fce1182d83bb5c836bbc119b0029929a201bdcbcc",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11865,9 +12069,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-28T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11877,7 +12081,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "497a7a747a0c947b07d268a11b6e7ea5b9a3a1c8637ae027db46dfe8fe344f50",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -11933,9 +12137,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -11945,7 +12149,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "431b835321931892bc303cbd0af113d4415b2b5388b7f02c4bca6f7175071a57",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12001,9 +12205,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12013,7 +12217,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "7be4d7c7b9516cf3b2e0fc2266038142683c0d76a923335b445191a14d9c4d1d",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12069,9 +12273,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-02T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12081,7 +12285,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "fb9f019aa1668682ba4b6dc8eae1f0dfccb3deeb700d3fb1ee84060de1b495c9",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12137,9 +12341,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12149,7 +12353,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "0abf37d8f4a3af7cd84f460eecd7570fc7c9305777507adbd8722a98578c5d69",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12205,9 +12409,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12217,7 +12421,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "3fdc1ea82f5bab88cc52f1aec8c703ea6ad5c06712111bd301f0c597935a0f08",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12273,9 +12477,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-08-31T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12285,7 +12489,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "ef588712f637a280c082050293496e1d2f0c43453da6ba3edc2caaf8e6d8db3d",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12341,9 +12545,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-11T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12353,7 +12557,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "3ed6dd0fd10a32468dffad096b24b954f69e2a63bbc7e38218a1995ad69c9504",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12409,9 +12613,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-28T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12421,7 +12625,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "d281a81aa6df835d7fb92d2d779616d86b3a7872452a8bbbeb24f6c0a2a1ee5c",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12477,9 +12681,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12489,7 +12693,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "e90bd453c99ea962a64292b109e8d2c9cda6f35fbd2994c4f1a1c2c583cbce55",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12545,9 +12749,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12557,7 +12761,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "4b2750e231637438908b46e4760cdf0d6ed0bc75befdcdbde484e89e9ce466ea",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12613,9 +12817,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12625,7 +12829,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "608a89c5038e3663eec5260fb0fd7f94df159ac8175a5053c883ca5c4db5ad06",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12681,9 +12885,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12693,7 +12897,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "37919d1ba01ffe4f2fcd7a436923875e1d5d6419ff68d2366da794374655342c",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12749,9 +12953,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12761,7 +12965,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "976020e2a05c4b804c89c6e8750f1de3a3fb1f1cc790f94ce059e4389700c303",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12817,9 +13021,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12829,7 +13033,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "9e3b2902cec603b6706c0076e88693f896a0fc733ffb9d5abf6f1c1aac5ef4c0",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12885,9 +13089,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12897,7 +13101,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "9029d563fe98b5bb74c70cf8bd3ae4025a78c04fe1812abd538bad2389518045",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -12953,9 +13157,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -12965,7 +13169,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "417bc3f820bdbf9a6a906c53db918eaecaf4bc8b21b6dd15332a55df938b4969",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -13021,9 +13225,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -13033,7 +13237,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "46c692d2f62f8defe79516a7fe2913fd38a9ccf03ccf2fd909a7b957555bd72b",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -13089,9 +13293,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -13101,7 +13305,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "1a70b89a2db91f527f70266583935a99b37489e60e04b312300654ef38fb0ca1",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -13157,9 +13361,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -13169,7 +13373,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "62d6039cb8768eed7f5b56010bdb968bf829bd33ac28a8ab3ee0892595b62221",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -13225,9 +13429,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -13237,7 +13441,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "0814abc37751aedc49f2b79cb85a8257b98b089c1e90e3c69865756c33e089c7",
      "dimensions": [
       "canonical_exam_pass_rate",
@@ -13293,9 +13497,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-03T14:01:03.000Z",
+   "issued_at": "2026-10-04T08:27:14.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-02T14:01:03.000Z",
+   "expires_at": "2026-11-03T08:27:14.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -13305,7 +13509,7 @@
     "thresholds": null,
     "basis": {
      "cohort": "model-dyno-34t-559c010f",
-     "cohort_hash": "1dfa72adea16f3cdf424dcfc9c19523df2169b6ee1e383c638d2e67b5af24efd",
+     "cohort_hash": "3da512709165ff3ceda3b03683878866c9e7998dbf8d743ab32e2bab3ffae503",
      "observation_hash": "3a68ebd9d7178c13dbb2d3d03d625d858f73f82b1b1d0c6fa11cd34e51a9a226",
      "dimensions": [
       "canonical_exam_pass_rate",

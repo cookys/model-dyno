@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-llamacpp-vulkan-qwen3-30b-a3b-ee4c505-qwen3-30b-a3b-instruct-2507-54ffe71ff227","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"qwen3-30b-a3b","policy":"dashboard-public-feed","subject_digest":"bbd67d79792ea6f0c6ceb71af3733f8ff245775fb72ec768b054a1cc79eb8248"}]

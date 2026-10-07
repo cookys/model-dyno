@@ -2591,6 +2591,43 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-quasar-1catmain-dflash2-nvfp4kv-fc16-vendor-local-Qwe-1153a4ba04a10cb1-3d28acdf7e0b/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "1cat-vllm-main",
+        "kv": "nvfp4",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-fable-5-0c09f65556f1/",
       "billing": "metered",
@@ -3108,6 +3145,31 @@
         "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/haiku-5.5-low-07339f1f38b0/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 3.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "haiku-5.5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -6628,6 +6690,32 @@
     },
     {
       "access_label": "local",
+      "base_url": "./public-bundles/results-llamacpp-vulkan-qwen3-30b-a3b-ee4c505-qwen3-30b-a3b-instruct-2507-54ffe71ff227/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 12.0,
+        "noop_pct": 12.0,
+        "trunc_pct": 15.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3-30B-A3B",
+      "machine": "cachyos-max395",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "engine": "llama.cpp",
+        "placement": "local"
+      }
+    },
+    {
+      "access_label": "local",
       "base_url": "./public-bundles/results-bake-off-glm47flash-local-_data_models_GLM-4.7-Flash-Q4_GLM-4.7-Flash-Q-b3fcc6f8865be0cb-5d56f235f20d/",
       "billing": "local",
       "current": true,
@@ -7146,7 +7234,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "00ea276743d3e851f73bc63c98347005da2b0b8c4aa1f134b75899b83790e4cf",
+  "content_digest": "1eac6738f6cfa09d4d8fbad2a5655af0d0bd3bd928eaf34dcf89a7f305fa999a",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7181,7 +7269,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-07T09:45:07Z",
+  "generated_at": "2026-10-07T21:41:07Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

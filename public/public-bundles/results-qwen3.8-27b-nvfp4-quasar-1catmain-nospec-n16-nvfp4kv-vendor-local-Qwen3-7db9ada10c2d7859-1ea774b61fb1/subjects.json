@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-qwen3.8-27b-nvfp4-quasar-1catmain-nospec-n16-nvfp4kv-vendor-local-Qwen3-7db9ada10c2d7859-1ea774b61fb1","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"qwen3.8-27b","policy":"dashboard-public-feed","subject_digest":"1fa9fe18e26806881136770b6cc3b5570e2d85aebc6fbe32d77af82e1a6c09c0"}]

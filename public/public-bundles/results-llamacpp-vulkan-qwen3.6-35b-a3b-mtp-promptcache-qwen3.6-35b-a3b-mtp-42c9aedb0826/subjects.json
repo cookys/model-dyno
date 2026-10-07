@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-llamacpp-vulkan-qwen3.6-35b-a3b-mtp-promptcache-qwen3.6-35b-a3b-mtp-42c9aedb0826","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"qwen3.6-35b-a3b","policy":"dashboard-public-feed","subject_digest":"ee04b560fc49082c110a6079580f4265948928cdc0325a1c346fbd182c6e4c3b"}]

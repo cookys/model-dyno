@@ -95,6 +95,43 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-quasar-1catmain-nospec-n16-nvfp4kv-vendor-local-Qwen3-7db9ada10c2d7859-1ea774b61fb1/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "draft_quant": "n/a",
+        "effort": "low",
+        "engine": "1cat-vllm-main",
+        "kv": "nvfp4",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Kimi Code",
       "base_url": "./public-bundles/kimi-k2.8-preview-high-3c2f862830e2/",
       "billing": "metered",
@@ -1797,6 +1834,79 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-quasar-1catmain-nospec-n16-vendor-local-Qwen3.8-27B-QUASAR-NVFP4-06dd7a759a70/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "draft_n": "n/a",
+        "draft_packaging": "n/a",
+        "draft_quant": "n/a",
+        "effort": "low",
+        "engine": "1cat-vllm-main",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-27b-nvfp4-quasar-1catmain-dflash2-e4m3kv-vendor-local-Qwen3.8-27B-QUASAR-NVFP4-8c7d85b4b232/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-27B",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "dflash2",
+        "draft_n": "7",
+        "draft_packaging": "sidecar",
+        "draft_quant": "BF16",
+        "effort": "low",
+        "engine": "1cat-vllm-main",
+        "kv": "fp8_e4m3",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-5-062379822091/",
       "billing": "metered",
@@ -2443,6 +2553,44 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-1catp070-e4m3kv-uva-p3-mtp4-low-local-Qwen3.8-Flash-Next-NVFP4-55e3edcdcd14/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "dell-c4140",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "embedded",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "1cat-vllm-c4140-p070",
+        "kv": "fp8_e4m3",
+        "lineage": "base",
+        "placement": "local",
+        "ple": "uva",
+        "quant": "NVFP4",
+        "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-fable-5-0c09f65556f1/",
       "billing": "metered",
@@ -2921,6 +3069,43 @@
         "ple": "uva",
         "quant": "NVFP4",
         "role": "vendor-settings",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-gsqrco-iq3s-strata-mtp4-low-local-qwen3.8-flash-next-iq3_s-474f93651518/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "cachyos-max395",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_n": "4",
+        "draft_packaging": "sidecar",
+        "draft_quant": "unquant",
+        "effort": "low",
+        "engine": "strata",
+        "kv": "int8",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "IQ3_S-GSQ-RCO",
+        "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
       }
@@ -5494,6 +5679,33 @@
     },
     {
       "access_label": "local",
+      "base_url": "./public-bundles/results-llamacpp-vulkan-qwen3.6-35b-a3b-mtp-promptcache-qwen3.6-35b-a3b-mtp-42c9aedb0826/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 12.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 15.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.6-35B-A3B",
+      "machine": "cachyos-max395",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "engine": "llama.cpp",
+        "placement": "local"
+      }
+    },
+    {
+      "access_label": "local",
       "base_url": "./public-bundles/results-mimo-fair-q4km-MiMo-V2.5-Q4KM-1cefc9ed8050/",
       "billing": "local",
       "current": true,
@@ -6934,7 +7146,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "3a2006ffc52c8caae1debab36489aab9a7eb9e8e4903c0e60bcdefb4a868d83c",
+  "content_digest": "00ea276743d3e851f73bc63c98347005da2b0b8c4aa1f134b75899b83790e4cf",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -6969,7 +7181,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-04T08:40:20Z",
+  "generated_at": "2026-10-07T09:45:07Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

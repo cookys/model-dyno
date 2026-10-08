@@ -912,6 +912,31 @@
       }
     },
     {
+      "access_label": "Grok",
+      "base_url": "./public-bundles/grok-composer-2.5-fast-a2ec5012eae9/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "grok-composer-2.5 · Grok",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "xAI",
+      "operator_url": "https://x.ai/",
+      "owner": "?",
+      "publisher": "xAI",
+      "publisher_url": "https://x.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "qoder-cli",
       "base_url": "./public-bundles/results-qoder-qwen3.8-max-f13bf4a4f949/",
       "billing": "metered",
@@ -1451,6 +1476,38 @@
     },
     {
       "access_label": "local",
+      "base_url": "./public-bundles/results-muse-glimmer-30b-local-Muse-Glimmer-30B-f2afb19f9660/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 6.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Muse Glimmer 30B · Meta",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Meta",
+      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
+      "tags": {
+        "draft": "none",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "on"
+      }
+    },
+    {
+      "access_label": "local",
       "base_url": "./public-bundles/results-qwen38-27b-thinkon-local-Qwen3.8-27B-UD-Q4_K_XL.gguf-4b9c4ddfa728/",
       "billing": "local",
       "current": true,
@@ -1934,7 +1991,7 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/haiku-5.5-low-07339f1f38b0/",
+      "base_url": "./public-bundles/haiku-5.5-high-afb2c28f7b1e/",
       "billing": "metered",
       "current": true,
       "gates": {
@@ -3073,31 +3130,6 @@
       }
     },
     {
-      "access_label": "Grok",
-      "base_url": "./public-bundles/grok-composer-2.5-fast-a2ec5012eae9/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "grok-composer-2.5 · Grok",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "xAI",
-      "operator_url": "https://x.ai/",
-      "owner": "?",
-      "publisher": "xAI",
-      "publisher_url": "https://x.ai/",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-flash-next-nvfp4-1catp069b-e4m3kv-uva-lowmem-p3-mtp4-low-local-3eb058e6b1488068-913f7a393b50/",
       "billing": "local",
@@ -3170,6 +3202,31 @@
         "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/agy-gemini-3.8-flash-medium-870350945594/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 9.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.8-flash-medium · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "?",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
+      "tags": {
+        "engine": "n/a"
       }
     },
     {
@@ -3256,38 +3313,6 @@
         "lineage": "base",
         "placement": "local",
         "quant": "IQ4_XS",
-        "role": "candidate",
-        "temp": "0",
-        "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-muse-glimmer-30b-local-Muse-Glimmer-30B-f2afb19f9660/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 6.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "Muse Glimmer 30B · Meta",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Meta",
-      "publisher_url": "https://developer.meta.com/ai/models/muse-spark/",
-      "tags": {
-        "draft": "none",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "Q4_K_M",
         "role": "candidate",
         "temp": "0",
         "thinking": "on"
@@ -3526,31 +3551,6 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/agy-gemini-3.8-flash-medium-870350945594/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 9.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gemini-3.8-flash-medium · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Google",
-      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
-      "owner": "?",
-      "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
       "base_url": "./public-bundles/minimax-m3.1-flash-preview-ce42ca639458/",
       "billing": "token_plan",
       "current": true,
@@ -3627,6 +3627,31 @@
       "owner": "cookys",
       "publisher": "Moonshot",
       "publisher_url": "https://platform.moonshot.ai/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/results-agy-gemini-3.6-flash-high-0fe5b5229931/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "gemini-3.6-flash-high · Direct",
+      "machine": "cookys-linux-7840hs",
+      "n_runs": 1,
+      "operator": "Google",
+      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
+      "owner": "cookys",
+      "publisher": "Google",
+      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
       "tags": {
         "engine": "n/a"
       }
@@ -4697,6 +4722,71 @@
     },
     {
       "access_label": "local",
+      "base_url": "./public-bundles/results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local-73e20680a6c4/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 3.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "qwen36-27b-nvfp4-unsloth-128k-thinkoff",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "none",
+        "effort": "n/a",
+        "engine": "vllm",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "NVFP4",
+        "role": "candidate",
+        "temp": "0.7",
+        "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-hy3-iq1m-32k-thinkoff-local-hy3-iq1m-local-cf9e7b68b7a1/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 15.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "hy3-iq1m-32k-thinkoff",
+      "machine": "cookys-cuda",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Tencent",
+      "publisher_url": "https://www.tencent.com/en-us/",
+      "tags": {
+        "draft": "none",
+        "engine": "llama.cpp",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "IQ1_M",
+        "role": "candidate",
+        "temp": "0.6",
+        "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
       "base_url": "./public-bundles/results-qwen3.8-27b-q4km-mtp-local-Qwen3.8-27B-Q4_K_M-07fd56608668/",
       "billing": "local",
       "current": true,
@@ -4834,7 +4924,7 @@
         "verdict": "CLEAN"
       },
       "headline_range": [
-        0.0,
+        0.3333333333333333,
         1.0
       ],
       "id": "34t-559c010f",
@@ -5055,31 +5145,6 @@
         "role": "candidate",
         "temp": "0",
         "thinking": "off"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/results-agy-gemini-3.6-flash-high-0fe5b5229931/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gemini-3.6-flash-high · Direct",
-      "machine": "cookys-linux-7840hs",
-      "n_runs": 1,
-      "operator": "Google",
-      "operator_url": "https://ai.google.dev/gemini-api/docs/models",
-      "owner": "cookys",
-      "publisher": "Google",
-      "publisher_url": "https://ai.google.dev/gemini-api/docs/models",
-      "tags": {
-        "engine": "n/a"
       }
     },
     {
@@ -5308,39 +5373,6 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-qwen36-27b-nvfp4-unsloth-128k-thinkoff-local-qwen36-27b-nvfp4-unsloth-local-73e20680a6c4/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 3.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "qwen36-27b-nvfp4-unsloth-128k-thinkoff",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "draft": "none",
-        "effort": "n/a",
-        "engine": "vllm",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "NVFP4",
-        "role": "candidate",
-        "temp": "0.7",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
       "base_url": "./public-bundles/results-huihui-mtp-runswe-local-Huihui-Qwen3.6-27B-abliterated-Q4_K.gguf-1f9f1aa6a06c/",
       "billing": "local",
       "current": true,
@@ -5517,38 +5549,6 @@
         "role": "control",
         "temp": "0",
         "thinking": "on"
-      }
-    },
-    {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-hy3-iq1m-32k-thinkoff-local-hy3-iq1m-local-cf9e7b68b7a1/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 15.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "hy3-iq1m-32k-thinkoff",
-      "machine": "cookys-cuda",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Tencent",
-      "publisher_url": "https://www.tencent.com/en-us/",
-      "tags": {
-        "draft": "none",
-        "engine": "llama.cpp",
-        "lineage": "base",
-        "placement": "local",
-        "quant": "IQ1_M",
-        "role": "candidate",
-        "temp": "0.6",
-        "thinking": "off"
       }
     },
     {
@@ -6209,6 +6209,39 @@
     },
     {
       "access_label": "local",
+      "base_url": "./public-bundles/results-gemma-4-31b-dflash-turbo3-local-gemma-4-31B-it-IQ4_XS.gguf-ec4a15074e94/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 3.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 36.0,
+        "verdict": "CAPPED"
+      },
+      "id": "34t-559c010f",
+      "label": "gemma-4-31b-dflash-turbo3",
+      "machine": "cookys-gentoo",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "",
+      "publisher_url": "",
+      "tags": {
+        "draft": "dflash",
+        "effort": "n/a",
+        "engine": "llama.cpp",
+        "lineage": "gemma4-dense-31b",
+        "placement": "local",
+        "quant": "IQ4_XS",
+        "role": "candidate",
+        "temp": "1.0",
+        "thinking": "off"
+      }
+    },
+    {
+      "access_label": "local",
       "base_url": "./public-bundles/results-devstral2-24b-thinkoff-local-Devstral-Small-2-24B-Instruct-2512-Q4_K_M.gguf-7fa2361e6e17/",
       "billing": "local",
       "current": true,
@@ -6271,39 +6304,6 @@
     },
     {
       "access_label": "local",
-      "base_url": "./public-bundles/results-gemma-4-31b-dflash-turbo3-local-gemma-4-31B-it-IQ4_XS.gguf-ec4a15074e94/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 3.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 36.0,
-        "verdict": "CAPPED"
-      },
-      "id": "34t-559c010f",
-      "label": "gemma-4-31b-dflash-turbo3",
-      "machine": "cookys-gentoo",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "",
-      "publisher_url": "",
-      "tags": {
-        "draft": "dflash",
-        "effort": "n/a",
-        "engine": "llama.cpp",
-        "lineage": "gemma4-dense-31b",
-        "placement": "local",
-        "quant": "IQ4_XS",
-        "role": "candidate",
-        "temp": "1.0",
-        "thinking": "off"
-      }
-    },
-    {
-      "access_label": "local",
       "base_url": "./public-bundles/results-ornith-1.5-35b-a3b-rocmfp4-256k-vendor-think8k-local-Ornith-1.5-35B-A3B-ROCmFP4-d4221626cca1/",
       "billing": "local",
       "current": true,
@@ -6358,6 +6358,38 @@
       "tags": {
         "engine": "n/a",
         "placement": "cloud"
+      }
+    },
+    {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3-coder-next-vulkan-local-qwen3-coder-next-dfedc85e0655/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 50.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CAPPED"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3-Coder-Next",
+      "machine": "cookys-aimax395",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "none",
+        "engine": "llama.cpp",
+        "lineage": "qwen3-next-deltanet",
+        "placement": "local",
+        "quant": "Q4_K_M",
+        "role": "candidate",
+        "temp": "0",
+        "thinking": "off"
       }
     },
     {
@@ -7019,38 +7051,6 @@
       }
     },
     {
-      "access_label": "local",
-      "base_url": "./public-bundles/results-qwen3-coder-next-vulkan-local-qwen3-coder-next-dfedc85e0655/",
-      "billing": "local",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 50.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CAPPED"
-      },
-      "id": "34t-559c010f",
-      "label": "Qwen3-Coder-Next",
-      "machine": "cookys-aimax395",
-      "n_runs": 1,
-      "operator": "自架",
-      "operator_url": "",
-      "owner": "cookys",
-      "publisher": "Alibaba",
-      "publisher_url": "https://qwen.ai/",
-      "tags": {
-        "draft": "none",
-        "engine": "llama.cpp",
-        "lineage": "qwen3-next-deltanet",
-        "placement": "local",
-        "quant": "Q4_K_M",
-        "role": "candidate",
-        "temp": "0",
-        "thinking": "off"
-      }
-    },
-    {
       "access_label": "Direct",
       "base_url": "./public-bundles/gemini-3-flash-preview-6afa520b9f36/",
       "current": true,
@@ -7182,6 +7182,31 @@
     },
     {
       "access_label": "Direct",
+      "base_url": "./public-bundles/haiku-5.5-low-07339f1f38b0/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "haiku-5.5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "Direct",
       "base_url": "./public-bundles/minimax-b33132e2a4d2/",
       "billing": "token_plan",
       "current": true,
@@ -7234,7 +7259,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "1faf0fbd1c9689ca68fca1e31310d8a73b07717f44b134688122c85a6139ffbb",
+  "content_digest": "774a598e5b55099eaf257471fec8efe2f29d20fa705830eb799cfff65a5223fa",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7269,7 +7294,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-08T03:10:45Z",
+  "generated_at": "2026-10-08T05:24:09Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

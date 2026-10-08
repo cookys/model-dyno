@@ -7051,56 +7051,6 @@
       }
     },
     {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6-sol-high-df3b44c898fb/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6-sol · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Codex",
-      "base_url": "./public-bundles/codex-gpt6.1-sol-high-08ace4bcec5e/",
-      "billing": "subscription",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "gpt-6.1-sol · Codex",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "OpenAI",
-      "operator_url": "https://platform.openai.com/docs/models",
-      "owner": "?",
-      "publisher": "OpenAI",
-      "publisher_url": "https://platform.openai.com/docs/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
       "access_label": "Direct",
       "base_url": "./public-bundles/gemini-3-flash-preview-6afa520b9f36/",
       "current": true,
@@ -7232,31 +7182,6 @@
     },
     {
       "access_label": "Direct",
-      "base_url": "./public-bundles/haiku-5.5-low-07339f1f38b0/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 0.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "haiku-5.5 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
-      }
-    },
-    {
-      "access_label": "Direct",
       "base_url": "./public-bundles/minimax-b33132e2a4d2/",
       "billing": "token_plan",
       "current": true,
@@ -7309,7 +7234,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "2b92e3b20d71d4b05bbea99100d9ac27bd84a0c86aac88b5c08c1ca7921a4b32",
+  "content_digest": "19b8991d41e89bba041192b96d0ba020186af6cd5979a25b87b455066689ec38",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7344,7 +7269,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-08T07:34:53Z",
+  "generated_at": "2026-10-08T07:43:42Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

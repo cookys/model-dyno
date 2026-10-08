@@ -1933,6 +1933,31 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/haiku-5.5-low-07339f1f38b0/",
+      "billing": "metered",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "haiku-5.5 · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "Anthropic",
+      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "owner": "?",
+      "publisher": "Anthropic",
+      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "Codex",
       "base_url": "./public-bundles/codex-gpt6.1-sol-high-08ace4bcec5e/",
       "billing": "subscription",
@@ -3145,31 +3170,6 @@
         "role": "ab-leg",
         "temp": "1.0",
         "thinking": "on"
-      }
-    },
-    {
-      "access_label": "Direct",
-      "base_url": "./public-bundles/haiku-5.5-low-07339f1f38b0/",
-      "billing": "metered",
-      "current": true,
-      "gates": {
-        "infra_pct": 0.0,
-        "maxstep_pct": 0.0,
-        "noop_pct": 3.0,
-        "trunc_pct": 0.0,
-        "verdict": "CLEAN"
-      },
-      "id": "34t-559c010f",
-      "label": "haiku-5.5 · Direct",
-      "machine": "?",
-      "n_runs": 1,
-      "operator": "Anthropic",
-      "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "owner": "?",
-      "publisher": "Anthropic",
-      "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
-      "tags": {
-        "engine": "n/a"
       }
     },
     {
@@ -7234,7 +7234,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "1eac6738f6cfa09d4d8fbad2a5655af0d0bd3bd928eaf34dcf89a7f305fa999a",
+  "content_digest": "068ca8775cb96ad06f4c59722123b1df37fd0b022e4746c78a92555eab17f798",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7269,7 +7269,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-07T21:41:07Z",
+  "generated_at": "2026-10-08T02:48:00Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

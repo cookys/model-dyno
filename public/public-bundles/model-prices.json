@@ -1,13 +1,13 @@
 {
   "schema": "model-dyno.model-prices.v1",
-  "generated_at": "2026-10-17T10:16:04Z",
-  "content_digest": "sha256:a3485497863c3acf7cfffe49bda6ca5996688527eaf706fc65bd850f2ef7ad4f",
+  "generated_at": "2026-10-17T17:11:18Z",
+  "content_digest": "sha256:a4ddc96a7707c90f3eaf4cae431bc8e6750d2f270ce1ff57df642ba605aad262",
   "source_revision": {
-    "economics_blob": "3719977f0f2f790c06e0c7fab7052bddf589b0f9",
-    "identity_map_version": "2026-10-17.2"
+    "economics_blob": "a2500c443482d73b1cc4bc6a7e83ee8eaaf1ab60",
+    "identity_map_version": "2026-10-18.2"
   },
   "stale_after_days": 45,
-  "n_rows": 13,
+  "n_rows": 16,
   "rows": [
     {
       "engine": "Qwen3.8-Max",
@@ -33,11 +33,26 @@
       "plan": "claude",
       "usd_per_mtok_input_micro": 10000000,
       "usd_per_mtok_output_micro": 50000000,
-      "usd_per_mtok_cache_read_micro": null,
-      "effective": "2026-10-03",
+      "usd_per_mtok_cache_read_micro": 250000,
+      "effective": "2026-10-17",
       "effective_basis": "assumed",
-      "verified": "2026-10-03",
-      "source_url": "https://anotherwrapper.com/llm-pricing/claude-fable-5-1"
+      "verified": "2026-10-17",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "engine": "claude-haiku-5-5",
+      "runner": "claude-native",
+      "model": "claude-haiku-5-5",
+      "model_ref": "claude-haiku-5-5",
+      "billing": "subscription",
+      "plan": "claude",
+      "usd_per_mtok_input_micro": 100000,
+      "usd_per_mtok_output_micro": 500000,
+      "usd_per_mtok_cache_read_micro": 10000,
+      "effective": "2026-10-17",
+      "effective_basis": "assumed",
+      "verified": "2026-10-17",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing"
     },
     {
       "engine": "claude-opus-5-5",
@@ -48,11 +63,26 @@
       "plan": "claude",
       "usd_per_mtok_input_micro": 4000000,
       "usd_per_mtok_output_micro": 20000000,
-      "usd_per_mtok_cache_read_micro": null,
-      "effective": "2026-10-03",
+      "usd_per_mtok_cache_read_micro": 200000,
+      "effective": "2026-10-17",
       "effective_basis": "assumed",
-      "verified": "2026-10-03",
-      "source_url": "https://metricnexus.ai/blog/claude-opus-5-5-benchmarks-pricing"
+      "verified": "2026-10-17",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "engine": "claude-sonnet-5-5",
+      "runner": "claude-native",
+      "model": "claude-sonnet-5-5",
+      "model_ref": "claude-sonnet-5-5",
+      "billing": "subscription",
+      "plan": "claude",
+      "usd_per_mtok_input_micro": 2000000,
+      "usd_per_mtok_output_micro": 10000000,
+      "usd_per_mtok_cache_read_micro": 100000,
+      "effective": "2026-10-17",
+      "effective_basis": "assumed",
+      "verified": "2026-10-17",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing"
     },
     {
       "engine": "gemini-3.8-flash-high",
@@ -198,11 +228,26 @@
       "plan": "grok",
       "usd_per_mtok_input_micro": 2000000,
       "usd_per_mtok_output_micro": 6000000,
-      "usd_per_mtok_cache_read_micro": 650000,
-      "effective": "2026-10-03",
+      "usd_per_mtok_cache_read_micro": 500000,
+      "effective": "2026-10-17",
       "effective_basis": "assumed",
-      "verified": "2026-10-03",
-      "source_url": "https://aimlapi.com/models/grok-4-7"
+      "verified": "2026-10-17",
+      "source_url": "https://docs.x.ai/docs/models"
+    },
+    {
+      "engine": "kimi-code-k3",
+      "runner": "kimi",
+      "model": "kimi-code/k3",
+      "model_ref": "kimi-k3",
+      "billing": "subscription",
+      "plan": null,
+      "usd_per_mtok_input_micro": 3000000,
+      "usd_per_mtok_output_micro": 15000000,
+      "usd_per_mtok_cache_read_micro": 300000,
+      "effective": "2026-10-17",
+      "effective_basis": "assumed",
+      "verified": "2026-10-17",
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat"
     }
   ],
   "unpriced": [
@@ -223,12 +268,6 @@
       "runner": "cc-shim",
       "model": "claude-haiku-5-5",
       "reason": "billing_unknown"
-    },
-    {
-      "engine": "claude-haiku-5-5",
-      "runner": "claude-native",
-      "model": "claude-haiku-5-5",
-      "reason": "no_dated_entry"
     },
     {
       "engine": "claude-opus-5",
@@ -255,28 +294,16 @@
       "reason": "billing_unknown"
     },
     {
-      "engine": "claude-sonnet-5-5",
-      "runner": "claude-native",
-      "model": "claude-sonnet-5-5",
-      "reason": "no_dated_entry"
-    },
-    {
       "engine": "cursor-grok-4.6-high-fast",
       "runner": "cursor",
       "model": "cursor-grok-4.6-high-fast",
-      "reason": "billing_unknown"
+      "reason": "no_price_key"
     },
     {
       "engine": "gemini-3.7-flash-high",
       "runner": "agy",
       "model": "Gemini 3.7 Flash (High)",
       "reason": "no_price_key"
-    },
-    {
-      "engine": "kimi-code-k3",
-      "runner": "kimi",
-      "model": "kimi-code/k3",
-      "reason": "billing_unknown"
     },
     {
       "engine": "opencode-go/muse-spark-1.3-contributor",

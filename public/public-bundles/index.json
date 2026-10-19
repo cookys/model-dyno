@@ -326,6 +326,7 @@
       "operator": "OpenAI",
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml per-record pricing over 2 entries: effective=2026-07-09 basis=sourced source=https://simonwillison.net/2026/Jul/9/gpt-5-6/ | effective=2026-07-30 basis=sourced source=https://www.eesel.ai/blog/gpt-5-6-pricing",
       "publisher": "",
       "publisher_url": "",
       "tags": {
@@ -735,6 +736,7 @@
       "operator": "OpenAI",
       "operator_url": "https://platform.openai.com/docs/models",
       "owner": "?",
+      "price_provenance": "model-economics.toml per-record pricing over 2 entries: effective=2026-07-09 basis=sourced source=https://simonwillison.net/2026/Jul/9/gpt-5-6/ | effective=2026-07-30 basis=sourced source=https://www.eesel.ai/blog/gpt-5-6-pricing",
       "publisher": "",
       "publisher_url": "",
       "tags": {
@@ -7467,7 +7469,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "b6efbcc0dfef08ac6f1bf0af249a4013f5e77081db6260f0a45b7c563259dfa7",
+  "content_digest": "5c69d7472cd82ed27b9352a95250304b4c19b29f4037d4423cc5b65470ac9fd9",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7502,7 +7504,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-19T17:16:25Z",
+  "generated_at": "2026-10-19T17:45:27Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

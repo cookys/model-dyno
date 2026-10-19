@@ -1,8 +1,8 @@
 {
  "schema": "model-dyno.qualification-metrics.v2",
- "generated_at": "2026-10-19T16:21:05.000Z",
+ "generated_at": "2026-10-19T17:17:09.000Z",
  "producer": "build-qualification-feed.py@2",
- "source_revision": "ae65372971b61e9af8689526d41ce0770772f55a",
+ "source_revision": "2595572c21187468afee8636a65320d8f4f15908",
  "seat_metrics": [
   {
    "entry_id": "b71b32336524185490acfbd6099e45a00a005f950084ad6d40ea326d6c80f769",
@@ -54,7 +54,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-3.7-flash-high"
@@ -109,7 +109,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-3.7-flash-medium"
@@ -164,7 +164,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.3-spark"
@@ -219,7 +219,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.3-spark"
@@ -274,7 +274,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex"
@@ -329,7 +329,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex"
@@ -384,7 +384,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.6-sol"
@@ -439,7 +439,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.6-sol"
@@ -494,7 +494,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -549,7 +549,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -604,7 +604,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -659,7 +659,7 @@
    "join": {
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.6"
@@ -714,10 +714,74 @@
    "join": {
     "board_cell": "grok/grok-4.6-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.6-low"
+  },
+  {
+   "entry_id": "5f9265d00e409a9170d41d1d211ea5db5299fe3b63020185f293ac7c779c231b",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash-Preview",
+    "model": "MiniMax-M3.1-Flash-Preview",
+    "model_version": "MiniMax-M3.1-Flash-Preview",
+    "runner": "anthropic-compatible",
+    "role": "consult",
+    "effort": "default"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "76fc1f88cfcd61d97c246ca848f7bcf268b365208b2b97c62b34be7acfdab0de",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.1"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__76fc1f88.json"
+  },
+  {
+   "entry_id": "2c0c58719234a514ac81370f9b82ec1c6e45a1fb68f135d8ba82e8a137a02568",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash-Preview",
+    "model": "MiniMax-M3.1-Flash-Preview",
+    "model_version": "MiniMax-M3.1-Flash-Preview",
+    "runner": "anthropic-compatible",
+    "role": "discuss",
+    "effort": "default"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "b6566bb71cfd4dc2d1ed4750344a1253f022126b3cae8da07ed3e03eaac4e34e",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.1"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__b6566bb7.json"
   },
   {
    "entry_id": "3fe22345a6f0fd4ce45dbec352fd690821d8cfb38e6b854c86bc67c41bd40095",
@@ -746,7 +810,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__GLM-5.3__cc-shim__high__2026-08-21__a228313b.json"
@@ -778,10 +842,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3__cc-shim__high__2026-08-21__d8f3618b.json"
+  },
+  {
+   "entry_id": "e5fc8dcc5e274c6fa6fee564db858404e72f55d847ee0a5872fabb4822363e4d",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash-Preview",
+    "model": "MiniMax-M3.1-Flash-Preview",
+    "model_version": "MiniMax-M3.1-Flash-Preview",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "af7792221161713a337b5f883d0a5d782444a92b0e5b6cf5bac80e9943d3b0ce",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-12"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.1"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3.1-Flash-Preview__cc-shim__high__2026-10-14__af779222.json"
   },
   {
    "entry_id": "7fb1986d1e11b8a4fa03cec2bc6492ffed70849e1785789529644ea3d7d957c2",
@@ -810,7 +906,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__Qwen3.8-Max__qoderclicn__high__2026-08-21__d8c6a7e1.json"
@@ -842,7 +938,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5__cc-shim__high__2026-08-22__ae0f6e79.json"
@@ -874,7 +970,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5__cc-shim__high__2026-08-22__b9e089c2.json"
@@ -906,7 +1002,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.1-pro-high__agy__high__2026-08-21__7aaded50.json"
@@ -938,7 +1034,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.7-flash-high__agy__high__2026-08-21__138c1a0d.json"
@@ -970,7 +1066,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.7-flash-medium__agy__high__2026-08-22__29c60613.json"
@@ -1002,7 +1098,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.3-codex-spark__codex__default__2026-07-16__a4aad437.json"
@@ -1034,7 +1130,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.3-codex-spark__codex__high__2026-08-21__12f41a25.json"
@@ -1066,7 +1162,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.6-luna__codex__medium__2026-08-22__dc4f6cce.json"
@@ -1098,7 +1194,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.6-sol__codex__high__2026-08-21__636c28a5.json"
@@ -1130,7 +1226,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.5__grok__default__2026-07-17__04e036f9.json"
@@ -1162,7 +1258,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.5__grok__high__2026-08-21__e7a39b22.json"
@@ -1194,7 +1290,7 @@
    "join": {
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.6__grok__high__2026-08-21__17349528.json"
@@ -1226,10 +1322,42 @@
    "join": {
     "board_cell": "grok/grok-4.6-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.6__grok__low__2026-08-24__7635a64d.json"
+  },
+  {
+   "entry_id": "02106efaac9f9ff16aa20d655648dfc683dc917591f066f5ac2860d89d5c537a",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash-Preview",
+    "model": "MiniMax-M3.1-Flash-Preview",
+    "model_version": "MiniMax-M3.1-Flash-Preview",
+    "runner": "anthropic-compatible",
+    "role": "owner",
+    "effort": "default"
+   },
+   "instrument_id": "owner-brain-seat",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "brain-seat-v3.brain-seat-metamorphic-v1",
+    "prompt_config_hash": "3044021e650feb173a7d5ac652bb258e31aa95b40503184d9e9e194f93af1814",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "942ce1d65c7c0894599171807c509c805562e21670a9989bfc353a2bfc53ffbe",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.1"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/owner__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__942ce1d6.json"
   },
   {
    "entry_id": "fe7d409d119bb49d62ed313d01b51140685ce5f29ee4f8d6b77ae68674f70846",
@@ -1258,7 +1386,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.2__anthropic-compatible__high__2026-08-16__f4b8bd37.json"
@@ -1290,7 +1418,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__high__2026-08-17__d21f4954.json"
@@ -1322,7 +1450,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3__anthropic-compatible__default__2026-08-08__cf6a2d04.json"
@@ -1354,10 +1482,106 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3__cc-shim__default__2026-07-17__9425116d.json"
+  },
+  {
+   "entry_id": "9a25a0fc85b697b2fbaa72fb24c492b95dd52c6467307b5d4e7d47360c17a4cb",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash-Preview",
+    "model": "MiniMax-M3.1-Flash-Preview",
+    "model_version": "MiniMax-M3.1-Flash-Preview",
+    "runner": "anthropic-compatible",
+    "role": "reviewer",
+    "effort": "default"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v4",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "f235aabdaea2d7cc5c29adf506ffb84751f51ceea4fa677c7f40e8c229d43a2f",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.1"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__f235aabd.json"
+  },
+  {
+   "entry_id": "ff018d812722faa76757cb1504cf4889a276eed118f89db705499ef840d985e5",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash-Preview",
+    "model": "MiniMax-M3.1-Flash-Preview",
+    "model_version": "MiniMax-M3.1-Flash-Preview",
+    "runner": "anthropic-compatible",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "c45490f640133bd100ab0954caacba0cde4e9dae4e30deecd108cd3ade9be62e",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.1"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__high__2026-10-14__c45490f6.json"
+  },
+  {
+   "entry_id": "b6971a5300cb0c9763b70cc34ef81a3b21eae4e8630ab6ab6aae41d4a59347c1",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash-Preview",
+    "model": "MiniMax-M3.1-Flash-Preview",
+    "model_version": "MiniMax-M3.1-Flash-Preview",
+    "runner": "anthropic-compatible",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "82161dad67047bf0eb359c616d16a61da911e6d932d9a111953d9d3bf77c843b",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.1"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__low__2026-10-14__82161dad.json"
   },
   {
    "entry_id": "e24540568bb94db53a7b9c1a0bb71032f58471f690ac9cd45ad3c3a053224208",
@@ -1386,7 +1610,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku__claude-native__default__2026-07-10__9a3d4a1e.json"
@@ -1418,7 +1642,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus__claude-native__default__2026-07-14__56f93ef7.json"
@@ -1450,7 +1674,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.5__codex__default__2026-06-30__487dcba0.json"
@@ -1482,7 +1706,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__default__2026-07-13__c7faefd6.json"
@@ -1514,7 +1738,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__high__2026-07-13__19b97ced.json"
@@ -1546,7 +1770,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex-cli__max__2026-08-17__e3bc81fa.json"
@@ -1578,7 +1802,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol-high__codex__default__2026-07-13__b9bfdd21.json"
@@ -1610,10 +1834,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__GLM-5.3__anthropic-compatible__high__2026-08-17__c0751003.json"
+  },
+  {
+   "entry_id": "8a80d55ae3532b5eea3ba95838b16e759171854303a68af73ce2cbb24a7b35a4",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash-Preview",
+    "model": "MiniMax-M3.1-Flash-Preview",
+    "model_version": "MiniMax-M3.1-Flash-Preview",
+    "runner": "anthropic-compatible",
+    "role": "verification_author",
+    "effort": "default"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "d243be935f434225062fa88773a0d95eea0b80edc68e7ad2e5a632c32a1d46e1",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.1"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__d243be93.json"
   },
   {
    "entry_id": "89b8c229ba41334e3f63185d539d718320de8f94f48cfa0d9985dcf826bbfb53",
@@ -1642,7 +1898,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-16.1"
+    "identity_map_version": "2026-10-20.1"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__glm-5.2__anthropic-compatible__default__2026-06-30__bfe8f949.json"

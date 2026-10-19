@@ -1,8 +1,8 @@
 {
  "schema": "model-dyno.qualification-metrics.v2",
- "generated_at": "2026-10-19T10:15:04.000Z",
+ "generated_at": "2026-10-19T10:39:12.000Z",
  "producer": "build-qualification-feed.py@2",
- "source_revision": "12f0108f75ff8c4334ba6d042e17e1cfaa8acfa1",
+ "source_revision": "29641e52a4cda56b5d5cfeb45771eb755b32bf96",
  "seat_metrics": [
   {
    "entry_id": "b71b32336524185490acfbd6099e45a00a005f950084ad6d40ea326d6c80f769",

@@ -1,9 +1,174 @@
 {
  "schema": "model-dyno.qualification-metrics.v2",
- "generated_at": "2026-10-19T18:22:50.000Z",
+ "generated_at": "2026-10-19T19:33:29.000Z",
  "producer": "build-qualification-feed.py@2",
- "source_revision": "4fbe17b454732c5e82ecfb33e322e2e8d50fac39",
+ "source_revision": "af4f4617b9a55dadab34b0f334921a181fa1dfe5",
  "seat_metrics": [
+  {
+   "entry_id": "2945dec00f6509667523964ba216654e981fd5349c1d72f064d2ad4e48dd8b23",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "claude-haiku-5-5",
+    "model": "claude-haiku-5-5",
+    "model_version": "claude-haiku-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-07T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 29,
+    "n_timeout": null,
+    "pass_rate_permille": 853,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 699,
+    "ci_high_permille": 936
+   },
+   "speed": {
+    "solved_per_hour_milli": 17514,
+    "wall_s_total": 5961,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 144475,
+    "concurrency": 1,
+    "speed_basis": "2026-10-07T00:00:00Z..2026-10-07T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": 28900,
+    "usd_per_task_micro": 24650,
+    "cost_total_micro": 838095,
+    "cost_coverage_permille": 1000,
+    "cost_basis": "estimated",
+    "pricing_version": "model-economics@2026-10-07"
+   },
+   "sampling": {
+    "window_start": "2026-10-07T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "anthropic/haiku-5.5-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.3"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/haiku-5.5-high"
+  },
+  {
+   "entry_id": "c4a06d4604ca1d398059d706bfa3f435f504c7ed62fc809b02aa83650ab9b773",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-03T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 27,
+    "n_timeout": null,
+    "pass_rate_permille": 794,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 632,
+    "ci_high_permille": 897
+   },
+   "speed": {
+    "solved_per_hour_milli": 28605,
+    "wall_s_total": 3398,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 81930,
+    "concurrency": 1,
+    "speed_basis": "2026-10-03T00:00:00Z..2026-10-03T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": 612217,
+    "usd_per_task_micro": 486173,
+    "cost_total_micro": 16529867,
+    "cost_coverage_permille": 1000,
+    "cost_basis": "estimated",
+    "pricing_version": "model-economics@2026-10-03"
+   },
+   "sampling": {
+    "window_start": "2026-10-03T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "anthropic/opus-5.5-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.3"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/opus-5.5-high"
+  },
+  {
+   "entry_id": "d1b77b755703c85f43c8e539060beeb427faa451165c256584ae701d6e3d3934",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "model_version": "claude-sonnet-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-03T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 27,
+    "n_timeout": null,
+    "pass_rate_permille": 794,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 632,
+    "ci_high_permille": 897
+   },
+   "speed": {
+    "solved_per_hour_milli": 58945,
+    "wall_s_total": 1649,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 38810,
+    "concurrency": 1,
+    "speed_basis": "2026-10-03T00:00:00Z..2026-10-03T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": 173943,
+    "usd_per_task_micro": 138131,
+    "cost_total_micro": 4696470,
+    "cost_coverage_permille": 1000,
+    "cost_basis": "estimated",
+    "pricing_version": "model-economics@2026-10-03"
+   },
+   "sampling": {
+    "window_start": "2026-10-03T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "anthropic/sonnet-5.5-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.3"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/sonnet-5.5-high"
+  },
   {
    "entry_id": "b71b32336524185490acfbd6099e45a00a005f950084ad6d40ea326d6c80f769",
    "kind": "benchmark_observation",
@@ -54,7 +219,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-3.7-flash-high"
@@ -109,7 +274,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-3.7-flash-medium"
@@ -164,7 +329,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-4-argon-high"
@@ -219,7 +384,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-4-argon-low"
@@ -274,7 +439,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.3-spark"
@@ -329,7 +494,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.3-spark"
@@ -384,7 +549,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex"
@@ -439,7 +604,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex"
@@ -494,7 +659,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.6-sol"
@@ -549,7 +714,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.6-sol"
@@ -604,7 +769,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6-luna-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6-luna-low"
@@ -659,7 +824,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6.1-sol-high"
@@ -714,7 +879,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6.1-sol-low"
@@ -769,7 +934,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -824,7 +989,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -879,7 +1044,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -934,7 +1099,7 @@
    "join": {
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.6"
@@ -989,7 +1154,7 @@
    "join": {
     "board_cell": "grok/grok-4.6-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.6-low"
@@ -1044,7 +1209,7 @@
    "join": {
     "board_cell": "grok/grok-4.7-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.7-low"
@@ -1076,7 +1241,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__76fc1f88.json"
@@ -1108,7 +1273,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__claude-haiku-5-5__claude-native__high__2026-10-12__370f1110.json"
@@ -1140,7 +1305,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__claude-opus-5-5__claude-native__high__2026-10-12__d4667f58.json"
@@ -1172,7 +1337,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__claude-opus-5-5__claude-native__low__2026-10-12__32b3bec8.json"
@@ -1204,7 +1369,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__claude-sonnet-5-5__claude-native__high__2026-10-12__35bbfdde.json"
@@ -1236,7 +1401,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__gemini-4-argon-high__agy__high__2026-10-13__04d16fc8.json"
@@ -1268,7 +1433,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__gemini-4-argon-low__agy__low__2026-10-13__0ecc75a1.json"
@@ -1300,7 +1465,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__gpt-6.1-sol__codex__low__2026-10-14__7cb6864e.json"
@@ -1332,7 +1497,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__kimi-k2.8-preview__kimi__high__2026-10-16__79ba70a7.json"
@@ -1364,7 +1529,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__b6566bb7.json"
@@ -1396,7 +1561,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-haiku-5-5__claude-native__high__2026-10-12__20c55522.json"
@@ -1428,7 +1593,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-opus-5-5__claude-native__high__2026-10-12__2af80079.json"
@@ -1460,7 +1625,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-opus-5-5__claude-native__low__2026-10-12__c6a1c6c9.json"
@@ -1492,7 +1657,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-sonnet-5-5__claude-native__high__2026-10-12__413804ac.json"
@@ -1524,7 +1689,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__gemini-4-argon-high__agy__high__2026-10-13__fe104423.json"
@@ -1556,7 +1721,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__gemini-4-argon-low__agy__low__2026-10-13__78cf45a6.json"
@@ -1588,7 +1753,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__kimi-code-k3__kimi__high__2026-10-16__f1dbfc22.json"
@@ -1620,7 +1785,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__kimi-k2.8-preview__kimi__high__2026-10-16__a5a96148.json"
@@ -1652,7 +1817,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__GLM-5.3__cc-shim__high__2026-08-21__a228313b.json"
@@ -1684,13 +1849,13 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3__cc-shim__high__2026-08-21__d8f3618b.json"
   },
   {
-   "entry_id": "e5fc8dcc5e274c6fa6fee564db858404e72f55d847ee0a5872fabb4822363e4d",
+   "entry_id": "def0b8e5350fb3011a0e467e481d7382a90d2c0ad1636ec1747d63be2dd9bba2",
    "kind": "qualification",
    "seat": {
     "engine": "MiniMax-M3.1-Flash-Preview",
@@ -1702,24 +1867,24 @@
    },
    "instrument_id": "impl-live-rail",
    "instrument_version": "1.0.0",
-   "window_end": "2026-10-14T00:00:00Z",
+   "window_end": "2026-10-19T00:00:00Z",
    "qualification": {
     "status": "qualified",
     "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
     "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
-    "administered_at": "2026-10-14T00:00:00Z",
-    "record_id": "af7792221161713a337b5f883d0a5d782444a92b0e5b6cf5bac80e9943d3b0ce",
+    "administered_at": "2026-10-19T00:00:00Z",
+    "record_id": "4eb84c22f114ed1154a1c4a293bbf129a64791a8fbf1e1c219b53603ebdd1a40",
     "record_id_basis": "evidence_id",
     "supersedes": null,
-    "expires": "2027-01-12"
+    "expires": "2027-01-17"
    },
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
-   "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3.1-Flash-Preview__cc-shim__high__2026-10-14__af779222.json"
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3.1-Flash-Preview__cc-shim__high__2026-10-19__4eb84c22.json"
   },
   {
    "entry_id": "7fb1986d1e11b8a4fa03cec2bc6492ffed70849e1785789529644ea3d7d957c2",
@@ -1748,13 +1913,45 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__Qwen3.8-Max__qoderclicn__high__2026-08-21__d8c6a7e1.json"
   },
   {
-   "entry_id": "5286832616d55600cb5b75830a83d3d30f340248c2094c4efd7ac2806d4205be",
+   "entry_id": "8d16c20ae2ae75a7714634fb13a7e843f55208ee3d483e97af9d9b0faf1fdc7a",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-haiku-5-5",
+    "model": "claude-haiku-5-5",
+    "model_version": "claude-haiku-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "default"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "14ac9eff079d168f881ba20e8bc4dbfe01ce45b2895569441b388de0211e0a3a",
+    "record_id_basis": "evidence_id",
+    "supersedes": "b91e7aeb04a7dcb4e6bc4287c8fe7afc411f991b93c91e367f473087e8cdcd2c",
+    "expires": "2027-01-10"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.3"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-haiku-5-5__cc-shim__default__2026-10-12__14ac9eff.json"
+  },
+  {
+   "entry_id": "56992c883d69fdb7a55b05225b043afe5985207914287e2ca37a2ebe770189e8",
    "kind": "qualification",
    "seat": {
     "engine": "claude-haiku-5-5",
@@ -1766,24 +1963,24 @@
    },
    "instrument_id": "impl-live-rail",
    "instrument_version": "1.0.0",
-   "window_end": "2026-10-12T00:00:00Z",
+   "window_end": "2026-10-19T00:00:00Z",
    "qualification": {
-    "status": "qualified",
+    "status": "failed",
     "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
     "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
-    "administered_at": "2026-10-12T00:00:00Z",
-    "record_id": "b91e7aeb04a7dcb4e6bc4287c8fe7afc411f991b93c91e367f473087e8cdcd2c",
+    "administered_at": "2026-10-19T00:00:00Z",
+    "record_id": "95bd8b22f438e0da5a82b7767be11a7578562f90563e23289e4bcb1cad03d94d",
     "record_id_basis": "evidence_id",
     "supersedes": null,
-    "expires": "2027-01-10"
+    "expires": "2027-01-17"
    },
    "join": {
-    "board_cell": null,
-    "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "board_cell": "anthropic/haiku-5.5-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
-   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-haiku-5-5__cc-shim__high__2026-10-12__b91e7aeb.json"
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-haiku-5-5__cc-shim__high__2026-10-19__95bd8b22.json"
   },
   {
    "entry_id": "3ab1aaa02b26d166fca7af9f8fb30cf61e7dfde9c2d85c3ced55dd395cf72ab3",
@@ -1812,13 +2009,45 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5__cc-shim__high__2026-08-22__ae0f6e79.json"
   },
   {
-   "entry_id": "9f6725d79a423b6f24603ceb49ed3ee797c4930e6d837d8c6494f6e567359ed1",
+   "entry_id": "2e5744c92546526f5e6a050cb8700efa2a071d35cb82cdf19d28b725f230bfa8",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "default"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "204280d653627ebbf6f3d9dc9b2862b8815410f4cc55a10c4e6c1d63f8c2cbd5",
+    "record_id_basis": "evidence_id",
+    "supersedes": "8c5a5a1a86f88638a8ecec303e97d4f28a4d5ee345663bb1b9ba81fea03d48e5",
+    "expires": "2027-01-10"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.3"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5-5__cc-shim__default__2026-10-12__204280d6.json"
+  },
+  {
+   "entry_id": "f5f4e38a2ed86c1ffa5a11e2c667d493741ca242918f7fc43d052a1a0d4a110b",
    "kind": "qualification",
    "seat": {
     "engine": "claude-opus-5-5",
@@ -1830,24 +2059,24 @@
    },
    "instrument_id": "impl-live-rail",
    "instrument_version": "1.0.0",
-   "window_end": "2026-10-12T00:00:00Z",
+   "window_end": "2026-10-19T00:00:00Z",
    "qualification": {
     "status": "qualified",
     "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
     "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
-    "administered_at": "2026-10-12T00:00:00Z",
-    "record_id": "8c5a5a1a86f88638a8ecec303e97d4f28a4d5ee345663bb1b9ba81fea03d48e5",
+    "administered_at": "2026-10-19T00:00:00Z",
+    "record_id": "eee65cef7ec757feb7497fc3ee1ba37981c661093bdf01eca33c5105b9f237cd",
     "record_id_basis": "evidence_id",
     "supersedes": null,
-    "expires": "2027-01-10"
+    "expires": "2027-01-17"
    },
    "join": {
-    "board_cell": null,
-    "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "board_cell": "anthropic/opus-5.5-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
-   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5-5__cc-shim__high__2026-10-12__8c5a5a1a.json"
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5-5__cc-shim__high__2026-10-19__eee65cef.json"
   },
   {
    "entry_id": "3ae50052d019bede8a92a4ac07b0f30bf827d681368e3460856120f6e10179e4",
@@ -1876,13 +2105,45 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5__cc-shim__high__2026-08-22__b9e089c2.json"
   },
   {
-   "entry_id": "93902f329d659fdd27140ca9613a79c2da744f0945f39212561d332b1dd7bf3d",
+   "entry_id": "c7608d8be19e2cba1b19571a6399cfbbe511951d45b87073146d5382f4a7b67b",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "model_version": "claude-sonnet-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "default"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "b577764729f8354574ceda117a313d5421f244d633365793baeb13074bd4e0d6",
+    "record_id_basis": "evidence_id",
+    "supersedes": "20d13b0eeb4c2e8a558fc0414e43ef0506f79a7ea5fcb9fdd6943fa24740d55e",
+    "expires": "2027-01-10"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.3"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5-5__cc-shim__default__2026-10-12__b5777647.json"
+  },
+  {
+   "entry_id": "734abb6581991e96f3f4a2c4f4e9026287d765fd5457981b52d1aa42f420767c",
    "kind": "qualification",
    "seat": {
     "engine": "claude-sonnet-5-5",
@@ -1894,24 +2155,24 @@
    },
    "instrument_id": "impl-live-rail",
    "instrument_version": "1.0.0",
-   "window_end": "2026-10-12T00:00:00Z",
+   "window_end": "2026-10-19T00:00:00Z",
    "qualification": {
     "status": "qualified",
     "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
     "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
-    "administered_at": "2026-10-12T00:00:00Z",
-    "record_id": "20d13b0eeb4c2e8a558fc0414e43ef0506f79a7ea5fcb9fdd6943fa24740d55e",
+    "administered_at": "2026-10-19T00:00:00Z",
+    "record_id": "a66d966c1496135dc60f52e09363ed927d08f933beaa238bf58d4ba8050b5f6e",
     "record_id_basis": "evidence_id",
     "supersedes": null,
-    "expires": "2027-01-10"
+    "expires": "2027-01-17"
    },
    "join": {
-    "board_cell": null,
-    "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "board_cell": "anthropic/sonnet-5.5-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
-   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5-5__cc-shim__high__2026-10-12__20d13b0e.json"
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5-5__cc-shim__high__2026-10-19__a66d966c.json"
   },
   {
    "entry_id": "d5d4446e7176006ca2fcab3052cedc600bbae916554acc3734f1d99dffbbd5c9",
@@ -1940,7 +2201,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.1-pro-high__agy__high__2026-08-21__7aaded50.json"
@@ -1972,7 +2233,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.7-flash-high__agy__high__2026-08-21__138c1a0d.json"
@@ -2004,7 +2265,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.7-flash-medium__agy__high__2026-08-22__29c60613.json"
@@ -2036,7 +2297,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-4-argon-high__agy__high__2026-10-13__48d2ee3e.json"
@@ -2068,7 +2329,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-4-argon-low__agy__low__2026-10-13__18fc437c.json"
@@ -2100,7 +2361,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.3-codex-spark__codex__default__2026-07-16__a4aad437.json"
@@ -2132,7 +2393,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.3-codex-spark__codex__high__2026-08-21__12f41a25.json"
@@ -2164,7 +2425,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.6-luna__codex__medium__2026-08-22__dc4f6cce.json"
@@ -2196,7 +2457,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.6-sol__codex__high__2026-08-21__636c28a5.json"
@@ -2228,7 +2489,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6-luna-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6-luna__codex__low__2026-10-14__15770f44.json"
@@ -2260,7 +2521,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6-luna__codex__medium__2026-10-14__e190dc87.json"
@@ -2292,7 +2553,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6.1-sol__codex__high__2026-10-14__53d5f39d.json"
@@ -2324,7 +2585,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6.1-sol__codex__low__2026-09-30__5f716c47.json"
@@ -2356,7 +2617,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.5__grok__default__2026-07-17__04e036f9.json"
@@ -2388,7 +2649,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.5__grok__high__2026-08-21__e7a39b22.json"
@@ -2420,7 +2681,7 @@
    "join": {
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.6__grok__high__2026-08-21__17349528.json"
@@ -2452,7 +2713,7 @@
    "join": {
     "board_cell": "grok/grok-4.6-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.6__grok__low__2026-08-24__7635a64d.json"
@@ -2484,7 +2745,7 @@
    "join": {
     "board_cell": "grok/grok-4.7-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.7__grok__low__2026-09-30__adf551c9.json"
@@ -2516,7 +2777,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/owner__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__942ce1d6.json"
@@ -2548,7 +2809,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.2__anthropic-compatible__default__2026-08-16__7ed7f008.json"
@@ -2580,7 +2841,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.2__anthropic-compatible__high__2026-08-16__f4b8bd37.json"
@@ -2612,7 +2873,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__default__2026-08-17__67deb04d.json"
@@ -2644,7 +2905,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__high__2026-10-14__99569ff0.json"
@@ -2676,7 +2937,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__low__2026-10-14__79943d3e.json"
@@ -2708,7 +2969,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3__anthropic-compatible__default__2026-08-08__cf6a2d04.json"
@@ -2740,7 +3001,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3__cc-shim__default__2026-07-17__9425116d.json"
@@ -2772,7 +3033,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__f235aabd.json"
@@ -2804,7 +3065,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__high__2026-10-14__c45490f6.json"
@@ -2836,7 +3097,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__low__2026-10-14__82161dad.json"
@@ -2868,7 +3129,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__Qwen3.8-Max__qoderclicn__high__2026-10-14__45659312.json"
@@ -2900,7 +3161,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku__claude-native__default__2026-07-10__9a3d4a1e.json"
@@ -2932,7 +3193,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku-5-5__claude-native__high__2026-10-14__30270416.json"
@@ -2964,7 +3225,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku-5-5__claude-native__low__2026-10-14__40bcaf3b.json"
@@ -2996,7 +3257,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus__claude-native__default__2026-07-14__56f93ef7.json"
@@ -3028,7 +3289,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus-5-5__claude-native__high__2026-10-14__a8d5d71f.json"
@@ -3060,7 +3321,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus-5-5__claude-native__low__2026-10-14__8f0fc282.json"
@@ -3092,7 +3353,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-sonnet-5-5__claude-native__high__2026-10-14__c0ffcc8b.json"
@@ -3124,7 +3385,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-sonnet-5-5__claude-native__low__2026-10-14__ec9b0516.json"
@@ -3156,7 +3417,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gemini-4-argon-high__agy__high__2026-10-14__04eb884d.json"
@@ -3188,7 +3449,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gemini-4-argon-low__agy__low__2026-10-14__165b7744.json"
@@ -3220,7 +3481,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.5__codex__default__2026-06-30__487dcba0.json"
@@ -3252,7 +3513,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__default__2026-07-13__c7faefd6.json"
@@ -3284,7 +3545,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__high__2026-07-13__19b97ced.json"
@@ -3316,7 +3577,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__max__2026-10-14__8423500c.json"
@@ -3348,7 +3609,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex-cli__max__2026-08-17__e3bc81fa.json"
@@ -3380,7 +3641,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol-high__codex__default__2026-07-13__b9bfdd21.json"
@@ -3412,7 +3673,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-astra__codex__low__2026-10-14__0dcae71c.json"
@@ -3444,7 +3705,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6-luna-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-luna__codex__low__2026-10-14__09ffdda8.json"
@@ -3476,7 +3737,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-sol__codex__low__2026-10-14__0fa02d55.json"
@@ -3508,7 +3769,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6.1-sol__codex__low__2026-10-14__dc601c03.json"
@@ -3540,7 +3801,7 @@
    "join": {
     "board_cell": "grok/grok-4.7-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__grok-4.7__grok__low__2026-10-15__c8b45be9.json"
@@ -3572,7 +3833,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__kimi-code-k3__kimi__high__2026-10-16__7c65c94e.json"
@@ -3604,7 +3865,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__kimi-k2.8-preview__kimi__high__2026-10-16__c81cde64.json"
@@ -3636,7 +3897,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__muse-spark-1.3-contributor__anthropic-compatible__high__2026-10-14__908fb0a5.json"
@@ -3668,7 +3929,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__muse-spark-1.3-contributor__anthropic-compatible__low__2026-10-14__be579bae.json"
@@ -3700,7 +3961,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__GLM-5.3__anthropic-compatible__default__2026-08-17__0f69c5e5.json"
@@ -3732,7 +3993,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__GLM-5.3__anthropic-compatible__high__2026-08-17__c0751003.json"
@@ -3764,7 +4025,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__d243be93.json"
@@ -3796,7 +4057,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-haiku-5-5__claude-native__high__2026-10-12__6c7526ef.json"
@@ -3828,7 +4089,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-opus-5-5__claude-native__high__2026-10-12__d9990549.json"
@@ -3860,7 +4121,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-opus-5-5__claude-native__low__2026-10-12__3c37578b.json"
@@ -3892,7 +4153,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-sonnet-5-5__claude-native__high__2026-10-12__de4a4fdd.json"
@@ -3924,7 +4185,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__gemini-4-argon-high__agy__high__2026-10-13__ca2c463d.json"
@@ -3956,7 +4217,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__gemini-4-argon-low__agy__low__2026-10-13__51264701.json"
@@ -3988,7 +4249,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__glm-5.2__anthropic-compatible__default__2026-06-30__bfe8f949.json"
@@ -4020,7 +4281,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.2"
+    "identity_map_version": "2026-10-20.3"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__muse-spark-1.3-contributor__anthropic-compatible__high__2026-10-14__8201622e.json"

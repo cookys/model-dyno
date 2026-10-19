@@ -2277,6 +2277,32 @@
       }
     },
     {
+      "access_label": "Direct",
+      "base_url": "./public-bundles/minimax-m3.1-flash-842fd5a3540e/",
+      "billing": "token_plan",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "minimax-m3.1-flash · Direct",
+      "machine": "?",
+      "n_runs": 1,
+      "operator": "MiniMax",
+      "operator_url": "https://www.minimax.io/",
+      "owner": "?",
+      "price_provenance": "model-economics.toml effective=2026-10-19 basis=sourced source=https://platform.minimax.io/docs/guides/pricing-paygo.md",
+      "publisher": "MiniMax",
+      "publisher_url": "https://www.minimax.io/",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
       "access_label": "local",
       "base_url": "./public-bundles/results-deepseek-v4-flash-0731-local-DeepSeek-V4-Flash-0731-166f50a45974/",
       "billing": "local",
@@ -7469,7 +7495,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "f4f9bb946d6600e8ea97104f34c266ed3975648bcdd7834fdfd7f593a9ddb49d",
+  "content_digest": "f1af5156473cc1d063a039b1d320e2a77457592042568dff89002bd82fb4c166",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7504,7 +7530,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-19T18:17:46Z",
+  "generated_at": "2026-10-19T19:32:09Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

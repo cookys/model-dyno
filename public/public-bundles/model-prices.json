@@ -1,13 +1,13 @@
 {
   "schema": "model-dyno.model-prices.v1",
-  "generated_at": "2026-10-17T17:11:18Z",
-  "content_digest": "sha256:a4ddc96a7707c90f3eaf4cae431bc8e6750d2f270ce1ff57df642ba605aad262",
+  "generated_at": "2026-10-19T10:15:45Z",
+  "content_digest": "sha256:7f0fb92bc7980a1527d3c0c01858dee55d4b536da5abb0a799be361df5a6dbb6",
   "source_revision": {
-    "economics_blob": "a2500c443482d73b1cc4bc6a7e83ee8eaaf1ab60",
-    "identity_map_version": "2026-10-18.2"
+    "economics_blob": "f787478aa9b8c7941c28d656808d22519ebc5793",
+    "identity_map_version": "2026-10-19.1"
   },
   "stale_after_days": 45,
-  "n_rows": 16,
+  "n_rows": 18,
   "rows": [
     {
       "engine": "Qwen3.8-Max",
@@ -18,11 +18,11 @@
       "plan": null,
       "usd_per_mtok_input_micro": 2000000,
       "usd_per_mtok_output_micro": 6000000,
-      "usd_per_mtok_cache_read_micro": 200000,
-      "effective": "2026-08-03",
-      "effective_basis": "sourced",
-      "verified": "2026-08-08",
-      "source_url": "https://apidog.com/blog/qwen-3-8-pricing/"
+      "usd_per_mtok_cache_read_micro": 250000,
+      "effective": "2026-10-19",
+      "effective_basis": "assumed",
+      "verified": "2026-10-19",
+      "source_url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"
     },
     {
       "engine": "claude-fable-5-1",
@@ -85,6 +85,21 @@
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing"
     },
     {
+      "engine": "cursor-grok-4.6-high-fast",
+      "runner": "cursor",
+      "model": "cursor-grok-4.6-high-fast",
+      "model_ref": "cursor-grok-4.6-fast",
+      "billing": "subscription",
+      "plan": null,
+      "usd_per_mtok_input_micro": 4000000,
+      "usd_per_mtok_output_micro": 12000000,
+      "usd_per_mtok_cache_read_micro": 1000000,
+      "effective": "2026-10-19",
+      "effective_basis": "assumed",
+      "verified": "2026-10-19",
+      "source_url": "https://cursor.com/docs/models/grok-4-6"
+    },
+    {
       "engine": "gemini-3.8-flash-high",
       "runner": "agy",
       "model": "gemini-3.8-flash-high",
@@ -138,11 +153,11 @@
       "plan": "chatgpt",
       "usd_per_mtok_input_micro": 10000000,
       "usd_per_mtok_output_micro": 50000000,
-      "usd_per_mtok_cache_read_micro": null,
-      "effective": "2026-10-03",
+      "usd_per_mtok_cache_read_micro": 1000000,
+      "effective": "2026-10-19",
       "effective_basis": "assumed",
-      "verified": "2026-10-03",
-      "source_url": "https://www.eesel.ai/blog/gpt-6-astra-pricing"
+      "verified": "2026-10-19",
+      "source_url": "https://developers.openai.com/api/docs/pricing.md"
     },
     {
       "engine": "gpt-6-luna",
@@ -153,11 +168,11 @@
       "plan": "chatgpt",
       "usd_per_mtok_input_micro": 100000,
       "usd_per_mtok_output_micro": 500000,
-      "usd_per_mtok_cache_read_micro": null,
-      "effective": "2026-10-03",
+      "usd_per_mtok_cache_read_micro": 10000,
+      "effective": "2026-10-19",
       "effective_basis": "assumed",
-      "verified": "2026-10-03",
-      "source_url": "https://www.yottalabs.ai/post/gpt-6-sol-luna-pricing-vs-astra-open-models-2026"
+      "verified": "2026-10-19",
+      "source_url": "https://developers.openai.com/api/docs/pricing.md"
     },
     {
       "engine": "gpt-6-sol",
@@ -168,11 +183,11 @@
       "plan": "chatgpt",
       "usd_per_mtok_input_micro": 2000000,
       "usd_per_mtok_output_micro": 10000000,
-      "usd_per_mtok_cache_read_micro": null,
-      "effective": "2026-10-03",
+      "usd_per_mtok_cache_read_micro": 200000,
+      "effective": "2026-10-19",
       "effective_basis": "assumed",
-      "verified": "2026-10-03",
-      "source_url": "https://www.yottalabs.ai/post/gpt-6-sol-luna-pricing-vs-astra-open-models-2026"
+      "verified": "2026-10-19",
+      "source_url": "https://developers.openai.com/api/docs/pricing.md"
     },
     {
       "engine": "gpt-6.1-sol",
@@ -183,11 +198,11 @@
       "plan": "chatgpt",
       "usd_per_mtok_input_micro": 2000000,
       "usd_per_mtok_output_micro": 10000000,
-      "usd_per_mtok_cache_read_micro": null,
-      "effective": "2026-09-29",
+      "usd_per_mtok_cache_read_micro": 100000,
+      "effective": "2026-10-19",
       "effective_basis": "assumed",
-      "verified": "2026-10-03",
-      "source_url": "https://llmgateway.io/models/gpt-6.1-sol"
+      "verified": "2026-10-19",
+      "source_url": "https://developers.openai.com/api/docs/pricing.md"
     },
     {
       "engine": "grok-4.5",
@@ -248,6 +263,21 @@
       "effective_basis": "assumed",
       "verified": "2026-10-17",
       "source_url": "https://platform.kimi.ai/docs/pricing/chat"
+    },
+    {
+      "engine": "opencode-go/muse-spark-1.3-contributor",
+      "runner": "opencode",
+      "model": "opencode-go/muse-spark-1.3-contributor",
+      "model_ref": "muse-spark-1.3-contributor",
+      "billing": "subscription",
+      "plan": "opencode",
+      "usd_per_mtok_input_micro": 100000,
+      "usd_per_mtok_output_micro": 200000,
+      "usd_per_mtok_cache_read_micro": 2000,
+      "effective": "2026-10-19",
+      "effective_basis": "assumed",
+      "verified": "2026-10-19",
+      "source_url": "https://ai.developer.meta.com/docs/pricing-rate-limits/"
     }
   ],
   "unpriced": [
@@ -294,21 +324,9 @@
       "reason": "billing_unknown"
     },
     {
-      "engine": "cursor-grok-4.6-high-fast",
-      "runner": "cursor",
-      "model": "cursor-grok-4.6-high-fast",
-      "reason": "no_price_key"
-    },
-    {
       "engine": "gemini-3.7-flash-high",
       "runner": "agy",
       "model": "Gemini 3.7 Flash (High)",
-      "reason": "no_price_key"
-    },
-    {
-      "engine": "opencode-go/muse-spark-1.3-contributor",
-      "runner": "opencode",
-      "model": "opencode-go/muse-spark-1.3-contributor",
       "reason": "no_price_key"
     },
     {

@@ -2908,6 +2908,40 @@
       }
     },
     {
+      "access_label": "local",
+      "base_url": "./public-bundles/results-qwen3.8-flash-next-halogen-v2-low-local-halogen-qwen3.8-flash-next-ab51ac3322c7/",
+      "billing": "local",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "Qwen3.8-Flash-Next",
+      "machine": "cachyos-max395",
+      "n_runs": 1,
+      "operator": "自架",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "Alibaba",
+      "publisher_url": "https://qwen.ai/",
+      "tags": {
+        "draft": "mtp",
+        "draft_packaging": "sidecar",
+        "effort": "low",
+        "engine": "halogen",
+        "lineage": "base",
+        "placement": "local",
+        "quant": "halogen-v2-4.16bpw",
+        "role": "ab-leg",
+        "temp": "1.0",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-fable-5-0c09f65556f1/",
       "billing": "metered",
@@ -7432,7 +7466,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "e2ea1a3dbfe45ebd9d8ff3376c8272e72be2c02af5170afb649f0cda0156ddf9",
+  "content_digest": "670cd0cf130f7f4c5862594a79bfa86299429adc9b93896f90369881ef72e862",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7467,7 +7501,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-13T21:58:47Z",
+  "generated_at": "2026-10-19T10:13:42Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

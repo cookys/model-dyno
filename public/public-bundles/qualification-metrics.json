@@ -1,8 +1,8 @@
 {
  "schema": "model-dyno.qualification-metrics.v2",
- "generated_at": "2026-10-19T17:46:46.000Z",
+ "generated_at": "2026-10-19T18:18:36.000Z",
  "producer": "build-qualification-feed.py@2",
- "source_revision": "6a64f4ca5a6641bc3b58e6c56cec13dbb49f797d",
+ "source_revision": "4fbe17b454732c5e82ecfb33e322e2e8d50fac39",
  "seat_metrics": [
   {
    "entry_id": "b71b32336524185490acfbd6099e45a00a005f950084ad6d40ea326d6c80f769",
@@ -54,7 +54,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-3.7-flash-high"
@@ -109,10 +109,120 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-3.7-flash-medium"
+  },
+  {
+   "entry_id": "c15489ab2b5824455a3e754fe56b6117bb0cd3a708896d18fc8d40a5ab4fe6b7",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "gemini-4-argon-high",
+    "model": "gemini-4-argon-high",
+    "model_version": "gemini-4-argon-high",
+    "runner": "agy",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-13T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 30,
+    "n_timeout": null,
+    "pass_rate_permille": 882,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 734,
+    "ci_high_permille": 953
+   },
+   "speed": {
+    "solved_per_hour_milli": 8323,
+    "wall_s_total": 12976,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 334485,
+    "concurrency": 1,
+    "speed_basis": "2026-10-13T00:00:00Z..2026-10-13T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": null,
+    "usd_per_task_micro": null,
+    "cost_total_micro": null,
+    "pricing_version": null,
+    "cost_coverage_permille": 0,
+    "cost_basis": "subscription"
+   },
+   "sampling": {
+    "window_start": "2026-10-13T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-4-argon-high"
+  },
+  {
+   "entry_id": "43a6293ab5767cba07f83671cefa7579d7335366d35ade6ba336fec101a74a6e",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "gemini-4-argon-low",
+    "model": "gemini-4-argon-low",
+    "model_version": "gemini-4-argon-low",
+    "runner": "agy",
+    "role": "implementer",
+    "effort": "low"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-13T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 29,
+    "n_timeout": null,
+    "pass_rate_permille": 853,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 699,
+    "ci_high_permille": 936
+   },
+   "speed": {
+    "solved_per_hour_milli": 19676,
+    "wall_s_total": 5306,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 109000,
+    "concurrency": 1,
+    "speed_basis": "2026-10-13T00:00:00Z..2026-10-13T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": null,
+    "usd_per_task_micro": null,
+    "cost_total_micro": null,
+    "pricing_version": null,
+    "cost_coverage_permille": 0,
+    "cost_basis": "subscription"
+   },
+   "sampling": {
+    "window_start": "2026-10-13T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-4-argon-low"
   },
   {
    "entry_id": "b542a70e7c04c1a6f42f5931869fe7933018262b7d575fa9aab7074cfefe29de",
@@ -164,7 +274,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.3-spark"
@@ -219,7 +329,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.3-spark"
@@ -274,7 +384,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex"
@@ -329,7 +439,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex"
@@ -384,7 +494,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.6-sol"
@@ -439,10 +549,175 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.6-sol"
+  },
+  {
+   "entry_id": "5620ddf4c329106cd034b2ce39a26dee80e6b7c829f8750e5fddd42ad3b253b9",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "gpt-6-luna",
+    "model": "gpt-6-luna",
+    "model_version": "gpt-6-luna",
+    "runner": "codex",
+    "role": "implementer",
+    "effort": "low"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-03T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 28,
+    "n_timeout": null,
+    "pass_rate_permille": 824,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 665,
+    "ci_high_permille": 917
+   },
+   "speed": {
+    "solved_per_hour_milli": 52582,
+    "wall_s_total": 1917,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 48435,
+    "concurrency": 1,
+    "speed_basis": "2026-10-03T00:00:00Z..2026-10-03T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": null,
+    "usd_per_task_micro": null,
+    "cost_total_micro": null,
+    "pricing_version": null,
+    "cost_coverage_permille": 0,
+    "cost_basis": "subscription"
+   },
+   "sampling": {
+    "window_start": "2026-10-03T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6-luna-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6-luna-low"
+  },
+  {
+   "entry_id": "06215666ad7ecd31e8f93c1052265b38b0a132b9149751f3669f16e1d092569c",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "gpt-6.1-sol",
+    "model": "gpt-6.1-sol",
+    "model_version": "gpt-6.1-sol",
+    "runner": "codex",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-03T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 28,
+    "n_timeout": null,
+    "pass_rate_permille": 824,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 665,
+    "ci_high_permille": 917
+   },
+   "speed": {
+    "solved_per_hour_milli": 15725,
+    "wall_s_total": 6410,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 130455,
+    "concurrency": 1,
+    "speed_basis": "2026-10-03T00:00:00Z..2026-10-03T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": null,
+    "usd_per_task_micro": null,
+    "cost_total_micro": null,
+    "pricing_version": null,
+    "cost_coverage_permille": 0,
+    "cost_basis": "subscription"
+   },
+   "sampling": {
+    "window_start": "2026-10-03T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6.1-sol-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6.1-sol-high"
+  },
+  {
+   "entry_id": "e098d66e59dec5deb5bed28e5dcdeef2d2a4a05bb0105a1f0ce59826d981c159",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "gpt-6.1-sol",
+    "model": "gpt-6.1-sol",
+    "model_version": "gpt-6.1-sol",
+    "runner": "codex",
+    "role": "implementer",
+    "effort": "low"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-03T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 29,
+    "n_timeout": null,
+    "pass_rate_permille": 853,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 699,
+    "ci_high_permille": 936
+   },
+   "speed": {
+    "solved_per_hour_milli": 31248,
+    "wall_s_total": 3341,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 81505,
+    "concurrency": 1,
+    "speed_basis": "2026-10-03T00:00:00Z..2026-10-03T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": null,
+    "usd_per_task_micro": null,
+    "cost_total_micro": null,
+    "pricing_version": null,
+    "cost_coverage_permille": 0,
+    "cost_basis": "subscription"
+   },
+   "sampling": {
+    "window_start": "2026-10-03T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6.1-sol-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6.1-sol-low"
   },
   {
    "entry_id": "c2fbd12b6f14099dd2ba9ee2468a46425af737ac8c8eb716545c97f27be19726",
@@ -494,7 +769,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -549,7 +824,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -604,7 +879,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -659,7 +934,7 @@
    "join": {
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.6"
@@ -714,10 +989,65 @@
    "join": {
     "board_cell": "grok/grok-4.6-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.6-low"
+  },
+  {
+   "entry_id": "f20d01b487ebd2924290f00fdafcee3eada4873b00c8b9a0cb81a1535ee58f1c",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "grok-4.7",
+    "model": "grok-4.7",
+    "model_version": "grok-4.7",
+    "runner": "grok",
+    "role": "implementer",
+    "effort": "low"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-03T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 29,
+    "n_timeout": null,
+    "pass_rate_permille": 853,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 699,
+    "ci_high_permille": 936
+   },
+   "speed": {
+    "solved_per_hour_milli": 34252,
+    "wall_s_total": 3048,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 86760,
+    "concurrency": 1,
+    "speed_basis": "2026-10-03T00:00:00Z..2026-10-03T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": null,
+    "usd_per_task_micro": null,
+    "cost_total_micro": null,
+    "pricing_version": null,
+    "cost_coverage_permille": 0,
+    "cost_basis": "subscription"
+   },
+   "sampling": {
+    "window_start": "2026-10-03T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "grok/grok-4.7-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.7-low"
   },
   {
    "entry_id": "5f9265d00e409a9170d41d1d211ea5db5299fe3b63020185f293ac7c779c231b",
@@ -746,10 +1076,266 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__76fc1f88.json"
+  },
+  {
+   "entry_id": "edb7607aa61c1999cd33d9a89ae16fa00b13d4b9833f41488821dea9daf52d75",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-haiku-5-5",
+    "model": "claude-haiku-5-5",
+    "model_version": "claude-haiku-5-5",
+    "runner": "claude-native",
+    "role": "consult",
+    "effort": "high"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "370f1110538ca100098cac9fcabd5c0afbb7219b5b3dd3c7ab9db7b58b02bee3",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__claude-haiku-5-5__claude-native__high__2026-10-12__370f1110.json"
+  },
+  {
+   "entry_id": "c30a8abff835510d5a90b34599efd9d36b990ec25b5644e39a7ffae6159ad046",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "claude-native",
+    "role": "consult",
+    "effort": "high"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "d4667f5814635ffa00859d266d226aaeb93006e5612f53bcdad2a4e0d592dea5",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__claude-opus-5-5__claude-native__high__2026-10-12__d4667f58.json"
+  },
+  {
+   "entry_id": "2fd4db0bca6d3b8dddfce50b37000abce9f973a70183f58e933e987dce0dd546",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "claude-native",
+    "role": "consult",
+    "effort": "low"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "32b3bec811c3a93e1de05dd61871a48c0d149caacb50cc9e546c29ba7d8de21b",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__claude-opus-5-5__claude-native__low__2026-10-12__32b3bec8.json"
+  },
+  {
+   "entry_id": "753a0ac45438136428476ee82cb7d0b2aecdab8360c59a032dbd31a6f0e5e200",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "model_version": "claude-sonnet-5-5",
+    "runner": "claude-native",
+    "role": "consult",
+    "effort": "high"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "35bbfddecd29a67df797a67728a65bba23a90afe3fc230aef2f47d51563d4482",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__claude-sonnet-5-5__claude-native__high__2026-10-12__35bbfdde.json"
+  },
+  {
+   "entry_id": "c274309a37f67e48d02740aeda4f9b670e6ee1905ca390324be945bd18ae92b7",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-high",
+    "model": "gemini-4-argon-high",
+    "model_version": "gemini-4-argon-high",
+    "runner": "agy",
+    "role": "consult",
+    "effort": "high"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-13T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-13T00:00:00Z",
+    "record_id": "04d16fc85a6bb7633d80458bc4fdb1861b605388a1f37786286d2895ef35360e",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-12"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__gemini-4-argon-high__agy__high__2026-10-13__04d16fc8.json"
+  },
+  {
+   "entry_id": "5ee5eb83dc9bedde24ebfb49df8c37e9e554fc4465253fbbdeee512b2f2089cd",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-low",
+    "model": "gemini-4-argon-low",
+    "model_version": "gemini-4-argon-low",
+    "runner": "agy",
+    "role": "consult",
+    "effort": "low"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-13T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-13T00:00:00Z",
+    "record_id": "0ecc75a1eae629349c38ab5638627539ce62b7e2a89dfecc4215ffacf039aba8",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-12"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__gemini-4-argon-low__agy__low__2026-10-13__0ecc75a1.json"
+  },
+  {
+   "entry_id": "37b719d9d80781994a0ce29e165c9f389c33aa2052970dedddcdf6de3d57240c",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6.1-sol",
+    "model": "gpt-6.1-sol",
+    "model_version": "gpt-6.1-sol",
+    "runner": "codex",
+    "role": "consult",
+    "effort": "low"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "7cb6864e45a21ae05c07ffbaf8799a355b2206f499741c74318006395fc21c4d",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6.1-sol-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__gpt-6.1-sol__codex__low__2026-10-14__7cb6864e.json"
+  },
+  {
+   "entry_id": "7cb699c3e2d38548d12afa6bf6b5f23dd3f1a623784a82a5222f1ea10ecab55f",
+   "kind": "qualification",
+   "seat": {
+    "engine": "kimi-k2.8-preview",
+    "model": "kimi-code/kimi-for-coding",
+    "model_version": "kimi-for-coding:K2.8-Preview",
+    "runner": "kimi",
+    "role": "consult",
+    "effort": "high"
+   },
+   "instrument_id": "consult-panel-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-16T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "consult-v6.consult-eval-generator-v1",
+    "prompt_config_hash": "1479cfe29685e6239b56f9a5c72112075cc13b4c992bc9105b83d9e33bda3635",
+    "administered_at": "2026-10-16T00:00:00Z",
+    "record_id": "79ba70a7751ea55b12ca3b2e3b67ffbafc40ecfb46c22aff8d03f06fdb9ba2ec",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-15"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/consult__kimi-k2.8-preview__kimi__high__2026-10-16__79ba70a7.json"
   },
   {
    "entry_id": "2c0c58719234a514ac81370f9b82ec1c6e45a1fb68f135d8ba82e8a137a02568",
@@ -778,10 +1364,266 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__b6566bb7.json"
+  },
+  {
+   "entry_id": "92dfba0ee1a527b8045db5f5f6f00546af6c582d115b2dfc0df1cdae8e558246",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-haiku-5-5",
+    "model": "claude-haiku-5-5",
+    "model_version": "claude-haiku-5-5",
+    "runner": "claude-native",
+    "role": "discuss",
+    "effort": "high"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "20c55522a8558e935a194c132043c2ca1cb2dccaa00757a324c409c7c4aa284b",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-haiku-5-5__claude-native__high__2026-10-12__20c55522.json"
+  },
+  {
+   "entry_id": "37fcf881473f973ac8b3488fd6e2d72ef1d54e538ebd844074d5d3d30b0d9281",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "claude-native",
+    "role": "discuss",
+    "effort": "high"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "2af800793f81531bf0b4015424ffb9205ff1c103a7af764dada404768cccbe1c",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-opus-5-5__claude-native__high__2026-10-12__2af80079.json"
+  },
+  {
+   "entry_id": "dd1e1788f1098556dcf91ab957ea21ef4343f8edd7f31690eab32f9780cf955a",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "claude-native",
+    "role": "discuss",
+    "effort": "low"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "c6a1c6c9de511b7d10f8ae7e14de6a348e1ae5c5a7c8a46d61f0aab697617b30",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-opus-5-5__claude-native__low__2026-10-12__c6a1c6c9.json"
+  },
+  {
+   "entry_id": "24ad66a8008288cc9cdc71bde3e126acafb6d19c08b2fbd2bbd453966c0a6b8c",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "model_version": "claude-sonnet-5-5",
+    "runner": "claude-native",
+    "role": "discuss",
+    "effort": "high"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "413804ac1644cca6d9f0adb18e403136be605ed546562a1d91664ab4188462ca",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-sonnet-5-5__claude-native__high__2026-10-12__413804ac.json"
+  },
+  {
+   "entry_id": "a3e070912ee83758af76560e26a623a210700c7ae46aa44e078126be3542ddae",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-high",
+    "model": "gemini-4-argon-high",
+    "model_version": "gemini-4-argon-high",
+    "runner": "agy",
+    "role": "discuss",
+    "effort": "high"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-13T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-13T00:00:00Z",
+    "record_id": "fe104423fe67dbe356385bf66cadb96d34a548fb080df473d282c1463e9fa9ce",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-12"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__gemini-4-argon-high__agy__high__2026-10-13__fe104423.json"
+  },
+  {
+   "entry_id": "ddbf97d49ac51e5ef13f08d1b1b875553f293da1732b01e6b62d6c9836b21736",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-low",
+    "model": "gemini-4-argon-low",
+    "model_version": "gemini-4-argon-low",
+    "runner": "agy",
+    "role": "discuss",
+    "effort": "low"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-13T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-13T00:00:00Z",
+    "record_id": "78cf45a65d7aa7e50965caa255165a43997e5b447704d0bce300ad610cc152e0",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-12"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__gemini-4-argon-low__agy__low__2026-10-13__78cf45a6.json"
+  },
+  {
+   "entry_id": "9e02325fec86805369d5ef314b0e997374a07d1c67bb1fbae5e860b425077fab",
+   "kind": "qualification",
+   "seat": {
+    "engine": "kimi-code-k3",
+    "model": "kimi-code/k3",
+    "model_version": "kimi-code-k3",
+    "runner": "kimi",
+    "role": "discuss",
+    "effort": "high"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-16T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-16T00:00:00Z",
+    "record_id": "f1dbfc22d1486eac570974a991194f4f7708540c4de38791330eb412ea461519",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-15"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__kimi-code-k3__kimi__high__2026-10-16__f1dbfc22.json"
+  },
+  {
+   "entry_id": "421be61e76c1f04c4a4d84673429ef2512820a0b7e5a67cae9eef3a6c0ed7953",
+   "kind": "qualification",
+   "seat": {
+    "engine": "kimi-k2.8-preview",
+    "model": "kimi-code/kimi-for-coding",
+    "model_version": "kimi-for-coding:K2.8-Preview",
+    "runner": "kimi",
+    "role": "discuss",
+    "effort": "high"
+   },
+   "instrument_id": "discuss-rounds-v1",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-16T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "discuss-v4.discuss-v1",
+    "prompt_config_hash": "977f546946baec22eb74593baecb3efd2d421e34caeaef76dc0a183b6a9aa494",
+    "administered_at": "2026-10-16T00:00:00Z",
+    "record_id": "a5a96148e7168884927a743dbf19c1a34d892d62e76b37b728a83fa34a2a44cf",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-15"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/discuss__kimi-k2.8-preview__kimi__high__2026-10-16__a5a96148.json"
   },
   {
    "entry_id": "3fe22345a6f0fd4ce45dbec352fd690821d8cfb38e6b854c86bc67c41bd40095",
@@ -810,7 +1652,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__GLM-5.3__cc-shim__high__2026-08-21__a228313b.json"
@@ -842,7 +1684,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3__cc-shim__high__2026-08-21__d8f3618b.json"
@@ -874,7 +1716,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3.1-Flash-Preview__cc-shim__high__2026-10-14__af779222.json"
@@ -906,10 +1748,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__Qwen3.8-Max__qoderclicn__high__2026-08-21__d8c6a7e1.json"
+  },
+  {
+   "entry_id": "5286832616d55600cb5b75830a83d3d30f340248c2094c4efd7ac2806d4205be",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-haiku-5-5",
+    "model": "claude-haiku-5-5",
+    "model_version": "claude-haiku-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "b91e7aeb04a7dcb4e6bc4287c8fe7afc411f991b93c91e367f473087e8cdcd2c",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-10"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-haiku-5-5__cc-shim__high__2026-10-12__b91e7aeb.json"
   },
   {
    "entry_id": "3ab1aaa02b26d166fca7af9f8fb30cf61e7dfde9c2d85c3ced55dd395cf72ab3",
@@ -938,10 +1812,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5__cc-shim__high__2026-08-22__ae0f6e79.json"
+  },
+  {
+   "entry_id": "9f6725d79a423b6f24603ceb49ed3ee797c4930e6d837d8c6494f6e567359ed1",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "8c5a5a1a86f88638a8ecec303e97d4f28a4d5ee345663bb1b9ba81fea03d48e5",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-10"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5-5__cc-shim__high__2026-10-12__8c5a5a1a.json"
   },
   {
    "entry_id": "3ae50052d019bede8a92a4ac07b0f30bf827d681368e3460856120f6e10179e4",
@@ -970,10 +1876,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5__cc-shim__high__2026-08-22__b9e089c2.json"
+  },
+  {
+   "entry_id": "93902f329d659fdd27140ca9613a79c2da744f0945f39212561d332b1dd7bf3d",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "model_version": "claude-sonnet-5-5",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "20d13b0eeb4c2e8a558fc0414e43ef0506f79a7ea5fcb9fdd6943fa24740d55e",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-10"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5-5__cc-shim__high__2026-10-12__20d13b0e.json"
   },
   {
    "entry_id": "d5d4446e7176006ca2fcab3052cedc600bbae916554acc3734f1d99dffbbd5c9",
@@ -1002,7 +1940,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.1-pro-high__agy__high__2026-08-21__7aaded50.json"
@@ -1034,7 +1972,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.7-flash-high__agy__high__2026-08-21__138c1a0d.json"
@@ -1066,10 +2004,74 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.7-flash-medium__agy__high__2026-08-22__29c60613.json"
+  },
+  {
+   "entry_id": "e7b71b19b1ce8e221d39114279945176cb459437983e18e2df3ce4cd0e75180f",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-high",
+    "model": "gemini-4-argon-high",
+    "model_version": "gemini-4-argon-high",
+    "runner": "agy",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-13T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-13T00:00:00Z",
+    "record_id": "48d2ee3ebc401dcb7b91aa22f4749a9f0df4bea188e558840277a94234c82dde",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-11"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-4-argon-high__agy__high__2026-10-13__48d2ee3e.json"
+  },
+  {
+   "entry_id": "20bfc85d6e6200ef9c0e92ed43aab3f729c4ecf6ad0f90dbcdc0fb4b4dfbb74a",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-low",
+    "model": "gemini-4-argon-low",
+    "model_version": "gemini-4-argon-low",
+    "runner": "agy",
+    "role": "implementer",
+    "effort": "low"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-13T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-13T00:00:00Z",
+    "record_id": "18fc437c2f87b236e3b7a58d51bc72d079d2b31a3f93ee3b1fcd5b976292f163",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-11"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-4-argon-low__agy__low__2026-10-13__18fc437c.json"
   },
   {
    "entry_id": "9d2adfaeb98edb98b7f76fbf96f0906331885f5d8c00b2e044984ee9bb5e02a2",
@@ -1098,7 +2100,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.3-codex-spark__codex__default__2026-07-16__a4aad437.json"
@@ -1130,7 +2132,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.3-codex-spark__codex__high__2026-08-21__12f41a25.json"
@@ -1162,7 +2164,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.6-luna__codex__medium__2026-08-22__dc4f6cce.json"
@@ -1194,10 +2196,138 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.6-sol__codex__high__2026-08-21__636c28a5.json"
+  },
+  {
+   "entry_id": "40bbabc0219332d16d2c7750253f1968357d4b346dec86481279942b1af34e67",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6-luna",
+    "model": "gpt-6-luna",
+    "model_version": "gpt-6-luna",
+    "runner": "codex",
+    "role": "implementer",
+    "effort": "low"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "15770f4487d257e7dc6a93044a1d87b08707378dccecb5c1df348a228f1cd0bb",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-12"
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6-luna-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6-luna__codex__low__2026-10-14__15770f44.json"
+  },
+  {
+   "entry_id": "9e694637368d07cdc0f22464d12b7a4986f58915fdfcda8cdf02880992af8577",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6-luna",
+    "model": "gpt-6-luna",
+    "model_version": "gpt-6-luna",
+    "runner": "codex",
+    "role": "implementer",
+    "effort": "medium"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "e190dc87399af890d7e1a052cf3b0ef80dac42da47401c7393dfcb4c2450ebb8",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-12"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6-luna__codex__medium__2026-10-14__e190dc87.json"
+  },
+  {
+   "entry_id": "5ccae413a6ad7820761b61a972282154373c3bb6dccbc7588e115c383d02e35b",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6.1-sol",
+    "model": "gpt-6.1-sol",
+    "model_version": "gpt-6.1-sol",
+    "runner": "codex",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "53d5f39deaea20c603d9c8938a363db47e6c8a90df3c2e788315fd3770cd86d9",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-12"
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6.1-sol-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6.1-sol__codex__high__2026-10-14__53d5f39d.json"
+  },
+  {
+   "entry_id": "b8c2f7ba41f2e965c9762244b21c84d1ff7c62eaeadf7dd28272592ff265a18c",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6.1-sol",
+    "model": "gpt-6.1-sol",
+    "model_version": "gpt-6.1-sol",
+    "runner": "codex",
+    "role": "implementer",
+    "effort": "low"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-09-30T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-09-30T00:00:00Z",
+    "record_id": "5f716c47b4b8d66e6f4f98597ee6f513e4769c9dad051d0ec49bc7c1d946cf88",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-12-29"
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6.1-sol-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6.1-sol__codex__low__2026-09-30__5f716c47.json"
   },
   {
    "entry_id": "eece790cc825a97b47d177d690d5f922d50a96bd770789f51f6ac10ce9c7c2ab",
@@ -1226,7 +2356,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.5__grok__default__2026-07-17__04e036f9.json"
@@ -1258,7 +2388,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.5__grok__high__2026-08-21__e7a39b22.json"
@@ -1290,7 +2420,7 @@
    "join": {
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.6__grok__high__2026-08-21__17349528.json"
@@ -1322,10 +2452,42 @@
    "join": {
     "board_cell": "grok/grok-4.6-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.6__grok__low__2026-08-24__7635a64d.json"
+  },
+  {
+   "entry_id": "9cc69b139f4435184b72ccdae2914bf53442d41f743b3e6ceb5c3709b1f6903b",
+   "kind": "qualification",
+   "seat": {
+    "engine": "grok-4.7",
+    "model": "grok-4.7",
+    "model_version": "grok-4.7",
+    "runner": "grok",
+    "role": "implementer",
+    "effort": "low"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-09-30T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-09-30T00:00:00Z",
+    "record_id": "adf551c95bd3d43c96c79ef482064bbcc25d408cafb26151075d015eb7bbfca1",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-12-29"
+   },
+   "join": {
+    "board_cell": "grok/grok-4.7-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.7__grok__low__2026-09-30__adf551c9.json"
   },
   {
    "entry_id": "02106efaac9f9ff16aa20d655648dfc683dc917591f066f5ac2860d89d5c537a",
@@ -1354,10 +2516,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/owner__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__942ce1d6.json"
+  },
+  {
+   "entry_id": "9b3785c50ba60d0235f791b84aadac12c50a0f35708f5178b0fb05a9bba520fa",
+   "kind": "qualification",
+   "seat": {
+    "engine": "GLM-5.2",
+    "model": "glm-5.2",
+    "model_version": "glm-5.2-20260817",
+    "runner": "anthropic-compatible",
+    "role": "reviewer",
+    "effort": "default"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-08-16T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v4",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-08-16T00:00:00Z",
+    "record_id": "7ed7f0084ecf9e254e30843fadc7309ac1374b9ace2f72f0aed85b3bdb99e87b",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-09-15"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.2__anthropic-compatible__default__2026-08-16__7ed7f008.json"
   },
   {
    "entry_id": "fe7d409d119bb49d62ed313d01b51140685ce5f29ee4f8d6b77ae68674f70846",
@@ -1386,13 +2580,13 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.2__anthropic-compatible__high__2026-08-16__f4b8bd37.json"
   },
   {
-   "entry_id": "ce2dcb3321395cf989cc53908bd577bff339a088c50aaab1aeaa047928db59a9",
+   "entry_id": "b2b05207c0a27ff88f454a2878b670636da100df196ce21f49f7cadc9327069d",
    "kind": "qualification",
    "seat": {
     "engine": "GLM-5.3",
@@ -1400,7 +2594,7 @@
     "model_version": "glm-5.3-20260817",
     "runner": "anthropic-compatible",
     "role": "reviewer",
-    "effort": "high"
+    "effort": "default"
    },
    "instrument_id": "reviewer-metamorphic-executable",
    "instrument_version": "4.1.0",
@@ -1410,7 +2604,7 @@
     "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v4",
     "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
     "administered_at": "2026-08-17T00:00:00Z",
-    "record_id": "d21f49541f215fa2c5ee369658bc2b6cce486cd53c645723ac3f21ca5399153e",
+    "record_id": "67deb04d370de617ae3f2e83becac633bee8cfeac4598d32e7c28e5aaed925a7",
     "record_id_basis": "evidence_id",
     "supersedes": null,
     "expires": "2026-09-16"
@@ -1418,10 +2612,74 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
-   "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__high__2026-08-17__d21f4954.json"
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__default__2026-08-17__67deb04d.json"
+  },
+  {
+   "entry_id": "c90ab92bb479042286c8a9fcf4b29bdefc14898d8b964882c4e48337f014428e",
+   "kind": "qualification",
+   "seat": {
+    "engine": "GLM-5.3",
+    "model": "glm-5.3",
+    "model_version": "glm-5.3",
+    "runner": "anthropic-compatible",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "99569ff078563efc7a09966798f7618b252e452bb6b50bb15a14f77bab56ca2a",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__high__2026-10-14__99569ff0.json"
+  },
+  {
+   "entry_id": "631017c973a5c23967be653f687cf9584329ba1f29875f0e26f99cf17ea17c2f",
+   "kind": "qualification",
+   "seat": {
+    "engine": "GLM-5.3",
+    "model": "glm-5.3",
+    "model_version": "glm-5.3",
+    "runner": "anthropic-compatible",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "79943d3e048becd84ea573d6c422fec3d744f4010f32187d604e57c90baf3c29",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__low__2026-10-14__79943d3e.json"
   },
   {
    "entry_id": "5572e5d8f52e2264ce1ff28e4950ba1183d1d85928964ecb0ff2d1c6725834ec",
@@ -1450,7 +2708,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3__anthropic-compatible__default__2026-08-08__cf6a2d04.json"
@@ -1482,7 +2740,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3__cc-shim__default__2026-07-17__9425116d.json"
@@ -1514,7 +2772,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__f235aabd.json"
@@ -1546,7 +2804,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__high__2026-10-14__c45490f6.json"
@@ -1578,10 +2836,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__low__2026-10-14__82161dad.json"
+  },
+  {
+   "entry_id": "8743b68fb825137a5c6561e0de120e62feba933a1d9b537524c315de4837387e",
+   "kind": "qualification",
+   "seat": {
+    "engine": "Qwen3.8-Max",
+    "model": "Qwen3.8-Max",
+    "model_version": "Qwen3.8-Max",
+    "runner": "qoderclicn",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "4565931227e67d584dea03eb89389472dad01a911a7a3e969f0e48b1be31a80d",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__Qwen3.8-Max__qoderclicn__high__2026-10-14__45659312.json"
   },
   {
    "entry_id": "e24540568bb94db53a7b9c1a0bb71032f58471f690ac9cd45ad3c3a053224208",
@@ -1610,10 +2900,74 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku__claude-native__default__2026-07-10__9a3d4a1e.json"
+  },
+  {
+   "entry_id": "1efd87c33113fd4ca57866c1ebc0bc81a5b0acc354bcb2f57d85e20373e893aa",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-haiku-5-5",
+    "model": "claude-haiku-5-5",
+    "model_version": "claude-haiku-5-5",
+    "runner": "claude-native",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "30270416eaabf304c190f85b3ab837857b7b6e0fe10feb2cc8da3a9893b00549",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku-5-5__claude-native__high__2026-10-14__30270416.json"
+  },
+  {
+   "entry_id": "c767e0a987ac9ffb3b8a561b80ec1a976e9ec7d89b0b7dc097e930b971f7f9e8",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-haiku-5-5",
+    "model": "claude-haiku-5-5",
+    "model_version": "claude-haiku-5-5",
+    "runner": "claude-native",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "40bcaf3b8c8631cc72b1ceab7aab1ebb0b29aa811400f61978d88e402f83ddd0",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku-5-5__claude-native__low__2026-10-14__40bcaf3b.json"
   },
   {
    "entry_id": "04f825bf001d3a0c1c953fa0a93b3fef22fffa5de782c7439abb0e775b499aba",
@@ -1642,10 +2996,202 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus__claude-native__default__2026-07-14__56f93ef7.json"
+  },
+  {
+   "entry_id": "0dad879eb507479eb163b19254d67ca78af677c34c0457e283f99abf56f2ef03",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "claude-native",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "a8d5d71faeb18a1ce99a9b1b8f30b3f3435227f02b1c6cf27134cbad1d0cdbce",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus-5-5__claude-native__high__2026-10-14__a8d5d71f.json"
+  },
+  {
+   "entry_id": "11f75bde8631ebeb27b003a055b1887d18d1dcf745c0d8154f5d31f3e44bfd31",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "claude-native",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "8f0fc282f11d4dc341f6576f988dbc1541a254ce1e27d5f26604da760d9ca2b7",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus-5-5__claude-native__low__2026-10-14__8f0fc282.json"
+  },
+  {
+   "entry_id": "b87187574645cecdf69bf465c85dbcf202929c4cbcdde00821f1094891cb5e00",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "model_version": "claude-sonnet-5-5",
+    "runner": "claude-native",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "c0ffcc8b2451757face5783357cdc07a77887aff9a8b6024a9a82867ebde81e4",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-sonnet-5-5__claude-native__high__2026-10-14__c0ffcc8b.json"
+  },
+  {
+   "entry_id": "9547c325021cbd83469f4a0bb5280087b9a3b4e82eda7c853b8bec818593033d",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "model_version": "claude-sonnet-5-5",
+    "runner": "claude-native",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "ec9b05162ac6d70d16e3fee220ecdb978f67045908dfd6eb53f40a44fe32ea8d",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-sonnet-5-5__claude-native__low__2026-10-14__ec9b0516.json"
+  },
+  {
+   "entry_id": "5c1c5a88872288a717282a96d744b120428bcbc483dcf128bfd2d9697688cda6",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-high",
+    "model": "gemini-4-argon-high",
+    "model_version": "gemini-4-argon-high",
+    "runner": "agy",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "04eb884dfba11918f0b5d73227e1c3c14dc3d73bd4f791f9c365c1611da102e0",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__gemini-4-argon-high__agy__high__2026-10-14__04eb884d.json"
+  },
+  {
+   "entry_id": "2205b97eaf65834c226fe0856c5753b982bf0ac1d188fdb25ff9b051e36f7df8",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-low",
+    "model": "gemini-4-argon-low",
+    "model_version": "gemini-4-argon-low",
+    "runner": "agy",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "165b77449219840a27b176ef2d5f554d3c61e6f9b294f68dd96d7a5fce0a9305",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__gemini-4-argon-low__agy__low__2026-10-14__165b7744.json"
   },
   {
    "entry_id": "f4f6490a8c8e780b333fa6ea4ebe9fe018d3a2db19f8ce2156553787167f0d7a",
@@ -1674,7 +3220,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.5__codex__default__2026-06-30__487dcba0.json"
@@ -1706,7 +3252,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__default__2026-07-13__c7faefd6.json"
@@ -1738,10 +3284,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__high__2026-07-13__19b97ced.json"
+  },
+  {
+   "entry_id": "5f4e0f62ad6458d0c6ba3c0f0d0657ef340ea53fc063620b2cbe2b8a867d3a8e",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-5.6-sol",
+    "model": "gpt-5.6-sol",
+    "model_version": "gpt-5.6-sol",
+    "runner": "codex",
+    "role": "reviewer",
+    "effort": "max"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "8423500c8603914cbe4d6bb7e5ca27726a84321c7ce1af8a4addd3db26d36ccb",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__max__2026-10-14__8423500c.json"
   },
   {
    "entry_id": "ed3407d5d2830ac2b76d0eaebc26622c7d6949a053c24e008d4e3383dd581c42",
@@ -1770,7 +3348,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex-cli__max__2026-08-17__e3bc81fa.json"
@@ -1802,10 +3380,330 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol-high__codex__default__2026-07-13__b9bfdd21.json"
+  },
+  {
+   "entry_id": "53be6112c8022b4a0b292ae200d03ebc3f0613d8acbf99b63e028ce77782a45b",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6-astra",
+    "model": "gpt-6-astra",
+    "model_version": "gpt-6-astra",
+    "runner": "codex",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "0dcae71c55e96ca5c24944adf40826c8c664a0a7d46675a16ed2d53666a3479b",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-astra__codex__low__2026-10-14__0dcae71c.json"
+  },
+  {
+   "entry_id": "c6e2d9ed40db4688d1e088577934966819ab5557afcc3100ed73d9355ae7c95a",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6-luna",
+    "model": "gpt-6-luna",
+    "model_version": "gpt-6-luna",
+    "runner": "codex",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "failed",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "09ffdda85284f64a6dd2883518ee7ba5d6ccf2ac38da9e981e9d9aba5d0ac429",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6-luna-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-luna__codex__low__2026-10-14__09ffdda8.json"
+  },
+  {
+   "entry_id": "1d01e9a4c788c1e0593a90de86ec2a8565d1b6038b47711873892ead7ae56321",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6-sol",
+    "model": "gpt-6-sol",
+    "model_version": "gpt-6-sol",
+    "runner": "codex",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "0fa02d5594252676aa61e17601ea5c9567b83e21f05050a708b6e33b8a45f758",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-sol__codex__low__2026-10-14__0fa02d55.json"
+  },
+  {
+   "entry_id": "7de9dc16102adc3707d15382c36cf97272cf953b818c481658832e8ce6b79282",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gpt-6.1-sol",
+    "model": "gpt-6.1-sol",
+    "model_version": "gpt-6.1-sol",
+    "runner": "codex",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "dc601c036daba74e011ef3b28ca9d95d8f68489287f3192f68abc062e0ec57c0",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": "openai/codex-gpt6.1-sol-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6.1-sol__codex__low__2026-10-14__dc601c03.json"
+  },
+  {
+   "entry_id": "454fd75a672d148c611cb29221cdcb707b805c9341972cadc7ef469e868f6cab",
+   "kind": "qualification",
+   "seat": {
+    "engine": "grok-4.7",
+    "model": "grok-4.7",
+    "model_version": "grok-4.7",
+    "runner": "grok",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-15T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-15T00:00:00Z",
+    "record_id": "c8b45be923be9568072b47e8e0d6a43eab844309f12e3bf3b94b73abf35ff2f2",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-14"
+   },
+   "join": {
+    "board_cell": "grok/grok-4.7-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__grok-4.7__grok__low__2026-10-15__c8b45be9.json"
+  },
+  {
+   "entry_id": "3161d6dccfb0af78e46dee1c31bc3804f67873d8f0a7a6123776ab9c8b83cd09",
+   "kind": "qualification",
+   "seat": {
+    "engine": "kimi-code-k3",
+    "model": "kimi-code/k3",
+    "model_version": "kimi-code-k3",
+    "runner": "kimi",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-16T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-16T00:00:00Z",
+    "record_id": "7c65c94ed90070125827b2af104722b2979340819b1866676d39bedb2cfd7cfe",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-15"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__kimi-code-k3__kimi__high__2026-10-16__7c65c94e.json"
+  },
+  {
+   "entry_id": "651285a9c00b77667c45f324c7b3faaa19c3093d61283fb9be0d024b4436f548",
+   "kind": "qualification",
+   "seat": {
+    "engine": "kimi-k2.8-preview",
+    "model": "kimi-code/kimi-for-coding",
+    "model_version": "kimi-for-coding:K2.8-Preview",
+    "runner": "kimi",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-16T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-16T00:00:00Z",
+    "record_id": "c81cde64128ce59ba06c13f18152adc65a17331ccdc598ae94cd000f68b357f2",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-15"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__kimi-k2.8-preview__kimi__high__2026-10-16__c81cde64.json"
+  },
+  {
+   "entry_id": "66604fdafecb9766b8a6d3e52b8efa64fcfec87e70660287844f7e162882618b",
+   "kind": "qualification",
+   "seat": {
+    "engine": "muse-spark-1.3-contributor",
+    "model": "muse-spark-1.3-contributor",
+    "model_version": "muse-spark-1.3-contributor",
+    "runner": "anthropic-compatible",
+    "role": "reviewer",
+    "effort": "high"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "908fb0a561df22214d8a1933c51060156a4cf17a43f65cae81b94cb785bbc406",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__muse-spark-1.3-contributor__anthropic-compatible__high__2026-10-14__908fb0a5.json"
+  },
+  {
+   "entry_id": "aeabed33d21baf04e51846d1e95b3870d5649a4d4542b64a79f26a9c30aef459",
+   "kind": "qualification",
+   "seat": {
+    "engine": "muse-spark-1.3-contributor",
+    "model": "muse-spark-1.3-contributor",
+    "model_version": "muse-spark-1.3-contributor",
+    "runner": "anthropic-compatible",
+    "role": "reviewer",
+    "effort": "low"
+   },
+   "instrument_id": "reviewer-metamorphic-executable",
+   "instrument_version": "4.1.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "reviewer-known-bad-clean-v2.reviewer-metamorphic-v6",
+    "prompt_config_hash": "3cbe203c5958ec413269d63e2d5d1841336394d15f3c4a3ab4285ea3e73e3530",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "be579baeff588a1003b03362c135afba85b6aef8d24ef324a54a749ad4e4ecbd",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/reviewer__muse-spark-1.3-contributor__anthropic-compatible__low__2026-10-14__be579bae.json"
+  },
+  {
+   "entry_id": "74550ec1f172e2ab7449112a6b3e4f18e393586c1f4119c433ef6f9251bd2b47",
+   "kind": "qualification",
+   "seat": {
+    "engine": "GLM-5.3",
+    "model": "glm-5.3",
+    "model_version": "glm-5.3-20260818",
+    "runner": "anthropic-compatible",
+    "role": "verification_author",
+    "effort": "default"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-08-17T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-08-17T00:00:00Z",
+    "record_id": "0f69c5e5e1fae8b7dcb353e258d8148ddfba7657ca9323fa25963e279a0b3024",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-09-16"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__GLM-5.3__anthropic-compatible__default__2026-08-17__0f69c5e5.json"
   },
   {
    "entry_id": "9f72a2b3e0aa40852b974b6255614f65e4a75ac4fb0093f6a47d77e1b77a6c20",
@@ -1834,7 +3732,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__GLM-5.3__anthropic-compatible__high__2026-08-17__c0751003.json"
@@ -1866,10 +3764,202 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__d243be93.json"
+  },
+  {
+   "entry_id": "d366dc59f962585a45baa09486b74e1053eac106025b54358844b6c8d9245ab2",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-haiku-5-5",
+    "model": "claude-haiku-5-5",
+    "model_version": "claude-haiku-5-5",
+    "runner": "claude-native",
+    "role": "verification_author",
+    "effort": "high"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "6c7526efaec6610f75911d99f7c7e167c4e19a6a5ee3583dece53893561c2fdb",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-haiku-5-5__claude-native__high__2026-10-12__6c7526ef.json"
+  },
+  {
+   "entry_id": "6980f884c28493ea24f66cf40f0a5efe6ff3dc4feec5438e84b3fb02299fd468",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "claude-native",
+    "role": "verification_author",
+    "effort": "high"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "d9990549b81e521fe0d847885c5148d04361bced431eb29a04c45be1db319d8d",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-opus-5-5__claude-native__high__2026-10-12__d9990549.json"
+  },
+  {
+   "entry_id": "dc7230c278998af0067193b001228b80863adb3dbfdcd6ede4bab60dd0f185c4",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-opus-5-5",
+    "model": "claude-opus-5-5",
+    "model_version": "claude-opus-5-5",
+    "runner": "claude-native",
+    "role": "verification_author",
+    "effort": "low"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "3c37578b4a8d916a1cd610b510e8510b39a08402cd7e170fef97e658bf87054c",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-opus-5-5__claude-native__low__2026-10-12__3c37578b.json"
+  },
+  {
+   "entry_id": "c821763128c8671c77f8ded30fbcbc3067259395f47c4aeb9cf0d844012fcc06",
+   "kind": "qualification",
+   "seat": {
+    "engine": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5-5",
+    "model_version": "claude-sonnet-5-5",
+    "runner": "claude-native",
+    "role": "verification_author",
+    "effort": "high"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-12T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-10-12T00:00:00Z",
+    "record_id": "de4a4fdde04584f2675f068b1f37e2e581bc9a9a714e111e31f1c8b14ae16318",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-11"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-sonnet-5-5__claude-native__high__2026-10-12__de4a4fdd.json"
+  },
+  {
+   "entry_id": "9650f59ccbb0a778db3715bb1415665b3c5947f9b9fda625e26ed06ae9f099cb",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-high",
+    "model": "gemini-4-argon-high",
+    "model_version": "gemini-4-argon-high",
+    "runner": "agy",
+    "role": "verification_author",
+    "effort": "high"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-13T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-10-13T00:00:00Z",
+    "record_id": "ca2c463def088033ab29e489bea0dfdbb40dde7551dd62a828ead00a73d1edec",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-12"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-high",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__gemini-4-argon-high__agy__high__2026-10-13__ca2c463d.json"
+  },
+  {
+   "entry_id": "bf585db175e3e49f24aaecd225d21291d04a386ecd134aa8ccc9d7461a061faf",
+   "kind": "qualification",
+   "seat": {
+    "engine": "gemini-4-argon-low",
+    "model": "gemini-4-argon-low",
+    "model_version": "gemini-4-argon-low",
+    "runner": "agy",
+    "role": "verification_author",
+    "effort": "low"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-13T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-10-13T00:00:00Z",
+    "record_id": "51264701f99377d0f5c45f3019235bedd7f219564186b315538d8e79d0920802",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-12"
+   },
+   "join": {
+    "board_cell": "agy/gemini-4-argon-low",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__gemini-4-argon-low__agy__low__2026-10-13__51264701.json"
   },
   {
    "entry_id": "89b8c229ba41334e3f63185d539d718320de8f94f48cfa0d9985dcf826bbfb53",
@@ -1898,10 +3988,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.1"
+    "identity_map_version": "2026-10-20.2"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__glm-5.2__anthropic-compatible__default__2026-06-30__bfe8f949.json"
+  },
+  {
+   "entry_id": "7e0bde2c4864acf7543250afc4e05ba100b109f4d150cecfc5624c60e1990c4f",
+   "kind": "qualification",
+   "seat": {
+    "engine": "muse-spark-1.3-contributor",
+    "model": "muse-spark-1.3-contributor",
+    "model_version": "muse-spark-1.3-contributor",
+    "runner": "anthropic-compatible",
+    "role": "verification_author",
+    "effort": "high"
+   },
+   "instrument_id": "va-declared-plan",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-14T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "va-declared-plan-v1.va-declared-plan-v1",
+    "prompt_config_hash": "99d8c8386b234f683b787965a70184e4fa1fc789eb9b19420802e4ee13b09aad",
+    "administered_at": "2026-10-14T00:00:00Z",
+    "record_id": "8201622e2096f73d51629ec588c6daff8a014aa7e25095032d619c3c0492443c",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2026-11-13"
+   },
+   "join": {
+    "board_cell": null,
+    "board_join": "unmapped",
+    "identity_map_version": "2026-10-20.2"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/verification_author__muse-spark-1.3-contributor__anthropic-compatible__high__2026-10-14__8201622e.json"
   }
  ],
  "strike_events": []

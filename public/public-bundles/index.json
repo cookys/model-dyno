@@ -7469,7 +7469,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "5c69d7472cd82ed27b9352a95250304b4c19b29f4037d4423cc5b65470ac9fd9",
+  "content_digest": "f4f9bb946d6600e8ea97104f34c266ed3975648bcdd7834fdfd7f593a9ddb49d",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7504,7 +7504,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-19T17:45:27Z",
+  "generated_at": "2026-10-19T18:17:46Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

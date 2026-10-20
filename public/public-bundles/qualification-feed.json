@@ -2,11 +2,11 @@
  "schema": "model-dyno.qualification-feed.v2",
  "artifact_type": "official-qualification-defaults",
  "generated_by": "build-qualification-feed.py@1",
- "generated_at": "2026-10-20T02:53:08.000Z",
+ "generated_at": "2026-10-20T04:08:01.000Z",
  "feed_url": "https://cookys.github.io/model-dyno/public-bundles/qualification-feed.json",
  "owner": "cookys",
  "exam": "34t-559c010f",
- "digest": "4855fd8cdd1b269acdcb51622654d65b0e523f68e2ff2de9eadbe4fbcf2502a1",
+ "digest": "df1a3a96d4910a0b99c73da21b2f4c0c2f98bf3931fbf96a99573d545c4e333b",
  "digest_basis": "sha256(canonical_json({defaults, strikes, priors})), priors' issued_at/expires_at/observed_at stripped first (those are wall-clock, not content). Producer-internal change detection only (ADR-0001: disclosure, not attestation) — not specified as a wire format, not meant to be independently recomputed from the JSON alone.",
  "disclosure_notice": "These rows record administrations run in the autopilot maintainer's environment, not yours. Every entry carries the full administration environment (engine/runner/CLI versions, transport harness, prompt_config_hash, effort, corpus_version, date) precisely because official environment != user environment. FAILED rows ship alongside QUALIFIED ones: a FAILED administration is routing information, not an embarrassment to hide.",
  "adr_0001_notice": "DISCLOSURE, NOT ATTESTATION. Nothing here is signed, hash-chained, or witnessed, and no field is tamper-evidence (ADR-0001). Adopting these defaults is an informed choice to reuse someone else's evidence; the only verification path is re-derivation — self-qualify in your own environment via the engine-qualify flow, which overrides a default on the same seat identity.",
@@ -60,7 +60,7 @@
    "other": 0
   },
   "implementer": {
-   "qualified": 24,
+   "qualified": 25,
    "failed": 6,
    "other": 0
   },
@@ -80,7 +80,7 @@
    "other": 0
   }
  },
- "n_defaults": 96,
+ "n_defaults": 97,
  "n_strikes": 1,
  "n_priors": 125,
  "defaults": [
@@ -1525,7 +1525,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/haiku-high/consult",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/haiku-high/consult",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -2251,7 +2251,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-high/consult",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-high/consult",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -2977,7 +2977,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-low/consult",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-low/consult",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -3703,7 +3703,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/sonnet-high/consult",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/sonnet-high/consult",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -4429,7 +4429,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/consult-high",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/consult-high",
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped"
    },
@@ -5166,7 +5166,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/consult-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/consult-low",
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped"
    },
@@ -5965,7 +5965,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/consult-gpt-6.1-sol-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/consult-gpt-6.1-sol-low",
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped"
    },
@@ -6773,7 +6773,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-kimi28-consult",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-kimi28-consult",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -8047,7 +8047,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/haiku-high/discuss-v4",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/haiku-high/discuss-v4",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -8704,7 +8704,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-high/discuss-v4",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-high/discuss-v4",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -9361,7 +9361,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-low/discuss-v4",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-low/discuss-v4",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -10018,7 +10018,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/sonnet-high/discuss-v4",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/sonnet-high/discuss-v4",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -10675,7 +10675,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/discuss-high",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/discuss-high",
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped"
    },
@@ -11343,7 +11343,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/discuss-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/discuss-low",
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped"
    },
@@ -12075,7 +12075,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-kimi-discuss",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-kimi-discuss",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -12796,7 +12796,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-kimi28-discuss",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-kimi28-discuss",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -13081,7 +13081,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/glm-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/glm-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -13366,11 +13366,328 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/minimax-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/minimax-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
    "board": null
+  },
+  {
+   "row": {
+    "capability_score": 1,
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "cost": {
+     "sample_tokens": 0,
+     "source": "unknown",
+     "usd_per_mtok_input": null,
+     "usd_per_mtok_output": null
+    },
+    "date": "2026-10-19",
+    "effort": "high",
+    "endpoint": {
+     "base_url": "https://api.minimax.io/anthropic",
+     "name": "minimax",
+     "transport_security": "tls"
+    },
+    "engine": "MiniMax-M3.1-Flash",
+    "evidence": {
+     "evidence_hash": "0558d65636454f79a6c40db68ceedc2afaf9a9cb0fd546b1e8b75d0b058596ac",
+     "evidence_id": "0558d65636454f79a6c40db68ceedc2afaf9a9cb0fd546b1e8b75d0b058596ac",
+     "expires_at": "2027-01-17T20:01:54.179Z",
+     "grant_identity_hash": "0216ea5beea6aad5ed20e6b1749c72b4eefa18a76c2bda24316589c01a09a4df",
+     "identity": {
+      "containment_fingerprint": "2c1042fc7187841565fa4c9fafa2f25fa7efda49f0ed911cd0363300e21738fd",
+      "effort": "high",
+      "family": "minimax",
+      "harness_version": "dispatch-hetero:7481ead3",
+      "identity": "MiniMax-M3.1-Flash",
+      "identity_resolved": true,
+      "model_alias": "MiniMax-M3.1-Flash",
+      "model_version": "MiniMax-M3.1-Flash",
+      "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+      "runner": "cc-shim",
+      "runner_version": "2.1.303-Claude-Code",
+      "semantic_fingerprint": "d8af529058764fa0276f57633d26eb8a7e61089b441982a7cf29ed3913029d0a"
+     },
+     "identity_hash": "0216ea5beea6aad5ed20e6b1749c72b4eefa18a76c2bda24316589c01a09a4df",
+     "issued_at": "2026-10-19T20:01:54.179Z",
+     "methodology": {
+      "basis": null,
+      "corpus_manifest_hash": "d8af529058764fa0276f57633d26eb8a7e61089b441982a7cf29ed3913029d0a",
+      "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+      "kind": "impl_dispatch",
+      "name": "impl-live-rail",
+      "thresholds": {
+       "max_contract_violations": 0,
+       "max_fabricated_changes": 0,
+       "max_integrity_violations": 0,
+       "max_oracle_misses": 0,
+       "min_trials": 2
+      },
+      "version": "1.0.0"
+     },
+     "observed_at": "2026-10-19T20:01:54.179Z",
+     "revocation": null,
+     "role": "implementer",
+     "schema_version": 1,
+     "scope": {
+      "domains": [
+       "repository"
+      ],
+      "languages": [
+       "en"
+      ],
+      "task_classes": [
+       "bounded_implementation"
+      ],
+      "tool_surface": [
+       "git_commit"
+      ]
+     },
+     "scope_hash": "8eb3a1186d3883ba2c03cd9e312dfde38c496de6f3aad8f06a7a9f20f1dc7222",
+     "source": "internal_eval",
+     "source_ref": "engine-qualify:implementer-v1",
+     "state": "qualified",
+     "supersedes": null,
+     "trial_set_hash": "699b07d2e5dd7e9e266b872d465292c3253a83b475ad501a1936b8f4648fafe2",
+     "trials": [
+      {
+       "cases_passed": 12,
+       "cases_total": 12,
+       "contract_violations": 0,
+       "corpus_manifest_hash": "d8af529058764fa0276f57633d26eb8a7e61089b441982a7cf29ed3913029d0a",
+       "dispatch_ledger_hash": "89024f77b4bfa6c16d23948e0e3b212dad2141acf0f7fe19684a5ab2742e3bbc",
+       "fabricated_changes": 0,
+       "family_lines_hash": "2cf80a4356c8a5164304cb9045956fe5ea1958e30ee42ea09f8c23dd37b2cea3",
+       "integrity_violations": 0,
+       "observed_at": "2026-10-19T20:01:54.179Z",
+       "oracle_misses": 0,
+       "trial_id": "trial-1"
+      },
+      {
+       "cases_passed": 12,
+       "cases_total": 12,
+       "contract_violations": 0,
+       "corpus_manifest_hash": "d8af529058764fa0276f57633d26eb8a7e61089b441982a7cf29ed3913029d0a",
+       "dispatch_ledger_hash": "eab0745f4b4530d9b3c303638146fbf51698139edeb5704aba8866648925984e",
+       "fabricated_changes": 0,
+       "family_lines_hash": "2cf80a4356c8a5164304cb9045956fe5ea1958e30ee42ea09f8c23dd37b2cea3",
+       "integrity_violations": 0,
+       "observed_at": "2026-10-19T20:01:54.179Z",
+       "oracle_misses": 0,
+       "trial_id": "trial-2"
+      }
+     ]
+    },
+    "evidence_store": {
+     "event_id": 494,
+     "producer": "engine-qualify-v2",
+     "transcript_hash": "c7e6ebb421d91b40f1610827346d85a47a8532705a9f7287caaf29ba07d2388b"
+    },
+    "expires": "2027-01-17",
+    "family": "minimax",
+    "harness_version": "dispatch-hetero:7481ead3",
+    "latency": {
+     "sample_wall_time_s": 646
+    },
+    "model": "MiniMax-M3.1-Flash",
+    "model_version": "MiniMax-M3.1-Flash",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "qualified_at": "2026-10-19",
+    "quality": {
+     "contract_violations": 0,
+     "corpus_pass": "24/24",
+     "fabricated_changes": 0,
+     "false_pass_critical": 0,
+     "integrity_violations": 0,
+     "oracle_misses": 0,
+     "repeated_trials": 2
+    },
+    "role": "implementer",
+    "runner": "cc-shim",
+    "runner_version": "2.1.303-Claude-Code",
+    "status": "qualified",
+    "usage": {
+     "cases_complete": true,
+     "io_split_complete": false,
+     "med_wall_s": 22.664,
+     "n_cases": 24,
+     "n_cases_expected": 24,
+     "n_cases_missing_tokens": 24,
+     "n_solved": 24,
+     "schema_version": 1,
+     "solved_per_hour": 134.9429,
+     "tok_per_solved": null,
+     "total_tokens": null,
+     "total_wall_s": 640.271,
+     "usage_complete": false,
+     "usd_per_solved": null
+    },
+    "version_source": "operator-asserted"
+   },
+   "administration": {
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "date": "2026-10-19",
+    "effort": "high",
+    "engine": "MiniMax-M3.1-Flash",
+    "expires": "2027-01-17",
+    "family": "minimax",
+    "harness_version": "dispatch-hetero:7481ead3",
+    "model": "MiniMax-M3.1-Flash",
+    "model_version": "MiniMax-M3.1-Flash",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "qualified_at": "2026-10-19",
+    "runner": "cc-shim",
+    "runner_version": "2.1.303-Claude-Code",
+    "version_source": "operator-asserted"
+   },
+   "seat": {
+    "effort": "high",
+    "engine": "MiniMax-M3.1-Flash",
+    "role": "implementer",
+    "runner": "cc-shim"
+   },
+   "seat_hash": "cf92923c92aca6d27f3cc6767870391970359348c44d418d44aecfce56b59fe8",
+   "status": "qualified",
+   "evidence_pointers": {
+    "evidence_bundle": "docs/plans/evidence/2026-10-20-minimax-m31-flash-ga-qualify/implementer/MiniMax-M3.1-Flash-qualify",
+    "evidence_id": "0558d65636454f79a6c40db68ceedc2afaf9a9cb0fd546b1e8b75d0b058596ac",
+    "evidence_store": {
+     "event_id": 494,
+     "producer": "engine-qualify-v2",
+     "transcript_hash": "c7e6ebb421d91b40f1610827346d85a47a8532705a9f7287caaf29ba07d2388b"
+    },
+    "official_event_id": 331
+   },
+   "capability_evidence": {
+    "event_id": 494,
+    "evidence": {
+     "evidence_hash": "0558d65636454f79a6c40db68ceedc2afaf9a9cb0fd546b1e8b75d0b058596ac",
+     "evidence_id": "0558d65636454f79a6c40db68ceedc2afaf9a9cb0fd546b1e8b75d0b058596ac",
+     "expires_at": "2027-01-17T20:01:54.179Z",
+     "grant_identity_hash": "0216ea5beea6aad5ed20e6b1749c72b4eefa18a76c2bda24316589c01a09a4df",
+     "identity": {
+      "containment_fingerprint": "2c1042fc7187841565fa4c9fafa2f25fa7efda49f0ed911cd0363300e21738fd",
+      "effort": "high",
+      "family": "minimax",
+      "harness_version": "dispatch-hetero:7481ead3",
+      "identity": "MiniMax-M3.1-Flash",
+      "identity_resolved": true,
+      "model_alias": "MiniMax-M3.1-Flash",
+      "model_version": "MiniMax-M3.1-Flash",
+      "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+      "runner": "cc-shim",
+      "runner_version": "2.1.303-Claude-Code",
+      "semantic_fingerprint": "d8af529058764fa0276f57633d26eb8a7e61089b441982a7cf29ed3913029d0a"
+     },
+     "identity_hash": "0216ea5beea6aad5ed20e6b1749c72b4eefa18a76c2bda24316589c01a09a4df",
+     "issued_at": "2026-10-19T20:01:54.179Z",
+     "methodology": {
+      "basis": null,
+      "corpus_manifest_hash": "d8af529058764fa0276f57633d26eb8a7e61089b441982a7cf29ed3913029d0a",
+      "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+      "kind": "impl_dispatch",
+      "name": "impl-live-rail",
+      "thresholds": {
+       "max_contract_violations": 0,
+       "max_fabricated_changes": 0,
+       "max_integrity_violations": 0,
+       "max_oracle_misses": 0,
+       "min_trials": 2
+      },
+      "version": "1.0.0"
+     },
+     "observed_at": "2026-10-19T20:01:54.179Z",
+     "revocation": null,
+     "role": "implementer",
+     "schema_version": 1,
+     "scope": {
+      "domains": [
+       "repository"
+      ],
+      "languages": [
+       "en"
+      ],
+      "task_classes": [
+       "bounded_implementation"
+      ],
+      "tool_surface": [
+       "git_commit"
+      ]
+     },
+     "scope_hash": "8eb3a1186d3883ba2c03cd9e312dfde38c496de6f3aad8f06a7a9f20f1dc7222",
+     "source": "internal_eval",
+     "source_ref": "engine-qualify:implementer-v1",
+     "state": "qualified",
+     "supersedes": null,
+     "trial_set_hash": "699b07d2e5dd7e9e266b872d465292c3253a83b475ad501a1936b8f4648fafe2",
+     "trials": [
+      {
+       "cases_passed": 12,
+       "cases_total": 12,
+       "contract_violations": 0,
+       "corpus_manifest_hash": "d8af529058764fa0276f57633d26eb8a7e61089b441982a7cf29ed3913029d0a",
+       "dispatch_ledger_hash": "89024f77b4bfa6c16d23948e0e3b212dad2141acf0f7fe19684a5ab2742e3bbc",
+       "fabricated_changes": 0,
+       "family_lines_hash": "2cf80a4356c8a5164304cb9045956fe5ea1958e30ee42ea09f8c23dd37b2cea3",
+       "integrity_violations": 0,
+       "observed_at": "2026-10-19T20:01:54.179Z",
+       "oracle_misses": 0,
+       "trial_id": "trial-1"
+      },
+      {
+       "cases_passed": 12,
+       "cases_total": 12,
+       "contract_violations": 0,
+       "corpus_manifest_hash": "d8af529058764fa0276f57633d26eb8a7e61089b441982a7cf29ed3913029d0a",
+       "dispatch_ledger_hash": "eab0745f4b4530d9b3c303638146fbf51698139edeb5704aba8866648925984e",
+       "fabricated_changes": 0,
+       "family_lines_hash": "2cf80a4356c8a5164304cb9045956fe5ea1958e30ee42ea09f8c23dd37b2cea3",
+       "integrity_violations": 0,
+       "observed_at": "2026-10-19T20:01:54.179Z",
+       "oracle_misses": 0,
+       "trial_id": "trial-2"
+      }
+     ]
+    },
+    "producer": "engine-qualify-v2",
+    "transcript_hash": "c7e6ebb421d91b40f1610827346d85a47a8532705a9f7287caaf29ba07d2388b"
+   },
+   "role": "implementer",
+   "quality": {
+    "contract_violations": 0,
+    "corpus_pass": "24/24",
+    "fabricated_changes": 0,
+    "false_pass_critical": 0,
+    "integrity_violations": 0,
+    "oracle_misses": 0,
+    "repeated_trials": 2
+   },
+   "capability_score": 1,
+   "default_id": "feed:cookys:implementer:MiniMax-M3.1-Flash:cc-shim:high:0558d656",
+   "feed": {
+    "owner": "cookys",
+    "origin_host": "cookys-7840hs",
+    "record_id": "0558d65636454f79a6c40db68ceedc2afaf9a9cb0fd546b1e8b75d0b058596ac",
+    "record_id_basis": "evidence_id",
+    "source_kind": "autopilot-official-defaults",
+    "legacy": false,
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-20-minimax-m31-flash-ga-qualify/implementer/MiniMax-M3.1-Flash-qualify",
+    "board_cell": "minimax/m3.1-flash-direct",
+    "board_join": "mapped"
+   },
+   "board": {
+    "cell": "minimax/m3.1-flash-direct",
+    "exam": "34t-559c010f",
+    "passed": 28,
+    "n": 34,
+    "ci_lo_permille": 665,
+    "ci_hi_permille": 917,
+    "agency_verdict": "CLEAN",
+    "comparable": true,
+    "med_wall_s": 203,
+    "latest_run_date": "2026-10-19"
+   }
   },
   {
    "row": {
@@ -13672,7 +13989,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-20-cc-shim-effort-resit/implementer/MiniMax-M3.1-Flash-Preview-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-20-cc-shim-effort-resit/implementer/MiniMax-M3.1-Flash-Preview-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -13957,7 +14274,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/qoder-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/qoder-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -14248,7 +14565,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/implementer/claude-haiku-5-5-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/implementer/claude-haiku-5-5-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -14549,7 +14866,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-20-cc-shim-effort-resit/implementer/claude-haiku-5-5-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-20-cc-shim-effort-resit/implementer/claude-haiku-5-5-qualify",
     "board_cell": "anthropic/haiku-5.5-high",
     "board_join": "mapped"
    },
@@ -14845,7 +15162,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/opus5-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/opus5-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -15136,7 +15453,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/implementer/claude-opus-5-5-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/implementer/claude-opus-5-5-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -15437,7 +15754,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-20-cc-shim-effort-resit/implementer/claude-opus-5-5-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-20-cc-shim-effort-resit/implementer/claude-opus-5-5-qualify",
     "board_cell": "anthropic/opus-5.5-high",
     "board_join": "mapped"
    },
@@ -15733,7 +16050,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/sonnet5-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/sonnet5-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -16024,7 +16341,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/implementer/claude-sonnet-5-5-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/implementer/claude-sonnet-5-5-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -16325,7 +16642,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-20-cc-shim-effort-resit/implementer/claude-sonnet-5-5-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-20-cc-shim-effort-resit/implementer/claude-sonnet-5-5-qualify",
     "board_cell": "anthropic/sonnet-5.5-high",
     "board_join": "mapped"
    },
@@ -16621,7 +16938,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/agy-pro-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/agy-pro-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -16906,7 +17223,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/agy-flash-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/agy-flash-qualify",
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped"
    },
@@ -17202,7 +17519,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/flash-medium-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/flash-medium-qualify",
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped"
    },
@@ -17498,7 +17815,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/argon-high-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/argon-high-qualify",
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped"
    },
@@ -17794,7 +18111,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/argon-low-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/argon-low-qualify",
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped"
    },
@@ -18185,7 +18502,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/codex-spark-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/codex-spark-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -18470,7 +18787,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/luna-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/luna-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -18755,7 +19072,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/sol-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/sol-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -19054,7 +19371,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/impl-luna-low/gpt-6-luna-low-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/impl-luna-low/gpt-6-luna-low-qualify",
     "board_cell": "openai/codex-gpt6-luna-low",
     "board_join": "mapped"
    },
@@ -19364,7 +19681,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/impl-luna-medium/gpt-6-luna-medium-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/impl-luna-medium/gpt-6-luna-medium-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -19663,7 +19980,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/impl-sol61-high/gpt-6.1-sol-high-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/impl-sol61-high/gpt-6.1-sol-high-qualify",
     "board_cell": "openai/codex-gpt6.1-sol-high",
     "board_join": "mapped"
    },
@@ -19959,7 +20276,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-01-gpt6-low-sweep/implementer/gpt-6.1-sol-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-01-gpt6-low-sweep/implementer/gpt-6.1-sol-qualify",
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped"
    },
@@ -20350,7 +20667,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/grok-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/grok-qualify",
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped"
    },
@@ -20646,7 +20963,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-22-implementer-qualification-suite/grok46-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-22-implementer-qualification-suite/grok46-qualify",
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped"
    },
@@ -21238,7 +21555,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-01-grok-4.7-low-seats/implementer/grok-4.7-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-01-grok-4.7-low-seats/implementer/grok-4.7-qualify",
     "board_cell": "grok/grok-4.7-low",
     "board_join": "mapped"
    },
@@ -22093,7 +22410,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-17-roster-qualification/glm-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-17-roster-qualification/glm-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -22426,7 +22743,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-17-roster-qualification/glm-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-17-roster-qualification/glm-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -22765,7 +23082,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-17-roster-qualification/glm53-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-17-roster-qualification/glm53-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -23112,7 +23429,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-glm_high",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-glm_high",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -23459,7 +23776,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-glm_low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-glm_low",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -24993,7 +25310,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-qwen-reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-qwen-reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -25414,7 +25731,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-haiku-high/reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-haiku-high/reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -25747,7 +26064,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-haiku-low/reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-haiku-low/reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -26165,7 +26482,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-opus-high/reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-opus-high/reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -26498,7 +26815,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-opus-low/reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-opus-low/reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -26831,7 +27148,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-sonnet-high/reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-sonnet-high/reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -27164,7 +27481,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-sonnet-low/reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-claude-sonnet-low/reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -27511,7 +27828,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-argon-reviewer-high",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-argon-reviewer-high",
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped"
    },
@@ -27869,7 +28186,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-argon-reviewer-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-argon-reviewer-low",
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped"
    },
@@ -28487,7 +28804,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-5.6-sol-max",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-5.6-sol-max",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -28820,7 +29137,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-17-roster-qualification/sol-codex-qualify",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-17-roster-qualification/sol-codex-qualify",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -29237,7 +29554,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-6-astra-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-6-astra-low",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -29570,7 +29887,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-6-luna-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-6-luna-low",
     "board_cell": "openai/codex-gpt6-luna-low",
     "board_join": "mapped"
    },
@@ -29914,7 +30231,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-6-sol-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-6-sol-low",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -30247,7 +30564,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-6.1-sol-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-gpt-6.1-sol-low",
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped"
    },
@@ -30605,7 +30922,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-grok-4.7-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-grok-4.7-low",
     "board_cell": "grok/grok-4.7-low",
     "board_join": "mapped"
    },
@@ -30972,7 +31289,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-kimi-k3-high",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-kimi-k3-high",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -31328,7 +31645,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-kimi-k28-high",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/rv6-kimi-k28-high",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -31661,7 +31978,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-muse-high-reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-muse-high-reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -31994,7 +32311,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-muse-low-reviewer",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-muse-low-reviewer",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -32293,7 +32610,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-18-verification-author-suite/dogfood",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-18-verification-author-suite/dogfood",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -32586,7 +32903,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-08-18-verification-author-suite/dogfood",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-08-18-verification-author-suite/dogfood",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -33178,7 +33495,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/haiku-high/verification_author",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/haiku-high/verification_author",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -33471,7 +33788,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-high/verification_author",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-high/verification_author",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -33764,7 +34081,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-low/verification_author",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/opus-low/verification_author",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -34057,7 +34374,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/sonnet-high/verification_author",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-12-claude-5.5-requalify/broker/sonnet-high/verification_author",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -34350,7 +34667,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/verification_author-high",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/verification_author-high",
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped"
    },
@@ -34654,7 +34971,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/verification_author-low",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-gemini-4-argon-qualify/out/verification_author-low",
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped"
    },
@@ -35042,7 +35359,7 @@
     "record_id_basis": "evidence_id",
     "source_kind": "autopilot-official-defaults",
     "legacy": false,
-    "evidence_url": "https://github.com/cookys/autopilot/blob/ef7fd822d1fbe245f6a128afb20beda4a9369c9e/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-muse-high-verification_author",
+    "evidence_url": "https://github.com/cookys/autopilot/blob/79273896e33e8294c3990ab0b5c7a0cfc76a59ef/docs/plans/evidence/2026-10-14-reviewer-requalify-minimax-glm-qwen/out/m-muse-high-verification_author",
     "board_cell": null,
     "board_join": "unmapped"
    },
@@ -35108,9 +35425,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35176,9 +35493,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35244,9 +35561,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35312,9 +35629,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-06T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35380,9 +35697,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35448,9 +35765,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35516,9 +35833,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35584,9 +35901,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35652,9 +35969,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35720,9 +36037,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35788,9 +36105,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35856,9 +36173,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35924,9 +36241,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -35992,9 +36309,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36060,9 +36377,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36128,9 +36445,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36196,9 +36513,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36264,9 +36581,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36332,9 +36649,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36400,9 +36717,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36468,9 +36785,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36536,9 +36853,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36604,9 +36921,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36672,9 +36989,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-19T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36740,9 +37057,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36808,9 +37125,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-29T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36876,9 +37193,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -36944,9 +37261,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-19T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37012,9 +37329,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-24T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37080,9 +37397,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37148,9 +37465,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37216,9 +37533,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37284,9 +37601,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37352,9 +37669,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-07T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37420,9 +37737,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-08T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37488,9 +37805,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37556,9 +37873,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37624,9 +37941,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37692,9 +38009,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-24T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37760,9 +38077,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-22T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37828,9 +38145,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37896,9 +38213,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -37964,9 +38281,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38032,9 +38349,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38100,9 +38417,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-11T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38168,9 +38485,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38236,9 +38553,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38304,9 +38621,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38372,9 +38689,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38440,9 +38757,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38508,9 +38825,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38576,9 +38893,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-07T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38644,9 +38961,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38712,9 +39029,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-31T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38780,9 +39097,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38848,9 +39165,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38916,9 +39233,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-22T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -38984,9 +39301,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39039,11 +39356,11 @@
     ]
    },
    "identity": {
-    "identity": "minimax-m3.1-flash",
+    "identity": "MiniMax-M3.1-Flash",
     "model_alias": "minimax/m3.1-flash-direct",
     "model_version": "unresolved",
     "family": "minimax",
-    "runner": "direct-api",
+    "runner": "cc-shim",
     "runner_version": "unresolved",
     "harness_version": "unresolved",
     "effort": "high",
@@ -39052,9 +39369,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-19T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39120,9 +39437,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39188,9 +39505,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39256,9 +39573,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39324,9 +39641,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39392,9 +39709,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39460,9 +39777,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-06T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39528,9 +39845,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39596,9 +39913,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39664,9 +39981,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39732,9 +40049,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39800,9 +40117,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39868,9 +40185,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -39936,9 +40253,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-21T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40004,9 +40321,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-21T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40072,9 +40389,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40140,9 +40457,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40208,9 +40525,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40276,9 +40593,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40344,9 +40661,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40412,9 +40729,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40480,9 +40797,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40548,9 +40865,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40616,9 +40933,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40684,9 +41001,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-23T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40752,9 +41069,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-20T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40820,9 +41137,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40888,9 +41205,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -40956,9 +41273,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41024,9 +41341,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-07T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41092,9 +41409,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41160,9 +41477,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41228,9 +41545,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-19T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41296,9 +41613,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41364,9 +41681,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-07T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41432,9 +41749,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-29T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41500,9 +41817,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41568,9 +41885,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-30T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41636,9 +41953,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41704,9 +42021,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41772,9 +42089,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-19T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41840,9 +42157,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-06T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41908,9 +42225,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -41976,9 +42293,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42044,9 +42361,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-03T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42112,9 +42429,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42180,9 +42497,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-13T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42248,9 +42565,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42316,9 +42633,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-02T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42384,9 +42701,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42452,9 +42769,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42520,9 +42837,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-08-31T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42588,9 +42905,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-11T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42656,9 +42973,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-28T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42724,9 +43041,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42792,9 +43109,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42860,9 +43177,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42928,9 +43245,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -42996,9 +43313,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43064,9 +43381,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-05T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43132,9 +43449,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43200,9 +43517,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43268,9 +43585,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43336,9 +43653,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43404,9 +43721,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-07T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43472,9 +43789,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-09-04T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43540,9 +43857,9 @@
     "containment_fingerprint": "dcd72f056539377755f5e7f65a7edb7a461f577a04eb9bfd84211052d6fb7b3e",
     "identity_resolved": false
    },
-   "issued_at": "2026-10-20T02:53:08.000Z",
+   "issued_at": "2026-10-20T04:08:01.000Z",
    "observed_at": "2026-10-07T00:00:00.000Z",
-   "expires_at": "2026-11-19T02:53:08.000Z",
+   "expires_at": "2026-11-19T04:08:01.000Z",
    "methodology": {
     "kind": "external_prior",
     "name": "model-dyno-canonical-exam-prior",
@@ -43575,8 +43892,63 @@
    "supersedes": null
   }
  ],
- "source_revision": "7f73f295683bf15c6d8b18adb5af44687810f3eb",
+ "source_revision": "037ea02f308f0c1ad142d0a1584d768cb844fdaa",
  "seat_metrics": [
+  {
+   "entry_id": "d9b5017598b6babf4c49917c68b8f7ac468b9d4f806f4fc58b7b12bee9fbb18a",
+   "kind": "benchmark_observation",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash",
+    "model": "MiniMax-M3.1-Flash",
+    "model_version": "MiniMax-M3.1-Flash",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "swe-canonical",
+   "instrument_version": "34t-559c010f",
+   "window_end": "2026-10-19T00:00:00Z",
+   "benchmark": {
+    "population": "latest_per_task",
+    "n_tasks": 34,
+    "n_trials": 1,
+    "n_attempts": null,
+    "n_pass": 28,
+    "n_timeout": null,
+    "pass_rate_permille": 824,
+    "ci_method": "wilson",
+    "ci_level_permille": 950,
+    "ci_low_permille": 665,
+    "ci_high_permille": 917
+   },
+   "speed": {
+    "solved_per_hour_milli": 11308,
+    "wall_s_total": 8914,
+    "tasks_per_hour_milli": null,
+    "median_wall_ms": 202990,
+    "concurrency": 1,
+    "speed_basis": "2026-10-19T00:00:00Z..2026-10-19T00:00:00Z"
+   },
+   "cost": {
+    "usd_per_solved_micro": 79268,
+    "usd_per_task_micro": 65280,
+    "cost_total_micro": 2219511,
+    "cost_coverage_permille": 1000,
+    "cost_basis": "estimated",
+    "pricing_version": "model-economics@2026-10-19"
+   },
+   "sampling": {
+    "window_start": "2026-10-19T00:00:00Z",
+    "low_n": true
+   },
+   "join": {
+    "board_cell": "minimax/m3.1-flash-direct",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.4"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/minimax-m3.1-flash"
+  },
   {
    "entry_id": "2945dec00f6509667523964ba216654e981fd5349c1d72f064d2ad4e48dd8b23",
    "kind": "benchmark_observation",
@@ -43627,7 +43999,7 @@
    "join": {
     "board_cell": "anthropic/haiku-5.5-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/haiku-5.5-high"
@@ -43682,7 +44054,7 @@
    "join": {
     "board_cell": "anthropic/opus-5.5-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/opus-5.5-high"
@@ -43723,9 +44095,9 @@
     "speed_basis": "2026-10-03T00:00:00Z..2026-10-03T00:00:00Z"
    },
    "cost": {
-    "usd_per_solved_micro": 173943,
-    "usd_per_task_micro": 138131,
-    "cost_total_micro": 4696470,
+    "usd_per_solved_micro": 203826,
+    "usd_per_task_micro": 161862,
+    "cost_total_micro": 5503315,
     "cost_coverage_permille": 1000,
     "cost_basis": "estimated",
     "pricing_version": "model-economics@2026-10-03"
@@ -43737,7 +44109,7 @@
    "join": {
     "board_cell": "anthropic/sonnet-5.5-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/sonnet-5.5-high"
@@ -43792,7 +44164,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-3.7-flash-high"
@@ -43847,7 +44219,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-3.7-flash-medium"
@@ -43902,7 +44274,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-4-argon-high"
@@ -43957,7 +44329,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/agy-gemini-4-argon-low"
@@ -44012,7 +44384,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.3-spark"
@@ -44067,7 +44439,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.3-spark"
@@ -44122,7 +44494,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex"
@@ -44177,7 +44549,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex"
@@ -44232,7 +44604,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.6-sol"
@@ -44287,7 +44659,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt5.6-sol"
@@ -44342,7 +44714,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6-luna-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6-luna-low"
@@ -44397,7 +44769,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6.1-sol-high"
@@ -44452,7 +44824,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/codex-gpt6.1-sol-low"
@@ -44507,7 +44879,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -44562,7 +44934,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -44617,7 +44989,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.5"
@@ -44672,7 +45044,7 @@
    "join": {
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.6"
@@ -44727,7 +45099,7 @@
    "join": {
     "board_cell": "grok/grok-4.6-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.6-low"
@@ -44782,7 +45154,7 @@
    "join": {
     "board_cell": "grok/grok-4.7-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/swe-personal/cookys/survey-p4c-w1-20260517-185543/grok-4.7-low"
@@ -44814,7 +45186,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__76fc1f88.json"
@@ -44846,7 +45218,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__claude-haiku-5-5__claude-native__high__2026-10-12__370f1110.json"
@@ -44878,7 +45250,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__claude-opus-5-5__claude-native__high__2026-10-12__d4667f58.json"
@@ -44910,7 +45282,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__claude-opus-5-5__claude-native__low__2026-10-12__32b3bec8.json"
@@ -44942,7 +45314,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__claude-sonnet-5-5__claude-native__high__2026-10-12__35bbfdde.json"
@@ -44974,7 +45346,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__gemini-4-argon-high__agy__high__2026-10-13__04d16fc8.json"
@@ -45006,7 +45378,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__gemini-4-argon-low__agy__low__2026-10-13__0ecc75a1.json"
@@ -45038,7 +45410,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__gpt-6.1-sol__codex__low__2026-10-14__7cb6864e.json"
@@ -45070,7 +45442,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/consult__kimi-k2.8-preview__kimi__high__2026-10-16__79ba70a7.json"
@@ -45102,7 +45474,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__b6566bb7.json"
@@ -45134,7 +45506,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-haiku-5-5__claude-native__high__2026-10-12__20c55522.json"
@@ -45166,7 +45538,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-opus-5-5__claude-native__high__2026-10-12__2af80079.json"
@@ -45198,7 +45570,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-opus-5-5__claude-native__low__2026-10-12__c6a1c6c9.json"
@@ -45230,7 +45602,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__claude-sonnet-5-5__claude-native__high__2026-10-12__413804ac.json"
@@ -45262,7 +45634,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__gemini-4-argon-high__agy__high__2026-10-13__fe104423.json"
@@ -45294,7 +45666,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__gemini-4-argon-low__agy__low__2026-10-13__78cf45a6.json"
@@ -45326,7 +45698,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__kimi-code-k3__kimi__high__2026-10-16__f1dbfc22.json"
@@ -45358,7 +45730,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/discuss__kimi-k2.8-preview__kimi__high__2026-10-16__a5a96148.json"
@@ -45390,7 +45762,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__GLM-5.3__cc-shim__high__2026-08-21__a228313b.json"
@@ -45422,10 +45794,42 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3__cc-shim__high__2026-08-21__d8f3618b.json"
+  },
+  {
+   "entry_id": "31e77761674816ab2b109192edf337d9ec7a8148459a1edbf3fc0d34bdf4d611",
+   "kind": "qualification",
+   "seat": {
+    "engine": "MiniMax-M3.1-Flash",
+    "model": "MiniMax-M3.1-Flash",
+    "model_version": "MiniMax-M3.1-Flash",
+    "runner": "cc-shim",
+    "role": "implementer",
+    "effort": "high"
+   },
+   "instrument_id": "impl-live-rail",
+   "instrument_version": "1.0.0",
+   "window_end": "2026-10-19T00:00:00Z",
+   "qualification": {
+    "status": "qualified",
+    "corpus_version": "impl-live-rail-v1.impl-live-rail-v1",
+    "prompt_config_hash": "16b45e1a0ed185e494a602fd84e249f12fd6f86be0ab2b18ba3d5a6c64db7a5a",
+    "administered_at": "2026-10-19T00:00:00Z",
+    "record_id": "0558d65636454f79a6c40db68ceedc2afaf9a9cb0fd546b1e8b75d0b058596ac",
+    "record_id_basis": "evidence_id",
+    "supersedes": null,
+    "expires": "2027-01-17"
+   },
+   "join": {
+    "board_cell": "minimax/m3.1-flash-direct",
+    "board_join": "mapped",
+    "identity_map_version": "2026-10-20.4"
+   },
+   "origin_host_class": "cloud-api",
+   "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3.1-Flash__cc-shim__high__2026-10-19__0558d656.json"
   },
   {
    "entry_id": "def0b8e5350fb3011a0e467e481d7382a90d2c0ad1636ec1747d63be2dd9bba2",
@@ -45454,7 +45858,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__MiniMax-M3.1-Flash-Preview__cc-shim__high__2026-10-19__4eb84c22.json"
@@ -45486,7 +45890,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__Qwen3.8-Max__qoderclicn__high__2026-08-21__d8c6a7e1.json"
@@ -45518,7 +45922,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-haiku-5-5__cc-shim__default__2026-10-12__14ac9eff.json"
@@ -45550,7 +45954,7 @@
    "join": {
     "board_cell": "anthropic/haiku-5.5-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-haiku-5-5__cc-shim__high__2026-10-19__95bd8b22.json"
@@ -45582,7 +45986,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5__cc-shim__high__2026-08-22__ae0f6e79.json"
@@ -45614,7 +46018,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5-5__cc-shim__default__2026-10-12__204280d6.json"
@@ -45646,7 +46050,7 @@
    "join": {
     "board_cell": "anthropic/opus-5.5-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-opus-5-5__cc-shim__high__2026-10-19__eee65cef.json"
@@ -45678,7 +46082,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5__cc-shim__high__2026-08-22__b9e089c2.json"
@@ -45710,7 +46114,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5-5__cc-shim__default__2026-10-12__b5777647.json"
@@ -45742,7 +46146,7 @@
    "join": {
     "board_cell": "anthropic/sonnet-5.5-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__claude-sonnet-5-5__cc-shim__high__2026-10-19__a66d966c.json"
@@ -45774,7 +46178,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.1-pro-high__agy__high__2026-08-21__7aaded50.json"
@@ -45806,7 +46210,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.7-flash-high__agy__high__2026-08-21__138c1a0d.json"
@@ -45838,7 +46242,7 @@
    "join": {
     "board_cell": "agy/gemini-3.7-flash-medium",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-3.7-flash-medium__agy__high__2026-08-22__29c60613.json"
@@ -45870,7 +46274,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-4-argon-high__agy__high__2026-10-13__48d2ee3e.json"
@@ -45902,7 +46306,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gemini-4-argon-low__agy__low__2026-10-13__18fc437c.json"
@@ -45934,7 +46338,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.3-spark",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.3-codex-spark__codex__default__2026-07-16__a4aad437.json"
@@ -45966,7 +46370,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.3-codex-spark__codex__high__2026-08-21__12f41a25.json"
@@ -45998,7 +46402,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.6-luna__codex__medium__2026-08-22__dc4f6cce.json"
@@ -46030,7 +46434,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-5.6-sol__codex__high__2026-08-21__636c28a5.json"
@@ -46062,7 +46466,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6-luna-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6-luna__codex__low__2026-10-14__15770f44.json"
@@ -46094,7 +46498,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6-luna__codex__medium__2026-10-14__e190dc87.json"
@@ -46126,7 +46530,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6.1-sol__codex__high__2026-10-14__53d5f39d.json"
@@ -46158,7 +46562,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__gpt-6.1-sol__codex__low__2026-09-30__5f716c47.json"
@@ -46190,7 +46594,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.5__grok__default__2026-07-17__04e036f9.json"
@@ -46222,7 +46626,7 @@
    "join": {
     "board_cell": "grok/grok-4.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.5__grok__high__2026-08-21__e7a39b22.json"
@@ -46254,7 +46658,7 @@
    "join": {
     "board_cell": "grok/grok-4.6",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.6__grok__high__2026-08-21__17349528.json"
@@ -46286,7 +46690,7 @@
    "join": {
     "board_cell": "grok/grok-4.6-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.6__grok__low__2026-08-24__7635a64d.json"
@@ -46318,7 +46722,7 @@
    "join": {
     "board_cell": "grok/grok-4.7-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/implementer__grok-4.7__grok__low__2026-09-30__adf551c9.json"
@@ -46350,7 +46754,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/owner__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__942ce1d6.json"
@@ -46382,7 +46786,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.2__anthropic-compatible__default__2026-08-16__7ed7f008.json"
@@ -46414,7 +46818,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.2__anthropic-compatible__high__2026-08-16__f4b8bd37.json"
@@ -46446,7 +46850,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__default__2026-08-17__67deb04d.json"
@@ -46478,7 +46882,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__high__2026-10-14__99569ff0.json"
@@ -46510,7 +46914,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__GLM-5.3__anthropic-compatible__low__2026-10-14__79943d3e.json"
@@ -46542,7 +46946,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3__anthropic-compatible__default__2026-08-08__cf6a2d04.json"
@@ -46574,7 +46978,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3__cc-shim__default__2026-07-17__9425116d.json"
@@ -46606,7 +47010,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__f235aabd.json"
@@ -46638,7 +47042,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__high__2026-10-14__c45490f6.json"
@@ -46670,7 +47074,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__MiniMax-M3.1-Flash-Preview__anthropic-compatible__low__2026-10-14__82161dad.json"
@@ -46702,7 +47106,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__Qwen3.8-Max__qoderclicn__high__2026-10-14__45659312.json"
@@ -46734,7 +47138,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku__claude-native__default__2026-07-10__9a3d4a1e.json"
@@ -46766,7 +47170,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku-5-5__claude-native__high__2026-10-14__30270416.json"
@@ -46798,7 +47202,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-haiku-5-5__claude-native__low__2026-10-14__40bcaf3b.json"
@@ -46830,7 +47234,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus__claude-native__default__2026-07-14__56f93ef7.json"
@@ -46862,7 +47266,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus-5-5__claude-native__high__2026-10-14__a8d5d71f.json"
@@ -46894,7 +47298,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-opus-5-5__claude-native__low__2026-10-14__8f0fc282.json"
@@ -46926,7 +47330,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-sonnet-5-5__claude-native__high__2026-10-14__c0ffcc8b.json"
@@ -46958,7 +47362,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__claude-sonnet-5-5__claude-native__low__2026-10-14__ec9b0516.json"
@@ -46990,7 +47394,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gemini-4-argon-high__agy__high__2026-10-14__04eb884d.json"
@@ -47022,7 +47426,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gemini-4-argon-low__agy__low__2026-10-14__165b7744.json"
@@ -47054,7 +47458,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.5",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.5__codex__default__2026-06-30__487dcba0.json"
@@ -47086,7 +47490,7 @@
    "join": {
     "board_cell": "openai/codex-gpt5.6-sol",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__default__2026-07-13__c7faefd6.json"
@@ -47118,7 +47522,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__high__2026-07-13__19b97ced.json"
@@ -47150,7 +47554,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex__max__2026-10-14__8423500c.json"
@@ -47182,7 +47586,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol__codex-cli__max__2026-08-17__e3bc81fa.json"
@@ -47214,7 +47618,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-5.6-sol-high__codex__default__2026-07-13__b9bfdd21.json"
@@ -47246,7 +47650,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-astra__codex__low__2026-10-14__0dcae71c.json"
@@ -47278,7 +47682,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6-luna-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-luna__codex__low__2026-10-14__09ffdda8.json"
@@ -47310,7 +47714,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6-sol__codex__low__2026-10-14__0fa02d55.json"
@@ -47342,7 +47746,7 @@
    "join": {
     "board_cell": "openai/codex-gpt6.1-sol-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__gpt-6.1-sol__codex__low__2026-10-14__dc601c03.json"
@@ -47374,7 +47778,7 @@
    "join": {
     "board_cell": "grok/grok-4.7-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__grok-4.7__grok__low__2026-10-15__c8b45be9.json"
@@ -47406,7 +47810,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__kimi-code-k3__kimi__high__2026-10-16__7c65c94e.json"
@@ -47438,7 +47842,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__kimi-k2.8-preview__kimi__high__2026-10-16__c81cde64.json"
@@ -47470,7 +47874,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__muse-spark-1.3-contributor__anthropic-compatible__high__2026-10-14__908fb0a5.json"
@@ -47502,7 +47906,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/reviewer__muse-spark-1.3-contributor__anthropic-compatible__low__2026-10-14__be579bae.json"
@@ -47534,7 +47938,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__GLM-5.3__anthropic-compatible__default__2026-08-17__0f69c5e5.json"
@@ -47566,7 +47970,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__GLM-5.3__anthropic-compatible__high__2026-08-17__c0751003.json"
@@ -47598,7 +48002,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__MiniMax-M3.1-Flash-Preview__anthropic-compatible__default__2026-10-14__d243be93.json"
@@ -47630,7 +48034,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-haiku-5-5__claude-native__high__2026-10-12__6c7526ef.json"
@@ -47662,7 +48066,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-opus-5-5__claude-native__high__2026-10-12__d9990549.json"
@@ -47694,7 +48098,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-opus-5-5__claude-native__low__2026-10-12__3c37578b.json"
@@ -47726,7 +48130,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__claude-sonnet-5-5__claude-native__high__2026-10-12__de4a4fdd.json"
@@ -47758,7 +48162,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-high",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__gemini-4-argon-high__agy__high__2026-10-13__ca2c463d.json"
@@ -47790,7 +48194,7 @@
    "join": {
     "board_cell": "agy/gemini-4-argon-low",
     "board_join": "mapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__gemini-4-argon-low__agy__low__2026-10-13__51264701.json"
@@ -47822,7 +48226,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__glm-5.2__anthropic-compatible__default__2026-06-30__bfe8f949.json"
@@ -47854,7 +48258,7 @@
    "join": {
     "board_cell": null,
     "board_join": "unmapped",
-    "identity_map_version": "2026-10-20.3"
+    "identity_map_version": "2026-10-20.4"
    },
    "origin_host_class": "cloud-api",
    "evidence_ref": "benchmarks/qualification/cookys/verification_author__muse-spark-1.3-contributor__anthropic-compatible__high__2026-10-14__8201622e.json"

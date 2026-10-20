@@ -1,9 +1,9 @@
 {
   "schema": "model-dyno.model-prices.v1",
-  "generated_at": "2026-10-19T10:15:45Z",
-  "content_digest": "sha256:7f0fb92bc7980a1527d3c0c01858dee55d4b536da5abb0a799be361df5a6dbb6",
+  "generated_at": "2026-10-20T04:08:44Z",
+  "content_digest": "sha256:050610eeedf036fb2c15c892cfe2c464b53b753878f1b1036544bc9cd1bbdf6e",
   "source_revision": {
-    "economics_blob": "c6d033e21433fd52415a4cb1031091f5fc867c3e",
+    "economics_blob": "2e01f581fe0715d1e5ab7ddd4fc96a4b1d7a8d96",
     "identity_map_version": "2026-10-19.1"
   },
   "stale_after_days": 45,
@@ -229,10 +229,10 @@
       "usd_per_mtok_input_micro": 2000000,
       "usd_per_mtok_output_micro": 6000000,
       "usd_per_mtok_cache_read_micro": 500000,
-      "effective": "2026-08-12",
-      "effective_basis": "assumed",
-      "verified": "2026-10-17",
-      "source_url": "https://docs.x.ai/developers/models"
+      "effective": "2026-08-13",
+      "effective_basis": "sourced",
+      "verified": "2026-10-20",
+      "source_url": "https://web.archive.org/web/20260813001411/https://docs.x.ai/developers/models/grok-4.6"
     },
     {
       "engine": "grok-4.7",

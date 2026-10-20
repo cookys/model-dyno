@@ -763,6 +763,12 @@
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-bc4c11beda51/",
       "billing": "metered",
+      "cache_write_pricing": {
+        "records_folded": 34,
+        "records_ttl": 0,
+        "tokens_folded": 1300957,
+        "tokens_ttl": 0
+      },
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -842,6 +848,12 @@
       "access_label": "Direct",
       "base_url": "./public-bundles/sonnet-5.5-low-d382b3643c66/",
       "billing": "metered",
+      "cache_write_pricing": {
+        "records_folded": 0,
+        "records_ttl": 34,
+        "tokens_folded": 0,
+        "tokens_ttl": 681883
+      },
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -1643,6 +1655,12 @@
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-4.6-99a87696a24a/",
       "billing": "metered",
+      "cache_write_pricing": {
+        "records_folded": 5,
+        "records_ttl": 29,
+        "tokens_folded": 376498,
+        "tokens_ttl": 1002552
+      },
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -2518,6 +2536,12 @@
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-5-062379822091/",
       "billing": "metered",
+      "cache_write_pricing": {
+        "records_folded": 34,
+        "records_ttl": 0,
+        "tokens_folded": 2141696,
+        "tokens_ttl": 0
+      },
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3370,6 +3394,12 @@
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-fable-5-0c09f65556f1/",
       "billing": "metered",
+      "cache_write_pricing": {
+        "records_folded": 34,
+        "records_ttl": 0,
+        "tokens_folded": 1700015,
+        "tokens_ttl": 0
+      },
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3399,6 +3429,12 @@
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-sonnet-5-f3dd5f77f91b/",
       "billing": "metered",
+      "cache_write_pricing": {
+        "records_folded": 34,
+        "records_ttl": 0,
+        "tokens_folded": 1624080,
+        "tokens_ttl": 0
+      },
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -3451,6 +3487,12 @@
       "access_label": "Direct",
       "base_url": "./public-bundles/sonnet-5.5-high-eea10ccad4f9/",
       "billing": "metered",
+      "cache_write_pricing": {
+        "records_folded": 0,
+        "records_ttl": 34,
+        "tokens_folded": 0,
+        "tokens_ttl": 942429
+      },
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -6111,6 +6153,12 @@
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-haiku-4.5-d22353591337/",
       "billing": "metered",
+      "cache_write_pricing": {
+        "records_folded": 4,
+        "records_ttl": 30,
+        "tokens_folded": 375710,
+        "tokens_ttl": 1033157
+      },
       "current": true,
       "gates": {
         "infra_pct": 0.0,
@@ -8020,7 +8068,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "6a2d28b67b505924b65aa3008118b080ef43d4a6120c765f6f29a47ef29c1b8f",
+  "content_digest": "2f0ad6588ae663efb98df9f24d60641fc0f265ae94ee90fc7d73d7f3a1a7a231",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -8055,7 +8103,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-20T07:33:45Z",
+  "generated_at": "2026-10-20T08:34:23Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

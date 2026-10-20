@@ -3,7 +3,7 @@
   "generated_at": "2026-10-20T04:08:44Z",
   "content_digest": "sha256:050610eeedf036fb2c15c892cfe2c464b53b753878f1b1036544bc9cd1bbdf6e",
   "source_revision": {
-    "economics_blob": "2e01f581fe0715d1e5ab7ddd4fc96a4b1d7a8d96",
+    "economics_blob": "ddbfddb4295d70844337156ab415ec129e3e93fb",
     "identity_map_version": "2026-10-19.1"
   },
   "stale_after_days": 45,

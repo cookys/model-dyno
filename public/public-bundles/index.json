@@ -667,7 +667,7 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-05-28 basis=sourced source=https://www.helpnetsecurity.com/2026/05/29/anthropic-claude-opus-4-8/",
+      "price_provenance": "model-economics.toml per-record pricing over 1 entries: effective=2026-05-28 basis=sourced source=https://www.helpnetsecurity.com/2026/05/29/anthropic-claude-opus-4-8/; sub-agent models at their own rows: claude-haiku-4-5-20251001 effective=2026-05-04 basis=sourced source=https://web.archive.org/web/20260504111305/https://platform.claude.com/docs/en/about-claude/pricing",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -1488,7 +1488,7 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-05-04 basis=sourced source=https://web.archive.org/web/20260504111305/https://platform.claude.com/docs/en/about-claude/pricing",
+      "price_provenance": "model-economics.toml per-record pricing over 1 entries: effective=2026-05-04 basis=sourced source=https://web.archive.org/web/20260504111305/https://platform.claude.com/docs/en/about-claude/pricing; sub-agent models at their own rows: claude-haiku-4-5-20251001 effective=2026-05-04 basis=sourced source=https://web.archive.org/web/20260504111305/https://platform.claude.com/docs/en/about-claude/pricing",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -2279,7 +2279,7 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-07-24 basis=sourced source=https://www.anthropic.com/news/claude-opus-5",
+      "price_provenance": "model-economics.toml per-record pricing over 1 entries: effective=2026-07-24 basis=sourced source=https://www.anthropic.com/news/claude-opus-5; sub-agent models at their own rows: claude-haiku-4-5-20251001 effective=2026-05-04 basis=sourced source=https://web.archive.org/web/20260504111305/https://platform.claude.com/docs/en/about-claude/pricing",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -3048,9 +3048,12 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-06-09 basis=sourced source=https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "price_provenance": "model-economics.toml per-record pricing over 1 entries: effective=2026-06-09 basis=sourced source=https://www.anthropic.com/news/claude-fable-5-mythos-5; sub-agent models at their own rows: claude-haiku-4-5-20251001 effective=2026-05-04 basis=sourced source=https://web.archive.org/web/20260504111305/https://platform.claude.com/docs/en/about-claude/pricing | claude-sonnet-4-6 effective=2026-05-04 basis=sourced source=https://web.archive.org/web/20260504111305/https://platform.claude.com/docs/en/about-claude/pricing; sub-agent models with no price row, priced at the cell rate: claude-opus-4-8[1m]",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "subagent_rate_fallback": [
+        "claude-opus-4-8[1m]"
+      ],
       "tags": {
         "engine": "n/a"
       }
@@ -3074,7 +3077,7 @@
       "operator": "Anthropic",
       "operator_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "owner": "?",
-      "price_provenance": "model-economics.toml effective=2026-06-30 basis=sourced source=https://www.anthropic.com/news/claude-sonnet-5",
+      "price_provenance": "model-economics.toml per-record pricing over 1 entries: effective=2026-06-30 basis=sourced source=https://www.anthropic.com/news/claude-sonnet-5; sub-agent models at their own rows: claude-haiku-4-5-20251001 effective=2026-05-04 basis=sourced source=https://web.archive.org/web/20260504111305/https://platform.claude.com/docs/en/about-claude/pricing",
       "publisher": "Anthropic",
       "publisher_url": "https://docs.anthropic.com/en/docs/about-claude/models",
       "tags": {
@@ -7561,7 +7564,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "33468d8fe55504dad4b183f406dd3a6e747b13aca742c94f9b9ac28bc2225326",
+  "content_digest": "0f78e9e42a53c03c08c2eff836835ec00e8b26442dd732585d92e2669e5a4d8a",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7596,7 +7599,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-20T04:06:48Z",
+  "generated_at": "2026-10-20T04:28:08Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

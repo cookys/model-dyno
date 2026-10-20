@@ -592,6 +592,62 @@
       }
     },
     {
+      "access_label": "qoder-global-cli",
+      "base_url": "./public-bundles/results-qoder-global-deepseek-v4.1-flash-1017-7b6ea7deb13d/",
+      "billing": null,
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "deepseek-v4.1-flash · qoder-global-cli",
+      "machine": "cookys-aimax395",
+      "n_runs": 1,
+      "operator": "Qoder",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "DeepSeek",
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "tags": {
+        "engine": "n/a"
+      }
+    },
+    {
+      "access_label": "OpenCode",
+      "base_url": "./public-bundles/results-v41-flash-1017-opencode-deepseek-v4.1-flash-2418779f0f3b/",
+      "billing": "subscription",
+      "current": true,
+      "gates": {
+        "infra_pct": 0.0,
+        "maxstep_pct": 0.0,
+        "noop_pct": 0.0,
+        "trunc_pct": 0.0,
+        "verdict": "CLEAN"
+      },
+      "id": "34t-559c010f",
+      "label": "deepseek-v4.1-flash · OpenCode",
+      "machine": "cookys-aimax395",
+      "n_runs": 1,
+      "operator": "OpenCode",
+      "operator_url": "",
+      "owner": "cookys",
+      "publisher": "DeepSeek",
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "tags": {
+        "draft": "none",
+        "engine": "n/a",
+        "lineage": "base",
+        "placement": "cloud",
+        "quant": "none",
+        "role": "vendor-settings",
+        "thinking": "on"
+      }
+    },
+    {
       "access_label": "Direct",
       "base_url": "./public-bundles/anthropic-opus-4.8-bc4c11beda51/",
       "billing": "metered",
@@ -4203,8 +4259,8 @@
       "operator_url": "",
       "owner": "cookys",
       "price_provenance": "model-economics.toml effective=2026-09-10 basis=sourced source=https://web.archive.org/web/20260910071252/https://api-docs.deepseek.com/quick_start/pricing",
-      "publisher": "",
-      "publisher_url": "",
+      "publisher": "DeepSeek",
+      "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "tags": {
         "draft": "none",
         "engine": "n/a",
@@ -7495,7 +7551,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "f1af5156473cc1d063a039b1d320e2a77457592042568dff89002bd82fb4c166",
+  "content_digest": "b9295c8bbe7f36815fdfc67b96f2c725e54c416bb8a0e6f4c5f7e35e848799d4",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -7530,7 +7586,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-10-19T19:32:09Z",
+  "generated_at": "2026-10-20T02:04:09Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

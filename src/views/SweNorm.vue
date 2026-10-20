@@ -7,7 +7,7 @@ import { isDark, chartTheme } from '@/lib/theme'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { foldedVariantsBadge, modelCell, modelName, orgCell, harnessCell, num, runClassBadge } from '@/components/CellHelpers'
+import { foldedVariantsBadge, modelCell, modelName, variantModelName, orgCell, harnessCell, num, runClassBadge } from '@/components/CellHelpers'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
 import { resolveExamMeta } from '@/lib/examMeta'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
@@ -104,7 +104,7 @@ const normData = computed(() => {
       rankScore: c.ci[0] * 100,
       variantCount: foldedVariantCount(group),
       variants: group.records.map((v) => ({
-        model: modelName(v),
+        model: variantModelName(v),
         publisher: v.publisher || '—',
         operator: v.operator || '—',
         harness: v.harness || v.access_label || '—',

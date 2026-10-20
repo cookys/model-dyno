@@ -102,7 +102,9 @@ const TAG_LABEL: Record<string, Record<string, string>> = {
   lineage: { abliterated: 'abliterated', heretic: 'heretic', merged: 'merged', uncensored: 'uncensored' },
   role: { control: 'control' }
 }
-const TAG_ORDER = ['placement', 'thinking', 'draft', 'lineage', 'role', 'quant']
+// effort: one canonical_model can carry several pinned effort legs (low/high/max), which the
+// board folds into one row; without this badge the legs read identically.
+const TAG_ORDER = ['placement', 'thinking', 'effort', 'draft', 'lineage', 'role', 'quant']
 const TAG_HIDE = new Set(['none', 'n/a', 'base', 'candidate'])
 
 export function sweTagBadges(tags: Record<string, string>): VNode | null {
@@ -116,6 +118,7 @@ export function sweTagBadges(tags: Record<string, string>): VNode | null {
     let colorClass = 'text-muted-foreground border-border bg-muted'
     if (dim === 'placement') colorClass = 'text-brand border-brand/20 dark:border-brand/30 bg-brand/10 dark:bg-brand/20'
     else if (dim === 'thinking') colorClass = 'text-amber-700 dark:text-amber-400 border-amber-500/20 dark:border-amber-500/30 bg-amber-500/10 dark:bg-amber-950/20'
+    else if (dim === 'effort') colorClass = 'text-sky-700 dark:text-sky-400 border-sky-500/20 dark:border-sky-500/30 bg-sky-500/10 dark:bg-sky-950/20'
     else if (dim === 'lineage') colorClass = 'text-pink-700 dark:text-pink-400 border-pink-500/20 dark:border-pink-500/30 bg-pink-500/10 dark:bg-pink-950/20'
     else if (dim === 'role') colorClass = 'text-orange-700 dark:text-orange-400 border-orange-500/20 dark:border-orange-500/30 bg-orange-500/10 dark:bg-orange-950/20'
 
@@ -239,6 +242,14 @@ export function modelName(c: any): string {
   const id = c.identity
   if (id && id.access === 'local') return c.display || c.model || c.cell || c.profile || '?'
   return (id && id.canonical_model) || c.display || c.model || c.cell || c.profile || '?'
+}
+
+/** Name for a row inside a folded group's variant table: the canonical name alone is the same
+ * for every effort leg of a model, so append the pinned effort when the producer stamped one. */
+export function variantModelName(c: any): string {
+  const base = modelName(c)
+  const effort = c && c.tags && typeof c.tags.effort === 'string' ? c.tags.effort : ''
+  return effort && !TAG_HIDE.has(effort) ? `${base} · effort:${effort}` : base
 }
 
 export function modelBadges(c: any): VNode | null {

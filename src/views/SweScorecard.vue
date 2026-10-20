@@ -9,7 +9,7 @@ import { isDark, chartTheme, chartBlueScheme } from '@/lib/theme'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { foldedVariantsBadge, indicatorIconBadge, machineCell, modelCell, modelName, sweRate, sweCI, overlaps, num, pct, fmt, agencyBadge, suspectErrorBadge, runClassBadge } from '@/components/CellHelpers'
+import { foldedVariantsBadge, indicatorIconBadge, machineCell, modelCell, modelName, variantModelName, sweRate, sweCI, overlaps, num, pct, fmt, agencyBadge, suspectErrorBadge, runClassBadge } from '@/components/CellHelpers'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
 import { resolveExamMeta } from '@/lib/examMeta'
 import ExamVersionBar from '@/components/ExamVersionBar.vue'
@@ -140,7 +140,7 @@ const scorecardRows = computed(() => {
       perHour: num(c.solved_per_hour),
       variantCount: foldedVariantCount(group),
       variants: group.records.map((v) => ({
-        model: modelName(v),
+        model: variantModelName(v),
         profile: v.profile && v.profile !== '?' ? v.profile : '—',
         machine: v.machine || '—',
         n: `${v.n_passed ?? '?'}/${v.n_graded ?? '?'}`,

@@ -162,3 +162,12 @@ test('cloud speed page gives correct answers per minute the main visual weight',
     assert.equal((i18n.match(new RegExp(`"${key}":`, 'g')) || []).length, 2, `${key} must exist in en and zh`)
   }
 })
+
+test('pinned effort legs of one model are distinguishable on the board', () => {
+  const helper = read('src/components/CellHelpers.ts')
+  assert.match(helper, /const TAG_ORDER = \[[^\]]*'effort'/, 'effort must render as a tag badge')
+  assert.match(helper, /export function variantModelName/)
+  for (const view of ['src/views/SweScorecard.vue', 'src/views/SweComp.vue', 'src/views/SweNorm.vue']) {
+    assert.match(read(view), /model: variantModelName\(v\)/, `${view} variant table must show effort`)
+  }
+})

@@ -8,7 +8,7 @@ import { isDark, chartTheme } from '@/lib/theme'
 import DataTable from '@/components/DataTable.vue'
 import type { Column } from '@/components/DataTable.vue'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
-import { foldedRoutesBadge, modelCell, modelName, orgCell, harnessCell, machineCell, num, usageOf, agencyBadge, suspectErrorBadge, usageScenarioBadge, speedCredibilityBadge, runClassBadge } from '@/components/CellHelpers'
+import { foldedRoutesBadge, modelCell, modelName, variantModelName, orgCell, harnessCell, machineCell, num, usageOf, agencyBadge, suspectErrorBadge, usageScenarioBadge, speedCredibilityBadge, runClassBadge } from '@/components/CellHelpers'
 import { primarySolveSecOf, examCostSecOf } from '@/lib/speedMetrics'
 import { classifyCell, partitionBySection } from '@/lib/runClass'
 import { resolveExamMeta } from '@/lib/examMeta'
@@ -86,7 +86,7 @@ function mapCompRow(c: any, group?: { records: any[]; key: string }) {
     usage,
     variantCount: group ? Math.max(0, records.length - 1) : 0,
     variants: (group ? records : []).map((v: any) => ({
-      model: modelName(v),
+      model: variantModelName(v),
       publisher: v.publisher || '—',
       operator: v.operator || '—',
       harness: v.harness || v.access_label || '—',

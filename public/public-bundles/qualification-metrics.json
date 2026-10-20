@@ -1,8 +1,8 @@
 {
  "schema": "model-dyno.qualification-metrics.v2",
- "generated_at": "2026-10-20T04:29:37.000Z",
+ "generated_at": "2026-10-20T04:35:16.000Z",
  "producer": "build-qualification-feed.py@2",
- "source_revision": "2be59989a4510896307d116cd7aa242bd25099d8",
+ "source_revision": "3437baef8d59458b90bb4fdfa39e2380fe236050",
  "seat_metrics": [
   {
    "entry_id": "d9b5017598b6babf4c49917c68b8f7ac468b9d4f806f4fc58b7b12bee9fbb18a",
@@ -150,9 +150,9 @@
     "speed_basis": "2026-10-03T00:00:00Z..2026-10-03T00:00:00Z"
    },
    "cost": {
-    "usd_per_solved_micro": 612217,
-    "usd_per_task_micro": 486173,
-    "cost_total_micro": 16529867,
+    "usd_per_solved_micro": 515994,
+    "usd_per_task_micro": 409760,
+    "cost_total_micro": 13931847,
     "cost_coverage_permille": 1000,
     "cost_basis": "estimated",
     "pricing_version": "model-economics@2026-10-03"

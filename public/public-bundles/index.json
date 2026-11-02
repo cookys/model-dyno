@@ -261,7 +261,7 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "glm-53-flash-exl3k4-fp8kv-dflash2",
+      "label": "GLM-5.3-Flash",
       "machine": "cookys-cuda",
       "n_runs": 1,
       "operator": "自架",
@@ -761,9 +761,13 @@
     },
     {
       "access_label": "local",
+      "base_model": "zai-org/GLM-5.3-Flash-BF16",
+      "base_model_url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16",
       "base_url": "./public-bundles/results-glm-53-flash-nvfp4-kk-mtp3-nvfp4kv-4124gs-GLM-5.3-Flash-NVFP4-dd649ad9e605/",
       "billing": "local",
       "current": true,
+      "engine": "vLLM karmic-kraken-beta (local-inference-lab, image bc48d33ee167)",
+      "engine_url": "https://github.com/local-inference-lab/rtx6kpro/blob/master/benchmarks/karmic-kraken-serving.md",
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
@@ -772,7 +776,7 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "glm-53-flash-nvfp4-kk-mtp3-nvfp4kv-4124gs",
+      "label": "GLM-5.3-Flash",
       "machine": "4124gs",
       "n_runs": 1,
       "operator": "自架",
@@ -780,6 +784,7 @@
       "owner": "cookys",
       "publisher": "Z.AI",
       "publisher_url": "https://z.ai/",
+      "runtime_context": "1M ctx · TP4 · MTP3 · nvfp4_ds_mla KV",
       "tags": {
         "draft": "mtp",
         "draft_n": "3",
@@ -791,7 +796,11 @@
         "role": "head",
         "temp": "1.0",
         "thinking": "on"
-      }
+      },
+      "weight_format": "safetensors · ModelOpt NVFP4 (QAD)",
+      "weight_path": "/data/models/GLM-5.3-Flash-NVFP4",
+      "weight_source": "local-inference-lab/GLM-5.3-Flash-NVFP4",
+      "weight_source_url": "https://huggingface.co/local-inference-lab/GLM-5.3-Flash-NVFP4"
     },
     {
       "access_label": "Direct",
@@ -1755,9 +1764,13 @@
     },
     {
       "access_label": "local",
+      "base_model": "zai-org/GLM-5.3-Flash-BF16",
+      "base_model_url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16",
       "base_url": "./public-bundles/results-glm-53-flash-nvfp4-kk-mtp3-fp8kv-4124gs-GLM-5.3-Flash-NVFP4-ad953f2642bf/",
       "billing": "local",
       "current": true,
+      "engine": "vLLM karmic-kraken-beta (local-inference-lab, image bc48d33ee167)",
+      "engine_url": "https://github.com/local-inference-lab/rtx6kpro/blob/master/benchmarks/karmic-kraken-serving.md",
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
@@ -1766,7 +1779,7 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "glm-53-flash-nvfp4-kk-mtp3-fp8kv-4124gs",
+      "label": "GLM-5.3-Flash",
       "machine": "4124gs",
       "n_runs": 1,
       "operator": "自架",
@@ -1774,6 +1787,7 @@
       "owner": "cookys",
       "publisher": "Z.AI",
       "publisher_url": "https://z.ai/",
+      "runtime_context": "1M ctx · TP4 · MTP3 · fp8 KV",
       "tags": {
         "draft": "mtp",
         "draft_n": "3",
@@ -1785,7 +1799,11 @@
         "role": "head",
         "temp": "1.0",
         "thinking": "on"
-      }
+      },
+      "weight_format": "safetensors · ModelOpt NVFP4 (QAD)",
+      "weight_path": "/data/models/GLM-5.3-Flash-NVFP4",
+      "weight_source": "local-inference-lab/GLM-5.3-Flash-NVFP4",
+      "weight_source_url": "https://huggingface.co/local-inference-lab/GLM-5.3-Flash-NVFP4"
     },
     {
       "access_label": "Direct",
@@ -3617,9 +3635,13 @@
     },
     {
       "access_label": "local",
+      "base_model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "base_model_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
       "base_url": "./public-bundles/results-v41-flash-1017-exl3-3bpw-diffbot-fp8kv-4124gs-deepseek-v4.1-flash-8a01a74b7185/",
       "billing": "local",
       "current": true,
+      "engine": "vLLM nightly-5555a2d8f + exl3 fork (image dsv41-flash-1017-exl3-3bpw-sm120)",
+      "engine_url": "https://huggingface.co/diffbot/DeepSeek-V4.1-Flash-EXL3-3bpw-2x-RTX-PRO-6000",
       "gates": {
         "infra_pct": 0.0,
         "maxstep_pct": 0.0,
@@ -3628,7 +3650,7 @@
         "verdict": "CLEAN"
       },
       "id": "34t-559c010f",
-      "label": "v41-flash-1017-exl3-3bpw-diffbot-fp8kv-4124gs",
+      "label": "DeepSeek-V4.1-Flash",
       "machine": "4124gs",
       "n_runs": 1,
       "operator": "自架",
@@ -3637,6 +3659,7 @@
       "price_provenance": "model-economics.toml effective=2026-10-19 basis=sourced source=https://web.archive.org/web/20261019090259/https://api-docs.deepseek.com/quick_start/pricing",
       "publisher": "DeepSeek",
       "publisher_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "runtime_context": "1M ctx · TP2 · DSpark k5 · fp8 KV",
       "tags": {
         "draft": "dspark",
         "draft_n": "5",
@@ -3648,7 +3671,10 @@
         "role": "head",
         "temp": "1.0",
         "thinking": "on"
-      }
+      },
+      "weight_format": "EXL3 3bpw (safetensors)",
+      "weight_source": "diffbot/DeepSeek-V4.1-Flash-EXL3-3bpw-2x-RTX-PRO-6000",
+      "weight_source_url": "https://huggingface.co/diffbot/DeepSeek-V4.1-Flash-EXL3-3bpw-2x-RTX-PRO-6000"
     },
     {
       "access_label": "Direct",
@@ -8433,7 +8459,7 @@
     }
   ],
   "comparable_min": 31,
-  "content_digest": "277c84942dce2b8a9225bd58eb75bb34d4251756e3bc8a134966cc94b195954b",
+  "content_digest": "2ca2c3e759fa463bc1263a1ebfed2cd9d08a886f09d3de2390a59ce5d939a860",
   "current_exam": "34t-559c010f",
   "current_exam_label": "cookys-frontier v1.1.1",
   "current_exam_n_tasks": 34,
@@ -8468,7 +8494,7 @@
       "version": "34t-559c010f"
     }
   ],
-  "generated_at": "2026-11-02T05:13:21Z",
+  "generated_at": "2026-11-02T05:27:35Z",
   "n_canon": 34,
   "n_exam": 34,
   "schema_version": "dashboard_public_bundle_feed.v1",

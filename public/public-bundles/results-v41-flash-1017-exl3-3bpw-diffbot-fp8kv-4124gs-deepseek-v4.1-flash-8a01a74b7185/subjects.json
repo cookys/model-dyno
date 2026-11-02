@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-v41-flash-1017-exl3-3bpw-diffbot-fp8kv-4124gs-deepseek-v4.1-flash-8a01a74b7185","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"deepseek-v4.1-flash","policy":"dashboard-public-feed","subject_digest":"91a474e36b81cf4b2913af350af73993d817cb12f813c45bfd025551e4424823"}]

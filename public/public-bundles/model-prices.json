@@ -1,13 +1,13 @@
 {
   "schema": "model-dyno.model-prices.v1",
-  "generated_at": "2026-10-20T08:36:30Z",
-  "content_digest": "sha256:e21f64a36249278c9eaea41f0d06e825984ba2370e8cba593e0255924798d2b3",
+  "generated_at": "2026-11-02T05:14:43Z",
+  "content_digest": "sha256:d317cfb54c903aadf5f25ec5c380ab3420a4dd57bb049b515d6abf2a08a5947a",
   "source_revision": {
-    "economics_blob": "2ff661e8ee73d19ba193f4280bdd4f3b1daf8b63",
+    "economics_blob": "09cb854c520bd950b726ff64b9b5751af9601627",
     "identity_map_version": "2026-10-19.1"
   },
   "stale_after_days": 45,
-  "n_rows": 18,
+  "n_rows": 19,
   "rows": [
     {
       "engine": "Qwen3.8-Max",
@@ -229,6 +229,23 @@
       "effective_basis": "assumed",
       "verified": "2026-10-19",
       "source_url": "https://developers.openai.com/api/docs/pricing.md"
+    },
+    {
+      "engine": "gpt-6.1-terra",
+      "runner": "codex",
+      "model": "gpt-6.1-terra",
+      "model_ref": "gpt-6.1-terra",
+      "billing": "subscription",
+      "plan": "chatgpt",
+      "usd_per_mtok_input_micro": 1000000,
+      "usd_per_mtok_output_micro": 5000000,
+      "usd_per_mtok_cache_read_micro": 50000,
+      "usd_per_mtok_cache_write_5m_micro": null,
+      "usd_per_mtok_cache_write_1h_micro": null,
+      "effective": "2026-10-26",
+      "effective_basis": "assumed",
+      "verified": "2026-10-27",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-terra/"
     },
     {
       "engine": "grok-4.5",

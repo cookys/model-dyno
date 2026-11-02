@@ -1,0 +1,1 @@
+[{"backend":"local","display_slug":"results-glm-53-flash-nvfp4-kk-mtp3-fp8kv-4124gs-GLM-5.3-Flash-NVFP4-ad953f2642bf","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@8","model":"glm-5.3-flash","policy":"dashboard-public-feed","subject_digest":"ba2bace6c0f3c6996d5fac1683ba8db122bb8119eec932f856c30068e4caeda8"}]

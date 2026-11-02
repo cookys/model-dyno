@@ -1,4 +1,4 @@
-import type { CompCell } from '@/lib/store'
+import type { CompCell, RowProvenance } from '@/lib/store'
 
 export interface RouteProvenance {
   engine: string | null
@@ -92,6 +92,12 @@ const ACCESS_URLS: Record<string, string> = {
   'claude-harness': 'https://docs.anthropic.com/en/docs/claude-code/llm-gateway',
 }
 
+/** Producer-supplied provenance (feed entry → CompCell.provenance). It wins over every
+ * name-regex table below; those tables only cover rows whose feed predates the field. */
+function feedProvenance(c: RouteCarrier): RowProvenance {
+  return c?.provenance ?? c?._rec?.provenance ?? {}
+}
+
 function field(c: RouteCarrier, key: keyof CompCell): any {
   const direct = (c as any)?.[key]
   if (direct !== undefined && direct !== null && direct !== '') return direct
@@ -132,6 +138,8 @@ export function tagOf(c: RouteCarrier, key: string): string | null {
 
 export function engineOf(c: RouteCarrier): string | null {
   if (c.engine) return c.engine
+  const fed = feedProvenance(c).engine
+  if (fed) return fed
   const text = routeText(c).toLowerCase()
   // 0731 official local (DSpark) before generic lucifer preview
   if (text.includes('0731') || text.includes('deepseek-v4-flash-0731')) {
@@ -157,6 +165,8 @@ export function engineOf(c: RouteCarrier): string | null {
 
 export function engineUrlOf(c: RouteCarrier): string | null {
   if (c.engine_url) return c.engine_url
+  const fed = feedProvenance(c).engine_url
+  if (fed) return fed
   const engine = engineOf(c)
   if (!engine) return null
   if (engine.toLowerCase().includes('vllm')) return 'https://github.com/vllm-project/vllm'
@@ -205,6 +215,8 @@ export function enginePatchUrlOf(c: RouteCarrier): string | null {
 
 export function contextOf(c: RouteCarrier): string | null {
   if (c.runtime_context) return c.runtime_context
+  const fed = feedProvenance(c).runtime_context
+  if (fed) return fed
   const text = routeText(c).toLowerCase()
   const m = text.match(/(\d+)k/)
   if (m) return `${m[1]}K`
@@ -225,7 +237,19 @@ function modelSourceUrlOf(c: RouteCarrier): string | null {
   return entityUrl(publisher)
 }
 
+const WEIGHT_KEYS = [
+  'weight_format', 'weight_path', 'weight_source', 'weight_source_url', 'base_model', 'base_model_url',
+] as const
+
 export function weightMetaOf(c: RouteCarrier): Partial<RouteProvenance> {
+  const fed = feedProvenance(c)
+  const fromFeed: Partial<RouteProvenance> = {}
+  for (const k of WEIGHT_KEYS) if (fed[k]) fromFeed[k] = fed[k]
+  // Feed-supplied fields win key by key; the regex table fills only what the feed left out.
+  return { ...weightMetaFromName(c), ...fromFeed }
+}
+
+function weightMetaFromName(c: RouteCarrier): Partial<RouteProvenance> {
   const text = routeText(c).toLowerCase()
   if (text.includes('hy3') && text.includes('mxfp4')) {
     return {
@@ -323,11 +347,11 @@ export function routeProvenanceOf(c: RouteCarrier): RouteProvenance {
     // whose feed predates them. Without this, every new vendor silently renders
     // an unlinked name until someone remembers to edit the map in THIS repo
     // (Meta/muse-spark-1.2 shipped that way on 2026-08-07).
-    provider_url: c.publisher_url || entityUrl(publisher || operator),
+    provider_url: c.publisher_url || feedProvenance(c).publisher_url || entityUrl(publisher || operator),
     operator: operator || null,
-    operator_url: c.operator_url || entityUrl(operator),
+    operator_url: c.operator_url || feedProvenance(c).operator_url || entityUrl(operator),
     harness: harness || null,
-    harness_url: c.harness_url || entityUrl(harness),
+    harness_url: c.harness_url || feedProvenance(c).harness_url || entityUrl(harness),
     billing: billing || null,
     plan: plan || null,
     model_source: modelSource || undefined,

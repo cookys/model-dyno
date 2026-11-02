@@ -55,6 +55,25 @@ export interface AgencyBlock {
   flags?: string[]
 }
 
+/** Producer-supplied deployment provenance for a cell (llm-playground
+ * `cell-identity.toml` → feed entry). When present it is the source of truth;
+ * the name-regex tables in modelProvenance.ts are only a fallback for rows whose
+ * feed predates it. Every field optional: cloud rows carry only the *_url links. */
+export interface RowProvenance {
+  engine?: string
+  engine_url?: string
+  runtime_context?: string
+  weight_format?: string
+  weight_path?: string
+  weight_source?: string
+  weight_source_url?: string
+  base_model?: string
+  base_model_url?: string
+  publisher_url?: string
+  operator_url?: string
+  harness_url?: string
+}
+
 export interface SweCell {
   model: string
   cell?: string
@@ -104,6 +123,7 @@ export interface SweCell {
   price_known?: boolean
   /** plan 056: metered | subscription | token_plan | local — the cell's route regime. */
   billing?: string
+  provenance?: RowProvenance
   tags?: Record<string, string>
   identity?: {
     access?: string
@@ -204,6 +224,7 @@ export interface CompCell {
   harness?: string
   access_label?: string
   machine?: string
+  provenance?: RowProvenance
   cell: string
   source: string
   comparable?: boolean

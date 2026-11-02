@@ -5,6 +5,7 @@ import type {
   DomainIndex,
   ExamVersionInfo,
   NormIndex,
+  RowProvenance,
   SharedSweCell,
   SpeedRecord,
   SweCell,
@@ -57,6 +58,8 @@ export interface PublicBundleFeedEntry {
   operator?: string
   access_label?: string
   billing?: string
+  /** Producer-supplied deployment provenance (engine / weights / base model / links). */
+  provenance?: RowProvenance
   /** Producer's structured experiment-axis tags (engine/quant/draft/lineage/thinking/temp/variant/…). */
   tags?: Record<string, string>
   /** 3-gate credibility block (infra/noop/trunc/maxstep pct + verdict). */
@@ -193,6 +196,7 @@ interface PublicBundleProjectionMetadata {
   operator?: string
   access_label?: string
   billing?: string
+  provenance?: RowProvenance
   tags?: Record<string, string>
   gates?: CellGates
   n_runs?: number
@@ -535,6 +539,7 @@ export function projectScorecardRowsFromPublicBundle(
       harness: stringOrNull(comparisonKey.harness) ?? stringOrNull(subject?.harness) ?? undefined,
       access_label: metadata.access_label,
       billing: metadata.billing,
+      provenance: metadata.provenance,
       comparable,
       n_graded: nTasks,
       n_passed: nPassed,
@@ -689,6 +694,7 @@ export function projectCompIndexFromScorecardRows(cells: SweCell[], meta: SweMet
         harness: cell.harness,
         access_label: cell.access_label,
         machine: cell.machine,
+        provenance: cell.provenance,
         cell: cell.cell ?? cell.profile ?? cell.model,
         source: cell.source ?? 'public-bundle',
         comparable: cell.comparable,
@@ -949,6 +955,23 @@ function normalizeHeadlineRange(raw: unknown): [number, number] | undefined {
   return lo != null && hi != null ? [lo, hi] : undefined
 }
 
+const PROVENANCE_KEYS = [
+  'engine', 'engine_url', 'runtime_context',
+  'weight_format', 'weight_path', 'weight_source', 'weight_source_url',
+  'base_model', 'base_model_url',
+  'publisher_url', 'operator_url', 'harness_url',
+] as const satisfies readonly (keyof RowProvenance)[]
+
+/** The producer writes provenance as flat entry keys; gather the non-empty string ones. */
+function normalizeEntryProvenance(entry: JsonObject): RowProvenance | undefined {
+  const out: RowProvenance = {}
+  for (const key of PROVENANCE_KEYS) {
+    const v = stringOrNull(entry[key])
+    if (v) out[key] = v
+  }
+  return Object.keys(out).length ? out : undefined
+}
+
 function normalizeFeedEntry(raw: unknown): PublicBundleFeedEntry | null {
   const entry = asObject(raw)
   const base = stringOrNull(entry.base_url)
@@ -967,6 +990,7 @@ function normalizeFeedEntry(raw: unknown): PublicBundleFeedEntry | null {
     // Lets the UI say whether a dollar figure is money actually spent (metered) or
     // notional against a plan/quota (subscription, token_plan) without guessing.
     billing: stringOrNull(entry.billing) ?? undefined,
+    provenance: normalizeEntryProvenance(entry),
     tags: normalizeEntryTags(entry.tags),
     gates: normalizeEntryGates(entry.gates),
     n_runs: nonNegativeInt(entry.n_runs) ?? undefined,

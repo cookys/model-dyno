@@ -82,11 +82,5 @@ const onExamChange = (e: Event) => {
         {{ t('examBar.viewHistory') }}
       </Button>
     </div>
-    <p
-      v-if="selected?.note"
-      class="mt-2 text-xs text-amber-800 dark:text-amber-200/90 leading-relaxed"
-    >
-      {{ selected.note }}
-    </p>
   </div>
 </template>

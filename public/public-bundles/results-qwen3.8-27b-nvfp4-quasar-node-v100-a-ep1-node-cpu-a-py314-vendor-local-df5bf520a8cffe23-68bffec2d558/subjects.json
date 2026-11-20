@@ -1,0 +1,1 @@
+[{"backend":"results","display_slug":"results-qwen3.8-27b-nvfp4-quasar-node-v100-a-ep1-node-cpu-a-py314-vendor-local-df5bf520a8cffe23-68bffec2d558","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@11","model":"Qwen3.8-27B-QUASAR-NVFP4","policy":"dashboard-public-feed","subject_digest":"2487cdde52daa05b6fe14cbfa6bc7f6c00387a6a0660777a88b705041c34df4b"}]

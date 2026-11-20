@@ -30,6 +30,14 @@ const selected = computed(() => {
   return orderedVersions.value[0] || null
 })
 
+/** Prefer the feed-current rollover note so it stays visible when the board defaults to a prior full exam. */
+const rolloverNote = computed(() => {
+  const cur = currentVersion.value
+  const sel = selected.value
+  if (cur?.note && cur.version !== sel?.version) return cur.note
+  return sel?.note || cur?.note || null
+})
+
 const versionLabel = (v: typeof examVersions.value[number]) => {
   const currentOrArchived = v.current ? t('examBar.current') : t('examBar.archived')
   return `${v.label} · ${v.n_tasks ?? '—'} ${t('examBar.tasks')} · ${currentOrArchived}`
@@ -83,10 +91,10 @@ const onExamChange = (e: Event) => {
       </Button>
     </div>
     <p
-      v-if="selected?.note"
-      class="mt-2 text-xs text-amber-800 dark:text-amber-200/90 leading-relaxed"
+      v-if="rolloverNote"
+      class="mt-2 text-xs text-amber-800 dark:text-amber-200/90 leading-relaxed whitespace-pre-line"
     >
-      {{ selected.note }}
+      {{ rolloverNote }}
     </p>
   </div>
 </template>

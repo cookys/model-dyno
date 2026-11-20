@@ -11,6 +11,30 @@ export function examAlias(
   return version ? 'SWE' : null
 }
 
+/** Public-subset size for an exam scope: largest graded count among its partial cells. */
+export function subsetDenomForExam(
+  cells: readonly { n_graded?: number | null; comparable?: boolean | null }[],
+): number {
+  let max = 0
+  for (const c of cells) {
+    if (c.comparable === true) continue
+    const n = c.n_graded ?? 0
+    if (n > max) max = n
+  }
+  return max
+}
+
+/** Visible badge for a non-full-exam (subset) receipt, e.g. 子集(25/26 題). */
+export function subsetCoverageLabel(
+  nGraded: number | null | undefined,
+  denom: number,
+  zh: boolean,
+): string | null {
+  const n = nGraded ?? 0
+  if (denom <= 0 || n <= 0) return null
+  return zh ? `子集(${n}/${denom} 題)` : `subset (${n}/${denom})`
+}
+
 /** Semver tail from producer label, e.g. "cookys-frontier v1.1.1" → "v1.1.1". */
 export function examSemver(label: string | null | undefined): string | null {
   if (!label) return null

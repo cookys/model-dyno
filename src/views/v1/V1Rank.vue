@@ -19,6 +19,7 @@ import {
 } from '@/lib/modelFolding'
 import { classifyCell } from '@/lib/runClass'
 import { resolveExamMeta } from '@/lib/examMeta'
+import { subsetCoverageLabel, subsetDenomForExam } from '@/lib/examDisplay'
 import { sweRate, sweCI, num } from '@/components/CellHelpers'
 import ScorePill from '@/components/v1/ScorePill.vue'
 import ExamBadge from '@/components/v1/ExamBadge.vue'
@@ -64,6 +65,7 @@ interface RankRow {
   examVersion: string | null
   nRuns: number | null
   headlineRange: [number, number] | null
+  subsetLabel: string | null
 }
 
 const folded = computed(() =>
@@ -74,43 +76,57 @@ const folded = computed(() =>
   ),
 )
 
+const subsetDenom = computed(() => subsetDenomForExam(sweCellsByExam.value))
+
+function toRankRow(c: any, key: string, variants: number): RankRow {
+  const cls = classifyCell(
+    { n_graded: c.n_graded, comparable: c.comparable, owed: c.owed, n_exam: c.n_canon ?? c.n_exam, n_canon: c.n_canon },
+    examMeta.value,
+  )
+  const ci = sweCI(c)
+  const rankable = cls.rankable && (c.n_graded || 0) >= MIN_GRADED && num(sweRate(c)) !== null
+  const graded = c.n_graded ?? 0
+  const subsetLabel = !rankable && c.comparable !== true
+    ? subsetCoverageLabel(graded, subsetDenom.value, locale.value === 'zh')
+    : null
+  return {
+    key,
+    canonical: c.identity?.canonical_model || c.model,
+    cell: c,
+    isLocal: (c.identity?.access ?? '') === 'local',
+    passed: c.n_passed ?? 0,
+    graded,
+    ci,
+    rankScore: rankable ? (num(ci?.[0]) ?? num(sweRate(c)) ?? -1) : -1,
+    rankable,
+    variants,
+    medWallMin: c.med_wall != null ? c.med_wall / 60 : null,
+    solvedPerHour: c.solved_per_hour ?? null,
+    // OUTPUT tokens per solved task (the feed derives it from usage.output_tokens).
+    // Output — not input — on purpose: input counts are inflated on routes with no
+    // cache discount, which would make local cells look wasteful for a billing reason
+    // rather than a model one. Output is comparable across cache regimes.
+    tokPerSolved: c.tok_per_solved ?? null,
+    usdPerSolved: c.usd_per_solved ?? null,
+    priceKnown: c.price_known === true,
+    billing: c.billing ?? null,
+    scoredAt: c.scored_at ? c.scored_at.slice(0, 10) : null,
+    tie: false,
+    examVersion: c.canonical_version ?? null,
+    nRuns: c.n_runs ?? null,
+    headlineRange: c.headline_range ?? null,
+    subsetLabel,
+  }
+}
+
 const allRows = computed<RankRow[]>(() => {
-  return folded.value.map((group) => {
-    const c = group.representative
-    const cls = classifyCell(
-      { n_graded: c.n_graded, comparable: c.comparable, owed: c.owed, n_exam: c.n_canon ?? c.n_exam, n_canon: c.n_canon },
-      examMeta.value,
-    )
-    const ci = sweCI(c)
-    const rankable = cls.rankable && (c.n_graded || 0) >= MIN_GRADED && num(sweRate(c)) !== null
-    return {
-      key: group.key,
-      canonical: c.identity?.canonical_model || c.model,
-      cell: c,
-      isLocal: (c.identity?.access ?? '') === 'local',
-      passed: c.n_passed ?? 0,
-      graded: c.n_graded ?? 0,
-      ci,
-      rankScore: rankable ? (num(ci?.[0]) ?? num(sweRate(c)) ?? -1) : -1,
-      rankable,
-      variants: foldedVariantCount(group),
-      medWallMin: c.med_wall != null ? c.med_wall / 60 : null,
-      solvedPerHour: c.solved_per_hour ?? null,
-      // OUTPUT tokens per solved task (the feed derives it from usage.output_tokens).
-      // Output — not input — on purpose: input counts are inflated on routes with no
-      // cache discount, which would make local cells look wasteful for a billing reason
-      // rather than a model one. Output is comparable across cache regimes.
-      tokPerSolved: c.tok_per_solved ?? null,
-      usdPerSolved: c.usd_per_solved ?? null,
-      priceKnown: c.price_known === true,
-      billing: c.billing ?? null,
-      scoredAt: c.scored_at ? c.scored_at.slice(0, 10) : null,
-      tie: false,
-      examVersion: c.canonical_version ?? null,
-      nRuns: c.n_runs ?? null,
-      headlineRange: c.headline_range ?? null,
-    }
-  })
+  return folded.value.map((group) =>
+    toRankRow(
+      group.representative,
+      group.key,
+      foldedVariantCount(group),
+    ),
+  )
 })
 
 const scoped = computed(() =>
@@ -133,9 +149,30 @@ const rankedRows = computed(() => {
   return rows
 })
 
-const unrankedRows = computed(() =>
-  scoped.value.filter((r) => !r.rankable).sort((a, b) => b.graded - a.graded),
-)
+/** Subset-only exam: no comparable full-exam cell in scope — list every cell (no fold). */
+const subsetOnlyExam = computed(() => {
+  const cells = sweCellsByExam.value
+  if (!cells.length) return false
+  return cells.every((c) => c.comparable !== true)
+})
+
+const unrankedRows = computed(() => {
+  if (subsetOnlyExam.value) {
+    return sweCellsByExam.value
+      .map((c, i) => toRankRow(
+        c,
+        `${c.model}-${c.profile || ''}-${c.machine || ''}-${c.canonical_version || ''}-${i}`,
+        0,
+      ))
+      .filter((r) => {
+        if (scope.value === 'local') return r.isLocal
+        if (scope.value === 'cloud') return !r.isLocal
+        return true
+      })
+      .sort((a, b) => b.graded - a.graded || b.passed - a.passed)
+  }
+  return scoped.value.filter((r) => !r.rankable).sort((a, b) => b.graded - a.graded)
+})
 
 const fmtTok = (n: number | null) =>
   n == null ? '—' : n >= 10000 ? `${(n / 1000).toFixed(0)}k` : n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(Math.round(n))
@@ -317,7 +354,11 @@ const pct = (v: number) => `${Math.round(v * 100)}%`
             </tr>
             <tr v-if="!rankedRows.length">
               <td colspan="10" class="px-3 py-8 text-center text-sm text-muted-foreground">
-                {{ locale === 'zh' ? '這個範圍還沒有滿卷成績。' : 'No full-exam results in this scope yet.' }}
+                {{ subsetOnlyExam
+                  ? (locale === 'zh'
+                    ? '此考卷尚無滿卷成績；下方列出子集結果，不進入完整考試排名。'
+                    : 'No full-exam results for this exam yet; subset receipts below are listed separately and do not enter the full-exam ranking.')
+                  : (locale === 'zh' ? '這個範圍還沒有滿卷成績。' : 'No full-exam results in this scope yet.') }}
               </td>
             </tr>
           </tbody>
@@ -442,15 +483,19 @@ const pct = (v: number) => `${Math.round(v * 100)}%`
       <DomainHeatmapTable />
     </section>
 
-    <!-- Unranked, collapsed by default -->
-    <details v-if="unrankedRows.length" class="group">
+    <!-- Unranked / subset receipts. Subset-only exams stay open so the rows are visible. -->
+    <details v-if="unrankedRows.length" class="group" :open="subsetOnlyExam || undefined">
       <summary class="flex items-center gap-2 cursor-pointer text-xs font-semibold text-muted-foreground hover:text-foreground select-none">
         <ChevronDown class="h-3.5 w-3.5 transition-transform group-open:rotate-180" />
-        {{ locale === 'zh'
-          ? `沒考完整份卷的 ${unrankedRows.length} 筆（僅供參考，不入排名 — 分數可能偏高或偏低）`
-          : `${unrankedRows.length} incomplete runs (reference only — scores may be inflated or deflated)` }}
+        {{ subsetOnlyExam
+          ? (locale === 'zh'
+            ? `子集結果 ${unrankedRows.length} 筆（不進入完整考試排名）`
+            : `${unrankedRows.length} subset receipts (not in the full-exam ranking)`)
+          : (locale === 'zh'
+            ? `沒考完整份卷的 ${unrankedRows.length} 筆（僅供參考，不入排名 — 分數可能偏高或偏低）`
+            : `${unrankedRows.length} incomplete runs (reference only — scores may be inflated or deflated)`) }}
       </summary>
-      <Card class="mt-2 overflow-hidden opacity-80">
+      <Card class="mt-2 overflow-hidden" :class="subsetOnlyExam ? '' : 'opacity-80'">
         <CardContent class="p-0">
           <table class="w-full text-sm">
             <tbody>
@@ -458,9 +503,19 @@ const pct = (v: number) => `${Math.round(v * 100)}%`
                 v-for="r in unrankedRows"
                 :key="r.key"
                 class="border-b border-border/40 last:border-0 hover:bg-muted/30 cursor-pointer"
+                data-subset-row="1"
                 @click="goModel(r)"
               >
-                <td class="px-3 py-2 font-mono text-xs">{{ r.canonical }}</td>
+                <td class="px-3 py-2 font-mono text-xs">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span>{{ r.canonical }}</span>
+                    <span
+                      v-if="r.subsetLabel"
+                      class="inline-flex items-center rounded border border-amber-500/40 bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-bold text-amber-800 dark:text-amber-300"
+                      data-subset-label
+                    >{{ r.subsetLabel }}</span>
+                  </div>
+                </td>
                 <td class="px-3 py-2 text-right">
                   <ScorePill :passed="r.passed" :total="r.graded" :ci="r.ci" compact />
                 </td>

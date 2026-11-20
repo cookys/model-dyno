@@ -426,38 +426,13 @@ async function fetchDashboardJson<T>(url: string): Promise<T> {
   return data
 }
 
-export function orderedExamVersions(versions: ExamVersionInfo[]): ExamVersionInfo[] {
-  if (!versions.length) return []
-  const current = versions.find((v) => v.current)
-  if (!current) return versions
-  return [current, ...versions.filter((v) => v.version !== current.version)]
-}
-
-export function pickSelectedExam(
-  query: string | null,
-  versions: ExamVersionInfo[],
-  currentExam: string | null | undefined,
-): string | null {
-  const candidate = query && query.trim() ? query.trim() : null
-  if (candidate && versions.some((v) => v.version === candidate)) {
-    return candidate
-  }
-
-  const current = currentExam && versions.find((v) => v.version === currentExam)
-    ? currentExam
-    : versions.find((v) => v.current)?.version || null
-
-  if (current) return current
-
-  if (versions.length) return versions[0].version
-  return null
-}
-
-export function isArchivedExam(selected: string | null, currentExam: string | null | undefined): boolean {
-  if (!selected) return false
-  if (!currentExam) return false
-  return selected !== currentExam
-}
+import { pickSelectedExam } from './examSelect'
+export {
+  orderedExamVersions,
+  pickSelectedExam,
+  isArchivedExam,
+  type ExamPickCell,
+} from './examSelect'
 
 export function setSelectedExamFromQuery(value: unknown) {
   selectedExamQuery.value = typeof value === 'string' && value.trim() ? value : null
@@ -466,7 +441,12 @@ export function setSelectedExamFromQuery(value: unknown) {
 const examVersions = computed<ExamVersionInfo[]>(() => scorecardSweMeta.value?.exam_versions || [])
 
 export const selectedExam = computed<string | null>(() => {
-  return pickSelectedExam(selectedExamQuery.value, examVersions.value, scorecardSweMeta.value?.current_exam ?? null)
+  return pickSelectedExam(
+    selectedExamQuery.value,
+    examVersions.value,
+    scorecardSweMeta.value?.current_exam ?? null,
+    scorecardSweCells.value,
+  )
 })
 
 export const sweCellsByExam = computed<SweCell[]>(() => {

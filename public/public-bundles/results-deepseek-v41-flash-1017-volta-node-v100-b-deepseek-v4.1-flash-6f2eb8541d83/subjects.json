@@ -1,0 +1,1 @@
+[{"backend":"results","display_slug":"results-deepseek-v41-flash-1017-volta-node-v100-b-deepseek-v4.1-flash-6f2eb8541d83","evaluation_mode":"capability","harness":"scripts/run-swe-personal.py@10+nativetools","model":"deepseek-v4.1-flash","policy":"dashboard-public-feed","subject_digest":"9bda951bcdca849fb804e48eee567509865aa4b70f7c67f43278f094bc68dd0b"}]
